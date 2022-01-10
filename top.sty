@@ -1,0 +1,85 @@
+\usepackage[leqno]{mathtools}%\usepackage[leqno]{amsmath}%
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{enumerate}
+\usepackage{bm}
+\usepackage{pifont}
+\usepackage{mathrsfs}
+\usepackage{epsfig,lpic,wrapfig}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+
+\usepackage{titling}
+\newcommand{\subtitle}[1]{%
+\posttitle{%
+\par\end{center}
+\begin{center}\large#1\end{center}
+\vskip0.5em}%
+}
+
+\usepackage{titletoc}% http://ctan.org/pkg/titletoc
+\titlecontents*{section}[.5em]
+  {\small}
+  {\thecontentslabel.~{}}
+  {}
+  { \textbf{\thecontentspage}}
+  [; ][.]
+
+
+
+
+\def\RR{\mathbb{R}}
+\def\Ball{\mathrm{B}}
+\def\diam{\mathrm{diam}}
+\def\id{\mathrm{id}}
+\def\rel#1{\textrm{(rel.~$#1$)}}
+
+\def\eps{\varepsilon}
+\def\epsilon{\varepsilon}
+\def\c{\mathcal}
+\def\s{\mathscr}
+
+\def\:{\colon}
+\def\emptyset{\varnothing}
+\def\df{\buildrel \mathrm{def} \over{=\!\!=}}
+
+\newcommand*{\set}[2]{\left\{\,\left.{#1}\vphantom{#2}\,\right\arrowvert\,{#2}\,\right\}}
+
+%THEOREM
+\newcounter{thm}[chapter]
+\renewcommand{\thethm}{\thechapter.\arabic{thm}}
+\def\claim#1{\par\medskip\noindent\refstepcounter{thm}\hbox{\bf \arabic{chapter}.\arabic{thm}. #1.}
+\it\ %\ignorespaces
+}
+\def\endclaim{
+\par\medskip}
+\newenvironment{thm}{\claim}{\endclaim}
+
+%MY STYLE
+\def\parit#1{\medskip\noindent{\it #1}}
+\def\parbf#1{\medskip\noindent{\bf #1}}
+\def\qeds{\qed\par\medskip}%END OF PROOF
+\def\qedsf{\vskip-6mm\qeds}%END OF PROOF BY FORMULA
+
+%RUSSIAN FORMULA HYPERNATION
+\newcommand*{\z}[1]{#1\nobreak\discretionary{}%
+            {\hbox{$\mathsurround=0pt #1$}}{}}
+
+%NUMBERONCIRC
+\newcommand*{\numform}[1]{\@numform{\@nameuse{c@#1}}}
+\newcommand*{\@numform}[1]%
+{\ifcase #1\or \ding{202}\or \ding{203}\or \ding{204}\or \ding{205}\or \ding{206}\or \ding{207}\or \ding{208}\or \ding{209}\or \ding{210}\or \ding{211}\else\@ctrerr \fi}
+%EQNUMBER
+\newcounter{eqtn}[chapter]
+\renewcommand{\@eqnnum}{\theeqtn}
+\renewcommand{\theeqtn}{\numform{eqtn}}
+\newcommand{\eqlbl}[1]{\refstepcounter{eqtn}\leqno\text{\numform{eqtn}\label{#1}}}
+\newcommand{\eqtag}[1]{\refstepcounter{eqtn}\tag*{\numform{eqtn}\label{#1}}}
+
+
+\makeatletter\renewcommand{\p@section}{\thechapter}\makeatother
+\renewcommand{\thesection}{\Alph{section}}
+
+\renewcommand{\chaptername}{Lecture}

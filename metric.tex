@@ -1,0 +1,311 @@
+\chapter{Metric spaces}
+
+In this chapter we discuss \emph{metric spaces} --- 
+a motivating example that will guide us toward the definition of \emph{topological spaces} --- the main object of topology.
+
+Examples of metric spaces were considered for thousands of years,
+but the first general definition was given only in 1906 by Maurice Fr\'echet.
+
+\section{Definition}
+
+In the following definition we grab together the most important properties of intuitive notion of \emph{distance}.
+
+\begin{thm}{Definition}\label{def:metric-space}
+Let $\c X$ be a nonempty set 
+with a function 
+which returns a real number, denoted as $|x-y|$,
+for any pair $x,y\in\c X$.
+Assume that the following conditions are satisfied for any
+$x,y,z\in \c X$:
+\begin{enumerate}[(a)]
+\item\label{def:metric-space:a} Positiveness: 
+$$|x-y|\ge 0.$$
+\item\label{def:metric-space:b} Identity of indiscernibles:  
+$$x=y\quad\text{if and only if}\quad |x-y|=0.$$
+\item\label{def:metric-space:c} Symmetry: $$|x-y| = |y- x|.$$
+\item\label{def:metric-space:d} Triangle inequality: 
+$$  |x- y| + |y- z| \ge |x-z|.$$
+\end{enumerate}
+In this case we say that $\c X$ is a \index{metric space}\emph{metric space} 
+and the function 
+\[(x,y)\mapsto |x-y|\] 
+is called a \emph{metric}. 
+
+The elements of $\c X$ are called \index{point}\emph{points} of the metric space.
+Given two points $x,y\z\in \c X$, 
+the value $|x-y|$ is called \index{distance}\emph{distance} from $x$ to~$y$.
+\end{thm}
+
+Note that for two points in a metric space  the difference between points $x-y$ may have no meaning,
+but $|x-y|$ always has the meaning defined above.
+
+Typically, we consider only one metric on set, 
+but if few metrics are needed, we can distingush them by a index, say  $|x-y|_{\bullet}$ or $|x-y|_{239}$.
+If we need to emphasize that the distace is taken in the metric space $\c{X}$ we write $|x-y|_{\c X}$ instead of $|x-y|$.
+
+\section{Examples}
+
+Let us give few examples of metric spaces.
+
+\begin{itemize}
+\item\emph{Discrete sapce.}\label{page:Discrete metric} Let $\c X$ be an arbitrary set. 
+For any $x,y\z\in\c X$, 
+set $|x-y|\z=0$ if $x=y$ and $|x-y|=1$ otherwise.
+This metric is called \index{discrete metric}\emph{discrete metric} on $\c X$ and the obtained metric space is called \emph{discrete}.
+\item\index{real line}\emph{Real line.} 
+Set of all real numbers ($\mathbb{R}$) with metric defined as 
+$|x-y|$.
+\item {}\emph{Metrics on the plane.}\label{page:Metrics on the plane}
+Let us denote by $\mathbb{R}^2$ the set of all pairs $(x_1,y_2)$ of real numbers.
+Consider two points $p_1=(x_1,y_2)$ and $p_2=(x_2,y_2)$  in~$\mathbb{R}^2$.
+One can equip $\mathbb{R}^2$ with the following metrics:
+\begin{itemize}
+\item\index{Euclidean metric}\emph{Euclidean metric,} denoted by 
+$$|p_1-p_2|_2=\sqrt{(x_1-x_2)^2+(y_2-y_2)^2}.$$
+\item\label{Manhattan plane}\index{Manhattan plane}\emph{Manhattan metric,} denoted by $|{*}-{*}|_1$ and defined as 
+$$|p_1-p_2|_1=|x_1-x_2|+|y_2-y_2|.$$
+\item{}\emph{Maximum metric,} denoted by $|{*}-{*}|_\infty$ and defined as 
+$$|p_1-p_2|_\infty=\max\{|x_1-x_2|,|y_2-y_2|\}.$$
+\end{itemize}
+\end{itemize}
+
+\begin{thm}{Exercise}\label{ex:d1+d2+dinfty}
+Prove that (a)~$|{*}-{*}|_2$; (b)~$|{*}-{*}|_1$ and (c)~$|{*}-{*}|_\infty$ are metrics on $\mathbb{R}^2$.
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:not-a-metric}
+Show that 
+\[|x-y|_{\natural}=(x-y)^2\]
+is not a metric on $\RR$.
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:metric}
+Show that if $(x,y)\mapsto |{x}-{y}|$ is a metric then so is 
+\[(x,y)\mapsto |{x}-{y}|_{\max}=\max\{1,|{x}-{y}|\}.\] 
+\end{thm}
+
+
+\section{Continuous maps}
+
+Recall that a real-to-real function $f$ is called \emph{continuous} 
+if for any $x\in \RR$ and any $\eps > 0$ there exists $\delta > 0$ such that $|f(x)-f(y)|<\eps$, whenever $|x-y|<\delta$. 
+
+This definition can be used for the functions defined on Euclidean space if $|x-y|$ denotes the euclidean distance $|x-y|_2$ between the points $x$ and $y$.
+It admits the following straightforward generalization to \emph{metric spaces}:
+
+\begin{thm}{Definition}\label{def:cont-epsilon-delta}
+A function $f\:\c{X}\to\c{Y}$ between metric spaces is called \emph{continuous} 
+if for any  $x\in \c{X}$ and any $\eps>0$ there exists $\delta>0$ such that 
+$|f(x)-f(y)|_{\c{Y}}<\eps$,
+for any
+$y\in \c{X}$
+such that
+$|x-y|_{\c{X}}<\delta$.
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:dist-cont}
+Let $\c{X}$ be a metric space and $z\in \c{X}$ be a fixed point.
+Show that the function 
+$$f(x)\df|x-z|$$ 
+is continuous.
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:comp+cont}
+Let $\c{X}$, $\c{Y}$ and $\c{Z}$ be a metric spaces.
+Assume that the functions $f\:\c{X}\to\c{Y}$
+and $g\:\c{Y}\to\c{Z}$ are continuous,
+and 
+\[h=g\circ f\:\c{X}\to \c{Z}\] is its composition;
+that is, $h(x)=g(f(x))$ for any $x\in \c{X}$.
+Show that $h\:\c{X}\to\c{Z}$ is continuous at any point.
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:isom-cont}
+Show that any distance-preserving map is continuous.
+
+More precisely, assume that $f\:\c{X}\to\c{Y}$ is a map between metric space such that
+\[|x-x'|_{\c X}=
+|f(x)-f(x')|_{\c Y}\]
+for any $x,x'\in \c{X}$ then 
+$f$ is continuous.
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:to-descrete}
+Let $\c{X}$ be a discrete metric space (defined on page~\pageref{page:Discrete metric})
+and $\c{Y}$ be arbitrary metric space.
+Show that for any function $f\:\c{X}\to\c{Y}$ is continuous.
+\end{thm}
+
+
+
+\section{Balls}
+
+Let $\c{X}$ be a metric space, 
+$x$ is a point in $\c{X}$ 
+and $r$ is a positive real number.
+The set of points in $\c{X}$ which lies on the distance smaller than $r$ is called \emph{ball of radius $r$ centered at $x$}.
+It is denoted as $\Ball(x,r)$ 
+or $\Ball(x,r)_{\c{X}}$ if we need to emphasize that it is taken in the space $\c{X}$.
+
+The ball $\Ball(x,r)$ is also called $r$-neighborhood of $x$.
+
+\begin{thm}{Exercise}\label{ex:d1+d2+dinfty-open}
+Sketch the unit balls for the metrics $|{*}-{*}|_1$, $|{*}-{*}|_2$ and $|{*}-{*}|_\infty$ defined right before Exercise~\ref{ex:d1+d2+dinfty}.
+\end{thm}
+
+\begin{thm}{Exercise}
+Assume $\Ball(x,r)$  and $\Ball(y,R)$ is a pair of balls in a metric space 
+and $\Ball(x,r)\subsetneq \Ball(y,R)$.
+Show that $r<2\cdot R$.
+
+Give an example of a metric space and a pair of balls as above such that $r> R$.
+\end{thm}
+
+Let us reformulate the definition of continuous map (\ref{def:cont-epsilon-delta}) using the introduced notion of ball.
+
+\begin{thm}{Definition}\label{def:cont-balls}
+A function $f\:\c{X}\to\c{Y}$ between metric spaces is called \emph{continuous} if for any $x\in \c{X}$ and any $\eps>0$ there exists $\delta>0$ such that 
+\[f(\Ball(x,\delta)_{\c{X}})\subset\Ball(f(x),\eps)_{\c{Y}}.\]
+
+\end{thm}
+
+\begin{thm}{Exercise}
+Prove the equivalence of definitions \ref{def:cont-epsilon-delta} and \ref{def:cont-balls}.
+\end{thm}
+
+
+
+\section{Open sets}
+
+\begin{thm}{Definition}\label{def:open}
+A subset $V$ in a metric space $\c{X}$ is called \emph{open} if for any $x\in V$ there is $\eps>0$ such that $\Ball(x,\eps)\subset V$.
+\end{thm}
+
+In other words, $V$ is open if, together with each point, $V$ contains its $\eps$-neighborhood for some $\eps>0$.
+For example, any set in a descrete metric space is open since together with any point it contains its $1$-neighborhood.
+Further the set of positive real numbers
+\[(0,\infty)=\set{x\in\RR}{x>0}\] 
+is open since together with each point $x>0$ it contains its $x$-neighborhood.
+On the other hand, the set of nonnegative reals 
+\[[0,\infty)=\set{x\in\RR}{x\ge0}\]
+is not open since there are negative numbers in any neighborhood of~$0$.
+
+\begin{thm}{Exercise}\label{ex:ball-is-open}
+Show that any ball in a metric space is open.
+\end{thm}
+
+\begin{thm}{Exercise}
+Show that any  open set in a metric space is a union of balls. 
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:open-union} Show that union of arbitrary collection of open sets is open.
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:open-intersection}
+Show that intersection of two open sets is open.
+\end{thm}
+
+\begin{thm}{Exercise}
+Give an example of metric space $\c{X}$ and an infinite sequence of open sets $V_1,V_2\dots$
+such that the intesection
+\[\bigcap_nV_n\]
+is not open.
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:d1+d2+dinfty-open}
+Show that the metrics $|{*}-{*}|_1$, $|{*}-{*}|_2$ and $|{*}-{*}|_\infty$ (defined on page~\pageref{page:Metrics on the plane})
+give rise to the same open sets in $\RR^2$.
+That is, if $V\subset \RR^2$ is open for one of these metrics then it is open for the others.
+\end{thm}
+
+\section{Gateway to topology}
+
+The following result is the main gateway to topology.
+It says that continuuous maps can be defined entirely in terms of open sets.
+
+\begin{thm}{Proposition}\label{prop:cont-open}
+A function $f\:\c{X}\to\c{Y}$ 
+between two metric spaces is continuous 
+if and only if for any open set $W\subset\c{Y}$ 
+its inverse images
+\[f^{-1}(W)=\set{x\in \c{X}}{f(x)\in W}\]
+is open.
+\end{thm}
+
+Note that proposition says nothing about the images of open sets. In fact, before going into proof it would be useful to solve the following exercise.
+
+\begin{thm}{Exercise}\label{ex:image-of-open}
+Give an example of a continuous $f\:\RR\to\RR$ and an open set $V\subset \RR$ such that the image $f(V)\subset \RR$ is not open.
+\end{thm}
+
+The formulation of proposition contains ``if and only if''
+and the proof brakes into two parta ``if''-part and ``only if''-part.
+
+\parit{Proof; ``only-if'' part.} 
+Let $W\subset\c{Y}$ be an open set and $V=f^{-1}(W)$.
+Choose $x\in V$; note that so $f(x)\in W$.
+
+Since $W$ is open, 
+\[\Ball(f(x),\eps)_{\c{Y}}\subset W
+\eqlbl{eq:BinU}\] 
+for some $\eps>0$.
+
+Since $f$ is continuous, by Definition~\ref{def:cont-balls}, there is $\delta>0$ such that
+\[f(B(x,\delta)_{\c{X}})\subset \Ball(f(x),\eps)_{\c{Y}}.\]
+It follows that together with any point $x\in V$, the set $V$ contains $B(x,\delta)$;
+that is, $V$ is open.
+
+\parit{``If'' part.} Fix $x\in \c{X}$ and $\eps>0$.
+According to Exercise~\ref{ex:ball-is-open}, 
+\[W=\Ball(f(x),\eps)_{\c{Y}}\] is an open set in $\c{Y}$.
+Therefore its inverse image $f^{-1}(W)$ is open.
+
+Clearly $x\in f^{-1}(W)$.
+By the definition of open set (\ref{def:open})
+\[\Ball(x,\delta)_{\c{X}}\subset f^{-1}(W)\] for some $\delta>0$.
+Or equivalently
+\[f(\Ball(x,\delta)_{\c{X}})\subset W=\Ball(f(x),\eps)_{\c{Y}}.\]
+Hence the ``if''-part follows.\qeds
+
+\section{Limits}
+
+\begin{thm}{Definition}\label{def:limit-metric}
+Let $(x_n)=x_1,x_2,\dots$ be a sequence of points in a metric space $\c{X}$.
+We say the the sequence $x_n$ converges to a point $x\in \c{X}$ if 
+\[|x-x_n|_{\c{X}}\to 0\quad\text{as}\quad n\to \infty.\]
+In this case we say that the sequence $(x_n)$ is a converging sequence and $x$ is its limit; the latter will be written as \[x=\lim_{n\to\infty}x_n\]
+\end{thm}
+
+Note that we defined the convergence of points in a metric space using the convergence of real numbers $d_n=|x-x_n|_{\c{X}}$, which we assume to be known.
+
+\begin{thm}{Exercise}
+Let $f\:\c{X}\to\c{Y}$ be a function between metric spaces.
+Show that $f$ is continuous if and only if for any converging sequence $(x_n)$ in $\c{X}$ the sequence $y_n=f(x_n)$ is converging in $\c{Y}$ and 
+\[f( x_\infty)= y_\infty,\]
+if
+$x_n\to x_\infty$ and $y_n\to y_\infty$ as $n\to\infty$.
+
+\end{thm}
+
+
+\section{Closed sets}
+
+Let $A$ be a set in a metric space $\c{X}$.
+A point $x\in \c{X}$ is called \emph{limit point} of $A$ if there is a sequence $x_n\in A$ such that $x_n\to x$ as $n\to\infty$.
+
+The set of all limit points of $A$ is called \emph{closure} of $A$ and denoted as $\bar A$.
+Note that $\bar A\supset A$;
+indeed, any point $x\in A$ is a limit point of the constant sequence $x_n=x$.
+
+If $\bar A= A$ then the set is called \emph{closed}.
+
+\begin{thm}{Exercise}
+Show that closure of any set in metric space is a closed set; that is $\bar{\bar A}= \bar A$.
+\end{thm}
+
+\begin{thm}{Exercise}
+Show that a subset $A$ in a metric space $\c{X}$ is closed if and only if its complement $\c{X}\backslash A$ is open.
+\end{thm}
+
+
+
