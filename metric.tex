@@ -8,12 +8,12 @@ but the first general definition was given only in 1906 by Maurice Fr\'echet.
 
 \section{Definition}
 
-In the following definition we grab together the most important properties of intuitive notion of \emph{distance}.
+In the following definition we grab together the most important properties of the intuitive notion of \emph{distance}.
 
 \begin{thm}{Definition}\label{def:metric-space}
 Let $\c X$ be a nonempty set 
 with a function 
-which returns a real number, denoted as $|x-y|$,
+that returns a real number, denoted as $|x-y|$,
 for any pair $x,y\in\c X$.
 Assume that the following conditions are satisfied for any
 $x,y,z\in \c X$:
@@ -26,7 +26,7 @@ $$x=y\quad\text{if and only if}\quad |x-y|=0.$$
 \item\label{def:metric-space:d} Triangle inequality: 
 $$  |x- y| + |y- z| \ge |x-z|.$$
 \end{enumerate}
-In this case we say that $\c X$ is a \index{metric space}\emph{metric space} 
+In this case, we say that $\c X$ is a \index{metric space}\emph{metric space} 
 and the function 
 \[(x,y)\mapsto |x-y|\] 
 is called a \emph{metric}. 
@@ -40,15 +40,15 @@ Note that for two points in a metric space  the difference between points $x-y$ 
 but $|x-y|$ always has the meaning defined above.
 
 Typically, we consider only one metric on set, 
-but if few metrics are needed, we can distingush them by a index, say  $|x-y|_{\bullet}$ or $|x-y|_{239}$.
-If we need to emphasize that the distace is taken in the metric space $\c{X}$ we write $|x-y|_{\c X}$ instead of $|x-y|$.
+but if few metrics are needed, we can distinguish them by an index, say  $|x-y|_{\bullet}$ or $|x-y|_{239}$.
+If we need to emphasize that the distance is taken in the metric space $\c{X}$ we write $|x-y|_{\c X}$ instead of $|x-y|$.
 
-\section{Examples}
+\section{Examples}\label{sec:examples(metric-spaces)}
 
-Let us give few examples of metric spaces.
+Let us give a few examples of metric spaces.
 
 \begin{itemize}
-\item\emph{Discrete sapce.}\label{page:Discrete metric} Let $\c X$ be an arbitrary set. 
+\item\emph{Discrete space.}\label{page:Discrete metric} Let $\c X$ be an arbitrary set. 
 For any $x,y\z\in\c X$, 
 set $|x-y|\z=0$ if $x=y$ and $|x-y|=1$ otherwise.
 This metric is called \index{discrete metric}\emph{discrete metric} on $\c X$ and the obtained metric space is called \emph{discrete}.
@@ -90,7 +90,7 @@ Show that if $(x,y)\mapsto |{x}-{y}|$ is a metric then so is
 Recall that a real-to-real function $f$ is called \emph{continuous} 
 if for any $x\in \RR$ and any $\eps > 0$ there exists $\delta > 0$ such that $|f(x)-f(y)|<\eps$, whenever $|x-y|<\delta$. 
 
-This definition can be used for the functions defined on Euclidean space if $|x-y|$ denotes the euclidean distance $|x-y|_2$ between the points $x$ and $y$.
+This definition can be used for the functions defined on Euclidean space if $|x-y|$ denotes the Euclidean distance $|x-y|_2$ between the points $x$ and $y$.
 It admits the following straightforward generalization to \emph{metric spaces}:
 
 \begin{thm}{Definition}\label{def:cont-epsilon-delta}
@@ -111,7 +111,7 @@ is continuous.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:comp+cont}
-Let $\c{X}$, $\c{Y}$ and $\c{Z}$ be a metric spaces.
+Let $\c{X}$, $\c{Y}$ and $\c{Z}$ be metric spaces.
 Assume that the functions $f\:\c{X}\to\c{Y}$
 and $g\:\c{Y}\to\c{Z}$ are continuous,
 and 
@@ -131,7 +131,7 @@ $f$ is continuous.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:to-descrete}
-Let $\c{X}$ be a discrete metric space (defined on page~\pageref{page:Discrete metric})
+Let $\c{X}$ be a discrete metric space (defined in \ref{sec:examples(metric-spaces)})
 and $\c{Y}$ be arbitrary metric space.
 Show that for any function $f\:\c{X}\to\c{Y}$ is continuous.
 \end{thm}
@@ -182,7 +182,7 @@ A subset $V$ in a metric space $\c{X}$ is called \emph{open} if for any $x\in V$
 \end{thm}
 
 In other words, $V$ is open if, together with each point, $V$ contains its $\eps$-neighborhood for some $\eps>0$.
-For example, any set in a descrete metric space is open since together with any point it contains its $1$-neighborhood.
+For example, any set in a discrete metric space is open since together with any point it contains its $1$-neighborhood.
 Further the set of positive real numbers
 \[(0,\infty)=\set{x\in\RR}{x>0}\] 
 is open since together with each point $x>0$ it contains its $x$-neighborhood.
@@ -198,22 +198,22 @@ Show that any ball in a metric space is open.
 Show that any  open set in a metric space is a union of balls. 
 \end{thm}
 
-\begin{thm}{Exercise}\label{ex:open-union} Show that union of arbitrary collection of open sets is open.
+\begin{thm}{Exercise}\label{ex:open-union} Show that the union of an arbitrary collection of open sets is open.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:open-intersection}
-Show that intersection of two open sets is open.
+Show that the intersection of two open sets is open.
 \end{thm}
 
 \begin{thm}{Exercise}
 Give an example of metric space $\c{X}$ and an infinite sequence of open sets $V_1,V_2,\dots$
-such that the intesection
+such that the intersection
 \[\bigcap_nV_n\]
 is not open.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:d1+d2+dinfty-open}
-Show that the metrics $|{*}-{*}|_1$, $|{*}-{*}|_2$ and $|{*}-{*}|_\infty$ (defined on page~\pageref{page:Metrics on the plane})
+Show that the metrics $|{*}-{*}|_1$, $|{*}-{*}|_2$ and $|{*}-{*}|_\infty$ (defined in \ref{sec:examples(metric-spaces)})
 give rise to the same open sets in $\RR^2$.
 That is, if $V\subset \RR^2$ is open for one of these metrics then it is open for the others.
 \end{thm}
@@ -221,7 +221,7 @@ That is, if $V\subset \RR^2$ is open for one of these metrics then it is open fo
 \section{Gateway to topology}
 
 The following result is the main gateway to topology.
-It says that continuuous maps can be defined entirely in terms of open sets.
+It says that continuous maps can be defined entirely in terms of open sets.
 
 \begin{thm}{Proposition}\label{prop:cont-open}
 A function $f\:\c{X}\to\c{Y}$ 
@@ -238,8 +238,8 @@ Note that proposition says nothing about the images of open sets. In fact, befor
 Give an example of a continuous $f\:\RR\to\RR$ and an open set $V\subset \RR$ such that the image $f(V)\subset \RR$ is not open.
 \end{thm}
 
-The formulation of proposition contains ``if and only if''
-and the proof brakes into two parta ``if''-part and ``only if''-part.
+The formulation of the proposition contains ``if and only if''
+and the proof breaks into two parts ``if''-part and ``only if''-part.
 
 \parit{Proof; ``only-if'' part.} 
 Let $W\subset\c{Y}$ be an open set and $V=f^{-1}(W)$.
@@ -271,9 +271,9 @@ Hence the ``if''-part follows.\qeds
 
 \begin{thm}{Definition}\label{def:limit-metric}
 Let $(x_n)=x_1,x_2,\dots$ be a sequence of points in a metric space $\c{X}$.
-We say the the sequence $x_n$ converges to a point $x\in \c{X}$ if 
+We say the sequence $x_n$ converges to a point $x\in \c{X}$ if 
 \[|x-x_n|_{\c{X}}\to 0\quad\text{as}\quad n\to \infty.\]
-In this case we say that the sequence $(x_n)$ is a converging sequence and $x$ is its limit; the latter will be written as \[x=\lim_{n\to\infty}x_n\]
+In this case, we say that the sequence $(x_n)$ is a converging sequence and $x$ is its limit; the latter will be written as \[x=\lim_{n\to\infty}x_n\]
 \end{thm}
 
 Note that we defined the convergence of points in a metric space using the convergence of real numbers $d_n=|x-x_n|_{\c{X}}$, which we assume to be known.
@@ -291,16 +291,17 @@ $x_n\to x_\infty$ and $y_n\to y_\infty$ as $n\to\infty$.
 \section{Closed sets}
 
 Let $A$ be a set in a metric space $\c{X}$.
-A point $x\in \c{X}$ is called \emph{limit point} of $A$ if there is a sequence $x_n\in A$ such that $x_n\to x$ as $n\to\infty$.
+A point $x\in \c{X}$ is a \emph{limit point} of $A$ if there is a sequence $x_n\in A$ such that $x_n\to x$ as $n\to\infty$.
 
-The set of all limit points of $A$ is called \emph{closure} of $A$ and denoted as $\bar A$.
+The set of all limit points of $A$ is called the \emph{closure} of $A$ and denoted as $\bar A$.
 Note that $\bar A\supset A$;
 indeed, any point $x\in A$ is a limit point of the constant sequence $x_n=x$.
 
 If $\bar A= A$ then the set is called \emph{closed}.
 
 \begin{thm}{Exercise}
-Show that closure of any set in metric space is a closed set; that is $\bar{\bar A}= \bar A$.
+Show that closure of any set in metric space is a closed set;
+that is, $\bar{\bar A}= \bar A$.
 \end{thm}
 
 \begin{thm}{Exercise}

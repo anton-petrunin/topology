@@ -1,0 +1,140 @@
+\chapter{Topological spaces}
+
+%Topology studies \emph{topological spaces} --- sets with certain structure that is also named \emph{topology}.
+%This structure makes possible to talk about \emph{continuous} maps.
+
+In the previous chapter we defined open sets in metric spaces 
+and showed that continuity could be defined using only the notion of open sets.
+Now we will state the most important properties of these open sets as axioms.
+It will give us a definition of \emph{topological space} as a set with a distinguished class of subsets called \emph{open sets}.
+
+The \emph{topological properties} are loosely defined as properties which survive under arbitrary continuous deformation.
+They were studied since 19th century.
+The first definition of topological spaces was given by Felix Hausdorff in 1914.
+In 1922, the definition was generalized slightly by Kazimierz Kuratowski; his definition is given below.
+
+\section{Definitions}
+
+We are about to define \emph{abstract open sets} without referring to metric spaces.
+The exercises \ref{ex:open-union} and \ref{ex:open-intersection} motivate this definition.
+
+\begin{thm}{Definition}\label{def:top-space}
+Suppose $\c{X}$ is a set 
+with a distinguished type of subsets, called \emph{open sets} such that
+\begin{enumerate}[(i)] 
+\item\label{def:top-space:empty} The empty set and $\c{X}$ are open.
+\item\label{def:top-space:u} The union of any collection of open sets is an open set.
+That is, if $V_\alpha$ is open for any $\alpha$ the index set $\c{I}$ 
+then the set
+\[W=\bigcup_{\alpha\in \c{I}} V_\alpha
+=
+\set{x\in \c{X}}{x\in V_\alpha\quad\text{for some}\quad\alpha}\]
+is open
+\item\label{def:top-space:n} The intersection of two open sets is an open set.  
+That is, if $V_1$ and $V_2$ are open, then the intersection $W=V_1 \cap V_2$ is open. 
+\end{enumerate}
+In this case, $\c{X}$ is called \emph{topological space}.
+
+The collection of all open sets in  $\c{X}$ is called a \emph{topology} on $\c{X}$ and denoted as $\s{O}_{\c{X}}$;
+so instead of saying \emph{$V$ is an open set in the topological space $\c{X}$}, we might write $V\in \s{O}_{\c{X}}$.
+\end{thm}
+
+From (\ref{def:top-space:n}) it follows that the intersection of a finite collection of open sets is open.
+That is, if $V_1$, $V_2$, $\dots, V_n$ are open then the intersection 
+\[W=V_1 \cap V_2\cap\dots\cap V_n\] is open.
+This can be proved by applying induction on $n$ since 
+\[V_1 \cap \dots\cap V_{n-1}\cap V_n=(V_1 \cap \dots V_{n-1})\cap V_n.\]
+
+\section{Examples}
+
+The so-called \emph{connected two-point space} is a simple but nontrivial example of topological space.
+This space consists of two points 
+\[\c{X}=\{a,b\}\]
+and it has three open sets: 
+\[\emptyset,\quad \{a\}\quad\text{and}\quad\{a,b\}.\]
+It is instructive to check that this is indeed a topology.
+
+Further, for any set $\c{X}$, we can always define the following topologies:
+\begin{itemize} 
+\item  The discrete topology --- the topology consisting of all subsets of a set $\c{X}$.
+\item  The concrete topology  --- the topology consisting of just whole space $\c{X}$ and the empty set, $\emptyset$.
+\item  The cofinite topology --- the topology consisting of the empty set, $\emptyset$ and the complements to finite sets.
+\end{itemize}
+
+\begin{thm}{Exercise}\label{ex:Rge}
+Show that $\emptyset$, $\RR$ and the intervals $[a,\infty)$, $(a,\infty)$ for all $a\in\RR$ define a topology on the real line $\RR$.
+(The obtained space will be denoted by $\RR_\ge$.)
+\end{thm}
+
+Let $\s{W}$ and $\s{S}$ be two topologies on one set.
+Suppose $\s{W}\subset\s{S}$; that is, any open set in $\s{W}$-topology is open in $\s{S}$-topology.
+In this case we say that $\s{W}$ is weaker than $\s{S}$, or, equivalently, $\s{S}$ is stronger than~$\s{W}$.
+
+\begin{thm}{Exercise}
+Let $\s{W}$ and $\s{S}$ be two topologies on one set.
+Suppose that for any point $x$ and any $S\in \s{S}$ such that $S\ni x$, there is $W\in\s{W}$ such that 
+$S\supset W\ni x$.
+Show that $\s{W}$ is weaker than $\s{S}$.
+\end{thm}
+
+
+
+\section{Continuous maps}
+
+The following definition is motivated by Proposition~\ref{prop:cont-open}.
+
+\begin{thm}{Definition}\label{def:cont-top}
+A function between topological spaces 
+$f\:\c{X}\to\c{Y}$ is called \emph{continuous} if for any open set $W$ in $\c{Y}$, its inverse image $f^{-1}(W)$ is open in $\c{X}$.
+That is, if $W$ is an open subset in $\c{Y}$ then the set
+\[V=f^{-1}(W)=\set{x\in X}{f(x)\in W}\]
+is an open subset $\c{X}$
+\end{thm}
+
+\begin{thm}{Exercise}
+Let $\RR$ be the real line with the standard topology
+and $\c{X}$ be the connected two-point space described above.
+\begin{enumerate}[(a)]
+\item Construct a nonconstant continuous function $\RR\to \c{X}$
+\item Show that any continuous function $\c{X}\to \RR$ is constant.
+\end{enumerate}
+
+\end{thm}
+
+Recall that $\RR_\ge$ be the real line with topology defined in \ref{ex:Rge}.
+
+\begin{thm}{Exercise} 
+Show that a function $f\:\RR\to\RR$ is nondecreasing if and only if it defines a continuous map $\RR_\ge\to \RR_\ge$.
+\end{thm}
+
+
+\section{Metrizable spaces}
+
+According to exercises \ref{ex:open-union} and \ref{ex:open-intersection} any metric space is a topological space if one defines open sets as in the definition \ref{def:open}.
+As it follows from Exercise \ref{ex:d1+d2+dinfty-open},
+different metrics might define the same topology.
+
+The topological spaces which can be obtained this way are called \emph{metrizable}.
+For example, discrete topology is the topology induced by the discrete metric (defined in \ref{sec:examples(metric-spaces)}).
+Some examples of topological spaces mentioned above are not metrizable.
+
+\begin{thm}{Exercise}
+Assume $\c{X}$ is a concrete space containing at least two points.
+Show that $\c{X}$ is not metrizable.
+\end{thm}
+
+\begin{thm}{Exercise}
+Assume an infinite set $\c{X}$ equipped with the cofinite topology.
+Show that $\c{X}$ is not metrizable.
+\end{thm}
+
+\begin{thm}{Exercise}
+Show that $\RR_\ge$ is not metrizable; it is defined in \ref{ex:Rge}.
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:finite+metrizable}
+Show that finite topological space is metrizable if and only if it is discrete.
+In particular, connected two-point space is not metrizable.
+\end{thm}
+
+

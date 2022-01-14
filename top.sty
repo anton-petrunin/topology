@@ -55,8 +55,10 @@ unicode
 \def\:{\colon}
 \def\emptyset{\varnothing}
 \def\df{\buildrel \mathrm{def} \over{=\!\!=}}
+\def\le{\leqslant}
+\def\ge{\geqslant}
 
-\newcommand*{\set}[2]{\left\{\,\left.{#1}\vphantom{#2}\,\right\arrowvert\,{#2}\,\right\}}
+\newcommand*{\set}[2]{\left\{\,{#1}\,\middle|\,{#2}\,\right\}}
 
 %THEOREM
 \newcounter{thm}[chapter]
