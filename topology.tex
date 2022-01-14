@@ -20,22 +20,22 @@ The exercises \ref{ex:open-union} and \ref{ex:open-intersection} motivate this d
 
 \begin{thm}{Definition}\label{def:top-space}
 Suppose $\c{X}$ is a set 
-with a distinguished type of subsets, called \emph{open sets} such that
+with a distinguished class of subsets, called \an{open sets} such that
 \begin{enumerate}[(i)] 
-\item\label{def:top-space:empty} The empty set and $\c{X}$ are open.
+\item\label{def:top-space:empty} The empty set $\emptyset$ and the whole $\c{X}$ are open.
 \item\label{def:top-space:u} The union of any collection of open sets is an open set.
 That is, if $V_\alpha$ is open for any $\alpha$ the index set $\c{I}$ 
 then the set
 \[W=\bigcup_{\alpha\in \c{I}} V_\alpha
 =
-\set{x\in \c{X}}{x\in V_\alpha\quad\text{for some}\quad\alpha}\]
+\set{x\in \c{X}}{x\in V_\alpha\quad\text{for some}\quad\alpha\in \c{I}}\]
 is open
 \item\label{def:top-space:n} The intersection of two open sets is an open set.  
 That is, if $V_1$ and $V_2$ are open, then the intersection $W=V_1 \cap V_2$ is open. 
 \end{enumerate}
-In this case, $\c{X}$ is called \emph{topological space}.
+In this case, $\c{X}$ is called \an{topological space}.
 
-The collection of all open sets in  $\c{X}$ is called a \emph{topology} on $\c{X}$ and denoted as $\s{O}_{\c{X}}$;
+The collection of all open sets in  $\c{X}$ is called a \an{topology} on $\c{X}$ and denoted as $\s{O}_{\c{X}}$;
 so instead of saying \emph{$V$ is an open set in the topological space $\c{X}$}, we might write $V\in \s{O}_{\c{X}}$.
 \end{thm}
 
@@ -66,14 +66,16 @@ Show that $\emptyset$, $\RR$ and the intervals $[a,\infty)$, $(a,\infty)$ for al
 (The obtained space will be denoted by $\RR_\ge$.)
 \end{thm}
 
+\section{Comparison of topologies}
+
 Let $\s{W}$ and $\s{S}$ be two topologies on one set.
 Suppose $\s{W}\subset\s{S}$; that is, any open set in $\s{W}$-topology is open in $\s{S}$-topology.
 In this case we say that $\s{W}$ is weaker than $\s{S}$, or, equivalently, $\s{S}$ is stronger than~$\s{W}$.
 
 \begin{thm}{Exercise}
 Let $\s{W}$ and $\s{S}$ be two topologies on one set.
-Suppose that for any point $x$ and any $S\in \s{S}$ such that $S\ni x$, there is $W\in\s{W}$ such that 
-$S\supset W\ni x$.
+Suppose that for any point $x$ and any $W\in\s{W}$ such that $W\ni x$, there is $S\in \s{S}$ such that 
+$W\supset S\ni x$.
 Show that $\s{W}$ is weaker than $\s{S}$.
 \end{thm}
 
@@ -81,6 +83,8 @@ Show that $\s{W}$ is weaker than $\s{S}$.
 
 \section{Continuous maps}
 
+Our next challenge is to reformulate definitions from the previous chapter using only open sets.
+Continuous maps are first in the line.
 The following definition is motivated by Proposition~\ref{prop:cont-open}.
 
 \begin{thm}{Definition}\label{def:cont-top}
@@ -101,10 +105,31 @@ and $\c{X}$ be the connected two-point space described above.
 
 \end{thm}
 
-Recall that $\RR_\ge$ be the real line with topology defined in \ref{ex:Rge}.
-
 \begin{thm}{Exercise} 
 Show that a function $f\:\RR\to\RR$ is nondecreasing if and only if it defines a continuous map $\RR_\ge\to \RR_\ge$.
+(The space $\RR_\ge$ is defined in \ref{ex:Rge}.)
+\end{thm}
+
+\section{Limits}
+
+\begin{thm}{Definition}\label{def:limit-top}
+Suppose $x_n$ is a sequence of points in a topological space $\c{X}$.
+We say that $x_n$ converges to a point $x\in \c{X}$ (briefly $x_n\to x$ as $n\to\infty$) if for any open set $V\ni x$ there is $N$ such that 
+$x_n\in U$ for any $n\ge N$.
+\end{thm}
+
+\begin{thm}{Exercise}
+Prove that above definition agrees with \ref{def:limit-metric}.
+In other words, if $\c{X}$ is a metric space then $x_n$ converges to $x$ in the sense of definition \ref{def:limit-metric} if and only if $x_n$ converges to $x$ in the sense of definition \ref{def:limit-top}.
+\end{thm}
+
+\begin{thm}{Exercise}
+Show that in a space with concrete topology any sequence converges to any point.
+In particular, the limit point of a sequence is not uniquely defined.
+\end{thm}
+
+\begin{thm}{Exercise}
+Show that a convergent sequence of points in a topological space is also convergent for every weaker topology.
 \end{thm}
 
 
@@ -112,15 +137,14 @@ Show that a function $f\:\RR\to\RR$ is nondecreasing if and only if it defines a
 
 According to exercises \ref{ex:open-union} and \ref{ex:open-intersection} any metric space is a topological space if one defines open sets as in the definition \ref{def:open}.
 As it follows from Exercise \ref{ex:d1+d2+dinfty-open},
-different metrics might define the same topology.
+different metrics on one set might define the same topology.
 
-The topological spaces which can be obtained this way are called \emph{metrizable}.
-For example, discrete topology is the topology induced by the discrete metric (defined in \ref{sec:examples(metric-spaces)}).
-Some examples of topological spaces mentioned above are not metrizable.
+A topological space is called \emph{metrizable} if its topology is defined by a metric.
+Let us give few examples of nonmetrizable spaces.
 
-\begin{thm}{Exercise}
-Assume $\c{X}$ is a concrete space containing at least two points.
-Show that $\c{X}$ is not metrizable.
+\begin{thm}{Exercise}\label{ex:finite+metrizable}
+Show that finite topological space is metrizable if and only if it is discrete.
+In particular, connected two-point space is not metrizable.
 \end{thm}
 
 \begin{thm}{Exercise}
@@ -129,12 +153,6 @@ Show that $\c{X}$ is not metrizable.
 \end{thm}
 
 \begin{thm}{Exercise}
-Show that $\RR_\ge$ is not metrizable; it is defined in \ref{ex:Rge}.
+Show that $\RR_\ge$ is not metrizable.
+(The space $\RR_\ge$ is defined in \ref{ex:Rge}.)
 \end{thm}
-
-\begin{thm}{Exercise}\label{ex:finite+metrizable}
-Show that finite topological space is metrizable if and only if it is discrete.
-In particular, connected two-point space is not metrizable.
-\end{thm}
-
-

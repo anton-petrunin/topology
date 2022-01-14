@@ -1,0 +1,133 @@
+\chapter{Subsets}
+
+\section{Closed sets}
+
+Let $\c{X}$ be a topological space. 
+
+A set $K\subset \c{X}$ is called \emph{closed} if its complement $\c{X}\backslash K$ is open.
+
+From the definition of topological spaces the following properties of closed sets follow.
+
+\begin{thm}{Proposition}\label{prop:closed-properties}
+Let $\c{X}$ be a topological space. 
+\begin{enumerate}[(i)] 
+\item The empty set and $\c{X}$ are closed.
+\item The intersection of any collection of closed sets is a closed set.
+That is, if $K_\alpha$ is open for any $\alpha$ in the index set $\c{I}$,
+then the set
+\[L=\bigcap_{\alpha\in \c{I}} K_\alpha
+=
+\set{x\in \c{X}}{x\in K_\alpha\quad\text{for any}\quad\alpha\in \c{I}}\]
+is closed
+\item\label{def:top-space:n} 
+The union of two closed sets (or any finite collection of closed sets) is closed.  
+That is,  if $K_1$ and $K_2$ are closed then the union $L=K_1 \cup K_2$ is closed. 
+\end{enumerate}
+\end{thm}
+
+The definitions of open and closed sets are mirrow-symmetric to each other.
+There is no particular reason why we define topological space using open sets --- we could use closed sets instead.
+
+Sometimes it is easier to use closed sets; 
+for example, the cofinite topology can be defined by declaring that the whole space and all its finite sets are closed.
+
+The following proposition is completely analogous to the original definition of continuous functions via open sets (\ref{def:cont-top}). 
+
+\begin{thm}{Proposition}\label{prop:cont-closed}
+Let $\c{X}$ and $\c{Y}$ be topological spaces.
+A function $f\:\c{X}\to\c{Y}$ is continuous if and only if any closed set $K$ has closed inverse image $f^{-1}(K)$.
+\end{thm}
+
+
+\parit{Proof.}
+In the proof we will use following set-theoretical identity.
+
+Suppose $A\subset \c{Y}$ and $B=\c{Y}\backslash A$ (equvalently  $A=\c{Y}\backslash B$).
+Then
+$$f^{-1}(B)
+=
+\c{X}\backslash f^{-1}(A)\eqlbl{eq:inverse-image-complement}$$
+for any function $f\:\c{X}\to\c{Y}$.
+This identity is tautological,
+to prove it observe that both sides can be spelled as 
+\[\set{x\in\c{X}}{f(x)\notin A}.\]
+
+\parit{``Only-if'' part.}
+Let $B\subset \c{Y}$ be a closed set.
+Then $A=\c{Y}\backslash B$ is open.
+Since $f$ is continuous, 
+$f^{-1}(A)$ is open.
+By \ref{eq:inverse-image-complement},
+$f^{-1}(B)$ is the complement of $f^{-1}(A)$ in $\c{X}$.
+Hence $f^{-1}(B)$ is closed.
+
+\parit{``If'' part.}
+Fix an open set $B$, its complement $A=\c{Y}\backslash B$ is closed.
+Therefore $f^{-1}(A)$ is closed.
+By \ref{eq:inverse-image-complement},
+$f^{-1}(B)$ is a complement of $f^{-1}(A)$  in $\c{X}$. 
+Hence $f^{-1}(B)$ is open.
+
+The statement follows since $B$ is an arbitrary open set.
+\qeds
+
+\section{Interior and closure}
+
+Let $A$ be an arbitrary subset in a topological space $\c{X}$.
+The union of all open subsets of $A$ is called the \emph{interior} of $A$ and denoted as $\mathring A$.
+
+Note that $\mathring A$ is open.
+Indeed, it is defined as a union of open sets and such union has to be open by definition of topology (\ref{def:top-space}).
+So we can say that $\mathring A$ is the \emph{maximal} open set in $A$, 
+as any open subset of $A$ lies in~$\mathring A$.
+
+In a similar fashion, we define closure.
+The intersection of all closed subsets containing $A$ is called the \emph{closure} of $A$ and denoted as $\bar A$.
+
+The set $\bar A$ is closed.
+Indeed, it is defined as an intersection of closed sets and such intersection has to be closed by Proposition~\ref{prop:closed-properties}.
+In other words, $\bar A$ is the minimal closed set that contains $A$, 
+as any closed subset of $A$ contains $\bar A$.
+
+\begin{thm}{Exercise}
+Assume $A$ is a subset of a topological space $\c{X}$;
+consider its complement $B=\c{X}\backslash A$.
+Show that 
+\[\bar B=\c{X}\backslash \mathring A.\]
+\end{thm}
+
+\begin{thm}{Exercise}
+Show that the following holds for any set $A$ of a topological space:
+\begin{enumerate}[(a)]
+\item $\mathring A\subset A\subset \bar A$
+\item $\bar{\bar A}=\bar A$ 
+\item $\mathring{\mathring A}=\mathring A$
+\end{enumerate}
+\end{thm}
+
+\section{Boundary}
+
+Let $A$ be an arbitrary subset in a topological space $\c{X}$.
+The complement $\bar A\backslash \mathring A$ is called the \emph{boundary} of $A$ and dented as $\partial A$.
+
+\begin{thm}{Exercise}
+Show that the boundary of any set is closed.
+\end{thm}
+
+\begin{thm}{Exercise}
+Show that the set $A$ is closed if and only if $\partial A\subset A$.
+\end{thm}
+
+\section{Neighborhoods}
+
+Let $x$ be a point in a topological space $\c{X}$.
+A \emph{neighborhood} of $x$ is any open set $U$ containing $x$.
+
+
+\begin{thm}{Exercise}
+Let $A$ be a set in a topological space $\c{X}$.
+Show that $x\in \partial A$ if and only if any neighborhood of $x$ contains points in $A$ and its complement $\c{X}\backslash A$. 
+\end{thm}
+
+
+ 

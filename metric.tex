@@ -57,15 +57,15 @@ Set of all real numbers ($\mathbb{R}$) with metric defined as
 $|x-y|$.
 \item {}\emph{Metrics on the plane.}\label{page:Metrics on the plane}
 Let us denote by $\mathbb{R}^2$ the set of all pairs $(x_1,y_2)$ of real numbers.
-Consider two points $p_1=(x_1,y_2)$ and $p_2=(x_2,y_2)$  in~$\mathbb{R}^2$.
+Consider two points $p=(x_p,y_p)$ and $q=(x_q,y_q)$  in~$\mathbb{R}^2$.
 One can equip $\mathbb{R}^2$ with the following metrics:
 \begin{itemize}
 \item\index{Euclidean metric}\emph{Euclidean metric,} denoted by 
-$$|p_1-p_2|_2=\sqrt{(x_1-x_2)^2+(y_2-y_2)^2}.$$
+$$|p-q|_2=\sqrt{(x_p-x_q)^2+(y_p-y_q)^2}.$$
 \item\label{Manhattan plane}\index{Manhattan plane}\emph{Manhattan metric,} denoted by $|{*}-{*}|_1$ and defined as 
-$$|p_1-p_2|_1=|x_1-x_2|+|y_2-y_2|.$$
+$$|p-q|_1=|x_p-x_q|+|y_p-y_q|.$$
 \item{}\emph{Maximum metric,} denoted by $|{*}-{*}|_\infty$ and defined as 
-$$|p_1-p_2|_\infty=\max\{|x_1-x_2|,|y_2-y_2|\}.$$
+$$|p-q|_\infty=\max\{|x_p-x_q|,|y_p-y_q|\}.$$
 \end{itemize}
 \end{itemize}
 
@@ -291,7 +291,8 @@ $x_n\to x_\infty$ and $y_n\to y_\infty$ as $n\to\infty$.
 \section{Closed sets}
 
 Let $A$ be a set in a metric space $\c{X}$.
-A point $x\in \c{X}$ is a \emph{limit point} of $A$ if there is a sequence $x_n\in A$ such that $x_n\to x$ as $n\to\infty$.
+A point $x\in \c{X}$ is a \emph{limit point} of $A$ if there is a sequence $x_n\in A$ such that $x_n\to x$ as $n\to\infty$.%
+\footnote{Sometimes limit points are defined, assuming in addition that $x_n\z\ne x$ for any~$n$ --- we do \emph{not} follow this convention.}
 
 The set of all limit points of $A$ is called the \emph{closure} of $A$ and denoted as $\bar A$.
 Note that $\bar A\supset A$;

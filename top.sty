@@ -8,6 +8,10 @@
 \usepackage{mathrsfs}
 \usepackage{epsfig,lpic,wrapfig}
 
+\usepackage{soulutf8}
+\sodef\an{}{.1em}{.5em plus1em}{.5em plus.1em minus.1em}
+\def\emph{\an}
+
 \usepackage{tikz}
 \usetikzlibrary{arrows}
 
@@ -54,7 +58,7 @@ unicode
 
 \def\:{\colon}
 \def\emptyset{\varnothing}
-\def\df{\buildrel \mathrm{def} \over{=\!\!=}}
+\def\df{\mathrel{:=}}
 \def\le{\leqslant}
 \def\ge{\geqslant}
 
