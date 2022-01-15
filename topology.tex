@@ -24,7 +24,7 @@ with a distinguished class of subsets, called \an{open sets} such that
 \begin{enumerate}[(i)] 
 \item\label{def:top-space:empty} The empty set $\emptyset$ and the whole $\c{X}$ are open.
 \item\label{def:top-space:u} The union of any collection of open sets is an open set.
-That is, if $V_\alpha$ is open for any $\alpha$ the index set $\c{I}$ 
+That is, if $V_\alpha$ is open for any $\alpha$ the index set $\c{I}$, 
 then the set
 \[W=\bigcup_{\alpha\in \c{I}} V_\alpha
 =
@@ -40,7 +40,7 @@ so instead of saying \emph{$V$ is an open set in the topological space $\c{X}$},
 \end{thm}
 
 From (\ref{def:top-space:n}) it follows that the intersection of a finite collection of open sets is open.
-That is, if $V_1$, $V_2$, $\dots, V_n$ are open then the intersection 
+That is, if $V_1$, $V_2$, $\dots, V_n$ are open, then the intersection 
 \[W=V_1 \cap V_2\cap\dots\cap V_n\] is open.
 This can be proved by applying induction on $n$ since 
 \[V_1 \cap \dots\cap V_{n-1}\cap V_n=(V_1 \cap \dots V_{n-1})\cap V_n.\]
@@ -56,9 +56,9 @@ It is instructive to check that this is indeed a topology.
 
 Further, for any set $\c{X}$, we can always define the following topologies:
 \begin{itemize} 
-\item  The discrete topology --- the topology consisting of all subsets of a set $\c{X}$.
-\item  The concrete topology  --- the topology consisting of just whole space $\c{X}$ and the empty set, $\emptyset$.
-\item  The cofinite topology --- the topology consisting of the empty set, $\emptyset$ and the complements to finite sets.
+\item  The \emph{discrete topology} --- the topology consisting of all subsets of a set $\c{X}$.
+\item  The \emph{concrete topology}  --- the topology consisting of just whole space $\c{X}$ and the empty set, $\emptyset$.
+\item  The \emph{cofinite topology} --- the topology consisting of the empty set, $\emptyset$ and the complements to finite sets.
 \end{itemize}
 
 \begin{thm}{Exercise}\label{ex:Rge}
@@ -70,7 +70,7 @@ Show that $\emptyset$, $\RR$ and the intervals $[a,\infty)$, $(a,\infty)$ for al
 
 Let $\s{W}$ and $\s{S}$ be two topologies on one set.
 Suppose $\s{W}\subset\s{S}$; that is, any open set in $\s{W}$-topology is open in $\s{S}$-topology.
-In this case we say that $\s{W}$ is weaker than $\s{S}$, or, equivalently, $\s{S}$ is stronger than~$\s{W}$.
+In this case we say that $\s{W}$ is \emph{weaker} than $\s{S}$, or, equivalently, $\s{S}$ is \emph{stronger} than~$\s{W}$.
 
 \begin{thm}{Exercise}
 Let $\s{W}$ and $\s{S}$ be two topologies on one set.
@@ -90,7 +90,7 @@ The following definition is motivated by Proposition~\ref{prop:cont-open}.
 \begin{thm}{Definition}\label{def:cont-top}
 A function between topological spaces 
 $f\:\c{X}\to\c{Y}$ is called \emph{continuous} if for any open set $W$ in $\c{Y}$, its inverse image $f^{-1}(W)$ is open in $\c{X}$.
-That is, if $W$ is an open subset in $\c{Y}$ then the set
+That is, if $W$ is an open subset in $\c{Y}$, then the set
 \[V=f^{-1}(W)=\set{x\in X}{f(x)\in W}\]
 is an open subset $\c{X}$
 \end{thm}
@@ -114,13 +114,13 @@ Show that a function $f\:\RR\to\RR$ is nondecreasing if and only if it defines a
 
 \begin{thm}{Definition}\label{def:limit-top}
 Suppose $x_n$ is a sequence of points in a topological space $\c{X}$.
-We say that $x_n$ converges to a point $x\in \c{X}$ (briefly $x_n\to x$ as $n\to\infty$) if for any open set $V\ni x$ there is $N$ such that 
+We say that $x_n$ \emph{converges} to a point $x\in \c{X}$ (briefly $x_n\to x$ as $n\to\infty$) if for any open set $V\ni x$ there is $N$ such that 
 $x_n\in U$ for any $n\ge N$.
 \end{thm}
 
 \begin{thm}{Exercise}
 Prove that above definition agrees with \ref{def:limit-metric}.
-In other words, if $\c{X}$ is a metric space then $x_n$ converges to $x$ in the sense of definition \ref{def:limit-metric} if and only if $x_n$ converges to $x$ in the sense of definition \ref{def:limit-top}.
+In other words, if $x_1,x_2,\dots$, and $x$ are points in a metric space, then $x_n$ converges to $x$ in the sense of definition \ref{def:limit-metric} if and only if $x_n$ converges to $x$ in the sense of definition \ref{def:limit-top}.
 \end{thm}
 
 \begin{thm}{Exercise}
@@ -139,7 +139,7 @@ According to exercises \ref{ex:open-union} and \ref{ex:open-intersection} any me
 As it follows from Exercise \ref{ex:d1+d2+dinfty-open},
 different metrics on one set might define the same topology.
 
-A topological space is called \emph{metrizable} if its topology is defined by a metric.
+A topological space is called \emph{metrizable} if its topology can be defined by a metric.
 Let us give few examples of nonmetrizable spaces.
 
 \begin{thm}{Exercise}\label{ex:finite+metrizable}
