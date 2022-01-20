@@ -15,18 +15,19 @@ Let $\c{X}$ be a topological space.
 \item The intersection of any collection of closed sets is a closed set.
 That is, if $K_\alpha$ is open for any $\alpha$ in the index set $\c{I}$,
 then the set
-\[L=\bigcap_{\alpha\in \c{I}} K_\alpha
+\[Q=\bigcap_{\alpha\in \c{I}} K_\alpha
 =
 \set{x\in \c{X}}{x\in K_\alpha\quad\text{for any}\quad\alpha\in \c{I}}\]
 is closed
 \item\label{def:top-space:n} 
 The union of two closed sets (or any finite collection of closed sets) is closed.  
-That is,  if $K_1$ and $K_2$ are closed, then the union $L=K_1 \cup K_2$ is closed. 
+That is,  if $K_1$ and $K_2$ are closed, then the union $Q=K_1 \cup K_2$ is closed. 
 \end{enumerate}
 \end{thm}
 
 The definitions of open and closed sets are mirrow-symmetric to each other.
-There is no particular reason why we define topological space using open sets --- we could use closed sets instead.
+There is no particular reason why we define topological space using open sets --- we could use closed sets instead.%
+\footnote{In fact, closed sets were considered before open sets --- the former were introdiced by Georg Cantor in 1884, and the latter by René Baire in 1899.}
 
 Sometimes it is easier to use closed sets; 
 for example, the cofinite topology can be defined by declaring that the whole space and all its finite sets are closed.
@@ -105,6 +106,24 @@ Show that the following holds for any set $A$ of a topological space:
 \end{enumerate}
 \end{thm}
 
+\begin{thm}{Exercise}
+\begin{enumerate}[(a)]
+\item Give an example of a topological space $\c{X}$ with a closed subset $L$ such that
+ \[\bar{\mathring Q}\ne Q.\]
+\item Show that 
+\[\mathring{\bar{\mathring Q}}=\mathring Q\]
+for any closed set $Q$.
+\item Give an example of a topological space $\c{X}$ with an open subset $V$ such that
+ \[\mathring{\bar V}\ne V.\]
+\item Show that 
+\[\bar{\mathring{\bar V}}=\bar V\]
+for any open set $V$.
+\item Give an example of a topological space $\c{X}$ with a subset $A$ such that all the following 7 subsets are distinct:
+\[\bar{\mathring{\bar A}},\ \mathring{\bar A},\ \bar A,\  A,\  \mathring A,\ \bar{\mathring A},\ \mathring{\bar{\mathring A}}.\]
+\end{enumerate}
+
+\end{thm}
+
 \section{Boundary}
 
 Let $A$ be an arbitrary subset in a topological space $\c{X}$.
@@ -118,6 +137,11 @@ Show that the boundary of any set is closed.
 Show that the set $A$ is closed if and only if $\partial A\subset A$.
 \end{thm}
 
+\begin{thm}{Advanced exercise}
+Find three disjoint open sets on the real line 
+that have the same nonempty boundary.
+\end{thm}
+
 \section{Neighborhoods}
 
 Let $x$ be a point in a topological space $\c{X}$.
@@ -129,5 +153,9 @@ Let $A$ be a set in a topological space $\c{X}$.
 Show that $x\in \partial A$ if and only if any neighborhood of $x$ contains points in $A$ and its complement $\c{X}\backslash A$. 
 \end{thm}
 
+Let $A$ and $B$ be subsets of a topological space $\c{X}$.
+The set $A$ is said to be a \emph{dense in}  $B$ if $\bar A\supset B$.
 
- 
+\begin{thm}{Exercise} Show that $A$ is dense in $B$ if and only any neighborhood of any point in $B$ intersects $A$.
+\end{thm}
+

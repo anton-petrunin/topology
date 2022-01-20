@@ -54,7 +54,8 @@ set $|x-y|\z=0$ if $x=y$ and $|x-y|=1$ otherwise.
 This metric is called \index{discrete metric}\emph{discrete metric} on $\c X$ and the obtained metric space is called \emph{discrete}.
 \item\index{real line}\emph{Real line.} 
 Set of all real numbers ($\mathbb{R}$) with metric defined as 
-$|x-y|$.
+$|x-y|$. 
+(Unless it is stated othewise, the real line $\mathbb{R}$ will be considered with this metric.) 
 \item {}\emph{Metrics on the plane.}\label{page:Metrics on the plane}
 Let us denote by $\mathbb{R}^2$ the set of all pairs $(x_1,y_2)$ of real numbers.
 Consider two points $p=(x_p,y_p)$ and $q=(x_q,y_q)$  in~$\mathbb{R}^2$.
@@ -83,6 +84,20 @@ is not a metric on $\RR$.
 Show that if $(x,y)\mapsto |{x}-{y}|$ is a metric, then so is 
 \[(x,y)\mapsto |{x}-{y}|_{\max}=\max\{1,|{x}-{y}|\}.\] 
 \end{thm}
+
+\section{Subspaces}
+
+Any subset $\c{A}$ of metric space $\c{X}$ forms a metric space on its own;
+it is called \emph{subspace} of $\c{X}$.
+This construction produces meany more examples of metric spaces. 
+For example, the disc
+\begin{align*}
+\DD^2&=\set{(x,y)\in\RR^2}{x^2+y^2<1}
+\intertext{and the circle}
+\SS^1&=\set{(x,y)\in\RR^2}{x^2+y^2=1},
+\end{align*}
+are metric spaces with metrics taken from the Euclidean plane.
+Similarly, the interval $[0,1)$ is a metric space with metric taken from $\RR$.
 
 
 \section{Continuous maps}
@@ -136,6 +151,11 @@ and $\c{Y}$ be arbitrary metric space.
 Show that for any function $f\:\c{X}\to\c{Y}$ is continuous.
 \end{thm}
 
+\begin{thm}{Advanced exercise}
+Construct a continuous function 
+$[0,1]\z\to [0,1]$ that takes every value in $[0,1]$ 
+an infinite number of times.
+\end{thm}
 
 
 \section{Balls}
