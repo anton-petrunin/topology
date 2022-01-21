@@ -114,13 +114,13 @@ Show that a function $f\:\RR\to\RR$ is nondecreasing if and only if it defines a
 
 \begin{thm}{Definition}\label{def:limit-top}
 Suppose $x_n$ is a sequence of points in a topological space $\c{X}$.
-We say that $x_n$ \emph{converges} to a point $x\in \c{X}$ (briefly $x_n\to x$ as $n\to\infty$) if for any open set $V\ni x$ there is $N$ such that 
+We say that $x_n$ \emph{converges} to a point $x_\infty\in \c{X}$ (briefly $x_n\to x_\infty$ as $n\to\infty$) if for any open set $V\ni x_\infty$ there is $N$ such that 
 $x_n\in U$ for any $n\ge N$.
 \end{thm}
 
 \begin{thm}{Exercise}
 Prove that above definition agrees with \ref{def:limit-metric}.
-In other words, if $x_1,x_2,\dots$, and $x$ are points in a metric space, then $x_n$ converges to $x$ in the sense of definition \ref{def:limit-metric} if and only if $x_n$ converges to $x$ in the sense of definition \ref{def:limit-top}.
+In other words, if $x_1,x_2,\dots$, and $x_\infty$ are points in a metric space, then $x_n$ converges to $x_\infty$ in the sense of definition \ref{def:limit-metric} if and only if $x_n$ converges to $x_\infty$ in the sense of definition \ref{def:limit-top}.
 \end{thm}
 
 \begin{thm}{Exercise}
@@ -132,6 +132,20 @@ In particular, the limit point of a sequence is not uniquely defined.
 Show that a convergent sequence of points in a topological space is also convergent for every weaker topology.
 \end{thm}
 
+The following exercise shows that in general, converging sequences do \emph{not} provide an adequate description of topology.
+In other words, an analog of \ref{ex:continuous-limit} does not hold.%
+\footnote{The so-called \emph{nets} provide an appropriate analog of sequences that works well in topological spaces, but we are not going to consider them here.}
+
+\begin{thm}{Advanced exercise}
+Let $\c{X}$ be $\RR$ with the so-called \emph{cocountable topology};
+its closed sets are either countable or the whole $\RR$.
+\begin{enumerate}[(a)]
+\item Construct a map $f\:\c{X}\to \c{X}$ that is not continuous.
+\item Describe all converging sequences in $\c{X}$.
+\item Show that if the sequence $x_n$ converges to $x_\infty$ in $\c{X}$ then for any map $f\:\c{X}\to \c{X}$ the sequence $y_n=f(x_n)$ converges to $y_\infty\z=f(x_\infty)$.
+\end{enumerate}
+
+\end{thm}
 
 \section{Metrizable spaces}
 

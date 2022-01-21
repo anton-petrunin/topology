@@ -290,20 +290,25 @@ Hence the ``if''-part follows.\qeds
 \section{Limits}
 
 \begin{thm}{Definition}\label{def:limit-metric}
-Let $(x_n)=x_1,x_2,\dots$ be a sequence of points in a metric space $\c{X}$.
-We say the sequence $x_n$ converges to a point $x\in \c{X}$ if 
-\[|x-x_n|_{\c{X}}\to 0\quad\text{as}\quad n\to \infty.\]
-In this case, we say that the sequence $(x_n)$ is a converging sequence and $x$ is its limit; the latter will be written as \[x=\lim_{n\to\infty}x_n\]
+Let $x_1,x_2,\dots$ be a sequence of points in a metric space $\c{X}$.
+We say the sequence $x_n$ converges to a point $x_\infty\in \c{X}$ if 
+\[|x_\infty-x_n|_{\c{X}}\to 0\quad\text{as}\quad n\to \infty.\]
+In this case, we say that the sequence $(x_n)$ is a converging sequence and $x_\infty$ is its limit; the latter will be written as \[x_\infty=\lim_{n\to\infty}x_n\]
 \end{thm}
 
-Note that we defined the convergence of points in a metric space using the convergence of real numbers $d_n=|x-x_n|_{\c{X}}$, which we assume to be known.
+Note that we defined the convergence of points in a metric space using the convergence of real numbers $d_n=|x_\infty-x_n|_{\c{X}}$, which we assume to be known.
 
 \begin{thm}{Exercise}
+Show that any sequence of points in a metric space has at most one limit. 
+\end{thm}
+
+
+\begin{thm}{Exercise}\label{ex:continuous-limit}
 Let $f\:\c{X}\to\c{Y}$ be a function between metric spaces.
-Show that $f$ is continuous if and only if for any converging sequence $(x_n)$ in $\c{X}$ the sequence $y_n=f(x_n)$ is converging in $\c{Y}$ and 
-\[f( x_\infty)= y_\infty,\]
-if
-$x_n\to x_\infty$ and $y_n\to y_\infty$ as $n\to\infty$.
+Show that $f$ is continuous if and only if the following condition holds:
+\begin{itemize}
+ \item If $x_n\to x_\infty$ as $n\to\infty$ in $\c{X}$, then the sequence $y_n=f(x_n)$ converges to $y_\infty=f(y_\infty)$ as $n\to\infty$ in $\c{Y}$.
+\end{itemize}
 
 \end{thm}
 

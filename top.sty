@@ -7,10 +7,18 @@
 \usepackage{pifont}
 \usepackage{mathrsfs}
 \usepackage{epsfig,lpic,wrapfig}
+\usepackage{accsupp}
 
 \usepackage{soulutf8}
 \sodef\an{}{.1em}{.5em plus1em}{.5em plus.1em minus.1em}
-\def\emph{\an}
+
+\newcommand\ann[1]{%
+    \BeginAccSupp{method=escape,ActualText={\detokenize{#1}}}%
+      \an{#1}%
+    \EndAccSupp{}%
+}
+
+\def\emph{\ann}
 
 \usepackage{tikz}
 \usetikzlibrary{arrows}

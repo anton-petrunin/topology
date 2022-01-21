@@ -7,11 +7,16 @@
 \begin{thm}{Definition}\label{def:cont-top}
 A bijection $f\:\c{X}\to\c{Y}$ between topological spaces 
 is called \emph{homeomorphism} if $f$ and its inverse $f^{-1}\:\c{Y}\to\c{X}$
-are continuous.
+are continuous.%
+\footnote{The term \emph{homomorphism} from abstract algebra looks similar and it has similar meaning but should not to be confused with \emph{homeomorphism}.}
 
 Topological spaces $\c{X}$ and $\c{Y}$ are called \emph{homeomorphic} (briefly, $\c{X}\simeq\c{Y}$) if there is a homeomorphism $f\:\c{X}\to\c{Y}$.
 \end{thm}
 
+
+\begin{thm}{Exercise}
+Give an example of continuous bijection between topological spaces that is \emph{not} a homeomorphism.
+\end{thm}
 
 \begin{thm}{Exercise}
 Show that $x\mapsto e^x$ is a homeomorphism $\RR\to (0,\infty)$.
@@ -48,11 +53,13 @@ Show that the complements of two countable dense subsets of the plane are homeom
 
 \begin{thm}{Definition}\label{def:cont-top}
 A function between topological spaces 
-$f\:\c{X}\to\c{Y}$ is called \emph{open} if, for any open set $V$ in $\c{X}$, the image $f(V)$ is open in $\c{Y}$.
+$f\:\c{X}\to\c{Y}$ is called \emph{open} if, for any open set $V$ in $\c{X}$, the image $f(V)$ is open in~$\c{Y}$.
 
 A function between topological spaces 
 $f\:\c{X}\to\c{Y}$ is called \emph{closed} if, for any open set $V$ in $\c{X}$, the image $f(V)$ is closed in $\c{Y}$.
 \end{thm}
+
+Note that homeomorphism can be defined as a \emph{continuous open bijection}.
 
 \begin{thm}{Exercise}
 Show that a bijective map between topological spaces is closed if and only if it is open.
