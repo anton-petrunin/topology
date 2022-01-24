@@ -21,18 +21,26 @@ The exercises \ref{ex:open-union} and \ref{ex:open-intersection} motivate this d
 \begin{thm}{Definition}\label{def:top-space}
 Suppose $\c{X}$ is a set 
 with a distinguished class of subsets, called \an{open sets} such that
-\begin{enumerate}[(i)] 
-\item\label{def:top-space:empty} The empty set $\emptyset$ and the whole $\c{X}$ are open.
-\item\label{def:top-space:u} The union of any collection of open sets is an open set.
+
+\begin{subthm}{def:top-space:empty}
+The empty set $\emptyset$ and the whole $\c{X}$ are open.
+\end{subthm}
+
+\begin{subthm}{def:top-space:u}
+The union of any collection of open sets is an open set.
 That is, if $V_\alpha$ is open for any $\alpha$ the index set $\c{I}$, 
 then the set
 \[W=\bigcup_{\alpha\in \c{I}} V_\alpha
 =
 \set{x\in \c{X}}{x\in V_\alpha\quad\text{for some}\quad\alpha\in \c{I}}\]
-is open
-\item\label{def:top-space:n} The intersection of two open sets is an open set.  
+is open.
+\end{subthm}
+
+\begin{subthm}{def:top-space:n}
+The intersection of two open sets is an open set.  
 That is, if $V_1$ and $V_2$ are open, then the intersection $W=V_1 \cap V_2$ is open. 
-\end{enumerate}
+\end{subthm}
+
 In this case, $\c{X}$ is called \an{topological space}.
 
 The collection of all open sets in  $\c{X}$ is called a \an{topology} on $\c{X}$ and denoted as $\s{O}_{\c{X}}$;
@@ -98,10 +106,14 @@ is an open subset $\c{X}$
 \begin{thm}{Exercise}
 Let $\RR$ be the real line with the standard topology
 and $\c{X}$ be the connected two-point space described above.
-\begin{enumerate}[(a)]
-\item Construct a nonconstant continuous function $\RR\to \c{X}$
-\item Show that any continuous function $\c{X}\to \RR$ is constant.
-\end{enumerate}
+
+\begin{subthm}{}
+Construct a nonconstant continuous function $\RR\to \c{X}$.
+\end{subthm}
+
+\begin{subthm}{}
+Show that any continuous function $\c{X}\to \RR$ is constant.
+\end{subthm}
 
 \end{thm}
 
@@ -139,11 +151,18 @@ In other words, an analog of \ref{ex:continuous-limit} does not hold.%
 \begin{thm}{Advanced exercise}
 Let $\c{X}$ be $\RR$ with the so-called \emph{cocountable topology};
 its closed sets are either countable or the whole $\RR$.
-\begin{enumerate}[(a)]
-\item Construct a map $f\:\c{X}\to \c{X}$ that is not continuous.
-\item Describe all converging sequences in $\c{X}$.
-\item Show that if the sequence $x_n$ converges to $x_\infty$ in $\c{X}$ then for any map $f\:\c{X}\to \c{X}$ the sequence $y_n=f(x_n)$ converges to $y_\infty\z=f(x_\infty)$.
-\end{enumerate}
+
+\begin{subthm}{}
+ Construct a map $f\:\c{X}\to \c{X}$ that is not continuous.
+\end{subthm}
+
+\begin{subthm}{}
+ Describe all converging sequences in $\c{X}$.
+\end{subthm}
+
+\begin{subthm}{}
+ Show that if the sequence $x_n$ converges to $x_\infty$ in $\c{X}$ then for any map $f\:\c{X}\to \c{X}$ the sequence $y_n=f(x_n)$ converges to $y_\infty\z=f(x_\infty)$.
+\end{subthm}
 
 \end{thm}
 

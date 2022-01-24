@@ -1,0 +1,144 @@
+\chapter{Constructions}
+
+In this chapter we will discuss a few constructions that produce new topological spaces from the given ones.
+
+\section{Induced topology}\label{sec:induced-topology}
+
+Let $A$ be a subset of a topological space $\c{Y}$.
+Consider the the so-called \emph{induced topology} on $A$ defined the following way:
+a subset $V\subset A$ is open in $A$ if and only if $V=A\cap W$ for an open set $W$ in $\c{Y}$.
+
+Let us check that induced topology is indeed a topology;
+in other words, it meets all conditions in \ref{def:top-space}.
+
+First of all the empty set
+$\emptyset$ is open since $\emptyset=A\cap \emptyset$.
+Further, $A=A\cap \c{Y}$;
+therefore $A$ is open in the induced topology.
+
+Assume $\set{V_\alpha}{\alpha\in\c{I}}$ is a collection of open sets in $A$;
+that is, for each $V_\alpha$ there is a set $W_\alpha$ which is open in $\c{Y}$ and such that $V_\alpha\z=A\cap W_\alpha$.
+Note that
+\[\bigcup_\alpha V_\alpha=A\cap\left(\bigcup_\alpha W_\alpha\right).\]
+Since the union of $\{W_\alpha\}$ is open in $\c{Y}$, the inion of $\{V_\alpha\}$ is open in the induced topology on $A$.
+
+Assume $V_1$ and $V_2$ are open in $A$; 
+that is, $V_1=A\cap W_1$ and  $V_2\z=A\cap W_2$ for some open sets $W_1$ and $W_2$ in $\c{Y}$.
+Note that
+\[V_1\cap V_2=A\cap(W_1\cap W_2).\]
+Since the intersection $W_1\cap W_2$ is open in $\c{Y}$,
+the intersection $V_1\cap V_2$ is open in $A$.
+
+
+A subset $A$ in a topological space $\c{Y}$ equipped with the induced topology is called \emph{subspace} of $\c{Y}$.
+It is straightforward to check that this notion agrees with subspace of metric space introduced in \ref{sec:subspaces-metric}.
+
+A function $f\:\c{X}\to \c{Y}$ is called \emph{emebedding} if $f$ defines a homeomorphism from space $\c{X}$ to the subspace $f(\c{X})$ in $\c{Y}$.
+
+\section{Moving topology by a map}
+
+The construction in following exercise moves topology from target space to the source of a map.
+
+\begin{thm}{Exercise}\label{ex:move-topology:pullback}
+Let $f\:\c{X}\to\c{Y}$ be a function between two sets.
+Assume $\c{Y}$ is equipped with a topology.
+Declare a subset $V\subset\c{X}$  to be open if there is an open subset $W\subset\c{Y}$ 
+such that $V=f^{-1}(W)$.
+Show that it defines a topology on $\c{X}$.
+\end{thm}
+
+The constructed topology on $\c{X}$ is called \emph{pullback} topology.
+It generalizes the notion of induced topology above.
+Namely the induced topology on $A\subset \c{Y}$ can be defined as a pullback topology for the inclusion map $\iota\:A\to \c{Y}$.%
+\footnote{The inclusion map $\iota\: A\to \c{X}$ defined as $\iota(a)=a$ for any $a\in A$.}
+Indeed, for any $W\subset \c{Y}$ the inverse image $\iota^{-1}(W)$ coincides with the intersection  $V=A\cap W$.
+
+The following exercise describes an analogous construction that moves topology from source to target.
+Both exercises can be solved by checking the conditions in \ref{def:top-space} as we did in \ref{sec:induced-topology}.
+
+\begin{thm}{Exercise}\label{ex:move-topology:pushforward}
+Let $f\:\c{X}\to\c{Y}$ be a map between two sets.
+Assume $\c{X}$ is equipped with a topology.
+Declare a subset $W\subset\c{Y}$ to be open if the subset $V=f^{-1}(W)$ is open in $\c{X}$.
+Show that it defines a topology on $\c{X}$.
+
+\end{thm}
+
+The constructed topology on $\c{Y}$ is called \emph{pushforward} topology.
+
+\begin{thm}{Exercise}
+Let $f\:\c{X}\to\c{Y}$ be a continuous map.
+
+\begin{subthm}{}
+Show that the pullback topology on $\c{X}$ is weaker than its own topology.
+\end{subthm}
+
+\begin{subthm}{}
+Show that the pushforward topology on $\c{Y}$ is stronger than its own topology.
+\end{subthm}
+
+\end{thm}
+
+\begin{thm}{Exercise}
+Let $g\:\c{X}\to\c{Y}$ be a continuous map.
+
+\begin{subthm}{}
+Suppose $\c{X}$ is equipped with the pullback topology.
+Show that a map $f\:\c{W}\to\c{X}$ is continuous if and only if the composition $f\circ g\:\c{W}\to\c{Y}$ is continuous.
+\end{subthm}
+
+\begin{subthm}{}
+Suppose $\c{Y}$ is equipped with the pushforward topology.
+Show that a map $h\:\c{Y}\to\c{Z}$ is continuous if and only if the composition $h\circ f\:\c{X}\to\c{Z}$ is continuous.
+\end{subthm}
+
+\end{thm}
+
+
+The pullback topology is used mostly for injective maps; in this case it is nearly the same as \emph{induced topology}.
+Similarly pushforward topology is mostly used for surjective maps.
+This particular case of the construction is called \emph{quotient toplogy};
+it is discussed in the following two sections.
+
+\begin{thm}{Exercise}\label{ex:open-closed-pushforward}
+Let $f\:\c{X}\to \c{Y}$ be a continuous surjective map.
+Assume $f$ is closed or open.
+Show that $\c{Y}$ is equipped with the pushforward.
+\end{thm}
+
+\section{Quotient topology}
+
+Let $\sim$ be an \emph{equivalence relation} on a topological space $\c{X}$;
+that is, for any $x,y,z\in\c{X}$ the following conditions hold:
+\begin{itemize}
+ \item $x\sim x$;
+ \item if $x\sim y$, then $y\sim x$;
+ \item if $x\sim y$ and $y\sim z$, then $x\sim z$.
+\end{itemize}
+
+Recall that the set 
+\[[x]=\set{y\in \c{X}}{y\sim x}\]
+is called \emph{equivalence class} of $x$.
+The set of all equivalence classes in $\c{X}$ will be denoted by $\c{X}/\sim$.
+
+The following exercise ties equivalence relations with maps.
+
+\begin{thm}{Exercise}
+Show that an arbitrary map $f\:\c{X}\to \c{Y}$ defines the following equivalence relation on $\c{X}$:
+\[x\sim x'\quad\text{if and only if}\quad f(x)=f(x').\]
+Moreover,
+\[y=f(x)\quad\text{if and only if}\quad [x]=f^{-1}\{f(x)\}.\]
+\end{thm}
+
+Observe that $x\mapsto [x]$ defines a surjective map $\c{X}\to \c{X}/\sim$.
+The corresponding pushforward topology on $\c{X}/\sim$ is called \emph{quotient topology} on $\c{X}/\sim$.
+The set $\c{X}/\sim$ with the quotient topology is called \emph{quotient space}.
+
+Intuitively, quotient space is the space obtained by gluing equivalent points together.
+For example, consider the \emph{minimal equivalence realtion} on $[0,1]$ such that $0\sim 1$;
+that is, $x\sim y$ if and only if one of the following conditions hold $x=y$, or $x=0$ and $y=1$, or $x=1$ and $y=0$.
+Then the quotient space $[0,1]/\sim$ is homeomorphic to 
+\[\mathbb{S}^1=\set{(x,y)\in\RR^2}{x^2+y^2=1}.\]
+A homeomorphism is induced by the map $[0,1]\to \mathbb{S}^1$
+\[f(t)=\left(\cos(2\cdot\pi\cdot t),\sin(2\cdot\pi\cdot t)\right).\]
+The latter statement can be proved directly from the definition of quotient topology, but soon (\ref{???}) we will have a device that implies this and similar statements efortlesly, so we suggest to wait with a proof of this statement.

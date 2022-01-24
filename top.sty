@@ -71,6 +71,9 @@ unicode
 \def\le{\leqslant}
 \def\ge{\geqslant}
 
+\let\oldcdot\cdot
+\def\cdot{{\hskip0.5pt\z\oldcdot\hskip0.5pt}}
+
 \newcommand*{\set}[2]{\left\{\,{#1}\,\middle|\,{#2}\,\right\}}
 
 %THEOREM
@@ -103,6 +106,32 @@ unicode
 \renewcommand{\theeqtn}{\numform{eqtn}}
 \newcommand{\eqlbl}[1]{\refstepcounter{eqtn}\leqno\text{\numform{eqtn}\label{#1}}}
 \newcommand{\eqtag}[1]{\refstepcounter{eqtn}\tag*{\numform{eqtn}\label{#1}}}
+
+%SUBTHEOREM 
+\newcounter{subthm}[thm]
+\renewcommand{\thesubthm}{\thethm\textit{\hskip-0.03em \alph{subthm}}}
+\newcounter{clone}[thm]
+\renewcommand{\theclone}{\textit{(\alph{subthm})}}
+\newenvironment{subthm}[1]{\ifthenelse{\equal{#1}{}}
+{\par\refstepcounter{subthm}\begin{itemize}\item[(\alph{subthm})]}{\par\refstepcounter{subthm}\label{#1}\setcounter{clone}{\value{subthm}} \addtocounter{clone}{-1}\refstepcounter{clone}\label{SHORT.#1}\begin{itemize}
+\item [(\alph{subthm})]}}{\end{itemize}}
+
+%SUBTHEOREM A
+\newcounter{subthmA}[thm]
+\renewcommand{\thesubthmA}{\thethm\textit{\hskip-0.05em \Alph{subthmA}}}
+\newcounter{cloneA}[thm]
+\renewcommand{\thecloneA}{\textit{(\Alph{subthmA})}}
+\newenvironment{subthmA}[1]{\ifthenelse{\equal{#1}{}}
+{\par\refstepcounter{subthmA}\begin{itemize}\item[(\Alph{subthmA})]}{\par\refstepcounter{subthmA}\label{#1}\setcounter{cloneA}{\value{subthmA}} \addtocounter{cloneA}{-1}\refstepcounter{cloneA}\label{SHORT.#1}\begin{itemize}
+\item [(\Alph{subthmA})]}}{\end{itemize}}
+%SUBTHEOREM 1
+\newcounter{subthmN}[thm]
+\renewcommand{\thesubthmN}{\thethm-\arabic{subthmN}}
+\newcounter{cloneN}[thm]
+\renewcommand{\thecloneN}{\arabic{subthmN}}
+\newenvironment{subthmN}[1]{\ifthenelse{\equal{#1}{}}
+{\par\refstepcounter{subthmN}\begin{itemize}\item[\arabic{subthmN})]}{\par\refstepcounter{subthmN}\label{#1}\setcounter{cloneN}{\value{subthmN}} \addtocounter{cloneN}{-1}\refstepcounter{cloneN}\label{SHORT.#1}\begin{itemize}
+\item [\arabic{subthmN})]}}{\end{itemize}}
 
 
 \makeatletter\renewcommand{\p@section}{\thechapter}\makeatother

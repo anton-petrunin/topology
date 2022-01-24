@@ -17,15 +17,26 @@ that returns a real number, denoted as $|x-y|$,
 for any pair $x,y\in\c X$.
 Assume that the following conditions are satisfied for any
 $x,y,z\in \c X$:
-\begin{enumerate}[(a)]
-\item\label{def:metric-space:a} Positiveness: 
+
+\begin{subthm}{def:metric-space:a}
+Positiveness: 
 $$|x-y|\ge 0.$$
-\item\label{def:metric-space:b} Identity of indiscernibles:  
+\end{subthm}
+
+\begin{subthm}{def:metric-space:b}
+Identity of indiscernibles:  
 $$x=y\quad\text{if and only if}\quad |x-y|=0.$$
-\item\label{def:metric-space:c} Symmetry: $$|x-y| = |y- x|.$$
-\item\label{def:metric-space:d} Triangle inequality: 
+\end{subthm}
+
+\begin{subthm}{def:metric-space:c}
+Symmetry: $$|x-y| = |y- x|.$$
+\end{subthm}
+
+\begin{subthm}{def:metric-space:d}
+Triangle inequality: 
 $$  |x- y| + |y- z| \ge |x-z|.$$
-\end{enumerate}
+\end{subthm}
+
 In this case, we say that $\c X$ is a \index{metric space}\emph{metric space} 
 and the function 
 \[(x,y)\mapsto |x-y|\] 
@@ -85,7 +96,7 @@ Show that if $(x,y)\mapsto |{x}-{y}|$ is a metric, then so is
 \[(x,y)\mapsto |{x}-{y}|_{\max}=\max\{1,|{x}-{y}|\}.\] 
 \end{thm}
 
-\section{Subspaces}
+\section{Subspaces}\label{sec:subspaces-metric}
 
 Any subset $\c{A}$ of metric space $\c{X}$ forms a metric space on its own;
 it is called \emph{subspace} of $\c{X}$.
