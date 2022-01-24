@@ -5,7 +5,7 @@ In this chapter we will discuss a few constructions that produce new topological
 \section{Induced topology}\label{sec:induced-topology}
 
 Let $A$ be a subset of a topological space $\c{Y}$.
-Consider the the so-called \emph{induced topology} on $A$ defined the following way:
+Consider the so-called \emph{induced topology} on $A$ defined the following way:
 a subset $V\subset A$ is open in $A$ if and only if $V=A\cap W$ for an open set $W$ in $\c{Y}$.
 
 Let us check that induced topology is indeed a topology;
@@ -30,14 +30,14 @@ Since the intersection $W_1\cap W_2$ is open in $\c{Y}$,
 the intersection $V_1\cap V_2$ is open in $A$.
 
 
-A subset $A$ in a topological space $\c{Y}$ equipped with the induced topology is called \emph{subspace} of $\c{Y}$.
+A subset $A$ in a topological space $\c{Y}$ equipped with the induced topology is called a \emph{subspace} of $\c{Y}$.
 It is straightforward to check that this notion agrees with subspace of metric space introduced in \ref{sec:subspaces-metric}.
 
-A function $f\:\c{X}\to \c{Y}$ is called \emph{emebedding} if $f$ defines a homeomorphism from space $\c{X}$ to the subspace $f(\c{X})$ in $\c{Y}$.
+A function $f\:\c{X}\to \c{Y}$ is called \emph{embedding} if $f$ defines a homeomorphism from space $\c{X}$ to the subspace $f(\c{X})$ in $\c{Y}$.
 
 \section{Moving topology by a map}
 
-The construction in following exercise moves topology from target space to the source of a map.
+The construction in the following exercise moves topology from target space to the source of a map.
 
 \begin{thm}{Exercise}\label{ex:move-topology:pullback}
 Let $f\:\c{X}\to\c{Y}$ be a function between two sets.
@@ -49,7 +49,7 @@ Show that it defines a topology on $\c{X}$.
 
 The constructed topology on $\c{X}$ is called \emph{pullback} topology.
 It generalizes the notion of induced topology above.
-Namely the induced topology on $A\subset \c{Y}$ can be defined as a pullback topology for the inclusion map $\iota\:A\to \c{Y}$.%
+Namely, the induced topology on $A\subset \c{Y}$ can be defined as a pullback topology for the inclusion map $\iota\:A\to \c{Y}$.%
 \footnote{The inclusion map $\iota\: A\to \c{X}$ defined as $\iota(a)=a$ for any $a\in A$.}
 Indeed, for any $W\subset \c{Y}$ the inverse image $\iota^{-1}(W)$ coincides with the intersection  $V=A\cap W$.
 
@@ -96,7 +96,7 @@ Show that a map $h\:\c{Y}\to\c{Z}$ is continuous if and only if the composition 
 
 
 The pullback topology is used mostly for injective maps; in this case it is nearly the same as \emph{induced topology}.
-Similarly pushforward topology is mostly used for surjective maps.
+Similarly, pushforward topology is mostly used for surjective maps.
 This particular case of the construction is called \emph{quotient toplogy};
 it is discussed in the following two sections.
 
@@ -141,4 +141,4 @@ Then the quotient space $[0,1]/\sim$ is homeomorphic to
 \[\mathbb{S}^1=\set{(x,y)\in\RR^2}{x^2+y^2=1}.\]
 A homeomorphism is induced by the map $[0,1]\to \mathbb{S}^1$
 \[f(t)=\left(\cos(2\cdot\pi\cdot t),\sin(2\cdot\pi\cdot t)\right).\]
-The latter statement can be proved directly from the definition of quotient topology, but soon (\ref{???}) we will have a device that implies this and similar statements efortlesly, so we suggest to wait with a proof of this statement.
+The latter statement can be proved directly from the definition of quotient topology, but soon (\ref{???}) we will have a device that implies this and similar statements effortlessly, so we suggest to wait with proof of this statement.
