@@ -31,7 +31,9 @@ the intersection $V_1\cap V_2$ is open in $A$.
 
 
 A subset $A$ in a topological space $\c{Y}$ equipped with the induced topology is called a \emph{subspace} of $\c{Y}$.
-It is straightforward to check that this notion agrees with subspace of metric space introduced in \ref{sec:subspaces-metric}.
+It is straightforward to check that this notion agrees with the notion introduced in \ref{sec:subspaces-metric};
+that is, if $\c{Y}$ is a metric space, then any subset $A\subset\c{Y}$ comes with metric
+and the topology defined by this metric coincides with the induced topology on $A$.
 
 A function $f\:\c{X}\to \c{Y}$ is called \emph{embedding} if $f$ defines a homeomorphism from space $\c{X}$ to the subspace $f(\c{X})$ in $\c{Y}$.
 
@@ -50,7 +52,7 @@ Show that it defines a topology on $\c{X}$.
 The constructed topology on $\c{X}$ is called \emph{pullback} topology.
 It generalizes the notion of induced topology above.
 Namely, the induced topology on $A\subset \c{Y}$ can be defined as a pullback topology for the inclusion map $\iota\:A\to \c{Y}$.%
-\footnote{The inclusion map $\iota\: A\to \c{X}$ defined as $\iota(a)=a$ for any $a\in A$.}
+\footnote{The inclusion map $\iota\: A\to \c{X}$ is defined by $\iota(a)=a$ for any $a\in A$.}
 Indeed, for any $W\subset \c{Y}$ the inverse image $\iota^{-1}(W)$ coincides with the intersection  $V=A\cap W$.
 
 The following exercise describes an analogous construction that moves topology from source to target.
@@ -95,15 +97,15 @@ Show that a map $h\:\c{Y}\to\c{Z}$ is continuous if and only if the composition 
 \end{thm}
 
 
-The pullback topology is used mostly for injective maps; in this case it is nearly the same as \emph{induced topology}.
+The pullback topology is used mostly for injective maps; in this case, it is nearly the same as \emph{induced topology}.
 Similarly, pushforward topology is mostly used for surjective maps.
-This particular case of the construction is called \emph{quotient toplogy};
-it is discussed in the following two sections.
+This particular case of the construction is called \emph{quotient topology};
+it is discussed in the following section.
 
 \begin{thm}{Exercise}\label{ex:open-closed-pushforward}
 Let $f\:\c{X}\to \c{Y}$ be a continuous surjective map.
 Assume $f$ is closed or open.
-Show that $\c{Y}$ is equipped with the pushforward.
+Show that $\c{Y}$ is equipped with the quotient topology.
 \end{thm}
 
 \section{Quotient topology}
@@ -118,8 +120,8 @@ that is, for any $x,y,z\in\c{X}$ the following conditions hold:
 
 Recall that the set 
 \[[x]=\set{y\in \c{X}}{y\sim x}\]
-is called \emph{equivalence class} of $x$.
-The set of all equivalence classes in $\c{X}$ will be denoted by $\c{X}/\sim$.
+is called the \emph{equivalence class} of $x$.
+The set of all equivalence classes in $\c{X}$ will be denoted by $\c{X}/{\sim}$.
 
 The following exercise ties equivalence relations with maps.
 
@@ -130,15 +132,96 @@ Moreover,
 \[y=f(x)\quad\text{if and only if}\quad [x]=f^{-1}\{f(x)\}.\]
 \end{thm}
 
-Observe that $x\mapsto [x]$ defines a surjective map $\c{X}\to \c{X}/\sim$.
-The corresponding pushforward topology on $\c{X}/\sim$ is called \emph{quotient topology} on $\c{X}/\sim$.
-The set $\c{X}/\sim$ with the quotient topology is called \emph{quotient space}.
+Observe that $x\mapsto [x]$ defines a surjective map $\c{X}\to \c{X}/{\sim}$.
+The corresponding pushforward topology on $\c{X}/{\sim}$ is called \emph{quotient topology} on $\c{X}/{\sim}$.
+By default, $\c{X}/{\sim}$ is equipped with the quotient topology
+in this case, it is called \emph{quotient space}.
+
+\section{Quotients by subsets}
 
 Intuitively, quotient space is the space obtained by gluing equivalent points together.
-For example, consider the \emph{minimal equivalence realtion} on $[0,1]$ such that $0\sim 1$;
+For example, consider the \emph{minimal equivalence relation} on $[0,1]$ such that $0\sim 1$;
 that is, $x\sim y$ if and only if one of the following conditions hold $x=y$, or $x=0$ and $y=1$, or $x=1$ and $y=0$.
-Then the quotient space $[0,1]/\sim$ is homeomorphic to 
+Then the quotient space $[0,1]/{\sim}$ is homeomorphic to 
 \[\mathbb{S}^1=\set{(x,y)\in\RR^2}{x^2+y^2=1}.\]
 A homeomorphism is induced by the map $[0,1]\to \mathbb{S}^1$
 \[f(t)=\left(\cos(2\cdot\pi\cdot t),\sin(2\cdot\pi\cdot t)\right).\]
-The latter statement can be proved directly from the definition of quotient topology, but soon (\ref{???}) we will have a device that implies this and similar statements effortlessly, so we suggest to wait with proof of this statement.
+The latter statement can be proved directly from the definition of quotient topology, but soon we will prove the following statement that implies this and similar statements effortlessly.
+So we suggest to wait with proof of this statement.
+
+\begin{itemize}
+\item Suppose $\c{X}$ is a \emph{compact space} and  $\c{Y}$ is \emph{Hausdorff space} and $f\: \c{X}\to\c{Y}$ is a surjective continuous map.
+Then $\c{Y}$ is equipped with the quotient topology.
+\end{itemize}
+
+Given a subset $A$ in a topological space $\c{X}$, the space $\c{X}/A$ is defined as the quotient space $\c{X}/{\sim}$ for the minimal equivalence relation such that $a\sim b$ for any $a,b\in A$.
+For example the quotient space $[0,1]/{\sim}$ discussed above can be also denoted by $[0,1]/\{0,1\}$ --- it is the interval $[0,1]$ with identified two-element subset $\{0,1\}$.
+
+\begin{thm}{Exercise}
+Describe the quotient space $[0,1]/(0,1)$, where $[0,1]$ is the real interval with standard topology;
+that is, list its points and its open sets.
+\end{thm}
+
+
+\section{Orbit spaces}
+
+\begin{thm}{Definition}
+Let $\c{X}$ be a topological space and $G$ be a group.
+Suppose that $(g,x)\mapsto g\cdot x$ is a map $G\times\c{X}\to \c{X}$ such that
+\begin{subthm}{}
+$1\cdot x=x$ for any $x\in \c{X}$, here $1$ denotes the identity element of $G$;
+\end{subthm}
+\begin{subthm}{}
+$g\cdot (h\cdot x)=(g\cdot h)\cdot x$ for any $g,h\in G$ and $x\in \c{X}$;%
+\footnote{This condition means that the expression $g\cdot h\cdot x$ makes sense; that is, it does not depend on parentheses.}
+\end{subthm}
+\begin{subthm}{}
+for any $g\in G$, the map $x\mapsto g\cdot x$ is continuous.
+\end{subthm}
+Then we say that $G$ \emph{acts} on $\c{X}$, or $\c{X}$ is a $G$-space (briefly $G\acts \c{X}$).
+
+In this case, the set
+\[G\cdot x:=\set{g\cdot x}{g\in G}\]
+is called the \emph{$G$-orbit} of $x$ (or, briefly, \emph{orbit}).
+\end{thm}
+
+\begin{thm}{Exercise}
+Suppose that a group $G$ acts on a topological space $\c{X}$.
+Show that for any $g\in G$, the map $x\mapsto g\cdot x$ defines a homeomorphism $\c{X}\to \c{X}$.
+\end{thm}
+
+Suppose that a group $G$ acts on a topological space $\c{X}$.
+Set $x\sim y$ if there is $g\in G$ such that $y=g\cdot x$.
+
+Observe that $\sim$ is an equivalence relation on $\c{X}$.
+Indeed, 
+$x\sim x$ since $x=1\cdot x$.
+Further, if $y=g\cdot x$, then 
+\[x=1\cdot x=g^{-1}\cdot g\cdot  x=g^{-1}\cdot y;\] since $g^{-1}\in G$ we get that $x\sim y$
+$\Longrightarrow$
+$y\sim x$.
+Finally, suppose $x\sim y$ and $y\sim z$;
+that is, $y=g\cdot x$ and $z=h\cdot y$ for some $g,h\in G$.
+Then $z=h\cdot g\cdot x$;
+therefore $x\sim z$.
+
+For the described equivalence relation, the quotient space $\c{X}/{\sim}$ can be also denoted by $\c{X}/G$;
+it is called quotient of $\c{X}$ by the action of~$G$.
+
+Note that $[x]=G\cdot x$; that is, the orbit of $x$ coincides with its equivalence class.
+By that reason $\c{X}/G$ is also called \emph{orbit space}.
+
+\begin{thm}{Exercise}
+Suppose a group $G$ acts on a topological space $\c{X}$ and $f\:\c{X}\to \c{X}/G$ is the quotient map.
+
+\begin{subthm}{}
+Show that $f$ is open.
+\end{subthm}
+
+\begin{subthm}{}
+Assume $G$ is finite.
+Show that $f$ is closed.
+\end{subthm}
+
+\end{thm}
+
