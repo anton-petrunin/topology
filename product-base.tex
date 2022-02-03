@@ -1,0 +1,128 @@
+\chapter[Product, base, and prebas]{Product, base,\\ and prebase}
+
+\section{Product space}
+
+Recall that $\c{X}\times\c{Y}$ denotes the set of all pairs $(x,y)$ such that $x\in\c{X}$ and  $y\in\c{Y}$.
+
+Suppose that the sets $\c{X}$ and $\c{Y}$ are equipped with topologies.
+Let us construct the \emph{product topology} on $\c{X}\times\c{Y}$ by declaring that a set is open in $\c{X}\times\c{Y}$ if it can be presented as a union of sets of the following type: $V\times W$ for open sets $V\subset \c{X}$ and $W\subset \c{Y}$.
+In other words, a subset $U$ is open in $\c{X}\times\c{Y}$ if and only if there are collections of open sets $V_\alpha\subset \c{X}$ and $W_\alpha\subset \c{Y}$  such that 
+\[U=\bigcup_\alpha V_\alpha\times W_\alpha,\]
+here $\alpha$ runs in some index set.
+
+Let us show that it defines a topology on $\c{X}\times\c{Y}$.
+Parts \ref{SHORT.def:top-space:empty} and \ref{SHORT.def:top-space:u} in \ref{def:top-space} are evident.
+It remains to check \ref{SHORT.def:top-space:n}.
+Consider two sets
+\[
+U=\bigcup_\alpha V_\alpha\times W_\alpha
+\quad\text{and}\quad
+U'=\bigcup_\beta V'_\beta\times W'_\beta.
+\]
+where $\alpha$ and $\beta$ run in some index sets, say $\c{I}$ and $\c{J}$ respectively.
+We need to show that $U\cap U'$ can be presented as a union of products of open sets;
+the latter follows from the this set-theoretical identity
+\[U\cap U'=\bigcup_{\alpha,\beta} (V_\alpha\cup V'_\beta)\times (W_\alpha\cup W'_\beta).\eqlbl{eq:nu=un}\]
+
+Checking  \ref{eq:nu=un} is straightforward.
+Indeed, $(x,y)\in U\cap U'$ means that $(x,y)\in U$ and $(x,y)\in U'$;
+the latter means that $x\in V_\alpha$, $y\in W_\alpha$ and $x\in V'_\beta$, $y\in W'_\beta$ for \textit{some} $\alpha$ and $\beta$.
+In other words, $x\in V_\alpha\cap V'_\beta$ and $y\in W_\alpha\cap W'_\beta$ for \textit{some} $\alpha$ and $\beta$;
+the latter means that $(x,y)$ belongs to the right-hand side in \ref{eq:nu=un}.
+
+By default, we assume that $\c{X}\times\c{Y}$ is equipped with the product topology;
+in this case $\c{X}\times\c{Y}$ is called \emph{product space};
+
+
+\begin{thm}{Exercise}
+Given a map $f\:\c{X}\to \c{Y}$, consider the map $F\:\c{X}\to \c{X}\times\c{Y}$ defined by $F\:x\mapsto (x,f(x))$.
+Show that $f$ is continuous if and only if $F$ is an embedding.
+\end{thm}
+
+
+\section{Base}
+
+\begin{thm}{Definition}
+A collection $\s{B}$ of open sets in a topological space $\c{X}$ is called its \emph{base} if every open set in $\c{X}$ is a union of sets in $\s{B}$.
+\end{thm}
+
+The definition is motivated by the fact that \textit{open balls form a base of metric space} (\ref{ex:union-of-balls}).
+
+A base completely defines its topology,
+but typically a topology has many different bases.
+On metric spaces, for example, balls with rational radiuses, or balls with radiuses smaller than $1$ are bases.
+
+In many cases, it is convenient to describe topology by specifying its base.
+For example, the product topology on $\c{X}\times\c{Y}$ can be redefined as a \textit{topology with a base formed by all products $V\times W$, where $V$ is open in $\c{X}$, and $W$ is open in $\c{Y}$}.
+
+\begin{thm}{Exercise}
+Let $\s{B}$ be a base for the topology on $\c{Y}$.
+Show that a map $f\: \c{X} \to \c{Y}$ is continuous if and only if $f^{-1}(B)$ is open for any set $B$ in $\s{B}$.
+
+\end{thm}
+
+
+
+\begin{thm}{Exercise}
+Let $\s{B}$ be a collection of open sets in a topological space $\c{X}$.
+Show that $\s{B}$ is a base in $\c{X}$ if and only if any point $x\in \c{X}$ and any neighborhood $N\ni x$ there is $B\in  \s{B}$ such that $x\in B\subset N$.
+\end{thm}
+
+\begin{thm}{Proposition}\label{prop:base-any}
+Let $\s{B}$ be a set of subsets in some set $\c{X}$.
+Show that $\s{B}$ is a base of some topology on $\c{X}$ if and only if it satisfies the following conditions:
+
+\begin{subthm}{prop:base-any:covers}
+$\s{B}$ \emph{covers} $\c{X}$;
+that is, every point $x\in\c{X}$ lies in some set $B\in \s{B}$.
+\end{subthm}
+
+\begin{subthm}{prop:base-any:n}
+For each pair of sets $B_1, B_2\in \s{B}$ and each point $x \in B_1 \cap B_2$ there exists a set $B
+\in \s{B}$ such that $x\in B\subset B_1 \cap B_2$.
+\end{subthm}
+
+\end{thm}
+
+\parit{Proof.}
+Denote by $\s{O}$ the set of all unions of sets in $\s{B}$.
+We need to show that $\s{O}$ is a topology on $\c{X}$.
+
+Evidently, the union of any collection of sets in $\s{O}$ is in $\s{O}$.
+Further, $\c{X}$ is in $\s{O}$ by \ref{SHORT.prop:base-any:covers}.
+The empty set is in $\s{O}$ since it is a union of the empty collection.
+
+It remains to show that $O\cap O'$ is in $\s{O}$ if $O$ and $O'$ are in $\s{O}$.
+Equivalently, 
+\[\textit{for any $x\in O\cap O'$ there is $B\in\s{B}$ such that 
+$x\in B\subset O\cap O'$.}
+\eqlbl{eq:x-in-B-in -OnO}\]
+
+Suppose 
+\[O=\bigcup_\alpha B_\alpha
+\quad\text{and}\quad
+O'=\bigcup_\beta B'_\beta,
+\]
+where $\alpha$ and $\beta$ run in some index sets, and $B_\alpha$, $B'_\beta\in \s{B}$ for any $\alpha$ and $\beta$.
+Then $x\in O\cap O'$ if and only if for some $\alpha$ and $\beta$ we have $x\in B_\alpha$ and $x\in B'_\beta$.
+By \ref{SHORT.prop:base-any:n}, we can choose $B\in \s{B}$ so that $x\in B\subset B_\alpha \cap B'_\beta$.
+Since $B_\alpha \cap B'_\beta\subset O\cap O'$, \ref{eq:x-in-B-in -OnO} follows.
+\qeds
+
+\section{Prebase}
+
+Suppose $\s{P}$ is a collection of subsets in $\c{X}$ that coves the whole space;
+that is, $\c{X}$ is a union of all sets in $\s{P}$.
+By \ref{prop:base-any}, the set of all finite intersections of sets in $\s{P}$ is a base for \textit{some} topology on $\c{X}$.
+The set $\s{P}$ is called \emph{prebase} for this topology (also known as \emph{subbase});
+there are almost no restrictions on prebase --- we may start with any collection $\s{P}$ of subsets of $\c{X}$ that covers whole $\c{X}$ and define a topology by declaring that \textit{$\s{P}$ is a prebase for the topology}.
+It will define the weakest topology on $\c{X}$ such that every set of $\s{P}$ is open.
+
+For example, the product topology on $\c{X}\times\c{Y}$ can be redefined as a \textit{topology with prebase formed by all products $\c{X}\times W$ and $V\times \c{Y}$, where $V$ is open in $\c{X}$ and $W$ is open in $\c{Y}$}.
+
+More generally, given a collection of maps $f_\alpha\:S\to \c{Y}_\alpha$ from a set $S$ to topological spaces $\c{Y}_\alpha$, we can introduce pullback topology on $S$ by stating that the inverse images $f^{-1}_\alpha(W_\alpha)$ for open sets $W_\alpha\subset\c{Y}_\alpha$ form its prebase.
+It defines the weakest topology on $S$ that makes all maps $f_\alpha$ to be continuous.
+
+
+
+
