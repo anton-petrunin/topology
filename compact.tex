@@ -60,7 +60,7 @@ Show that a subset $S$ of a topological space is compact if and only if $S$ equi
 Construct a topological space with two compact sets such that their intersection is not compact.
 \end{thm}
 
-\begin{thm}{Advanced exercise} Let $f\:\c{X}\to\c{K}$ be a map between topolgical spaces.
+\begin{thm}{Advanced exercise} Let $f\:\c{X}\to\c{K}$ be a map between topological spaces.
 Assume $\c{K}$ is compact.
 Show that $f$ is continuous if and only if its graph $\set{(x,f(x))}{x\in\c{X}}$ is a closed set in $\c{X}\times\c{K}$. 
 \end{thm}
@@ -109,9 +109,9 @@ Note that $\{V_\alpha\}$ is also a cover for two intervals
 \[[a_0,\tfrac{a_0+b_0}2]
 \quad\text{and}\quad
 [\tfrac{a_0+b_0}2,b_0].\]
-If $\{V_\alpha\}$ would have a finite subcover of each of these two subintevals,
+If $\{V_\alpha\}$ would have a finite subcover of each of these two subintervals,
 then these subcovers together would give a finite cover of $[a,b]$.
-Therefore $\{V_\alpha\}$ has no finite subcovers of \textit{at least one} of these subintevals;
+Therefore $\{V_\alpha\}$ has no finite subcovers of \textit{at least one} of these subintervals;
 denote it by $[a_1,b_1]$;
 so either $a_1=a_0$ and $b_1=\tfrac{a_0+b_0}2$ or $a_1=\tfrac{a_0+b_0}2$ and $b_1=b_0$.
 
@@ -211,6 +211,7 @@ Suppose that a product space $\c{X}\times\c{Y}$ is nonempty and compact.
 Show that its factors $\c{X}$ and $\c{Y}$ are compact.
 \end{thm} 
 
+
 In the proof, we will need the following definition.
 
 \begin{thm}{Definition}
@@ -270,7 +271,108 @@ that is, $\c{X}\times\c{Y}$ can be covered by a finite set of sets from $\{N_x\t
 Applying \ref{clm:Nx}, we get that $\c{X}\times\c{Y}$ can be covered by finite umber of product sets from $\{V_\alpha\times W_\alpha\}$.
 \qeds
 
+\begin{thm}{Exercise}
+Find a flow in the following argument.
+\end{thm}
+
+\parit{Fake proof of \ref{thm:compact-product}.}
+Fix an open cover $\{U_\beta\}$ of $\c{X}\times\c{Y}$.
+Consider all product sets $V_\alpha\times W_\alpha$ such that $V_\alpha\times W_\alpha\subset U_\beta$ for some $\beta$ (as before, $V_\alpha$ and $W_\alpha$ are open in $\c{X}$ and $\c{Y}$ respectively).
+Note that $\{V_\alpha\times W_\alpha\}$ is a cover of $\c{X}\times\c{Y}$ that is inscribed in $\{U_\beta\}$.
+By the observation, it is sufficient to find a finite subcover of $\{V_\alpha\times W_\alpha\}$.
+
+Note that $\{V_\alpha\}$ is a cover of $\c{X}$.
+Since $\c{X}$ is compact, we can choose its finite subcover $\{V_{\alpha_1},\dots,V_{\alpha_n}\}$.
+Similarly, $\{W_\alpha\}$ is a cover of $\c{Y}$.
+So we can choose its finite subcover $\{W_{\alpha_1'},\dots,W_{\alpha_m'}\}$.
+
+Finally observe that 
+\[\{V_{\alpha_1}\times W_{\alpha_1},\dots,V_{\alpha_n}\times W_{\alpha_n},V_{\alpha_1'}\times W_{\alpha_1'},\dots,V_{\alpha_m'}\times W_{\alpha_m'}\}\] is a finite cover of $\c{X}\times\c{Y}$.
+\qeds
 
 
+\section{Compactness of metric spaces}
 
+Recall that any metric space has natural topology.
+In particular we may talk about \emph{compact metric spaces}.
+
+\begin{thm}{Proposition}
+Let $\c{M}$ be a metric space.
+Then $\c{M}$ is compact if and only if any sequence of points $x_n\in \c{M}$ has a converging subsequence.
+\end{thm}
+
+A topological space is called \emph{sequentially compact} if any its sequence has a converging subsequence.
+For general topological spaces sequential compactness does not imply compactness, and the other way around.
+The theorem above states that these two notions are equivalent for metric spaces.
+
+\begin{thm}{Exercise}
+Show that product of two sequentially compact spaces is sequentially compact.
+\end{thm}
+
+
+\parit{Proof; only-if part.}
+Choose a sequence $x_n\in \c{M}$.
+
+Note that a point $p\in \c{M}$ is a limit of subsequence of $x_n$ if and only if for any $\eps>0$, the ball $\Ball(p,\eps)$ contains infinite number of elements of $x_n$.
+Indeed, if this property holds, then we can choose $i_1$ such that $x_{i_1}\in \Ball(p,1)$, further $i_2>i_1$ such that $x_{i_2}\in \Ball(p,\tfrac12)$ and so on; on $n$\textsuperscript{th} step we get $i_n>i_{n-1}$ such that $x_{i_n}\in \Ball(p,\tfrac1n)$.
+Note that obtained subsequence $x_{i_1},x_{i_2},\dots$ converges to $p$.
+
+Assume the sequence $x_n$ has no converging subsequence.
+Then for any point $p$ there is $\eps_p>0$ such that $\Ball(p,\eps_p)$ contains only finitely many elements of $x_n$.
+Note that $\Ball(p,\eps_p)$ for all $p$ forms a cover of $\c{M}$.
+Since the sequence is infinite, this cover does not have a fine subcover.
+That is, if a sequence $x_n$ has no converging subsequence, then $\c{M}$ is not compact.
+It proves the only-if part of the proposition.
+\qeds
+
+The proof of the if part goes along the same lines as the proof that \textit{any bounded sequence of real numbers has a converging subsequence}, but it goes on a more abstract level.
+The following exercise will guide you thru this proof.
+
+\begin{thm}{Exercise}
+Let $\c{M}$ be a compact metric space.
+
+\begin{subthm}{}
+Show that $\c{M}$ is bounded; that is, the distance between any pair of points in $\c{M}$ cannot exceed a some fixed real number, say $D$.
+\end{subthm}
+
+Let $x_n$ be a sequence of points in $\c{M}$.
+
+\begin{subthm}{}
+Suppose a closed ball $\cBall[p,R]$ contains an infinite set of elements of the sequence $x_n$.
+Show that there is $p'\in \cBall[p,R]$ such that the closed ball $\cBall[p',R/2]$ contains an infinite set of elements of the sequence $x_n$.
+\end{subthm}
+
+\begin{subthm}{}
+Conclude that there is a nested sequence of closed balls 
+\[\cBall[p_0,1]\supset \cBall[p_1,\tfrac12]\supset\dots\supset \cBall[p_n,\tfrac1{2^n}]\supset\dots \]
+such that each $\cBall[p_n,\tfrac1{2^n}]$ contains in an infinite set of elements of the sequence $x_n$.
+\end{subthm}
+
+\begin{subthm}{}
+Apply the finite intersection property to $\cBall[p_n,\tfrac1{2^n}]$ to show that the sequence $p_n$ converges;
+denote its limit by $p_\infty$.
+\end{subthm}
+
+\begin{subthm}{}
+Show that a subsequence of $x_n$ convereges to $p_\infty$.
+\end{subthm}
+
+\end{thm}
+
+
+\begin{thm}{Exercise}
+Let $\{V_\alpha\}$ be a cover of a compact metric space $\c{M}$.
+Show that there is $\eps > 0$ such that for every $x\in\c{M}$ there is $\alpha$ such that $V_\alpha\supset \Ball(x,\eps)$.
+Lebesgue number is defined for any cover of a compact metric space.
+
+\noindent{\footnotesize Hint: Show and use that there is a finite cover of $\c{M}$ by balls $\Ball(p_i,r_i)$ such that for each $i$ the ball $\Ball(p_i,2\cdot r_i)$ lies in some $V_{\alpha_i}$.}
+\end{thm}
+
+
+The number $\eps$ in the exercise is called \emph{Lebesgue number} and the statement is called \emph{Lebesgue lemma}.
+It is a useful tool for compact metric spaces.
+
+\begin{thm}{Exercise}
+Construct a noncompact metric space $\c{M}$ such that $1$ is a Lebesgue number for any of cover of $\c{M}$. 
+\end{thm}
 
