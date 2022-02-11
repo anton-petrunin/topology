@@ -1,0 +1,106 @@
+\chapter{Compactness of metric spaces}
+
+\section{Compactness of metric spaces}
+
+\begin{thm}{Exercise}
+Assume a sequence of points $x_n$ in a metric space $\c{M}$ has no converging subsequence.
+Show that $\c{M}$ is not compact.
+(Hint: Note that for any $p\in \c{M}$ there is $r_p>0$ such that the ball $B(p,r_p)$ contains only finitely many elements of the sequence. Consider the covering of $\c{M}$ by balls $B(p,r_p)$.)
+\end{thm}
+
+
+\begin{thm}{Exercise}
+Show that compact metric spaces has finite diameter;
+that is, there is a pair of points which maximize the distace from eachother.
+\end{thm}
+
+Given a a cover $\{V_\alpha\}$ of a metric space $\c{X}$, a number $\eps > 0$ such that every ball $B(x,\eps)$ in $\c{X}$ lies completely in at least one set $U_\alpha$ of the cover is called \emph{Lebesgue number of the cover}.
+
+\begin{thm}{Lemma on Lebesgue number}
+For every cover of compact metric space there is a  Lebesgue number of the cover.
+\end{thm}
+
+\parit{Proof.}
+Fix a cover $\{V_\alpha\}_{\alpha\in\c{I}}$ of a compact metric space $\c{X}$.
+
+For any point $x\in \c{X}$, there is $\alpha$ such that $x\in V_\alpha$.
+Moreover, since $V_\alpha$ is open there is $r_x>0$ such that 
+$B(x,2\cdot r_x)\subset V_\alpha$.
+Note that 
+\[B(y,r_x)\subset V_\alpha\quad\text{for any}\quad y\in B(x,r_x).
+\eqlbl{eq:B(y)inV}\] 
+
+The collection of balls $B(x,r_x)$ as above for all $x\in\c{X}$
+is a cover of $\c{X}$.
+In particular it admits a finite subcover
+\[B(x_1,r_{x_1})\cup\dots\cup B(x_n,r_{x_n})\supset \c{X}.\]
+
+Set $\eps=\min\{r_{x_1},\dots,r_{x_n}\}$;
+since $r_x>0$ for any $x$, we have that $\eps>0$.
+From \ref{eq:B(y)inV}, $\eps$ is a Lebesgue number of the cover $\{V_\alpha\}_{\alpha\in\c{I}}$.
+\qeds
+
+\begin{thm}{Exercise}
+Show that any topological space $\c{X}$ is homeomorphic to a subspace $\c{K}\backslash\{p\}$
+where $\c{K}$ is compact and $p$ is a point in $\c{K}$.
+\end{thm}
+
+\section{Metric spaces}
+
+The diameter of metric space is defined as the exact upper bound for the distances between pairs of its points;
+the diameter of metric space $\c{X}$ is denoted as $\diam \c{X}$, it might take any value in $[0,\infty]$.
+
+\begin{thm}{Exercise}
+Show that any compact metric space have finite diameter.
+In other words, show that if $\diam\c{X}=\infty$ then the metric space $\c{X}$ is not compact.
+
+Moreover, any compact metric space $\c{X}$ there are two points $p$ and $q$ such that 
+\[|p-q|=\diam \c{X}.\]
+\end{thm}
+
+
+Let $\c{X}$ be a metric space and $\{V_\alpha\}_{\alpha\in\c{I}}$ be its open cover.
+A positive number $\delta$ is called Lebesgue number of the covering $\{V_\alpha\}$
+if for any $x\in \c{X}$ there is $\alpha\in\c{I}$ such that $B(x,\delta)\subset V_\alpha$.
+
+\begin{thm}{Theorem}
+Any open cover of compact metric space has a Lebesgue number.
+\end{thm}
+
+\parit{Proof.}
+Fix a compact metric space $\c{X}$ and its open cover $\{V_\alpha\}_{\alpha\in\c{I}}$.
+
+Given $x\in \c{X}$, denote by $f(x)$ the exact upper bound for the values $r$ such that $B(x,r)\subset V_\alpha$ for some $\alpha\in \c{I}$.
+
+Note that if $f(x)=\infty$ for some $x$ then one of $V_\alpha$ coincides with the whole space $\c{X}$.
+In this case any positive number is a Lebesgue number of $\{V_\alpha\}$.
+Further we assume that $f(x)$ takes finite value for any $x\in\c{X}$.
+
+Note that 
+\[|f(x)-f(y)|\le |x-y|_{\c{X}};\]
+in particular, the function $f\:\c{X}\to\RR$ is continuous.
+
+Indeed, by triangle inequality, 
+\[B(x,r)\supset B(y,r-|x-y|_{\c{X}}).\eqlbl{eq:lipschitz}\]
+It follows that if $B(x,r)\subset V_\alpha$ for some $\alpha$,
+then $B(y,r-|x-y|_{\c{X}})\subset V_\alpha$.
+Therefore
+\[f(x)-|x-y|_{\c{X}}<f(y).\]
+Similarly, we get 
+\[f(y)-|x-y|_{\c{X}}<f(x).\]
+Hence \ref{eq:lipschitz} follows.
+
+Since $f$ is continuous and $\c{X}$ is compact,
+the function $f\:\c{X}\to \RR$ admits its minimum at some point $x_0$.
+
+Note that $f(x_0)>0$.
+Indeed, since $\{V_\alpha\}$ is an open cover of $\c{X}$,
+there is $V_\alpha$ such that $V_\alpha\ni x_0$.
+Since $V_\alpha$ is open, we have $V_\alpha\supset B(x_0,r)$ for some $r>0$.
+
+Finally, note that by construction $\delta=\tfrac12\cdot f(x_0)$ is a Lebsgue number of $\{V_\alpha\}$. 
+\qeds
+
+\begin{thm}{Exercise}
+Find an open cover of a compact metric space such that and $r<1$ is a Lebesgue number, but 1 is not its Lebesgue number.
+\end{thm}

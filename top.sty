@@ -135,6 +135,14 @@ unicode
 {\par\refstepcounter{subthmN}\begin{itemize}\item[\arabic{subthmN})]}{\par\refstepcounter{subthmN}\label{#1}\setcounter{cloneN}{\value{subthmN}} \addtocounter{cloneN}{-1}\refstepcounter{cloneN}\label{SHORT.#1}\begin{itemize}
 \item [\arabic{subthmN})]}}{\end{itemize}}
 
+%CLAIM
+\def\clmclaim#1{\par\medskip\noindent\refstepcounter{eqtn}\hbox{\rm\numform{eqtn} #1}
+\it%\ignorespaces
+}
+\def\endclmclaim{\par
+\medskip}
+\newenvironment{clm}{\clmclaim}{\endclmclaim}
+
 
 \makeatletter\renewcommand{\p@section}{\thechapter}\makeatother
 \renewcommand{\thesection}{\Alph{section}}
