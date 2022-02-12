@@ -186,10 +186,12 @@ In the proof, we add an extra open set to the cover, used it, and took it away.
 This type of reasoning is useful in all branches of mathematics;
 sometimes it is called \emph{17 camels trick}.%
 \footnote{The name comes from the following mathematical parable:
-\textit{A father left 17 camels to his three sons and, according to the will, the eldest son should be given  half of all camels, the middle son the one-third part and the youngest son the one-ninth.
-It was impossible to follow his will until a wise man helped them.
-He added his own camel, the oldest son took 18/2=9 camels, the second son took 18/3=6 camels, and the third son 18/9=2 camels.
-After that, the wise man took his camel and went away.}}
+\textit{A father left 17 camels to his three sons and, according to the will,
+the eldest son should be given half of all camels,
+the middle son the 1/3 part,
+and the youngest son the 1/9.
+It was impossible to follow his will until a wise man appeared.
+He added his own camel, the oldest son took $18/2=9$ camels, the second son took $18/3=6$ camels, and the third son $18/9=2$ camels, the wise man took his camel and went away.}}
 
 
 \begin{thm}{Exercise}
@@ -291,7 +293,7 @@ Finally observe that
 \qeds
 
 
-\section{Compactness of metric spaces}
+\section{Comments on compactness of metric spaces}
 
 Recall that any metric space has natural topology.
 In particular we may talk about \emph{compact metric spaces}.
@@ -300,6 +302,9 @@ In particular we may talk about \emph{compact metric spaces}.
 Let $\c{M}$ be a metric space.
 Then $\c{M}$ is compact if and only if any sequence of points $x_n\in \c{M}$ has a converging subsequence.
 \end{thm}
+
+We will prove only the only-if part of this proposition;
+the if part requires deeper diving into metric spaces.
 
 A topological space is called \emph{sequentially compact} if any its sequence has a converging subsequence.
 For general topological spaces sequential compactness does not imply compactness, and the other way around.
@@ -325,47 +330,13 @@ That is, if a sequence $x_n$ has no converging subsequence, then $\c{M}$ is not 
 It proves the only-if part of the proposition.
 \qeds
 
-The proof of the if part goes along the same lines as the proof that \textit{any bounded sequence of real numbers has a converging subsequence}, but it goes on a more abstract level.
-The following exercise will guide you thru this proof.
-
-\begin{thm}{Exercise}
-Let $\c{M}$ be a compact metric space.
-
-\begin{subthm}{}
-Show that $\c{M}$ is bounded; that is, the distance between any pair of points in $\c{M}$ cannot exceed a some fixed real number, say $D$.
-\end{subthm}
-
-Let $x_n$ be a sequence of points in $\c{M}$.
-
-\begin{subthm}{}
-Suppose a closed ball $\cBall[p,R]$ contains an infinite set of elements of the sequence $x_n$.
-Show that there is $p'\in \cBall[p,R]$ such that the closed ball $\cBall[p',R/2]$ contains an infinite set of elements of the sequence $x_n$.
-\end{subthm}
-
-\begin{subthm}{}
-Conclude that there is a nested sequence of closed balls 
-\[\cBall[p_0,1]\supset \cBall[p_1,\tfrac12]\supset\dots\supset \cBall[p_n,\tfrac1{2^n}]\supset\dots \]
-such that each $\cBall[p_n,\tfrac1{2^n}]$ contains in an infinite set of elements of the sequence $x_n$.
-\end{subthm}
-
-\begin{subthm}{}
-Apply the finite intersection property to $\cBall[p_n,\tfrac1{2^n}]$ to show that the sequence $p_n$ converges;
-denote its limit by $p_\infty$.
-\end{subthm}
-
-\begin{subthm}{}
-Show that a subsequence of $x_n$ convereges to $p_\infty$.
-\end{subthm}
-
-\end{thm}
-
 
 \begin{thm}{Exercise}
 Let $\{V_\alpha\}$ be a cover of a compact metric space $\c{M}$.
 Show that there is $\eps > 0$ such that for every $x\in\c{M}$ there is $\alpha$ such that $V_\alpha\supset \Ball(x,\eps)$.
 Lebesgue number is defined for any cover of a compact metric space.
 
-\noindent{\footnotesize Hint: Show and use that there is a finite cover of $\c{M}$ by balls $\Ball(p_i,r_i)$ such that for each $i$ the ball $\Ball(p_i,2\cdot r_i)$ lies in some $V_{\alpha_i}$.}
+\noindent{\footnotesize Hint: Show and use that there is $\eps>0$ and a finite cover of $\c{M}$ by balls $\Ball(p_i,r_i)$ such that for each $i$ the ball $\Ball(p_i, r_i+\eps)$ lies in some $V_{\alpha_i}$.}
 \end{thm}
 
 
