@@ -1,0 +1,36 @@
+\chapter{Solutions of some exercises}
+
+\parbf{7.13(c).}
+\textit{Prove that the graph of the function $f\: [0,1] \to \RR$ is compact if and
+only if f is continuous.
+Give an example of a discontinuous function
+$g: [0,1] \to \RR$ with a graph which is closed but not compact.}
+
+\parit{Solution.}
+Denote the graph of $f$ by $\Gamma$.
+
+\parit{If part.}
+Assume $f$ is continuous.
+
+Note that $F\:x\mapsto (x,f(x))$ is a continuous function $[0,1]\to\RR^2$.
+Since $[0,1]$ is compact, so is its $F$-image which is $\Gamma$.
+
+
+\parit{Only-if part.}
+Assume $\Gamma$ is compact.
+By Theorem 3.3 (page 17 in Kosniowski's book), it is sufficient to show that $f^{-1}(Q)$ is closed for any closed $Q\subset \RR$.
+Note that $P=(\RR\times Q)\cap\Gamma$ is closed.
+Since $\Gamma$ is compact, so it $P$.
+
+Obserfe that $f^{-1}(Q)$ is the projection of $P$ to the first coordinate.
+Since $P$ is compact, the same holds for its image $f^{-1}(Q)$.
+Finally, since $f^{-1}(Q)$ compact subset of real line, it is has to be closed (\ref{ex:closed-compact}).
+
+\parit{Example.}
+\[g(x)=
+\begin{cases}
+\tfrac1x&\text{if}\quad x\ne0,
+\\
+0&\text{if}\quad x=0.
+\end{cases}
+\]
