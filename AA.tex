@@ -1,0 +1,60 @@
+In other words, $f\:\c{X}\to \c{Y}$ is an \emph{emebedding} if it is injective and the topology on $\c{X}$ coinsides with pullback topology for $f$.
+
+A function $f\:\c{X}\to \c{Y}$ is called local embedding if for any point $x\in \c{X}$ there is a neighborhood $U\ni x$ such that the restriction $f|_U$ is an embedding.\footnote{The meaning of the word \emph{local} in topology can be described the following way: a space $\c{X}$ is \emph{locally magnificent} if for any point $x\in \c{X}$ and any neighborhood $V\ni x$ there is a smaller neighborhood $W$ (that is, $x\in W\subset V$) which is \emph{magnificent}.}
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+The following proposition provides a way to construct the weakest topology containing the given collection of sets.
+
+\begin{thm}{Proposition}
+Let $\s{Q}$ be arbitrary collection of subsets of a set $\c{X}$.
+Consider the set $\s{P}$ of all finite intersections of sets in $\s{Q}$;
+that is, $P\in \s{P}$ if there is a finite collection of subsets $Q_1,\dots,Q_n\in \s{Q}$ such that 
+\[P=Q_1\cap\dots\cap Q_n.\]
+If the collection is empty we assume that $P=\c{X}$.
+
+Denote by $\s{O}$ all possible unions of sets in $\s{P}$;
+that is, $O\in \s{O}$ if there is, a (possibly infinite) collection of sets $P_\alpha\in\s{P}$, $\alpha\in\c{I}$ such that 
+\[O=\bigcup_{\alpha\in\c{I}}P_\alpha.\]
+Then $\s{O}$ is a topology on $\c{X}$.
+\end{thm}
+
+\parit{Proof.}
+We need to check if the collection $\s{O}$ satisfies the conditions in the definition \ref{def:top-space}.
+
+The conditions \ref{def:top-space:empty} and \ref{def:top-space:u} hold evidently.
+It remains to check condition \ref{def:top-space:n};
+that is, given two sets $O,O'\in\s{O}$ we need to show that $O_1\cap O_2\in \s{O}$.
+
+Let
+\[O=\bigcup_{\alpha\in \c{I}}V_\alpha,\quad O'=\bigcup_{\beta\in \c{J}}V'_\beta,\]
+where  $V_\alpha,V'_\beta\in\s{P}$ for any $\alpha\in\c{I}$ and $\beta\in\c{J}$.
+
+Fix $\alpha\in\c{I}$ and $\beta\in\c{J}$.
+Since $V_\alpha,\in\s{P}$ it can be presented as an intesection
+\[V_\alpha=Q_1\cap \dots \cap Q_n,\]
+with $Q_1,\dots,Q_n\in \s{Q}$.
+Similarly, 
+\[V'_\beta=Q'_1\cap \dots \cap Q'_m,\]
+with $Q'_1,\dots,Q'_m\in \s{Q}$.
+It follow that 
+\begin{align*}
+W_{\alpha,\beta}&=V_\alpha\cap V'_\beta=
+\\
+&=Q_1\cap \dots \cap Q_n\cap Q'_1\cap \dots \cap Q'_m.
+\end{align*}
+In particular $W_{\alpha,\beta}\in \s{P}$.
+
+Finally note that
+\[O\cap O'=\bigcup_{\alpha\in \c{I},\beta\in\c{J}}W_{\alpha,\beta}.\]
+Hence $O\cap O'\in \s{O}$.
+\qeds
