@@ -1,0 +1,165 @@
+\chapter{Hausdorff spaces}
+
+\section{Definition}
+
+\begin{thm}{Definition} 
+A topological space $\c{X}$ is called \emph{Hausdorff} if for each pair of distinct points
+$x, y \in \c{X}$ there are disjoint neighborhoods $V\ni x$ and $W\ni y$.
+\end{thm}
+
+Recall that a sequence $x_n$ of points in a topological space $\c{X}$ converges to a point $x\in  \c{X}$
+if for any neighborhood $V\ni x$ we have 
+$x_n\in V$ for all, but finitely many $n$.
+
+Note that in general, a sequence of points in a topological space might have different limits.
+For example, consider the real line with the cofinite topology and a sequence $x_n$ such that $x_m\ne x_n$ for $m\ne n$.
+Note that $x_n$ converges to \textit{every} point in $x\in \RR$.
+Indeed, a complement of any neighborhood $V\ni x$ is a finite set;
+therefore $x_n\in V$ for all, but finitely many indexes $n$.
+
+\begin{thm}{Exercise}
+Show that any converging sequence in Hausdorff space has a unique limit.
+\end{thm}
+
+
+\begin{thm}{Exercise}
+Show that the topological space $\c{X}$ is Hausdorff
+if the diagonal 
+\[\Delta=\set{(x,y)\in \c{X}\times\c{X}}{x=y}\]
+is a closed set in the product space $\c{X}\times\c{X}$.
+\end{thm}
+
+\section{Observations}
+
+\begin{thm}{Observation}\label{obs:one-point=compact}
+Any one-point set in a Hausdorff topological space is closed. 
+\end{thm}
+
+If every one-point space in a topological space is closed
+then the space is called \emph{$T_1$-space} or sometimes \emph{Tikhonov space}.
+Therefore the observation above states that any Hausdorff space is $T_1$.
+
+\parit{Proof.}
+Fix a point $x$ in a Hausdorff topological space $\c{X}$.
+By definition of Hausdorff space, given a point $y\ne x$,
+there are disjoint open sets $V_y\ni x$ and $W_y\ni y$.
+In particular $W_y\not\ni x$.
+
+Note that 
+\[\c{X}\backslash\{x\}=\bigcup_{y\ne x}W_y.\]
+In particular $\c{X}\backslash\{x\}$ is open and therefore $\{x\}$ is closed.
+\qeds
+
+\begin{thm}{Observation}
+Any metrizable space is Hausdorff.
+\end{thm}
+
+\parit{Proof.}
+Assume that topology on the space $\c{X}$ is induced by a metric $|{*}-{*}|$.
+
+If the points $x,y\in\c{X}$ are distinct then $|x-y|>0$.
+By triangle inequality 
+$\Ball(x,\tfrac r2)\cap \Ball(y,\tfrac r2)=\emptyset$.
+Hence the statement follows
+\qeds
+
+
+\begin{thm}{Observation}
+Any subspace of Hausdorff space is Hausdorff.
+\end{thm}
+
+
+
+\section{Games with compactness}
+
+\begin{thm}{Proposition}\label{prop:hausdorff-compact-closed}
+Any compact  subset of a Hausdorff topological space is closed. 
+\end{thm}
+
+Since any one-point set is compact, this proposition generalizes Observation~\ref{obs:one-point=compact}.
+The proof is similar but requires an extra step.
+It is instructive to solve the following exercise before reading the proof.
+
+\begin{thm}{Exercise}
+Find a topological space $\c{X}$ with a nonclosed, but compact subset $K$. 
+\end{thm}
+
+We will prove the following slightly stronger statement.
+
+\begin{thm}{Theorem}\label{thm:hausdorff-compact-t3}
+Let $\c{X}$ be a Hausdorff space and $K\subset X$ be a compact subset.
+Then for any point $y\notin K$ there are open sets $V\supset K$ and $W\ni y$
+such that $V\cap W=\emptyset$
+\end{thm}
+
+\parit{Proof of \ref{prop:hausdorff-compact-closed} modulo \ref{thm:hausdorff-compact-t3}.}
+For $y\notin K$, let us denote by $W_y$ the open set provided by \ref{thm:hausdorff-compact-t3};
+in particular, $W_y\ni y$ and $W_y\cap K=\emptyset$.
+Note that 
+\[\c{X}\backslash K=\bigcup_{y\notin K} W_y.\]
+It follows that $\c{X}\backslash K$ is open; therefore, $K$ is closed.
+\qeds
+
+
+\parit{Proof.}
+By definition of Hausdorff space,
+for any point $x\in K$ there is a pair of disjoint openset $V_x\ni x$ and $W_x\ni y$.
+Note that sets $\{V_x\}_{x\in K}$ forms cover of $K$.
+Since $K$ is compact we can pass to a finite subcover $\{V_{x_1},\dots , V_{x_n}\}$.
+Set 
+\begin{align*}
+V&=V_{x_1}\cup\dots \cup V_{x_n}
+\\
+W&=W_{x_1}\cap\dots \cap W_{x_n}
+\end{align*}
+It remains to observe that $y\in W$, $K\subset V$ and 
+\[V\cap W\subset \bigcup_i(V_{x_i}\cap W_{x_i})=\emptyset.\]
+\qedsf
+
+\begin{thm}{Exercise}
+Let $\c{X}$ be a Hausdorff space and $K,L\subset X$ be two compact subsets.
+Assume $K\cap L=\emptyset$, show that there are open sets $V\supset K$ and $W\supset L$
+such that $V\cap W=\emptyset$
+\end{thm}
+
+\section{Application to quotients}
+
+\begin{thm}{Observation}\label{obs:compact-to-hausdorff}
+Let $\c{K}$ be a compact space and $\c{Y}$ is Hausdorff.
+Then any continuous map $f\:\c{K}\to\c{Y}$ is closed.
+
+If in addition, the map $f$ is onto, then $\c{Y}$ is equipped with the quotient topology induced by $f$. 
+\end{thm}
+
+\begin{thm}{Corollary}
+A continuous bijection from a compact space to a Hausdorff space is a homeomorphism.
+\end{thm}
+
+
+\parit{Proof of \ref{obs:compact-to-hausdorff}.}
+Since $\c{K}$ is compact, any closed subset $Q\subset \c{K}$ is compact as well (\ref{prop:compact-closed}).
+Since the image of a compact set is compact we have that $f(Q)$ is a compact subset of $\c{Y}$.
+Since $\c{Y}$ is Hausdorff $f(Q)$ is closed.
+Hence the first statement follows.
+
+The second statement follows from \ref{ex:open-closed-pushforward}.
+\qeds
+
+Recall that $\DD$ denotes the unit disc and $\mathbb{S}^1$ denotes the unit circle;
+that is,
+\begin{align*}
+\DD&=\set{(x,y)\in\RR^2}{x^2+y^2\le 1},
+\\
+\mathbb{S}^1&=\set{(x,y)\in\RR^2}{x^2+y^2=1}.
+\end{align*}
+
+\begin{thm}{Exercise}
+Show that the quotient space $[0,1]/\{0,1\}$ is homeomorphic to $\mathbb{S}^1$.
+\end{thm}
+
+\begin{thm}{Exercise}
+Show that the quotient space  $\DD/\mathbb{S}^1$ is homeomorphic to the unit sphere 
+\[\mathbb{S}^2=\set{(x,y,z)\in\RR^3}{x^2+y^2+z^2=1}.\]
+\end{thm}
+
+
