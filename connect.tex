@@ -1,0 +1,334 @@
+\chapter{Connected spaces}
+
+\section{Definitions}
+
+A subset of topological space is called \emph{clopen} if it is closed and open at the same time.
+
+\begin{thm}{Definition}
+A topological space $\c{X}$ is called \emph{connected} if it has exactly two clopen sets $\emptyset$ and the whole space $\c{X}$.
+\end{thm}
+
+According to our definition, the empty space is not connected.
+Not everyone agrees with this convention.
+
+Suppose $V$ is a \emph{proper} clopen subset in a topological space $\c{X}$; that is, $V\ne\emptyset$ and $V\ne\c{X}$.
+Its complement $W=\c{X}\backslash V$ is also a proper clopen subset.
+That is, there are two open sets $V,W\subset \c{X}$ such that $V\ne\emptyset$, $W\ne\emptyset$, $V\cup W=\c{X}$ and $V\cap W=\emptyset$.
+In this case, the pair $V$ and $W$ is called \emph{open subdivision} of $\c{X}$.
+Note that a nonempty space is disconnected if and only if it admits an open subdivision. 
+
+\begin{thm}{Proposition}\label{prop:image-connected}
+Let $f\:\c{X}\to \c{Y}$ be a continuous onto map between topological spaces.
+If $\c{X}$ is connected, then so is $\c{Y}$.
+\end{thm}
+
+\parit{Proof.}
+We can assume that $\c{X}$, and therefore $\c{Y}$ are nonempty.
+
+Assume contrary; that is, $\c{Y}$ is disconnected.
+Suppose $V$ and $W$ form an open subdivision of $\c{Y}$.
+
+Since $f$ is continuous, $V'=f^{-1}(V)$ and $W'=f^{-1}(W)$ are open in $\c{X}$.
+Since the map $f$ is onto $V'\ne\emptyset$ and $W'\ne\emptyset$.
+Finally observe that $V'\cup W'=f^{-1}(\c{Y}) =\c{X}$ and
+\begin{align*}
+V'\cup W'&=f^{-1}(V\cup W)=f^{-1}(\c{Y})=\c{X},
+\\
+V'\cap W'&=f^{-1}(V\cap W)=f^{-1}(\emptyset)=\emptyset.
+\end{align*}
+That is, $V'$ and $W'$ is an open subdivision of $\c{X}$; 
+therefore $\c{X}$ is disconnected --- a contradiction.
+\qeds
+
+A subset of topological space is called the connected or disconnected if so is the corresponding subspace.
+Spelling the notion of subspace we get the following definition.
+
+
+\begin{thm}{Definition}
+Let $\c{X}$ be a topological space.
+
+A subset $A\subset \c{X}$ is called \emph{disconnected} if it is empty or there are two disjoint open sets $V$ and $W$ be its open subdivision.
+
+Otherwise, we say that $A$ is \emph{connected}.
+\end{thm}
+
+\begin{thm}{Proposition}\label{prop:union-connect}
+Assume $\{A_\alpha\}_{\alpha\in\c{I}}$ is a collection of connected subsets of a topological space.
+Suppose that  $\bigcap_\alpha A_\alpha\ne\emptyset$.
+Then 
+\[A=\bigcup_\alpha A_\alpha\] 
+is connected.
+\end{thm}
+
+\parit{Proof.}
+Assume contrary; that is, $A$ is disconnected.
+Choose its open subdivision $V$, $W$.
+Since $\bigcap_\alpha A_\alpha\ne\emptyset$, we can fix $p\in \bigcap_\alpha A_\alpha$.
+Without loss of generality, we can assume that $p\in V$.
+
+In particular, $V\cap A_\alpha\ne\emptyset$ for any $\alpha$.
+Since $A_\alpha$ is connected, it follows that $W\cap A_\alpha=\emptyset $ for each $\alpha$.
+Therefore 
+\begin{align*}
+W\cap A&=W\cap\biggl(\bigcup_\alpha A_\alpha\biggr)
+\\&=\bigcup_\alpha(W\cap A_\alpha)
+\\&=\emptyset,
+\end{align*}
+a contradiction.
+\qeds
+
+\section{Real interval}
+
+\begin{thm}{Proposition}\label{prop:connected[0,1]}
+The real interval $[0,1]$ is connected.
+\end{thm}
+
+\parit{Proof.}
+Assume contrary;
+let $V$ and $W$ be an open subdivision of $[0,1]$.
+Fix a $a_0\in V$ and $b_0\in W$;
+without loss of generality, we can assume that $a_0<b_0$.
+
+Let us construct a nested sequence of closed intervals 
+\[[a_0,b_0]\supset [a_1,b_1]\dots\]
+such that $b_n-a_n=\tfrac1{2^n}(b_0-a_0)$ and $a_n\in V$ and $b_n\in W$ for any $n$.
+
+The construction is recursive.
+Assume $[a_n,b_n]$ is already constructed.
+Set $c=\tfrac12\cdot(a_n+b_n)$.
+If $c\in V$,
+then set $a_{n+1}=c$ and $b_{n+1}=b_n$;
+if $c\in W$, then set $a_{n+1}=a_n$ and $b_{n+1}=c$.
+
+The sequence $a_n$ is nondecreasing and bounded above by $b_0$.
+In particular, the sequence $a_n$ converges; denote its limit by $x$.
+Since $b_n-a_n=\tfrac1{2^n}\cdot(b_0-a_0)$, the sequence $b_n$ also converges to $x$.
+
+The point $x$ has to belong to $V$ or $W$.
+Since both $V$ and $W$ are open, one of them contains $a_n$ and $b_n$ for all large $n$ --- a contradiction.
+\qeds
+
+\begin{thm}{Exercise}
+Show that the real line is a connected space. 
+\end{thm}
+
+\section{Connected components}
+
+Let $x$ be a point in a topological space $\c{X}$.
+The intersection of all clopen sets containing $x$ is called \emph{connected component} of $x$.
+Note that the space $\c{X}$ is connected if $\c{X}$ is the connected component of one (and therefore any) point in $\c{X}$.
+
+As an intersection of closed sets,
+any connected component has to be closed.
+
+\begin{thm}{Exercise}
+Construct an example of topological space $\c{X}$ and a point $x\in \c{X}$ such that the connected component of $x$ is not open.
+\end{thm}
+
+\begin{thm}{Exercise}
+Suppose that a space $\c{X}$ has a finite number of connected components.
+Show that each connected component of $\c{X}$ is open.
+\end{thm}
+
+\begin{thm}{Exercise}
+Show that two connected components either coincide or disjoint.
+In other words, being in one connected component defines an equivalence relation on points of topological space.
+\end{thm}
+
+
+
+\section{Cut points}
+
+Evidently, number of connected components is a topological invariant;
+that is, \textit{if two spaces are homeomorphic, then they have the same number of connected components}.
+In particular, connected space is not homeomorphic to a disconnected space.
+
+Let us describe a more refined way to apply that connectedness is preserved by
+homeomorphisms.
+Suppose $\c{X}$ is a connected space, a point $x \in\c{X}$ is called a \emph{cut point} if removing $x$ from $\c{X}$ produces a disconnected space $\c{X}\backslash\{x\}$.
+Note that if $f\:\c{X}\to \c{Y}$ is a homeomorphism, then a point $x \in\c{X}$ is a cut point of if and only if $y=f(x)$ is a cut point of $\c{Y}$, since the restriction of $f$ defines a homeomorphism $\c{X}\backslash\{x\}\to \c{Y}\backslash\{y\}$.
+Moreover, we get that the spaces $\c{X}\backslash\{x\}$ and $\c{Y}\backslash\{y\}$ have the same number of connected components.
+
+These observations can be used to solve the following exercises.
+
+\begin{thm}{Exercise}
+Show that the circle $\mathbb{S}^1$ is not homeomorphic to the line segment $[0,1]$.
+\end{thm}
+
+\begin{thm}{Exercise}
+Show that the plane $\RR^2$ is not homeomorphic to the real line $\RR$.
+\end{thm}
+
+\begin{thm}{Exercise}
+Show that no two of the following four closed connected sets in the plane are homeomorphic.
+(Each set is a union of line segments.)
+
+\begin{figure}[!ht]
+\centering
+\includegraphics{mppics/pic-10}
+\end{figure}
+
+\end{thm}
+
+
+\section{Path-connectedness}
+
+Let $\c{X}$ be a topological space.
+A continuous map $f\:[0,1]\to \c{X}$ is called \emph{path}.
+If $x=f(0)$ and $y=f(1)$ we say that $f$ is a path \emph{from $x$ to $y$}.
+
+A space $\c{X}$ is called \emph{path-connected} if it is nonempty and any two points in $\c{X}$ can be connected by a path;
+that is, for any $x,y\in \c{X}$ there is a path $f$ from $x$ to $y$.
+
+\begin{thm}{Theorem}\label{thm:conncted/path-connected}
+Any path-connected space is connected;
+the converse does not hold.
+\end{thm}
+
+\parit{Proof; main part.}
+Let $\c{X}$ be a path-connected space.
+
+By Proposition~\ref{prop:connected[0,1]}, the unit interval $[0,1]$ is connected.
+By Proposition~\ref{prop:image-connected}, for any path $f\:[0,1]\to \c{X}$ the image $f([0,1])$ is connected.
+
+Fix $x\in \c{X}$. 
+Since $\c{X}$ is path-connected, 
+\[\c{X}=\bigcup_f f([0,1]),\]
+where the union is taken for all paths $f$ starting from $x$.
+By Proposition~\ref{prop:union-connect}, $\c{X}$ is connected.
+
+
+\parit{Example.}
+It remains to present an example of a space that connected, but not path-connected.
+
+\begin{wrapfigure}{r}{33mm}
+\includegraphics{mppics/pic-20}
+\end{wrapfigure}
+
+Consider the following segments in the coordinate plane
+$I$ from $(0,0)$ to $(1,0)$ 
+and $J_n$ from $(\tfrac1n,0)$ to $(\tfrac1n,1)$ for each positive integer $n$.
+Consider the union of all these segments and the point $y=(0,1)$
+\[W=\{y\}\cup I\cup J_1\cup J_2 \cup \dots\]
+
+The space $W$ is called \emph{flea and comb}
+The union of line segments $I\cup J_1\cup J_2 \cup \dots$ is called \emph{comb},
+and the point $y$ is called \emph{flea}.
+
+Let us show that subspace $W$ is not path-connected.
+Assume the contrary. 
+Let $f$ be a path from $x=(0,0)$ to $y=(0,1)$.
+
+Note that $f^{-1}(\{y\})$ is closed subset of compact space $[0,1]$.
+Therefore $f^{-1}(\{y\})$ is compact.
+In particular, the set $f^{-1}(\{y\})$ has the minimal element,
+denote it by $b$.
+Note that $b>0$; so $f(b)=y$ and $f(t)\ne y$ for any $t<b$.
+
+Choose positive $\eps<1$.
+Since $f$ is continuous, there is $a<b$ such that $|f(t)-y|<\eps$ for any $t\in (a,b]$.
+Note that $f(a)\in J_n$ for some $n$.
+Denote by $N$ the intersection of $\eps$-neighborhood of $y$ with the comb.
+note that the intersection of $J_n$ with $\eps$-neighborhood of $y$ forms a connected component of $N$.
+It follows that $f(t)\in J_n$ for any $t\in [a,b]$;
+in particular, $f(b)\ne y$ --- a contradiction.
+\qeds
+
+\begin{thm}{Exericise}
+Show that any convex set in a Euclidean space is path-connected. 
+\end{thm}
+
+\section{Operations on paths}
+
+Given a path $f\:[0,1]\to \c{X}$ one can consider the path $\bar f$ traveled backward.
+Namely, 
+\[\bar f(t)=f(1-t).\]
+Note that $\bar f$ is continuous since $f$ is.
+
+Let $f,h\:[0,1]\to \c{X}$ be two paths in the topological space $\c{X}$.
+If $f(1)=h(0)$ we can join these two paths into one $g\:[0,1]\to \c{X}$ defined as 
+\[g(t)=
+\left[
+\begin{aligned}
+f(2\cdot t)&&\text{if}&\ t\le \tfrac12
+\\
+h(2\cdot t-1)&&\text{if}&\ t\ge \tfrac12
+\end{aligned}
+\right.
+\]
+The path $g$ is called the product (or concatenation) of paths $f$ and $h$, briefly it is denoted as $g=f * h$.
+
+In order to show that $f * h$ is indeed a path, we need to check that the defined map $f * h\:[0,1]\to \c{X}$ is continuous.
+
+Indeed, fix a closed set $C\subset \c{X}$,
+assume $E=(f * h)^{-1}(C)\subset [0,1]$.
+Since $f$ is continuous, we get that $E\cap [0,\tfrac12]$ is closed.
+The same way, since $h$ is continuous, we get that $E\cap [\tfrac12,1]$ is closed.
+Since 
+\[E=(E\cap [0,\tfrac12])\cup (E\cap [\tfrac12,1]),\] 
+it follows that $E$ is a closed subset in $[0,1]$.
+That is, the inverse image of any closed set in $\c{X}$ is closed in $[0,1]$ --- by Proposition~\ref{prop:cont-closed}, $f * h\:[0,1]\to \c{X}$ is continuous.
+
+
+Consider the relation $\sim$ on the set of points of topological space defined as $x\sim y$ if there is a path from $x$ to $y$.
+
+\begin{thm}{Exercise}
+Show that $\sim$ is an equivalence relation;
+that is, for any points $x$, $y$, and $z$ in a topological space we have
+
+\begin{subthm}{}
+$x\sim x$.
+\end{subthm}
+
+\begin{subthm}{}
+If $x\sim y$, then $y\sim x$
+\end{subthm}
+
+\begin{subthm}{}
+If $x\sim y$ and $y\sim z$, then $x\sim z$.
+\end{subthm}
+
+\end{thm}
+
+The equivalence class of point $x$ for the equivalence relation $\sim$ is called \emph{path-connected component} of $x$. 
+
+\begin{thm}{Exercise}
+Assume every path-connected component in a topological space $\c{X}$ is closed.
+Show that $\c{X}$ is connected if and only if $\c{X}$ is path-connected.
+\end{thm}
+
+\begin{thm}{Exercise}
+Show that image of path-connected set under a continuous map is path-connected.
+\end{thm}
+
+\begin{thm}{Exercise}
+Show that the product of path-connected spaces is path-connected.
+\end{thm}
+
+\section{Open sets of Euclidean space}
+
+The following theorem provides a class of topological space for which connectedness implies path-connectedness.
+
+\begin{thm}{Theorem}
+An open set in a Euclidean space $\RR^n$ is path-connected if and only if it is connected.
+\end{thm}
+
+\parit{Proof.}
+The only-if part follows from \ref{thm:conncted/path-connected};
+it remains to prove the if part.
+
+Let $\Omega\subset\RR^n$ be an open subset.
+Choose a point $p\in\Omega$; denote by $P\subset \Omega$ the path-connected component of $p$.
+
+Let us show that for any point $q\in \Omega$ there is $\eps>0$ such that either $\Ball(q,\eps)\subset P$, or $\Ball(q,\eps)\cap P=\emptyset$.
+
+Indeed, since $\Omega$ is open, we can choose $\eps>0$ such that $\Ball(q,\eps)\subset\Omega$.
+Note that $\Ball(q,\eps)$ is convex.
+Therefore if $\Ball(q,\eps)\cap P=\emptyset$, then $\Ball(q,\eps)\subset P$.
+
+It follows that $P$ and its complement $\Omega\backslash P$ are open.
+Since $\Omega$ is connected, we get that $\Omega\backslash P=\emptyset$ --- hence the result.
+\qeds
+
+
+
