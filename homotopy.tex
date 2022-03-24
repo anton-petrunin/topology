@@ -1,0 +1,224 @@
+\chapter{Homotopy}
+
+
+\section{Definitions}
+
+Assume $f_t\:\c{X}\to \c{Y}$ be a one-parameter family of maps, $t\in [0,1]$.
+If the map $[0,1]\times \c{X}\to \c{Y}$ that is defined as $(t,x)\mapsto f_t(x)$ is continuous, then $f_t$ is called a \emph{homotopy} of maps from $\c{X}$ to $\c{Y}$.
+
+If $f_t(a)$ is independent of $t$ for any point $a$ in some subset $A\subset \c{X}$, then we say that  $f_t$ is a \emph{homotopy relative to $A$}. 
+
+Two maps $g,h\:\c{X}\to \c{Y}$ are called \emph{homotopic} (briefly $g\sim h$)
+if there is a homotopy $f_t\:\c{X}\to \c{Y}$ such that $g=f_0$ and $h=f_1$.
+
+Two maps $g,h\:\c{X}\to \c{Y}$ are called \emph{homotopic relative to} $A$, briefly $g\sim h\rel A$
+if there is a homotopy $f_t\:\c{X}\to \c{Y}$ relative to $A$ such that $g=f_0$ and $h=f_1$.
+
+\begin{thm}{Exercise}\label{ex:hom-eq}
+Show that ``$\sim$''  defines equivalence relations on the set of continuous maps between given topological spaces.
+That is, for any continuous maps $f,g,h\:\c{X}\to \c{Y}$, we have 
+\begin{itemize}
+\item $f\sim f$, 
+\item if $f\sim h$ then $h\sim f$, and
+\item if $f\sim g$ and $g\sim h$ then $f\sim h$.
+\end{itemize}
+Do the same for and ``$\sim\rel A$''.
+\end{thm}
+
+
+
+\section{Contractible spaces}
+
+A topological space $\c{X}$ is called \emph{contactable} if the identity map $\id_\c{X}\:\c{X}\z\to \c{X}$ is homotopic to a constant map;
+that is there is a homotopy $h_t\:\c{X}\to\c{X}$ such that $h_0(x)=x$ and $h_1(x)=p$ for some fixed point $p\in\c{X}$ and any $t$.
+
+\begin{thm}{Exercise}
+Show that any convex subset of the Euclidean space is contractible.
+\end{thm}
+
+
+\begin{thm}{Exercise}
+Show that any contractible space is path-connected.
+\end{thm}
+
+Later we will show that the circle $\mathbb{S}^1$ is an example of path-connected space that is not contractible.
+
+\begin{thm}{Exercise}
+Let $\c{X}$ be a contractible space.
+
+\begin{subthm}{}
+Show that any two continuous maps from a topological space to $\c{X}$ are homotopic.
+\end{subthm}
+
+\begin{subthm}{}
+Show that any two continuous maps from $\c{X}$ to a path-connected space are homotopic.
+\end{subthm}
+
+\end{thm}
+
+\section{Homotopy type}
+
+Two topological spaces $\c{X}$ and $\c{Y}$ have the \emph{same homotopy type} (briefly $\c{X}\sim\c{Y}$) if there are continuous maps
+$f\: \c{X}\to \c{Y}$ and $h\:\c{Y}\to \c{X}$ such that $h\circ f\sim \id_\c{X}$ and $f\circ h\sim \id_\c{Y}$.
+
+\begin{thm}{Exercise}
+Show that a topological $\c{X}$ is contractible if and only if it has the same homotopy type with the one-point space.
+\end{thm}
+
+\section{Homotopy of paths}
+
+Suppose that $f_t\:[0,1]\to\c{X}$ is homotopy of paths relative to its ends;
+that is, $f_t(0)$ and $f_t(1)$ do not depend on $t$.
+Then we say that $f_0$ is \emph{homotopic} to  $f_1$, briefly $f_0\sim f_1$.
+This is shortcut notation --- formally speaking, we had to say \emph{homotopic rel. $\{0,1\}$} and write $f_0\sim f_1\rel{\{0,1\}}$,
+
+Since $\sim$ is an equivalence relation (\ref{ex:hom-eq}), we can talk about the equivalence class of a path $f$ that will be called its \emph{homotopy class};
+it will be denoted by $[f]$.
+
+\section{Fundamental group}
+
+A path $f\:[0,1]\to\c{X}$ is called \emph{loop} based at $p\in\c{X}$ if $f(0)=f(1)=p$.
+
+Suppose $f$ is a loop based at $p\in \c{X}$.
+Recall that $[f]$ denotes the homotopy class of $f$; 
+note that $[f]$ is a subset of all loops in $\c{X}$.
+
+Let us define multiplication of homotopy classes by 
+\[[f]\cdot [g]=[f*g];\]
+that is, \textit{the product of homotopy classes of $f$ and $g$ is the homotopy class of the product $f*g$.}
+
+Denote by $\pi_1(\c{X},p)$ the set of all homotopy classes of loops at $p$.
+
+\begin{thm}{Theorem}
+ $\pi_1(\c{X},p)$ with the introduced multiplication is a group.
+\end{thm}
+
+It will be done by checking every condition in the definition of group.
+Let us reformulate these conditions using the definition of homotopy class.
+Recall that $\bar f$ denoted the path $f$ with revered time; see Section~\ref{sec:Operations on paths}.
+
+\parit{Proof.}
+Denote by $\eps_p$ the constant loop at $p$ in $\c{X}$;
+that is, $\eps_p(t)=p$ for any $t$.
+Note that conditions in the definition of group follow from the next three conditions for any loops $f$, $g$, and $h$ based at $p$ in $\c{X}$.
+\begin{enumerate}[(i)]
+\item $f*\eps_p\sim \eps_p*f\sim f$;
+\item $f*\bar f\sim\bar f* f\sim e$;
+\item $(f*g)*h\sim f*(g*h)$.
+\end{enumerate}
+Slightly more general versions of these statements provided by the claims \ref{clm:neutral}, \ref{clm:f-bar-f}, and \ref{clm:assoc}.
+\qeds
+
+\section{Three claims}
+
+Each of the following claims proved by explicit construction of the needed homotopy.
+Each time the homotopy constructed as a composition $h\circ s_\tau(t)$, where $h$ is a fixed path and  $s_\tau$ is a one-parameter family of functions $[0,1]\to [0,1]$.
+The graphs of $s_\tau$ provide more intuitive descriptions of the families;
+the formulas presented just to make it formally correct.
+
+\begin{thm}{Claim}\label{clm:neutral}
+Suppose $f$ is a path from $x$ to $y$, then
+\[\eps_x*f\sim f*\eps_y\sim  f.\]
+\end{thm}
+
+\begin{wrapfigure}[4]{r}{30mm}
+\centering
+\vskip-5mm
+\includegraphics{mppics/pic-30}
+\end{wrapfigure}
+
+\parit{Proof.}
+Consider the function
+\[s_\tau(t)=
+\begin{cases}
+2\cdot \tau \cdot t&\text{if}\ t\le \tfrac12,
+\\
+2\cdot\tau-1+2\cdot (1-\tau) \cdot t&\text{if}\ t\ge \tfrac12.
+\end{cases}
+\]
+Observe that 
+\begin{align*}
+f(s_0(t))&=\eps_x*f(t),
+\\
+f(s_{\frac12}(t))&=f(t),
+\\
+f(s_1(t))&=f(t)*\eps_y
+\end{align*}
+for any $t$.
+Since $h_\tau(t)=f(s_\tau(t))$ is a homotopy, the claim follows.
+\qeds
+
+\begin{thm}{Claim}\label{clm:f-bar-f}
+Suppose $f$ is a path from $x$ to $y$, then
+\[f*\bar f\sim \eps_x
+\quad\text{and}\quad
+\bar f*f\sim \eps_y.\]
+\end{thm}
+
+{
+
+\begin{wrapfigure}[12]{r}{30mm}
+\centering
+\includegraphics{mppics/pic-31}
+\end{wrapfigure}
+
+\parit{Proof.}
+Consider the function
+\[s_\tau(t)=
+\begin{cases}
+2\cdot \tau \cdot t&\text{if}\ t\le \tfrac12,
+\\
+1-2\cdot \tau \cdot t&\text{if}\ t\ge \tfrac12.
+\end{cases}
+\]
+Observe that $f(s_1(t))=f*\bar f(t)$ for any $t$.
+Therefore $h_\tau(t)=f(s_\tau(t))$ is a homotopy from $\eps_x$ to $f*\bar f$.
+It proves the first statement.
+
+
+
+To prove the second statement one has to redefine $s_\tau$ as
+\[s_\tau(t)=
+\begin{cases}
+1-2\cdot \tau \cdot t&\text{if}\ t\le \tfrac12,
+\\
+1-2\cdot\tau + 2\cdot \tau \cdot t&\text{if}\ t\ge \tfrac12,
+\end{cases}
+\]
+and observe that $f(s_1(t))=\bar f*f(t)$ for any $t$.
+\qeds
+
+}
+
+\begin{thm}{Claim}\label{clm:assoc}
+Suppose $f$ is a path from $x$ to $y$, 
+$g$ is a path from $y$ to $z$,
+and
+$h$ is a path from $z$ to $w$,
+then
+\[(f*g)*h\sim f*(g*h).\]
+\end{thm}
+
+\begin{wrapfigure}[3]{r}{30mm}
+\centering
+\vskip-4mm
+\includegraphics{mppics/pic-32}
+\end{wrapfigure}
+
+\parit{Proof.}
+Consider the function $s_\tau$ defined by 
+\[s_\tau(t)=
+\begin{cases}
+\tfrac{1+\tau}2\cdot t&\text{if}\ t\le \tfrac12,
+\\
+\tfrac{\tau-1}4+t&\text{if}\ \tfrac 34\ge t\ge \tfrac12,
+\\
+\tau-1+ (2-\tau)\cdot t&\text{if}\  t\ge \tfrac34.
+\end{cases}
+\]
+Note that $s_1(t)=t$,
+and therefore \[f*(g*h)(t)\z=f*(g*h)(s_1(t))\] for any $t$.
+Further, 
+\[(f*g)*h(t)\z=f*(g*h)(s_0(t))\] for any $t$.
+It remains to observe that $f*(g*h)(s_\tau(t))$ is the needed homotopy.
+\qeds
