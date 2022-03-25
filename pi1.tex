@@ -1,0 +1,40 @@
+\chapter{Fundamental group}
+
+\section{Definition}
+
+A path $f\:[0,1]\to\c{X}$ is called \emph{loop} based at $p\in\c{X}$ if $f(0)=f(1)=p$.
+
+Suppose $f$ is a loop based at $p\in \c{X}$.
+Recall that $[f]$ denotes the homotopy class of $f$; 
+note that $[f]$ is a subset of all loops in $\c{X}$.
+
+Let us define multiplication of homotopy classes by 
+\[[f]\cdot [g]=[f*g];\]
+that is, \textit{the product of homotopy classes of $f$ and $g$ is the homotopy class of the product $f*g$.}
+
+Note that the product is well defined;
+that is, if $[f_0]= [f_1]$ and $[g_0]=[g_1]$, then  $[f_0*g_0]=[f_1*g_1]$.
+In other words, if $f_0\sim f_1$ and $g_0\sim g_1$ then $f_0*g_0\sim f_1*g_1$.
+The latter is stated in Claim \ref{clm:product}.
+
+Denote by $\pi_1(\c{X},p)$ the set of all homotopy classes of loops at $p$.
+
+\begin{thm}{Theorem}
+ $\pi_1(\c{X},p)$ with the introduced multiplication is a group.
+\end{thm}
+
+It will be done by checking every condition in the definition of group.
+Let us reformulate these conditions using the definition of homotopy class.
+Recall that $\bar f$ denoted the path $f$ with revered time; see Section~\ref{sec:Operations on paths}.
+
+\parit{Proof.}
+Denote by $\eps_p$ the constant loop at $p$ in $\c{X}$;
+that is, $\eps_p(t)=p$ for any $t$.
+Note that conditions in the definition of group follow from the next three conditions for any loops $f$, $g$, and $h$ based at $p$ in $\c{X}$.
+\begin{enumerate}[(i)]
+\item $f*\eps_p\sim \eps_p*f\sim f$;
+\item $f*\bar f\sim\bar f* f\sim e$;
+\item $(f*g)*h\sim f*(g*h)$.
+\end{enumerate}
+These statements provided by the claims \ref{clm:neutral}, \ref{clm:f-bar-f}, and \ref{clm:assoc}.
+\qeds

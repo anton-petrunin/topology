@@ -75,46 +75,29 @@ This is shortcut notation --- formally speaking, we had to say \emph{homotopic r
 Since $\sim$ is an equivalence relation (\ref{ex:hom-eq}), we can talk about the equivalence class of a path $f$ that will be called its \emph{homotopy class};
 it will be denoted by $[f]$.
 
-\section{Fundamental group}
 
-A path $f\:[0,1]\to\c{X}$ is called \emph{loop} based at $p\in\c{X}$ if $f(0)=f(1)=p$.
 
-Suppose $f$ is a loop based at $p\in \c{X}$.
-Recall that $[f]$ denotes the homotopy class of $f$; 
-note that $[f]$ is a subset of all loops in $\c{X}$.
-
-Let us define multiplication of homotopy classes by 
-\[[f]\cdot [g]=[f*g];\]
-that is, \textit{the product of homotopy classes of $f$ and $g$ is the homotopy class of the product $f*g$.}
-
-Denote by $\pi_1(\c{X},p)$ the set of all homotopy classes of loops at $p$.
-
-\begin{thm}{Theorem}
- $\pi_1(\c{X},p)$ with the introduced multiplication is a group.
-\end{thm}
-
-It will be done by checking every condition in the definition of group.
-Let us reformulate these conditions using the definition of homotopy class.
-Recall that $\bar f$ denoted the path $f$ with revered time; see Section~\ref{sec:Operations on paths}.
-
-\parit{Proof.}
-Denote by $\eps_p$ the constant loop at $p$ in $\c{X}$;
-that is, $\eps_p(t)=p$ for any $t$.
-Note that conditions in the definition of group follow from the next three conditions for any loops $f$, $g$, and $h$ based at $p$ in $\c{X}$.
-\begin{enumerate}[(i)]
-\item $f*\eps_p\sim \eps_p*f\sim f$;
-\item $f*\bar f\sim\bar f* f\sim e$;
-\item $(f*g)*h\sim f*(g*h)$.
-\end{enumerate}
-Slightly more general versions of these statements provided by the claims \ref{clm:neutral}, \ref{clm:f-bar-f}, and \ref{clm:assoc}.
-\qeds
-
-\section{Three claims}
+\section{Technical claims}
 
 Each of the following claims proved by explicit construction of the needed homotopy.
 Each time the homotopy constructed as a composition $h\circ s_\tau(t)$, where $h$ is a fixed path and  $s_\tau$ is a one-parameter family of functions $[0,1]\to [0,1]$.
 The graphs of $s_\tau$ provide more intuitive descriptions of the families;
 the formulas presented just to make it formally correct.
+
+\begin{thm}{Claim}\label{clm:product}
+Suppose $f_0$ is a path from $x$ to $y$,
+and 
+$g_0$ is a path from $y$ to $z$.
+Suppose $f_0\sim f_1$ and $g_0\sim g_1$,
+then
+\[f_0*g_0\sim f_1*g_1.\]
+\end{thm}
+
+\parit{Proof.}
+Choose homotopies $f_t$ from $f_0$ to $f_1$, and $g_t$ from $g_0$ to $g_1$ and observe that 
+$f_t*g_t$ is a homotopy from $f_0*g_0$ to $f_1*g_1$.
+\qeds
+
 
 \begin{thm}{Claim}\label{clm:neutral}
 Suppose $f$ is a path from $x$ to $y$, then
@@ -147,6 +130,12 @@ f(s_1(t))&=f(t)*\eps_y
 for any $t$.
 Since $h_\tau(t)=f(s_\tau(t))$ is a homotopy, the claim follows.
 \qeds
+
+\begin{thm}{Exercise}\label{ex:neutral}
+Suppose that $f$ is a path in a Hausdorff space.
+Assume $f(0)=x$ and $\eps_x*f= f$.
+Show that $f=\eps_x$; in particular, $x=y$.
+\end{thm}
 
 \begin{thm}{Claim}\label{clm:f-bar-f}
 Suppose $f$ is a path from $x$ to $y$, then
@@ -222,3 +211,10 @@ Further,
 \[(f*g)*h(t)\z=f*(g*h)(s_0(t))\] for any $t$.
 It remains to observe that $f*(g*h)(s_\tau(t))$ is the needed homotopy.
 \qeds
+
+\begin{thm}{Advanced exercise}\label{ex:assoc}
+Let $f$, $g$, and $h$ be paths in a Hausdorff space.
+Suppose that $(f*g)*h= f*(g*h)$
+and both sides of the equation are defined.
+Show that $f=g=h=\eps_x$ for some point $x$.
+\end{thm}
