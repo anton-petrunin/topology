@@ -11,7 +11,7 @@ If $f_t(a)$ is independent of $t$ for any point $a$ in some subset $A\subset \c{
 Two maps $g,h\:\c{X}\to \c{Y}$ are called \emph{homotopic} (briefly $g\sim h$)
 if there is a homotopy $f_t\:\c{X}\to \c{Y}$ such that $g=f_0$ and $h=f_1$.
 
-Two maps $g,h\:\c{X}\to \c{Y}$ are called \emph{homotopic relative to} $A$, briefly $g\sim h\rel A$
+Two maps $g,h\:\c{X}\to \c{Y}$ are called \emph{homotopic relative to} $A$ (briefly, $g\sim h\rel A$)
 if there is a homotopy $f_t\:\c{X}\to \c{Y}$ relative to $A$ such that $g=f_0$ and $h=f_1$.
 
 \begin{thm}{Exercise}\label{ex:hom-eq}
@@ -77,7 +77,7 @@ it will be denoted by $[f]$.
 
 
 
-\section{Technical claims}
+\section{Technical claims}\label{sec:homotopy-claim}
 
 Each of the following claims proved by explicit construction of the needed homotopy.
 Each time the homotopy constructed as a composition $h\circ s_\tau(t)$, where $h$ is a fixed path and  $s_\tau$ is a one-parameter family of functions $[0,1]\to [0,1]$.
@@ -85,9 +85,9 @@ The graphs of $s_\tau$ provide more intuitive descriptions of the families;
 the formulas presented just to make it formally correct.
 
 \begin{thm}{Claim}\label{clm:product}
-Suppose $f_0$ is a path from $x$ to $y$,
+Suppose $f_0$ is a path from $p$ to $q$,
 and 
-$g_0$ is a path from $y$ to $z$.
+$g_0$ is a path from $q$ to $r$.
 Suppose $f_0\sim f_1$ and $g_0\sim g_1$,
 then
 \[f_0*g_0\sim f_1*g_1.\]
@@ -98,10 +98,12 @@ Choose homotopies $f_t$ from $f_0$ to $f_1$, and $g_t$ from $g_0$ to $g_1$ and o
 $f_t*g_t$ is a homotopy from $f_0*g_0$ to $f_1*g_1$.
 \qeds
 
+Let us denote by $\eps_p$ the constant loop with image $p$;
+that is, $\eps_p(t)=p$ for any $t$.
 
 \begin{thm}{Claim}\label{clm:neutral}
-Suppose $f$ is a path from $x$ to $y$, then
-\[\eps_x*f\sim f*\eps_y\sim  f.\]
+Suppose $f$ is a path from $p$ to $q$, then
+\[\eps_p*f\sim f*\eps_q\sim  f.\]
 \end{thm}
 
 \begin{wrapfigure}[4]{r}{30mm}
@@ -121,11 +123,11 @@ Consider the function
 \]
 Observe that 
 \begin{align*}
-f(s_0(t))&=\eps_x*f(t),
+f(s_0(t))&=\eps_p*f(t),
 \\
 f(s_{\frac12}(t))&=f(t),
 \\
-f(s_1(t))&=f(t)*\eps_y
+f(s_1(t))&=f(t)*\eps_q
 \end{align*}
 for any $t$.
 Since $h_\tau(t)=f(s_\tau(t))$ is a homotopy, the claim follows.
@@ -133,15 +135,15 @@ Since $h_\tau(t)=f(s_\tau(t))$ is a homotopy, the claim follows.
 
 \begin{thm}{Exercise}\label{ex:neutral}
 Suppose that $f$ is a path in a Hausdorff space.
-Assume $f(0)=x$ and $\eps_x*f= f$.
-Show that $f=\eps_x$; in particular, $x=y$.
+Assume $f(0)=p$ and $\eps_p*f= f$.
+Show that $f=\eps_p$; in particular, $p=q$.
 \end{thm}
 
 \begin{thm}{Claim}\label{clm:f-bar-f}
-Suppose $f$ is a path from $x$ to $y$, then
-\[f*\bar f\sim \eps_x
+Suppose $f$ is a path from $p$ to $q$, then
+\[f*\bar f\sim \eps_p
 \quad\text{and}\quad
-\bar f*f\sim \eps_y.\]
+\bar f*f\sim \eps_q.\]
 \end{thm}
 
 {
@@ -161,7 +163,7 @@ Consider the function
 \end{cases}
 \]
 Observe that $f(s_1(t))=f*\bar f(t)$ for any $t$.
-Therefore $h_\tau(t)=f(s_\tau(t))$ is a homotopy from $\eps_x$ to $f*\bar f$.
+Therefore $h_\tau(t)=f(s_\tau(t))$ is a homotopy from $\eps_p$ to $f*\bar f$.
 It proves the first statement.
 
 
@@ -180,11 +182,11 @@ and observe that $f(s_1(t))=\bar f*f(t)$ for any $t$.
 }
 
 \begin{thm}{Claim}\label{clm:assoc}
-Suppose $f$ is a path from $x$ to $y$, 
-$g$ is a path from $y$ to $z$,
+Suppose $f$, 
+$g$,
 and
-$h$ is a path from $z$ to $w$,
-then
+$h$ are paths such that $f(1)=g(0)$ and $g(1)=h(0)$.
+Then
 \[(f*g)*h\sim f*(g*h).\]
 \end{thm}
 
@@ -212,9 +214,15 @@ Further,
 It remains to observe that $f*(g*h)(s_\tau(t))$ is the needed homotopy.
 \qeds
 
+\begin{thm}{Exercise}
+Let $f$ and $g$ be paths from $p$ to $q$.
+Show that $f\sim g$ if and only if $f*\bar g\sim \eps_p$.
+\end{thm}
+
+
 \begin{thm}{Advanced exercise}\label{ex:assoc}
 Let $f$, $g$, and $h$ be paths in a Hausdorff space.
 Suppose that $(f*g)*h= f*(g*h)$
 and both sides of the equation are defined.
-Show that $f=g=h=\eps_x$ for some point $x$.
+Show that $f=g=h=\eps_p$ for some point $p$.
 \end{thm}
