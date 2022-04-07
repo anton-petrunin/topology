@@ -146,7 +146,9 @@ In particular, connected space is not homeomorphic to a disconnected space.
 Let us describe a more refined way to apply that connectedness is preserved by
 homeomorphisms.
 Suppose $\c{X}$ is a connected space, a point $x \in\c{X}$ is called a \emph{cut point} if removing $x$ from $\c{X}$ produces a disconnected space $\c{X}\backslash\{x\}$.
-Note that if $f\:\c{X}\to \c{Y}$ is a homeomorphism, then a point $x \in\c{X}$ is a cut point of if and only if $y=f(x)$ is a cut point of $\c{Y}$, since the restriction of $f$ defines a homeomorphism $\c{X}\backslash\{x\}\to \c{Y}\backslash\{y\}$.
+
+Note that if $f\:\c{X}\to \c{Y}$ is a homeomorphism, then a point $x \in\c{X}$ is a cut point of $\c{X}$ if and only if $y=f(x)$ is a cut point of $\c{Y}$.
+Indeed, the restriction of $f$ defines a homeomorphism $\c{X}\backslash\{x\}\to \c{Y}\backslash\{y\}$.
 Moreover, we get that the spaces $\c{X}\backslash\{x\}$ and $\c{Y}\backslash\{y\}$ have the same number of connected components.
 
 These observations can be used to solve the following exercises.
@@ -309,7 +311,7 @@ Show that the product of path-connected spaces is path-connected.
 
 The following theorem provides a class of topological space for which connectedness implies path-connectedness.
 
-\begin{thm}{Theorem}
+\begin{thm}{Theorem}\label{thm:open-connected=path-connected}
 An open set in a Euclidean space $\RR^n$ is path-connected if and only if it is connected.
 \end{thm}
 

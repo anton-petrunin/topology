@@ -139,4 +139,23 @@ label.bot(btex $\tfrac34$ etex, (.75,0)*u);
 
 endfig;
 
+beginfig(40) 
+save u,k;
+u:=1cm;
+k:=.3;
+
+z.a=(0,0)*u;
+z.b=(1,0)*u;
+z.c=(1,1)*u;
+z.d=(0,1)*u;
+z.shift=(3,0)*u;
+
+draw z.a--z.b--z.c--z.d--cycle pensemibold;
+draw .5[z.a,z.d]--.5[z.b,z.c] pensemibold;
+
+draw (z.a--z.b--k[z.b,z.c]--k[z.a,z.d]--cycle) shifted z.shift pensemibold;
+draw (z.d--z.c--(1-k)[z.b,z.c]--(1-k)[z.a,z.d]--cycle) shifted z.shift pensemibold;
+draw (.5[k[z.b,z.c],k[z.a,z.d]]--.5[(1-k)[z.b,z.c],(1-k)[z.a,z.d]]) shifted z.shift pensemibold;
+endfig;
+
 end

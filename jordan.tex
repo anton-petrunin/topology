@@ -1,0 +1,97 @@
+\chapter{Jordan curve theorem}
+
+\begin{thm}{Theorem}\label{thm:proper-jordan}
+Suppose $\Gamma\subset\RR^2$ is a closed set homeomorphic to $\RR$.
+Then $\RR^2\backslash \Gamma$ has at least two connected components.
+\end{thm}
+
+We will use the following two auxiliary propositions.
+
+\begin{thm}{Proposition}\label{prop:c/sc}
+Suppose $\Gamma\subset\RR^2$ is a closed set such that the complement $X=\RR^2\backslash \Gamma$ is connected.
+Let us identify $\RR^2$ with the $(x,y)$-plane in $\RR^3$.
+Then the complement $Y=\RR^3\backslash \Gamma$ is simply-connected.
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:sc-VuW}
+Suppose that $V$ and $W$ are open simply connected subsets of topological space $\c{X}$ such that 
+$\c{X}=V\cup W$, and the set $V\cap W$ is path-connected.
+Show that $\c{X}$ is simply-connected.
+
+Conclude that sphere $\mathbb{S}^2$ is simply-connected.
+\end{thm}
+
+\parit{Proof.}
+Denote by $A$ (respectively $B$) the sets that include $\Gamma$ and the points below (respectively above) $\Gamma$;
+that is,
+\begin{align*}
+A&=\set{(x,y,z)}{(x,y)\in\Gamma\ \text{and}\ z\le 0},
+\\
+B&=\set{(x,y,z)}{(x,y)\in\Gamma\ \text{and}\ z\ge 0}.
+\end{align*}
+Consider their complements $V=\RR^3\backslash A$ and $W=\RR^3\backslash B$.
+Note that $Y=V\cup W$.
+
+The sets $V$ and $W$ are simply-connected.
+Indeed, the horizontal plane $z= 1$ is a deformation retract of $V$;
+a retraction can be defined by $(x,y,z)\mapsto (x,y,1)$ and the following homotopy shows that it is homotopic to the identity map: 
+\[h_t(x,y,z)=(x,y,(1-t)\cdot z+t).\]
+The plane is contractible, in particular simply-connected; therefore so is $V$.
+Similarly one proves that $W$ is simply-connected.
+
+
+Since $X$ is open and connected set in $\RR^2$.
+By \ref{thm:open-connected=path-connected}, $X$ is path-connected.
+Further, note that $V\cup W=X\times \RR$.
+Therefore $V\cup W$ is path-connected as well.
+
+Summarizing, $V$ and $W$ are open simply-connected sets, $Y=V\z\cup W$, and $V\z\cap W$ is path-connected.
+Applying \ref{ex:sc-VuW}, we get that $Y$ is simply connected.
+\qeds
+
+\begin{thm}{Proposition}\label{prop:home-gamma-z-axis}
+Suppose $\Gamma\subset\RR^2$ is a closed subset homeomorphic to $\RR$.
+Then there is a homeomorphism $\RR^3\to \RR^3$ that maps $\Gamma$ the $z$-axis.
+\end{thm}
+
+\parit{Proof.}
+Let $t\mapsto (a(t),b(t))$ be a homeomorphism $\RR\to \Gamma$.
+By Tietze--Urysohn extension theorem (\ref{ex:tietze}), there is a function $f\:\RR^2\to\RR$ such that 
+$f(a(t),b(t))=t$ for any $t\in \RR$.
+
+Note that the map 
+\[F\:(x,y,z)\mapsto (x,y,z+f(x,y))\] is a homeomorphism.
+Indeed, this map is continuous and its inverse 
+\[F^{-1}\:(x,y,z)\z\mapsto (x,y,z-f(x,y))\]
+is continuous as well.
+
+Similarly, the map 
+\[G\:(x,y,z)\mapsto (x-a(z),y-b(z),z)\]
+is a homeomorphism as well.
+Indeed, $G$ is continuous and it has inverse 
+\[G^{-1}\:(x,y,z)\mapsto (x+a(z),y+b(z),z)\]
+that is continuous as well.
+
+It follows that the composition $G\circ F\:\RR^3\to\RR^3$ is a homeomorphism.
+Observe that $G\circ F(a(t),b(t),0)=(0,0,t)$.
+It follows that $G\circ F$ sends $\Gamma$ to the $z$-axis as required.
+\qeds
+
+\begin{thm}{Exercise}
+Show that the complement of the $z$-axis in $\RR^3$ is not simply connected.
+
+Combine this statement together with \ref{prop:c/sc} and \ref{prop:home-gamma-z-axis} implies \ref{thm:proper-jordan}.
+\end{thm}
+
+\begin{thm}{Theorem}
+Let $J\subset\mathbb{S}^2$ be a subset homeomorphic to $\mathbb{S}^1$.
+Then $\mathbb{S}^2\backslash J$ has at least two connected components. 
+\end{thm}
+
+This theorem is a partial case of famous Jordan's theorem;
+it is known for simple formulation and annoyingly tricky proofs.
+
+\parit{Proof.}
+Remove a point $p$ from $J$ to get a closed line $\Gamma=J\backslash\{p\}$ in $ \mathbb{S}^2\backslash\{p\}\simeq\RR^2$.
+It remains to apply \ref{thm:proper-jordan}.
+\qeds
