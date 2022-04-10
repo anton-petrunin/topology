@@ -43,6 +43,14 @@ Note that conditions in the definition of group follow from the next three condi
 These statements are provided by \ref{clm:neutral}, \ref{clm:f-bar-f}, and \ref{clm:assoc}.
 \qeds
 
+\begin{thm}{Exercise}
+Suppose that $V$ and $W$ are open subsets of topological space $\c{X}$ such that 
+$\c{X}=V\cup W$, and the set $V\cap W$ is path-connected.
+Let $p\in V\cap W$.
+Show that any loop in $\c{X}$ based at $p$  is homotopic to a product of loops in $V$ or $W$ with the same base.
+\end{thm}
+
+
 \section{Induced homomorphism}
 
 Let $\phi\:\c{X}\to \c{Y}$ be a continuous map;
@@ -99,9 +107,6 @@ Suppose there is a path $h$ from $p$ to $q$, then
 the fundamental groups $\pi_1(\c{X},p)$ and $\pi_1(\c{X},q)$ are isomorphic.
 \end{thm}
 
-According to the theorem, the fundamental group (more precisely its \textit{isomorphism class}) of path-connected space does not depend on its base point.
-Therefore, for a path-connected space $\c{X}$ we do not need to specify the base point of its fundamental group; so we could write $\pi_1(\c{X})$ instead of $\pi_1(\c{X},p)$.
-
 \parit{Proof.}
 Suppose $f$ is a loop based at $p$.
 Note that $\bar h*(f*h)$ is a loop at $q$.
@@ -142,6 +147,9 @@ The same way we show that $u_{h}$ is the inverse of $u_{\bar h}$.
 It follows that $u_h$ is an isomorphism.
 \qeds
 
+According to the theorem, the fundamental group (more precisely its \textit{isomorphism class}) of path-connected space does not depend on its base point.
+Therefore, for a path-connected space $\c{X}$ we do not need to specify the base point of its fundamental group; so we could write $\pi_1(\c{X})$ instead of $\pi_1(\c{X},p)$.
+
 \begin{thm}{Exercise}\label{ex:uphi}
 Let $\phi_t\:\c{X}\to\c{Y}$ be a homotopy.
 Suppose that $q_0=\phi_0(p)$ and $q_1=\phi_1(p)$; 
@@ -181,4 +189,21 @@ that is, for any $\gamma\in \pi_1(\c{X},p)\z\times\pi_1(\c{Y},q)$ there is $\alp
 \end{subthm}
 
 Conclude that $\pi_1(\c{X}\times\c{Y})$ is isomorphic to $\pi_1(\c{X})\times\pi_1(\c{Y})$.
+\end{thm}
+
+\section{Simply-connected spaces}
+
+Recall that a group is called \emph{trivial} if it contains only one element which is necessary the neutral element.
+
+A path connected topological space with trivial fundamental group is called \emph{simply-connected}.
+
+If the fundamental group $\pi_1(\c{X},p)$ is trivial, it is common to write $\pi_1(\c{X},p)=0$ despite that this equality does not have much sense --- in general the group $\pi_1(\c{X},p)$ is not commutative and so it would be more reasonable to write $\pi_1(\c{X},p)\z=\{1\}$, meaning that $1$ is the only element of $\pi_1(\c{X},p)$.
+
+
+\begin{thm}{Exercise}\label{ex:sc-VuW}
+Suppose that $V$ and $W$ are open simply-connected subsets of topological space $\c{X}$ such that 
+$\c{X}=V\cup W$, and the set $V\cap W$ is path-connected.
+Show that $\c{X}$ is simply-connected.
+
+Conclude that sphere $\mathbb{S}^2$ is simply-connected.
 \end{thm}

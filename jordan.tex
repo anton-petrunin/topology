@@ -5,7 +5,10 @@ Suppose $\Gamma\subset\RR^2$ is a closed set homeomorphic to $\RR$.
 Then $\RR^2\backslash \Gamma$ has at least two connected components.
 \end{thm}
 
-We will use the following two auxiliary propositions.
+Note that the assumption that $\Gamma$ is closed is necessary;
+indeed a finite open interval $I$ of a line in $\RR^2$ is homeomorphic to $\RR$, but its complement $\RR^2\backslash I$ is connected.
+
+The theorem follows from \ref{prop:c/sc}, \ref{prop:home-gamma-z-axis}, and \ref{ex:z-axis}.
 
 \begin{thm}{Proposition}\label{prop:c/sc}
 Suppose $\Gamma\subset\RR^2$ is a closed set such that the complement $X=\RR^2\backslash \Gamma$ is connected.
@@ -13,13 +16,6 @@ Let us identify $\RR^2$ with the $(x,y)$-plane in $\RR^3$.
 Then the complement $Y=\RR^3\backslash \Gamma$ is simply-connected.
 \end{thm}
 
-\begin{thm}{Exercise}\label{ex:sc-VuW}
-Suppose that $V$ and $W$ are open simply connected subsets of topological space $\c{X}$ such that 
-$\c{X}=V\cup W$, and the set $V\cap W$ is path-connected.
-Show that $\c{X}$ is simply-connected.
-
-Conclude that sphere $\mathbb{S}^2$ is simply-connected.
-\end{thm}
 
 \parit{Proof.}
 Denote by $A$ (respectively $B$) the sets that include $\Gamma$ and the points below (respectively above) $\Gamma$;
@@ -46,7 +42,7 @@ Further, note that $V\cup W=X\times \RR$.
 Therefore $V\cup W$ is path-connected as well.
 
 Summarizing, $V$ and $W$ are open simply-connected sets, $Y=V\z\cup W$, and $V\z\cap W$ is path-connected.
-Applying \ref{ex:sc-VuW}, we get that $Y$ is simply connected.
+Applying \ref{ex:sc-VuW}, we get that $Y$ is simply-connected.
 \qeds
 
 \begin{thm}{Proposition}\label{prop:home-gamma-z-axis}
@@ -54,10 +50,36 @@ Suppose $\Gamma\subset\RR^2$ is a closed subset homeomorphic to $\RR$.
 Then there is a homeomorphism $\RR^3\to \RR^3$ that maps $\Gamma$ the $z$-axis.
 \end{thm}
 
-\parit{Proof.}
-Let $t\mapsto (a(t),b(t))$ be a homeomorphism $\RR\to \Gamma$.
-By Tietze--Urysohn extension theorem (\ref{ex:tietze}), there is a function $f\:\RR^2\to\RR$ such that 
-$f(a(t),b(t))=t$ for any $t\in \RR$.
+
+\begin{thm}{Technical lemma}\label{lem:tietze}
+Suppose $\Gamma\subset\RR^2$ is a closed subset homeomorphic to $\RR$ and $h\:\RR\to\Gamma$ is a homeomorphism.
+Then there is a function $f\:\RR^2\to\RR$ such that 
+$f\circ h(t)=t$ for any $t\in \RR$.
+\end{thm}
+
+This lemma follows directly from the so-called \emph{Tietze--Urysohn extension theorem},
+but we sketch a more elementary proof.
+
+\parit{Sketch of proof.}
+Consider the function $\Phi\:\RR\times[0,\infty)\to[0,\infty)$ defined by 
+\[\Phi(t,r)\df \sup_{s\in\RR} \{\,|s-t|\cdot (1+r-|h(s)-h(t)|)\,\}.\]
+Note that $\Phi$ is continuous.
+
+Moreover, if $r\ge |h(t)-h(s)|$, then
+\[|s-t|\le \Phi(t,r)\]
+for any $s,t\in\RR$.
+It follows that $f\circ h(t)=t$ where  
+\[f(p)\df\sup_{t\in\RR}\{\,t-\Phi(t,|p-h(t)|)\,\}.\]
+It remains to observe that the function $f\:\RR^2\to\RR$ is continuous.
+\qeds
+
+The following proof uses the so-called \emph{Klee trick} which is quite useful in many topological problems.
+
+\parit{Proof of \ref{prop:home-gamma-z-axis}.}
+Let $h\:t\mapsto (a(t),b(t))$ be a homeomorphism $\RR\to \Gamma$.
+By \ref{lem:tietze}, there is a function $f\:\RR^2\z\to\RR$ such that 
+\[f(a(t),b(t))=f\circ h(t)=t\]
+for any $t\in \RR$.
 
 Note that the map 
 \[F\:(x,y,z)\mapsto (x,y,z+f(x,y))\] is a homeomorphism.
@@ -73,14 +95,13 @@ Indeed, $G$ is continuous and it has inverse
 that is continuous as well.
 
 It follows that the composition $G\circ F\:\RR^3\to\RR^3$ is a homeomorphism.
-Observe that $G\circ F(a(t),b(t),0)=(0,0,t)$.
+Since $f(a(t),b(t))=t$,
+\[G\circ F(a(t),b(t),0)=G(a(t),b(t),t)=(0,0,t).\]
 It follows that $G\circ F$ sends $\Gamma$ to the $z$-axis as required.
 \qeds
 
-\begin{thm}{Exercise}
-Show that the complement of the $z$-axis in $\RR^3$ is not simply connected.
-
-Combine this statement together with \ref{prop:c/sc} and \ref{prop:home-gamma-z-axis} implies \ref{thm:proper-jordan}.
+\begin{thm}{Exercise}\label{ex:z-axis}
+Show that the complement of the $z$-axis in $\RR^3$ is not simply-connected.
 \end{thm}
 
 \begin{thm}{Theorem}
