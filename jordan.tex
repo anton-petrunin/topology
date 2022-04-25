@@ -60,6 +60,13 @@ $f\circ h(t)=t$ for any $t\in \RR$.
 This lemma follows directly from the so-called \emph{Tietze--Urysohn extension theorem},
 but we sketch a more elementary proof.
 
+Assume first that $h$ is $L$-Lipschitz;
+that is, $|h(t_0)-h(t_1)|\le L\cdot |t_0\z-t_1|$ for any $t_0,t_1\in\RR$.
+In this case it is easy to see that the function 
+\[f(x)=\sup_{t\in\RR}\{\, t-L\cdot |h(t)-x|\,\}\]
+meets the conditions in the lemma.
+To do the general case one has to be more inventive with the choice of $f$, but the idea is very the same.
+
 \parit{Sketch of proof.}
 Consider the function $\Phi\:\RR\times[0,\infty)\to[0,\infty)$ defined by 
 \[\Phi(t,r)\df \sup_{s\in\RR} \{\,|s-t|\cdot (1+r-|h(s)-h(t)|)\,\}.\]
@@ -111,6 +118,8 @@ Then $\mathbb{S}^2\backslash J$ has at least two connected components.
 
 This theorem is a partial case of famous Jordan's theorem;
 it is known for simple formulation and annoyingly tricky proofs.
+The presented proof is found by Patrick Doyle; 
+it uses quite a bit of topology, but is among the shortest.
 
 \parit{Proof.}
 Remove a point $p$ from $J$ to get a closed line $\Gamma=J\backslash\{p\}$ in $ \mathbb{S}^2\backslash\{p\}\simeq\RR^2$.
