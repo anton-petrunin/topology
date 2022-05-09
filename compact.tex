@@ -6,7 +6,7 @@ Let us denote by $\{V_\alpha\}=\{V_\alpha\}_{\alpha\in \c{I}}$ a collection of s
 we assume that $\alpha$ runs in some index set, say $\c{I}$.
 
 \begin{thm}{Definition}
-A collection $\{V_\alpha\}$ of open subsets in a topological space $\c{X}$ is called its \emph{open cover} if it covers whole $\c{X}$;
+A collection $\{V_\alpha\}$ of open subsets in a topological space $\c{X}$ is called its \emph{open cover} if it covers the whole $\c{X}$;
 that is, if any $x\in \c{X}$ belongs to some~$V_\alpha$.
 
 More generally, $\{V_\alpha\}$ is an \emph{open cover of a subset} $S\subset \c{X}$ if any $s\in S$ belongs to some~$V_\alpha$.
@@ -14,7 +14,7 @@ More generally, $\{V_\alpha\}$ is an \emph{open cover of a subset} $S\subset \c{
 A subset of $\{V_\alpha\}$ that is also a cover is called its \emph{subcover}.
 \end{thm}
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:open-open-cover}
 Let $\{V_\alpha\}$ be an open cover of topological space $\c{X}$.
 Show that $W\subset \c{X}$ is open if and only if for any $\alpha$ the intersection $W\cap V_\alpha$ is open.  
 \end{thm}
@@ -27,56 +27,41 @@ Analogously, a subset $S$ in a topological space $\c{X}$ is called \emph{compact
 contains a finite subcover of $S$.
 \end{thm}
 
-As you will see, compact spaces are particularly nice and simple topological spaces.
 Clearly, \textit{any finite topological space is compact}.
 In fact, the role of compact spaces in topology reminds the role of finite sets in set theory.
 The next exercise provides a source of examples of infinite compact spaces.
 More interesting examples are given in Section~\ref{sec:compact-interval}.
 
-\begin{thm}{Exercise}
-Any space equipped with cofinite topology is compact. 
+\begin{thm}{Exercise}\label{ex:cofinite-compact}
+Any set equipped with cofinite topology is compact. 
 \end{thm}
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:unbounded-noncompact}
 Let $S$ be an unbounded subset of the real line; that is, for any $c\in \RR$ there is $s\in S$ such that $|s|>c$.
 Show that $S$ is not compact.
-
-\noindent{\footnotesize Hint: Consider covering of $S$ by intervals $(-c,c)$ for all $c>0$.}
-\end{thm}
-
-\begin{thm}{Exercise}
-Let $B$ be a bounded subset of $\RR$; set $s=\sup B$.
-Assume $s\notin B$.
-Show that $B$ is not compact.
-
-\noindent{\footnotesize Hint: Consider the covering of $B$ by intervals $(-\infty,x)$ for all $x<s$.}
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:closed-compact}
 Let $S$ be a subset of $\RR$.
 Assume $S$ is not closed.
 Show that $S$ is not compact.
-
-\noindent{\footnotesize Hint: Choose a point $s\in\partial S\backslash S$ and consider the cover by intervals $(-\infty, s-\eps)$ and $(s+\eps,+\infty)$ for all $\eps>0$.}
 \end{thm}
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:compact-set-subspace}
 Show that a subset $S$ of a topological space is compact if and only if $S$ equipped with induced topology is a compact space.
 \end{thm}
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:noncompact-n}
 Construct a topological space with two compact sets such that their intersection is not compact.
 \end{thm}
 
-\begin{thm}{Advanced exercise} Let $f\:\c{X}\to\c{K}$ be a map between topological spaces.
+\begin{thm}{Advanced exercise}\label{ex:closed-graph} 
+Let $f\:\c{X}\to\c{K}$ be a map between topological spaces.
 Assume $\c{K}$ is compact.
 Show that $f$ is continuous if and only if its graph $\set{(x,f(x))}{x\in\c{X}}$ is a closed set in $\c{X}\times\c{K}$. 
 \end{thm}
 
-\section{Finite intersection property}
-
-The following proposition describes the so-called \emph{finite intersection property};
-it is a useful reformulation of compactness via closed subsets. 
+\section{Finite intersection property} 
 
 \begin{thm}{Proposition}
 Show that space $\c{X}$ is compact if for any collection of closed sets $\{Q_\alpha\}$ in $\c{X}$ such that 
@@ -87,17 +72,20 @@ such that
 
 \end{thm}
 
+The condition in the above proposition is called \emph{finite intersection property}.
+
 \parit{Proof.}
-Consider the complements $V_\alpha=\c{X}\backslash Q_\alpha$.
+Consider the complements $V_\alpha=\c{X}\setminus Q_\alpha$.
 Note that 
-\[\bigcup_\alpha V_\alpha=\c{X}\backslash \left(\bigcap_{\alpha}Q_\alpha\right)=\c{X};\]
+\[\bigcup_\alpha V_\alpha=\c{X}\setminus \left(\bigcap_{\alpha}Q_\alpha\right)=\c{X};\]
 that is, $\{V_\alpha\}$ is a cover of $\c{X}$.
 
 Choose a finite subcover $\{V_{\alpha_1},\dots,V_{\alpha_n}\}$ and observe that
-\[Q_{\alpha_1}\cap\dots\cap Q_{\alpha_n}=\c{X}\backslash(V_{\alpha_1}\cup\dots\cup V_{\alpha_n})=\emptyset.\]\qedsf
+\[Q_{\alpha_1}\cap\dots\cap Q_{\alpha_n}=\c{X}\setminus(V_{\alpha_1}\cup\dots\cup V_{\alpha_n})=\emptyset.\]\qedsf
 
 
-\begin{thm}{Exercise} Let $Q_1\supset Q_2\supset\dots$ be a nested sequence of closed nonempty sets in a compact space $\c{K}$.
+\begin{thm}{Exercise}\label{ex:nested-compact}
+Let $Q_1\supset Q_2\supset\dots$ be a nested sequence of closed nonempty sets in a compact space $\c{K}$.
 Show that there is a point $q\in \c{K}$ such that $q\in Q_n$ for any $n$.
 \end{thm}
 
@@ -117,9 +105,9 @@ Note that $\{V_\alpha\}$ is also a cover for two intervals
 \[[a_0,\tfrac{a_0+b_0}2]
 \quad\text{and}\quad
 [\tfrac{a_0+b_0}2,b_0].\]
-If $\{V_\alpha\}$ would have a finite subcover of each of these two subintervals,
-then these subcovers together would give a finite cover of $[a,b]$.
-Therefore $\{V_\alpha\}$ has no finite subcovers of \textit{at least one} of these subintervals;
+Assume $\{V_\alpha\}$ has a finite subcover of each of these two subintervals.
+Then these two subcovers together give a finite cover of $[a,b]$.
+It follows that $\{V_\alpha\}$ has no finite subcovers of \textit{at least one} of these subintervals;
 denote it by $[a_1,b_1]$;
 so either $a_1=a_0$ and $b_1=\tfrac{a_0+b_0}2$ or $a_1=\tfrac{a_0+b_0}2$ and $b_1=b_0$.
 
@@ -167,7 +155,7 @@ Since $K$ is compact, there is a finite subcover $\{V_{\alpha_1},\z\dots, V_{\al
 Observe that $\{W_{\alpha_1},\dots, W_{\alpha_n}\}$ is a cover of $Q$.
 \qeds
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:S1-compact}
 Show that the circle $\mathbb{S}^1$ is compact.
 \end{thm}
 
@@ -179,7 +167,7 @@ A closed set in a compact space is compact.
 
 \parit{Proof.}
 Let $Q$ be a closed set in a compact space $\c{K}$.
-Since $Q$ is closed, its complement $W=\c{K}\backslash Q$ is open.
+Since $Q$ is closed, its complement $W=\c{K}\setminus Q$ is open.
 
 Consider an open cover $\{V_\alpha\}_{\alpha\in\c{I}}$ of $Q$.
 Add to it $W$; that is, consider the collection of sets that includes $W$ and all $V_\alpha$ for $\alpha\in\c{I}$.
@@ -192,7 +180,7 @@ Observe that $\{V_{\alpha_1},\dots,V_{\alpha_n}\}$ is a cover of $Q$, hence the 
 
 In the proof, we add an extra open set to the cover, used it, and took it away.
 This type of reasoning is useful in all branches of mathematics;
-sometimes it is called \emph{17 camels trick}.%
+sometimes it is called \emph{17 camels trick}%
 \footnote{The name comes from the following mathematical parable:
 \textit{A father left 17 camels to his three sons and, according to the will,
 the eldest son should be given half of all camels,
@@ -200,9 +188,9 @@ the middle son the 1/3 part,
 and the youngest son the 1/9.
 It was impossible to follow his will until a wise man appeared.
 He added his own camel, the oldest son took $18/2=9$ camels, the second son took $18/3=6$ camels, and the third son $18/9=2$ camels, the wise man took his camel and went away.}}
+\cite{17-camels}.
 
-
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:closed-bounded=compact}
 Show that any closed bounded subset of the real line is compact.
 \end{thm}
 
@@ -216,10 +204,31 @@ Then their product space $\c{X}\times\c{Y}$ is compact.
 
 The following exercise provides a partial converse.
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:compact-product}
 Suppose that a product space $\c{X}\times\c{Y}$ is nonempty and compact.
 Show that its factors $\c{X}$ and $\c{Y}$ are compact.
 \end{thm} 
+
+It is instructive to solve the following exercise before reading the proof of \ref{thm:compact-product}.
+
+\begin{thm}{Exercise}\label{ex:fake-proof(thm:compact-product)}
+Find a flaw in the following argument.
+\end{thm}
+
+\parit{Fake proof of \ref{thm:compact-product}.}
+Fix an open cover $\{U_\beta\}$ of $\c{X}\times\c{Y}$.
+Consider all product sets $V_\alpha\times W_\alpha$ such that $V_\alpha\times W_\alpha\subset U_\beta$ for some $\beta$ (as before, $V_\alpha$ and $W_\alpha$ are open in $\c{X}$ and $\c{Y}$ respectively).
+Note that $\{V_\alpha\times W_\alpha\}$ is a cover of $\c{X}\times\c{Y}$ that is inscribed in $\{U_\beta\}$.
+By the observation, it is sufficient to find a finite subcover of $\{V_\alpha\times W_\alpha\}$.
+
+Note that $\{V_\alpha\}$ is a cover of $\c{X}$.
+Since $\c{X}$ is compact, we can choose its finite subcover $\{V_{\alpha_1},\dots,V_{\alpha_n}\}$.
+Similarly, $\{W_\alpha\}$ is a cover of $\c{Y}$.
+So we can choose its finite subcover $\{W_{\alpha_1'},\dots,W_{\alpha_m'}\}$.
+
+Finally observe that 
+\[\{V_{\alpha_1}\times W_{\alpha_1},\dots,V_{\alpha_n}\times W_{\alpha_n},V_{\alpha_1'}\times W_{\alpha_1'},\dots,V_{\alpha_m'}\times W_{\alpha_m'}\}\] is a finite cover of $\c{X}\times\c{Y}$.
+\qeds
 
 
 In the proof, we will need the following definition.
@@ -229,13 +238,13 @@ Let $\{V_\alpha\}$ and $\{W_\beta\}$ be two covers of a topological space $\c{X}
 We say that $\{V_\alpha\}$ is \emph{inscribed} in $\{W_\beta\}$ if for any $\alpha$ there is $\beta$ such that $V_\alpha\subset W_\beta$.
 \end{thm}
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:inscribed-cover-base}
 Let $\s{B}$ be a base in a topological space $\c{X}$.
 Show that for any cover $\{V_\alpha\}$ of $\c{X}$ there is an inscribed cover of sets in $\s{B}$.
 \end{thm}
 
-Supose that $\{V_\alpha\}$ is \emph{inscribed} in $\{W_\beta\}$.
-If $\{V_\alpha\}$ has a finite inscribed cover $\{V_{\alpha_1},\dots,V_{\alpha_n}\}$.
+Suppose that $\{V_\alpha\}$ is \emph{inscribed} in $\{W_\beta\}$.
+If $\{V_\alpha\}$ has a finite subcover $\{V_{\alpha_1},\dots,V_{\alpha_n}\}$.
 Then for each $\alpha_i$ we can choose $\beta_i$ such that $V_{\alpha_i}\subset  W_{\beta_i}$.
 Note that $\{W_{\beta_1},\dots,W_{\beta_n}\}$ is a finite subcover of $\{W_\beta\}$.
 It proves the following:
@@ -281,34 +290,14 @@ that is, $\c{X}\times\c{Y}$ can be covered by a finite set of sets from $\{N_x\t
 Applying \ref{clm:Nx}, we get that $\c{X}\times\c{Y}$ can be covered by finite number of product sets from $\{V_\alpha\times W_\alpha\}$.
 \qeds
 
-\begin{thm}{Exercise}
-Find a flaw in the following argument.
-\end{thm}
-
-\parit{Fake proof of \ref{thm:compact-product}.}
-Fix an open cover $\{U_\beta\}$ of $\c{X}\times\c{Y}$.
-Consider all product sets $V_\alpha\times W_\alpha$ such that $V_\alpha\times W_\alpha\subset U_\beta$ for some $\beta$ (as before, $V_\alpha$ and $W_\alpha$ are open in $\c{X}$ and $\c{Y}$ respectively).
-Note that $\{V_\alpha\times W_\alpha\}$ is a cover of $\c{X}\times\c{Y}$ that is inscribed in $\{U_\beta\}$.
-By the observation, it is sufficient to find a finite subcover of $\{V_\alpha\times W_\alpha\}$.
-
-Note that $\{V_\alpha\}$ is a cover of $\c{X}$.
-Since $\c{X}$ is compact, we can choose its finite subcover $\{V_{\alpha_1},\dots,V_{\alpha_n}\}$.
-Similarly, $\{W_\alpha\}$ is a cover of $\c{Y}$.
-So we can choose its finite subcover $\{W_{\alpha_1'},\dots,W_{\alpha_m'}\}$.
-
-Finally observe that 
-\[\{V_{\alpha_1}\times W_{\alpha_1},\dots,V_{\alpha_n}\times W_{\alpha_n},V_{\alpha_1'}\times W_{\alpha_1'},\dots,V_{\alpha_m'}\times W_{\alpha_m'}\}\] is a finite cover of $\c{X}\times\c{Y}$.
-\qeds
-
 
 \section{Remarks on metric spaces}
 
 Recall that any metric space has natural topology.
 In particular we may talk about \emph{compact metric spaces}.
 
-\begin{thm}{Proposition}
-Let $\c{M}$ be a metric space.
-Then $\c{M}$ is compact if and only if any sequence of points $x_n\in \c{M}$ has a converging subsequence.
+\begin{thm}{Proposition}\label{prop:seq-comp-metr}
+A metric space $\c{M}$ is compact if and only if any sequence of points $x_n\in \c{M}$ has a converging subsequence.
 \end{thm}
 
 We will prove only the only-if part of this proposition;
@@ -320,40 +309,37 @@ The theorem above states that these two notions are equivalent for metric spaces
 
 {\sloppy
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:product-sequentially-compact}
 Show that product of two sequentially compact spaces is sequentially compact.
 \end{thm}
 
 }
 
-\parit{Proof; only-if part.}
+\parit{Proof of the only-if part in {prop:seq-comp-metr}.}
 Choose a sequence $x_n\in \c{M}$.
 
 Note that a point $p\in \c{M}$ is a limit of subsequence of $x_n$ if and only if for any $\eps>0$, the ball $\Ball(p,\eps)$ contains infinite number of elements of $x_n$.
 Indeed, if this property holds, then we can choose $i_1$ such that $x_{i_1}\in \Ball(p,1)$, further $i_2>i_1$ such that $x_{i_2}\in \Ball(p,\tfrac12)$ and so on; on $n$\textsuperscript{th} step we get $i_n>i_{n-1}$ such that $x_{i_n}\in \Ball(p,\tfrac1n)$.
-Note that obtained subsequence $x_{i_1},x_{i_2},\dots$ converges to $p$.
+The obtained subsequence $x_{i_1},x_{i_2},\dots$ converges to $p$.
 
 Assume the sequence $x_n$ has no converging subsequence.
 Then for any point $p$ there is $\eps_p>0$ such that $\Ball(p,\eps_p)$ contains only finitely many elements of $x_n$.
 Note that $\Ball(p,\eps_p)$ for all $p$ forms a cover of $\c{M}$.
 Since the sequence is infinite, this cover does not have a fine subcover.
 That is, if a sequence $x_n$ has no converging subsequence, then $\c{M}$ is not compact.
-It proves the only-if part of the proposition.
 \qeds
 
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:lebesgue-number}
 Let $\{V_\alpha\}$ be a cover of a compact metric space $\c{M}$.
 Show that there is $\eps > 0$ such that for every $x\in\c{M}$ there is $\alpha$ such that $V_\alpha\supset \Ball(x,\eps)$.
-
-\noindent{\footnotesize Hint: Show and use that there is $\eps>0$ and a finite cover of $\c{M}$ by balls $\Ball(p_i,r_i)$ such that for each $i$ the ball $\Ball(p_i, r_i+\eps)$ lies in some $V_{\alpha_i}$.}
 \end{thm}
 
 
-The number $\eps$ in the exercise is called \emph{Lebesgue number} and the statement is called \emph{Lebesgue lemma}.
+The number $\eps$ in the exercise is called \emph{Lebesgue number} of the cover and the statement is called \emph{Lebesgue lemma}.
 It is a useful tool for compact metric spaces.
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:lebesgue=1}
 Construct a noncompact metric space $\c{M}$ such that $1$ is a Lebesgue number for any of cover of $\c{M}$. 
 \end{thm}
 

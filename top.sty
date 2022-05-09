@@ -7,6 +7,7 @@
 \usepackage{pifont}
 \usepackage{mathrsfs}
 \usepackage{epsfig,lpic,wrapfig}
+\usepackage{multicol}
 
 \usepackage{accsupp}
 \usepackage{soulutf8}
@@ -50,8 +51,33 @@ unicode
   { \textbf{\thecontentspage}}
   [; ][.]
 
-\usepackage{mathabx}
-\def\acts{\mathrel{\reflectbox{$\righttoleftarrow$}}}
+
+\usepackage[T1,T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\DeclareUnicodeCharacter{2010}{-}% support older LaTeX versions
+
+
+\usepackage[
+sorting=none,
+bibencoding=auto,
+backend=biber,
+maxnames=10,
+%babel=other,
+autolang=other,
+doi=false,
+url=false,
+style=numeric-comp,
+isbn=false]{biblatex}
+\usepackage{csquotes}
+\AtEveryBibitem{\clearlist{language}}
+\AtEveryBibitem{\clearlist{note}}
+\renewbibmacro{in:}{}
+\renewcommand*{\bibfont}{\scriptsize}
+\addbibresource{library.bib}
+
+\usepackage[russian,
+german,
+english]{babel}
 
 \def\DD{\mathbb{D}}
 \def\H{\mathrm{Homeo}}
@@ -150,3 +176,7 @@ unicode
 \renewcommand{\thesection}{\Alph{section}}
 
 \renewcommand{\chaptername}{Lecture}
+
+\newenvironment{Figure}
+  {\par\medskip\noindent\minipage{\linewidth}}
+  {\endminipage\par\medskip}

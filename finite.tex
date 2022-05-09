@@ -1,0 +1,43 @@
+\chapter{Finite spaces}
+
+Finite spaces provide a source of examples of topological spaces.
+They also have some distinguishing properties, which we will discuss in this chapter.
+
+\section{Arbitrary unions and intersections}
+
+Let $\c{F}$ be a finite topological space;
+that is, a finite set equipped with a topology.
+
+Note that $\c{F}$ contains finitely many distinct open sets.
+Since intersection of finite collection of open sets is open,
+we can conclude that arbitrary intersection of open sets in $\c{F}$ is open.
+
+Similarly, arbitrary union of closed sets in $\c{F}$ is closed.
+
+In other words, for the finite topological spaces $\c{F}$, open and closed sets have the same properties.
+In particular one could define a new topology on $\c{F}$ by declaring all open sets to be closed and the other way around.
+
+These observations are the key properties which distinguish finite spaces from the rest of topological spaces.
+
+\section{Preorder}
+
+Let $\c{F}$ be a finite topological space.
+
+Given a point $x\in \c{F}$,
+denote by $\bar x$ the closure of one-point set $\{x\}$.
+
+For two points $x,y\in \c{F}$ write $x\succcurlyeq y$ if $\bar x\supset \bar y$.
+The introduced relation ``$\succcurlyeq$'' behaves very much as ``$\ge$'' --- formally speaking it defines a \emph{preorder} on $\c{F}$;
+that is, for any $x,y,z\in\c{F}$ the following conditions are fulfilled: 
+\begin{itemize}
+\item $x\succcurlyeq x$ (reflexivity).
+\item if $x\succcurlyeq y$ and $y\succcurlyeq z$, then $x\succcurlyeq z$ (transitivity).
+\end{itemize}
+
+Conversely, if $\c{F}$ is a finite set with preorder ``$\succcurlyeq$'',
+one can define topology on $\c{F}$ by declaring that for any $\bar x=\set{y\in \c{F}}{x\succcurlyeq y}$ and all its finite intersections and unions are closed.
+Thus the partial order is an equivalent way to describe topology.
+
+
+
+

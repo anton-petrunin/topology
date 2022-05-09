@@ -1,0 +1,405 @@
+\chapter{Semisolutions}
+
+\begin{multicols}{2}
+
+\parbf{\ref{ex:d1+d2+dinfty}.}
+Check all the conditions in Definition~\ref{def:metric-space}.
+Further we discuss the triangle inequality --- the remaining conditions are nearly evident.
+
+Let $a=(x_a,y_a)$, $b=(x_b,y_b)$, and $c\z=(x_c,y_c)$.
+Set 
+\begin{align*}
+x_1&=x_b-x_a, 
+&
+y_1&=y_b-y_a,
+\\
+x_2&=x_c-x_b,
+&
+y_2&=y_c-y_b.
+\end{align*}
+
+\parit{(a).}
+The inequality
+$$|a-c|_1\le |a-b|_1+|b-c|_1$$
+can be written as 
+$$|x_1+x_2|+|y_1+y_2|
+\le 
+|x_1|+|y_1|+|x_2|+|y_2|.$$
+The latter follows since $|x_1+x_2|\le |x_1|+|x_2|$ 
+and
+$|y_1+y_2|\le |y_1|+|y_2|$.
+
+\parit{(b).}
+The inequality
+$$|a-c|_2\le |a-b|_2+|b-c|_2\eqlbl{eq:trig-inq-d2}$$
+can be written as 
+\begin{align*}
+&\sqrt{\bigl(x_1+x_2\bigr)^2+\bigl(y_1+y_2\bigr)^2}\le
+\\
+&\qquad\le
+\sqrt{x_1^2+y_1^2}+\sqrt{x_2^2+y_2^2}.
+\end{align*}
+Take the square of the left and the right-hand sides,
+simplify,
+take the square again and simplify again.
+You should get the following inequality:
+$$0
+\le 
+(x_1\cdot y_2-x_2\cdot y_1)^2,$$
+which is equivalent to \ref{eq:trig-inq-d2}
+and evidently true.
+
+\parit{(c).}
+The inequality
+$$|a-c|_\infty\le |a-b|_\infty+|b-c|_\infty$$
+can be written as 
+$$
+\begin{aligned}
+&\max\{|x_1+x_2|,|y_1+y_2|\}\le
+\\
+&\qquad\le 
+\max\{|x_1|,|y_1|\}+\max\{|x_2|,|y_2|\}.
+\end{aligned}
+\eqlbl{eq:max-trig}$$
+Without loss of generality, we may assume that 
+$$\max\{|x_1+x_2|,|y_1+y_2|\}=|x_1+x_2|.$$
+Further,
+\begin{align*}
+|x_1+x_2|&\le |x_1|+|x_2|\le 
+\\
+&\le\max\{|x_1|,|y_1|\}+\max\{|x_2|,|y_2|\}.
+\end{align*}
+Hence \ref{eq:max-trig} follows.
+
+\parbf{\ref{ex:not-a-metric}.}
+Check the triangle inequality for $0$, $\tfrac12$, and~$1$.
+
+\parbf{\ref{ex:metric}.}
+Check the conditions in \ref{def:metric-space}.
+
+\parbf{\ref{ex:dist-cont}.}
+Show that the triangle inequality implies that
+$|f(x)-f(y)|<\eps$,
+if
+$|x-y|_{\c{X}}<\eps$;
+make a conclusion.
+
+\parbf{\ref{ex:comp+cont}.}
+Fix $x\in \mathcal{X}$ and $y\in\mathcal{Y}$
+such that $f(x)=y$.
+
+Fix $\epsilon>0$.
+Since $g$ is continuous at $y$, there is a positive value $\delta_1$ such that 
+$$d_{\mathcal{Z}}(g(y'),g(y))<\epsilon
+\quad
+\text{if}
+\quad
+d_{\mathcal{Y}}(y',y)<\delta_1.$$ 
+
+Since $f$ is continuous at $x$, there is $\delta_2>0$ such that 
+$$d_{\mathcal{Y}}(f(x'),f(x))\z<\delta_1
+\quad
+\text{if}
+\quad
+d_{\mathcal{X}}(x',x)<\delta_2.$$ 
+
+Since $f(x)=y$, we get that
+$$d_{\mathcal{Z}}(h(x'),h(x))<\epsilon
+\quad
+\text{if}
+\quad
+d_{\mathcal{X}}(x',x)<\delta_2.$$ 
+Hence the result.
+
+\parbf{\ref{ex:isom-cont}.} \ref{SHORT.ex:isom-cont:continuous}
+Show that the triangle inequality implies that
+$|f(x)-f(y)|_{\c{Y}}<\eps$,
+if
+$|x-y|_{\c{X}}<\eps$;
+make a conclusion.
+
+\parit{\ref{SHORT.ex:isom-cont:injective}.}
+Apply \ref{def:metric-space:b}.
+
+\parbf{\ref{ex:to-descrete}.} Show and use that in \ref{def:cont-epsilon-delta} one can take $\delta=1$ for any $\eps>0$.
+
+\parbf{\ref{ex:infinite-inverse-image}.}
+Learn about space-filling curves and think.
+
+\parbf{\ref{ex:d1+d2+dinfty-balls}.}
+
+\begin{Figure}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-60}
+\vskip-0mm
+\end{Figure}
+
+\parbf{\ref{ex:r<2R}.}
+Apply triangle inequality.
+For the second part, describe the balls $B(2,3)$ and $B(0,4)$ in $[0,\infty)$.
+
+\parbf{\ref{ex:def:cont-epsilon-delta=def:cont-balls}.}
+Spell the definitions.
+
+\parbf{\ref{ex:ball-is-open}.}
+If $y\in B(x,R)$, then $r=R-|x-y|>0$.
+Use triangle inequality to show that $B(y,r)\z\subset B(x,R)$.
+Make a conclusion.
+
+\parbf{\ref{ex:open-union}.} Apply \ref{def:open}.
+
+\parbf{\ref{ex:open-intersection}.} Apply \ref{def:open}.
+
+\parbf{\ref{ex:union-of-balls}.} The if part follows from \ref{ex:ball-is-open} and \ref{ex:open-union}.
+It remains to prove the only-if part.
+
+Let $V$ be an open set. 
+By \ref{def:open}, for any $x\in V$ there is $r_x>0$ such that $B(x,r_x)\subset V$.
+Observe that
+\[V=\bigcup_{x\in V} B(x,r_x).\]
+
+\parbf{\ref{ex:infty-open-intersection}.}
+Consider that open segments $(-\eps,\eps)$ for all $\eps>0$ in $\RR$.
+Note that 
+\[\{0\}=\bigcap_{\eps>0}(-\eps,\eps)\]
+and the one-point set $\{0\}$ is not open.
+
+\parbf{\ref{ex:d1+d2+dinfty-open}.}
+Show and use that 
+\[B(x,r)_1\subset B(x,r)_2\subset B(x,r)_\infty\subset B(x,2\cdot r)_1;\]
+here $B(x,r)_1$, $B(x,r)_2$, and $B(x,r)_\infty$ denote the balls in the metrics $|{*}-{*}|_1$, $|{*}-{*}|_2$, and $|{*}-{*}|_\infty$ respectively.
+
+\parbf{\ref{ex:image-of-open}.} 
+Look at the image of $\RR$ for the function $x\mapsto |x|$.
+
+\parbf{\ref{ex:unique-lim-metr}.}
+Assume the contrary; that is, a sequence $x_1,x_2,\dots$ has two limits $y$ and $z$.
+Set $r=|y-z|$.
+Note that $B(y,\tfrac r2)$ contains all but finitely many elements of the sequence $x_1,x_2,\dots$;
+the same holds for $B(z,\tfrac r2)$.
+Observe that $B(y,\tfrac r2)\cap B(z,\tfrac r2)=\emptyset$ and arrive at a contradiction.
+
+\parbf{\ref{ex:continuous-limit}.}
+Suppose $f$ is not continuous.
+Note that it means that there is a point $x_\infty$ and $\eps>0$ such that there is a point $x_n\in B(x_\infty,\tfrac1n)$ such that $|f(x_n)-f(x_\infty)|>\eps$ in particular, $y_n=f(x_n)$ does not converge to $y_\infty=f(x_\infty)$. 
+It proves the if part of the exercise.
+
+To prove the only-if part, suppose that there is a sequence $x_n\to x_\infty$ such that $y_n\not\to y_\infty$ as $n\to \infty$.
+Note that in this case we can pass to a subseqence so that $x_n\in B(x_\infty,\tfrac1n)$ and $|y_n-y_\infty|>\eps$ for some fixed $\eps>0$.
+From above $f$ is not continuous.
+
+\parbf{\ref{ex:nonclosed-nonopen}.}
+Show that the semiopen interval $[0,1)$ is neither open nor closed in $\RR$.
+
+\parbf{\ref{ex:closure-is-closed}.}
+Choose a point $z\in \bar{\bar A}$.
+It means that, there is a sequence $y_1,y_2,\dots\in\bar A$ such that $y_n\to z$ as $n\to\infty$.
+The latter means that for each $y_i$ there is a sequence $x_{i,1}, x_{i,2},\dots\in A$ such that $x_{i,n}\to y_i$ as $n\to\infty$.
+Try to choose a sequence of integers $m_n$ such that $x_{n,m_n}\to z$ as $n\to\infty$.
+Make a conclusion.
+
+\parbf{\ref{ex:closed-open-complement}.}
+Show that $Q$ is closed if $x\in Q$ if and only if $B(x,\eps)\cap Q\ne\emptyset$ for any $\eps>0$.
+Show that the latter is equivalent to $y\in V$ if and only if $B(y,\eps)\subset V$ for some $\eps>0$.
+Make a conclusion.
+
+\parbf{\ref{ex:finite+metrizable}.}
+Let $\c{F}$ be a finite metric space.
+Observe that there is $\eps>0$ such that $|x-y|>\eps$ for any two distinct points $x,y\in\c{F}$.
+It follows that $\{x\}=B(x,\eps)$ for any $x\in\c{F}$;
+in particular, each one-point set is open.
+By \ref{def:top-space:u}, any set in $\c{F}$ is open.
+
+
+\parbf{\ref{ex:cofinite-metrizable}.}
+Let $\c{X}$ be an infinite set with cofinite topology.
+Show that any two nonempty open sets in $\c{X}$ have nonempty intersection.
+Show that the latter does not hold for open balls in a metric space with at least two points.
+
+\parbf{\ref{ex:weaker-top}.}
+Choose $W\in \s{W}$.
+By assumption, for any $w\in W$ there is $S_w\in \s{S}$ such that $W\supset S_w\ni w$.
+Observe that 
+\[W=\bigcup_{w\in W}S_w.\]
+It follows that $\s{W}\subset \s{S}$;
+in other words, any $\s{W}$-open set is $\s{S}$-open.
+
+\parbf{\ref{ex:connect-two-point-maps}}; \ref{SHORT.ex:connect-two-point-maps:R->X}.
+Consider the function defined by
+\[
+f(x)=
+\begin{cases}
+\quad a &\text{if}\ x< 0,
+\\
+\quad b &\text{if}\ x\ge 0.
+\end{cases}
+\]
+
+\parit{\ref{SHORT.ex:connect-two-point-maps:X->R}.} Suppose $f\:\c{X}\to \RR$ is nonconstant;
+that is, $f(a)\ne f(b)$.
+Note that $W=\RR\setminus\{f(a)\}$ is an open set containing $b$.
+Assume $f$ is continuous.
+Then $\{b\}=f^{-1}(W)$ is an open set --- a contradiction.
+
+\parbf{\ref{ex:Rge}}; \ref{SHORT.ex:Rge:top}.Check the conditions in \ref{def:top-space}.
+
+\parit{\ref{SHORT.ex:Rge:nonmetr}.}
+Show that that every two nonempty set in $\RR_\ge$ intersect.
+Show that the latter statement does not hold in a metric space with at least two points.
+Make a conclusion.
+
+\parit{\ref{SHORT.ex:Rge:mono}.}
+To do the only-if part check the condition in \ref{def:cont-top}.
+
+To do the if part, suppose $f$ is not nondecreasing;
+that is, we can find $x<y$ such that $f(x)>f(y)$.
+Note that the inverse image $V=f^{-1}([f(x),\infty))$ contains $x$ but does not contain $y$.
+Show that $V$ is not open in $\RR_\ge$, so $f\:\RR_\ge\to\RR_\ge$ is not continuous. 
+
+\parbf{\ref{ex:closed-continuous}.} 
+Set $a=f|_A$ and $b=f|_{B}$; choose a closed set $Q\subset \c{Y}$.
+By \ref{prop:cont-closed}, $a^{-1}(Q)$ and $b^{-1}(Q)$ are closed.
+Note that $a^{-1}(Q)=f^{-1}(Q)\cap A$ and $b^{-1}(Q)=f^{-1}(Q)\cap B$.
+Apply \ref{def:closed-properties:n} to show that $f^{-1}(Q)$ is closed.
+Further, apply \ref{prop:cont-closed}.
+
+\parbf{\ref{ex:closure-interior-complement}.}
+
+\parbf{\ref{ex:closure-closure}.}
+
+\parbf{\ref{ex:kuratowski}.}
+
+\parbf{\ref{ex:bry-closed}.}
+
+\parbf{\ref{ex:bry<closure}.}
+
+\parbf{\ref{ex:3=bry}.}
+
+\parbf{\ref{ex:bry-nbhd}.}
+
+\parbf{\ref{ex:dense-nbhd}.}
+
+\parbf{\ref{ex:def:limit-metric=def:limit-top}.}
+
+\parbf{\ref{ex:concrete-lim}.}
+
+\parbf{\ref{ex:lim-weaker}.}
+
+\parbf{\ref{ex:cocountable-top}.}
+
+\parbf{\ref{ex:bijection-ne-homeo}.}
+
+\parbf{\ref{ex:exp}.}
+
+\parbf{\ref{ex:arctan}.}
+
+\parbf{\ref{ex:homeo=eq}.}
+
+\parbf{\ref{ex:inversion}.}
+Learn about inversion and try to apply it.
+
+\parbf{\ref{ex:star-shaped}.}
+
+\parbf{\ref{ex:cont-dense}.}
+
+\parbf{\ref{ex:bijective-closed-open}.}
+
+\parbf{\ref{ex:closed-open-cont}.}
+
+\parbf{\ref{ex:closed-open-cont-R}.}
+
+\parbf{\ref{ex:graph}.}
+
+\parbf{\ref{ex:base}.}
+
+\parbf{\ref{ex:base-nbhd}.}
+
+\parbf{\ref{ex:induced-nonmetrizable}.}
+
+\parbf{\ref{ex:open-open-cover}.}
+
+\parbf{\ref{ex:cofinite-compact}.}
+
+\parbf{\ref{ex:unbounded-noncompact}.}
+Consider covering of $S$ by intervals $(-c,c)$ for all $c>0$.
+
+\parbf{\ref{ex:closed-compact}.}
+Choose a point $s\in\bar S\setminus S$ and consider the cover by intervals $(-\infty, s-\eps)$ and $(s+\eps,+\infty)$ for all $\eps>0$.
+
+\parbf{\ref{ex:compact-set-subspace}.}
+
+\parbf{\ref{ex:noncompact-n}.}
+
+\parbf{\ref{ex:closed-graph}.}
+
+\parbf{\ref{ex:nested-compact}.}
+
+\parbf{\ref{ex:S1-compact}.}
+
+\parbf{\ref{ex:closed-bounded=compact}.}
+
+\parbf{\ref{ex:compact-product}.}
+
+\parbf{\ref{ex:fake-proof(thm:compact-product)}.}
+
+\parbf{\ref{ex:inscribed-cover-base}.}
+
+\parbf{\ref{ex:product-sequentially-compact}.}
+
+\parbf{\ref{ex:lebesgue-number}.}
+Show and use that there is $\eps>0$ and a finite cover of $\c{M}$ by balls $\Ball(p_i,r_i)$ such that for each $i$ the ball $\Ball(p_i, r_i+\eps)$ lies in some $V_{\alpha_i}$.
+
+\parbf{\ref{ex:lebesgue=1}.}
+
+\parbf{\ref{ex:hausdorff-unique-limit}.}
+
+\parbf{\ref{ex:hausdorff-diagonal}.}
+
+\parbf{\ref{ex:nonclosed-compact}.}
+
+\parbf{\ref{ex:normal-hausdorff}.}
+
+\parbf{\ref{ex:move-topology:pushforward}.}
+
+\parbf{\ref{ex:pullback/pushforward}.}
+
+\parbf{\ref{ex:category-def-pull-push}.}
+
+\parbf{\ref{ex:open-closed-pushforward}.}
+
+\parbf{\ref{ex:eq-relation-f}.}
+
+\parbf{\ref{ex:[0,1]/(0,1)}.}
+
+\parbf{\ref{ex:[0,1]/0=1}.}
+
+\parbf{\ref{ex:D/S}.}
+
+\parbf{\ref{ex:g-homeo}.}
+
+\parbf{\ref{ex:quotient-map}.}
+
+\parbf{\ref{ex:quotient-connected}.}
+
+\parbf{\ref{ex:A<B<bar-A}.}
+
+\parbf{\ref{ex:R-connected}.}
+
+\parbf{\ref{ex:nonopen-connected-component}.}
+
+\parbf{\ref{ex:finite-number-connected-component}.}
+
+\parbf{\ref{ex:connected-component-disjoint}.}
+
+\parbf{\ref{ex:S1ne[0,1]}.}
+
+\parbf{\ref{ex:R2neR}.}
+
+\parbf{\ref{ex:not-homeo}.}
+
+\parbf{\ref{ex:sierpinski}.}
+
+%\parbf{\ref.}
+
+\end{multicols}

@@ -53,6 +53,7 @@ n=9;
 
 draw (0,0)*u--(1,0)*u;
 fill circle((0,1)*u,.7) withcolor 0;
+fill circle((0,0)*u,.7) withcolor 0;
 draw circle((0,1)*u,1/3.5*u) dashed evenly;
 
 for i=1 step 1 until 3:
@@ -65,6 +66,7 @@ endfor
 
 label.lft(btex {\scriptsize $\dots$} etex, (1/n,.5)*u+(4,0));
 label.lft(btex $y$ etex, (0,1)*u);
+label.lft(btex $x$ etex, (0,0)*u);
 endfig;
 
 beginfig(30) 
@@ -158,4 +160,87 @@ draw (z.d--z.c--(1-k)[z.b,z.c]--(1-k)[z.a,z.d]--cycle) shifted z.shift pensemibo
 draw (.5[k[z.b,z.c],k[z.a,z.d]]--.5[(1-k)[z.b,z.c],(1-k)[z.a,z.d]]) shifted z.shift pensemibold;
 endfig;
 
+beginfig(50)
+save u,p;
+path p[];
+u:=2cm;
+
+z.o=origin;
+z.a=(1,0)*u;
+z.b=z.a rotated 60;
+
+picture triangle[];
+triangle1=image( fill z.o--z.a--z.b--cycle withcolor 0);
+triangle2=image(
+draw triangle1 scaled .5;
+draw triangle1 shifted z.a scaled .5;
+draw triangle1 shifted z.b scaled .5;
+);
+triangle3=image(
+draw triangle2 scaled .5;
+draw triangle2 shifted z.a scaled .5;
+draw triangle2 shifted z.b scaled .5;
+);
+triangle4=image(
+draw triangle3 scaled .5;
+draw triangle3 shifted z.a scaled .5;
+draw triangle3 shifted z.b scaled .5;
+);
+triangle5=image(
+draw triangle4 scaled .5;
+draw triangle4 shifted z.a scaled .5;
+draw triangle4 shifted z.b scaled .5;
+);
+triangle6=image(
+draw triangle5 scaled .5;
+draw triangle5 shifted z.a scaled .5;
+draw triangle5 shifted z.b scaled .5;
+);
+triangle7=image(
+draw triangle6 scaled .5;
+draw triangle6 shifted z.a scaled .5;
+draw triangle6 shifted z.b scaled .5;
+);
+
+draw triangle7;
+
+endfig;
+
+beginfig(60)
+save u,p;
+path p[];
+u:=.6cm;
+
+z.shift=(3,0)*u;
+
+picture ball[];
+ball1=image(
+drawarrow ddline((-1,0)*u,(1,0)*u)(.2,.2);
+drawarrow ddline((0,-1)*u,(0,1)*u)(.2,.2);
+p1=(-1,0)*u--(0,1)*u--(1,0)*u--(0,-1)*u--cycle;
+draw p1 pensemibold;
+hatchfill p1  withcolor (67, 1mm, -.5bp);
+);
+
+ball2=image(
+drawarrow ddline((-1,0)*u,(1,0)*u)(.2,.2);
+drawarrow ddline((0,-1)*u,(0,1)*u)(.2,.2);
+p2= circle(origin,1*u);
+draw p2 pensemibold;
+hatchfill p2  withcolor (67, 1mm, -.5bp);
+);
+
+ball3=image(
+drawarrow ddline((-1,0)*u,(1,0)*u)(.2,.2);
+drawarrow ddline((0,-1)*u,(0,1)*u)(.2,.2);
+p3=(-1,-1)*u--(-1,1)*u--(1,1)*u--(1,-1)*u--cycle;
+draw p3 pensemibold;
+hatchfill p3  withcolor (67, 1mm, -.5bp);
+);
+
+draw ball1;
+draw ball2 shifted z.shift;
+draw ball3 shifted (2*z.shift);
+
+endfig;
 end

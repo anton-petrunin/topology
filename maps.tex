@@ -14,19 +14,19 @@ Topological spaces $\c{X}$ and $\c{Y}$ are called \emph{homeomorphic} (briefly, 
 \end{thm}
 
 
-\begin{thm}{Exercise}
-Give an example of continuous bijection between topological spaces that is \emph{not} a homeomorphism.
+\begin{thm}{Exercise}\label{ex:bijection-ne-homeo}
+Give an example of continuous bijection between topological spaces that is not a homeomorphism.
 \end{thm}
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:exp}
 Show that $x\mapsto e^x$ is a homeomorphism $\RR\to (0,\infty)$.
 \end{thm}
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:arctan}
 Construct a homeomorphism $f\:\RR\to (0,1)$.
 \end{thm}
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:homeo=eq}
 Show that $\simeq$ is an equivalence relation;
 that is, for any topological spaces $\c{X}$, $\c{Y}$, and $\c{Z}$ we have the following:
 \begin{subthm}{}
@@ -43,35 +43,37 @@ if $\c{X}\simeq\c{Y}$ and $\c{Y}\simeq\c{Z}$, then $\c{X}\simeq\c{Z}$.
 
 \end{thm}
 
-\begin{thm}{Advanced exercise}
+\begin{thm}{Advanced exercise}\label{ex:inversion}
 Prove that the complement of a circle in the Euclidean space is homeomorphic to the Euclidean space without line $\ell$ and a point $p\not\in\ell$.
 \end{thm}
 
-\begin{thm}{Advanced exercise}
+Recall that a figure $F$ is called \emph{star-shaped} if there exists a point $p\in F$ such that for all $x\in F$ the line segment $px$ lies in $F$.
+
+\begin{thm}{Advanced exercise}\label{ex:star-shaped}
 Any nonempty open star-shaped set in the plane is homeomorphic to the open disc.
 \end{thm}
 
-\begin{thm}{Advanced exercise}
+\begin{thm}{Advanced exercise}\label{ex:cont-dense}
 Show that the complements of two countable dense subsets of the plane are homeomorphic.
 \end{thm}
 
 \section{Closed and open maps}
 
 \begin{thm}{Definition}\label{def:open-closed-maps}
-A function between topological spaces 
+A map between topological spaces 
 $f\:\c{X}\to\c{Y}$ is called \emph{open} if, for any open set $V$ in $\c{X}$, the image $f(V)$ is open in~$\c{Y}$.
 
-A function between topological spaces 
+A map between topological spaces 
 $f\:\c{X}\to\c{Y}$ is called \emph{closed} if, for any closed set $Q$ in $\c{X}$, the image $f(Q)$ is closed in $\c{Y}$.
 \end{thm}
 
-Note that homeomorphism can be defined as a \emph{continuous open bijection}.
+Note that homeomorphism can be defined as a \textit{continuous open bijection}.
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:bijective-closed-open}
 Show that a bijective map between topological spaces is closed if and only if it is open.
 \end{thm}
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:closed-open-cont}
 Give an example of a map $f\:\c{X}\to\c{Y}$ between two topological spaces such that 
 \begin{subthm}{}
 $f$ is continuous and open, but not closed,
@@ -87,8 +89,8 @@ $f$ is closed and open, but not continuous.
 
 \end{thm}
 
-\begin{thm}{Advanced exercise}
-Construct two functions $\RR\to\RR$, one is closed but not continuous, and the other is open but not continuous.
+\begin{thm}{Advanced exercise}\label{ex:closed-open-cont-R}
+Construct a function $\RR\to\RR$ that is closed and open, but not continuous.
 \end{thm}
 
 

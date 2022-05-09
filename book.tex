@@ -23,13 +23,31 @@
 \newpage
 \tableofcontents
 
-\include{metric}\include{topology}\include{sets}\include{maps}\include{spaces}\include{product-base}\include{compact}\include{hausdorff}\include{connect}
+\include{metric}
+\part{Point-set topology}
+\include{topology}
+\include{sets}
+\include{maps}
+\include{induced}
+\include{compact}
+\include{hausdorff}
+\include{spaces}
+\include{connect}
+\part{Fundamental group}
+\include{path-connect}
 \include{homotopy}
+\include{hom-type}
 \include{pi1}
 %\include{s1}
 %\include{finite}
 
 \appendix
-\include{sol-kosniawski}
+%\include{sol-kosniawski}
+
+\newgeometry{top=0.9in, bottom=0.9in,inner=0.55in, outer=0.45in}
+%\newgeometry{top=1.025in, bottom=1.025in,inner=0.5in, outer=0.625in, paperwidth=6.125in, paperheight=9.25in}%with bleed
+{\footnotesize
+\include{sols}
+}
 \include{jordan}
 \end{document}  

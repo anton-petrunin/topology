@@ -16,7 +16,7 @@ In 1922, the definition was generalized slightly by Kazimierz Kuratowski; his de
 \section{Definitions}
 
 We are about to define \emph{abstract open sets} without referring to metric spaces.
-The exercises \ref{ex:open-union} and \ref{ex:open-intersection} motivate this definition.
+The following definition is motivated by exercises \ref{ex:open-union} and \ref{ex:open-intersection}.
 
 \begin{thm}{Definition}\label{def:top-space}
 Suppose $\c{X}$ is a set 
@@ -50,10 +50,18 @@ so instead of saying \emph{$V$ is an open set in the topological space $\c{X}$},
 From (\ref{def:top-space:n}) it follows that the intersection of a finite collection of open sets is open.
 That is, if $V_1$, $V_2$, $\dots, V_n$ are open, then the intersection 
 \[W=V_1 \cap V_2\cap\dots\cap V_n\] is open.
-This can be proved by applying induction on $n$ since 
+The latter is proved by induction on $n$ using the identity
 \[V_1 \cap \dots\cap V_{n-1}\cap V_n=(V_1 \cap \dots V_{n-1})\cap V_n.\]
 
-\section{Examples}
+\section{Examples}\label{sec:ecamples(top)}
+
+According to exercises \ref{ex:open-union} and \ref{ex:open-intersection} any metric space is a topological space if one defines open sets as in the definition \ref{def:open}.
+As it follows from Exercise \ref{ex:d1+d2+dinfty-open},
+different metrics on one set might define the same topology.
+For example, the real line $\RR$ comes with natural metric which defines a topology on $\RR$;
+if not stated otherwise, the real line $\RR$ will be considered with this topology.
+
+A topological space is called \emph{metrizable} if its topology can be defined by a metric --- these examples play are most important.
 
 The so-called \emph{connected two-point space} is a simple but nontrivial example of topological space.
 This space consists of two points 
@@ -62,16 +70,21 @@ and it has three open sets:
 \[\emptyset,\quad \{a\}\quad\text{and}\quad\{a,b\}.\]
 It is instructive to check that this is indeed a topology.
 
-Further, for any set $\c{X}$, we can always define the following topologies:
+\begin{thm}{Exercise}\label{ex:finite+metrizable}
+Show that finite topological space is metrizable if and only if it is discrete.
+In particular, connected two-point space is not metrizable.
+\end{thm}
+
+For any set $\c{X}$, we can always define the following topologies:
 \begin{itemize} 
 \item  The \emph{discrete topology} --- the topology consisting of all subsets of a set $\c{X}$.
 \item  The \emph{concrete topology}  --- the topology consisting of just the whole set $\c{X}$ and the empty set, $\emptyset$.
 \item  The \emph{cofinite topology} --- the topology consisting of the empty set, $\emptyset$ and the complements to finite sets.
 \end{itemize}
 
-\begin{thm}{Exercise}\label{ex:Rge}
-Show that $\emptyset$, $\RR$ and the intervals $[a,\infty)$, $(a,\infty)$ for all $a\in\RR$ define a topology on the real line $\RR$.
-(The obtained space will be denoted by $\RR_\ge$.)
+\begin{thm}{Exercise}\label{ex:cofinite-metrizable}
+Assume an infinite set $\c{X}$ equipped with the cofinite topology.
+Show that $\c{X}$ is not metrizable.
 \end{thm}
 
 \section{Comparison of topologies}
@@ -80,7 +93,9 @@ Let $\s{W}$ and $\s{S}$ be two topologies on one set.
 Suppose $\s{W}\subset\s{S}$; that is, any open set in $\s{W}$-topology is open in $\s{S}$-topology.
 In this case, we say that $\s{W}$ is \emph{weaker} than $\s{S}$, or, equivalently, $\s{S}$ is \emph{stronger} than~$\s{W}$.
 
-\begin{thm}{Exercise}
+Note that on any set, the concrete topology is the weakest and discrete topology is the strongest.
+
+\begin{thm}{Exercise}\label{ex:weaker-top}
 Let $\s{W}$ and $\s{S}$ be two topologies on one set.
 Suppose that for any point $x$ and any $W\in\s{W}$ such that $W\ni x$, there is $S\in \s{S}$ such that 
 $W\supset S\ni x$.
@@ -96,96 +111,44 @@ Continuous maps are first in the line.
 The following definition is motivated by Proposition~\ref{prop:cont-open}.
 
 \begin{thm}{Definition}\label{def:cont-top}
-A function between topological spaces 
+A map between topological spaces 
 $f\:\c{X}\to\c{Y}$ is called \emph{continuous} if for any open set $W$ in $\c{Y}$, its inverse image $f^{-1}(W)$ is open in $\c{X}$.
 That is, if $W$ is an open subset in $\c{Y}$, then the set
 \[V=f^{-1}(W)=\set{x\in X}{f(x)\in W}\]
-is an open subset $\c{X}$
+is an open subset of $\c{X}$
 \end{thm}
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:connect-two-point-maps}
 Let $\RR$ be the real line with the standard topology
-and $\c{X}$ be the connected two-point space described above.
+and $\c{X}=\{a,b\}$ be the connected two-point space described in \ref{sec:ecamples(top)} --- it has three open sets $\emptyset$, $\{a\}$, and $\{a,b\}$.
 
-\begin{subthm}{}
-Construct a nonconstant continuous function $\RR\to \c{X}$.
+\begin{subthm}{ex:connect-two-point-maps:R->X}
+Construct a nonconstant continuous map $\RR\to \c{X}$.
 \end{subthm}
 
-\begin{subthm}{}
+\begin{subthm}{ex:connect-two-point-maps:X->R}
 Show that any continuous function $\c{X}\to \RR$ is constant.
 \end{subthm}
 
 \end{thm}
 
-\begin{thm}{Exercise} 
-Show that a function $f\:\RR\to\RR$ is nondecreasing if and only if it defines a continuous map $\RR_\ge\to \RR_\ge$.
-(The space $\RR_\ge$ is defined in \ref{ex:Rge}.)
-\end{thm}
+\begin{thm}{Exercise}\label{ex:Rge}
 
-\section{Limits}
-
-\begin{thm}{Definition}\label{def:limit-top}
-Suppose $x_n$ is a sequence of points in a topological space $\c{X}$.
-We say that $x_n$ \emph{converges} to a point $x_\infty\in \c{X}$ (briefly $x_n\to x_\infty$ as $n\to\infty$) if for any open set $V\ni x_\infty$ there is $N$ such that 
-$x_n\in U$ for any $n\ge N$.
-\end{thm}
-
-\begin{thm}{Exercise}
-Prove that above definition agrees with \ref{def:limit-metric}.
-In other words, if $x_1,x_2,\dots$, and $x_\infty$ are points in a metric space, then $x_n$ converges to $x_\infty$ in the sense of definition \ref{def:limit-metric} if and only if $x_n$ converges to $x_\infty$ in the sense of definition \ref{def:limit-top}.
-\end{thm}
-
-\begin{thm}{Exercise}
-Show that in a space with concrete topology any sequence converges to any point.
-In particular, the limit point of a sequence is not uniquely defined.
-\end{thm}
-
-\begin{thm}{Exercise}
-Show that a convergent sequence of points in a topological space is also convergent for every weaker topology.
-\end{thm}
-
-The following exercise shows that in general, converging sequences do \emph{not} provide an adequate description of topology.
-In other words, an analog of \ref{ex:continuous-limit} does not hold.%
-\footnote{The so-called \emph{nets} provide an appropriate analog of sequences that works well in topological spaces, but we are not going to consider them here.}
-
-\begin{thm}{Advanced exercise}
-Let $\c{X}$ be $\RR$ with the so-called \emph{cocountable topology};
-its closed sets are either countable or the whole $\RR$.
-
-\begin{subthm}{}
- Construct a map $f\:\c{X}\to \c{X}$ that is not continuous.
+\begin{subthm}{ex:Rge:top}
+Show that $\emptyset$, $\RR$ and the intervals $[a,\infty)$, $(a,\infty)$ for all $a\in\RR$ define a topology on the real line $\RR$.
+The  described space will be denoted by $\RR_\ge$.
 \end{subthm}
 
-\begin{subthm}{}
- Describe all converging sequences in $\c{X}$.
-\end{subthm}
-
-\begin{subthm}{}
- Show that if the sequence $x_n$ converges to $x_\infty$ in $\c{X}$ then for any map $f\:\c{X}\to \c{X}$ the sequence $y_n=f(x_n)$ converges to $y_\infty\z=f(x_\infty)$.
-\end{subthm}
-
-\end{thm}
-
-\section{Metrizable spaces}
-
-According to exercises \ref{ex:open-union} and \ref{ex:open-intersection} any metric space is a topological space if one defines open sets as in the definition \ref{def:open}.
-As it follows from Exercise \ref{ex:d1+d2+dinfty-open},
-different metrics on one set might define the same topology.
-
-A topological space is called \emph{metrizable} if its topology can be defined by a metric.
-Let us give few examples of nonmetrizable spaces.
-
-\begin{thm}{Exercise}\label{ex:finite+metrizable}
-Show that finite topological space is metrizable if and only if it is discrete.
-In particular, connected two-point space is not metrizable.
-\end{thm}
-
-\begin{thm}{Exercise}
-Assume an infinite set $\c{X}$ equipped with the cofinite topology.
-Show that $\c{X}$ is not metrizable.
-\end{thm}
-
-\begin{thm}{Exercise}
+\begin{subthm}{ex:Rge:nonmetr}
 Show that $\RR_\ge$ is not metrizable.
-(The space $\RR_\ge$ is defined in \ref{ex:Rge}.)
+\end{subthm}
+
+\begin{subthm}{ex:Rge:mono}
+Show that a function $f\:\RR\to\RR$ is nondecreasing if and only if it defines a continuous map $\RR_\ge\to \RR_\ge$.
+\end{subthm}
+
 \end{thm}
+
+
+
+

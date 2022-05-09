@@ -12,27 +12,27 @@ if for any neighborhood $V\ni x$ we have
 $x_n\in V$ for all, but finitely many $n$.
 
 Note that in general, a sequence of points in a topological space might have different limits.
-For example, consider the real line with the cofinite topology and a sequence $x_n$ such that $x_m\ne x_n$ for $m\ne n$.
-Note that $x_n$ converges to \textit{every} point in $x\in \RR$.
+For example, consider the real line with the cofinite topology and a sequence $x_1,x_2,\dots$ such that $x_m\ne x_n$ for $m\ne n$.
+Note that the sequence converges to \textit{every} $x\in \RR$.
 Indeed, a complement of any neighborhood $V\ni x$ is a finite set;
 therefore $x_n\in V$ for all, but finitely many indexes $n$.
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:hausdorff-unique-limit}
 Show that any converging sequence in Hausdorff space has a unique limit.
 \end{thm}
 
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:hausdorff-diagonal}
 Show that the topological space $\c{X}$ is Hausdorff
-if the diagonal 
-\[\Delta=\set{(x,y)\in \c{X}\times\c{X}}{x=y}\]
+if and only if the diagonal 
+\[\Delta=\{\,(x,x)\in \c{X}\times\c{X}\,\}\]
 is a closed set in the product space $\c{X}\times\c{X}$.
 \end{thm}
 
 \section{Observations}
 
 \begin{thm}{Observation}\label{obs:one-point=compact}
-Any one-point set in a Hausdorff topological space is closed. 
+Any one-point set in a Hausdorff space is closed. 
 \end{thm}
 
 If every one-point space in a topological space is closed
@@ -40,14 +40,14 @@ then the space is called \emph{$T_1$-space} or sometimes \emph{Tikhonov space}.
 Therefore the observation above states that any Hausdorff space is $T_1$.
 
 \parit{Proof.}
-Fix a point $x$ in a Hausdorff topological space $\c{X}$.
+Choose a point $x$ in a Hausdorff space $\c{X}$.
 By definition of Hausdorff space, given a point $y\ne x$,
 there are disjoint open sets $V_y\ni x$ and $W_y\ni y$.
 In particular $W_y\not\ni x$.
 
 Note that 
-\[\c{X}\backslash\{x\}=\bigcup_{y\ne x}W_y.\]
-In particular $\c{X}\backslash\{x\}$ is open and therefore $\{x\}$ is closed.
+\[\c{X}\setminus\{x\}=\bigcup_{y\ne x}W_y.\]
+It follows that $\c{X}\setminus\{x\}$ is open, and therefore $\{x\}$ is closed.
 \qeds
 
 \begin{thm}{Observation}
@@ -68,23 +68,32 @@ Hence the statement follows
 Any subspace of Hausdorff space is Hausdorff.
 \end{thm}
 
+\parit{Proof.}
+Choose two points $x,y$ in a subspace $A$ of a Hausdorff space $\c{X}$.
+Since $\c{X}$ is Hausdorff, we can choose neighborhoods $V\ni x$ ad $W\ni y$ such that $V\cap W=\emptyset$.
+Then $A\cap V$ and $A\cap W$ are neighborhoods of $x$ and $y$ in $A$.
+Clearly, 
+\[(A\cap V)\cap(A\cap W)\subset V\cap W=\emptyset.\]
+Whence the observation follows.
+\qeds
 
 
 \section{Games with compactness}
 
 \begin{thm}{Proposition}\label{prop:hausdorff-compact-closed}
-Any compact  subset of a Hausdorff topological space is closed. 
+Any compact  subset of a Hausdorff space is closed. 
 \end{thm}
 
-Since any one-point set is compact, this proposition generalizes Observation~\ref{obs:one-point=compact}.
+Noote that any one-point set is compact.
+Therefore the proposition generalizes Observation~\ref{obs:one-point=compact}.
 The proof is similar but requires an extra step.
 It is instructive to solve the following exercise before reading the proof.
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:nonclosed-compact}
 Describe a topological space $\c{X}$ with a nonclosed, but compact subset $K$. 
 \end{thm}
 
-We will prove the following slightly stronger statement.
+The proof of proposition is beased on the following theorem.
 
 \begin{thm}{Theorem}\label{thm:hausdorff-compact-t3}
 Let $\c{X}$ be a Hausdorff space and $K\subset X$ be a compact subset.
@@ -96,8 +105,8 @@ such that $V\cap W=\emptyset$
 For $y\notin K$, let us denote by $W_y$ the open set provided by \ref{thm:hausdorff-compact-t3};
 in particular, $W_y\ni y$ and $W_y\cap K=\emptyset$.
 Note that 
-\[\c{X}\backslash K=\bigcup_{y\notin K} W_y.\]
-It follows that $\c{X}\backslash K$ is open; therefore, $K$ is closed.
+\[\c{X}\setminus K=\bigcup_{y\notin K} W_y.\]
+It follows that $\c{X}\setminus K$ is open; therefore, $K$ is closed.
 \qeds
 
 
@@ -112,54 +121,16 @@ V&=V_{x_1}\cup\dots \cup V_{x_n}
 \\
 W&=W_{x_1}\cap\dots \cap W_{x_n}
 \end{align*}
-It remains to observe that $y\in W$, $K\subset V$ and 
+It remains to observe that $V$ and $W$ are open, $y\in W$, $K\subset V$, and 
 \[V\cap W\subset \bigcup_i(V_{x_i}\cap W_{x_i})=\emptyset.\]
 \qedsf
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:normal-hausdorff}
 Let $\c{X}$ be a Hausdorff space and $K,L\subset X$ be two compact subsets.
 Assume $K\cap L=\emptyset$, show that there are open sets $V\supset K$ and $W\supset L$
 such that $V\cap W=\emptyset$
 \end{thm}
 
-\section{Application to quotients}
 
-\begin{thm}{Observation}\label{obs:compact-to-hausdorff}
-Let $\c{K}$ be a compact space and $\c{Y}$ is Hausdorff.
-Then any continuous map $f\:\c{K}\to\c{Y}$ is closed.
-
-If in addition, the map $f$ is onto, then $\c{Y}$ is equipped with the quotient topology induced by $f$. 
-\end{thm}
-
-\begin{thm}{Corollary}
-A continuous bijection from a compact space to a Hausdorff space is a homeomorphism.
-\end{thm}
-
-
-\parit{Proof of \ref{obs:compact-to-hausdorff}.}
-Since $\c{K}$ is compact, any closed subset $Q\subset \c{K}$ is compact as well (\ref{prop:compact-closed}).
-Since the image of a compact set is compact we have that $f(Q)$ is a compact subset of $\c{Y}$.
-Since $\c{Y}$ is Hausdorff $f(Q)$ is closed.
-Hence the first statement follows.
-
-The second statement follows from \ref{ex:open-closed-pushforward}.
-\qeds
-
-Recall that $\DD$ denotes the unit disc and $\mathbb{S}^1$ denotes the unit circle;
-that is,
-\begin{align*}
-\DD&=\set{(x,y)\in\RR^2}{x^2+y^2\le 1},
-\\
-\mathbb{S}^1&=\set{(x,y)\in\RR^2}{x^2+y^2=1}.
-\end{align*}
-
-\begin{thm}{Exercise}
-Show that the quotient space $[0,1]/\{0,1\}$ is homeomorphic to $\mathbb{S}^1$.
-\end{thm}
-
-\begin{thm}{Exercise}
-Show that the quotient space  $\DD/\mathbb{S}^1$ is homeomorphic to the unit sphere 
-\[\mathbb{S}^2=\set{(x,y,z)\in\RR^3}{x^2+y^2+z^2=1}.\]
-\end{thm}
 
 

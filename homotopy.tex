@@ -4,7 +4,7 @@
 \section{Definitions}
 
 Assume $f_t\:\c{X}\to \c{Y}$ be a one-parameter family of maps, $t\in [0,1]$.
-If the map $[0,1]\times \c{X}\to \c{Y}$ that is defined as $(t,x)\mapsto f_t(x)$ is continuous, then $f_t$ is called a \emph{homotopy} of maps from $\c{X}$ to $\c{Y}$.
+If the map $[0,1]\times \c{X}\to \c{Y}$, defined as $(t,x)\mapsto f_t(x)$ is continuous, then $f_t$ is called a \emph{homotopy} of maps from $\c{X}$ to $\c{Y}$.
 
 If $f_t(a)$ is independent of $t$ for any point $a$ in some subset $A\subset \c{X}$, then we say that  $f_t$ is a \emph{homotopy relative to $A$}. 
 
@@ -22,64 +22,9 @@ That is, for any continuous maps $f,g,h\:\c{X}\to \c{Y}$, we have
 \item if $f\sim h$ then $h\sim f$, and
 \item if $f\sim g$ and $g\sim h$ then $f\sim h$.
 \end{itemize}
-Do the same for and ``$\sim\rel A$''.
+Do the same for ``$\sim\rel A$''.
 \end{thm}
 
-
-
-\section{Contractible spaces}
-
-A topological space $\c{X}$ is called \emph{contactable} if the identity map $\id_\c{X}\:\c{X}\z\to \c{X}$ is homotopic to a constant map;
-that is there is a homotopy $h_t\:\c{X}\to\c{X}$ such that $h_0(x)=x$ and $h_1(x)=p$ for some fixed point $p\in\c{X}$ and any $t$.
-
-\begin{thm}{Exercise}
-Show that any convex subset of the Euclidean space is contractible.
-\end{thm}
-
-
-\begin{thm}{Exercise}
-Show that any contractible space is path-connected.
-\end{thm}
-
-Later we will show that the circle $\mathbb{S}^1$ is an example of path-connected space that is not contractible.
-
-\begin{thm}{Exercise}
-Let $\c{X}$ be a contractible space.
-
-\begin{subthm}{}
-Show that any two continuous maps from a topological space to $\c{X}$ are homotopic.
-\end{subthm}
-
-\begin{subthm}{}
-Show that any two continuous maps from $\c{X}$ to a path-connected space are homotopic.
-\end{subthm}
-
-\end{thm}
-
-\section{Homotopy type}
-
-Two topological spaces $\c{X}$ and $\c{Y}$ have the \emph{same homotopy type} (briefly $\c{X}\sim\c{Y}$) if there are continuous maps
-$f\: \c{X}\to \c{Y}$ and $h\:\c{Y}\to \c{X}$ such that $h\circ f\sim \id_\c{X}$ and $f\circ h\sim \id_\c{Y}$.
-
-\begin{thm}{Exercise}
-Show that a topological $\c{X}$ is contractible if and only if it has the same homotopy type with the one-point space.
-\end{thm}
-
-\begin{thm}{Exercise}
-Suppose $A$ is a strong deformation retract of a space $\c{X}$.
-Show that $A$ and $\c{X}$ have the same homotopy type.
-\end{thm}
-
-
-\begin{thm}{Exercise}
-Show that the following two closed connected sets in the plane have the same homotopy type.
-(Each set is a union of line segments.)
-
-\begin{figure}[!ht]
-\centering
-\includegraphics{mppics/pic-40}
-\end{figure}
-\end{thm}
 
 
 \section{Homotopy of paths}

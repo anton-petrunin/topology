@@ -1,3 +1,34 @@
+\section{Quotients by subsets}
+
+Intuitively, quotient space is the space obtained by gluing equivalent points together.
+For example, consider the \emph{minimal equivalence relation} on $[0,1]$ such that $0\sim 1$;
+that is, $x\sim y$ if and only if one of the following conditions hold $x=y$, or $x=0$ and $y=1$, or $x=1$ and $y=0$.
+Then the quotient space $[0,1]/{\sim}$ is homeomorphic to 
+\[\mathbb{S}^1=\set{(x,y)\in\RR^2}{x^2+y^2=1}.\]
+A homeomorphism is induced by the map $[0,1]\to \mathbb{S}^1$
+\[f(t)=\left(\cos(2\cdot\pi\cdot t),\sin(2\cdot\pi\cdot t)\right).\]
+The latter statement can be proved directly from the definition of quotient topology, but soon we will prove the following statement that implies this and similar statements effortlessly.
+So we suggest to wait with proof of this statement.
+
+\begin{itemize}
+\item Suppose $\c{X}$ is a \emph{compact space} and  $\c{Y}$ is \emph{Hausdorff space} and $f\: \c{X}\to\c{Y}$ is a surjective continuous map.
+Then $\c{Y}$ is equipped with the quotient topology.
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 In other words, $f\:\c{X}\to \c{Y}$ is an \emph{emebedding} if it is injective and the topology on $\c{X}$ coinsides with pullback topology for $f$.
 
 A function $f\:\c{X}\to \c{Y}$ is called local embedding if for any point $x\in \c{X}$ there is a neighborhood $U\ni x$ such that the restriction $f|_U$ is an embedding.\footnote{The meaning of the word \emph{local} in topology can be described the following way: a space $\c{X}$ is \emph{locally magnificent} if for any point $x\in \c{X}$ and any neighborhood $V\ni x$ there is a smaller neighborhood $W$ (that is, $x\in W\subset V$) which is \emph{magnificent}.}

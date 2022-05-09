@@ -2,18 +2,18 @@
 
 \begin{thm}{Theorem}\label{thm:proper-jordan}
 Suppose $\Gamma\subset\RR^2$ is a closed set homeomorphic to $\RR$.
-Then $\RR^2\backslash \Gamma$ has at least two connected components.
+Then $\RR^2\setminus \Gamma$ has at least two connected components.
 \end{thm}
 
 Note that the assumption that $\Gamma$ is closed is necessary;
-indeed a finite open interval $I$ of a line in $\RR^2$ is homeomorphic to $\RR$, but its complement $\RR^2\backslash I$ is connected.
+indeed a finite open interval $I$ of a line in $\RR^2$ is homeomorphic to $\RR$, but its complement $\RR^2\setminus I$ is connected.
 
 The theorem follows from \ref{prop:c/sc}, \ref{prop:home-gamma-z-axis}, and \ref{ex:z-axis}.
 
 \begin{thm}{Proposition}\label{prop:c/sc}
-Suppose $\Gamma\subset\RR^2$ is a closed set such that the complement $X=\RR^2\backslash \Gamma$ is connected.
+Suppose $\Gamma\subset\RR^2$ is a closed set such that the complement $X=\RR^2\setminus \Gamma$ is connected.
 Let us identify $\RR^2$ with the $(x,y)$-plane in $\RR^3$.
-Then the complement $Y=\RR^3\backslash \Gamma$ is simply-connected.
+Then the complement $Y=\RR^3\setminus \Gamma$ is simply-connected.
 \end{thm}
 
 
@@ -25,7 +25,7 @@ A&=\set{(x,y,z)}{(x,y)\in\Gamma\ \text{and}\ z\le 0},
 \\
 B&=\set{(x,y,z)}{(x,y)\in\Gamma\ \text{and}\ z\ge 0}.
 \end{align*}
-Consider their complements $V=\RR^3\backslash A$ and $W=\RR^3\backslash B$.
+Consider their complements $V=\RR^3\setminus A$ and $W=\RR^3\setminus B$.
 Note that $Y=V\cup W$.
 
 The sets $V$ and $W$ are simply-connected.
@@ -113,7 +113,7 @@ Show that the complement of the $z$-axis in $\RR^3$ is not simply-connected.
 
 \begin{thm}{Theorem}
 Let $J\subset\mathbb{S}^2$ be a subset homeomorphic to $\mathbb{S}^1$.
-Then $\mathbb{S}^2\backslash J$ has at least two connected components. 
+Then $\mathbb{S}^2\setminus J$ has at least two connected components. 
 \end{thm}
 
 This theorem is a partial case of famous Jordan's theorem;
@@ -122,6 +122,6 @@ The presented proof is found by Patrick Doyle;
 it uses quite a bit of topology, but is among the shortest.
 
 \parit{Proof.}
-Remove a point $p$ from $J$ to get a closed line $\Gamma=J\backslash\{p\}$ in $ \mathbb{S}^2\backslash\{p\}\simeq\RR^2$.
+Remove a point $p$ from $J$ to get a closed line $\Gamma=J\setminus\{p\}$ in $ \mathbb{S}^2\setminus\{p\}\simeq\RR^2$.
 It remains to apply \ref{thm:proper-jordan}.
 \qeds

@@ -1,62 +1,16 @@
-\chapter{Constructions}
-
-In this chapter we will discuss a few constructions that produce new topological spaces from the given ones.
-
-\section{Induced topology}\label{sec:induced-topology}
-
-Let $A$ be a subset of a topological space $\c{Y}$.
-Consider the so-called \emph{induced topology} on $A$ defined the following way:
-a subset $V\subset A$ is open in $A$ if and only if $V=A\cap W$ for an open set $W$ in $\c{Y}$.
-
-Let us check that induced topology is indeed a topology;
-in other words, it meets all conditions in \ref{def:top-space}.
-
-First of all the empty set
-$\emptyset$ is open since $\emptyset=A\cap \emptyset$.
-Further, $A=A\cap \c{Y}$;
-therefore $A$ is open in the induced topology.
-
-Assume $\set{V_\alpha}{\alpha\in\c{I}}$ is a collection of open sets in $A$;
-that is, for each $V_\alpha$ there is a set $W_\alpha$ which is open in $\c{Y}$ and such that $V_\alpha\z=A\cap W_\alpha$.
-Note that
-\[\bigcup_\alpha V_\alpha=A\cap\left(\bigcup_\alpha W_\alpha\right).\]
-Since the union of $\{W_\alpha\}$ is open in $\c{Y}$, the union of $\{V_\alpha\}$ is open in the induced topology on $A$.
-
-Assume $V_1$ and $V_2$ are open in $A$; 
-that is, $V_1=A\cap W_1$ and  $V_2\z=A\cap W_2$ for some open sets $W_1$ and $W_2$ in $\c{Y}$.
-Note that
-\[V_1\cap V_2=A\cap(W_1\cap W_2).\]
-Since the intersection $W_1\cap W_2$ is open in $\c{Y}$,
-the intersection $V_1\cap V_2$ is open in $A$.
-
-
-A subset $A$ in a topological space $\c{Y}$ equipped with the induced topology is called a \emph{subspace} of $\c{Y}$.
-It is straightforward to check that this notion agrees with the notion introduced in \ref{sec:subspaces-metric};
-that is, if $\c{Y}$ is a metric space, then any subset $A\subset\c{Y}$ comes with metric
-and the topology defined by this metric coincides with the induced topology on $A$.
-
-A function $f\:\c{X}\to \c{Y}$ is called \emph{embedding} if $f$ defines a homeomorphism from space $\c{X}$ to the subspace $f(\c{X})$ in $\c{Y}$.
+\chapter{More constructions}
 
 \section{Moving topology by a map}
 
-The construction in the following exercise moves topology from target space to the source of a map.
+Recall that in \ref{prebase}, we defined a natural way to move a topology from target space to the source of a map.
 
-\begin{thm}{Exercise}\label{ex:move-topology:pullback}
-Let $f\:\c{X}\to\c{Y}$ be a function between two sets.
+Namely, suppose $f\:\c{X}\to\c{Y}$ be a map between two sets.
 Assume $\c{Y}$ is equipped with a topology.
-Declare a subset $V\subset\c{X}$  to be open if there is an open subset $W\subset\c{Y}$ 
+Then declare a subset $V\subset\c{X}$ to be open in the \emph{induced topology} for $f$ if there is an open subset $W\subset\c{Y}$ 
 such that $V=f^{-1}(W)$.
-Show that it defines a topology on $\c{X}$.
-\end{thm}
 
-The constructed topology on $\c{X}$ is called \emph{pullback} topology.
-It generalizes the notion of induced topology above.
-Namely, the induced topology on $A\subset \c{Y}$ can be defined as a pullback topology for the inclusion map $\iota\:A\to \c{Y}$.%
-\footnote{The inclusion map $\iota\: A\to \c{X}$ is defined by $\iota(a)=a$ for any $a\in A$.}
-Indeed, for any $W\subset \c{Y}$ the inverse image $\iota^{-1}(W)$ coincides with the intersection  $V=A\cap W$.
-
-The following exercise describes an analogous construction that moves topology from source to target.
-Both exercises can be solved by checking the conditions in \ref{def:top-space} as we did in \ref{sec:induced-topology}.
+The following exercise describes an analogous construction that moves a topology from source to target.
+It can be solved by checking the conditions in \ref{def:top-space} as we did in \ref{sec:induced-topology}.
 
 \begin{thm}{Exercise}\label{ex:move-topology:pushforward}
 Let $f\:\c{X}\to\c{Y}$ be a map between two sets.
@@ -68,7 +22,7 @@ Show that it defines a topology on $\c{X}$.
 
 The constructed topology on $\c{Y}$ is called \emph{pushforward} topology.
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:pullback/pushforward}
 Let $f\:\c{X}\to\c{Y}$ be a continuous map.
 
 \begin{subthm}{}
@@ -81,7 +35,7 @@ Show that the pushforward topology on $\c{Y}$ is stronger than its own topology.
 
 \end{thm}
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:category-def-pull-push}
 Let $g\:\c{X}\to\c{Y}$ be a continuous map.
 
 \begin{subthm}{}
@@ -123,43 +77,66 @@ Recall that the set
 is called the \emph{equivalence class} of $x$.
 The set of all equivalence classes in $\c{X}$ will be denoted by $\c{X}/{\sim}$.
 
+Observe that $x\mapsto [x]$ defines a surjective map $\c{X}\to \c{X}/{\sim}$.
+The corresponding pushforward topology on $\c{X}/{\sim}$ is called \emph{quotient topology} on $\c{X}/{\sim}$.
+By default, $\c{X}/{\sim}$ is equipped with the quotient topology
+in this case, it is called \emph{quotient space}.
+
 The following exercise ties equivalence relations with maps.
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:eq-relation-f}
 Show that an arbitrary map $f\:\c{X}\to \c{Y}$ defines the following equivalence relation on $\c{X}$:
 \[x\sim x'\quad\text{if and only if}\quad f(x)=f(x').\]
 Moreover,
 \[y=f(x)\quad\text{if and only if}\quad [x]=f^{-1}\{f(x)\}.\]
 \end{thm}
 
-Observe that $x\mapsto [x]$ defines a surjective map $\c{X}\to \c{X}/{\sim}$.
-The corresponding pushforward topology on $\c{X}/{\sim}$ is called \emph{quotient topology} on $\c{X}/{\sim}$.
-By default, $\c{X}/{\sim}$ is equipped with the quotient topology
-in this case, it is called \emph{quotient space}.
-
-\section{Quotients by subsets}
-
-Intuitively, quotient space is the space obtained by gluing equivalent points together.
-For example, consider the \emph{minimal equivalence relation} on $[0,1]$ such that $0\sim 1$;
-that is, $x\sim y$ if and only if one of the following conditions hold $x=y$, or $x=0$ and $y=1$, or $x=1$ and $y=0$.
-Then the quotient space $[0,1]/{\sim}$ is homeomorphic to 
-\[\mathbb{S}^1=\set{(x,y)\in\RR^2}{x^2+y^2=1}.\]
-A homeomorphism is induced by the map $[0,1]\to \mathbb{S}^1$
-\[f(t)=\left(\cos(2\cdot\pi\cdot t),\sin(2\cdot\pi\cdot t)\right).\]
-The latter statement can be proved directly from the definition of quotient topology, but soon we will prove the following statement that implies this and similar statements effortlessly.
-So we suggest to wait with proof of this statement.
-
-\begin{itemize}
-\item Suppose $\c{X}$ is a \emph{compact space} and  $\c{Y}$ is \emph{Hausdorff space} and $f\: \c{X}\to\c{Y}$ is a surjective continuous map.
-Then $\c{Y}$ is equipped with the quotient topology.
-\end{itemize}
-
 Given a subset $A$ in a topological space $\c{X}$, the space $\c{X}/A$ is defined as the quotient space $\c{X}/{\sim}$ for the minimal equivalence relation such that $a\sim b$ for any $a,b\in A$.
 For example the quotient space $[0,1]/{\sim}$ discussed above can be also denoted by $[0,1]/\{0,1\}$ --- it is the interval $[0,1]$ with identified two-element subset $\{0,1\}$.
 
-\begin{thm}{Exercise}
-Describe the quotient space $[0,1]/(0,1)$, where $[0,1]$ is the real interval with standard topology;
-that is, list its points and its open sets.
+\begin{thm}{Exercise}\label{ex:[0,1]/(0,1)}
+Describe the quotient space $[0,1]/(0,1)$, where $[0,1]$ and $(0,1)$ are real intervals;
+that is, list the points and the open sets of the quotient space.
+\end{thm}
+
+\section{Compact-to-Hausdorff trick}
+
+\begin{thm}{Observation}\label{obs:compact-to-hausdorff}
+Let $\c{K}$ be a compact space and $\c{Y}$ is Hausdorff.
+Then any continuous map $f\:\c{K}\to\c{Y}$ is closed.
+
+If in addition, the map $f$ is onto, then $\c{Y}$ is equipped with the quotient topology induced by $f$. 
+\end{thm}
+
+\begin{thm}{Corollary}
+A continuous bijection from a compact space to a Hausdorff space is a homeomorphism.
+\end{thm}
+
+
+\parit{Proof of \ref{obs:compact-to-hausdorff}.}
+Since $\c{K}$ is compact, any closed subset $Q\subset \c{K}$ is compact as well (\ref{prop:compact-closed}).
+Since the image of a compact set is compact we have that $f(Q)$ is a compact subset of $\c{Y}$.
+Since $\c{Y}$ is Hausdorff $f(Q)$ is closed.
+Hence the first statement follows.
+
+The second statement follows from \ref{ex:open-closed-pushforward}.
+\qeds
+
+Recall that $\DD$ denotes the unit disc and $\mathbb{S}^1$ denotes the unit circle;
+that is,
+\begin{align*}
+\DD&=\set{(x,y)\in\RR^2}{x^2+y^2\le 1},
+\\
+\mathbb{S}^1&=\set{(x,y)\in\RR^2}{x^2+y^2=1}.
+\end{align*}
+
+\begin{thm}{Exercise}\label{ex:[0,1]/0=1}
+Show that the quotient space $[0,1]/\{0,1\}$ is homeomorphic to $\mathbb{S}^1$.
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:D/S}
+Show that the quotient space $\DD/\mathbb{S}^1$ is homeomorphic to the unit sphere 
+\[\mathbb{S}^2=\set{(x,y,z)\in\RR^3}{x^2+y^2+z^2=1}.\]
 \end{thm}
 
 
@@ -178,15 +155,15 @@ $g\cdot (h\cdot x)=(g\cdot h)\cdot x$ for any $g,h\in G$ and $x\in \c{X}$;%
 \begin{subthm}{}
 for any $g\in G$, the map $x\mapsto g\cdot x$ is continuous.
 \end{subthm}
-Then we say that $G$ \emph{acts} on $\c{X}$, or $\c{X}$ is a $G$-space (briefly $G\acts \c{X}$).
+Then we say that $G$ \emph{acts} on $\c{X}$, or $\c{X}$ is a $G$-space.
 
 In this case, the set
 \[G\cdot x:=\set{g\cdot x}{g\in G}\]
 is called the \emph{$G$-orbit} of $x$ (or, briefly, \emph{orbit}).
 \end{thm}
 
-\begin{thm}{Exercise}
-Suppose that a group $G$ acts on a topological space $\c{X}$.
+\begin{thm}{Exercise}\label{ex:g-homeo}
+Suppose that a group $G$ acts on a topological space~$\c{X}$.
 Show that for any $g\in G$, the map $x\mapsto g\cdot x$ defines a homeomorphism $\c{X}\to \c{X}$.
 \end{thm}
 
@@ -202,7 +179,7 @@ $\Longrightarrow$
 $y\sim x$.
 Finally, suppose $x\sim y$ and $y\sim z$;
 that is, $y=g\cdot x$ and $z=h\cdot y$ for some $g,h\in G$.
-Then $z=h\cdot g\cdot x$;
+Then $z=(h\cdot g)\cdot x$;
 therefore $x\sim z$.
 
 For the described equivalence relation, the quotient space $\c{X}/{\sim}$ can be also denoted by $\c{X}/G$;
@@ -211,7 +188,7 @@ it is called quotient of $\c{X}$ by the action of~$G$.
 Note that $[x]=G\cdot x$; that is, the orbit of $x$ coincides with its equivalence class.
 By that reason $\c{X}/G$ is also called \emph{orbit space}.
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:quotient-map}
 Suppose a group $G$ acts on a topological space $\c{X}$ and $f\:\c{X}\to \c{X}/G$ is the quotient map.
 
 \begin{subthm}{}

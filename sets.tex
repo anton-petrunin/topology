@@ -4,25 +4,31 @@
 
 Let $\c{X}$ be a topological space. 
 
-A set $K\subset \c{X}$ is called \emph{closed} if its complement $\c{X}\backslash K$ is open.
+A set $K\subset \c{X}$ is called \emph{closed} if its complement $\c{X}\setminus K$ is open.
 
 From the definition of topological spaces the following properties of closed sets follow.
 
 \begin{thm}{Proposition}\label{prop:closed-properties}
 Let $\c{X}$ be a topological space. 
-\begin{enumerate}[(i)] 
-\item The empty set and $\c{X}$ are closed.
-\item The intersection of any collection of closed sets is a closed set.
+\begin{subthm}
+ The empty set and $\c{X}$ are closed.
+\end{subthm}
+
+\begin{subthm}
+ The intersection of any collection of closed sets is a closed set.
 That is, if $K_\alpha$ is open for any $\alpha$ in the index set $\c{I}$,
 then the set
 \[Q=\bigcap_{\alpha\in \c{I}} K_\alpha
 =
 \set{x\in \c{X}}{x\in K_\alpha\quad\text{for any}\quad\alpha\in \c{I}}\]
 is closed
-\item\label{def:closed-properties:n} 
+\end{subthm}
+
+\begin{subthm}{def:closed-properties:n}
 The union of two closed sets (or any finite collection of closed sets) is closed.  
 That is,  if $K_1$ and $K_2$ are closed, then the union $Q=K_1 \cup K_2$ is closed. 
-\end{enumerate}
+\end{subthm}
+
 \end{thm}
 
 The definitions of open and closed sets are mirror-symmetric to each other.
@@ -32,38 +38,38 @@ There is no particular reason why we define topological space using open sets --
 Sometimes it is easier to use closed sets; 
 for example, the cofinite topology can be defined by declaring that the whole space and all its finite sets are closed.
 
-The following proposition is completely analogous to the original definition of continuous functions via open sets (\ref{def:cont-top}). 
+The following proposition is completely analogous to the original definition of continuous maps via open sets (\ref{def:cont-top}). 
 
 \begin{thm}{Proposition}\label{prop:cont-closed}
 Let $\c{X}$ and $\c{Y}$ be topological spaces.
-A function $f\:\c{X}\to\c{Y}$ is continuous if and only if any closed set $K$ has closed inverse image $f^{-1}(K)$.
+A map $f\:\c{X}\to\c{Y}$ is continuous if and only if any closed set $Q$ has closed inverse image $f^{-1}(Q)$.
 \end{thm}
 
 
 \parit{Proof.}
 In the proof, we will use following set-theoretical identity.
 
-Suppose $A\subset \c{Y}$ and $B=\c{Y}\backslash A$ (equvalently  $A=\c{Y}\backslash B$).
+Suppose $A\subset \c{Y}$ and $B=\c{Y}\setminus A$ (equvalently  $A=\c{Y}\setminus B$).
 Then
 $$f^{-1}(B)
 =
-\c{X}\backslash f^{-1}(A)\eqlbl{eq:inverse-image-complement}$$
-for any function $f\:\c{X}\to\c{Y}$.
+\c{X}\setminus f^{-1}(A)\eqlbl{eq:inverse-image-complement}$$
+for any map $f\:\c{X}\to\c{Y}$.
 This identity is tautological,
 to prove it observe that both sides can be spelled as 
 \[\set{x\in\c{X}}{f(x)\notin A}.\]
 
-\parit{``Only-if'' part.}
+\parit{Only-if part.}
 Let $B\subset \c{Y}$ be a closed set.
-Then $A=\c{Y}\backslash B$ is open.
+Then $A=\c{Y}\setminus B$ is open.
 Since $f$ is continuous, 
 $f^{-1}(A)$ is open.
 By \ref{eq:inverse-image-complement},
 $f^{-1}(B)$ is the complement of $f^{-1}(A)$ in $\c{X}$.
 Hence $f^{-1}(B)$ is closed.
 
-\parit{``If'' part.}
-Fix an open set $B$, its complement $A=\c{Y}\backslash B$ is closed.
+\parit{If part.}
+Fix an open set $B$, its complement $A=\c{Y}\setminus B$ is closed.
 Therefore $f^{-1}(A)$ is closed.
 By \ref{eq:inverse-image-complement},
 $f^{-1}(B)$ is a complement of $f^{-1}(A)$  in $\c{X}$. 
@@ -72,9 +78,17 @@ Hence $f^{-1}(B)$ is open.
 The statement follows since $B$ is an arbitrary open set.
 \qeds
 
+\begin{thm}{Exercise}\label{ex:closed-continuous}
+Let $f\:\c{X}\to \c{Y}$ be a map between topological spaces.
+Assume $A,B\subset \c{X}$ are closed sets such that $A\cup B=\c{X}$.
+Show that $f$ is continuous if and only if so are the restrictions $f|_A$ and $f|_B$.
+\end{thm}
+
+
 \section{Interior and closure}
 
 Let $A$ be an arbitrary subset in a topological space $\c{X}$.
+
 The union of all open subsets of $A$ is called the \emph{interior} of $A$ and denoted as $\mathring A$.
 
 Note that $\mathring A$ is open.
@@ -82,39 +96,30 @@ Indeed, it is defined as a union of open sets and such union has to be open by d
 So we can say that $\mathring A$ is the \emph{maximal} open set in $A$, 
 as any open subset of $A$ lies in~$\mathring A$.
 
-In a similar fashion, we define closure.
 The intersection of all closed subsets containing $A$ is called the \emph{closure} of $A$ and denoted as $\bar A$.
 
 The set $\bar A$ is closed.
-Indeed, it is defined as an intersection of closed sets and such intersection has to be closed by Proposition~\ref{prop:closed-properties}.
+Indeed, it is defined as an intersection of closed sets and such intersection has to be closed by \ref{prop:closed-properties}.
 In other words, $\bar A$ is the minimal closed set that contains $A$, 
 as any closed subset of $A$ contains $\bar A$.
 
-\begin{thm}{Exercise}
+
+\begin{thm}{Exercise}\label{ex:closure-interior-complement}
 Assume $A$ is a subset of a topological space $\c{X}$;
-consider its complement $B=\c{X}\backslash A$.
+consider its complement $B=\c{X}\setminus A$.
 Show that 
-\[\bar B=\c{X}\backslash \mathring A.\]
+\[\bar B=\c{X}\setminus \mathring A.\]
 \end{thm}
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:closure-closure}
 Show that the following holds for any set $A$ of a topological space:
-
-\begin{subthm}{}
-$\mathring A\subset A\subset \bar A$
-\end{subthm}
-
-\begin{subthm}{}
-$\bar{\bar A}=\bar A$
-\end{subthm}
-
-\begin{subthm}{}
-$\mathring{\mathring A}=\mathring A$
-\end{subthm}
+\[\mathring{\mathring A}=\mathring A\subset A\subset \bar A=\bar{\bar A}\]
 
 \end{thm}
 
-\begin{thm}{Exercise}
+The following exercise is a based on the so-called \textit{Kuratowski's problem}.
+
+\begin{thm}{Exercise}\label{ex:kuratowski}
 
 \begin{subthm}{}
 Give an example of a topological space $\c{X}$ with a closed subset $Q$ such that
@@ -149,17 +154,17 @@ for any open set $V$.
 
 Let $A$ be an arbitrary subset in a topological space $\c{X}$.
 The \emph{boundary} of $A$ (briefly $\partial A$) is defined as the complement 
-\[\partial A=\bar A\backslash \mathring A.\]
+\[\partial A=\bar A\setminus \mathring A.\]
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:bry-closed}
 Show that the boundary of any set is closed.
 \end{thm}
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:bry<closure}
 Show that the set $A$ is closed if and only if $\partial A\subset A$.
 \end{thm}
 
-\begin{thm}{Advanced exercise}
+\begin{thm}{Advanced exercise}\label{ex:3=bry}
 Find three disjoint open sets on the real line 
 that have the same nonempty boundary.
 \end{thm}
@@ -167,18 +172,62 @@ that have the same nonempty boundary.
 \section{Neighborhoods}
 
 Let $x$ be a point in a topological space $\c{X}$.
-A \emph{neighborhood} of $x$ is any open set $U$ containing $x$.
-In topology, neighborhoods often replace the notion of ball (the latter can be used only in metric spaces).  
+A \emph{neighborhood} of $x$ is any open set $N$ containing $x$.
+In topology, neighborhoods often replace the notion of balls (the latter can be used only in metric spaces).  
 
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:bry-nbhd}
 Let $A$ be a set in a topological space $\c{X}$.
-Show that $x\in \partial A$ if and only if any neighborhood of $x$ contains points in $A$ and its complement $\c{X}\backslash A$. 
+Show that $x\in \partial A$ if and only if any neighborhood of $x$ contains points in $A$ and its complement $\c{X}\setminus A$. 
 \end{thm}
 
 Let $A$ and $B$ be subsets of a topological space $\c{X}$.
 The set $A$ is said to be a \emph{dense in}  $B$ if $\bar A\supset B$.
 
-\begin{thm}{Exercise} Show that $A$ is dense in $B$ if and only any neighborhood of any point in $B$ intersects $A$.
+\begin{thm}{Exercise}\label{ex:dense-nbhd} 
+Show that $A$ is dense in $B$ if and only if any neighborhood of any point in $B$ intersects $A$.
 \end{thm}
 
+\section{Limits}
+
+\begin{thm}{Definition}\label{def:limit-top}
+Suppose $x_n$ is a sequence of points in a topological space $\c{X}$.
+We say that $x_n$ \emph{converges} to a point $x_\infty\in \c{X}$ (briefly $x_n\to x_\infty$ as $n\to\infty$) if for any neighborhood $N$ of $x_\infty$ such that 
+$x_n\in N$ for all sufficiently large $n$.
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:def:limit-metric=def:limit-top}
+Prove that above definition agrees with \ref{def:limit-metric}.
+In other words, a sequence of points $x_1,x_2,\dots$ in a metric space converges to a point $x_\infty$ in the sense of definition \ref{def:limit-metric} if and only if it converges in the sense of definition \ref{def:limit-top}.
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:concrete-lim}
+Show that in a space with concrete topology any sequence converges to any point.
+In particular, a sequence might have different limits.
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:lim-weaker}
+Show that a convergent sequence of points in a topological space is also convergent for every weaker topology.
+\end{thm}
+
+The following exercise shows that in general, converging sequences do \textit{not} provide an adequate description of topology.
+In other words, an analog of \ref{ex:continuous-limit} does not hold.%
+\footnote{The so-called \emph{nets} provide an appropriate analog of sequences that works well in topological spaces, but we are not going to consider them in the sequel.}
+
+\begin{thm}{Advanced exercise}\label{ex:cocountable-top}
+Let $\c{X}$ be $\RR$ with the so-called \emph{cocountable topology};
+its closed sets are either countable or the whole $\RR$.
+
+\begin{subthm}{}
+ Construct a map $f\:\c{X}\to \c{X}$ that is not continuous.
+\end{subthm}
+
+\begin{subthm}{}
+ Describe all converging sequences in $\c{X}$.
+\end{subthm}
+
+\begin{subthm}{}
+ Show that if the sequence $x_n$ converges to $x_\infty$ in $\c{X}$ then for any map $f\:\c{X}\to \c{X}$ the sequence $y_n=f(x_n)$ converges to $y_\infty\z=f(x_\infty)$.
+\end{subthm}
+
+\end{thm}
