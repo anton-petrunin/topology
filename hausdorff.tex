@@ -2,12 +2,25 @@
 
 \section{Definition}
 
-\begin{thm}{Definition} 
-A topological space $\c{X}$ is called \emph{Hausdorff} if for each pair of distinct points
+\begin{thm}{Definition}\label{def:hausdorff}
+A topological space $\c{X}$ is called \index{Hausdorff space}\emph{Hausdorff} if for each pair of distinct points
 $x, y \in \c{X}$ there are disjoint neighborhoods $V\ni x$ and $W\ni y$.
 \end{thm}
 
-Recall that a sequence $x_n$ of points in a topological space $\c{X}$ converges to a point $x\in  \c{X}$
+\begin{thm}{Observation}
+Any metrizable space is Hausdorff.
+\end{thm}
+
+\parit{Proof.}
+Assume that topology on the space $\c{X}$ is induced by a metric $|{*}-{*}|$.
+
+If the points $x,y\in\c{X}$ are distinct then $|x-y|>0$.
+By triangle inequality 
+$\Ball(x,\tfrac r2)\cap \Ball(y,\tfrac r2)=\emptyset$.
+Hence the statement follows
+\qeds
+
+Recall that a sequence of points $x_1,x_2,\dots$ in a topological space $\c{X}$ converges to a point $x\in  \c{X}$
 if for any neighborhood $V\ni x$ we have 
 $x_n\in V$ for all, but finitely many $n$.
 
@@ -23,7 +36,7 @@ Show that any converging sequence in Hausdorff space has a unique limit.
 
 
 \begin{thm}{Exercise}\label{ex:hausdorff-diagonal}
-Show that the topological space $\c{X}$ is Hausdorff
+Show that a topological space $\c{X}$ is Hausdorff
 if and only if the diagonal 
 \[\Delta=\{\,(x,x)\in \c{X}\times\c{X}\,\}\]
 is a closed set in the product space $\c{X}\times\c{X}$.
@@ -36,12 +49,12 @@ Any one-point set in a Hausdorff space is closed.
 \end{thm}
 
 If every one-point space in a topological space is closed
-then the space is called \emph{$T_1$-space} or sometimes \emph{Tikhonov space}.
-Therefore the observation above states that any Hausdorff space is $T_1$.
+then the space is called \index{$T_1$-space}\emph{$T_1$-space} or sometimes \index{Tikhonov space}\emph{Tikhonov space}.
+Therefore the observation above states that \textit{any Hausdorff space is $T_1$}.
 
 \parit{Proof.}
-Choose a point $x$ in a Hausdorff space $\c{X}$.
-By definition of Hausdorff space, given a point $y\ne x$,
+Let $\c{X}$ be a Hausdorff space and $x\in \c{X}$.
+By \ref{def:hausdorff}, given a point $y\ne x$,
 there are disjoint open sets $V_y\ni x$ and $W_y\ni y$.
 In particular $W_y\not\ni x$.
 
@@ -49,20 +62,6 @@ Note that
 \[\c{X}\setminus\{x\}=\bigcup_{y\ne x}W_y.\]
 It follows that $\c{X}\setminus\{x\}$ is open, and therefore $\{x\}$ is closed.
 \qeds
-
-\begin{thm}{Observation}
-Any metrizable space is Hausdorff.
-\end{thm}
-
-\parit{Proof.}
-Assume that topology on the space $\c{X}$ is induced by a metric $|{*}-{*}|$.
-
-If the points $x,y\in\c{X}$ are distinct then $|x-y|>0$.
-By triangle inequality 
-$\Ball(x,\tfrac r2)\cap \Ball(y,\tfrac r2)=\emptyset$.
-Hence the statement follows
-\qeds
-
 
 \begin{thm}{Observation}
 Any subspace of Hausdorff space is Hausdorff.
@@ -110,11 +109,11 @@ It follows that $\c{X}\setminus K$ is open; therefore, $K$ is closed.
 \qeds
 
 
-\parit{Proof.}
+\parit{Proof of \ref{thm:hausdorff-compact-t3}.}
 By definition of Hausdorff space,
 for any point $x\in K$ there is a pair of disjoint openset $V_x\ni x$ and $W_x\ni y$.
 Note that sets $\{V_x\}_{x\in K}$ forms cover of $K$.
-Since $K$ is compact we can pass to a finite subcover $\{V_{x_1},\dots , V_{x_n}\}$.
+Since $K$ is compact we can choose a finite subcover $\{V_{x_1},\dots , V_{x_n}\}$.
 Set 
 \begin{align*}
 V&=V_{x_1}\cup\dots \cup V_{x_n}
@@ -122,8 +121,7 @@ V&=V_{x_1}\cup\dots \cup V_{x_n}
 W&=W_{x_1}\cap\dots \cap W_{x_n}
 \end{align*}
 It remains to observe that $V$ and $W$ are open, $y\in W$, $K\subset V$, and 
-\[V\cap W\subset \bigcup_i(V_{x_i}\cap W_{x_i})=\emptyset.\]
-\qedsf
+\[V\cap W\subset \bigcup_i(V_{x_i}\cap W_{x_i})=\emptyset.\qedsin\]
 
 \begin{thm}{Exercise}\label{ex:normal-hausdorff}
 Let $\c{X}$ be a Hausdorff space and $K,L\subset X$ be two compact subsets.

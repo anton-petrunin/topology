@@ -9,9 +9,10 @@
 \usepackage{epsfig,lpic,wrapfig}
 \usepackage{multicol}
 
+
 \usepackage{accsupp}
 \usepackage{soulutf8}
-\sodef\an{}{.1em}{.5em plus.1em}{.5em plus.1em minus.1em}
+\sodef\an{}{.1em}{.7em plus.1em}{.5em plus.1em minus.1em}
 
 \newcommand\ann[1]{%
     \BeginAccSupp{method=escape,ActualText={\detokenize{#1}}}%
@@ -121,6 +122,7 @@ english]{babel}
 \def\parbf#1{\medskip\noindent{\bf #1}}
 \def\qeds{\qed\par\medskip}%END OF PROOF
 \def\qedsf{\vskip-6mm\qeds}%END OF PROOF BY FORMULA
+\def\qedsin{\eqno\square}%END OF PROOF in FORMULA
 
 %RUSSIAN FORMULA HYPERNATION
 \newcommand*{\z}[1]{#1\nobreak\discretionary{}%

@@ -1,12 +1,12 @@
 \chapter{More constructions}
 
-\section{Moving topology by a map}
+\section{Moving topology by a map}\label{sec:final-topology}
 
-Recall that in \ref{prebase}, we defined a natural way to move a topology from target space to the source of a map.
+Recall that in \ref{induced-family}, we defined a natural way to move a topology from target space to the source of a map.
 
 Namely, suppose $f\:\c{X}\to\c{Y}$ be a map between two sets.
 Assume $\c{Y}$ is equipped with a topology.
-Then declare a subset $V\subset\c{X}$ to be open in the \emph{induced topology} for $f$ if there is an open subset $W\subset\c{Y}$ 
+Declare a subset $V\subset\c{X}$ to be open in the \index{induced topology}\emph{induced topology} for $f$ if there is an open subset $W\subset\c{Y}$ 
 such that $V=f^{-1}(W)$.
 
 The following exercise describes an analogous construction that moves a topology from source to target.
@@ -20,17 +20,17 @@ Show that it defines a topology on $\c{X}$.
 
 \end{thm}
 
-The constructed topology on $\c{Y}$ is called \emph{pushforward} topology.
+The constructed topology on $\c{Y}$ is called \index{final topology}\emph{final} topology.
 
 \begin{thm}{Exercise}\label{ex:pullback/pushforward}
-Let $f\:\c{X}\to\c{Y}$ be a continuous map.
+Let $f\:\c{X}\to\c{Y}$ be a continuous map between topological spaces.
 
 \begin{subthm}{}
-Show that the pullback topology on $\c{X}$ is weaker than its own topology.
+Show that the initial topology on $\c{X}$ is weaker than its own topology.
 \end{subthm}
 
 \begin{subthm}{}
-Show that the pushforward topology on $\c{Y}$ is stronger than its own topology.
+Show that the final topology on $\c{Y}$ is stronger than its own topology.
 \end{subthm}
 
 \end{thm}
@@ -39,32 +39,32 @@ Show that the pushforward topology on $\c{Y}$ is stronger than its own topology.
 Let $g\:\c{X}\to\c{Y}$ be a continuous map.
 
 \begin{subthm}{}
-Suppose $\c{X}$ is equipped with the pullback topology.
+Suppose $\c{X}$ is equipped with the initial topology.
 Show that a map $f\:\c{W}\to\c{X}$ is continuous if and only if the composition $f\circ g\:\c{W}\to\c{Y}$ is continuous.
 \end{subthm}
 
 \begin{subthm}{}
-Suppose $\c{Y}$ is equipped with the pushforward topology.
+Suppose $\c{Y}$ is equipped with the final topology.
 Show that a map $h\:\c{Y}\to\c{Z}$ is continuous if and only if the composition $h\circ f\:\c{X}\to\c{Z}$ is continuous.
 \end{subthm}
 
 \end{thm}
 
 
-The pullback topology is used mostly for injective maps; in this case, it is nearly the same as \emph{induced topology}.
-Similarly, pushforward topology is mostly used for surjective maps.
-This particular case of the construction is called \emph{quotient topology};
+The initial topology is used mostly for injective maps; in this case, it is nearly the same as \index{induced topology}\emph{induced topology}.
+Similarly, final topology is mostly used for surjective maps.
+This particular case of the construction is called \index{quotient topology}\emph{quotient topology};
 it is discussed in the following section.
 
 \begin{thm}{Exercise}\label{ex:open-closed-pushforward}
 Let $f\:\c{X}\to \c{Y}$ be a continuous surjective map.
-Assume $f$ is closed or open.
+Assume $f$ is (a) open or (b) closed.
 Show that $\c{Y}$ is equipped with the quotient topology.
 \end{thm}
 
 \section{Quotient topology}
 
-Let $\sim$ be an \emph{equivalence relation} on a topological space $\c{X}$;
+Let $\sim$ be an \index{equivalence relation}\emph{equivalence relation} on a topological space $\c{X}$;
 that is, for any $x,y,z\in\c{X}$ the following conditions hold:
 \begin{itemize}
  \item $x\sim x$;
@@ -74,13 +74,13 @@ that is, for any $x,y,z\in\c{X}$ the following conditions hold:
 
 Recall that the set 
 \[[x]=\set{y\in \c{X}}{y\sim x}\]
-is called the \emph{equivalence class} of $x$.
+is called the \index{equivalence class}\emph{equivalence class} of $x$.
 The set of all equivalence classes in $\c{X}$ will be denoted by $\c{X}/{\sim}$.
 
 Observe that $x\mapsto [x]$ defines a surjective map $\c{X}\to \c{X}/{\sim}$.
-The corresponding pushforward topology on $\c{X}/{\sim}$ is called \emph{quotient topology} on $\c{X}/{\sim}$.
+The corresponding final topology on $\c{X}/{\sim}$ is called \index{quotient topology}\emph{quotient topology} on $\c{X}/{\sim}$.
 By default, $\c{X}/{\sim}$ is equipped with the quotient topology
-in this case, it is called \emph{quotient space}.
+in this case, it is called \index{quotient space}\emph{quotient space}.
 
 The following exercise ties equivalence relations with maps.
 
@@ -99,11 +99,12 @@ Describe the quotient space $[0,1]/(0,1)$, where $[0,1]$ and $(0,1)$ are real in
 that is, list the points and the open sets of the quotient space.
 \end{thm}
 
-\section{Compact-to-Hausdorff trick}
+\section{Compact-to-Hausdorff maps}
 
 \begin{thm}{Observation}\label{obs:compact-to-hausdorff}
-Let $\c{K}$ be a compact space and $\c{Y}$ is Hausdorff.
-Then any continuous map $f\:\c{K}\to\c{Y}$ is closed.
+Let $f\:\c{K}\to\c{Y}$ be a continuous map.
+Assume that the space $\c{K}$ is compact, and $\c{Y}$ is Hausdorff.
+Then $f$ is a closed map.
 
 If in addition, the map $f$ is onto, then $\c{Y}$ is equipped with the quotient topology induced by $f$. 
 \end{thm}
@@ -114,9 +115,9 @@ A continuous bijection from a compact space to a Hausdorff space is a homeomorph
 
 
 \parit{Proof of \ref{obs:compact-to-hausdorff}.}
-Since $\c{K}$ is compact, any closed subset $Q\subset \c{K}$ is compact as well (\ref{prop:compact-closed}).
+Since $\c{K}$ is compact, any closed subset $Q\subset \c{K}$ is compact (\ref{prop:compact-closed}).
 Since the image of a compact set is compact we have that $f(Q)$ is a compact subset of $\c{Y}$.
-Since $\c{Y}$ is Hausdorff $f(Q)$ is closed.
+Since $\c{Y}$ is Hausdorff $f(Q)$ is closed (\ref{prop:hausdorff-compact-closed}).
 Hence the first statement follows.
 
 The second statement follows from \ref{ex:open-closed-pushforward}.
@@ -131,7 +132,8 @@ that is,
 \end{align*}
 
 \begin{thm}{Exercise}\label{ex:[0,1]/0=1}
-Show that the quotient space $[0,1]/\{0,1\}$ is homeomorphic to $\mathbb{S}^1$.
+Show that $\mathbb{S}^1$ is homeomorphic to the quotient space $[0,1]/\{0,1\}$.
+(In other words, $\mathbb{S}^1$ is homeomorphic to the unit interval with glued ends.)
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:D/S}
@@ -142,25 +144,28 @@ Show that the quotient space $\DD/\mathbb{S}^1$ is homeomorphic to the unit sphe
 
 \section{Orbit spaces}
 
-\begin{thm}{Definition}
+\begin{thm}{Definition}\label{def:action}
 Let $\c{X}$ be a topological space and $G$ be a group.
 Suppose that $(g,x)\mapsto g\cdot x$ is a map $G\times\c{X}\to \c{X}$ such that
-\begin{subthm}{}
+\begin{subthm}{def:action:1}
 $1\cdot x=x$ for any $x\in \c{X}$, here $1$ denotes the identity element of $G$;
 \end{subthm}
-\begin{subthm}{}
+\begin{subthm}{def:action:assoc}
 $g\cdot (h\cdot x)=(g\cdot h)\cdot x$ for any $g,h\in G$ and $x\in \c{X}$;%
-\footnote{This condition means that the expression $g\cdot h\cdot x$ makes sense; that is, it does not depend on parentheses.}
 \end{subthm}
 \begin{subthm}{}
 for any $g\in G$, the map $x\mapsto g\cdot x$ is continuous.
 \end{subthm}
-Then we say that $G$ \emph{acts} on $\c{X}$, or $\c{X}$ is a $G$-space.
+Then we say that $G$ \index{action}\emph{acts} on $\c{X}$, or $\c{X}$ is a $G$-space.
 
 In this case, the set
 \[G\cdot x:=\set{g\cdot x}{g\in G}\]
-is called the \emph{$G$-orbit} of $x$ (or, briefly, \emph{orbit}).
+is called the \index{orbit}\emph{$G$-orbit} of $x$ (or, briefly, {}\emph{orbit}).
 \end{thm}
+
+Note that \ref{SHORT.def:action:assoc} implies that the expression
+\[g\cdot h\cdot x\]
+makes sense; that is, it does not depend on parentheses.
 
 \begin{thm}{Exercise}\label{ex:g-homeo}
 Suppose that a group $G$ acts on a topological space~$\c{X}$.
@@ -173,29 +178,29 @@ Set $x\sim y$ if there is $g\in G$ such that $y=g\cdot x$.
 Observe that $\sim$ is an equivalence relation on $\c{X}$.
 Indeed, 
 $x\sim x$ since $x=1\cdot x$.
-Further, if $y=g\cdot x$, then 
+Further, if $y=g\cdot x$, then by \ref{SHORT.def:action:1} and \ref{SHORT.def:action:assoc} we get
 \[x=1\cdot x=g^{-1}\cdot g\cdot  x=g^{-1}\cdot y;\] since $g^{-1}\in G$ we get that $x\sim y$
 $\Longrightarrow$
 $y\sim x$.
 Finally, suppose $x\sim y$ and $y\sim z$;
 that is, $y=g\cdot x$ and $z=h\cdot y$ for some $g,h\in G$.
-Then $z=(h\cdot g)\cdot x$;
+By \ref{SHORT.def:action:assoc}, $z=(h\cdot g)\cdot x$;
 therefore $x\sim z$.
 
 For the described equivalence relation, the quotient space $\c{X}/{\sim}$ can be also denoted by $\c{X}/G$;
 it is called quotient of $\c{X}$ by the action of~$G$.
 
 Note that $[x]=G\cdot x$; that is, the orbit of $x$ coincides with its equivalence class.
-By that reason $\c{X}/G$ is also called \emph{orbit space}.
+By that reason $\c{X}/G$ is also called \index{orbit space}\emph{orbit space}.
 
 \begin{thm}{Exercise}\label{ex:quotient-map}
 Suppose a group $G$ acts on a topological space $\c{X}$ and $f\:\c{X}\to \c{X}/G$ is the quotient map.
 
-\begin{subthm}{}
+\begin{subthm}{ex:quotient-map:open}
 Show that $f$ is open.
 \end{subthm}
 
-\begin{subthm}{}
+\begin{subthm}{ex:quotient-map:closed}
 Assume $G$ is finite.
 Show that $f$ is closed.
 \end{subthm}

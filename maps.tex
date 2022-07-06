@@ -6,15 +6,17 @@
 
 \begin{thm}{Definition}\label{def:homeo}
 A bijection $f\:\c{X}\to\c{Y}$ between topological spaces 
-is called \emph{homeomorphism} if $f$ and its inverse $f^{-1}\:\c{Y}\to\c{X}$
+is called \index{homeomorphism}\emph{homeomorphism} if $f$ and its inverse $f^{-1}\:\c{Y}\to\c{X}$
 are continuous.%
-\footnote{The term \emph{homomorphism} from abstract algebra looks similar and it has similar meaning but should not to be confused with \emph{homeomorphism}.}
+\footnote{The term \textit{homomorphism} from abstract algebra looks similar and it has similar meaning but should not to be confused with \textit{homeomorphism}.}
 
-Topological spaces $\c{X}$ and $\c{Y}$ are called \emph{homeomorphic} (briefly, $\c{X}\simeq\c{Y}$) if there is a homeomorphism $f\:\c{X}\to\c{Y}$.
+Topological spaces $\c{X}$ and $\c{Y}$ are called \index{homeomorphic spaces}\emph{homeomorphic} (briefly, $\c{X}\simeq\c{Y}$) if there is a homeomorphism $f\:\c{X}\to\c{Y}$.
 \end{thm}
 
 
 \begin{thm}{Exercise}\label{ex:bijection-ne-homeo}
+Show that any homomorphism is a continuous bijection.
+
 Give an example of continuous bijection between topological spaces that is not a homeomorphism.
 \end{thm}
 
@@ -47,7 +49,13 @@ if $\c{X}\simeq\c{Y}$ and $\c{Y}\simeq\c{Z}$, then $\c{X}\simeq\c{Z}$.
 Prove that the complement of a circle in the Euclidean space is homeomorphic to the Euclidean space without line $\ell$ and a point $p\not\in\ell$.
 \end{thm}
 
-Recall that a figure $F$ is called \emph{star-shaped} if there exists a point $p\in F$ such that for all $x\in F$ the line segment $px$ lies in $F$.
+\begin{wrapfigure}{r}{34 mm}
+\vskip-4mm
+\centering
+\includegraphics{mppics/pic-70}
+\end{wrapfigure}
+
+Recall that a figure $F$ is called \index{star-shaped set}\emph{star-shaped} if there exists a point $p\in F$ such that for all $x\in F$ the line segment $px$ lies in~$F$.
 
 \begin{thm}{Advanced exercise}\label{ex:star-shaped}
 Any nonempty open star-shaped set in the plane is homeomorphic to the open disc.
@@ -57,14 +65,17 @@ Any nonempty open star-shaped set in the plane is homeomorphic to the open disc.
 Show that the complements of two countable dense subsets of the plane are homeomorphic.
 \end{thm}
 
+%???Restriction+embedding
+
 \section{Closed and open maps}
+\label{sec:Closed and open maps}
 
 \begin{thm}{Definition}\label{def:open-closed-maps}
 A map between topological spaces 
-$f\:\c{X}\to\c{Y}$ is called \emph{open} if, for any open set $V$ in $\c{X}$, the image $f(V)$ is open in~$\c{Y}$.
+$f\:\c{X}\to\c{Y}$ is called \index{open map}\emph{open} if, for any open set $V\subset\c{X}$, the image $f(V)$ is open in~$\c{Y}$.
 
 A map between topological spaces 
-$f\:\c{X}\to\c{Y}$ is called \emph{closed} if, for any closed set $Q$ in $\c{X}$, the image $f(Q)$ is closed in $\c{Y}$.
+$f\:\c{X}\to\c{Y}$ is called \index{closed map}\emph{closed} if, for any closed set $Q\subset\c{X}$, the image $f(Q)$ is closed in $\c{Y}$.
 \end{thm}
 
 Note that homeomorphism can be defined as a \textit{continuous open bijection}.

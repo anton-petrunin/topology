@@ -1,26 +1,24 @@
 \chapter{Topological spaces}
 
-%Topology studies \emph{topological spaces} --- sets with certain structure that is also named \emph{topology}.
-%This structure makes possible to talk about \emph{continuous} maps.
-
-In the previous chapter we defined open sets in metric spaces 
-and showed that continuity could be defined using only the notion of open sets.
-Now we will state the most important properties of these open sets as axioms.
-It will give us a definition of \emph{topological space} as a set with a distinguished class of subsets called \emph{open sets}.
-
-The \emph{topological properties} are loosely defined as properties which survive under arbitrary continuous deformation.
+The \index{topological property}\emph{topological properties} are loosely defined as properties which survive under arbitrary continuous deformation.
 They were studied since 19th century.
 The first definition of topological spaces was given by Felix Hausdorff in 1914.
 In 1922, the definition was generalized slightly by Kazimierz Kuratowski; his definition is given below.
 
+Recall that in the previous chapter we defined open sets in metric spaces 
+and showed that continuity could be defined using only the notion of open sets.
+
+In this chapter we collect key properties of open sets and state them as axioms.
+It will give us a definition of \textit{topological space} as a set with a distinguished class of subsets called \textit{open sets}.
+
 \section{Definitions}
 
-We are about to define \emph{abstract open sets} without referring to metric spaces.
-The following definition is motivated by exercises \ref{ex:open-union} and \ref{ex:open-intersection}.
+We are about to define \textit{abstract open sets} without referring to metric spaces;
+this definition is bases on two properties in exercises \ref{ex:open-union} and \ref{ex:open-intersection}.
 
 \begin{thm}{Definition}\label{def:top-space}
 Suppose $\c{X}$ is a set 
-with a distinguished class of subsets, called \an{open sets} such that
+with a distinguished class of subsets, called \index{open set}\emph{open sets} such that
 
 \begin{subthm}{def:top-space:empty}
 The empty set $\emptyset$ and the whole $\c{X}$ are open.
@@ -41,29 +39,34 @@ The intersection of two open sets is an open set.
 That is, if $V_1$ and $V_2$ are open, then the intersection $W=V_1 \cap V_2$ is open. 
 \end{subthm}
 
-In this case, $\c{X}$ is called \an{topological space}.
+In this case, $\c{X}$ is called \index{topological space}\emph{topological space}.
+The collection of all open sets in  $\c{X}$ is called a \index{topology}\emph{topology} on $\c{X}$.
 
-The collection of all open sets in  $\c{X}$ is called a \an{topology} on $\c{X}$ and denoted as $\s{O}_{\c{X}}$;
-so instead of saying \emph{$V$ is an open set in the topological space $\c{X}$}, we might write $V\in \s{O}_{\c{X}}$.
 \end{thm}
+
+Usually we consider set with one topology, therefore it is acceptable to use the same notation for the set and the corresponding topological space.
+Rarely we will need to consider different topologies, say $\s{T}_1$ and $\s{T}_2$, on the same set $\c{X}$;
+in this case, the corresponding topological spaces will be denoted by $(\c{X},\s{T}_1)$ and $(\c{X},\s{T}_2)$.
+
 
 From (\ref{def:top-space:n}) it follows that the intersection of a finite collection of open sets is open.
 That is, if $V_1$, $V_2$, $\dots, V_n$ are open, then the intersection 
-\[W=V_1 \cap V_2\cap\dots\cap V_n\] is open.
+\[W=V_1 \cap \dots\cap V_n\] is open.
 The latter is proved by induction on $n$ using the identity
-\[V_1 \cap \dots\cap V_{n-1}\cap V_n=(V_1 \cap \dots V_{n-1})\cap V_n.\]
+\[V_1 \cap \dots\cap V_n=(V_1 \cap \dots \cap V_{n-1})\cap V_n.\]
 
 \section{Examples}\label{sec:ecamples(top)}
 
 According to exercises \ref{ex:open-union} and \ref{ex:open-intersection} any metric space is a topological space if one defines open sets as in the definition \ref{def:open}.
-As it follows from Exercise \ref{ex:d1+d2+dinfty-open},
-different metrics on one set might define the same topology.
 For example, the real line $\RR$ comes with natural metric which defines a topology on $\RR$;
 if not stated otherwise, the real line $\RR$ will be considered with this topology.
 
-A topological space is called \emph{metrizable} if its topology can be defined by a metric --- these examples play are most important.
+As it follows from Exercise \ref{ex:d1+d2+dinfty-open},
+different metrics on one set might define the same topology.
 
-The so-called \emph{connected two-point space} is a simple but nontrivial example of topological space.
+A topological space is called \index{metrizable space}\emph{metrizable} if its topology can be defined by a metric --- these examples are most important.
+
+The so-called \index{connected two-point space}\emph{connected two-point space} is a simple but nontrivial example of topological space.
 This space consists of two points 
 \[\c{X}=\{a,b\}\]
 and it has three open sets: 
@@ -75,11 +78,11 @@ Show that finite topological space is metrizable if and only if it is discrete.
 In particular, connected two-point space is not metrizable.
 \end{thm}
 
-For any set $\c{X}$, we can always define the following topologies:
+For any set $\c{X}$, we can define the following topologies:
 \begin{itemize} 
-\item  The \emph{discrete topology} --- the topology consisting of all subsets of a set $\c{X}$.
-\item  The \emph{concrete topology}  --- the topology consisting of just the whole set $\c{X}$ and the empty set, $\emptyset$.
-\item  The \emph{cofinite topology} --- the topology consisting of the empty set, $\emptyset$ and the complements to finite sets.
+\item  The \index{discrete topology}\emph{discrete topology} --- the topology consisting of all subsets of a set $\c{X}$.
+\item  The \index{concrete topology}\emph{concrete topology}  --- the topology consisting of just the whole set $\c{X}$ and the empty set, $\emptyset$.
+\item  The \index{cofinite topology}\emph{cofinite topology} --- the topology consisting of the empty set, $\emptyset$ and the complements to finite sets.
 \end{itemize}
 
 \begin{thm}{Exercise}\label{ex:cofinite-metrizable}
@@ -91,7 +94,7 @@ Show that $\c{X}$ is not metrizable.
 
 Let $\s{W}$ and $\s{S}$ be two topologies on one set.
 Suppose $\s{W}\subset\s{S}$; that is, any open set in $\s{W}$-topology is open in $\s{S}$-topology.
-In this case, we say that $\s{W}$ is \emph{weaker} than $\s{S}$, or, equivalently, $\s{S}$ is \emph{stronger} than~$\s{W}$.
+In this case, we say that $\s{W}$ is \index{weaker topology}\emph{weaker} than $\s{S}$, or, equivalently, $\s{S}$ is \index{stronger topology}\emph{stronger} than~$\s{W}$.
 
 Note that on any set, the concrete topology is the weakest and discrete topology is the strongest.
 
@@ -112,15 +115,15 @@ The following definition is motivated by Proposition~\ref{prop:cont-open}.
 
 \begin{thm}{Definition}\label{def:cont-top}
 A map between topological spaces 
-$f\:\c{X}\to\c{Y}$ is called \emph{continuous} if for any open set $W$ in $\c{Y}$, its inverse image $f^{-1}(W)$ is open in $\c{X}$.
-That is, if $W$ is an open subset in $\c{Y}$, then the set
+$f\:\c{X}\to\c{Y}$ is called \index{continuous map}\emph{continuous} if the inverse image of any open set is open.
+That is, if $W$ is an open subset in $\c{Y}$, then its inverse image
 \[V=f^{-1}(W)=\set{x\in X}{f(x)\in W}\]
-is an open subset of $\c{X}$
+is an open subset in $\c{X}$
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:connect-two-point-maps}
 Let $\RR$ be the real line with the standard topology
-and $\c{X}=\{a,b\}$ be the connected two-point space described in \ref{sec:ecamples(top)} --- it has three open sets $\emptyset$, $\{a\}$, and $\{a,b\}$.
+and $\c{X}=\{a,b\}$ be the connected two-point space described in \ref{sec:ecamples(top)} --- it has only three open sets: $\emptyset$, $\{a\}$, and $\{a,b\}$.
 
 \begin{subthm}{ex:connect-two-point-maps:R->X}
 Construct a nonconstant continuous map $\RR\to \c{X}$.
@@ -132,19 +135,25 @@ Show that any continuous function $\c{X}\to \RR$ is constant.
 
 \end{thm}
 
+\begin{thm}{Exercise}\label{ex:composition-continuous}
+Show that the composition of continuous maps is continuous. 
+\end{thm}
+
+
 \begin{thm}{Exercise}\label{ex:Rge}
+Let $\s{T}$ be a collection of subsets in $\RR$ that consists of $\emptyset$, $\RR$ and the intervals $[a,\infty)$, $(a,\infty)$ for all $a\in\RR$.
+
 
 \begin{subthm}{ex:Rge:top}
-Show that $\emptyset$, $\RR$ and the intervals $[a,\infty)$, $(a,\infty)$ for all $a\in\RR$ define a topology on the real line $\RR$.
-The  described space will be denoted by $\RR_\ge$.
+Show that $\s{T}$ is a topology on $\RR$.
 \end{subthm}
 
 \begin{subthm}{ex:Rge:nonmetr}
-Show that $\RR_\ge$ is not metrizable.
+Show that the topological space $(\RR,\s{T})$ is not metrizable.
 \end{subthm}
 
 \begin{subthm}{ex:Rge:mono}
-Show that a function $f\:\RR\to\RR$ is nondecreasing if and only if it defines a continuous map $\RR_\ge\to \RR_\ge$.
+Show that a function $f\:\RR\to\RR$ is nondecreasing if and only if it defines a continuous map $(\RR,\s{T})\to (\RR,\s{T})$.
 \end{subthm}
 
 \end{thm}

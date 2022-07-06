@@ -3,14 +3,18 @@
 \section{Definitions}
 
 Let $\c{X}$ be a topological space.
-A continuous map $f\:[0,1]\to \c{X}$ is called \emph{path}.
+A continuous map $f\:[0,1]\to \c{X}$ is called \index{path}\emph{path}.
 If $x=f(0)$ and $y=f(1)$ we say that $f$ is a path from $x$ to $y$.
 
-A space $\c{X}$ is called \emph{path-connected} if it is nonempty and any two points in $\c{X}$ can be connected by a path;
+A space $\c{X}$ is called \index{path-connected space}\emph{path-connected} if it is nonempty and any two points in $\c{X}$ can be connected by a path;
 that is, for any $x,y\in \c{X}$ there is a path $f$ from $x$ to $y$.
 
-\begin{thm}{Exericise}
+\begin{thm}{Exericise}\label{ex:convex-path-connected}
 Show that any convex set in a Euclidean space is path-connected. 
+\end{thm}
+
+\begin{thm}{Exericise}\label{ex:two-point-path-connected}
+Show that the connected two-point space $\c{X}=\{a,b\}$ (defined in \ref{sec:ecamples(top)}) is path-connected. 
 \end{thm}
 
 \begin{thm}{Theorem}\label{thm:conncted/path-connected}
@@ -28,10 +32,10 @@ Fix $x\in \c{X}$.
 Since $\c{X}$ is path-connected, 
 \[\c{X}=\bigcup_f f([0,1]),\]
 where the union is taken for all paths $f$ starting from $x$.
-By Proposition~\ref{prop:union-connect}, $\c{X}$ is connected.
+It remains to apply~\ref{prop:union-connect}.
 
 \parit{Second part.}
-It remains to present an example of a space that connected, but not path-connected.
+We need to present an example of a space that connected, but not path-connected.
 
 Denote by $I$ the closed line segment from $(0,0)$ to $(1,0)$ in the plane.
 Further, denote by $J_n$ the closed line segment from $(\tfrac1n,0)$ to $(\tfrac1n,1)$.
@@ -40,9 +44,9 @@ Consider the union of all these segments
 and set 
 \[W'=W\cup\{y\},\]
 where $y=(0,1)$.
-The space $W'$ is called \emph{flea and comb};
-the set $W$ is called \emph{comb},
-and the point $y$ is called \emph{flea}.
+The space $W'$ is called {}\emph{flea and comb};
+the set $W$ is called \index{comb}\emph{comb},
+and the point $y$ is called \index{flea}\emph{flea}.
 
 \begin{wrapfigure}{r}{33mm}
 \vskip-4mm
@@ -60,21 +64,31 @@ Note that $f^{-1}(\{y\})$ is closed subset of compact space $[0,1]$.
 Therefore $f^{-1}(\{y\})$ is compact.
 In particular, the set $f^{-1}(\{y\})$ has the minimal element,
 denote it by $b$.
-Note that $b>0$; so $f(b)=y$ and $f(t)\ne y$ for any $t<b$.
+Note that $b>0$, $f(b)=y$ and $f(t)\ne y$ for any $t<b$.
 
 Choose positive $\eps<1$.
 Since $f$ is continuous, there is $a<b$ such that $|f(t)-y|<\eps$ for any $t\in [a,b]$.
 Note that $f(a)\in J_n$ for some $n$.
+
 Denote by $N$ the intersection of $\eps$-neighborhood of $y$ with the comb.
 note that the intersection of $J_n$ with $\eps$-neighborhood of $y$ forms a connected component of $N$.
-It follows that $f(t)\in J_n$ for any $t\in [a,b]$;
+By \ref{prop:image-connected}, $f(t)\in J_n$ for any $t\in [a,b]$;
 in particular, $f(b)\ne y$ --- a contradiction.
 \qeds
 
+\begin{thm}{Advanced exercise}\label{ex:QQ}
+Recall that $\mathbb{Q}$ denotes the set of rational numbers.
+Consider the following sets in the plane:
+\[A=\set{(x,y)\in\RR^2}{ x,y\in\mathbb{Q}}
+\quad\text{and}\quad
+B=\set{(x,y)\in\RR^2}{x,y\notin\mathbb{Q}}.\]
+Show that $A\cup B$ is path connected.
+\end{thm}
+
+
 \section{Operations on paths}\label{sec:Operations on paths}
 
-Given a path $f\:[0,1]\to \c{X}$ one can consider the \emph{time-reversed} path $\bar f$.
-Namely, 
+Given a path $f\:[0,1]\to \c{X}$ one can consider the \index{time-reversed path}\emph{time-reversed} path $\bar f$, defined by
 \[\bar f(t)=f(1-t).\]
 Note that $\bar f$ is continuous since $f$ is.
 
@@ -89,59 +103,50 @@ h(2\cdot t-1)&&\text{if}&\ t\ge \tfrac12
 \end{aligned}
 \right.
 \]
-The path $g$ is called the \emph{product} (or \emph{concatenation}) of paths $f$ and $h$, briefly it is denoted as $g=f * h$.
+The path $g$ is called the \index{product of paths}\emph{product} (or \index{concatenation}\emph{concatenation}) of paths $f$ and $h$, briefly it is denoted as $g=f * h$.
 
-By 
-In order to show that $f * h$ is indeed a path, we need to check that the defined map $f * h\:[0,1]\to \c{X}$ is continuous.
+By construction, the restrictions $f*h|_{[0,\frac12]}$ and $f*h|_{[\frac12,1]}$ are continuous. 
+Therefore, \ref{ex:closed-continuous} implies that $f*h$ is continuous;
+in other words $f*h$ is indeed a path.
 
-Indeed, fix a closed set $C\subset \c{X}$,
-assume $E=(f * h)^{-1}(C)\subset [0,1]$.
-Since $f$ is continuous, we get that $E\cap [0,\tfrac12]$ is closed.
-The same way, since $h$ is continuous, we get that $E\cap [\tfrac12,1]$ is closed.
-Since 
-\[E=(E\cap [0,\tfrac12])\cup (E\cap [\tfrac12,1]),\] 
-it follows that $E$ is a closed subset in $[0,1]$.
-That is, the inverse image of any closed set in $\c{X}$ is closed in $[0,1]$ --- by Proposition~\ref{prop:cont-closed}, $f * h\:[0,1]\to \c{X}$ is continuous.
+Consider the following relation on the set of points of topological space:  $x\sim y\ \Leftrightarrow$  there is a path from $x$ to $y$.
 
-
-Consider the relation $\sim$ on the set of points of topological space defined as $x\sim y$ if there is a path from $x$ to $y$.
-
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:path-equivalence}
 Show that $\sim$ is an equivalence relation;
 that is, for any points $x$, $y$, and $z$ in a topological space we have
 
-\begin{subthm}{}
+\begin{subthm}{ex:path-equivalence:a}
 $x\sim x$.
 \end{subthm}
 
-\begin{subthm}{}
+\begin{subthm}{ex:path-equivalence:b}
 If $x\sim y$, then $y\sim x$
 \end{subthm}
 
-\begin{subthm}{}
+\begin{subthm}{ex:path-equivalence:c}
 If $x\sim y$ and $y\sim z$, then $x\sim z$.
 \end{subthm}
 
 \end{thm}
 
-The equivalence class of point $x$ for the equivalence relation $\sim$ is called \emph{path-connected component} of $x$. 
+The equivalence class of point $x$ for the equivalence relation $\sim$ is called \index{path-connected component}\emph{path-connected component} of $x$. 
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:path-connected-component-closed-open}
 Assume every path-connected component in a topological space $\c{X}$ is closed.
 Show that $\c{X}$ is connected if and only if $\c{X}$ is path-connected.
 \end{thm}
 
-\begin{thm}{Exercise}
-Show that image of path-connected set under a continuous map is path-connected.
+\begin{thm}{Exercise}\label{ex:image(path-connected)}
+Show that the image of a path-connected set under a continuous map is path-connected.
 \end{thm}
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:product(path-connected)}
 Show that the product of path-connected spaces is path-connected.
 \end{thm}
 
 \section{Open sets of Euclidean space}
 
-The following theorem provides a class of topological space for which connectedness implies path-connectedness.
+The following theorem provides a class of topological spaces for which connectedness implies path-connectedness.
 
 \begin{thm}{Theorem}\label{thm:open-connected=path-connected}
 An open set in a Euclidean space $\RR^n$ is path-connected if and only if it is connected.
@@ -156,20 +161,21 @@ Choose a point $p\in\Omega$; denote by $P\subset \Omega$ the path-connected comp
 
 Let us show that for any point $q\in \Omega$ there is $\eps>0$ such that either $\Ball(q,\eps)\subset P$, or $\Ball(q,\eps)\cap P=\emptyset$.
 
-Indeed, since $\Omega$ is open, we can choose $\eps>0$ such that $\Ball(q,\eps)\z\subset\Omega$.
-Note that $\Ball(q,\eps)$ is convex.
-Therefore if $\Ball(q,\eps)\cap P=\emptyset$, then $\Ball(q,\eps)\subset P$.
+Indeed, since $\Omega$ is open, we can choose $\eps>0$ such that the ball $\Ball(q,\eps)$ lies in $\Omega$.
+Note that $\Ball(q,\eps)$ is convex, in particular path-connected.
+Therefore if $\Ball(q,\eps)\cap P\ne\emptyset$, then $\Ball(q,\eps)\subset P$.
 
 It follows that $P$ and its complement $\Omega\setminus P$ are open.
 Since $\Omega$ is connected, we get that $\Omega\setminus P=\emptyset$ --- hence the result.
 \qeds
 
-A topological space $\c{X}$ is called \emph{locally path-connected} if any point $p\in\c{X}$ and its neighborhood $V$ there is a path-connected open set $W$ such that $V\supset W\ni p$. 
+A topological space $\c{X}$ is called \index{locally path-connected}\emph{locally path-connected} if any point $p\in\c{X}$ and its neighborhood $V$ there is a path-connected open set $W$ such that $V\supset W\ni p$. 
+
 Note that Euclidean spaceis locally path-connected;
 it follows since any open ball in a Euclidean space is path-connected.
 Therefore the following exercise generalizes the theorem above.
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:locally-path-connected}
 Show that an open set in a locally path-connected space is path-connected if and only if it is connected.
 \end{thm}
 

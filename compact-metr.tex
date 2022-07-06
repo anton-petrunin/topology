@@ -5,7 +5,7 @@
 \begin{thm}{Exercise}
 Assume a sequence of points $x_n$ in a metric space $\c{M}$ has no converging subsequence.
 Show that $\c{M}$ is not compact.
-(Hint: Note that for any $p\in \c{M}$ there is $r_p>0$ such that the ball $B(p,r_p)$ contains only finitely many elements of the sequence. Consider the covering of $\c{M}$ by balls $B(p,r_p)$.)
+(Hint: Note that for any $p\in \c{M}$ there is $r_p>0$ such that the ball $\Ball(p,r_p)$ contains only finitely many elements of the sequence. Consider the covering of $\c{M}$ by balls $\Ball(p,r_p)$.)
 \end{thm}
 
 
@@ -19,11 +19,10 @@ Existace
 The following exercise describes another useful property of compact metric spaces;
 the value $\eps>0$ is often useful 
 
-Finally let me mention the so-called \emph{Lebesgue number}one useful construction
-
+Finally let me mention the so-called Lebesgue number one useful construction
 
 Let $\{V_\alpha\}$ be a cover of a metric space $\c{M}$.
-A number $\eps > 0$ is called \emph{Lebesgue number} of the cover if for avery $x\in\c{M}$ there is $\alpha$ such that $ V_\alpha\supset \Ball(x,\eps)$.
+A number $\eps > 0$ is called \index{Lebesgue number}\emph{Lebesgue number} of the cover if for avery $x\in\c{M}$ there is $\alpha$ such that $ V_\alpha\supset \Ball(x,\eps)$.
 
 
 
@@ -32,15 +31,15 @@ Fix a cover $\{V_\alpha\}_{\alpha\in\c{I}}$ of a compact metric space $\c{M}$.
 
 For any point $x\in \c{M}$, there is $\alpha$ such that $x\in V_\alpha$.
 Moreover, since $V_\alpha$ is open there is $r_x>0$ such that 
-$B(x,2\cdot r_x)\subset V_\alpha$.
+$\Ball(x,2\cdot r_x)\subset V_\alpha$.
 Note that 
-\[B(y,r_x)\subset V_\alpha\quad\text{for any}\quad y\in B(x,r_x).
+\[\Ball(y,r_x)\subset V_\alpha\quad\text{for any}\quad y\in \Ball(x,r_x).
 \eqlbl{eq:B(y)inV}\] 
 
-The collection of balls $B(x,r_x)$ as above for all $x$
+The collection of balls $\Ball(x,r_x)$ as above for all $x$
 is a cover of~$\c{M}$.
 In particular, it admits a finite subcover
-\[B(x_1,r_{x_1})\cup\dots\cup B(x_n,r_{x_n})\supset \c{M}.\eqlbl{eq:yinB(x)}\]
+\[\Ball(x_1,r_{x_1})\cup\dots\cup \Ball(x_n,r_{x_n})\supset \c{M}.\eqlbl{eq:yinB(x)}\]
 
 Set $\eps=\min\{r_{x_1},\dots,r_{x_n}\}$;
 since $r_x>0$ for any $x$, we have that $\eps>0$.
@@ -69,7 +68,7 @@ Moreover, any compact metric space $\c{X}$ there are two points $p$ and $q$ such
 
 Let $\c{X}$ be a metric space and $\{V_\alpha\}_{\alpha\in\c{I}}$ be its open cover.
 A positive number $\delta$ is called Lebesgue number of the covering $\{V_\alpha\}$
-if for any $x\in \c{X}$ there is $\alpha\in\c{I}$ such that $B(x,\delta)\subset V_\alpha$.
+if for any $x\in \c{X}$ there is $\alpha\in\c{I}$ such that $\Ball(x,\delta)\subset V_\alpha$.
 
 \begin{thm}{Theorem}
 Any open cover of compact metric space has a Lebesgue number.
@@ -78,7 +77,7 @@ Any open cover of compact metric space has a Lebesgue number.
 \parit{Proof.}
 Fix a compact metric space $\c{X}$ and its open cover $\{V_\alpha\}_{\alpha\in\c{I}}$.
 
-Given $x\in \c{X}$, denote by $f(x)$ the exact upper bound for the values $r$ such that $B(x,r)\subset V_\alpha$ for some $\alpha\in \c{I}$.
+Given $x\in \c{X}$, denote by $f(x)$ the exact upper bound for the values $r$ such that $\Ball(x,r)\subset V_\alpha$ for some $\alpha\in \c{I}$.
 
 Note that if $f(x)=\infty$ for some $x$ then one of $V_\alpha$ coincides with the whole space $\c{X}$.
 In this case, any positive number is a Lebesgue number of $\{V_\alpha\}$.
@@ -89,9 +88,9 @@ Note that
 in particular, the function $f\:\c{X}\to\RR$ is continuous.
 
 Indeed, by triangle inequality, 
-\[B(x,r)\supset B(y,r-|x-y|_{\c{X}}).\eqlbl{eq:lipschitz}\]
-It follows that if $B(x,r)\subset V_\alpha$ for some $\alpha$,
-then $B(y,r-|x-y|_{\c{X}})\subset V_\alpha$.
+\[\Ball(x,r)\supset \Ball(y,r-|x-y|_{\c{X}}).\eqlbl{eq:lipschitz}\]
+It follows that if $\Ball(x,r)\subset V_\alpha$ for some $\alpha$,
+then $\Ball(y,r-|x-y|_{\c{X}})\subset V_\alpha$.
 Therefore
 \[f(x)-|x-y|_{\c{X}}<f(y).\]
 Similarly, we get 
@@ -104,7 +103,7 @@ the function $f\:\c{X}\to \RR$ admits its minimum at some point $x_0$.
 Note that $f(x_0)>0$.
 Indeed, since $\{V_\alpha\}$ is an open cover of $\c{X}$,
 there is $V_\alpha$ such that $V_\alpha\ni x_0$.
-Since $V_\alpha$ is open, we have $V_\alpha\supset B(x_0,r)$ for some $r>0$.
+Since $V_\alpha$ is open, we have $V_\alpha\supset \Ball(x_0,r)$ for some $r>0$.
 
 Finally, note that by construction $\delta=\tfrac12\cdot f(x_0)$ is a Lebsgue number of $\{V_\alpha\}$. 
 \qeds

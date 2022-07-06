@@ -10,10 +10,21 @@ indeed a finite open interval $I$ of a line in $\RR^2$ is homeomorphic to $\RR$,
 
 The theorem follows from \ref{prop:c/sc}, \ref{prop:home-gamma-z-axis}, and \ref{ex:z-axis}.
 
+
 \begin{thm}{Proposition}\label{prop:c/sc}
 Suppose $\Gamma\subset\RR^2$ is a closed set such that the complement $X=\RR^2\setminus \Gamma$ is connected.
 Let us identify $\RR^2$ with the $(x,y)$-plane in $\RR^3$.
 Then the complement $Y=\RR^3\setminus \Gamma$ is simply-connected.
+\end{thm}
+
+The proof is based on the following partial case of Van Kampen theorem.
+
+\begin{thm}{Exercise}\label{ex:sc-VuW}
+Suppose that $V$ and $W$ are open simply-connected subsets of topological space $\c{X}$ such that 
+$\c{X}=V\cup W$, and the set $V\cap W$ is path-connected.
+Show that $\c{X}$ is simply-connected.
+
+Conclude that sphere $\mathbb{S}^2$ is simply-connected.
 \end{thm}
 
 
@@ -45,6 +56,12 @@ Summarizing, $V$ and $W$ are open simply-connected sets, $Y=V\z\cup W$, and $V\z
 Applying \ref{ex:sc-VuW}, we get that $Y$ is simply-connected.
 \qeds
 
+\begin{thm}{Exercise}
+Observe that the proposition above does not hold without assuming that $\Gamma$ is close.
+Spot the place in the proof that brakes in this case.
+\end{thm}
+
+
 \begin{thm}{Proposition}\label{prop:home-gamma-z-axis}
 Suppose $\Gamma\subset\RR^2$ is a closed subset homeomorphic to $\RR$.
 Then there is a homeomorphism $\RR^3\to \RR^3$ that maps $\Gamma$ the $z$-axis.
@@ -57,7 +74,7 @@ Then there is a function $f\:\RR^2\to\RR$ such that
 $f\circ h(t)=t$ for any $t\in \RR$.
 \end{thm}
 
-This lemma follows directly from the so-called \emph{Tietze--Urysohn extension theorem},
+This lemma follows directly from the so-called \index{Tietze--Urysohn extension theorem}\emph{Tietze--Urysohn extension theorem},
 but we sketch a more elementary proof.
 
 Assume first that $h$ is $L$-Lipschitz;
@@ -80,7 +97,7 @@ It follows that $f\circ h(t)=t$ where
 It remains to observe that the function $f\:\RR^2\to\RR$ is continuous.
 \qeds
 
-The following proof uses the so-called \emph{Klee trick} which is quite useful in many topological problems.
+The following proof uses the so-called \index{Klee trick}\emph{Klee trick} which is quite useful in many topological problems.
 
 \parit{Proof of \ref{prop:home-gamma-z-axis}.}
 Let $h\:t\mapsto (a(t),b(t))$ be a homeomorphism $\RR\to \Gamma$.
@@ -118,8 +135,8 @@ Then $\mathbb{S}^2\setminus J$ has at least two connected components.
 
 This theorem is a partial case of famous Jordan's theorem;
 it is known for simple formulation and annoyingly tricky proofs.
-The presented proof is found by Patrick Doyle; 
-it uses quite a bit of topology, but is among the shortest.
+The presented proof is found by Patrick Doyle \cite{doyle}; 
+it is among the shortest proofs, but it uses quite a bit of topology.
 
 \parit{Proof.}
 Remove a point $p$ from $J$ to get a closed line $\Gamma=J\setminus\{p\}$ in $ \mathbb{S}^2\setminus\{p\}\simeq\RR^2$.

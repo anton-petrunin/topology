@@ -1,27 +1,33 @@
 \chapter{Subsets}
 
-\section{Closed sets}
+\section{Closed sets}\label{sec:closed-sets}
+
+The definitions of open and closed sets are mirror-symmetric to each other.
+There is no particular reason why we define topological space using open sets --- we could use closed sets instead.
+In fact, closed sets were considered before open sets --- the former were introdiced by Georg Cantor in 1884 \cite{cantor}, and the latter by René Baire in 1899 \cite{baire}.
 
 Let $\c{X}$ be a topological space. 
+A subset $K\subset \c{X}$ is called \index{close subset}\emph{closed} if its complement $\c{X}\setminus K$ is open.
 
-A set $K\subset \c{X}$ is called \emph{closed} if its complement $\c{X}\setminus K$ is open.
+Sometimes it is easier to use closed sets; 
+for example, the cofinite topology can be defined by declaring that the whole space and all its finite sets are closed.
 
 From the definition of topological spaces the following properties of closed sets follow.
 
 \begin{thm}{Proposition}\label{prop:closed-properties}
 Let $\c{X}$ be a topological space. 
-\begin{subthm}
+\begin{subthm}{}
  The empty set and $\c{X}$ are closed.
 \end{subthm}
 
-\begin{subthm}
+\begin{subthm}{}
  The intersection of any collection of closed sets is a closed set.
 That is, if $K_\alpha$ is open for any $\alpha$ in the index set $\c{I}$,
 then the set
 \[Q=\bigcap_{\alpha\in \c{I}} K_\alpha
 =
 \set{x\in \c{X}}{x\in K_\alpha\quad\text{for any}\quad\alpha\in \c{I}}\]
-is closed
+is closed.
 \end{subthm}
 
 \begin{subthm}{def:closed-properties:n}
@@ -31,25 +37,17 @@ That is,  if $K_1$ and $K_2$ are closed, then the union $Q=K_1 \cup K_2$ is clos
 
 \end{thm}
 
-The definitions of open and closed sets are mirror-symmetric to each other.
-There is no particular reason why we define topological space using open sets --- we could use closed sets instead.%
-\footnote{In fact, closed sets were considered before open sets --- the former were introdiced by Georg Cantor in 1884, and the latter by René Baire in 1899.}
-
-Sometimes it is easier to use closed sets; 
-for example, the cofinite topology can be defined by declaring that the whole space and all its finite sets are closed.
-
 The following proposition is completely analogous to the original definition of continuous maps via open sets (\ref{def:cont-top}). 
 
 \begin{thm}{Proposition}\label{prop:cont-closed}
 Let $\c{X}$ and $\c{Y}$ be topological spaces.
-A map $f\:\c{X}\to\c{Y}$ is continuous if and only if any closed set $Q$ has closed inverse image $f^{-1}(Q)$.
+A map $f\:\c{X}\z\to\c{Y}$ is continuous if and only if any closed set $Q$ has closed inverse image $f^{-1}(Q)$.
 \end{thm}
 
 
 \parit{Proof.}
 In the proof, we will use following set-theoretical identity.
-
-Suppose $A\subset \c{Y}$ and $B=\c{Y}\setminus A$ (equvalently  $A=\c{Y}\setminus B$).
+Suppose $A\subset \c{Y}$ and $B=\c{Y}\setminus A$ (or, equvalently, $A=\c{Y}\setminus B$).
 Then
 $$f^{-1}(B)
 =
@@ -89,18 +87,18 @@ Show that $f$ is continuous if and only if so are the restrictions $f|_A$ and $f
 
 Let $A$ be an arbitrary subset in a topological space $\c{X}$.
 
-The union of all open subsets of $A$ is called the \emph{interior} of $A$ and denoted as $\mathring A$.
+The union of all open subsets of $A$ is called the \index{interior}\emph{interior} of $A$ and denoted as $\mathring A$.
 
 Note that $\mathring A$ is open.
 Indeed, it is defined as a union of open sets and such union has to be open by definition of topology (\ref{def:top-space}).
-So we can say that $\mathring A$ is the \emph{maximal} open set in $A$, 
+So we can say that $\mathring A$ is the \textit{maximal} open set in $A$, 
 as any open subset of $A$ lies in~$\mathring A$.
 
-The intersection of all closed subsets containing $A$ is called the \emph{closure} of $A$ and denoted as $\bar A$.
+The intersection of all closed subsets containing $A$ is called the \index{closure}\emph{closure} of $A$ and denoted as $\bar A$.
 
 The set $\bar A$ is closed.
 Indeed, it is defined as an intersection of closed sets and such intersection has to be closed by \ref{prop:closed-properties}.
-In other words, $\bar A$ is the minimal closed set that contains $A$, 
+In other words, $\bar A$ is the \textit{minimal} closed set that contains $A$, 
 as any closed subset of $A$ contains $\bar A$.
 
 
@@ -111,49 +109,49 @@ Show that
 \[\bar B=\c{X}\setminus \mathring A.\]
 \end{thm}
 
+The following exercises are a based on the so-called \textit{Kuratowski's problem}.
+
 \begin{thm}{Exercise}\label{ex:closure-closure}
 Show that the following holds for any set $A$ of a topological space:
 \[\mathring{\mathring A}=\mathring A\subset A\subset \bar A=\bar{\bar A}\]
 
 \end{thm}
 
-The following exercise is a based on the so-called \textit{Kuratowski's problem}.
-
-\begin{thm}{Exercise}\label{ex:kuratowski}
-
-\begin{subthm}{}
-Give an example of a topological space $\c{X}$ with a closed subset $Q$ such that
- \[\bar{\mathring Q}\ne Q.\]
-\end{subthm}
-
-\begin{subthm}{}
+\begin{thm}{Exercise}\label{ex:kuratowski-c}
+Let $A$ and $B$ be subsets of a topological space.
+Suppose that $A\subset B$.
 Show that 
-\[\mathring{\bar{\mathring Q}}=\mathring Q\]
+\[\bar A\subset \bar B
+\quad\text{and}\quad 
+\mathring A\subset \mathring B.\]
+
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:kuratowski-closed}
+Show that 
+\[\bar{\mathring Q}\subset Q\]
 for any closed set $Q$.
-\end{subthm}
+\end{thm}
 
-\begin{subthm}{}
-Give an example of a topological space $\c{X}$ with an open subset $V$ such that
- \[\mathring{\bar V}\ne V.\]
-\end{subthm}
-
-\begin{subthm}{}
+\begin{thm}{Exercise}\label{ex:kuratowski-open}
 Show that 
-\[\bar{\mathring{\bar V}}=\bar V\]
+\[\mathring{\bar V}\supset V\]
 for any open set $V$.
-\end{subthm}
+\end{thm}
 
-\begin{subthm}{}
- Give an example of a topological space $\c{X}$ with a subset $A$ such that all the following 7 subsets are distinct:
+
+
+\begin{thm}{Advanced exercise}\label{ex:kuratowski}
+Give an example of a topological space $\c{X}$ with a subset $A$ such that all the following 7 subsets are distinct:
 \[\bar{\mathring{\bar A}},\ \mathring{\bar A},\ \bar A,\  A,\  \mathring A,\ \bar{\mathring A},\ \mathring{\bar{\mathring A}}.\]
-\end{subthm}
+Show that given a set $A$ one can get at most 7 by repeatedly applying the set operations of closure and interior.
 
 \end{thm}
 
 \section{Boundary}
 
 Let $A$ be an arbitrary subset in a topological space $\c{X}$.
-The \emph{boundary} of $A$ (briefly $\partial A$) is defined as the complement 
+The \index{boundary}\emph{boundary} of $A$ (briefly $\partial A$) is defined as the complement 
 \[\partial A=\bar A\setminus \mathring A.\]
 
 \begin{thm}{Exercise}\label{ex:bry-closed}
@@ -172,9 +170,8 @@ that have the same nonempty boundary.
 \section{Neighborhoods}
 
 Let $x$ be a point in a topological space $\c{X}$.
-A \emph{neighborhood} of $x$ is any open set $N$ containing $x$.
+A \index{neighborhood}\emph{neighborhood} of $x$ is any open set $N$ containing $x$.
 In topology, neighborhoods often replace the notion of balls (the latter can be used only in metric spaces).  
-
 
 \begin{thm}{Exercise}\label{ex:bry-nbhd}
 Let $A$ be a set in a topological space $\c{X}$.
@@ -182,17 +179,23 @@ Show that $x\in \partial A$ if and only if any neighborhood of $x$ contains poin
 \end{thm}
 
 Let $A$ and $B$ be subsets of a topological space $\c{X}$.
-The set $A$ is said to be a \emph{dense in}  $B$ if $\bar A\supset B$.
+The set $A$ is said to be \index{dense}\emph{dense} in $B$ if $\bar A\supset B$.
 
 \begin{thm}{Exercise}\label{ex:dense-nbhd} 
 Show that $A$ is dense in $B$ if and only if any neighborhood of any point in $B$ intersects $A$.
 \end{thm}
 
+\begin{thm}{Exercise}\label{ex:nowhere-dense}
+Classify topological spaces (up to homeomorphism) containing a unique nowhere
+dense subset.
+\end{thm}
+
+
 \section{Limits}
 
 \begin{thm}{Definition}\label{def:limit-top}
 Suppose $x_n$ is a sequence of points in a topological space $\c{X}$.
-We say that $x_n$ \emph{converges} to a point $x_\infty\in \c{X}$ (briefly $x_n\to x_\infty$ as $n\to\infty$) if for any neighborhood $N$ of $x_\infty$ such that 
+We say that $x_n$ \index{convergence}\emph{converges} to a point $x_\infty\in \c{X}$ (briefly $x_n\to x_\infty$ as $n\to\infty$) if for any neighborhood $N$ of $x_\infty$, we have that 
 $x_n\in N$ for all sufficiently large $n$.
 \end{thm}
 
@@ -212,10 +215,13 @@ Show that a convergent sequence of points in a topological space is also converg
 
 The following exercise shows that in general, converging sequences do \textit{not} provide an adequate description of topology.
 In other words, an analog of \ref{ex:continuous-limit} does not hold.%
-\footnote{The so-called \emph{nets} provide an appropriate analog of sequences that works well in topological spaces, but we are not going to consider them in the sequel.}
+(The so-called \index{net}\emph{nets} provide an appropriate generalization of sequences that works well in topological spaces, but we are not going to consider them in the sequel.)
+
+Recall that a set is called \index{countable set}\emph{countable} if it admits a bijection to some subset of the set of natural numbers.
+In particular, all finite sets are countable.
 
 \begin{thm}{Advanced exercise}\label{ex:cocountable-top}
-Let $\c{X}$ be $\RR$ with the so-called \emph{cocountable topology};
+Let $\c{X}$ be $\RR$ with the so-called \index{cocountable topology}\emph{cocountable topology};
 its closed sets are either countable or the whole $\RR$.
 
 \begin{subthm}{}

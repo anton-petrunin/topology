@@ -2,59 +2,65 @@
 
 \section{Definitions}
 
-A subset of topological space is called \emph{clopen} if it is closed and open at the same time.
+A subset of topological space is called \index{clopen subset}\emph{clopen} if it is closed and open at the same time.
 
 \begin{thm}{Definition}
-A topological space $\c{X}$ is called \emph{connected} if it has exactly two clopen sets $\emptyset$ and the whole space $\c{X}$.
+A topological space $\c{X}$ is called \index{connected space}\emph{connected} if it has exactly two clopen sets $\emptyset$ and the whole space $\c{X}$.
 \end{thm}
 
-According to our definition, the empty space is not connected.
+According to our definition, \textit{the empty space is not connected}.
 Not everyone agrees with this convention.
 
-Suppose $V$ is a \emph{proper} clopen subset in a topological space $\c{X}$; that is, $V\ne\emptyset$ and $V\ne\c{X}$.
+Suppose $V$ is a \index{proper subset}\emph{proper} clopen subset in a topological space $\c{X}$; that is, $V\ne\emptyset$ and $V\ne\c{X}$.
 Note that its complement $W=\c{X}\setminus V$ is also a proper clopen subset.
 In particular, there are two open sets $V,W\subset \c{X}$ such that $V\ne\emptyset$, $W\ne\emptyset$, $V\cup W=\c{X}$ and $V\cap W=\emptyset$.
-In this case, the pair $V$ and $W$ is called \emph{open subdivision} of $\c{X}$.
-Note that a nonempty space is disconnected if and only if it admits an open subdivision. 
-
-\begin{thm}{Proposition}\label{prop:image-connected}
-Let $f\:\c{X}\to \c{Y}$ be a continuous onto map between topological spaces.
-If $\c{X}$ is connected, then so is $\c{Y}$.
-\end{thm}
-
-\parit{Proof.}
-We can assume that $\c{X}$, and therefore $\c{Y}$ are nonempty.
-
-Assume the contrary; that is, $\c{Y}$ is disconnected.
-Suppose $V$ and $W$ form an open subdivision of $\c{Y}$.
-
-Since $f$ is continuous, $V'=f^{-1}(V)$ and $W'=f^{-1}(W)$ are open in $\c{X}$.
-Since the map $f$ is onto $V'\ne\emptyset$ and $W'\ne\emptyset$.
-Finally observe that $V'\cup W'=f^{-1}(\c{Y}) =\c{X}$ and
-\begin{align*}
-V'\cup W'&=f^{-1}(V\cup W)=f^{-1}(\c{Y})=\c{X},
-\\
-V'\cap W'&=f^{-1}(V\cap W)=f^{-1}(\emptyset)=\emptyset.
-\end{align*}
-That is, $V'$ and $W'$ is an open subdivision of $\c{X}$; 
-therefore $\c{X}$ is disconnected --- a contradiction.
-\qeds
-
-\begin{thm}{Exercise}\label{ex:quotient-connected}
-Let $\c{X}$ be a connsected space.
-Show that the quotient space $\c{X}/{\sim}$ is connected for any equivalence relation $\sim$ on $\c{X}$.
-\end{thm}
 
 A subset of topological space is called the connected or disconnected if so is the corresponding subspace.
 Spelling the notion of subspace we get the following definition.
 
-\begin{thm}{Definition}
-Let $\c{X}$ be a topological space.
+\begin{thm}{Definition}\label{def:connected-subset}
+A subset $A$ of a topological space is called \index{disconnected subset}\emph{disconnected} if it is empty or there are two open sets $V$ and $W$ such that 
+\[
+V\cap W\cap A=\emptyset,\quad
+V\cap A\ne\emptyset,\quad 
+W\cap A\ne\emptyset,\quad\text{and}\quad 
+V\cup W\supset A.\]
 
-A subset $A\subset \c{X}$ is called \emph{disconnected} if it is empty or there are two disjoint open sets $V$ and $W$ in $\c{X}$ such that 
-\[V\cap A\ne\emptyset,\quad W\cap A\ne\emptyset,\quad\text{and}\quad V\cup W\supset A.\]
+Otherwise, we say that $A$ is \index{connected subset}\emph{connected}.
+\end{thm}
 
-Otherwise, we say that $A$ is \emph{connected}.
+A pair of open sets $V$ and $W$ as in the definition will be called \index{open splitting}\emph{open splitting} of $A$.
+So we can say that \textit{a nonempty set $A$ is disconnected if and only if it admits an open splitting}.
+
+\begin{thm}{Proposition}\label{prop:image-connected}
+Let $f\:\c{X}\to \c{Y}$ be a continuous map between topological spaces.
+Suppose $A\subset \c{X}$ is a connected set.
+Then the image $f(A)$ is a connected set in $\c{Y}$.
+\end{thm}
+
+\parit{Proof.}
+We can assume that $B\ne\emptyset$; otherwise the statement is trivial.
+
+Assume that $B=f(A)$ is disconnected.
+Choose an open splitting $V$ and $W$ of $B$; that is,
+\[V\cap W\cap B=\emptyset,\quad
+V\cap B\ne\emptyset,\quad 
+W\cap B\ne\emptyset,\quad\text{and}\quad 
+V\cup W\supset B.\eqlbl{eq:VWB}\]
+
+Since $f$ is continuous, $V'=f^{-1}(V)$ and $W'=f^{-1}(W)$ are open sets in $\c{X}$.
+Note that \ref{eq:VWB} implies that $V'$ and $W'$ is an open splitting of $A$; that is,
+\[
+V'\cap W'\cap A=\emptyset,\quad
+V'\cap A\ne\emptyset,\quad 
+W'\cap A\ne\emptyset,\quad\text{and}\quad 
+V'\cup W'\supset A.\]
+Therefore $A$ is disconnected --- a contradiction.
+\qeds
+
+\begin{thm}{Exercise}\label{ex:quotient-connected}
+Let $\c{X}$ be a connected space.
+Show that the quotient space $\c{X}/{\sim}$ is connected for any equivalence relation $\sim$ on $\c{X}$.
 \end{thm}
 
 \begin{thm}{Proposition}\label{prop:union-connect}
@@ -66,13 +72,12 @@ is connected.
 \end{thm}
 
 \parit{Proof.}
-Assume contrary; that is, $A$ is disconnected.
-Choose its open subdivision $V$, $W$.
+Assume that $A$ is disconnected; choose its open splitting $V$, $W$.
 Since $\bigcap_\alpha A_\alpha\ne\emptyset$, we can fix $p\in \bigcap_\alpha A_\alpha$.
 Without loss of generality, we can assume that $p\in V$.
 
 In particular, $V\cap A_\alpha\ne\emptyset$ for any $\alpha$.
-Since $A_\alpha$ is connected, it follows that $W\cap A_\alpha=\emptyset $ for each $\alpha$.
+Since $A_\alpha$ is connected, we have that $W\cap A_\alpha=\emptyset$ for each $\alpha$; otherwise $V$ and $W$ form an open splitting of $A_\alpha$.
 Therefore 
 \begin{align*}
 W\cap A&=W\cap\biggl(\bigcup_\alpha A_\alpha\biggr)
@@ -97,14 +102,14 @@ The real interval $[0,1]$ is connected.
 
 \parit{Proof.}
 Assume contrary;
-let $V$ and $W$ be an open subdivision of $[0,1]$.
+let $V$ and $W$ be an open splitting of $[0,1]$.
 Fix a $a_0\in V$ and $b_0\in W$;
 without loss of generality, we can assume that $a_0<b_0$.
 
 Let us construct a nested sequence of closed intervals 
-\[[a_0,b_0]\supset [a_1,b_1]\dots\]
-such that $b_n-a_n=\tfrac1{2^n}(b_0-a_0)$ and 
-\[a_n\in V\quad\text{and}\quad b_n\in W
+\[[a_0,b_0]\supset [a_1,b_1]\supset \dots\]
+such that 
+\[b_n-a_n=\tfrac1{2^n}(b_0-a_0),\quad a_n\in V,\quad\text{and}\quad b_n\in W
 \eqlbl{eq:ab-in-VW}\]
 for any $n$.
 
@@ -119,7 +124,6 @@ In both cases, \ref{eq:ab-in-VW} holds.
 The sequence $a_n$ is nondecreasing and bounded above by $b_0$.
 In particular, the sequence $a_n$ converges; denote its limit by $x$.
 Since $b_n-a_n=\tfrac1{2^n}\cdot(b_0-a_0)$, the sequence $b_n$ also converges to $x$.
-
 The point $x$ has to belong to $V$ or $W$.
 Since both $V$ and $W$ are open, one of them contains $a_n$ and $b_n$ for all large $n$ --- a contradiction.
 \qeds
@@ -131,24 +135,22 @@ Show that the real line $\RR$ is a connected space.
 \section{Connected components}
 
 Let $x$ be a point in a topological space $\c{X}$.
-The intersection of all clopen sets containing $x$ is called \emph{connected component} of $x$.
-Note that the space $\c{X}$ is connected if $\c{X}$ is the connected component of one (and therefore any) point in $\c{X}$.
-
-As an intersection of closed sets,
-any connected component has to be closed.
+The intersection of all clopen sets containing $x$ is called \index{connected component}\emph{connected component} of $x$.
+Note that the space $\c{X}$ is connected if and only if $\c{X}$ is a connected component of some (and therefore any) point in $\c{X}$.
 
 \begin{thm}{Exercise}\label{ex:nonopen-connected-component}
+Show that any connected component is a closed set.
+
 Construct an example of topological space $\c{X}$ and a point $x\in \c{X}$ such that the connected component of $x$ is not open.
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:connected-component-disjoint}
+Show that two connected components either coincide or disjoint.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:finite-number-connected-component}
 Suppose that a space $\c{X}$ has a finite number of connected components.
 Show that each connected component of $\c{X}$ is open.
-\end{thm}
-
-\begin{thm}{Exercise}\label{ex:connected-component-disjoint}
-Show that two connected components either coincide or disjoint.
-In other words, being in one connected component defines an equivalence relation on points of topological space.
 \end{thm}
 
 
@@ -160,7 +162,8 @@ that is, \textit{if two spaces are homeomorphic, then they have the same number 
 In particular, connected space is not homeomorphic to a disconnected space.
 
 Let us describe a more refined way to apply this observation.
-Suppose $\c{X}$ is a connected space, a point $x \in\c{X}$ is called a \emph{cut point} if removing $x$ from $\c{X}$ produces a disconnected space $\c{X}\setminus\{x\}$.
+Suppose $\c{X}$ is a connected space, a point $x \in\c{X}$ is called a \index{cut point}\emph{cut point} if removing $x$ from $\c{X}$ produces a disconnected space;
+that is, the subset $\c{X}\setminus\{x\}$ is disconnected.
 
 Note that if $f\:\c{X}\to \c{Y}$ is a homeomorphism, then a point $x \in\c{X}$ is a cut point of $\c{X}$ if and only if $y=f(x)$ is a cut point of $\c{Y}$.
 Indeed, the restriction of $f$ defines a homeomorphism $\c{X}\setminus\{x\}\to \c{Y}\setminus\{y\}$.
@@ -175,11 +178,12 @@ Show that the circle $\mathbb{S}^1$ is not homeomorphic to the line segment $[0,
 \begin{thm}{Exercise}\label{ex:R2neR}
 Show that the plane $\RR^2$ is not homeomorphic to the real line $\RR$.
 \end{thm}
+
 {
 
 \begin{thm}{Exercise}\label{ex:not-homeo}
 Show that no two of the following four closed connected sets in the plane are not homeomorphic.
-(Each set is a union of line segments.)
+(Each set is a union of four line segments.)
 
 \begin{figure}[!ht]
 \centering
@@ -198,12 +202,21 @@ Show that no two of the following four closed connected sets in the plane are no
 \includegraphics{mppics/pic-50}
 \end{wrapfigure}
 
-\mbox{\emph{Sierpi\'nski gasket}} is constructed the following way:
+\mbox{\index{Sierpi\'nski gaske}\emph{Sierpi\'nski gasket}} is constructed the following way:
 start with a solid equilateral triangle, subdivide it into four smaller congruent equilateral triangles and remove the interior of the central one.
 Repeat this procedure recursively for each of the remaining solid triangles.
 
 }
 
+
 \begin{thm}{Advanced exercise}\label{ex:sierpinski}
+
+\begin{subthm}{ex:sierpinski:connected}
+Prove that Sierpi\'nski triangle is connected.
+\end{subthm}
+
+\begin{subthm}{ex:sierpinski:homeogroup}
 Describe all the homeomorphisms from the Sierpi\'nski triangle to it self.
+\end{subthm}
+
 \end{thm}

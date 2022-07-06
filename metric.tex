@@ -12,7 +12,7 @@ but the first general definition was given only in 1906 by Maurice Fr\'echet \ci
 In the following definition we grab together the most important properties of the intuitive notion of \textit{distance}.
 
 \begin{thm}{Definition}\label{def:metric-space}
-Let $\c X$ be a nonempty set 
+Let $\c X$ be a set 
 with a function 
 that returns a real number, denoted as $|x-y|$,
 for any pair $x,y\in\c X$.
@@ -32,13 +32,13 @@ $|x-y| = |y- x|.$
 \end{subthm}
 
 \begin{subthm}{def:metric-space:d}
-$  |x- y| + |y- z| \ge |x-z|$; it is called the \emph{triangle inequality}.
+$|x- y| + |y- z| \ge |x-z|$; this property is called the \index{triangle inequality}\emph{triangle inequality}.
 \end{subthm}
 
 In this case, we say that $\c X$ is a \index{metric space}\emph{metric space} 
 and the function 
 \[(x,y)\mapsto |x-y|\] 
-is called a \emph{metric}. 
+is called a \index{metric}\emph{metric}. 
 
 The elements of $\c X$ are called \index{point}\emph{points} of the metric space.
 Given two points $x,y\z\in \c X$, 
@@ -51,33 +51,6 @@ but $|x-y|$ always has the meaning defined above.
 Typically, we consider only one metric on set, 
 but if few metrics are needed, we can distinguish them by an index, say  $|x-y|_{\bullet}$ or $|x-y|_{239}$.
 If we need to emphasize that the distance is taken in the metric space $\c{X}$ we write $|x-y|_{\c X}$ instead of $|x-y|$.
-
-\section{Examples}\label{sec:examples(metric-spaces)}
-
-Let us give a few examples of metric spaces.
-
-\begin{itemize}
-\item\emph{Discrete space.}\label{page:Discrete metric} Let $\c X$ be an arbitrary set. 
-For any $x,y\z\in\c X$, 
-set $|x-y|\z=0$ if $x=y$ and $|x-y|=1$ otherwise.
-This metric is called \index{discrete metric}\emph{discrete metric} on $\c X$ and the obtained metric space is called \emph{discrete}.
-\item\index{real line}\emph{Real line.} 
-The set $\mathbb{R}$ of all real numbers with metric defined as 
-$|x-y|$. 
-(Unless it is stated othewise, the real line $\mathbb{R}$ will be considered with this metric.) 
-\item {}\emph{Metrics on the plane.}\label{page:Metrics on the plane}
-Let us denote by $\mathbb{R}^2$ the set of all pairs $(x,y)$ of real numbers.
-Consider two points $p=(x_p,y_p)$ and $q=(x_q,y_q)$  in~$\mathbb{R}^2$.
-One can equip $\mathbb{R}^2$ with the following metrics:
-\begin{itemize}
-\item\index{Euclidean metric}\emph{Euclidean metric,} denoted by $|p-q|_2$  and defined as
-$$|p-q|_2=\sqrt{(x_p-x_q)^2+(y_p-y_q)^2}.$$
-\item\label{Manhattan plane}\index{Manhattan plane}\emph{Manhattan metric,}  
-$$|p-q|_1=|x_p-x_q|+|y_p-y_q|.$$
-\item{}\emph{Maximum metric,} 
-$$|p-q|_\infty=\max\{|x_p-x_q|,|y_p-y_q|\}.$$
-\end{itemize}
-\end{itemize}
 
 \begin{thm}{Exercise}\label{ex:d1+d2+dinfty}
 Prove that (a)~$|{*}-{*}|_1$; (b)~$|{*}-{*}|_2$ and (c)~$|{*}-{*}|_\infty$ are metrics on $\mathbb{R}^2$.
@@ -94,10 +67,40 @@ Show that if $(x,y)\mapsto |{x}-{y}|$ is a metric, then so is
 \[(x,y)\mapsto |{x}-{y}|_{\max}=\max\{1,|{x}-{y}|\}.\] 
 \end{thm}
 
+\section{Examples}\label{sec:examples(metric-spaces)}
+
+Let us give a few examples of metric spaces.
+
+\begin{itemize}
+\item\index{discrete space}\emph{Discrete space.}\label{page:Discrete metric}
+Let $\c X$ be an arbitrary set. 
+For any $x,y\z\in\c X$, 
+set $|x-y|\z=0$ if $x=y$ and $|x-y|=1$ otherwise.
+This metric is called \index{discrete metric}\emph{discrete metric} on $\c X$ and the obtained metric space is called {}\emph{discrete}.
+\item\index{real line}\emph{Real line.} 
+The set $\mathbb{R}$ of all real numbers with metric defined as 
+$|x-y|$. 
+(Unless it is stated othewise, the real line $\mathbb{R}$ will be considered with this metric.) 
+\item {}\emph{Metrics on the plane.}\label{page:Metrics on the plane}
+Let us denote by $\mathbb{R}^2$ the set of all pairs $(x,y)$ of real numbers.
+Consider two points $p=(x_p,y_p)$ and $q=(x_q,y_q)$  in~$\mathbb{R}^2$.
+One can equip $\mathbb{R}^2$ with the following metrics:
+\begin{itemize}
+\item\index{Euclidean metric}\emph{Euclidean metric,} 
+$$|p-q|_2=\sqrt{(x_p-x_q)^2+(y_p-y_q)^2}.$$
+(Unless it is stated othewise, the real line $\mathbb{R}^2$ will be considered with the Euclidean metric.) 
+\item\label{Manhattan plane}\index{Manhattan plane}\emph{Manhattan metric,}  
+$$|p-q|_1=|x_p-x_q|+|y_p-y_q|.$$
+\item{}\emph{Maximum metric,} 
+$$|p-q|_\infty=\max\{|x_p-x_q|,|y_p-y_q|\}.$$
+\end{itemize}
+\end{itemize}
+
+
 \section{Subspaces}\label{sec:subspaces-metric}
 
 Any subset $\c{A}$ of metric space $\c{X}$ forms a metric space on its own;
-it is called \emph{subspace} of $\c{X}$.
+it is called \index{subspace}\emph{subspace} of $\c{X}$.
 This construction produces many more examples of metric spaces. 
 For example, the disc
 \begin{align*}
@@ -111,12 +114,12 @@ Similarly, the interval $[0,1)$ is a metric space with metric taken from $\RR$.
 
 \section{Continuous maps}
 
-Recall that a real-to-real function $f$ is called \emph{continuous} 
+Recall that a real-to-real function $f$ is called \textit{continuous} 
 if \textit{for any $x\in \RR$ and any $\eps > 0$ there exists $\delta > 0$ such that $|f(x)-f(y)|<\eps$, whenever $|x-y|<\delta$}. 
-It admits the following straightforward generalization to \emph{metric spaces}:
+It admits the following straightforward generalization to metric spaces:
 
 \begin{thm}{Definition}\label{def:cont-epsilon-delta}
-A map $f\:\c{X}\to\c{Y}$ between metric spaces is called \emph{continuous} 
+A map $f\:\c{X}\to\c{Y}$ between metric spaces is called \index{continuous map}\emph{continuous} 
 if for any  $x\in \c{X}$ and any $\eps>0$ there exists $\delta>0$ such that 
 $|f(x)-f(y)|_{\c{Y}}<\eps$,
 for any
@@ -137,7 +140,7 @@ Let $\c{X}$, $\c{Y}$ and $\c{Z}$ be metric spaces.
 Assume that the maps $f\:\c{X}\to\c{Y}$
 and $g\:\c{Y}\to\c{Z}$ are continuous,
 and 
-\[h=g\circ f\:\c{X}\to \c{Z}\] is its \emph{composition};
+\[h=g\circ f\:\c{X}\to \c{Z}\] is their \index{composition}\emph{composition};
 that is, $h(x)=g(f(x))$ for any $x\in \c{X}$.
 Show that $h\:\c{X}\to\c{Z}$ is continuous at any point.
 \end{thm}
@@ -154,7 +157,7 @@ Show that $f$ is continuous.
 \end{subthm}
 
 \begin{subthm}{ex:isom-cont:injective}
-Show that $f$ is injective.
+Show that $f$ is \index{injective map}\emph{injective}; that is, if $x\ne x'$ then $f(x)\ne f(x')$.
 \end{subthm}
 
 \end{thm}
@@ -176,17 +179,17 @@ an infinite number of times.
 
 \section{Balls}
 
-Let $\c{X}$ be a metric space, 
-$x$ is a point in $\c{X}$ 
-and $r$ is a positive real number.
-The set of points in $\c{X}$ which lies on the distance smaller than $r$ is called \emph{open ball} of radius $r$ centered at $x$.
+Let $x$ be a point in a metric space $\c{X}$,
+and $r>0$.
+The set of points in $\c{X}$ which lies on the distance smaller than $r$ is called \index{ball}\emph{open ball} of radius $r$ centered at $x$.
 It is denoted as $\Ball(x,r)$ 
 or $\Ball(x,r)_{\c{X}}$;
-the latter notation is used if we need to emphasize that it is taken in the space $\c{X}$.
+the latter notation is used if we need to emphasize that it is taken in the space~$\c{X}$.%
+\footnote{Many authors use the notations $\Ball_r(x)$ and $\Ball_r(x)_{\c{X}}$ as well.}
 
-The ball $\Ball(x,r)$ is also called \emph{$r$-neighborhood} of $x$.
+The ball $\Ball(x,r)$ is also called \index{neighborhood}\emph{$r$-neighborhood} of $x$.
 
-Analogously we may define \emph{closed balls} 
+Analogously we may define {}\emph{closed balls} 
 \[\cBall[x,r]=\cBall[x,r]_{\c{X}}=\set{y\in \c{X}}{|x-y|\le r}.\] 
 
 \begin{thm}{Exercise}\label{ex:d1+d2+dinfty-balls}
@@ -204,7 +207,7 @@ Give an example of a metric space and a pair of balls as above such that $r> R$.
 Let us reformulate the definition of continuous map (\ref{def:cont-epsilon-delta}) using the introduced notion of ball.
 
 \begin{thm}{Definition}\label{def:cont-balls}
-A map $f\:\c{X}\to\c{Y}$ between metric spaces is called \emph{continuous} if for any $x\in \c{X}$ and any $\eps>0$ there exists $\delta>0$ such that 
+A map $f\:\c{X}\to\c{Y}$ between metric spaces is called \index{continuous map}\emph{continuous} if for any $x\in \c{X}$ and any $\eps>0$ there exists $\delta>0$ such that 
 \[f(\Ball(x,\delta)_{\c{X}})\subset\Ball(f(x),\eps)_{\c{Y}}.\]
 
 \end{thm}
@@ -218,7 +221,7 @@ Prove the equivalence of definitions \ref{def:cont-epsilon-delta} and \ref{def:c
 \section{Open sets}
 
 \begin{thm}{Definition}\label{def:open}
-A subset $V$ in a metric space $\c{X}$ is called \emph{open} if for any $x\in V$ there is $\eps>0$ such that $\Ball(x,\eps)\subset V$.
+A subset $V$ in a metric space $\c{X}$ is called \index{open subset}\emph{open} if for any $x\in V$ there is $\eps>0$ such that $\Ball(x,\eps)\subset V$.
 \end{thm}
 
 In other words, $V$ is open if, together with each point, $V$ contains its $\eps$-neighborhood for some $\eps>0$.
@@ -231,7 +234,8 @@ On the other hand, the set of nonnegative reals
 is not open since there are negative numbers in any neighborhood of~$0$.
 
 \begin{thm}{Exercise}\label{ex:ball-is-open}
-Show that any ball in a metric space is open.
+Show that any open ball in a metric space is open.%
+\footnote{In other words, show that for any $y\in \Ball(x,r)$ there is $\eps>0$ such that $\Ball(y,\eps)\z\subset\Ball(x,r)$.}
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:open-union}
@@ -248,9 +252,7 @@ Show that a set in a metric space is open if and only if it is a union of balls.
 
 \begin{thm}{Exercise}\label{ex:infty-open-intersection}
 Give an example of metric space $\c{X}$ and an infinite sequence of open sets $V_1,V_2,\dots$
-such that the intersection
-\[\bigcap_nV_n\]
-is not open.
+such that their intersection $V_1\cap V_2\cap \dots$ is not open.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:d1+d2+dinfty-open}
@@ -265,18 +267,17 @@ The following result is the main gateway to topology.
 It says that continuous maps can be defined entirely in terms of open sets.
 
 \begin{thm}{Proposition}\label{prop:cont-open}
-A map $f\:\c{X}\to\c{Y}$ 
-between two metric spaces is \emph{continuous} 
-if and only if for any open set $W\subset\c{Y}$ 
-its inverse images
+A map $f\:\c{X}\to\c{Y}$ between two metric spaces is continuous if and only if inverse image of any open set is open;
+that is, for any open set $W\subset\c{Y}$ its \index{inverse image}\emph{inverse image}
 \[f^{-1}(W)=\set{x\in \c{X}}{f(x)\in W}\]
 is open.
 \end{thm}
 
-Note that proposition says nothing about the images of open sets. In fact, before going into proof it would be useful to solve the following exercise.
+The following exercise emphasizes that the proposition says nothing about the images of open sets;
+it is instructive to solve it before going into the proof (see also \ref{sec:Closed and open maps}).
 
 \begin{thm}{Exercise}\label{ex:image-of-open}
-Give an example of a continuous $f\:\RR\to\RR$ and an open set $V\subset \RR$ such that the image $f(V)\subset \RR$ is not open.
+Give an example of a continuous function $f\:\RR\to\RR$ and an open set $V\subset \RR$ such that the image $f(V)\subset \RR$ is not open.
 \end{thm}
 
 
@@ -290,8 +291,8 @@ Since $W$ is open,
 for some $\eps>0$.
 
 Since $f$ is continuous, by Definition~\ref{def:cont-balls}, there is $\delta>0$ such that
-\[f(B(x,\delta)_{\c{X}})\subset \Ball(f(x),\eps)_{\c{Y}}.\]
-It follows that together with any point $x\in V$, the set $V$ contains $B(x,\delta)$;
+\[f(\Ball(x,\delta)_{\c{X}})\subset \Ball(f(x),\eps)_{\c{Y}}.\]
+It follows that together with any point $x\in V$, the set $V$ contains $\Ball(x,\delta)$;
 that is, $V$ is open.
 
 \parit{If part.} Fix $x\in \c{X}$ and $\eps>0$.
@@ -312,9 +313,10 @@ Hence the if part follows.\qeds
 Let $x_1,x_2,\dots$ be a sequence of points in a metric space $\c{X}$.
 We say that the sequence $x_1,x_2,\dots$ converges to a point $x_\infty\in \c{X}$ if 
 \[|x_\infty-x_n|_{\c{X}}\to 0\quad\text{as}\quad n\to \infty.\]
-In this case, we say that the sequence $x_1,x_2,\dots$ is \emph{converging} and $x_\infty$ is its \emph{limit}, or briefly
-\[x_\infty=\lim_{n\to\infty}x_n,\]
-or $x_n\to x_\infty$ as $n\to\infty$.
+In this case, we say that the sequence $x_1,x_2,\dots$ is \index{convergence}\emph{converging} and $x_\infty$ is its \index{limit}\emph{limit};
+it can be expressed by  $x_n\to x_\infty$ as $n\to\infty$ or
+\[x_\infty=\lim_{n\to\infty}x_n.\]
+
 \end{thm}
 
 Note that we defined the convergence of points in a metric space using the convergence of real numbers $d_n=|x_\infty-x_n|_{\c{X}}$, which we assume to be known.
@@ -337,14 +339,14 @@ Show that $f$ is continuous if and only if the following condition holds:
 \section{Closed sets}
 
 Let $A$ be a set in a metric space $\c{X}$.
-A point $x\in \c{X}$ is a \emph{limit point} of $A$ if there is a sequence $x_n\in A$ such that $x_n\to x$ as $n\to\infty$.%
+A point $x\in \c{X}$ is a \index{limit point}\emph{limit point} of $A$ if there is a sequence $x_n\in A$ such that $x_n\to x$ as $n\to\infty$.%
 \footnote{Sometimes limit points are defined, assuming in addition that $x_n\z\ne x$ for any~$n$ --- we do \textit{not} follow this convention.}
 
-The set of all limit points of $A$ is called the \emph{closure} of $A$ and denoted as $\bar A$.
+The set of all limit points of $A$ is called the \index{closure}\emph{closure} of $A$ and denoted as $\bar A$.
 Note that $\bar A\supset A$;
 indeed, any point $x\in A$ is a limit point of the constant sequence $x_n=x$.
 
-If $\bar A= A$, then the set is called \emph{closed}.
+If $\bar A= A$, then the set $A$ is called \index{close set}\emph{closed}.
 
 \begin{thm}{Exercise}\label{ex:nonclosed-nonopen}
 Give an example of a subset $A\subset\RR$ that is neither closed nor open. 

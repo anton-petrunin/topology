@@ -5,6 +5,7 @@
 \hypersetup{
 %pdftitle={Introduction to topology; MATH 429, Spring 2022.}
 }
+\makeindex
 
 %\overfullrule=100mm
 
@@ -15,29 +16,51 @@
 \title{
 \tt Introduction to topology
 }
-\subtitle{\tt MATH 429, Spring 2022}
+%\subtitle{\tt MATH 429, Spring 2022}
 \author{\tt Anton Petrunin}
 \date{}
 \maketitle
 \thispagestyle{empty}
+
+Here is very preliminary noncomplete lectures from my introductory course in topology at PennState.
+I used several sources, inducing  
+notes of Allen Hatcher \cite{hatcher},
+lectures of Sergei Ivanov \cite{ivanov},
+the textbook of Czes Kosniowski \cite{kosniowski},
+and the textbook of Oleg Viro, Oleg Ivanov, Nikita Netsvetaev, and Viatcheslav Kharlamov \cite{VINKh}.
+
+
+
+Hope that someone will find it useful for something.
+
+\medskip
+
+%I want to thank  for help.
+
+\begin{flushright}
+Anton Petrunin
+\end{flushright}
+\null\vfill\noindent{\begin{lpic}[t(-0mm),b(-0mm),r(0mm),l(0mm)]{pics/by-sa(0.5)}\end{lpic} This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
+To view a copy of this license, visit \texttt{http://creativecommons.org/licenses/by-sa/4.0/}}
 \newpage
 \tableofcontents
 
 \include{metric}
-\part{Point-set topology}
+%\part{Point-set topology}
 \include{topology}
 \include{sets}
 \include{maps}
 \include{induced}
 \include{compact}
+\include{metric-plus}
 \include{hausdorff}
 \include{spaces}
 \include{connect}
-\part{Fundamental group}
+%\part{Fundamental group}
 \include{path-connect}
-\include{homotopy}
-\include{hom-type}
-\include{pi1}
+%\include{pi1}
+%\include{homotopy}
+%\include{hom-type}
 %\include{s1}
 %\include{finite}
 
@@ -49,5 +72,15 @@
 {\footnotesize
 \include{sols}
 }
+
 \include{jordan}
+
+{\small\sloppy
+\input{book.ind}
+
+\def\emph{\textit}
+
+\printbibliography[heading=bibintoc]
+\fussy
+}
 \end{document}  

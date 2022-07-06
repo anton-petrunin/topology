@@ -1,14 +1,176 @@
-\chapter{Homotopy}
+\chapter{Topology meets algebra}
+
+In the previous chapter we gave a construction of the fundamental group for a given topological space with marked point.
+This construction is one of bridges between topology and abstract algebra.
+It makes possible to reformulate a topological problem on using the language of abstract algebra and sometimes the other way around.
+In order to be useful the construction should predictably behave with respect to change of topological space.
+In this chapter we discuss ...
+
+\section{Induced homomorphism}
+
+\begin{thm}{Claim}\label{clm:ind-hom}
+Let $\phi\:\c{X}\to \c{Y}$ be a continuous map and $\phi(p)=q$.
+Suppose that $f_0$ and $f_1$ are loops bases at $p$ in $\c{X}$.
+Then
+
+\begin{subthm}{clm:ind-hom-prod}
+$\phi\circ(f_0*f_1)=(\phi\circ f_0)*(\phi\circ f_1)$,
+\end{subthm}
+
+\begin{subthm}{clm:ind-hom-homotopy}
+if $f_0\sim f_1$, then $\phi\circ f_0\sim\phi\circ f_1$.
+\end{subthm}
+
+\end{thm}
+
+\parit{Proof; \ref{SHORT.clm:ind-hom-prod}.}
+Applying the definition of the product of paths and composition of maps to $\phi\circ(f_0*f_1)$ and $(\phi\circ f_0)*(\phi\circ f_1)$ we get exactly the same expression:
+\begin{align*}
+\begin{cases}
+\phi\circ f_0(t)&\text{if}\ t\le \tfrac12,
+\\
+\phi\circ f_1(t)&\text{if}\ t\ge \tfrac12.
+\end{cases}
+\end{align*}
+Hence \ref{SHORT.clm:ind-hom-prod} follows.
+
+\parit{\ref{SHORT.clm:ind-hom-homotopy}.}
+Observe that if $f_\tau$ is a homotopy from $f_0$ to $f_1$, then $\phi\circ f_\tau$ is a homotopy from $\phi\circ f_0$ to $\phi\circ f_1$.
+Hence \ref{SHORT.clm:ind-hom-homotopy} follows.
+\qeds
+
+\begin{thm}{Corollary}
+Let $\phi\:\c{X}\to \c{Y}$ be a continuous map between topological spaces;
+suppose $\phi(p)=q$.
+Given a loop $f$ with base at $p$ in $\c{X}$, the composition $\phi\circ f$ is a loop with base at $q$ in $\c{Y}$.
+Moreover, 
+$\phi_*\:[f]\mapsto [\phi\circ f]$
+defines a homomorphism $\phi_*\:\pi_1(\c{X},p)\to \pi_1(\c{Y},q)$.
+\end{thm}
+
+
+
+\begin{thm}{Exercise}
+Consider continuous maps 
+$\c{X}\stackrel{\phi}{\to}\c{Y}\stackrel{\psi}{\to}\c{Z}$ between topological spaces.
+Show that $\psi_*\circ\phi_*=(\psi\circ\phi)_*$.
+\end{thm}
+
+\section{Dependence on base point}
+
+\begin{thm}{Theorem}
+Let $p$ and $q$ be two points in a topological space $\c{X}$.
+Suppose there is a path $h$ from $p$ to $q$, then 
+the fundamental groups $\pi_1(\c{X},p)$ and $\pi_1(\c{X},q)$ are isomorphic.
+\end{thm}
+
+Recall that product of paths is not associative;
+that is, we might have that $(f*g)*h\ne f*(g*h)$ for some paths $f,g,h$ such that both sides of the equation are defined.
+In other words we have to fully parenthesize the products of paths.
+If the product is not parenthesized we assume that the product is taken in the usual order;
+that is,
+\[f*g*h*k\df((f*g)*h)*k.\]
+
+\parit{Proof.}
+Suppose $f$ is a loop based at $p$.
+Note that $\bar h*f*h$ is a loop at $q$.
+Moreover, the map $f\mapsto \bar h*f*h$ induces a homomorphism $u_h\:\pi_1(M,p)\to\pi_1(M,q)$.
+
+Indeed, suppose $f_\tau$ is a homotopy of loops at $p$.
+Then $\bar h*f_\tau*h$ is a homotopy of loops at $q$.
+It follows that the map 
+\[u_h\:[f]\mapsto [\bar h*f*h]\]
+is defined; that is, the right-hand side does not depend on the choice of loop $f$ in the homotopy class $[f]$. 
+
+Further, if $f$ and $g$ are loops based at $p$, then \ref{clm:neutral}, \ref{clm:f-bar-f}, and  \ref{clm:assoc} imply that
+\begin{align*}
+(\bar h*f*h)*(\bar h*g*h)&\sim \bar h*f*(h*\bar h)*g*h\sim
+\\
+&\sim \bar h*(f*\eps_p)*g*h\sim 
+\\
+&\sim \bar h*(f*g)*h.
+\end{align*}
+Whence the map $u_h\:\pi_1(M,p)\to \pi_1(M,q)$ is a homomorphism;
+that is, 
+\[u_h([f]\cdot [g])=u_h[f]\cdot u_h[g]\quad\text{for any}\quad [f],[g]\in \pi_1(\c{X},p).\]
+
+The same argument shows that $u_{\bar h}\: \pi_1(M,q)\to \pi_1(M,p)$ defined by 
+\[u_{\bar h}\:[k]\mapsto [h*(k*\bar h)]\]
+is a homomorphism.
+
+Finally note that 
+\begin{align*}
+h*(\bar h*f*h)*\bar h&\sim (h*\bar h)*f*(h*\bar h)\sim
+\\
+&\sim \eps_p*f*\eps_p\sim
+\\
+&\sim f
+\end{align*}
+for any loop $f$ based at $p$.
+Therefore, $u_{\bar h}$ is a left inverse of $u_h$.
+The same way we show that $u_{h}$ is a left inverse of $u_{\bar h}$.
+It follows that $u_h$ is an isomorphism.
+\qeds
+
+According to the theorem, the fundamental group (more precisely its \textit{isomorphism class}) of path-connected space does not depend on its base point.
+Therefore, for a path-connected space $\c{X}$ we do not need to specify the base point of its fundamental group; so we could write $\pi_1(\c{X})$ instead of $\pi_1(\c{X},p)$ (if we think about the group up to isomorphism).
+
+\begin{thm}{Exercise}\label{ex:uphi}
+Let $\phi_\tau\:\c{X}\to\c{Y}$ be a homotopy.
+Suppose that $q_0=\phi_0(p)$ and $q_1=\phi_1(p)$; 
+consider the path from $q_0$ to $q_1$ defined by $h(t)=\phi_\tau(p)$.
+Show that 
+\[u_h\circ \phi_{0*}=\phi_{1*}.\]
+\end{thm}
+
+\begin{thm}{Exercise}
+Suppose that path-connected topological spaces $\c{X}$ and $\c{Y}$ have the same homotopy type.
+Use \ref{ex:uphi} to show that their fundamental groups are isomorphic.
+\end{thm}
+
+
+
+\begin{thm}{Exercise}
+Let $\c{X}$ and $\c{Y}$ be two path-connected topological spaces.
+Choose points $p\in \c{X}$ and $q\in \c{Y}$.
+Consider the projections $\phi\:\c{X}\times\c{Y}\to \c{X}$ and $\psi\:\c{X}\times\c{Y}\to \c{Y}$
+and their induced homomorphisms
+$\phi_*\:\pi_1(\c{X}\times\c{Y},(p,q))\to \pi_1(\c{X},p)$
+and $\psi_*\:\pi_1(\c{X}\times\c{Y},(p,q))\to \pi_1(\c{Y},q)$.
+Define $\Phi\:\pi_1(\c{X}\times\c{Y},(p,q))\to \pi_1(\c{X},p)\times \pi_1(\c{Y},q)$ by
+\[\Phi\:\alpha\mapsto (\phi_*(\alpha),\psi_*(\alpha))\]
+for any $\alpha\in \pi_1(\c{X}\times\c{Y},(p,q))$.
+Note that the map $\Phi$ is a homomorphism.
+
+\begin{subthm}{}
+Show that $\Phi$ is a monomorphism;
+that is, if $\Phi(\alpha)=\Phi(\beta)$ for some $\alpha,\beta\in \pi_1(\c{X}\times\c{Y},(p,q))$, then 
+$\alpha=\beta$.
+\end{subthm}
+
+\begin{subthm}{}
+Show that $\Phi$ is an epimorphism;
+that is, for any $\gamma\in \pi_1(\c{X},p)\z\times\pi_1(\c{Y},q)$ there is $\alpha\in\pi_1(\c{X}\times\c{Y},(p,q))$ such that $\Phi(\alpha)=\gamma$.
+\end{subthm}
+
+Conclude that $\pi_1(\c{X}\times\c{Y})$ is isomorphic to $\pi_1(\c{X})\times\pi_1(\c{Y})$.
+\end{thm}
+
+\begin{thm}{Advanced exercise}
+Let $\c{X}$ be a topological space.
+Consider the quotient space $\c{Y}=(\c{X}\times \c{X})/\sim$ where $\sim$ is the minimal equivalence relation such that $(x,y)\sim (y,x)$.
+Show that the fundamental group $\pi_1(\c{Y},(x,x))$ is commutative for any $x\in \c{X}$.
+\end{thm}
 
 
 \section{Definitions}
 
 Assume $f_t\:\c{X}\to \c{Y}$ be a one-parameter family of maps, $t\in [0,1]$.
-If the map $[0,1]\times \c{X}\to \c{Y}$, defined as $(t,x)\mapsto f_t(x)$ is continuous, then $f_t$ is called a \emph{homotopy} of maps from $\c{X}$ to $\c{Y}$.
+If the map $[0,1]\times \c{X}\to \c{Y}$, defined as $(t,x)\mapsto f_t(x)$ is continuous, then $f_t$ is called a \index{homotopy}\emph{homotopy} of maps from $\c{X}$ to $\c{Y}$.
 
-If $f_t(a)$ is independent of $t$ for any point $a$ in some subset $A\subset \c{X}$, then we say that  $f_t$ is a \emph{homotopy relative to $A$}. 
+If $f_t(a)$ is independent of $t$ for any point $a$ in some subset $A\subset \c{X}$, then we say that  $f_t$ is a {}\emph{homotopy relative to $A$}. 
 
-Two maps $g,h\:\c{X}\to \c{Y}$ are called \emph{homotopic} (briefly $g\sim h$)
+Two maps $g,h\:\c{X}\to \c{Y}$ are called {}\emph{homotopic} (briefly $g\sim h$)
 if there is a homotopy $f_t\:\c{X}\to \c{Y}$ such that $g=f_0$ and $h=f_1$.
 
 Two maps $g,h\:\c{X}\to \c{Y}$ are called \emph{homotopic relative to} $A$ (briefly, $g\sim h\rel A$)
@@ -25,166 +187,8 @@ That is, for any continuous maps $f,g,h\:\c{X}\to \c{Y}$, we have
 Do the same for ``$\sim\rel A$''.
 \end{thm}
 
+Suppose that $f_\tau\:[0,1]\to\c{X}$ is homotopy of paths relative to its ends;
+that is, $f_\tau(0)$ and $f_\tau(1)$ do not depend on $t$.
+Then we say that $f_0$ is \index{homotopy of paths}\emph{homotopic} to $f_1$, briefly $f_0\sim f_1$.
+This is shortcut notation --- formally speaking, we had to say \textit{homotopic rel. $\{0,1\}$} and write $f_0\sim f_1\rel{\{0,1\}}$,
 
-
-\section{Homotopy of paths}
-
-Suppose that $f_t\:[0,1]\to\c{X}$ is homotopy of paths relative to its ends;
-that is, $f_t(0)$ and $f_t(1)$ do not depend on $t$.
-Then we say that $f_0$ is \emph{homotopic} to  $f_1$, briefly $f_0\sim f_1$.
-This is shortcut notation --- formally speaking, we had to say \emph{homotopic rel. $\{0,1\}$} and write $f_0\sim f_1\rel{\{0,1\}}$,
-
-Since $\sim$ is an equivalence relation (\ref{ex:hom-eq}), we can talk about the equivalence class of a path $f$ that will be called its \emph{homotopy class};
-it will be denoted by $[f]$.
-
-
-
-\section{Technical claims}\label{sec:homotopy-claim}
-
-Each of the following claims proved by explicit construction of the needed homotopy.
-Each time the homotopy constructed as a composition $h\circ s_\tau(t)$, where $h$ is a fixed path and  $s_\tau$ is a one-parameter family of functions $[0,1]\to [0,1]$.
-The graphs of $s_\tau$ provide more intuitive descriptions of the families;
-the formulas presented just to make it formally correct.
-
-\begin{thm}{Claim}\label{clm:product}
-Suppose $f_0$ is a path from $p$ to $q$,
-and 
-$g_0$ is a path from $q$ to $r$.
-Suppose $f_0\sim f_1$ and $g_0\sim g_1$,
-then
-\[f_0*g_0\sim f_1*g_1.\]
-\end{thm}
-
-\parit{Proof.}
-Choose homotopies $f_t$ from $f_0$ to $f_1$, and $g_t$ from $g_0$ to $g_1$ and observe that 
-$f_t*g_t$ is a homotopy from $f_0*g_0$ to $f_1*g_1$.
-\qeds
-
-Let us denote by $\eps_p$ the constant loop with image $p$;
-that is, $\eps_p(t)=p$ for any $t$.
-
-\begin{thm}{Claim}\label{clm:neutral}
-Suppose $f$ is a path from $p$ to $q$, then
-\[\eps_p*f\sim f*\eps_q\sim  f.\]
-\end{thm}
-
-\begin{wrapfigure}[4]{r}{30mm}
-\centering
-\vskip-5mm
-\includegraphics{mppics/pic-30}
-\end{wrapfigure}
-
-\parit{Proof.}
-Consider the function
-\[s_\tau(t)=
-\begin{cases}
-2\cdot \tau \cdot t&\text{if}\ t\le \tfrac12,
-\\
-2\cdot\tau-1+2\cdot (1-\tau) \cdot t&\text{if}\ t\ge \tfrac12.
-\end{cases}
-\]
-Observe that 
-\begin{align*}
-f(s_0(t))&=\eps_p*f(t),
-\\
-f(s_{\frac12}(t))&=f(t),
-\\
-f(s_1(t))&=f(t)*\eps_q
-\end{align*}
-for any $t$.
-Since $h_\tau(t)=f(s_\tau(t))$ is a homotopy, the claim follows.
-\qeds
-
-\begin{thm}{Exercise}\label{ex:neutral}
-Suppose that $f$ is a path in a Hausdorff space.
-Assume $f(0)=p$ and $\eps_p*f= f$.
-Show that $f=\eps_p$; in particular, $p=q$.
-\end{thm}
-
-\begin{thm}{Claim}\label{clm:f-bar-f}
-Suppose $f$ is a path from $p$ to $q$, then
-\[f*\bar f\sim \eps_p
-\quad\text{and}\quad
-\bar f*f\sim \eps_q.\]
-\end{thm}
-
-{
-
-\begin{wrapfigure}[12]{r}{30mm}
-\centering
-\includegraphics{mppics/pic-31}
-\end{wrapfigure}
-
-\parit{Proof.}
-Consider the function
-\[s_\tau(t)=
-\begin{cases}
-2\cdot \tau \cdot t&\text{if}\ t\le \tfrac12,
-\\
-1-2\cdot \tau \cdot t&\text{if}\ t\ge \tfrac12.
-\end{cases}
-\]
-Observe that $f(s_1(t))=f*\bar f(t)$ for any $t$.
-Therefore $h_\tau(t)=f(s_\tau(t))$ is a homotopy from $\eps_p$ to $f*\bar f$.
-It proves the first statement.
-
-
-
-To prove the second statement one has to redefine $s_\tau$ as
-\[s_\tau(t)=
-\begin{cases}
-1-2\cdot \tau \cdot t&\text{if}\ t\le \tfrac12,
-\\
-1-2\cdot\tau + 2\cdot \tau \cdot t&\text{if}\ t\ge \tfrac12,
-\end{cases}
-\]
-and observe that $f(s_1(t))=\bar f*f(t)$ for any $t$.
-\qeds
-
-}
-
-\begin{thm}{Claim}\label{clm:assoc}
-Suppose $f$, 
-$g$,
-and
-$h$ are paths such that $f(1)=g(0)$ and $g(1)=h(0)$.
-Then
-\[(f*g)*h\sim f*(g*h).\]
-\end{thm}
-
-\begin{wrapfigure}[3]{r}{30mm}
-\centering
-\vskip-4mm
-\includegraphics{mppics/pic-32}
-\end{wrapfigure}
-
-\parit{Proof.}
-Consider the function $s_\tau$ defined by 
-\[s_\tau(t)=
-\begin{cases}
-\tfrac{1+\tau}2\cdot t&\text{if}\ t\le \tfrac12,
-\\
-\tfrac{\tau-1}4+t&\text{if}\ \tfrac 34\ge t\ge \tfrac12,
-\\
-\tau-1+ (2-\tau)\cdot t&\text{if}\  t\ge \tfrac34.
-\end{cases}
-\]
-Note that $s_1(t)=t$,
-and therefore \[f*(g*h)(t)\z=f*(g*h)(s_1(t))\] for any $t$.
-Further, 
-\[(f*g)*h(t)\z=f*(g*h)(s_0(t))\] for any $t$.
-It remains to observe that $f*(g*h)(s_\tau(t))$ is the needed homotopy.
-\qeds
-
-\begin{thm}{Exercise}
-Let $f$ and $g$ be paths from $p$ to $q$.
-Show that $f\sim g$ if and only if $f*\bar g\sim \eps_p$.
-\end{thm}
-
-
-\begin{thm}{Advanced exercise}\label{ex:assoc}
-Let $f$, $g$, and $h$ be paths in a Hausdorff space.
-Suppose that $(f*g)*h= f*(g*h)$
-and both sides of the equation are defined.
-Show that $f=g=h=\eps_p$ for some point $p$.
-\end{thm}

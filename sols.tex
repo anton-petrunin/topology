@@ -127,6 +127,7 @@ Apply \ref{def:metric-space:b}.
 Learn about space-filling curves and think.
 
 \parbf{\ref{ex:d1+d2+dinfty-balls}.}
+Figure out which is which.
 
 \begin{Figure}
 \vskip-0mm
@@ -137,14 +138,14 @@ Learn about space-filling curves and think.
 
 \parbf{\ref{ex:r<2R}.}
 Apply triangle inequality.
-For the second part, describe the balls $B(2,3)$ and $B(0,4)$ in $[0,\infty)$.
+For the second part, describe the balls $\Ball(2,3)$ and $\Ball(0,4)$ in $[0,\infty)$.
 
 \parbf{\ref{ex:def:cont-epsilon-delta=def:cont-balls}.}
 Spell the definitions.
 
 \parbf{\ref{ex:ball-is-open}.}
-If $y\in B(x,R)$, then $r=R-|x-y|>0$.
-Use triangle inequality to show that $B(y,r)\z\subset B(x,R)$.
+If $y\in \Ball(x,R)$, then $r=R-|x-y|>0$.
+Use triangle inequality to show that $\Ball(y,r)\z\subset \Ball(x,R)$.
 Make a conclusion.
 
 \parbf{\ref{ex:open-union}.} Apply \ref{def:open}.
@@ -155,9 +156,9 @@ Make a conclusion.
 It remains to prove the only-if part.
 
 Let $V$ be an open set. 
-By \ref{def:open}, for any $x\in V$ there is $r_x>0$ such that $B(x,r_x)\subset V$.
+By \ref{def:open}, for any $x\in V$ there is $r_x>0$ such that $\Ball(x,r_x)\subset V$.
 Observe that
-\[V=\bigcup_{x\in V} B(x,r_x).\]
+\[V=\bigcup_{x\in V} \Ball(x,r_x).\]
 
 \parbf{\ref{ex:infty-open-intersection}.}
 Consider that open segments $(-\eps,\eps)$ for all $\eps>0$ in $\RR$.
@@ -167,8 +168,8 @@ and the one-point set $\{0\}$ is not open.
 
 \parbf{\ref{ex:d1+d2+dinfty-open}.}
 Show and use that 
-\[B(x,r)_1\subset B(x,r)_2\subset B(x,r)_\infty\subset B(x,2\cdot r)_1;\]
-here $B(x,r)_1$, $B(x,r)_2$, and $B(x,r)_\infty$ denote the balls in the metrics $|{*}-{*}|_1$, $|{*}-{*}|_2$, and $|{*}-{*}|_\infty$ respectively.
+\[\Ball(x,r)_1\subset \Ball(x,r)_2\subset \Ball(x,r)_\infty\subset \Ball(x,2\cdot r)_1;\]
+here $\Ball(x,r)_1$, $\Ball(x,r)_2$, and $\Ball(x,r)_\infty$ denote the balls in the metrics $|{*}-{*}|_1$, $|{*}-{*}|_2$, and $|{*}-{*}|_\infty$ respectively.
 
 \parbf{\ref{ex:image-of-open}.} 
 Look at the image of $\RR$ for the function $x\mapsto |x|$.
@@ -176,17 +177,17 @@ Look at the image of $\RR$ for the function $x\mapsto |x|$.
 \parbf{\ref{ex:unique-lim-metr}.}
 Assume the contrary; that is, a sequence $x_1,x_2,\dots$ has two limits $y$ and $z$.
 Set $r=|y-z|$.
-Note that $B(y,\tfrac r2)$ contains all but finitely many elements of the sequence $x_1,x_2,\dots$;
-the same holds for $B(z,\tfrac r2)$.
-Observe that $B(y,\tfrac r2)\cap B(z,\tfrac r2)=\emptyset$ and arrive at a contradiction.
+Note that $\Ball(y,\tfrac r2)$ contains all but finitely many elements of the sequence $x_1,x_2,\dots$;
+the same holds for $\Ball(z,\tfrac r2)$.
+Observe that $\Ball(y,\tfrac r2)\cap \Ball(z,\tfrac r2)=\emptyset$ and arrive at a contradiction.
 
 \parbf{\ref{ex:continuous-limit}.}
 Suppose $f$ is not continuous.
-Note that it means that there is a point $x_\infty$ and $\eps>0$ such that there is a point $x_n\in B(x_\infty,\tfrac1n)$ such that $|f(x_n)-f(x_\infty)|>\eps$ in particular, $y_n=f(x_n)$ does not converge to $y_\infty=f(x_\infty)$. 
+Note that it means that there is a point $x_\infty$ and $\eps>0$ such that there is a point $x_n\in \Ball(x_\infty,\tfrac1n)$ such that $|f(x_n)-f(x_\infty)|>\eps$ in particular, $y_n=f(x_n)$ does not converge to $y_\infty=f(x_\infty)$. 
 It proves the if part of the exercise.
 
 To prove the only-if part, suppose that there is a sequence $x_n\to x_\infty$ such that $y_n\not\to y_\infty$ as $n\to \infty$.
-Note that in this case we can pass to a subseqence so that $x_n\in B(x_\infty,\tfrac1n)$ and $|y_n-y_\infty|>\eps$ for some fixed $\eps>0$.
+Note that in this case we can pass to a subseqence so that $x_n\in \Ball(x_\infty,\tfrac1n)$ and $|y_n-y_\infty|>\eps$ for some fixed $\eps>0$.
 From above $f$ is not continuous.
 
 \parbf{\ref{ex:nonclosed-nonopen}.}
@@ -200,14 +201,14 @@ Try to choose a sequence of integers $m_n$ such that $x_{n,m_n}\to z$ as $n\to\i
 Make a conclusion.
 
 \parbf{\ref{ex:closed-open-complement}.}
-Show that $Q$ is closed if $x\in Q$ if and only if $B(x,\eps)\cap Q\ne\emptyset$ for any $\eps>0$.
-Show that the latter is equivalent to $y\in V$ if and only if $B(y,\eps)\subset V$ for some $\eps>0$.
+Show that $Q$ is closed if $x\in Q$ if and only if $\Ball(x,\eps)\cap Q\ne\emptyset$ for any $\eps>0$.
+Show that the latter is equivalent to $y\in V$ if and only if $\Ball(y,\eps)\subset V$ for some $\eps>0$.
 Make a conclusion.
 
 \parbf{\ref{ex:finite+metrizable}.}
 Let $\c{F}$ be a finite metric space.
 Observe that there is $\eps>0$ such that $|x-y|>\eps$ for any two distinct points $x,y\in\c{F}$.
-It follows that $\{x\}=B(x,\eps)$ for any $x\in\c{F}$;
+It follows that $\{x\}=\Ball(x,\eps)$ for any $x\in\c{F}$;
 in particular, each one-point set is open.
 By \ref{def:top-space:u}, any set in $\c{F}$ is open.
 
@@ -242,6 +243,9 @@ Note that $W=\RR\setminus\{f(a)\}$ is an open set containing $b$.
 Assume $f$ is continuous.
 Then $\{b\}=f^{-1}(W)$ is an open set --- a contradiction.
 
+\parbf{\ref{ex:composition-continuous}.}
+Apply the definitions.
+
 \parbf{\ref{ex:Rge}}; \ref{SHORT.ex:Rge:top}.Check the conditions in \ref{def:top-space}.
 
 \parit{\ref{SHORT.ex:Rge:nonmetr}.}
@@ -265,61 +269,188 @@ Apply \ref{def:closed-properties:n} to show that $f^{-1}(Q)$ is closed.
 Further, apply \ref{prop:cont-closed}.
 
 \parbf{\ref{ex:closure-interior-complement}.}
+Suppose $V$ is an open subset and $Q$ is its complement.
+Recall that $Q$ is closed; see \ref{sec:closed-sets}.
+Show and use that $V\subset A$ if and only if $Q\supset B$.
 
 \parbf{\ref{ex:closure-closure}.}
+Each of four statements can be deduced by spelling the needed definition.
+
+\parbf{\ref{ex:kuratowski-c}.} Use \ref{ex:closure-closure} together with the definitions of closure and interior.
+
+\parbf{\ref{ex:kuratowski-closed}.}
+Observe that $\mathring Q\subset Q$, and apply \ref{ex:kuratowski-c}.
+
+\parbf{\ref{ex:kuratowski-open}.}
+Observe that $\bar V\supset V$, and apply \ref{ex:kuratowski-c}.
 
 \parbf{\ref{ex:kuratowski}.}
+Try to choose a subset $A$ in $\RR$ so that it meets the following conditions:
+\begin{itemize}
+\item $A$ and $\RR\setminus A$ contain isolated points,
+\item $A$ and $\RR\setminus A$ contain intervals,
+\item $A$ and $\RR\setminus A$ are dense in some interval.
+\end{itemize}
+For the second part, show and use the following 
+\[
+\bar{\bar A}=\bar A,
+\quad
+\mathring{\mathring A}=\mathring A,
+\quad
+\mathring{\bar{\mathring{\bar A}}}=\mathring{\bar A},
+\quad\text{and}\quad 
+\bar{\mathring{\bar{\mathring A}}}=\bar{\mathring A}.
+\]
 
-\parbf{\ref{ex:bry-closed}.}
-
-\parbf{\ref{ex:bry<closure}.}
+\parbf{\ref{ex:bry-closed}--\ref{ex:bry<closure}.}
+Apply the definitions of boundary and closed set.
 
 \parbf{\ref{ex:3=bry}.}
+Read about the Catnor set and think.
 
 \parbf{\ref{ex:bry-nbhd}.}
+Let $A$ be a subset of a topological space $\c{X}$.
+Denote by $B$ its complement; that is $B\z=\c{X}\setminus A$.
+Show and use that the statement is equivalent to the following 
+\[\c{X}\setminus\partial A =\mathring A\cup \mathring B.\]
 
 \parbf{\ref{ex:dense-nbhd}.}
+Apply the definitions of neighborhood and dense set.
+
+\parbf{\ref{ex:nowhere-dense}.} 
+In other words, we need to classify spaces such that any nonempty subset is everywhere dense.
+Observe that every point of the space lies in every nonempty open set.
+Conclude that the space has concrete topology.
+Show that any such space has this property.
 
 \parbf{\ref{ex:def:limit-metric=def:limit-top}.}
+Note that any ball $\Ball(x_\infty,\eps)$ is a neighbohood of $x_\infty$.
+Observe that it implies the only-if part.
 
-\parbf{\ref{ex:concrete-lim}.}
+To prove the if part, show and use that for any neighbohood $N$ of $x_\infty$ there is $\eps>0$ such that $\Ball(x_\infty,\eps)\subset N$.
 
-\parbf{\ref{ex:lim-weaker}.}
-
-\parbf{\ref{ex:cocountable-top}.}
+\parbf{\ref{ex:concrete-lim}--\ref{ex:cocountable-top}.}
+Apply the definition of the convergence.
 
 \parbf{\ref{ex:bijection-ne-homeo}.}
+Let $f\:\c{X}\to\c{Y}$ is a homeomorphism.
+Recall that by deinition of inverse, we have $f^{-1}(f(x))=x$ and $f(f^{-1}(y))=y$ for any $x\in \c{X}$ and $y\in\c{Y}$.
+It remains to show that the existence of $f^{-1}\:\c{Y}\to\c{X}$ implies that $f$ is a bijection $\c{X}\leftrightarrow\c{Y}$.
+
+For the second part,
+try to find such bijection for the subspaces $A=[0,1)\cup \{2\}$ and $B=[0,1]$ of $\RR$.
 
 \parbf{\ref{ex:exp}.}
+Observe that $y\mapsto \ln y$ is inverse of $x\mapsto e^x$,
+and show that both functions are continuous.
+(You can use that differentiable functions are continuous.)
 
-\parbf{\ref{ex:arctan}.}
+\parbf{\ref{ex:arctan}.} 
+Try to build the needed function from $x\mapsto \arctan x$ or $x\mapsto e^{-e^x}$
 
 \parbf{\ref{ex:homeo=eq}.}
+Apply the definitions of homeomorphism and \ref{ex:composition-continuous}.
 
 \parbf{\ref{ex:inversion}.}
 Learn about inversion and try to apply it.
 
 \parbf{\ref{ex:star-shaped}.}
+Let $\Omega$ be an open star-shaped set with respect to the origin.
+It is not hard to prove the statement if can be described by the inequality $r<f_n(\theta)$ in the polar $(r,\theta)$-coordinates, were $f_n\:\mathbb{S}^1\to \RR$ is a continuous function
+But general star-shaped set, for example one on the diagram is problematic.
+
+\begin{Figure}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-71}
+\end{Figure}
+
+To do the general case,
+show that $\Omega$ can be presented as a union of a nested sequence of open sets $\Omega_0\subset \Omega_1\subset \dots$
+such that for each $\Omega_n$ can be described by the inequality $r<f_n(\theta)$ in the polar $(r,\theta)$-coordinates with continuous $f_n\:\mathbb{S}^1\to \RR$.
+We can assume that $\Omega_0$ is a round disc around the origin.
+
+Further construct a sequence of homeomorphisms $\phi_n\:\Omega_{n-1}\to\Omega_{n}$ such that 
+the compositions $\Phi_n=\phi_n\circ\dots\circ\phi_1\:\Omega_0\to \Omega_n$ stabilises for each $x\in\Omega_0$; that is, $\Phi_n(x)$ is a fixed point for all sufficiently large $n$.
+Set 
+\[\Phi(x)=\lim_{n\to\infty} \Phi_n(x),\]
+and show that $\Phi$ defines the needed homeomorphism $\Omega_0\leftrightarrow \Omega$.
 
 \parbf{\ref{ex:cont-dense}.}
+$\Phi_n\:\RR^2\leftrightarrow\RR^2$
+Suppose that the sets are $P=\{p_1,p_2,\dots \}$ and $Q=\{q_1,q_2,\dots\}$.
+Try to construct a sequence of homeomorphisms $\Phi_n\:\RR^2\leftrightarrow\RR^2$ such that 
+$\Phi_n$ converge to a homeomorphism $\Phi\:\RR^2\leftrightarrow\RR^2$ and for any $n$ we have $\Phi_n(\{p_1,\dots,p_n\})\z\subset Q$ and $\Phi_n^{-1}(\{q_1,\dots,q_n\})\z\subset P$.
 
 \parbf{\ref{ex:bijective-closed-open}.}
+Apply the definitions.
 
 \parbf{\ref{ex:closed-open-cont}.}
+Try the maps between two-point spaces with appropriate topologies.
 
 \parbf{\ref{ex:closed-open-cont-R}.}
+Consider a map that vanish on the Cantor set and sends each remaining interval homeomorpically to the whole $\RR$.
 
-\parbf{\ref{ex:graph}.}
+\parbf{\ref{ex:base};} \textit{only-if part.}
+Apply that a base is a collection of open sets.
 
-\parbf{\ref{ex:base}.}
+\parit{If part.} 
+Choose an open set $W\subset\c{Y}$.
+By \ref{def:base}, 
+\[W=\bigcup_\alpha B_\alpha,\]
+for some collection $\{B_\alpha\}$ of sets in the base.
+Then 
+\[f^{-1}(W)=\bigcup_\alpha f^{-1}(B_\alpha).\]
+By the assumption $f^{-1}(B_\alpha)$ is open for any $\alpha$;
+it remains to apply \ref{def:top-space:u}.
 
-\parbf{\ref{ex:base-nbhd}.}
+\parbf{\ref{ex:base-nbhd}}; \textit{if part.} 
+Choose an open set $N$.
+For any $x\in N$ choose an element of base $B_x$ such that $x\in B_x\subset N$.
+Observe that 
+\[N=\bigcup_{x\in N}B_x.\]
+
+\parit{Only-if part.} Suppose that $\s{B}$ is a base.
+Then 
+\[N=\bigcup_{\alpha}B_\alpha,\]
+where $B_\alpha\in \s{B}$ for each $\alpha$.
+Then for any $x\in N$ there is $\alpha$ such that $B_\alpha\ni x$;
+in this case, $x\in B_\alpha\subset N$.
+
+\parbf{\ref{ex:prebase};} \textit{only-if part.}
+Apply that a prebase is a collection of open sets.
+
+\parit{If part.} Show that for any finite collection of sets $P_1,\dots,P_n$ in the prebase the inverse image 
+$f^{-1}(P_1\cap\dots\cap P_n)$
+is open.
+Further apply \ref{ex:base-nbhd}.
+
+\parbf{\ref{ex:graph}.} To show that the map $F$ is continuous,
+apply \ref{ex:prebase} to the prebase described before the exercise.
+Further, show and use that projection $G\:(x,f(x))\to x$ is a continuous left inverse;
+that is $G(F(x))=x$ for any $x$.
 
 \parbf{\ref{ex:induced-nonmetrizable}.}
+Show that \textit{every two disjoint closed sets of a metric space have disjoint open neighborhoods};
+that is, for any two closed sets $A$ and $B$ there are open sets $V\supset A$ and $W\supset B$ such that $V\cap W=\emptyset$.
+(Topological spaces that share this propery are called \index{normal space}\emph{normal};
+so you need to show that \textit{any metrizable space is normal}.)
+
+Observe that arithmetic progression is a closed set in the initial topology.
+Construct two disjoint arithmetic progressions that do not admit disjoint open neighborhoods. 
 
 \parbf{\ref{ex:open-open-cover}.}
+Use \ref{def:top-space:u} and \ref{def:top-space:n}.
+
+\parbf{\ref{ex:compact-set-subspace}.}
+Spell the definitions.
 
 \parbf{\ref{ex:cofinite-compact}.}
+We may assume that the space is nonempty; otherwise there is nothing to prove.
+Choose a nonempty set $V_0$ from the covering.
+Its complement is a vinete set, say $\{x_1,\dots,x_n\}$.
+For each $x_i$ choose a set $V_i\ni x_i$ from the covering.
+Observe that $\{V_0,\dots,V_0\}$ is a subcover.
 
 \parbf{\ref{ex:unbounded-noncompact}.}
 Consider covering of $S$ by intervals $(-c,c)$ for all $c>0$.
@@ -327,78 +458,215 @@ Consider covering of $S$ by intervals $(-c,c)$ for all $c>0$.
 \parbf{\ref{ex:closed-compact}.}
 Choose a point $s\in\bar S\setminus S$ and consider the cover by intervals $(-\infty, s-\eps)$ and $(s+\eps,+\infty)$ for all $\eps>0$.
 
-\parbf{\ref{ex:compact-set-subspace}.}
-
 \parbf{\ref{ex:noncompact-n}.}
+Choose a noncompact space $\c{X}$ and consider topology on the union $\c{X}\cup\{a,b\}$ that includes
+$\c{X}\cup\{a,b\}$, $\c{X}\cup\{a\}$, $\c{X}\cup\{b\}$ and all open sets in $\c{X}$.
+Observe that the sets $\c{X}\cup\{a\}$ and $\c{X}\cup\{b\}$ are compact, but their intersection is not.
 
-\parbf{\ref{ex:closed-graph}.}
+\parbf{\ref{ex:nested-compact}.} Apply the finite intersection property.
 
-\parbf{\ref{ex:nested-compact}.}
-
-\parbf{\ref{ex:S1-compact}.}
+\parbf{\ref{ex:S1-compact}.} 
+Show that $\mathbb{S}^1$ is an image of closed interval under a continuous map, and apply \ref{prop:comp-image}.
 
 \parbf{\ref{ex:closed-bounded=compact}.}
+Apply \ref{prop:compact-closed} and \ref{thm:comp-interval}.
 
 \parbf{\ref{ex:compact-product}.}
+Apply \ref{prop:comp-image} to the projections $\c{X}\times\c{Y}\to\c{X}$ and $\c{X}\times\c{Y}\to\c{Y}$.
+
+\parbf{\ref{ex:inscribed-cover-base}.} Apply \ref{ex:base}.
 
 \parbf{\ref{ex:fake-proof(thm:compact-product)}.}
+Show by example that the obtained collection 
+$\{V_{\alpha_1}\times W_{\alpha_1},\z\dots,V_{\alpha_n}\z\times W_{\alpha_n},V_{\alpha_1'}\z\times W_{\alpha_1'},\z\dots,V_{\alpha_m'}\z\times W_{\alpha_m'}\}$
+might not cover the whole $\c{X}\times\c{Y}$.
 
-\parbf{\ref{ex:inscribed-cover-base}.}
+\parbf{\ref{ex:closed-graph}.}
+By \ref{prop:cont-closed}, it is sufficient to show that any closed set $A\subset\c{K}$ has closed inverse image $B=f^{-1}(A)\subset\c{X}$.
 
-\parbf{\ref{ex:product-sequentially-compact}.}
+Observe that the set $C=\Gamma\cap (\c{X}\times A)$ is closed,
+so its complement $U$ can be presented as a union $\bigcup_\alpha V_\alpha\times W_\alpha$.
 
-\parbf{\ref{ex:lebesgue-number}.}
-Show and use that there is $\eps>0$ and a finite cover of $\c{M}$ by balls $\Ball(p_i,r_i)$ such that for each $i$ the ball $\Ball(p_i, r_i+\eps)$ lies in some $V_{\alpha_i}$.
+Suppse $B$ is not closed, choose a point $p\z\in \bar B\backslash B$.
+Note that $\{p\}\times \c{K}$ is a compact set in~$U$.
+Argue as in \ref{thm:compact-product} to prove that there is an open set $N_p\ni p$ such that $N_p\times \c{K}\subset U$.
+Arrive at a contradiction.
+
+\parit{Remark.}
+The following function $f\:\RR\to\RR$ has closed graph, but is not continuous:
+\[f(x)=
+\begin{cases}
+\tfrac1x&\text{if}\ x\ne 0,
+\\
+0&\text{if}\ x= 0.
+\end{cases}
+\]
+It shows that compactness of $\c{K}$ is a necessary assumption.
 
 \parbf{\ref{ex:lebesgue=1}.}
+Consider an infinite set of points with discrete metric.
 
-\parbf{\ref{ex:hausdorff-unique-limit}.}
+\parbf{\ref{ex:product-sequentially-compact}.}
+Suppose that a sequence $x_n$ converges to $x_\infty$ in $\c{X}$ 
+and $y_n$ converges to $y_\infty$ in $\c{Y}$.
+Show and use that $(x_n,y_n)$ converges to $(x_\infty,y_\infty)$ in $\c{X}\times\c{Y}$ as $n\to\infty$.
+
+\parbf{\ref{ex:compact-complete}.}
+By \ref{prop:seq-comp-metr}, any sequence has a converging subseqence;
+denote by $x$ the limit of this subsequence.
+Show that if the sequence is Cauchy, then it converges to $x$.
+
+\parbf{\ref{ex:hausdorff-unique-limit}.} Arguing by contradiction, assume a sequence has two limits $x$ and $y$.
+Since the space is Hausdorff we can choose disjoint neighbohoods $V\ni x$ and $W\ni y$.
+Since the sequence converges to $x$, the set $V$ contains all but finitely many elements of the sequence.
+The same holds for $W$ --- a contradiction.
 
 \parbf{\ref{ex:hausdorff-diagonal}.}
+The set $\Delta$ is closed if and only if its complement $U=(\c{X}\times\c{X})\setminus\Delta$ is open.
+Show and use that the latter means that there is a family $\{(V_\alpha,W_\alpha)\}$ of disjoint pairs of open sets in $\c{X}$ such that
+\[U=\bigcup_\alpha V_\alpha\times W_\alpha.\]
 
 \parbf{\ref{ex:nonclosed-compact}.}
+Look at the subsets of a concrete space.
 
-\parbf{\ref{ex:normal-hausdorff}.}
+\parbf{\ref{ex:normal-hausdorff}.} By \ref{thm:hausdorff-compact-t3}, for any $y\in L$ there is a pair of open sets $V_y$, $W_y$ such that $V_y\supset K$ and $W_y\ni y$
+such that $V_y\cap W_y=\emptyset$.
+Mimic the proof of \ref{thm:hausdorff-compact-t3} using these pairs.
 
-\parbf{\ref{ex:move-topology:pushforward}.}
+\parbf{\ref{ex:move-topology:pushforward}.} Check the conditions in \ref{def:top-space} directly.
 
 \parbf{\ref{ex:pullback/pushforward}.}
 
 \parbf{\ref{ex:category-def-pull-push}.}
 
 \parbf{\ref{ex:open-closed-pushforward}.}
+Since $f$ is continuous, $V=f^{-1}(W)$ is open for any open set $W\subset \c{Y}$.
+It remains to show that if $V$ is open so is $W\subset \c{Y}$.
+
+Note that $W=f(V)$.
+If $f$ is open, then $W=f(V)$ is open as well.
+
+Set $A=\c{X}\setminus V$ and $B=\c{Y}\setminus W$.
+Since $V$ is open $A$ is closed.
+Since $f$ is surjective, $B=f(A)$.
+Since $f$ is a closed map, $B=f(A)$ is closed as well.
+Therefore, $W=\c{Y}\setminus B$ is open.
 
 \parbf{\ref{ex:eq-relation-f}.}
+Check the conditions, in the definitions of equivalence relation and equivalence class.
 
 \parbf{\ref{ex:[0,1]/(0,1)}.}
+It has tree points $a=[0]$, $b=[\tfrac12]$, and $c=[1]$ and the open sets are 
+\[\emptyset,\  \{a,b\},\ \{b,c\},\  \{a,b,c\}.\]
 
 \parbf{\ref{ex:[0,1]/0=1}.}
+Apply \ref{obs:compact-to-hausdorff} to the map $[0,1]\to \mathbb{S}^1$ defined by $t\mapsto (\cos (2\cdot\pi\cdot t), \sin(2\cdot\pi\cdot t))$.
 
 \parbf{\ref{ex:D/S}.}
+Apply \ref{obs:compact-to-hausdorff} to the map $\DD\to \RR^3$ that is written from polar to spherical coordinates as  
+\[(r,\theta)\mapsto (1, \theta, \pi\cdot r).\]
 
 \parbf{\ref{ex:g-homeo}.}
+Show and use that $y\mapsto g^{-1}\cdot y$ is inverse of $x\mapsto g\cdot x$.
 
-\parbf{\ref{ex:quotient-map}.}
+\parbf{\ref{ex:quotient-map}}
+Let $f\:\c{X}\to \c{X}/G$ is the quotient map.
+Show that for any set $V\subset \c{X}$ we have
+\[f^{-1}\circ f(V)=\bigcup_{g\in G}g\cdot V.\]
 
-\parbf{\ref{ex:quotient-connected}.}
+\parit{\ref{SHORT.ex:quotient-map:open}.}
+Apply this formula and \ref{ex:g-homeo} to show that if $V$ is open then so is $f^{-1}\circ f(V)$.
+Finally apply the definition of quotient topology.
+
+\parit{\ref{SHORT.ex:quotient-map:closed}.}
+Apply this formula and \ref{ex:g-homeo} to show that if $G$ is finite and $V$ is closed then so is $f^{-1}\circ f(V)$.
+
+\parbf{\ref{ex:quotient-connected}.} Apply \ref{prop:image-connected}.
 
 \parbf{\ref{ex:A<B<bar-A}.}
+Show that any open splitting of $B$ splits $A$ as well.
 
 \parbf{\ref{ex:R-connected}.}
+Apply \ref{prop:connected[0,1]}, \ref{prop:image-connected}, and \ref{prop:union-connect}.
 
 \parbf{\ref{ex:nonopen-connected-component}.}
+Connected component is an intersection of clopen sets; in particular it is closed.
 
-\parbf{\ref{ex:finite-number-connected-component}.}
+Consider the following subspace of real line $A=\{0,1,\tfrac12,\tfrac13,\dots\}$.
+Show that the one-point set $\{0\}$ is a connected component in $A$ and it is not open in $A$. 
 
 \parbf{\ref{ex:connected-component-disjoint}.}
+Check that being in one connected component defines an equivalence relation on points of topological space.
+
+\parbf{\ref{ex:finite-number-connected-component}.}
+Use \ref{ex:nonopen-connected-component} and \ref{ex:connected-component-disjoint}.
 
 \parbf{\ref{ex:S1ne[0,1]}.}
+Show that $\mathbb{S}^1$ has no cut points, but $[0,1]$ has.
 
 \parbf{\ref{ex:R2neR}.}
+Show that $\RR^2$ has no cut points, but $\RR$ has.
 
 \parbf{\ref{ex:not-homeo}.}
+Count cut points and noncut points for each space.
 
-\parbf{\ref{ex:sierpinski}.}
+\parbf{\ref{ex:sierpinski}};
+\ref{SHORT.ex:sierpinski:connected}
+Let $T_n$ be a the union of all sides of the $3^n$ thriangles after $n^{\text{th}}$ iteration.
+Note that the sequence is nested; that is, $T_0\subset T_1\subset \dots{}$
+Use induction to show that each $T_i$ is connected.
+Conclude that the union $T=T_0\cup T_1\cup\dots$ is connected.
+Finally, show that Sierpi\'nski triangle is the closure of $T$ and apply \ref{ex:A<B<bar-A}.
+
+\parit{\ref{SHORT.ex:sierpinski:homeogroup}.}
+Denote the Sierpi\'nski triangle by~$\triangle$.
+
+\begin{Figure}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-51}
+\end{Figure}
+
+Let $\{x,y,z\}$ be a 3-point set in $\triangle$ such that $\triangle \setminus\{x,y,z\}$ has 3 connected components.
+Show and use that there is a unique choice for the set $\{x,y,z\}$ and 
+it is formed by the midpoints of the original triangle.
+
+\parbf{\ref{ex:convex-path-connected}.}
+Let $p$ and $q$ be points in a convex set $F$.
+Observe that the linear path 
+\[f(t)=(1-t)\cdot p+t\cdot q\]
+lies in $F$.
+
+\parbf{\ref{ex:two-point-path-connected}.}
+Recall that $\{a\}$ is an open set in $\c{X}$.
+Show and use that $f\:[0,1]\to\c{X}$ defined by 
+\[f(t)=
+\begin{cases}
+a&\text{if\ }t<1,
+\\
+b&\text{if\ }t=1
+\end{cases}
+\]
+is continuous map.
+
+\parbf{\ref{ex:QQ}.}
+Show and use that for any rational numbers $a$ and $b$, the line $y=a\cdot x+b$ lies in $A\cup B$.
+
+\parbf{\ref{ex:path-equivalence}.} For \ref{SHORT.ex:path-equivalence:a}, use the constant path $f(t)=x$.
+For \ref{SHORT.ex:path-equivalence:b}: if $f$ is a path from $x$ to $y$, then $\bar f$ is from $y$ to $x$.
+For \ref{SHORT.ex:path-equivalence:c}, suppose $f$ is a path from $x$ to $y$ and $g$ is a path from $y$ to $z$.
+Observe that $f*g$ is a path from $x$ to $z$.
+
+\parbf{\ref{ex:path-connected-component-closed-open}.}
+
+\parbf{\ref{ex:image(path-connected)}.}
+Show and use that for any continuous map $\phi$ and any path $f$, the composition $\phi\circ f$ is a path. 
+
+\parbf{\ref{ex:product(path-connected)}.}
+Suppose that $f$ and $g$ are paths in $\c{X}$ and $\c{Y}$ respectively.
+Show and use that $t\z\mapsto (f(t),g(t))$ is a path in $\c{X}\times\c{Y}$.
+
+\parbf{\ref{ex:locally-path-connected}.} Mimic the proof of \ref{thm:open-connected=path-connected}.
 
 %\parbf{\ref.}
 

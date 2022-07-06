@@ -7,35 +7,35 @@ In this chapter we will discuss a few constructions that produce new topological
 
 \begin{thm}{Proposition}
 Let $A$ be a subset of a topological space $\c{Y}$.
-Then the subsets $V\subset A$ of the form $V=A\cap W$ for an open set $W$ in $\c{Y}$ form a topology on $A$.
+Then all subsets $V\subset A$ such that $V=A\cap W$ for some open set $W$ in $\c{Y}$ form a topology on $A$.
 \end{thm}
 
-The described topology is called \emph{induced topology} on $A$.
+The described topology is called \index{induced topology}\emph{induced topology} on $A$.
 
-A subset $A$ in a topological space $\c{Y}$ equipped with the induced topology is called a \emph{subspace} of $\c{Y}$.
+A subset $A$ in a topological space $\c{Y}$ equipped with the induced topology is called a \index{subspace}\emph{subspace} of $\c{Y}$.
 It is straightforward to check that this notion agrees with the notion introduced in \ref{sec:subspaces-metric};
 that is, if $\c{Y}$ is a metric space, then any subset $A\subset\c{Y}$ comes with metric
 and the topology defined by this metric coincides with the induced topology on $A$.
 
-A map $f\:\c{X}\to \c{Y}$ is called \emph{embedding} if $f$ defines a homeomorphism from space $\c{X}$ to the subspace $f(\c{X})$ in $\c{Y}$.
+A map $f\:\c{X}\to \c{Y}$ is called \index{embedding}\emph{embedding} if $f$ defines a homeomorphism from space $\c{X}$ to the subspace $f(\c{X})$ in $\c{Y}$.
 
 \parit{Proof.}
 We need to check the conditions in \ref{def:top-space}.
 
-First of the whole set $A$ and the empty set are included;
+First, the whole set $A$ and the empty set are included;
 indeed, $\emptyset=A\cap \emptyset$ and $A=A\cap \c{Y}$.
 
-Assume $\set{V_\alpha}{\alpha\in\c{I}}$ is a collection of open sets in $A$;
-that is, for each $V_\alpha$ there is a set $W_\alpha$ which is open in $\c{Y}$ and such that $V_\alpha\z=A\cap W_\alpha$.
+Assume $\{V_\alpha\}$ is a collection of open sets in $A$; here $\alpha$ runs in some index set, say $\c{I}$.
+In other words, for each $V_\alpha$ there is an open set $W_\alpha\subset\c{Y}$ such that $V_\alpha\z=A\cap W_\alpha$.
 Note that
 \[\bigcup_\alpha V_\alpha=A\cap\left(\bigcup_\alpha W_\alpha\right).\]
-Since the union of $\{W_\alpha\}$ is open in $\c{Y}$, the union of $\{V_\alpha\}$ is open in the induced topology on $A$.
+Since the union of $\{W_\alpha\}$ is open in $\c{Y}$ (\ref{def:top-space:u}), the union of $\{V_\alpha\}$ is open in the induced topology on $A$.
 
 Assume $V_1$ and $V_2$ are open in $A$; 
 that is, $V_1=A\cap W_1$ and  $V_2\z=A\cap W_2$ for some open sets $W_1,W_2\subset\c{Y}$.
 Note that
 \[V_1\cap V_2=A\cap(W_1\cap W_2).\]
-Since the intersection $W_1\cap W_2$ is open in $\c{Y}$,
+Since the intersection $W_1\cap W_2$ is open in $\c{Y}$ (\ref{def:top-space:n}),
 the intersection $V_1\cap V_2$ is open in $A$.
 \qeds
 
@@ -44,13 +44,13 @@ the intersection $V_1\cap V_2$ is open in $A$.
 Recall that $\c{X}\times\c{Y}$ denotes the set of all pairs $(x,y)$ such that $x\in\c{X}$ and  $y\in\c{Y}$.
 
 Suppose that the sets $\c{X}$ and $\c{Y}$ are equipped with topologies.
-Let us construct the \emph{product topology} on $\c{X}\times\c{Y}$ by declaring that a set is open in $\c{X}\times\c{Y}$ if it can be presented as a union of sets of the following type: $V\times W$ for open sets $V\subset \c{X}$ and $W\subset \c{Y}$.
+Let us construct the \index{product topology}\emph{product topology} on $\c{X}\times\c{Y}$ by declaring that a set is open in $\c{X}\times\c{Y}$ if it can be presented as a union of sets of the following type: $V\times W$ for open sets $V\subset \c{X}$ and $W\subset \c{Y}$.
 In other words, a subset $U$ is open in $\c{X}\times\c{Y}$ if and only if there are collections of open sets $V_\alpha\subset \c{X}$ and $W_\alpha\subset \c{Y}$  such that 
 \[U=\bigcup_\alpha V_\alpha\times W_\alpha,\]
 here $\alpha$ runs in some index set.
 
 By default, we assume that $\c{X}\times\c{Y}$ is equipped with the product topology;
-in this case $\c{X}\times\c{Y}$ is called \emph{product space}.
+in this case $\c{X}\times\c{Y}$ is called \index{product space}\emph{product space}.
 
 \begin{thm}{Proposition}
 The product topology is indeed a topology.
@@ -67,7 +67,7 @@ U'=\bigcup_\beta V'_\beta\times W'_\beta.
 \]
 where $\alpha$ and $\beta$ run in some index sets, say $\c{I}$ and $\c{J}$ respectively.
 We need to show that $U\cap U'$ can be presented as a union of products of open sets;
-the latter follows from the this set-theoretical identity
+the latter follows from the next set-theoretical identity
 \[U\cap U'=\bigcup_{\alpha,\beta} (V_\alpha\cup V'_\beta)\times (W_\alpha\cup W'_\beta).\eqlbl{eq:nu=un}\]
 
 Checking  \ref{eq:nu=un} is straightforward.
@@ -79,16 +79,10 @@ the latter means that $(x,y)$ belongs to the right-hand side in \ref{eq:nu=un}.
 
 Recall that an embedding is defined in \ref{sec:induced-topology}.
 
-\begin{thm}{Exercise}\label{ex:graph}
-Given a map $f\:\c{X}\z\to \c{Y}$, consider the map $F\:\c{X}\z\to \c{X}\times\c{Y}$ defined by $F\:x\mapsto (x,f(x))$.
-Show that $f$ is continuous if and only if $F$ is an embedding.
-\end{thm}
-
-
 \section{Base}
 
-\begin{thm}{Definition}
-A collection $\s{B}$ of open sets in a topological space $\c{X}$ is called its \emph{base} if every open set in $\c{X}$ is a union of sets in $\s{B}$.
+\begin{thm}{Definition}\label{def:base}
+A collection $\s{B}$ of open sets in a topological space $\c{X}$ is called its \index{base}\emph{base} if every open set in $\c{X}$ is a union of sets in $\s{B}$.
 \end{thm}
 
 The definition is motivated by the fact that \textit{open balls form a base of metric space} (\ref{ex:union-of-balls}).
@@ -111,7 +105,7 @@ Show that a map $f\: \c{X} \to \c{Y}$ is continuous if and only if $f^{-1}(B)$ i
 
 \begin{thm}{Exercise}\label{ex:base-nbhd}
 Let $\s{B}$ be a collection of open sets in a topological space $\c{X}$.
-Show that $\s{B}$ is a base in $\c{X}$ if and only if any point $x\in \c{X}$ and any neighborhood $N\ni x$ there is $B\in  \s{B}$ such that $x\in B\subset N$.
+Show that $\s{B}$ is a base in $\c{X}$ if and only if any point $x\in \c{X}$ and any neighborhood $N\ni x$ there is $B\in\s{B}$ such that $x\in B\subset N$.
 \end{thm}
 
 \begin{thm}{Proposition}\label{prop:base-any}
@@ -119,7 +113,7 @@ Let $\s{B}$ be a set of subsets in some set $\c{X}$.
 Show that $\s{B}$ is a base of some topology on $\c{X}$ if and only if it satisfies the following conditions:
 
 \begin{subthm}{prop:base-any:covers}
-$\s{B}$ \emph{covers} $\c{X}$;
+$\s{B}$ {}\emph{covers} $\c{X}$;
 that is, every point $x\in\c{X}$ lies in some set $B\in \s{B}$.
 \end{subthm}
 
@@ -138,13 +132,7 @@ Evidently, the union of any collection of sets in $\s{O}$ is in $\s{O}$.
 Further, $\c{X}$ is in $\s{O}$ by \ref{SHORT.prop:base-any:covers}.
 The empty set is in $\s{O}$ since it is a union of the empty collection.
 
-It remains to show that $O\cap O'$ is in $\s{O}$ if $O$ and $O'$ are in $\s{O}$.
-Equivalently, 
-\[\textit{for any $x\in O\cap O'$ there is $B\in\s{B}$ such that 
-$x\in B\subset O\cap O'$.}
-\eqlbl{eq:x-in-B-in -OnO}\]
-
-Suppose 
+It remins to check \ref{def:top-space:n}; suppose 
 \[O=\bigcup_\alpha B_\alpha
 \quad\text{and}\quad
 O'=\bigcup_\beta B'_\beta,
@@ -152,7 +140,12 @@ O'=\bigcup_\beta B'_\beta,
 where $\alpha$ and $\beta$ run in some index sets, and $B_\alpha$, $B'_\beta\in \s{B}$ for any $\alpha$ and~$\beta$.
 Then $x\in O\cap O'$ if and only if for some $\alpha$ and $\beta$ we have $x\in B_\alpha$ and $x\in B'_\beta$.
 By \ref{SHORT.prop:base-any:n}, we can choose $B\in \s{B}$ so that $x\in B\subset B_\alpha \cap B'_\beta$.
-Since $B_\alpha \cap B'_\beta\subset O\cap O'$, \ref{eq:x-in-B-in -OnO} follows.
+Since $B_\alpha \cap B'_\beta\subset O\cap O'$, it follows that 
+\[\textit{for any $x\in O\cap O'$ there is $B_x\in\s{B}$ such that 
+$x\in B\subset O\cap O'$.}\]
+Observe that 
+\[O\cap O'=\bigcup_{x\in O\cap O'} B_x.\]
+It follows that $O\cap O'\in\s{O}$ if $O,O'\in\s{O}$.
 \qeds
 
 \section{Prebase}\label{prebase}
@@ -160,16 +153,44 @@ Since $B_\alpha \cap B'_\beta\subset O\cap O'$, \ref{eq:x-in-B-in -OnO} follows.
 Suppose $\s{P}$ is a collection of subsets in $\c{X}$ that covers the whole space;
 that is, $\c{X}$ is a union of all sets in $\s{P}$.
 By \ref{prop:base-any}, the set of all finite intersections of sets in $\s{P}$ is a base for \textit{some} topology on $\c{X}$.
-The set $\s{P}$ is called \emph{prebase} for this topology (also known as \emph{subbase});
-there are almost no restrictions on prebase --- we may start with any collection $\s{P}$ of subsets of $\c{X}$ that covers the whole $\c{X}$ and define a topology by declaring that \textit{$\s{P}$ is a prebase for the topology}.
+The set $\s{P}$ is called \index{prebase}\emph{prebase} for this topology (also known as \index{subbase}\emph{subbase}).
+
+\begin{thm}{Exercise}\label{ex:prebase}
+Let $\s{P}$ be a prebase for the topology on $\c{Y}$.
+Show that a map $f\: \c{X} \to \c{Y}$ is continuous if and only if $f^{-1}(P)$ is open for any set $P$ in $\s{P}$.
+
+\end{thm}
+
+There are almost no restrictions on prebase --- we may start with any collection $\s{P}$ of subsets of $\c{X}$ that covers the whole $\c{X}$ and define a topology by declaring that \textit{$\s{P}$ is a prebase for the topology}.
 It defines the weakest topology on $\c{X}$ such that every set of $\s{P}$ is open.
 
 For example, the product topology on $\c{X}\times\c{Y}$ can be redefined as a \textit{topology with prebase formed by all products $\c{X}\times W$ and $V\times \c{Y}$, where $V$ is open in $\c{X}$ and $W$ is open in $\c{Y}$}.
-Note that the product topology on $\c{X}\times\c{Y}$ is induced by the two projections $\c{X}\times\c{Y}\to \c{X}$ and $\c{X}\times\c{Y}\to \c{Y}$ defined by $(x,y)\mapsto x$ and $(x,y)\mapsto y$ respectively.
+
+
+\begin{thm}{Exercise}\label{ex:graph}
+Given a map $f\:\c{X}\z\to \c{Y}$, consider the map $F\:\c{X}\z\to \c{X}\times\c{Y}$ defined by $F\:x\mapsto (x,f(x))$.
+Show that $f$ is continuous if and only if $F$ is an embedding.
+\end{thm}
+
+\section{Family of maps}\label{induced-family}
+
+Note that the product topology on $\c{X}\times\c{Y}$ is the weakest topology such that the following two projections are continuous:
+$\c{X}\times\c{Y}\to \c{X}$ and $\c{X}\times\c{Y}\to \c{Y}$ defined by $(x,y)\mapsto x$ and $(x,y)\mapsto y$ respectively.
+
+Indeed, these projections are continuous if the inverse images of all opens sets in $\c{X}$ and $\c{Y}$ are open in $\c{X}\times\c{Y}$.
+In other words the topology on $\c{X}\times\c{Y}$ must contain all sets of the form $V\times \c{Y}$ and $\c{X}\times W$ for open sets $V\subset \c{X}$ and $W\subset \c{Y}$.
+These sets form a prebase in $\c{X}\times\c{Y}$ and its topology is the weakest topology  that contains these sets.
 
 More generally, given a collection of maps $f_\alpha\:S\to \c{Y}_\alpha$ from a set $S$ to topological spaces $\c{Y}_\alpha$, we can introduce topology on $S$ by stating that the inverse images $f^{-1}_\alpha(W_\alpha)$ for open sets $W_\alpha\subset\c{Y}_\alpha$ form its prebase.
-It defines topology on $S$ \emph{induced} by the maps $f_\alpha$;
+It defines topology on $S$ \index{induced topology}\emph{induced} by the maps $f_\alpha$;
 it is weakest topology on $S$ that makes all maps $f_\alpha$ to be continuous.
+
+This construction produces a topology on the source space;
+by that reason it is also called \index{initial topology}\emph{initial topology}.
+In \ref{sec:final-topology} we will discuss final topology --- an analogous construction that moves to topology from source to target of a map.
+
+For example, this construction can be used to define topology on infinite product of spaces, as the induced topology for all its projections.
+This topology is called \index{product topology}\emph{product topology}, or \index{Tychonoff topology}\emph{Tychonoff topology}.
 
 \begin{thm}{Advanced exericse}\label{ex:induced-nonmetrizable}
 Let $\s{O}$ be the topology on $\RR$ induced by the maps $x\mapsto (\cos(t\cdot x),\sin(t\cdot x))$ for all $t\in \RR$.
