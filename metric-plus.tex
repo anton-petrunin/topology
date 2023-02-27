@@ -1,0 +1,185 @@
+\chapter{Compactness of metric spaces}
+
+Recall that any metric space has natural topology.
+In particular we may talk about \emph{compact metric spaces}.
+In this chapter we discuss specific properties of compact metric spaces.
+
+\section{Lebesgue number}
+
+The following lemma is a very useful tool.
+
+\begin{thm}{Lebesgue number}\label{prop:lebesgue-number}
+Let $\{V_\alpha\}$ be an open cover of a compact metric space $\c{M}$.
+Then there is $\eps > 0$ such that for every $x\in\c{M}$ there is $\alpha$ such that $V_\alpha\supset \Ball(x,\eps)$.
+\end{thm}
+
+The number $\eps$ in the lemma is called \emph{Lebesgue number} of the cover.
+
+\parit{Proof.}
+Given a point $p\in \c{M}$ we can choose $r=r(p)>0$ such that the ball $\Ball(p,2\cdot r)$ lies in $V_\alpha$ for some $\alpha$.
+Observe that all balls $\Ball(p,r(p))$ form an open covering of $\c{M}$.
+Since $\c{M}$ is compact, we can choose a finite subcover $\{\Ball(p_1,r_1),\dots,\Ball(p_n,r_n)\}$.
+
+Let $\eps=\min\{r_1,\dots,r_n\}$.
+For any $p\in\c{M}$ we can choose a ball $\Ball(p_i,r_i)\ni p$.
+Observe that $\Ball(p,\eps)\subset \Ball(p_i,2\cdot r_i)$ .
+Since $\Ball(p_i,2\cdot r_i)$ lies in some $V_{\alpha_i}$, so is $\Ball(p,\eps)$.
+\qeds
+
+
+\begin{thm}{Exercise}\label{ex:lebesgue=1}
+Construct a noncompact metric space $\c{M}$ such that $1$ is a Lebesgue number for any of cover of $\c{M}$. 
+\end{thm}
+
+\section[\texorpdfstring{Compactness $\Rightarrow$ sequential compactness}{Compactness ⇒ sequential compactness}]{Compactness $\bm{\Rightarrow}$ sequential compactness}
+
+A topological space is called \emph{sequentially compact} if any its sequence has a converging subsequence.
+For general topological spaces sequential compactness does not imply compactness, and the other way around.
+The theorem above states that these two notions are equivalent for metric spaces.
+
+{\sloppy
+
+\begin{thm}{Exercise}\label{ex:product-sequentially-compact}
+Show that product of two sequentially compact spaces is sequentially compact.
+\end{thm}
+
+}
+
+\begin{thm}{Proposition}\label{prop:seq-comp-metr}
+A metric space $\c{M}$ is compact if and only if it is sequentially compact.
+\end{thm}
+
+In this section, we prove the only-if part.
+The if part requires deeper diving into metric spaces; it will be done in \ref{sec:seq-comp-if} after proving auxilary statements in the following two sections.
+
+\parit{Proof of the only-if part in \ref{prop:seq-comp-metr}.}
+Choose a sequence $x_1,x_2,\dots{}\in \c{M}$.
+
+Note that a point $p\in \c{M}$ is a limit of subsequence of $x_n$ if and only if for any $\eps>0$, the ball $\Ball(p,\eps)$ contains infinite number of elements of $x_n$.
+Indeed, if this property holds, then we can choose $i_1$ such that $x_{i_1}\in \Ball(p,1)$, further $i_2>i_1$ such that $x_{i_2}\in \Ball(p,\tfrac12)$ and so on; on $n$\textsuperscript{th} step we get $i_n>i_{n-1}$ such that $x_{i_n}\in \Ball(p,\tfrac1n)$.
+The obtained subsequence $x_{i_1},x_{i_2},\dots$ converges to $p$.
+
+Assume the sequence $x_n$ has no converging subsequence.
+Then for any point $p$ there is $\eps_p>0$ such that $\Ball(p,\eps_p)$ contains only finitely many elements of $x_n$.
+Note that $\Ball(p,\eps_p)$ for all $p$ forms a cover of $\c{M}$.
+Since the sequence is infinite, this cover does not have a fine subcover.
+That is, if a sequence $x_n$ has no converging subsequence, then $\c{M}$ is not compact.
+\qeds
+
+A sequence $x_1,x_2,\dots$ of points in a metric space is called \index{Cauchy sequence}\emph{Cauchy} if
+for any $\eps>0$ there is $n$ such that $|x_i-x_j|<\eps$ for all $i,j>n$.
+It is easy to prove that any converging sequence is Cauchy, the converse does not hold in general.
+A metric space $\c{M}$ is called \index{complete space}\emph{complete} if any Cauchy sequence in $\c{M}$ converges to a point in $\c{M}$.
+
+For example, as it follows from Cauchy test, the real line $\RR$ with stndard metric is a complete space.
+On the other hand, an open interval $(0,1)$ forms a noncomplete subspace of $\RR$;
+indeed, the sequence $x_n=\tfrac 1{2\cdot n}$ is a Cauchy, it also converges to zero in $\RR$ which not a point of the subspace.
+
+\begin{thm}{Exercise}\label{ex:compact-complete}
+Show that any compact metric space is complete. 
+\end{thm}
+
+
+\section{Nets and separability}
+
+Let $\c{M}$ be a metric space.
+A subset $A\subset\c{M}$ is called \index{$\eps$-net}\emph{$\eps$-net} of $\c{M}$ if for any $p\in \c{M}$  there is $a\in A$ such that $|p-a|_{\c{M}}<\eps$.
+
+\begin{thm}{Lemma}\label{lem:net}
+Let $\c{M}$ be a sequentially compact metric space.
+Then for any $\eps>0$ there is a finite $\eps$-net in $\c{M}$.
+\end{thm}
+
+\parit{Proof}.
+Choose $\eps>0$.
+Consider the following recursive procedure. 
+
+Choose a point $x_1$ in $\c{M}$.
+Further, choose a point $x_2$ so that $|x_1\z-x_2|>\eps$.
+Further, choose a point $x_3$ so that $|x_1\z-x_3|>\eps$ and $|x_2\z-x_3|>\eps$; and so on.
+On the $n^{\text{th}}$ step we choose a point $x_n$ such that $|x_i\z-x_n|>\eps$ for all $i<n$.
+
+Suppose that the procedure terminates at some $n$;
+that is, there is no point $x_n$ such that $|x_i\z-x_n|>\eps$ for all $i<n$.
+In this case, the set $\{x_1,\dots,x_{n-1}\}$ is an $\eps$-net in $\c{M}$ --- the lemma is proved.
+
+If the procedure does not terminate, we get an infinite sequence of points $X_1,x_2,\dots$ such that $|x_i-x_j|>\eps$ for all $i\ne j$.
+Any of its subsequence has the same property; in particular non of its subsequences converge --- a contradiction.
+\qeds
+
+A topological space is called \index{separable space}\emph{separable} if it contains a countable dense subset.
+
+\begin{thm}{Corollary}\label{cor:comp>separable}
+Sequentially compact metric spaces are separable.
+\end{thm}
+
+\parit{Proof.}
+Let $\c{M}$ be a sequentially compact metric space.
+
+By \ref{lem:net}, for each positive integer $n$,
+we can choose a finite $\eps$-net $N_n\subset\c{M}$.
+It remains to observe that the union $N_1\cup N_2\cup \dots$ is a countable everywhere dense set.
+\qeds
+
+\section{Countable base}
+
+\begin{thm}{Proposition}\label{cor:comp>2count}
+Any sequentially compact metric space has a countable base.
+\end{thm}
+
+Topological spaces that admit a countable base are called \index{second-countable space}\emph{second-countable}.
+So the proposition states that \textit{any sequentially compact metric space is second-countable}.
+
+\parit{Proof.}
+Let $\c{M}$ be a sequentially compact metric space.
+By \ref{cor:comp>separable}, we can choose a countable dense subset $A\subset\c{M}$.
+
+Consider the set of all balls $\Ball(a,\tfrac 1n)$ for $a\in A$ and positive integers~$n$.
+Note that this set is countable; it remains to show that it forms a base in~$\c{M}$.
+
+Let $x$ be a point in an open set $V$.
+Then $\Ball(x,\eps)\subset V$ for some $\eps>0$.
+Choose $n$ so that $\tfrac1n<\tfrac\eps2$.
+Since $A$ is everywhere dense, we can choose $a\in A$ so that $|a-x|< \tfrac1n$.
+By the triangle inequality, $x\in \Ball(a,\tfrac1n)\subset \Ball(x,\eps)$;
+in particular,
+\[x\in \Ball(a,\tfrac1n)\subset V.\]
+It remains to apply \ref{prop:base-any}.
+\qeds
+
+\begin{thm}{Lemma}\label{lem:lind}
+Let $\c{X}$ be a topological space with a countable base.
+Then any open cover of $\c{X}$ has a countable subcover.
+\end{thm}
+
+\parit{Proof.}
+Choose an open cover $\{V_\alpha\}$.
+
+Note that it is sufficient to show that there is a countable open cover that is inscribed in  $\{V_\alpha\}$.
+Indeed, suppose $\{W_1,W_2,\dots\}$ is an open subcover inscribed in $\{V_\alpha\}$.
+Then for any $W_i$ we can choose $V_{\alpha_i}\supset W_i$;
+evidently $\{V_{\alpha_1},V_{\alpha_2},\dots\}$ is a countable subcover of $\{V_\alpha\}$.
+
+Let $\{B_1,B_2,\dots\}$ be a countable base of $\c{X}$.
+By \ref{ex:base-nbhd}, for any $x\in\c{X}$ we can choose $i=i(x)$ such that $x\in B_i\subset V_\alpha$ for some $\alpha$.
+Denote by $S$ all integers that appear as $i(x)$ for some $x$.
+Then $\{B_i\}_{i\in S}$ is a countable open cover that is inscribed in $\{V_\alpha\}$.
+\qeds
+
+\section[\texorpdfstring{Sequential compactness $\Rightarrow$  compactness}{Sequential compactness ⇒ compactness}]{Sequential compactness $\bm{\Rightarrow}$ compactness}\label{sec:seq-comp-if}
+
+\parit{Proof of the if part in \ref{prop:seq-comp-metr}.}
+Choose an open cover of $\c{M}$.
+By \ref{lem:lind}, we can assume that the cover is countable;
+denote it by $\{V_1,V_2,\dots\}$.
+
+Assume $\{V_1,V_2,\dots\}$ does not have a finite subcover.
+Then we can choose a sequence of points $x_1,x_2,\dots\in\c{M}$ such that
+\[x_n\notin  V_1\cup \dots\cup V_n\]
+for any $n$.
+
+Since $\c{M}$ is sequentially compact, its subsequence has a limit, say $x$;
+we have that $x\in V_n$ for some $n$.
+It follows that $x_i\in V_n$ for an infinite set of indices $i$.
+By construction, $x_i\notin V_n$ for all $i>n$ --- a contradiction.
+\qeds

@@ -205,6 +205,12 @@ Show that $Q$ is closed if $x\in Q$ if and only if $\Ball(x,\eps)\cap Q\ne\empty
 Show that the latter is equivalent to $y\in V$ if and only if $\Ball(y,\eps)\subset V$ for some $\eps>0$.
 Make a conclusion.
 
+\parbf{\ref{ex:cofinite-metrizable}.}
+Let $\c{X}$ be an infinite set with cofinite topology.
+Show that any two nonempty open sets in $\c{X}$ have nonempty intersection.
+Show that the latter does not hold for open balls in a metric space with at least two points.
+
+
 \parbf{\ref{ex:finite+metrizable}.}
 Let $\c{F}$ be a finite metric space.
 Observe that there is $\eps>0$ such that $|x-y|>\eps$ for any two distinct points $x,y\in\c{F}$.
@@ -212,11 +218,13 @@ It follows that $\{x\}=\Ball(x,\eps)$ for any $x\in\c{F}$;
 in particular, each one-point set is open.
 By \ref{def:top-space:u}, any set in $\c{F}$ is open.
 
+\parbf{\ref{ex:open-intersection+metrizable}.}
+Choose a metric that induce the topology on $\c{X}$.
+Let $Q$ be a closed set in $\c{X}$.
+Given $\eps>0$, let $W_\eps$ be the union of $\eps$-balls centered at points in $Q$.
+Show that $W_\eps$ is open and $Q=\bigcap W_\eps$.
 
-\parbf{\ref{ex:cofinite-metrizable}.}
-Let $\c{X}$ be an infinite set with cofinite topology.
-Show that any two nonempty open sets in $\c{X}$ have nonempty intersection.
-Show that the latter does not hold for open balls in a metric space with at least two points.
+For the second part of the problem, try to find the needed closed set in the connected two-point space.
 
 \parbf{\ref{ex:weaker-top}.}
 Choose $W\in \s{W}$.
@@ -390,6 +398,18 @@ Try the maps between two-point spaces with appropriate topologies.
 
 \parbf{\ref{ex:closed-open-cont-R}.}
 Consider a map that vanish on the Cantor set and sends each remaining interval homeomorpically to the whole $\RR$.
+
+\parbf{\ref{ex:cont-product}.} 
+Check the following function
+\[f(x,y)=
+\begin{cases}
+0&\text{if}\quad x=0\quad\text{or}\quad y=0,
+\\
+\tfrac xy &\text{if}\quad 0<x\le y,
+\\
+\tfrac yx &\text{if}\quad 0<y\le x,
+\end{cases}
+\]
 
 \parbf{\ref{ex:base};} \textit{only-if part.}
 Apply that a base is a collection of open sets.
