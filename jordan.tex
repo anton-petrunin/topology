@@ -6,7 +6,7 @@ Then $\RR^2\setminus \Gamma$ has at least two connected components.
 \end{thm}
 
 Note that the assumption that $\Gamma$ is closed is necessary;
-indeed a finite open interval $I$ of a line in $\RR^2$ is homeomorphic to $\RR$, but its complement $\RR^2\setminus I$ is connected.
+indeed, a finite open interval $I$ of a line in $\RR^2$ is homeomorphic to $\RR$, but its complement $\RR^2\setminus I$ is connected.
 
 The theorem follows from \ref{prop:c/sc}, \ref{prop:home-gamma-z-axis}, and \ref{ex:z-axis}.
 
@@ -17,18 +17,18 @@ Let us identify $\RR^2$ with the $(x,y)$-plane in $\RR^3$.
 Then the complement $Y=\RR^3\setminus \Gamma$ is simply-connected.
 \end{thm}
 
-The proof is based on the following partial case of Van Kampen theorem.
+The proof is based on the following partial case of the Van Kampen theorem.
 
 \begin{thm}{Exercise}\label{ex:sc-VuW}
-Suppose that $V$ and $W$ are open simply-connected subsets of topological space $\c{X}$ such that 
+Suppose that $V$ and $W$ are open simply-connected subsets of a topological space $\c{X}$ such that
 $\c{X}=V\cup W$, and the set $V\cap W$ is path-connected.
 Show that $\c{X}$ is simply-connected.
 
-Conclude that sphere $\mathbb{S}^2$ is simply-connected.
+Conclude that the sphere $\mathbb{S}^2$ is simply-connected.
 \end{thm}
 
 
-\parit{Proof.}
+\parit{Proof of \ref{prop:c/sc}.}
 Denote by $A$ (respectively $B$) the sets that include $\Gamma$ and the points below (respectively above) $\Gamma$;
 that is,
 \begin{align*}
@@ -44,64 +44,59 @@ Indeed, the horizontal plane $z= 1$ is a deformation retract of $V$;
 a retraction can be defined by $(x,y,z)\mapsto (x,y,1)$ and the following homotopy shows that it is homotopic to the identity map: 
 \[h_t(x,y,z)=(x,y,(1-t)\cdot z+t).\]
 The plane is contractible, in particular simply-connected; therefore so is $V$.
-Similarly one proves that $W$ is simply-connected.
+Similarly, one proves that $W$ is simply-connected.
 
-
-Since $X$ is open and connected set in $\RR^2$.
-By \ref{thm:open-connected=path-connected}, $X$ is path-connected.
-Further, note that $V\cup W=X\times \RR$.
-Therefore $V\cup W$ is path-connected as well.
+Since $X$ is an open and connected set in $\RR^2$,
+by \ref{thm:open-connected=path-connected}, $X$ is path-connected.
+Further, note that $V\cap W=X\times \RR$.
+Therefore $V\cap W$ is path-connected as well.
 
 Summarizing, $V$ and $W$ are open simply-connected sets, $Y=V\z\cup W$, and $V\z\cap W$ is path-connected.
 Applying \ref{ex:sc-VuW}, we get that $Y$ is simply-connected.
 \qeds
 
-\begin{thm}{Exercise}
-Observe that the proposition above does not hold without assuming that $\Gamma$ is close.
-Spot the place in the proof that brakes in this case.
+\begin{thm}{Exercise}\label{ex:nonclosed-Gamma}
+Observe that \ref{prop:c/sc} above does not hold without assuming that $\Gamma$ is closed.
+Spot the place in the proof that breaks in this case.
 \end{thm}
 
 
 \begin{thm}{Proposition}\label{prop:home-gamma-z-axis}
 Suppose $\Gamma\subset\RR^2$ is a closed subset homeomorphic to $\RR$.
-Then there is a homeomorphism $\RR^3\to \RR^3$ that maps $\Gamma$ the $z$-axis.
+Then there is a homeomorphism $\RR^3\to \RR^3$ that maps $\Gamma$ to the $z$-axis.
 \end{thm}
 
 
-\begin{thm}{Technical lemma}\label{lem:tietze}
-Suppose $\Gamma\subset\RR^2$ is a closed subset homeomorphic to $\RR$ and $h\:\RR\to\Gamma$ is a homeomorphism.
-Then there is a function $f\:\RR^2\to\RR$ such that 
+The following exercise provides a partial case of the so-called \index{Tietze--Urysohn extension theorem}\emph{Tietze--Urysohn extension theorem}.
+
+\begin{thm}{Exercise}\label{ex:tietze}
+Let $\phi$ be a continuous map from a closed subset $\Gamma\subset\RR^2$ to the open interval $(1,2)$.
+Given $x\in\RR^2$, set
+\[
+a(x)=\inf\limits_{y\in\Gamma} \{\,|x-y|\,\}
+\quad\text{and}\quad
+b(x)=\inf\limits_{y\in\Gamma} \{\,\phi(y)\cdot |x-y|\,\}.
+\]
+Show that
+\[f(x)=
+\begin{cases}
+\phi(x)& \text{if}\ x\in \Gamma,
+\\
+\frac{b(x)}{a(x)}& \text{if}\ x\notin \Gamma
+\end{cases}
+\]
+defines a continuous function $f\:\RR^2\to (1,2)$.
+
+Conclude that if there is a homeomorphism $h\:\RR\to\Gamma$,
+then there is a function $f\:\RR^2\to\RR$ such that
 $f\circ h(t)=t$ for any $t\in \RR$.
 \end{thm}
 
-This lemma follows directly from the so-called \index{Tietze--Urysohn extension theorem}\emph{Tietze--Urysohn extension theorem},
-but we sketch a more elementary proof.
-
-Assume first that $h$ is $L$-Lipschitz;
-that is, $|h(t_0)-h(t_1)|\le L\cdot |t_0\z-t_1|$ for any $t_0,t_1\in\RR$.
-In this case it is easy to see that the function 
-\[f(x)=\sup_{t\in\RR}\{\, t-L\cdot |h(t)-x|\,\}\]
-meets the conditions in the lemma.
-To do the general case one has to be more inventive with the choice of $f$, but the idea is very the same.
-
-\parit{Sketch of proof.}
-Consider the function $\Phi\:\RR\times[0,\infty)\to[0,\infty)$ defined by 
-\[\Phi(t,r)\df \sup_{s\in\RR} \{\,|s-t|\cdot (1+r-|h(s)-h(t)|)\,\}.\]
-Note that $\Phi$ is continuous.
-
-Moreover, if $r\ge |h(t)-h(s)|$, then
-\[|s-t|\le \Phi(t,r)\]
-for any $s,t\in\RR$.
-It follows that $f\circ h(t)=t$ where  
-\[f(p)\df\sup_{t\in\RR}\{\,t-\Phi(t,|p-h(t)|)\,\}.\]
-It remains to observe that the function $f\:\RR^2\to\RR$ is continuous.
-\qeds
-
-The following proof uses the so-called \index{Klee trick}\emph{Klee trick} which is quite useful in many topological problems.
+The following proof uses the so-called \index{Klee trick}\emph{Klee trick}, which is quite useful in many topological problems.
 
 \parit{Proof of \ref{prop:home-gamma-z-axis}.}
 Let $h\:t\mapsto (a(t),b(t))$ be a homeomorphism $\RR\to \Gamma$.
-By \ref{lem:tietze}, there is a function $f\:\RR^2\z\to\RR$ such that 
+By \ref{ex:tietze}, there is a function $f\:\RR^2\z\to\RR$ such that
 \[f(a(t),b(t))=f\circ h(t)=t\]
 for any $t\in \RR$.
 
@@ -114,7 +109,7 @@ is continuous as well.
 Similarly, the map 
 \[G\:(x,y,z)\mapsto (x-a(z),y-b(z),z)\]
 is a homeomorphism as well.
-Indeed, $G$ is continuous and it has inverse 
+Indeed, $G$ is continuous and it has an inverse
 \[G^{-1}\:(x,y,z)\mapsto (x+a(z),y+b(z),z)\]
 that is continuous as well.
 
@@ -133,9 +128,9 @@ Let $J\subset\mathbb{S}^2$ be a subset homeomorphic to $\mathbb{S}^1$.
 Then $\mathbb{S}^2\setminus J$ has at least two connected components. 
 \end{thm}
 
-This theorem is a partial case of famous Jordan's theorem;
-it is known for simple formulation and annoyingly tricky proofs.
-The presented proof is found by Patrick Doyle \cite{doyle}; 
+This theorem is a partial case of the famous Jordan theorem;
+it is known for its simple formulation and annoyingly tricky proofs.
+The presented proof is due to Patrick Doyle \cite{doyle};
 it is among the shortest proofs, but it uses quite a bit of topology.
 
 \parit{Proof.}

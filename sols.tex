@@ -1,15 +1,63 @@
 \chapter{Semisolutions}
 
-\begin{multicols}{2}
+
+\spell{\begin{multicols}{2}}{}
+
+
+\parbf{\ref{ex:morning}.}
+Topologically speaking, T-shirt is a disc with three holes, two for the hands and one for the head;
+pants have two holes, one for each leg.
+In an ideal universe socks should not have holes, but one of them apparently has a hole.
+
+\parbf{\ref{ex:mug}.}
+He saw a hole in the bottom, so the topology of the mug is the same as a donut (topologically speaking, a solid torus).
+
+{
+
+\begin{wrapfigure}{r}{25 mm}
+\vskip-5mm
+\centering
+\includegraphics[scale=.25]{pics/5a}\\
+\end{wrapfigure}
+
+\parbf{\ref{ex:finger-ring}.}
+Draw the hair tie on each picture, the last one is shown.
+
+\parit{Source.} Suggested by Rostislav Matveev.
+
+}
+
+\parbf{\ref{ex:scissors}}; \ref{SHORT.ex:scissors:scissors}.
+Push the loop up thru the other handle, bring it
+around over the points and back over the handles, and the
+string will come off.
+
+\parit{\ref{SHORT.ex:scissors:4-hands}.}
+Take the center of the string holding your wrists, push it up thru one of the loops on your friend's wrist and bring it down over his hand.
+
+\parit{\ref{SHORT.ex:scissors:2-hands}.}
+Use the same trick as in \ref{SHORT.ex:scissors:4-hands}.
+
+\parit{Source.}
+Part \ref{SHORT.ex:scissors:scissors} and \ref{SHORT.ex:scissors:4-hands} appear in Harry Houdini's book \cite{houdini}.
+A version of part \ref{SHORT.ex:scissors:scissors} appears earlier in the collection of Sam Loyd \cite{loyd} under the name ``The Gordian knot''.
+Part \ref{SHORT.ex:scissors:4-hands} under the name ``The prisoners' release puzzle'' appears in Cassell's book \cite{cassell} published in 1881.
+Both puzzles should be much older.
+
+\parbf{\ref{ex:not-a-metric}.}
+Check the triangle inequality for $0$, $\tfrac12$, and~$1$.
+
+\parbf{\ref{ex:metric}.}
+Check the conditions in \ref{def:metric-space}.
 
 \parbf{\ref{ex:d1+d2+dinfty}.}
 Check all the conditions in Definition~\ref{def:metric-space}.
 Further we discuss the triangle inequality --- the remaining conditions are nearly evident.
 
 Let $a=(x_a,y_a)$, $b=(x_b,y_b)$, and $c\z=(x_c,y_c)$.
-Set 
+Set
 \begin{align*}
-x_1&=x_b-x_a, 
+x_1&=x_b-x_a,
 &
 y_1&=y_b-y_a,
 \\
@@ -21,18 +69,18 @@ y_2&=y_c-y_b.
 \parit{(a).}
 The inequality
 $$|a-c|_1\le |a-b|_1+|b-c|_1$$
-can be written as 
+can be written as
 $$|x_1+x_2|+|y_1+y_2|
-\le 
+\le
 |x_1|+|y_1|+|x_2|+|y_2|.$$
-The latter follows since $|x_1+x_2|\le |x_1|+|x_2|$ 
+The latter follows since $|x_1+x_2|\le |x_1|+|x_2|$
 and
 $|y_1+y_2|\le |y_1|+|y_2|$.
 
 \parit{(b).}
 The inequality
 $$|a-c|_2\le |a-b|_2+|b-c|_2\eqlbl{eq:trig-inq-d2}$$
-can be written as 
+can be written as
 \begin{align*}
 &\sqrt{\bigl(x_1+x_2\bigr)^2+\bigl(y_1+y_2\bigr)^2}\le
 \\
@@ -44,7 +92,7 @@ simplify,
 take the square again and simplify again.
 You should get the following inequality:
 $$0
-\le 
+\le
 (x_1\cdot y_2-x_2\cdot y_1)^2,$$
 which is equivalent to \ref{eq:trig-inq-d2}
 and evidently true.
@@ -52,34 +100,28 @@ and evidently true.
 \parit{(c).}
 The inequality
 $$|a-c|_\infty\le |a-b|_\infty+|b-c|_\infty$$
-can be written as 
+can be written as
 $$
 \begin{aligned}
 &\max\{|x_1+x_2|,|y_1+y_2|\}\le
 \\
-&\qquad\le 
+&\qquad\le
 \max\{|x_1|,|y_1|\}+\max\{|x_2|,|y_2|\}.
 \end{aligned}
 \eqlbl{eq:max-trig}$$
-Without loss of generality, we may assume that 
+Without loss of generality, we may assume that
 $$\max\{|x_1+x_2|,|y_1+y_2|\}=|x_1+x_2|.$$
 Further,
 \begin{align*}
-|x_1+x_2|&\le |x_1|+|x_2|\le 
+|x_1+x_2|&\le |x_1|+|x_2|\le
 \\
 &\le\max\{|x_1|,|y_1|\}+\max\{|x_2|,|y_2|\}.
 \end{align*}
 Hence \ref{eq:max-trig} follows.
 
-\parbf{\ref{ex:not-a-metric}.}
-Check the triangle inequality for $0$, $\tfrac12$, and~$1$.
-
-\parbf{\ref{ex:metric}.}
-Check the conditions in \ref{def:metric-space}.
-
 \parbf{\ref{ex:dist-cont}.}
 Show that the triangle inequality implies that
-$|f(x)-f(y)|<\eps$,
+$|f(x)-f(y)|<\eps$
 if
 $|x-y|_{\c{X}}<\eps$;
 make a conclusion.
@@ -113,7 +155,7 @@ Hence the result.
 
 \parbf{\ref{ex:isom-cont}.} \ref{SHORT.ex:isom-cont:continuous}
 Show that the triangle inequality implies that
-$|f(x)-f(y)|_{\c{Y}}<\eps$,
+$|f(x)-f(y)|_{\c{Y}}<\eps$
 if
 $|x-y|_{\c{X}}<\eps$;
 make a conclusion.
@@ -137,7 +179,7 @@ Figure out which is which.
 \end{Figure}
 
 \parbf{\ref{ex:r<2R}.}
-Apply triangle inequality.
+Apply the triangle inequality.
 For the second part, describe the balls $\Ball(2,3)$ and $\Ball(0,4)$ in $[0,\infty)$.
 
 \parbf{\ref{ex:def:cont-epsilon-delta=def:cont-balls}.}
@@ -145,7 +187,7 @@ Spell the definitions.
 
 \parbf{\ref{ex:ball-is-open}.}
 If $y\in \Ball(x,R)$, then $r=R-|x-y|>0$.
-Use triangle inequality to show that $\Ball(y,r)\z\subset \Ball(x,R)$.
+Use the triangle inequality to show that $\Ball(y,r)\z\subset \Ball(x,R)$.
 Make a conclusion.
 
 \parbf{\ref{ex:open-union}.} Apply \ref{def:open}.
@@ -161,7 +203,7 @@ Observe that
 \[V=\bigcup_{x\in V} \Ball(x,r_x).\]
 
 \parbf{\ref{ex:infty-open-intersection}.}
-Consider that open segments $(-\eps,\eps)$ for all $\eps>0$ in $\RR$.
+Consider the open segments $(-\eps,\eps)$ for all $\eps>0$ in $\RR$.
 Note that 
 \[\{0\}=\bigcap_{\eps>0}(-\eps,\eps)\]
 and the one-point set $\{0\}$ is not open.
@@ -172,7 +214,7 @@ Show and use that
 here $\Ball(x,r)_1$, $\Ball(x,r)_2$, and $\Ball(x,r)_\infty$ denote the balls in the metrics $|{*}-{*}|_1$, $|{*}-{*}|_2$, and $|{*}-{*}|_\infty$ respectively.
 
 \parbf{\ref{ex:image-of-open}.} 
-Look at the image of $\RR$ for the function $x\mapsto |x|$.
+Look at the image of $\RR$ under the function $x\mapsto |x|$.
 
 \parbf{\ref{ex:unique-lim-metr}.}
 Assume the contrary; that is, a sequence $x_1,x_2,\dots$ has two limits $y$ and $z$.
@@ -183,19 +225,20 @@ Observe that $\Ball(y,\tfrac r2)\cap \Ball(z,\tfrac r2)=\emptyset$ and arrive at
 
 \parbf{\ref{ex:continuous-limit}.}
 Suppose $f$ is not continuous.
-Note that it means that there is a point $x_\infty$ and $\eps>0$ such that there is a point $x_n\in \Ball(x_\infty,\tfrac1n)$ such that $|f(x_n)-f(x_\infty)|>\eps$ in particular, $y_n=f(x_n)$ does not converge to $y_\infty=f(x_\infty)$. 
+This means that there is a point $x_\infty$ and $\eps>0$ such that there is a point $x_n\in \Ball(x_\infty,\tfrac1n)$ such that $|f(x_n)-f(x_\infty)|>\eps$.
+In particular, $y_n=f(x_n)$ does not converge to $y_\infty=f(x_\infty)$.
 It proves the if part of the exercise.
 
 To prove the only-if part, suppose that there is a sequence $x_n\to x_\infty$ such that $y_n\not\to y_\infty$ as $n\to \infty$.
-Note that in this case we can pass to a subseqence so that $x_n\in \Ball(x_\infty,\tfrac1n)$ and $|y_n-y_\infty|>\eps$ for some fixed $\eps>0$.
-From above $f$ is not continuous.
+Note that in this case we can pass to a subsequence so that $x_n\in \Ball(x_\infty,\tfrac1n)$ and $|y_n-y_\infty|>\eps$ for some fixed $\eps>0$.
+From above, $f$ is not continuous.
 
 \parbf{\ref{ex:nonclosed-nonopen}.}
 Show that the semiopen interval $[0,1)$ is neither open nor closed in $\RR$.
 
 \parbf{\ref{ex:closure-is-closed}.}
 Choose a point $z\in \bar{\bar A}$.
-It means that, there is a sequence $y_1,y_2,\dots\in\bar A$ such that $y_n\to z$ as $n\to\infty$.
+It means that there is a sequence $y_1,y_2,\dots\in\bar A$ such that $y_n\to z$ as $n\to\infty$.
 The latter means that for each $y_i$ there is a sequence $x_{i,1}, x_{i,2},\dots\in A$ such that $x_{i,n}\to y_i$ as $n\to\infty$.
 Try to choose a sequence of integers $m_n$ such that $x_{n,m_n}\to z$ as $n\to\infty$.
 Make a conclusion.
@@ -217,14 +260,6 @@ Observe that there is $\eps>0$ such that $|x-y|>\eps$ for any two distinct point
 It follows that $\{x\}=\Ball(x,\eps)$ for any $x\in\c{F}$;
 in particular, each one-point set is open.
 By \ref{def:top-space:u}, any set in $\c{F}$ is open.
-
-\parbf{\ref{ex:open-intersection+metrizable}.}
-Choose a metric that induce the topology on $\c{X}$.
-Let $Q$ be a closed set in $\c{X}$.
-Given $\eps>0$, let $W_\eps$ be the union of $\eps$-balls centered at points in $Q$.
-Show that $W_\eps$ is open and $Q=\bigcap W_\eps$.
-
-For the second part of the problem, try to find the needed closed set in the connected two-point space.
 
 \parbf{\ref{ex:weaker-top}.}
 Choose $W\in \s{W}$.
@@ -257,7 +292,7 @@ Apply the definitions.
 \parbf{\ref{ex:Rge}}; \ref{SHORT.ex:Rge:top}.Check the conditions in \ref{def:top-space}.
 
 \parit{\ref{SHORT.ex:Rge:nonmetr}.}
-Show that that every two nonempty set in $\RR_\ge$ intersect.
+Show that every two nonempty sets in $\RR_\ge$ intersect.
 Show that the latter statement does not hold in a metric space with at least two points.
 Make a conclusion.
 
@@ -276,29 +311,40 @@ Note that $a^{-1}(Q)=f^{-1}(Q)\cap A$ and $b^{-1}(Q)=f^{-1}(Q)\cap B$.
 Apply \ref{def:closed-properties:n} to show that $f^{-1}(Q)$ is closed.
 Further, apply \ref{prop:cont-closed}.
 
+\parbf{\ref{ex:open-intersection+metrizable}}; \ref{SHORT.ex:open-intersection+metrizable:a}
+Choose a metric that induces the topology on $\c{X}$.
+Let $Q$ be a closed set in $\c{X}$.
+Given $\eps>0$, let $W_\eps$ be the union of $\eps$-balls centered at points in $Q$.
+Show that $W_\eps$ is open and that $Q=\bigcap W_\eps$.
+
+\parit{\ref{SHORT.ex:open-intersection+metrizable:b}.}
+Try to find the needed closed set in the connected two-point space; see \ref{sec:ecamples(top)}.
+
 \parbf{\ref{ex:closure-interior-complement}.}
 Suppose $V$ is an open subset and $Q$ is its complement.
 Recall that $Q$ is closed; see \ref{sec:closed-sets}.
 Show and use that $V\subset A$ if and only if $Q\supset B$.
 
-\parbf{\ref{ex:closure-closure}.}
-Each of four statements can be deduced by spelling the needed definition.
+\parbf{\ref{ex:kuratowski}}; \ref{SHORT.ex:closure-closure}.
+Each of the four statements can be deduced by spelling out the needed definition.
 
-\parbf{\ref{ex:kuratowski-c}.} Use \ref{ex:closure-closure} together with the definitions of closure and interior.
+\parit{\ref{SHORT.ex:kuratowski-c}.} Use part \ref{SHORT.ex:closure-closure} together with the definitions of closure and interior.
 
-\parbf{\ref{ex:kuratowski-closed}.}
-Observe that $\mathring Q\subset Q$, and apply \ref{ex:kuratowski-c}.
+\parit{\ref{SHORT.ex:kuratowski-closed}.}
+Observe that $\mathring Q\subset Q$, and apply part \ref{SHORT.ex:kuratowski-c}.
 
-\parbf{\ref{ex:kuratowski-open}.}
-Observe that $\bar V\supset V$, and apply \ref{ex:kuratowski-c}.
+\parit{\ref{SHORT.ex:kuratowski-open}.}
+Observe that $\bar V\supset V$, and apply part \ref{SHORT.ex:kuratowski-c}.
 
-\parbf{\ref{ex:kuratowski}.}
+\parit{\ref{SHORT.ex:kuratowski:kuratowski}.}
 Try to choose a subset $A$ in $\RR$ so that it meets the following conditions:
 \begin{itemize}
 \item $A$ and $\RR\setminus A$ contain isolated points,
 \item $A$ and $\RR\setminus A$ contain intervals,
 \item $A$ and $\RR\setminus A$ are dense in some interval.
 \end{itemize}
+
+\parit{\ref{SHORT.ex:kuratowski:kuratowski7}.}
 For the second part, show and use the following 
 \[
 \bar{\bar A}=\bar A,
@@ -314,7 +360,7 @@ For the second part, show and use the following
 Apply the definitions of boundary and closed set.
 
 \parbf{\ref{ex:3=bry}.}
-Read about the Catnor set and think.
+Read about the Cantor set and think.
 
 \parbf{\ref{ex:bry-nbhd}.}
 Let $A$ be a subset of a topological space $\c{X}$.
@@ -332,24 +378,24 @@ Conclude that the space has concrete topology.
 Show that any such space has this property.
 
 \parbf{\ref{ex:def:limit-metric=def:limit-top}.}
-Note that any ball $\Ball(x_\infty,\eps)$ is a neighbohood of $x_\infty$.
+Note that any ball $\Ball(x_\infty,\eps)$ is a neighborhood of $x_\infty$.
 Observe that it implies the only-if part.
 
-To prove the if part, show and use that for any neighbohood $N$ of $x_\infty$ there is $\eps>0$ such that $\Ball(x_\infty,\eps)\subset N$.
+To prove the if part, show and use that for any neighborhood $N$ of $x_\infty$ there is $\eps>0$ such that $\Ball(x_\infty,\eps)\subset N$.
 
 \parbf{\ref{ex:concrete-lim}--\ref{ex:cocountable-top}.}
 Apply the definition of the convergence.
 
 \parbf{\ref{ex:bijection-ne-homeo}.}
-Let $f\:\c{X}\to\c{Y}$ is a homeomorphism.
-Recall that by deinition of inverse, we have $f^{-1}(f(x))=x$ and $f(f^{-1}(y))=y$ for any $x\in \c{X}$ and $y\in\c{Y}$.
+Let $f\:\c{X}\to\c{Y}$ be a homeomorphism.
+Recall that by definition of inverse, we have $f^{-1}(f(x))=x$ and $f(f^{-1}(y))=y$ for any $x\in \c{X}$ and $y\in\c{Y}$.
 It remains to show that the existence of $f^{-1}\:\c{Y}\to\c{X}$ implies that $f$ is a bijection $\c{X}\leftrightarrow\c{Y}$.
 
 For the second part,
 try to find such bijection for the subspaces $A=[0,1)\cup \{2\}$ and $B=[0,1]$ of $\RR$.
 
 \parbf{\ref{ex:exp}.}
-Observe that $y\mapsto \ln y$ is inverse of $x\mapsto e^x$,
+Observe that $y\mapsto \ln y$ is the inverse of $x\mapsto e^x$,
 and show that both functions are continuous.
 (You can use that differentiable functions are continuous.)
 
@@ -364,7 +410,8 @@ Learn about inversion and try to apply it.
 
 \parbf{\ref{ex:star-shaped}.}
 Let $\Omega$ be an open star-shaped set with respect to the origin.
-It is not hard to prove the statement if can be described by the inequality $r<f_n(\theta)$ in the polar $(r,\theta)$-coordinates, were $f_n\:\mathbb{S}^1\to \RR$ is a continuous function
+Assume $\Omega$ can be described by the inequality $r<f_n(\theta)$ in the polar $(r,\theta)$-coordinates, were $f_n\:\mathbb{S}^1\to \RR$ is a continuous function.
+In this case it is not hard to prove the statement.
 But general star-shaped set, for example one on the diagram is problematic.
 
 \begin{Figure}
@@ -375,7 +422,7 @@ But general star-shaped set, for example one on the diagram is problematic.
 
 To do the general case,
 show that $\Omega$ can be presented as a union of a nested sequence of open sets $\Omega_0\subset \Omega_1\subset \dots$
-such that for each $\Omega_n$ can be described by the inequality $r<f_n(\theta)$ in the polar $(r,\theta)$-coordinates with continuous $f_n\:\mathbb{S}^1\to \RR$.
+such that each $\Omega_n$ can be described by the inequality $r<f_n(\theta)$ in the polar $(r,\theta)$-coordinates with continuous $f_n\:\mathbb{S}^1\to \RR$.
 We can assume that $\Omega_0$ is a round disc around the origin.
 
 Further construct a sequence of homeomorphisms $\phi_n\:\Omega_{n-1}\to\Omega_{n}$ such that 
@@ -385,10 +432,9 @@ Set
 and show that $\Phi$ defines the needed homeomorphism $\Omega_0\leftrightarrow \Omega$.
 
 \parbf{\ref{ex:cont-dense}.}
-$\Phi_n\:\RR^2\leftrightarrow\RR^2$
 Suppose that the sets are $P=\{p_1,p_2,\dots \}$ and $Q=\{q_1,q_2,\dots\}$.
 Try to construct a sequence of homeomorphisms $\Phi_n\:\RR^2\leftrightarrow\RR^2$ such that 
-$\Phi_n$ converge to a homeomorphism $\Phi\:\RR^2\leftrightarrow\RR^2$ and for any $n$ we have $\Phi_n(\{p_1,\dots,p_n\})\z\subset Q$ and $\Phi_n^{-1}(\{q_1,\dots,q_n\})\z\subset P$.
+$\Phi_n$ converges to a homeomorphism $\Phi\:\RR^2\leftrightarrow\RR^2$ and for any $n$ we have $\Phi_n(\{p_1,\dots,p_n\})\z\subset Q$ and $\Phi_n^{-1}(\{q_1,\dots,q_n\})\z\subset P$.
 
 \parbf{\ref{ex:bijective-closed-open}.}
 Apply the definitions.
@@ -397,7 +443,7 @@ Apply the definitions.
 Try the maps between two-point spaces with appropriate topologies.
 
 \parbf{\ref{ex:closed-open-cont-R}.}
-Consider a map that vanish on the Cantor set and sends each remaining interval homeomorpically to the whole $\RR$.
+Consider a map that vanishes on the Cantor set and sends each remaining interval homeomorphically to the whole $\RR$.
 
 \parbf{\ref{ex:cont-product}.} 
 Check the following function
@@ -412,7 +458,7 @@ Check the following function
 \]
 
 \parbf{\ref{ex:base};} \textit{only-if part.}
-Apply that a base is a collection of open sets.
+Use that a base is a collection of open sets.
 
 \parit{If part.} 
 Choose an open set $W\subset\c{Y}$.
@@ -426,7 +472,7 @@ it remains to apply \ref{def:top-space:u}.
 
 \parbf{\ref{ex:base-nbhd}}; \textit{if part.} 
 Choose an open set $N$.
-For any $x\in N$ choose an element of base $B_x$ such that $x\in B_x\subset N$.
+For any $x\in N$ choose an element $B_x$ of the base such that $x\in B_x\subset N$.
 Observe that 
 \[N=\bigcup_{x\in N}B_x.\]
 
@@ -437,6 +483,19 @@ where $B_\alpha\in \s{B}$ for each $\alpha$.
 Then for any $x\in N$ there is $\alpha$ such that $B_\alpha\ni x$;
 in this case, $x\in B_\alpha\subset N$.
 
+\parbf{\ref{ex:base-N}.}
+Let $B_1=\{a_1,a_1+d_1,a_1+2\cdot d_1,\dots\}$ and $B_2=\{a_2,a_2+d_2,a_2+2\cdot d_2,\dots\}$.
+Show that if $a\in B_1\cap B_2$, then
+\[\{\,a, a+d, a+2\cdot d,\dots\,\}\subset B_1\cap B_2,\]
+where $d=d_1\cdot d_2$.
+Apply \ref{prop:base-any}.
+
+Do not forget about the second part.
+
+\parit{Comment.}
+
+Since $\{1\}$ is not open
+
 \parbf{\ref{ex:prebase};} \textit{only-if part.}
 Apply that a prebase is a collection of open sets.
 
@@ -445,7 +504,12 @@ $f^{-1}(P_1\cap\dots\cap P_n)$
 is open.
 Further apply \ref{ex:base-nbhd}.
 
-\parbf{\ref{ex:graph}.} To show that the map $F$ is continuous,
+\parbf{\ref{ex:graph}}; \ref{SHORT.ex:graph:prebase}
+Observe that $(V\times \c{Y})\cap(\c{X}\times W) = V\times W$.
+Further, show and use that all the sets $V\times W$ for open subset $V\subset \c{X}$ and $W\subset \c{Y}$ form a base in $\c{X}\times\c{Y}$.
+
+\parit{\ref{SHORT.ex:graph:graph}.}
+To show that the map $F$ is continuous,
 apply \ref{ex:prebase} to the prebase described before the exercise.
 Further, show and use that projection $G\:(x,f(x))\to x$ is a continuous left inverse;
 that is $G(F(x))=x$ for any $x$.
@@ -453,11 +517,56 @@ that is $G(F(x))=x$ for any $x$.
 \parbf{\ref{ex:induced-nonmetrizable}.}
 Show that \textit{every two disjoint closed sets of a metric space have disjoint open neighborhoods};
 that is, for any two closed sets $A$ and $B$ there are open sets $V\supset A$ and $W\supset B$ such that $V\cap W=\emptyset$.
-(Topological spaces that share this propery are called \index{normal space}\emph{normal};
+(Topological spaces that share this property are called \index{normal space}\emph{normal};
 so you need to show that \textit{any metrizable space is normal}.)
 
 Observe that arithmetic progression is a closed set in the initial topology.
 Construct two disjoint arithmetic progressions that do not admit disjoint open neighborhoods. 
+
+\parbf{\ref{ex:move-topology:pushforward}.} Check the conditions in \ref{def:top-space} directly.
+
+\parbf{\ref{ex:pullback/pushforward}+\ref{ex:category-def-pull-push}.} Spell out the definitions.
+
+\parbf{\ref{ex:open-closed-pushforward}.}
+Since $f$ is continuous, $V=f^{-1}(W)$ is open for any open set $W\subset \c{Y}$.
+It remains to show that if $V$ is open, then so is $W\subset \c{Y}$.
+
+Note that $W=f(V)$.
+If $f$ is open, then $W=f(V)$ is open as well.
+
+Set $A=\c{X}\setminus V$ and $B=\c{Y}\setminus W$.
+Since $V$ is open $A$ is closed.
+Since $f$ is surjective, $B=f(A)$.
+Since $f$ is a closed map, $B=f(A)$ is closed as well.
+Therefore, $W=\c{Y}\setminus B$ is open.
+
+\parbf{\ref{ex:eq-relation-f}.}
+Check the conditions in the definitions of equivalence relation and equivalence class.
+
+\parbf{\ref{ex:[0,1]/(0,1)}.}
+It has three points $a=[0]$, $b=[\tfrac12]$, and $c=[1]$ and the open sets are
+\[\emptyset,\  \{a,b\},\ \{b,c\},\  \{a,b,c\}.\]
+
+\parbf{\ref{ex:g-homeo}.}
+Show and use that $y\mapsto g^{-1}\cdot y$ is the inverse of $x\mapsto g\cdot x$.
+
+\parbf{\ref{ex:R/R}.}
+Note that all positive numbers are in one $\RR_+$-orbit.
+Similarly, all negative numbers are in one orbit and $0$ forms another orbit.
+Thus, $\RR/\RR_+$ contains three points, say $p$, $n$, and $z$ that corespond to positive numbers, negative numbers, and zero.
+It remains to describe all open subsets in $\{p,n,z\}$.
+
+\parbf{\ref{ex:quotient-map}}
+Let $f\:\c{X}\to \c{X}/G$ be the quotient map.
+Show that for any set $V\subset \c{X}$ we have
+\[f^{-1}\circ f(V)=\bigcup_{g\in G}g\cdot V.\]
+
+\parit{\ref{SHORT.ex:quotient-map:open}.}
+Apply this formula and \ref{ex:g-homeo} to show that if $V$ is open, then so is $f^{-1}\circ f(V)$.
+Finally apply the definition of quotient topology.
+
+\parit{\ref{SHORT.ex:quotient-map:closed}.}
+Apply this formula and \ref{ex:g-homeo} to show that if $G$ is finite and $V$ is closed, then so is $f^{-1}\circ f(V)$.
 
 \parbf{\ref{ex:open-open-cover}.}
 Use \ref{def:top-space:u} and \ref{def:top-space:n}.
@@ -467,13 +576,13 @@ Spell the definitions.
 
 \parbf{\ref{ex:cofinite-compact}.}
 We may assume that the space is nonempty; otherwise there is nothing to prove.
-Choose a nonempty set $V_0$ from the covering.
-Its complement is a vinete set, say $\{x_1,\dots,x_n\}$.
-For each $x_i$ choose a set $V_i\ni x_i$ from the covering.
+Choose a nonempty set $V_0$ from the cover.
+Its complement is a finite set, say $\{x_1,\dots,x_n\}$.
+For each $x_i$ choose a set $V_i\ni x_i$ from the cover.
 Observe that $\{V_0,\dots,V_0\}$ is a subcover.
 
 \parbf{\ref{ex:unbounded-noncompact}.}
-Consider covering of $S$ by intervals $(-c,c)$ for all $c>0$.
+Consider cover of $S$ by intervals $(-c,c)$ for all $c>0$.
 
 \parbf{\ref{ex:closed-compact}.}
 Choose a point $s\in\bar S\setminus S$ and consider the cover by intervals $(-\infty, s-\eps)$ and $(s+\eps,+\infty)$ for all $\eps>0$.
@@ -484,6 +593,13 @@ $\c{X}\cup\{a,b\}$, $\c{X}\cup\{a\}$, $\c{X}\cup\{b\}$ and all open sets in $\c{
 Observe that the sets $\c{X}\cup\{a\}$ and $\c{X}\cup\{b\}$ are compact, but their intersection is not.
 
 \parbf{\ref{ex:nested-compact}.} Apply the finite intersection property.
+
+\parbf{\ref{ex:disjoint-closed}.}
+Let us write $A\Supset B$ if the interior of $A$ contains closure of $B$.
+
+Construct a strongly nested sequence of intervals $[0,1]=[a_0,b_0]\Supset[a_1,b_1]\Supset\dots$ such that $[a_n,b_n]\cap Q_m=\emptyset$ for any $m\le n$.
+Apply the finite intersection property (\ref{prop:finite intersection property}) to show that the intersection $X=[a_0,b_0]\cap [a_1,b_1]\cap\dots$ is nonempty.
+Note that $X\cap Q_m=\emptyset$ for any $m$.
 
 \parbf{\ref{ex:S1-compact}.} 
 Show that $\mathbb{S}^1$ is an image of closed interval under a continuous map, and apply \ref{prop:comp-image}.
@@ -507,7 +623,7 @@ By \ref{prop:cont-closed}, it is sufficient to show that any closed set $A\subse
 Observe that the set $C=\Gamma\cap (\c{X}\times A)$ is closed,
 so its complement $U$ can be presented as a union $\bigcup_\alpha V_\alpha\times W_\alpha$.
 
-Suppse $B$ is not closed, choose a point $p\z\in \bar B\backslash B$.
+Suppose $B$ is not closed, choose a point $p\z\in \bar B\backslash B$.
 Note that $\{p\}\times \c{K}$ is a compact set in~$U$.
 Argue as in \ref{thm:compact-product} to prove that there is an open set $N_p\ni p$ such that $N_p\times \c{K}\subset U$.
 Arrive at a contradiction.
@@ -532,12 +648,12 @@ and $y_n$ converges to $y_\infty$ in $\c{Y}$.
 Show and use that $(x_n,y_n)$ converges to $(x_\infty,y_\infty)$ in $\c{X}\times\c{Y}$ as $n\to\infty$.
 
 \parbf{\ref{ex:compact-complete}.}
-By \ref{prop:seq-comp-metr}, any sequence has a converging subseqence;
+By \ref{prop:seq-comp-metr}, any sequence has a converging subsequence;
 denote by $x$ the limit of this subsequence.
 Show that if the sequence is Cauchy, then it converges to $x$.
 
 \parbf{\ref{ex:hausdorff-unique-limit}.} Arguing by contradiction, assume a sequence has two limits $x$ and $y$.
-Since the space is Hausdorff we can choose disjoint neighbohoods $V\ni x$ and $W\ni y$.
+Since the space is Hausdorff we can choose disjoint neighborhoods $V\ni x$ and $W\ni y$.
 Since the sequence converges to $x$, the set $V$ contains all but finitely many elements of the sequence.
 The same holds for $W$ --- a contradiction.
 
@@ -553,53 +669,12 @@ Look at the subsets of a concrete space.
 such that $V_y\cap W_y=\emptyset$.
 Mimic the proof of \ref{thm:hausdorff-compact-t3} using these pairs.
 
-\parbf{\ref{ex:move-topology:pushforward}.} Check the conditions in \ref{def:top-space} directly.
-
-\parbf{\ref{ex:pullback/pushforward}.}
-
-\parbf{\ref{ex:category-def-pull-push}.}
-
-\parbf{\ref{ex:open-closed-pushforward}.}
-Since $f$ is continuous, $V=f^{-1}(W)$ is open for any open set $W\subset \c{Y}$.
-It remains to show that if $V$ is open so is $W\subset \c{Y}$.
-
-Note that $W=f(V)$.
-If $f$ is open, then $W=f(V)$ is open as well.
-
-Set $A=\c{X}\setminus V$ and $B=\c{Y}\setminus W$.
-Since $V$ is open $A$ is closed.
-Since $f$ is surjective, $B=f(A)$.
-Since $f$ is a closed map, $B=f(A)$ is closed as well.
-Therefore, $W=\c{Y}\setminus B$ is open.
-
-\parbf{\ref{ex:eq-relation-f}.}
-Check the conditions, in the definitions of equivalence relation and equivalence class.
-
-\parbf{\ref{ex:[0,1]/(0,1)}.}
-It has tree points $a=[0]$, $b=[\tfrac12]$, and $c=[1]$ and the open sets are 
-\[\emptyset,\  \{a,b\},\ \{b,c\},\  \{a,b,c\}.\]
-
 \parbf{\ref{ex:[0,1]/0=1}.}
 Apply \ref{obs:compact-to-hausdorff} to the map $[0,1]\to \mathbb{S}^1$ defined by $t\mapsto (\cos (2\cdot\pi\cdot t), \sin(2\cdot\pi\cdot t))$.
 
 \parbf{\ref{ex:D/S}.}
 Apply \ref{obs:compact-to-hausdorff} to the map $\DD\to \RR^3$ that is written from polar to spherical coordinates as  
 \[(r,\theta)\mapsto (1, \theta, \pi\cdot r).\]
-
-\parbf{\ref{ex:g-homeo}.}
-Show and use that $y\mapsto g^{-1}\cdot y$ is inverse of $x\mapsto g\cdot x$.
-
-\parbf{\ref{ex:quotient-map}}
-Let $f\:\c{X}\to \c{X}/G$ is the quotient map.
-Show that for any set $V\subset \c{X}$ we have
-\[f^{-1}\circ f(V)=\bigcup_{g\in G}g\cdot V.\]
-
-\parit{\ref{SHORT.ex:quotient-map:open}.}
-Apply this formula and \ref{ex:g-homeo} to show that if $V$ is open then so is $f^{-1}\circ f(V)$.
-Finally apply the definition of quotient topology.
-
-\parit{\ref{SHORT.ex:quotient-map:closed}.}
-Apply this formula and \ref{ex:g-homeo} to show that if $G$ is finite and $V$ is closed then so is $f^{-1}\circ f(V)$.
 
 \parbf{\ref{ex:quotient-connected}.} Apply \ref{prop:image-connected}.
 
@@ -609,20 +684,14 @@ Show that any open splitting of $B$ splits $A$ as well.
 \parbf{\ref{ex:R-connected}.}
 Apply \ref{prop:connected[0,1]}, \ref{prop:image-connected}, and \ref{prop:union-connect}.
 
-\parbf{\ref{ex:disjoint-closed}.}
-Let us write $A\Supset B$ if the interior of $A$ contains closure of $B$.
-
-Construct a strongly nested sequence of intervals $[0,1]=[a_0,b_0]\Supset[a_1,b_1]\Supset\dots$ such that $[a_n,b_n]\cap Q_m=\emptyset$ for any $m\le n$.
-Apply the finite intersection property (\ref{prop:finite intersection property}) to show that the intersection $X=[a_0,b_0]\cap [a_1,b_1]\cap\dots$ is not empty.
-Note that $X\cap Q_m=\emptyset$ for any $m$.
-
-
-
 \parbf{\ref{ex:nonopen-connected-component}.}
 Connected component is an intersection of clopen sets; in particular it is closed.
 
 Consider the following subspace of real line $A=\{0,1,\tfrac12,\tfrac13,\dots\}$.
 Show that the one-point set $\{0\}$ is a connected component in $A$ and it is not open in $A$. 
+
+\parit{Remark.} A more interesting example is the Cantor set; denote it by $K$.
+Each connceted compontnt of $K$ is a one-point set is not open in $K$.
 
 \parbf{\ref{ex:connected-component-disjoint}.}
 Check that being in one connected component defines an equivalence relation on points of topological space.
@@ -660,12 +729,6 @@ Let $\{x,y,z\}$ be a 3-point set in $\triangle$ such that $\triangle \setminus\{
 Show and use that there is a unique choice for the set $\{x,y,z\}$ and 
 it is formed by the midpoints of the original triangle.
 
-\parbf{\ref{ex:convex-path-connected}.}
-Let $p$ and $q$ be points in a convex set $F$.
-Observe that the linear path 
-\[f(t)=(1-t)\cdot p+t\cdot q\]
-lies in $F$.
-
 \parbf{\ref{ex:two-point-path-connected}.}
 Recall that $\{a\}$ is an open set in $\c{X}$.
 Show and use that $f\:[0,1]\to\c{X}$ defined by 
@@ -676,27 +739,72 @@ a&\text{if\ }t<1,
 b&\text{if\ }t=1
 \end{cases}
 \]
-is continuous map.
+is a continuous map.
 
 \parbf{\ref{ex:QQ}.}
 Show and use that for any rational numbers $a$ and $b$, the line $y=a\cdot x+b$ lies in $A\cup B$.
 
-\parbf{\ref{ex:path-equivalence}.} For \ref{SHORT.ex:path-equivalence:a}, use the constant path $f(t)=x$.
-For \ref{SHORT.ex:path-equivalence:b}: if $f$ is a path from $x$ to $y$, then $\bar f$ is from $y$ to $x$.
-For \ref{SHORT.ex:path-equivalence:c}, suppose $f$ is a path from $x$ to $y$ and $g$ is a path from $y$ to $z$.
-Observe that $f*g$ is a path from $x$ to $z$.
-
 \parbf{\ref{ex:path-connected-component-closed-open}.}
+Choose path-connected component $V$.
+Assume its complement, say $W$, is nonempty.
+Observe that $W$ is a union of path-connected components.
+Therefore, $W$ is open, and the pair $V$, $W$ forms an open splitting of the space.
+
+To prove the converse, apply \ref{thm:conncted/path-connected}
+
+\parbf{\ref{ex:path-connected-component-closed}.}
+Read about lexicographic order topology, and apply it to the unit square.
 
 \parbf{\ref{ex:image(path-connected)}.}
 Show and use that for any continuous map $\phi$ and any path $f$, the composition $\phi\circ f$ is a path. 
+
 
 \parbf{\ref{ex:product(path-connected)}.}
 Suppose that $f$ and $g$ are paths in $\c{X}$ and $\c{Y}$ respectively.
 Show and use that $t\z\mapsto (f(t),g(t))$ is a path in $\c{X}\times\c{Y}$.
 
+\parbf{\ref{ex:flea-and-comb}.} The flea and the comb.
+
 \parbf{\ref{ex:locally-path-connected}.} Mimic the proof of \ref{thm:open-connected=path-connected}.
+
+\parbf{\ref{ex:sc-VuW}.}
+Consider a loop $\gamma$ with the base point $p_0\in V\cap W$.
+Show that there is a partition $0=t_0<t_1<\ldots<t_n=1$ such that the arc $\gamma|_{[t_{i-1},t_i]}$ lies in $V$ or in $W$ for each $i$.
+Denote by $\gamma_i$ the arc $\gamma|_{[t_{i-1},t_i]}$ reparametrized by $[0,1]$.
+
+Show that we can choose a path $\beta_i$ in $V\cap W$ from $p_0$ to $p_i=\gamma(t_i)$ for each $i$.
+Set
+\begin{align*}
+\alpha_1&=\gamma_1*\bar\beta_1,
+\\
+\alpha_2&=\beta_1*\gamma_2*\beta_2,
+\\
+&\ \vdots
+\\
+\alpha_n&=\beta_{n-1}*\gamma_n.
+\end{align*}
+Observe that $\alpha_1*\dots*\alpha_n\sim \gamma$.
+Observe that each $\alpha_i$ lies entirely in $V$ or $W$.
+Conclude that each $\alpha_i$ is null homotopic.
+Finally, observe that $\alpha_1*\dots*\alpha_n\sim \gamma$, and conclude that $\gamma$ is null homotopic.
+
+
+\parbf{\ref{ex:nonclosed-Gamma}.}
+
+\parbf{\ref{ex:tietze}.} Show that the functions $a$ and $b$ are continuous.
+Note that $0<a(x)<b(x)<2\cdot a(x)$ for any $x\ni \Gamma$.
+Conclude that $f$ is continuos in the complement of $\Gamma$.
+Further, show that for any $x\in\Gamma$ and $\eps>0$ there is a neighborhood $V\ni x$ such that
+$|f(y)-f(x)|<\eps$ for any $y\in V$.
+Conclude that $f$ is continuos on the entire plane.
+
+For the second part, choose an increasing continuous  function $\sigma\:\RR\to (1,2)$ such that $\sigma(x)\to 1$ as $x\to -\infty$ and $\sigma(x)\to 2$ as $x\to +\infty$, say $\sigma(x)=1+\tfrac12\cdot\frac{e^x-e^{-x}}{e^x+e^{-x}}$.
+Consider function $\phi\:\Gamma\to (0,1)$ defined by $\sigma\circ h^{-1}$, apply the first part of the exercise and apply $\sigma^{-1}$ to the obtained function.
+
+\parbf{\ref{ex:z-axis}.} Show and use that the complement of $z$-axis has unit circle $\set{(x,y,0)\in\RR^3}{x^2+y^2=1}$
+as a homotopy retract.
 
 %\parbf{\ref.}
 
-\end{multicols}
+
+\spell{\end{multicols}}{}

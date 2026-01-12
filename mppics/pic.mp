@@ -30,10 +30,10 @@ z.c=z.d-z.b;
 z.e=z.d+z.b;
 z.shift=(2,0)*u;
 
-draw ((z.c--z.e) yscaled -1 shifted (0,y.d));
-draw ((z.a--z.d--z.b) yscaled -1 shifted (0,y.d));
+draw ((z.c+(3,-10)--z.d--z.e+(-3,-10)) yscaled -1 shifted (0,y.d));
+draw ((z.a+(4,0)--z.d--z.b+(-4,0)) yscaled -1 shifted (0,y.d));
 
-draw (z.a--z.b--z.d--z.c--cycle) shifted (1*z.shift);
+draw (z.a--z.b--(-.5)[z.d,z.c]--.5[z.d,z.c]--cycle) shifted (1*z.shift);
 
 draw (z.c--z.a--z.b--z.e) shifted (2*z.shift);
 draw (z.b--z.d) shifted (2*z.shift);
@@ -330,8 +330,8 @@ draw p1 dashed evenly;
 draw z.x--z.y;
 dOt z.x, z.y;
 
-whitelabel.lft(btex $x$ etex, z.x);
-whitelabel.bot(btex $y$ etex, z.y);
+whitelabel.lft(btex $p$ etex, z.x);
+whitelabel.bot(btex $x$ etex, z.y);
 whitelabel(btex $F$ etex, (0,-.5)*u);
 endfig;
 
@@ -377,5 +377,48 @@ label.lft(btex $p$ etex, z.p);
 label.rt(btex $q$ etex, z.q);
 endfig;
 
+
+beginfig(110)
+save u,n;
+u:=.4cm;
+n:=7;
+
+z.shift=(3,0)*u;
+
+for i=0 upto n:
+fill
+((-(1),-(1-i/n))*u{down}..{right}(-(1-i/n),-(1))*u
+--
+((1-i/n),-(1))*u{right}..{up}((1),-(1-i/n))*u
+--
+((1),(1-i/n))*u{up}..{left}((1-i/n),(1))*u
+--
+(-(1-i/n),(1))*u{left}..{down}(-(1),(1-i/n))*u
+--
+cycle) shifted (i*z.shift)
+withcolor .5;
+endfor
+
+endfig;
+
+beginfig(120)
+save u,p;
+path p[];
+u:=.4cm;
+
+z.shift=(3,0)*u;
+z.a=(.41,0)*u;
+z.b=(.45,0)*u;
+
+p0=(1,0)*u..(0,1)*u..(-1,0)*u..(0,-1)*u..cycle;
+p1=(reverse p0) scaled .25;
+p2= p1 rotated 180;
+
+fill p0 withcolor .5;
+fill (p0--p1--cycle) shifted (z.shift) withcolor .5;
+fill
+(((p0 rotated 90)--(p2 shifted z.a)--cycle)--(p1  shifted -z.a)--cycle) shifted (2*z.shift)  withcolor .5;
+fill ((((p2 shifted z.b rotated 90)--p0--cycle)--(p2 shifted z.b rotated 210)--cycle)--(p2 shifted z.b rotated 330)--cycle) shifted (3*z.shift) withcolor .5;
+endfig;
 
 end

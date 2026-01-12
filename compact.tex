@@ -1,16 +1,23 @@
 \chapter{Compactness}
 
+In this chapter we define compact topological spaces --- especially nice spaces that behave in many ways like finite sets, yet are far more general.
+
+
+In practice, compactness is a powerful replacement for ``closed and bounded'' in $\RR^n$, but the general definition does not resemble it at first glance.
+On compact spaces continuous functions behave well: they are bounded and attain their maxima and minima (\ref{ex:fun(compact)}).
+Moreover, many limiting and convergence arguments become simpler and more robust.
+
 \section{Definition}
 
 We will denote by $\{V_\alpha\}=\{V_\alpha\}_{\alpha\in \c{I}}$ a collection of sets, where $\alpha$ runs in an arbitrary index set $\c{I}$. 
 
 \begin{thm}{Definition}
-A collection $\{V_\alpha\}$ of open subsets in a topological space $\c{X}$ is called its \index{open cover}\emph{open cover} if it covers the whole $\c{X}$;
-that is, if any $x\in \c{X}$ belongs to some~$V_\alpha$.
+A collection $\{V_\alpha\}$ of open subsets of a topological space $\c{X}$ is called its \index{open cover}\emph{open cover} if it covers the whole $\c{X}$;
+that is, if every $x\in \c{X}$ belongs to some~$V_\alpha$.
 
 More generally, $\{V_\alpha\}$ is an {}\emph{open cover of a subset} $S\subset \c{X}$ if any $s\in S$ belongs to some~$V_\alpha$.
 
-A subset of $\{V_\alpha\}$ that is also a cover is called its \index{subcover}\emph{subcover}.
+A subset of cover $\{V_\alpha\}$ that is also a cover is called its \index{subcover}\emph{subcover} of $\{V_\alpha\}$.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:open-open-cover}
@@ -22,21 +29,21 @@ Show that $W\subset \c{X}$ is open if and only if for any $\alpha$ the intersect
 A topological space $\c{X}$ is called \index{compact}\emph{compact} if any cover $\{V_\alpha\}$ of $\c{X}$
 contains a finite subcover $\{V_{\alpha_1},\z\dots,V_{\alpha_n}\}$.
 
-Analogously, a subset $S$ in a topological space $\c{X}$ is called {}\emph{compact} if any cover of $S$
+Analogously, a subset $S$ of a topological space $\c{X}$ is called {}\emph{compact} if any cover of $S$
 contains a finite subcover of $S$.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:compact-set-subspace}
-Show that a subset $S$ of a topological space is compact if and only if $S$ equipped with induced topology is a compact space.
+Show that a subset $S$ of a topological space is compact if and only if $S$ equipped with the induced topology is a compact space.
 \end{thm}
 
 Clearly, \textit{any finite topological space is compact}.
-In fact, the role of compact spaces in topology reminds the role of finite sets in the set theory.
+In fact, compact spaces in topology, in many ways, resemble finite sets in set theory.
 The next exercise provides a source of examples of infinite compact spaces.
 More interesting examples are given in Section~\ref{sec:compact-interval}.
 
 \begin{thm}{Exercise}\label{ex:cofinite-compact}
-Any set equipped with cofinite topology is compact. 
+Show that any set equipped with the cofinite topology is compact.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:unbounded-noncompact}
@@ -45,8 +52,7 @@ Show that $S$ is not compact.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:closed-compact}
-Let $S$ be a subset of $\RR$.
-Assume $S$ is not closed.
+Let $S\subset \RR$ be a subset that is not closed.
 Show that $S$ is not compact.
 \end{thm}
 
@@ -54,10 +60,27 @@ Show that $S$ is not compact.
 Construct a topological space with two compact sets such that their intersection is not compact.
 \end{thm}
 
+\begin{thm}{Exercise}\label{ex:fun(compact)}
+Let $f$ be a continuous real-valued function that is defined on a compact space $\c{K}$.
+
+\begin{subthm}{ex:fun(compact):bounded}
+Show that $f$ is bounded; that is there is a constant $C$ such that $|f(x)|\le C$ for any $x\in\c{K}$.
+\end{subthm}
+
+
+\begin{subthm}{ex:fun(compact):min-max}
+Show that $f$ attains its maximum and minimum; that is there are points $x_{\min},x_{\max}\in \c{K}$ such that
+\[f(x_{\min})\le f(x)\le f(x_{\max})\]
+for any $x\in \c{K}$.
+\end{subthm}
+
+\end{thm}
+
+
 \section{Finite intersection property} 
 
 \begin{thm}{Proposition}\label{prop:finite intersection property}
-Show that space $\c{X}$ is compact if for any collection of closed sets $\{Q_\alpha\}$ in $\c{X}$ such that 
+A space $\c{X}$ is compact if for any collection of closed sets $\{Q_\alpha\}$ in $\c{X}$ such that
 \[\bigcap_{\alpha}Q_\alpha=\emptyset\]
 There is a finite collection $\{Q_{\alpha_1},\dots,Q_{\alpha_n}\}$
 such that
@@ -65,14 +88,14 @@ such that
 
 \end{thm}
 
-The condition in the above proposition is called \index{finite intersection property}\emph{finite intersection property};
+The condition in the above proposition is called the \index{finite intersection property}\emph{finite intersection property};
 it redefines compactness via closed sets.
 
 \parit{Proof.}
-Consider the complements $V_\alpha=\c{X}\setminus Q_\alpha$.
+By the definition of closed sets, the complements $V_\alpha=\c{X}\setminus Q_\alpha$ are open.
 Note that 
 \[\bigcup_\alpha V_\alpha=\c{X}\setminus \left(\bigcap_{\alpha}Q_\alpha\right)=\c{X};\]
-that is, $\{V_\alpha\}$ is a cover of $\c{X}$.
+that is, $\{V_\alpha\}$ is an open cover of $\c{X}$.
 
 Choose a finite subcover $\{V_{\alpha_1},\dots,V_{\alpha_n}\}$;
 so, $V_{\alpha_1}\cup\dots\cup V_{\alpha_n}=\c{X}$.
@@ -80,17 +103,29 @@ Observe that
 \[Q_{\alpha_1}\cap\dots\cap Q_{\alpha_n}=\c{X}\setminus(V_{\alpha_1}\cup\dots\cup V_{\alpha_n})=\emptyset.
 \qedsin\]
 
+\mbox{\index{Cantor set}\emph{Cantor set}} is constructed the following way:
+start with the unit interval $[0,1]$, subdivide it into three equal inervals and remove the interior of the middle one.
+Repeat this procedure recursively for each of the remaining closed intervals.
+Observe that the following exercise imlies that the Cantor set is not empty.
 
 \begin{thm}{Exercise}\label{ex:nested-compact}
 Let $Q_1\supset Q_2\supset\dots$ be a nested sequence of closed nonempty sets in a compact space $\c{K}$.
 Show that there is a point $q\in \c{K}$ such that $q\in Q_n$ for any $n$.
 \end{thm}
 
+\begin{thm}{Advanced exercise}\label{ex:disjoint-closed}
+Let $Q_1,Q_2,\dots$ be a sequence of nonempty disjoint closed sets in $[0,1]$.
+Show that
+$Q_1\cup Q_2\cup\dots\ne [0,1]$.
+\end{thm}
+
+
+
 
 \section{Real interval}\label{sec:compact-interval}
 
 \begin{thm}{Theorem}\label{thm:comp-interval}
-Any closed interval $[a,b]$ is a compact subset of the real line.  
+Any closed interval $[a,b]$ is a compact subset of $\RR$.
 \end{thm}
 
 \parit{Proof.}
@@ -102,9 +137,9 @@ Note that $\{V_\alpha\}$ is also a cover for two intervals
 \[[a_0,\tfrac{a_0+b_0}2]
 \quad\text{and}\quad
 [\tfrac{a_0+b_0}2,b_0].\]
-Assume $\{V_\alpha\}$ has a finite subcover of each of these two subintervals.
-Then these two subcovers together give a finite cover of $[a,b]$.
-It follows that $\{V_\alpha\}$ has no finite subcovers of \textit{at least one} of these subintervals;
+Furthermore, if $\{V_\alpha\}$ has a finite subcover of each of these two subintervals,
+then these two subcovers together give a finite cover of $[a,b]$.
+Thus $\{V_\alpha\}$ must have no finite subcovers of \textit{at least one} of these subintervals;
 denote it by $[a_1,b_1]$;
 so either $a_1=a_0$ and $b_1=\tfrac{a_0+b_0}2$ or $a_1=\tfrac{a_0+b_0}2$ and $b_1=b_0$.
 
@@ -117,19 +152,17 @@ In particular,
 \eqlbl{[a,b]-not-in-V}\]
 
 Observe that 
-\begin{align*}
-a_0\le a_1\le &\dots 
-\\
-&\dots \le b_1\le b_0,
-\\
-b_n-a_n&=\tfrac{b-a}{2^n}.
-\end{align*}
+\[
+a_0\le a_1\le \dots \le b_1\le b_0
+\quad\text{and}\quad
+b_n-a_n=\tfrac{b-a}{2^n}.
+\]
 Denote by $x$ the least upper bound of $\{a_n\}$.
 Note that $x\in [a_n,b_n]$ for any $n$.%
 \footnote{In fact, $a_n\to x$ and $b_n\to x$ as $n\to\infty$, but we will not use it directly.}
 
 Since $\{V_\alpha\}$ is a cover, we can choose $V_\alpha\ni x$.
-Since $V_\alpha$ is open, it contains the interval $(x-\eps,x+\eps)$ for some $\eps>0$.
+Since $V_\alpha$ is open, it contains an interval $(x-\eps,x+\eps)$ for some $\eps>0$.
 Choose a large $n$ so that $\tfrac{b-a}{2^n}<\eps$.
 Clearly, $V_\alpha\supset (x-\eps,x+\eps)\supset[a_n,b_n]$;
 the latter contradicts~\ref{[a,b]-not-in-V}.\qeds
@@ -153,7 +186,7 @@ It remains to observe that $\{W_{\alpha_1},\dots, W_{\alpha_n}\}$ covers $Q$.
 \qeds
 
 \begin{thm}{Exercise}\label{ex:S1-compact}
-Show that the circle $\mathbb{S}^1$ is compact.
+Show that the circle $\mathbb{S}^1=\set{(x,y)\in\RR^2}{x^2+y^2=1}$ is compact.
 \end{thm}
 
 \section{Closed subsets}
@@ -167,7 +200,7 @@ Let $Q$ be a closed set in a compact space $\c{K}$.
 Since $Q$ is closed, its complement $W=\c{K}\setminus Q$ is open.
 
 Consider an open cover $\{V_\alpha\}_{\alpha\in\c{I}}$ of $Q$.
-Add to it $W$; that is, consider the collection of sets that includes $W$ and all $V_\alpha$ for $\alpha\in\c{I}$.
+Add to it $W$; that is, consider the collection of sets that includes $W$ as well as $V_\alpha$ for all $\alpha\in\c{I}$.
 Note that we get an open cover of $\c{K}$.
 Indeed, $W$ covers all points in the complement of $Q$ and any point of $Q$ is covered by some $V_\alpha$.
 
@@ -175,10 +208,10 @@ Since $\c{K}$ is compact, we can choose a finite subcover, say $\{W,V_{\alpha_1}
 Observe that $\{V_{\alpha_1},\dots,V_{\alpha_n}\}$ is a cover of $Q$, hence the result.
 \qeds
 
-In the proof, we add an extra open set to the cover, used it, and took it away.
-This type of reasoning is useful in all branches of mathematics;
-sometimes it is called \index{17 camels trick}\emph{17 camels trick}%
-\footnote{The name comes from the following mathematical parable:
+In the proof, we add an extra open set to the cover, use it, and take it away.%
+\footnote{This type of reasoning is useful in all branches of mathematics;
+sometimes it is called the \index{17 camels trick}\emph{17 camels trick}.
+The name comes from the following mathematical parable:
 \textit{A father left 17 camels to his three sons and, according to the will,
 the eldest son should be given half of all camels,
 the middle son the 1/3 part,
@@ -215,12 +248,12 @@ We say that $\{V_\alpha\}$ is \index{inscribed cover}\emph{inscribed} in $\{W_\b
 
 \begin{thm}{Exercise}\label{ex:inscribed-cover-base}
 Let $\s{B}$ be a base in a topological space $\c{X}$.
-Show that for any cover $\{V_\alpha\}$ of $\c{X}$ there is an inscribed cover of sets in $\s{B}$.
+Show that for any cover $\{V_\alpha\}$ of $\c{X}$ there is an inscribed cover made from sets in~$\s{B}$.
 \end{thm}
 
 Suppose that $\{V_\alpha\}$ is inscribed in $\{W_\beta\}$.
-If $\{V_\alpha\}$ has a finite subcover $\{V_{\alpha_1},\dots,V_{\alpha_n}\}$.
-Then for each $\alpha_i$ we can choose $\beta_i$ such that $V_{\alpha_i}\subset  W_{\beta_i}$.
+If $\{V_\alpha\}$ has a finite subcover $\{V_{\alpha_1},\dots,V_{\alpha_n}\}$,
+then for each $\alpha_i$ we can choose $\beta_i$ such that $V_{\alpha_i}\subset  W_{\beta_i}$.
 Note that $\{W_{\beta_1},\dots,W_{\beta_n}\}$ is a finite subcover of $\{W_\beta\}$.
 It proves the following:
 
@@ -250,7 +283,7 @@ Finally observe that
 \qeds
 
 \parit{Proof of \ref{thm:compact-product}.}
-Recall that by definition of product topology, any open set in $\c{X}\times\c{Y}$ is a union of product sets 
+Recall that by definition of the product topology, any open set in $\c{X}\times\c{Y}$ is a union of product sets
 $V_\alpha\times W_\alpha$, where $V_\alpha$ is open in $\c{X}$ and $W_\alpha$ is open in $\c{Y}$.
 
 Fix an open cover $\{U_\beta\}$ of $\c{X}\times\c{Y}$.
@@ -271,9 +304,9 @@ note that $N_x$ is  open in $\c{X}$.
 Since $N_x\subset V_{\alpha_i}$ for any $i$, we have
 \[N_x\times \c{Y}\subset (V_{\alpha_1}\times W_{\alpha_1})\cup\dots\cup
 (V_{\alpha_n}\times W_{\alpha_n}).\]
-Therefore
+We get that
 \begin{clm}{}\label{clm:Nx}
-every point $x\in\c{X}$ admits an open neighborhood $N_x$ such that $N_x\times \c{Y}$ can be covered by finitely many product sets from $\{V_\alpha\times W_\alpha\}$
+every point $x\in\c{X}$ admits an open neighborhood $N_x$ such that $N_x\times \c{Y}$ can be covered by finitely many product sets from $\{V_\alpha\times W_\alpha\}$.
 \end{clm}
 
 
@@ -283,7 +316,7 @@ there is a finite subcover $\{N_{x_1},\dots,N_{x_m}\}$.
 Note that 
 \[\c{X}\times\c{Y}=(N_{x_1}\times \c{Y})\cup\dots\cup (N_{x_m}\times \c{Y});\]
 that is, $\c{X}\times\c{Y}$ can be covered by a finite set of sets from $\{N_x\times \c{Y}\}_{x\in\c{X}}$.
-Applying \ref{clm:Nx}, we get that $\c{X}\times\c{Y}$ can be covered by finite number of product sets from $\{V_\alpha\times W_\alpha\}$.
+Applying \ref{clm:Nx}, we get that $\c{X}\times\c{Y}$ can be covered by a finite number of product sets from $\{V_\alpha\times W_\alpha\}$.
 \qeds
 
 \begin{thm}{Advanced exercise}\label{ex:closed-graph} 

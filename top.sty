@@ -9,9 +9,8 @@
 \usepackage{epsfig,lpic,wrapfig}
 \usepackage{multicol}
 
-
 \usepackage{accsupp}
-\usepackage{soulutf8}
+\usepackage{soul}
 \sodef\an{}{.1em}{.7em plus.1em}{.5em plus.1em minus.1em}
 
 \newcommand\ann[1]{%
@@ -35,6 +34,7 @@ menucolor=black,
 urlcolor=black,
 unicode
 ]{hyperref}
+\usepackage{bookmark}
 
 \usepackage{titling}
 \newcommand{\subtitle}[1]{%
@@ -52,6 +52,7 @@ unicode
   { \textbf{\thecontentspage}}
   [; ][.]
 
+\usepackage[nottoc]{tocbibind}
 
 \usepackage[T1,T2A]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -59,7 +60,7 @@ unicode
 
 
 \usepackage[
-sorting=none,
+sorting=debug,
 bibencoding=auto,
 backend=biber,
 maxnames=10,
@@ -81,14 +82,14 @@ german,
 english]{babel}
 
 \def\DD{\mathbb{D}}
-\def\H{\mathrm{Homeo}}
+\def\NN{\mathbb{N}}
 \def\RR{\mathbb{R}}
 \def\SS{\mathbb{S}}
 \def\Ball{\mathrm{B}}
 \def\cBall{\bar{\mathrm{B}}}
 \def\diam{\mathrm{diam}}
 \def\id{\mathrm{id}}
-\def\rel#1{\textrm{\ (rel.~$#1$)}}
+\def\rel#1{\textrm{\ (rel~$#1$)}}
 
 \def\eps{\varepsilon}
 \def\epsilon{\varepsilon}
@@ -105,7 +106,7 @@ english]{babel}
 \let\oldcdot\cdot
 \def\cdot{{\hskip0.5pt\z\oldcdot\hskip0.5pt}}
 
-\newcommand*{\set}[2]{\left\{\,{#1}\,\middle|\,{#2}\,\right\}}
+\newcommand*{\set}[2]{\left\{\,{#1}\,:\,{#2}\,\right\}}
 
 %THEOREM
 \newcounter{thm}[chapter]
@@ -138,6 +139,32 @@ english]{babel}
 \renewcommand{\theeqtn}{\numform{eqtn}}
 \newcommand{\eqlbl}[1]{\refstepcounter{eqtn}\leqno\text{\numform{eqtn}\label{#1}}}
 \newcommand{\eqtag}[1]{\refstepcounter{eqtn}\tag*{\numform{eqtn}\label{#1}}}
+
+\def\@listi{%
+  \leftmargin\leftmargini
+  \topsep 0pt
+  \partopsep 0pt
+  \parsep 0pt
+  \itemsep 0pt
+}
+\let\@listI\@listi % some classes use \@listI
+
+\def\@listii{%
+  \leftmargin\leftmarginii
+  \topsep 0pt
+  \partopsep 0pt
+  \parsep 0pt
+  \itemsep 0pt
+}
+\def\@listiii{%
+  \leftmargin\leftmarginiii
+  \topsep 0pt
+  \partopsep 0pt
+  \parsep 0pt
+  \itemsep 0pt
+}
+
+\renewcommand{\labelitemii}{$\circ$}
 
 %SUBTHEOREM 
 \newcounter{subthm}[thm]

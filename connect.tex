@@ -2,21 +2,24 @@
 
 \section{Definitions}
 
-A subset of topological space is called \index{clopen subset}\emph{clopen} if it is closed and open at the same time.
+A subset of a topological space is called \index{clopen subset}\emph{clopen} if it is closed and open at the same time.
 
 \begin{thm}{Definition}
 A topological space $\c{X}$ is called \index{connected space}\emph{connected} if it has exactly two clopen sets $\emptyset$ and the whole space $\c{X}$.
 \end{thm}
 
 According to our definition, \textit{the empty space is not connected}.
-Not everyone agrees with this convention.
+Not everyone agrees with this convention.%
+\footnote{This convention is similar in spirit to saying that $1$ is not prime --- if prime meant \textit{no nontrivial divisors}, then $1$ would be prime, \textit{but it is not}.
+Similarly, if a connected space meant \textit{no proper clopen sets}, then the empty set would be connected, but \textit{it is not} (at least in this course).
+}
 
-Suppose $V$ is a \index{proper subset}\emph{proper} clopen subset in a topological space $\c{X}$; that is, $V\ne\emptyset$ and $V\ne\c{X}$.
+Suppose $V$ is a \index{proper subset}\emph{proper} clopen subset of a topological space $\c{X}$; that is, $V\ne\emptyset$ and $V\ne\c{X}$.
 Note that its complement $W=\c{X}\setminus V$ is also a proper clopen subset.
 In particular, there are two open sets $V,W\subset \c{X}$ such that $V\ne\emptyset$, $W\ne\emptyset$, $V\cup W=\c{X}$ and $V\cap W=\emptyset$.
 
-A subset of topological space is called the connected or disconnected if so is the corresponding subspace.
-Spelling the notion of subspace we get the following definition.
+A subset of a topological space is called connected or disconnected if the corresponding subspace is connected or disconnected, respectively.
+Spelling out the notion of subspace we get the following definition.
 
 \begin{thm}{Definition}\label{def:connected-subset}
 A subset $A$ of a topological space is called \index{disconnected subset}\emph{disconnected} if it is empty or there are two open sets $V$ and $W$ such that 
@@ -29,13 +32,13 @@ V\cup W\supset A.\]
 Otherwise, we say that $A$ is \index{connected subset}\emph{connected}.
 \end{thm}
 
-A pair of open sets $V$ and $W$ as in the definition will be called \index{open splitting}\emph{open splitting} of $A$.
+A pair of open sets $V$ and $W$ as in the definition will be called an \index{open splitting}\emph{open splitting} of $A$.
 So we can say that \textit{a nonempty set $A$ is disconnected if and only if it admits an open splitting}.
 
 \begin{thm}{Proposition}\label{prop:image-connected}
 Let $f\:\c{X}\to \c{Y}$ be a continuous map between topological spaces.
 Suppose $A\subset \c{X}$ is a connected set.
-Then the image $f(A)$ is a connected set in $\c{Y}$.
+Then the image $B=f(A)$ is a connected set in $\c{Y}$.
 \end{thm}
 
 \parit{Proof.}
@@ -49,7 +52,7 @@ W\cap B\ne\emptyset,\quad\text{and}\quad
 V\cup W\supset B.\eqlbl{eq:VWB}\]
 
 Since $f$ is continuous, $V'=f^{-1}(V)$ and $W'=f^{-1}(W)$ are open sets in $\c{X}$.
-Note that \ref{eq:VWB} implies that $V'$ and $W'$ is an open splitting of $A$; that is,
+Note that \ref{eq:VWB} implies that $V'$ and $W'$ form an open splitting of $A$; that is,
 \[
 V'\cap W'\cap A=\emptyset,\quad
 V'\cap A\ne\emptyset,\quad 
@@ -73,18 +76,18 @@ is connected.
 
 \parit{Proof.}
 Assume that $A$ is disconnected; choose its open splitting $V$, $W$.
-Since $\bigcap_\alpha A_\alpha\ne\emptyset$, we can fix $p\in \bigcap_\alpha A_\alpha$.
+Since $\bigcap_\alpha A_\alpha\ne\emptyset$, we can choose $p\in \bigcap_\alpha A_\alpha$.
 Without loss of generality, we can assume that $p\in V$.
 
 In particular, $V\cap A_\alpha\ne\emptyset$ for any $\alpha$.
 Since $A_\alpha$ is connected, we have that $W\cap A_\alpha=\emptyset$ for each $\alpha$; otherwise $V$ and $W$ form an open splitting of $A_\alpha$.
 Therefore 
 \begin{align*}
-W\cap A&=W\cap\biggl(\bigcup_\alpha A_\alpha\biggr)
-\\&=\bigcup_\alpha(W\cap A_\alpha)
-\\&=\emptyset,
+W\cap A&=W\cap\biggl(\bigcup_\alpha A_\alpha\biggr)=
+\\&=\bigcup_\alpha(W\cap A_\alpha)=
+\\&=\emptyset
 \end{align*}
-a contradiction.
+--- a contradiction.
 \qeds
 
 \begin{thm}{Exercise}\label{ex:A<B<bar-A}
@@ -100,8 +103,10 @@ Show that $B$ is connected.
 The real interval $[0,1]$ is connected.
 \end{thm}
 
+The proof reuses the construction in \ref{sec:compact-interval}.
+
 \parit{Proof.}
-Assume contrary;
+Assume the contrary;
 let $V$ and $W$ be an open splitting of $[0,1]$.
 Fix a $a_0\in V$ and $b_0\in W$;
 without loss of generality, we can assume that $a_0<b_0$.
@@ -121,38 +126,35 @@ then set $a_{n}=c$ and $b_{n}=b_{n-1}$;
 if $c\in W$, then set $a_{n}=a_{n-1}$ and $b_{n}=c$.
 In both cases, \ref{eq:ab-in-VW} holds.
 
-The sequence $a_n$ is nondecreasing and bounded above by $b_0$.
-In particular, the sequence $a_n$ converges; denote its limit by $x$.
+Observe that
+\[
+a_0\le a_1\le \dots \le b_1\le b_0.
+\]
+In particular, the sequence $a_n$ is nondecreasing and bounded above by $b_0$.
+Therefoe, it converges; denote its limit by $x$.
 Since $b_n-a_n=\tfrac1{2^n}\cdot(b_0-a_0)$, the sequence $b_n$ also converges to $x$.
 The point $x$ has to belong to $V$ or $W$.
-Since both $V$ and $W$ are open, one of them contains $a_n$ and $b_n$ for all large $n$ --- a contradiction.
+Since both $V$ and $W$ are open, one of them contains $a_n$ and $b_n$ for all large $n$, which contradicts \ref{eq:ab-in-VW}.
 \qeds
 
 \begin{thm}{Exercise}\label{ex:R-connected}
 Show that the real line $\RR$ is a connected space. 
 \end{thm}
 
-\begin{thm}{Advanced exercise}\label{ex:disjoint-closed}
-Let $Q_1,Q_2,\dots$ be a sequence of nonempty disjoint closed sets in $[0,1]$.
-Show that 
-$Q_1\cup Q_2\cup\dots\ne [0,1]$.
-\end{thm}
-
-
 \section{Connected components}
 
 Let $x$ be a point in a topological space $\c{X}$.
-The intersection of all clopen sets containing $x$ is called \index{connected component}\emph{connected component} of $x$.
-Note that the space $\c{X}$ is connected if and only if $\c{X}$ is a connected component of some (and therefore any) point in $\c{X}$.
+The intersection of all clopen sets containing $x$ is called the \index{connected component}\emph{connected component} of $x$.
+Note that the space $\c{X}$ is connected if and only if $\c{X}$ is a connected component of some (and therefore of any) point in $\c{X}$.
 
 \begin{thm}{Exercise}\label{ex:nonopen-connected-component}
 Show that any connected component is a closed set.
 
-Construct an example of topological space $\c{X}$ and a point $x\in \c{X}$ such that the connected component of $x$ is not open.
+Construct an example of a topological space $\c{X}$ and a point $x\in \c{X}$ such that the connected component of $x$ is not open.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:connected-component-disjoint}
-Show that two connected components either coincide or disjoint.
+Show that two connected components either coincide or are disjoint.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:finite-number-connected-component}
@@ -164,12 +166,13 @@ Show that each connected component of $\c{X}$ is open.
 
 \section{Cut points}
 
-Evidently, number of connected components is a topological invariant;
+Evidently, the number of connected components is a topological invariant;
 that is, \textit{if two spaces are homeomorphic, then they have the same number of connected components}.
-In particular, connected space is not homeomorphic to a disconnected space.
+In particular, a connected space is not homeomorphic to a disconnected space.
 
 Let us describe a more refined way to apply this observation.
-Suppose $\c{X}$ is a connected space, a point $x \in\c{X}$ is called a \index{cut point}\emph{cut point} if removing $x$ from $\c{X}$ produces a disconnected space;
+Suppose $\c{X}$ is a connected space.
+A point $x \in\c{X}$ is called a \index{cut point}\emph{cut point} if removing $x$ from $\c{X}$ produces a disconnected space;
 that is, the subset $\c{X}\setminus\{x\}$ is disconnected.
 
 Note that if $f\:\c{X}\to \c{Y}$ is a homeomorphism, then a point $x \in\c{X}$ is a cut point of $\c{X}$ if and only if $y=f(x)$ is a cut point of $\c{Y}$.
@@ -189,8 +192,8 @@ Show that the plane $\RR^2$ is not homeomorphic to the real line $\RR$.
 {
 
 \begin{thm}{Exercise}\label{ex:not-homeo}
-Show that no two of the following four closed connected sets in the plane are not homeomorphic.
-(Each set is a union of four line segments.)
+Show that no two of the following four closed connected sets in the plane are homeomorphic.
+(Each set is a union of four line segments, and if it looks like they share an end point, then this is ideed so.)
 
 \begin{figure}[!ht]
 \centering
@@ -219,11 +222,11 @@ Repeat this procedure recursively for each of the remaining solid triangles.
 \begin{thm}{Advanced exercise}\label{ex:sierpinski}
 
 \begin{subthm}{ex:sierpinski:connected}
-Prove that Sierpi\'nski triangle is connected.
+Prove that the Sierpi\'nski triangle is connected (in particular, nonempty).
 \end{subthm}
 
 \begin{subthm}{ex:sierpinski:homeogroup}
-Describe all the homeomorphisms from the Sierpi\'nski triangle to it self.
+Describe all the homeomorphisms from the Sierpi\'nski triangle to itself.
 \end{subthm}
 
 \end{thm}

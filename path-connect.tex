@@ -1,20 +1,104 @@
-\chapter{Path-connected spaces}
+\chapter{Paths and homotopies}
 
-\section{Definitions}
+Here we discuss paths and path-connected spaces,
+We start with homotopy, which is more general than path.
 
-Let $\c{X}$ be a topological space.
-A continuous map $f\:[0,1]\to \c{X}$ is called \index{path}\emph{path}.
-If $x=f(0)$ and $y=f(1)$ we say that $f$ is a path from $x$ to $y$.
+\section{Homotopy}\label{sec:homotopy}
 
-A space $\c{X}$ is called \index{path-connected space}\emph{path-connected} if it is nonempty and any two points in $\c{X}$ can be connected by a path;
-that is, for any $x,y\in \c{X}$ there is a path $f$ from $x$ to $y$.
+Two continuous maps $f,g\:\c{X}\to \c{Y}$ are called \index{homotopic}\emph{homotopic} (briefly, $f\sim g$) if $f$ can be continuously deformed into $g$ within the class of continuous maps.
+Formally, this means that there exists a continuous map
+\[
+H\:\c{X}\times[0,1]\to \c{Y}
+\]
+such that $H(x,0)=f(x)$ and $H(x,1)=g(x)$ for all $x\in \c{X}$.
+The map $H\:\c{X}\times[0,1]\to \c{Y}$ is called \emph{homotopy} from $f$ to $g$.
 
-\begin{thm}{Exericise}\label{ex:convex-path-connected}
-Show that any convex set in a Euclidean space is path-connected. 
+One should think of the homotopy $H$ is a one-parameter family of maps $h_t\:\c{X}\to \c{Y}$ defined by $h_t(x)=H(x,t)$.
+
+
+\begin{thm}{Exercise}
+Show that any two continous maps $\c{X}\to\RR^2$ are homotopic.
 \end{thm}
 
-\begin{thm}{Exericise}\label{ex:two-point-path-connected}
-Show that the connected two-point space $\c{X}=\{a,b\}$ (defined in \ref{sec:ecamples(top)}) is path-connected. 
+\begin{thm}{Exercise}
+Let $f_0, f_1\:\c{X}\to\c{Y}$ and $g_0,g_1\:\c{Y}\to \c{Z}$ be
+four maps between topological spaces.
+Assume that $f_0\sim f_1$ and $g_0\sim g_1$.
+Show that $g_0\circ f_0\sim g_1\circ f_1$.
+\end{thm}
+
+
+\section{Operation on homotopies}\label{sec:homot-operations}
+
+Observe that
+\begin{itemize}
+\item the \index{constant homotopy}\emph{constant homotopy} $H(x,t)=f(x)$ joins $f$ with itself;
+\item if $H$ is a homotopy from $f$ with $g$, then the
+\index{time-reversed}\emph{time-reversed} homotopy defined by
+\[
+\bar H(x,t)=H(x,1-t)
+\]
+is a homotopy from $g$ to $f$;
+\item Consider two homotopies $H$ and $G$ from $f$ to $g$ and from $g$ to $h$, respectively.
+Then their \index{concatenation of homotopies}\emph{concatenation} $F=H*G$ defined by
+\[
+F(x,t)=
+\begin{cases}
+H(x,2\cdot t),& t\le \tfrac12,\\
+G(x,2\cdot t-1),& t\ge \tfrac12,
+\end{cases}
+\]
+defines a homotopy from $f$ with $h$.
+(By \ref{ex:closed-continuous}, $F$ is continuous.)
+\end{itemize}
+
+\section{Homotopy classes}
+
+The previous section implies that $\sim$ is an equivalence relation on the set of continuous maps $\c{X}\to\c{Y}$; in other words, the following properties hold for any continuous maps $f,g,h\: \c{X}\to\c{Y}$:
+\begin{itemize}
+ \item $f\sim f$;
+ \item if $f\sim g$, then $g\sim f$;
+ \item if $f\sim g$, and $g\sim h$, then $f\sim h$.
+\end{itemize}
+
+The equivalence classes for $\sim$ are called \index{homotopy class}\emph{homotopy classes};
+the equivalence class of a map $f\:\c{X}\to\c{Y}$ will be denoted by $[f]$.
+Given two spaces $\c{X}$ and $\c{Y}$, the set of all homotopy classes will be denoted by
+$\pi(\c{X},\c{Y})$.
+
+Note that any homeomorphism $\c{Y}\to \c{Y}'$ defines a bijection between homotopy classes $\pi(\c{X},\c{Y})\to \pi(\c{X},\c{Y}')$ for any given space $\c{X}$.
+So, stydying the homotopy classes may help to distiguish topological spaces.
+
+Often the set $\pi(\c{X},\c{Y})$ admits a direct description; this is precisely its advantage over the vast set of all continuous maps $\c{X}\to \c{Y}$.
+
+This construction is meaningful even for very simple choices of $\c{X}$.
+If $\c{X}$ is the one-point space, then $\pi(\c{X},\c{Y})$ is also denoted by $\pi_0(\c{Y})$.
+This is the main subject of this chapter.
+Further we will do the case of circle, which is closely related to the fundamental group $\pi_1(\c{Y})$, which is the main subject of the following chapters.
+
+This observation will guide us in the right direction.
+However, the true motivation is different; it will described in Capter \ref{chap:algebra}.
+
+\section{Paths}
+
+A continuous map $f\:[0,1]\to \c{Y}$ is called a \index{path}\emph{path}.
+If $x=f(0)$ and $y=f(1)$ we say that $f$ is a path from $x$ to $y$.
+
+Note that path is a special case of homotopy with one-point sourse space $\c{X}$.
+In particular we can talk about \index{constant path}\emph{constant paths} (path that stays at one point, say $p$; it will be denoted by $\eps_p(t)$) \index{time-reversed path}\emph{time-reversed path} and \index{concatenation of paths}\emph{concatenation of paths} defined in Section~\ref{sec:homot-operations}.
+In this case the homotopy class corresponds to a subset of points in $\c{Y}$ which is called \index{path-connected component}\emph{path-connected component}.
+Path-connected component of a point $y$, can be denoted by $[y]$; it is the set of all point in $\c{Y}$ that can be jointed with $y$ by a path.
+
+\section{Path-connected spaces}
+
+A space $\c{Y}$ is called \index{path-connected space}\emph{path-connected} if it is nonempty and any two points in $\c{Y}$ can be connected by a path;
+that is, for any $x,y\in \c{Y}$ there is a path $f$ from $x$ to $y$.%
+\footnote{One can say that $\c{Y}$ is path-connected if $[y]=\c{Y}$ for one (and therefore every) point $y\in\c{Y}$; here $[y]$ denotes the path-connected component of $y$.}
+
+%\begin{thm}{Exercise}\label{ex:convex-path-connected}Show that any convex set in a Euclidean space is path-connected.\end{thm}
+
+\begin{thm}{Exercise}\label{ex:two-point-path-connected}
+Show that the connected two-point space $\c{Y}=\{a,b\}$ (defined in \ref{sec:ecamples(top)}) is path-connected.
 \end{thm}
 
 \begin{thm}{Theorem}\label{thm:conncted/path-connected}
@@ -23,30 +107,30 @@ the converse does not hold.
 \end{thm}
 
 \parit{Proof; main part.}
-Let $\c{X}$ be a path-connected space.
+Let $\c{Y}$ be a path-connected space.
 
 By Proposition~\ref{prop:connected[0,1]}, the unit interval $[0,1]$ is connected.
-By Proposition~\ref{prop:image-connected}, for any path $f\:[0,1]\to \c{X}$ the image $f([0,1])$ is connected.
+By Proposition~\ref{prop:image-connected}, for any path $f\:[0,1]\to \c{Y}$ the image $f([0,1])$ is connected.
 
-Fix $x\in \c{X}$. 
-Since $\c{X}$ is path-connected, 
-\[\c{X}=\bigcup_f f([0,1]),\]
+Fix $x\in \c{Y}$.
+Since $\c{Y}$ is path-connected,
+\[\c{Y}=\bigcup_f f([0,1]),\]
 where the union is taken for all paths $f$ starting from $x$.
 It remains to apply~\ref{prop:union-connect}.
 
 \parit{Second part.}
-We need to present an example of a space that connected, but not path-connected.
+We need to present an example of a space that is connected, but not path-connected.
 
-Denote by $I$ the closed line segment from $(0,0)$ to $(1,0)$ in the plane.
+Denote by $I$ the closed line segment from $(0,0)$ to $(1,0)$ in $\RR^2$.
 Further, denote by $J_n$ the closed line segment from $(\tfrac1n,0)$ to $(\tfrac1n,1)$.
 Consider the union of all these segments
 \[W=I\cup J_1\cup J_2 \cup \dots\]
 and set 
 \[W'=W\cup\{y\},\]
 where $y=(0,1)$.
-The space $W'$ is called {}\emph{flea and comb};
-the set $W$ is called \index{comb}\emph{comb},
-and the point $y$ is called \index{flea}\emph{flea}.
+The space $W'$ is called the {}\emph{flea and comb};
+the set $W$ is called the \index{comb}\emph{comb},
+and the point $y$ is called the \index{flea}\emph{flea}.
 
 \begin{wrapfigure}{r}{33mm}
 \vskip-4mm
@@ -61,17 +145,17 @@ Assume the contrary.
 Let $f$ be a path from $x=(0,0)$ to $y=(0,1)$.
 
 Note that $f^{-1}(\{y\})$ is closed subset of compact space $[0,1]$.
-Therefore $f^{-1}(\{y\})$ is compact.
+Therefore $f^{-1}(\{y\})$ is compact (\ref{prop:compact-closed}).
 In particular, the set $f^{-1}(\{y\})$ has the minimal element,
 denote it by $b$.
 Note that $b>0$, $f(b)=y$ and $f(t)\ne y$ for any $t<b$.
 
-Choose positive $\eps<1$.
+Choose a positive $\eps<1$.
 Since $f$ is continuous, there is $a<b$ such that $|f(t)-y|<\eps$ for any $t\in [a,b]$.
 Note that $f(a)\in J_n$ for some $n$.
 
-Denote by $N$ the intersection of $\eps$-neighborhood of $y$ with the comb.
-note that the intersection of $J_n$ with $\eps$-neighborhood of $y$ forms a connected component of $N$.
+Denote by $N$ the intersection of the $\eps$-neighborhood of $y$ with the comb.
+Note that the intersection of $J_n$ with $\eps$-neighborhood of $y$ forms a connected component of $N$.
 By \ref{prop:image-connected}, $f(t)\in J_n$ for any $t\in [a,b]$;
 in particular, $f(b)\ne y$ --- a contradiction.
 \qeds
@@ -82,58 +166,17 @@ Consider the following sets in the plane:
 \[A=\set{(x,y)\in\RR^2}{ x,y\in\mathbb{Q}}
 \quad\text{and}\quad
 B=\set{(x,y)\in\RR^2}{x,y\notin\mathbb{Q}}.\]
-Show that $A\cup B$ is path connected.
+Show that $A\cup B$ is path-connected.
 \end{thm}
 
-
-\section{Operations on paths}\label{sec:Operations on paths}
-
-Given a path $f\:[0,1]\to \c{X}$ one can consider the \index{time-reversed path}\emph{time-reversed} path $\bar f$, defined by
-\[\bar f(t)=f(1-t).\]
-Note that $\bar f$ is continuous since $f$ is.
-
-Let $f$ and $h$ be paths in the topological space $\c{X}$.
-If $f(1)=h(0)$ we can join these two paths into one $g\:[0,1]\to \c{X}$ defined as 
-\[g(t)=
-\left[
-\begin{aligned}
-f(2\cdot t)&&\text{if}&\ t\le \tfrac12
-\\
-h(2\cdot t-1)&&\text{if}&\ t\ge \tfrac12
-\end{aligned}
-\right.
-\]
-The path $g$ is called the \index{product of paths}\emph{product} (or \index{concatenation}\emph{concatenation}) of paths $f$ and $h$, briefly it is denoted as $g=f * h$.
-
-By construction, the restrictions $f*h|_{[0,\frac12]}$ and $f*h|_{[\frac12,1]}$ are continuous. 
-Therefore, \ref{ex:closed-continuous} implies that $f*h$ is continuous;
-in other words $f*h$ is indeed a path.
-
-Consider the following relation on the set of points of topological space:  $x\sim y\ \Leftrightarrow$  there is a path from $x$ to $y$.
-
-\begin{thm}{Exercise}\label{ex:path-equivalence}
-Show that $\sim$ is an equivalence relation;
-that is, for any points $x$, $y$, and $z$ in a topological space we have
-
-\begin{subthm}{ex:path-equivalence:a}
-$x\sim x$.
-\end{subthm}
-
-\begin{subthm}{ex:path-equivalence:b}
-If $x\sim y$, then $y\sim x$
-\end{subthm}
-
-\begin{subthm}{ex:path-equivalence:c}
-If $x\sim y$ and $y\sim z$, then $x\sim z$.
-\end{subthm}
-
-\end{thm}
-
-The equivalence class of point $x$ for the equivalence relation $\sim$ is called \index{path-connected component}\emph{path-connected component} of $x$. 
 
 \begin{thm}{Exercise}\label{ex:path-connected-component-closed-open}
-Assume every path-connected component in a topological space $\c{X}$ is closed.
-Show that $\c{X}$ is connected if and only if $\c{X}$ is path-connected.
+Assume every path-connected component in a topological space $\c{Y}$ is open.
+Show that $\c{Y}$ is connected if and only if $\c{Y}$ is path-connected.
+\end{thm}
+
+\begin{thm}{Advanced exercise}\label{ex:path-connected-component-closed}
+Construct connectected compact Hausdorff space $\c{Y}$ that is not path-connected and each path-connected in $\c{Y}$ is closed.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:image(path-connected)}
@@ -143,6 +186,11 @@ Show that the image of a path-connected set under a continuous map is path-conne
 \begin{thm}{Exercise}\label{ex:product(path-connected)}
 Show that the product of path-connected spaces is path-connected.
 \end{thm}
+
+\begin{thm}{Exercise}\label{ex:flea-and-comb}
+Describe path-connected components in the flea and comb.
+\end{thm}
+
 
 \section{Open sets of Euclidean space}
 
@@ -163,15 +211,15 @@ Let us show that for any point $q\in \Omega$ there is $\eps>0$ such that either 
 
 Indeed, since $\Omega$ is open, we can choose $\eps>0$ such that the ball $\Ball(q,\eps)$ lies in $\Omega$.
 Note that $\Ball(q,\eps)$ is convex, in particular path-connected.
-Therefore if $\Ball(q,\eps)\cap P\ne\emptyset$, then $\Ball(q,\eps)\subset P$.
+Therefore $\Ball(q,\eps)\cap P\ne\emptyset$ if and only if $\Ball(q,\eps)\subset P$.
 
 It follows that $P$ and its complement $\Omega\setminus P$ are open.
 Since $\Omega$ is connected, we get that $\Omega\setminus P=\emptyset$ --- hence the result.
 \qeds
 
-A topological space $\c{X}$ is called \index{locally path-connected}\emph{locally path-connected} if any point $p\in\c{X}$ and its neighborhood $V$ there is a path-connected open set $W$ such that $V\supset W\ni p$. 
+A topological space $\c{Y}$ is called \index{locally path-connected}\emph{locally path-connected} if for any point $p\in\c{Y}$ and any open set $V\ni p$ there is a path-connected open set $W$ such that $V\supset W\ni p$.
 
-Note that Euclidean spaceis locally path-connected;
+Note that Euclidean space is locally path-connected;
 it follows since any open ball in a Euclidean space is path-connected.
 Therefore the following exercise generalizes the theorem above.
 

@@ -1,4 +1,47 @@
-\chapter{Construction}
+\chapter{Fundamental group}
+
+\section{Relative homotopy}
+
+Recall that homotoy was defined in Section \ref{sec:homotopy}; here we introduce its generalized version.
+
+Let $A$ be a subset a topological space $\c{X}$, and let $\c{Y}$ be another topological space.
+Two maps $f,g\: \c{X}\to \c{Y}$ are called \index{homotopic relative to $A$}\emph{homotopic relative to $A$}, briefly, $f\sim g\rel A$, if there exists a homotopy
+\[
+H\:\c{X}\times[0,1]\to \c{Y}
+\]
+from $f$ to $g$ that is constant on $A$;
+that is, $H(a,t)$ is constnat for any $a\in A$ and $t$.
+In this case, the map $H\:\c{X}\times[0,1]\to \c{Y}$ is called \emph{homotopy reative to $A$} from $f$ to $g$.
+
+If $H$ is a homotopy reative to $A$ from $f$ to $g$, then each map $f$ and $g$ is a restriction of $H$.
+In particular, both maps $f$ and $g$ are continuous.
+Note also that $f$ agrees with $g$ on $A$;
+that is, $f(a)=g(a)$ for any $a\in A$.
+
+The properties of homotopies that was described in the previous chapter admit straightforward generalization to its relative version.
+Mainly, $\sim\rel A$ defines an equivalence relation on the space of maps from $\c{X}$ to $\c{Y}$; in particular, we can talk about its equivalence classes.
+
+\section{Informal description}
+
+Let us apply the definition of realtive homotopy for unit segment with its ends;
+that is, $\c{X}=[0,1]$ and $A=\{0,1\}$.
+
+Let $\c{Y}$ be a topological space with chosen point $y_0$.
+A path $f\:[0,1]\to \c{Y}$ will be called \index{loop}\emph{loop} with base at $y_0$ if $f(0)=f(1)=y_0$.
+The set of homotopy classes relative to $\{0,1\}$ is called the \index{fundamental group}\emph{fundamental group} of the space $\c{Y}$ and is denoted by
+$\pi_1(\c{Y},y_0)$.
+Soon we will equip this set with multiplication and show that it is indeed a group.
+As a rule, the fundamental group is considered only for path-connected $\c{Y}$.
+
+The product of two loops $f$ and $g$ is defined as follows as their conctination $f*g$ (see ???): first we travel along $f$, and then along $g$.
+
+Associativity of the product holds up to homotopy; that is, altho in general $f*(g*h)\ne (f*g)*h$, we still have that $f*(g*h)\sim (f*g)*h$
+
+The identity element is the class of the constant map $[0,1]\to \c{Y}$ with value $y_0$.
+The inverse element is represented by the loop traversed in the opposite direction.
+In the followng sections all this will be discussed more formally.
+
+
 
 \section{Homotopy of paths}
 
@@ -19,7 +62,7 @@ To make this statement precise, one has to introduce an appropriate topology on 
 Two paths $g,h\:[0,1]\to \c{X}$ are called {}\emph{homotopic} (briefly $g\sim h$)
 if there is a homotopy $f_\tau\:[0,1]\to \c{X}$ such that $g=f_0$ and $h=f_1$.
 
-Following the argument in \ref{sec:Operations on paths}, one can show that $\sim$ is an equivalence relation.
+Recall that $\sim$ is an equivalence relation.
 Therefore, we can talk about the equivalence class of a path $f$ that will be called its \index{homotopy class of paths}\emph{homotopy class};
 it will be denoted by~$[f]$.
 
@@ -191,7 +234,7 @@ Let $\c{X}$ be a topological space.
 A path $f\:[0,1]\to\c{X}$ is called a \index{loop}\emph{loop} with base at $p\in\c{X}$ if $f(0)=f(1)=p$;
 
 
-Note that if $f$ and $g$ are loops based at $p$, then their products $f*g$, $g*f$ are defined and they are loops based at $p$ as well; see Section~\ref{sec:Operations on paths}.
+Note that if $f$ and $g$ are loops based at $p$, then their products $f*g$, $g*f$ are defined and they are loops based at $p$ as well; see Section~\ref{sec:homot-operations}.
 Moreover, the time-reversed paths $\bar f$, $\bar g$ are also loops based at $p$.
 
 
@@ -202,7 +245,7 @@ that is, \textit{the product of homotopy classes of loops $f$ and $g$ is the hom
 
 Observe that the product is well defined;
 that is, if $[f_0]= [f_1]$ and $[g_0]=[g_1]$, then  $[f_0*g_0]=[f_1*g_1]$.
-In other words, if $f_0\sim f_1$ and $g_0\sim g_1$ then $f_0*g_0\sim f_1*g_1$.
+In other words, if $f_0\sim f_1$ and $g_0\sim g_1$, then $f_0*g_0\sim f_1*g_1$.
 The latter is stated in Claim \ref{clm:product}.
 
 Denote by $\pi_1(\c{X},p)$ the set of all homotopy classes of loops at $p$.

@@ -1,3 +1,104 @@
+\section{Finite spaces}\label{sec:finite}
+
+Finite spaces provide a source of examples of topological spaces.
+They also have some distinguishing properties, which we about to discuss.
+
+Let $\c{F}$ be a finite topological space;
+that is, a finite set equipped with a topology.
+
+Note that $\c{F}$ contains finitely many distinct open sets.
+Since intersection of finite collection of open sets is open,
+we can conclude that arbitrary intersection of open sets in $\c{F}$ is open.
+
+Similarly, arbitrary union of closed sets in $\c{F}$ is closed.
+
+In other words, for the finite topological spaces $\c{F}$, open and closed sets have the same properties.
+In particular one could define a new topology on $\c{F}$ by declaring all open sets to be closed and the other way around.
+
+Given a point $x\in \c{F}$,
+denote by $\bar x$ the closure of one-point set $\{x\}$.
+
+For two points $x,y\in \c{F}$ write $x\succcurlyeq y$ if $\bar x\supset \bar y$.
+The introduced relation ``$\succcurlyeq$'' behaves very much as ``$\ge$'' --- formally speaking it defines a \index{preorder}\emph{preorder} on $\c{F}$;
+that is, for any $x,y,z\in\c{F}$ the following conditions are fulfilled:
+\begin{itemize}
+\item $x\succcurlyeq x$ (reflexivity).
+\item if $x\succcurlyeq y$ and $y\succcurlyeq z$, then $x\succcurlyeq z$ (transitivity).
+\end{itemize}
+
+Conversely, if $\c{F}$ is a finite set with preorder ``$\succcurlyeq$'',
+one can define topology on $\c{F}$ by declaring that for any $\bar x=\set{y\in \c{F}}{x\succcurlyeq y}$ and all its finite intersections and unions are closed.
+Thus the partial order is an equivalent way to describe topology.
+
+
+
+
+
+
+
+
+
+
+
+\section{Operations on paths}\label{sec:Operations on paths}
+
+Given a path $f\:[0,1]\to \c{Y}$, one can consider the \index{time-reversed path}\emph{time-reversed} path $\bar f$, defined by
+\[\bar f(t)=f(1-t).\]
+Note that $\bar f$ is continuous since $f$ is.
+
+Let $f$ and $h$ be paths in the topological space $\c{Y}$.
+If $f(1)=h(0)$ we can join these two paths into one $g\:[0,1]\to \c{Y}$ defined as
+\[g(t)=
+\left[
+\begin{aligned}
+f(2\cdot t)&&\text{if}&\ t\le \tfrac12
+\\
+h(2\cdot t-1)&&\text{if}&\ t\ge \tfrac12
+\end{aligned}
+\right.
+\]
+The path $g$ is called the \index{product of paths}\emph{product} (or \index{concatenation}\emph{concatenation}) of paths $f$ and $h$, briefly it is denoted as $g=f * h$.
+
+By construction, the restrictions $f*h|_{[0,\frac12]}$ and $f*h|_{[\frac12,1]}$ are continuous.
+Therefore, \ref{ex:closed-continuous} implies that $f*h$ is continuous;
+in other words $f*h$ is indeed a path.
+
+Consider the following relation on the set of points of a topological space:  $x\sim y\ \Leftrightarrow$  there is a path from $x$ to $y$.
+
+\begin{thm}{Exercise}\label{ex:path-equivalence}
+Show that $\sim$ is an equivalence relation;
+that is, for any points $x$, $y$, and $z$ in a topological space we have
+
+\begin{subthm}{ex:path-equivalence:a}
+$x\sim x$.
+\end{subthm}
+
+\begin{subthm}{ex:path-equivalence:b}
+If $x\sim y$, then $y\sim x$
+\end{subthm}
+
+\begin{subthm}{ex:path-equivalence:c}
+If $x\sim y$ and $y\sim z$, then $x\sim z$.
+\end{subthm}
+
+\end{thm}
+
+The equivalence class of a point $x$ for the equivalence relation $\sim$ is called the \index{path-connected component}\emph{path-connected component} of $x$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \section{Quotients by subsets}
 
 Intuitively, quotient space is the space obtained by gluing equivalent points together.
