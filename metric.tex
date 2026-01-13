@@ -54,7 +54,7 @@ If we need to emphasize that the distance is taken in the metric space $\c{X}$ w
 \begin{thm}{Exercise}\label{ex:not-a-metric}
 Show that 
 \[|x-y|_{\natural}=(x-y)^2\]
-is not a metric on $\RR$.
+is not a metric on the real line $\RR$.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:metric}
@@ -211,8 +211,9 @@ Give an example of a metric space and a pair of balls as above with $r> R$.
 Let us reformulate the definition of continuous map (\ref{def:cont-epsilon-delta}) using the introduced notion of ball.
 
 \begin{thm}{Definition}\label{def:cont-balls}
-A map $f\:\c{X}\to\c{Y}$ between metric spaces is called \index{continuous map}\emph{continuous} if for any $x\in \c{X}$ and any $\eps>0$ there exists $\delta>0$ such that 
-\[f(\Ball(x,\delta)_{\c{X}})\subset\Ball(f(x),\eps)_{\c{Y}}.\]
+A map $f\:\c{X}\to\c{Y}$ between metric spaces is called \index{continuous map}\emph{continuous} if for every $x\in \c{X}$ and every $\eps>0$ there exists $\delta>0$ such that
+\[f(\Ball(x,\delta)_{\c{X}})\subset\Ball(f(x),\eps)_{\c{Y}};\]
+that is, the image of the $\delta$-ball centered at $x\in\c{X}$ lies in the $\eps$-ball centered at $f(x)\in\c{Y}$.
 
 \end{thm}
 

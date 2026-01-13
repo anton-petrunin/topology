@@ -1,12 +1,12 @@
-\chapter{Topological spaces}
+\chapter{Topological spaces}\label{chap:topological-spaces}
 
 In the previous chapter we defined open sets in metric spaces
 and showed that continuity could be defined using only the notion of open sets.
 In this chapter we collect key properties of open sets and state them as axioms.
 It will give us a definition of a \textit{topological space} as a set with a distinguished class of subsets called \textit{open sets}.
 
-The first definition of topological spaces was given by Felix Hausdorff in 1914.
-In 1922, the definition was generalized slightly by Kazimierz Kuratowski, and it is now standard.
+The first definition of topological spaces was given by Felix Hausdorff in 1914 \cite[VII § 1]{hausdorff1914}.
+In 1922, the definition was generalized slightly by Kazimierz Kuratowski \cite{kuratowski1922}, and it is now standard.
 
 
 
@@ -49,7 +49,7 @@ Rarely we will need to consider different topologies, say $\s{T}_1$ and $\s{T}_2
 in this case, the corresponding topological spaces will be denoted by $(\c{X},\s{T}_1)$ and $(\c{X},\s{T}_2)$.
 
 
-From part \ref{def:top-space:n} it follows that the intersection of a finite collection of open sets is open.
+From \ref{def:top-space:n}, it follows that the intersection of a finite collection of open sets is open.
 That is, if $V_1$, $V_2$, $\dots, V_n$ are open, then the intersection 
 \[W=V_1 \cap \dots\cap V_n\] is open.
 The latter is proved by induction on $n$ using the identity
@@ -67,7 +67,6 @@ For any set $\c{X}$, we can define the following topologies:
 According to exercises \ref{ex:open-union} and \ref{ex:open-intersection} any metric space is a topological space if one defines open sets as in the definition \ref{def:open}.
 For example, the real line $\RR$ comes with a natural metric which defines a topology on $\RR$;
 if not stated otherwise, the real line $\RR$ will be considered with this topology.
-
 As follows from Exercise \ref{ex:d1+d2+dinfty-open},
 different metrics on one set might define the same topology.
 
@@ -98,7 +97,8 @@ Unfortunately, proving that this indeed defines a topology requires some commuta
 
 Let $\s{W}$ and $\s{S}$ be two topologies on the same set.
 Suppose $\s{W}\subset\s{S}$; that is, any open set in the $\s{W}$-topology is open in the $\s{S}$-topology.
-In this case, we say that $\s{W}$ is \index{weaker topology}\emph{weaker} than $\s{S}$, or, equivalently, $\s{S}$ is \index{stronger topology}\emph{stronger} than~$\s{W}$.
+In this case, we say that $\s{W}$ is \index{weaker topology}\emph{weaker} than $\s{S}$, or, equivalently, $\s{S}$ is \index{stronger topology}\emph{stronger} than~$\s{W}$.%
+\footnote{Some authors use terms {}\emph{smaller} or {}\emph{coarcer} for weaker topology and  {}\emph{finer} or  {}\emph{larger} for stornger topology.}
 
 Note that on any set, the concrete topology is the weakest and discrete topology is the strongest.
 
@@ -113,7 +113,7 @@ Show that $\s{W}$ is weaker than $\s{S}$.
 
 \section{Continuous maps}\label{sec:continuous-maps}
 
-Our next challenge is to reformulate definitions from the previous chapter using only open sets.
+Our challenge is to reformulate definitions from the previous chapter using only open sets.
 Continuous maps are first in line.
 The following definition is motivated by Proposition~\ref{prop:cont-open}.
 
