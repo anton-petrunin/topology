@@ -128,33 +128,41 @@ Show that
 
 The following long exercise is based on the so-called \textit{Kuratowski problem}.
 
-
 \begin{thm}{Exercise}\label{ex:kuratowski}
 
-\begin{subthm}{ex:closure-closure}
-Show that the following holds for any set $A$ in a topological space:
-\[\mathring{\mathring A}=\mathring A\subset A\subset \bar A=\bar{\bar A}\]
-\end{subthm}
-
 \begin{subthm}{ex:kuratowski-c}
-Let $A$ and $B$ be subsets of a topological space.
-Suppose that $A\subset B$.
-Show that 
-\[\bar A\subset \bar B
-\quad\text{and}\quad 
-\mathring A\subset \mathring B.\]
-\end{subthm}
-
-\begin{subthm}{ex:kuratowski-closed}
-Show that 
-\[\bar{\mathring Q}\subset Q\]
-for any closed set $Q$.
-\end{subthm}
-
-\begin{subthm}{ex:kuratowski-open}
-Show that 
-\[\mathring{\bar V}\supset V\]
-for any open set $V$.
+Prove that all the inclusions and equalities shown on the diagam hold for any subset $A$ in a topologocal space $\c{X}$.
+\[
+\begin{tikzcd}[column sep=1em, row sep=.6em]
+&\bar{\mathring{\bar{A}}}
+\arrow[rr, hook]
+&&\bar{A}
+&&\bar{\mathring{A}}
+\arrow[ll, hook]
+\arrow[rr, equals]
+&&\bar{\mathring{\bar{\mathring{A}}}}
+\\
+&&&&A
+\arrow[ul, hook]
+&&&
+\\
+&\mathring{\bar{\mathring{\bar{A}}}}
+\arrow[uu, hook]
+\arrow[rr, equals]
+&&\mathring{\bar{A}}
+\arrow[uu, hook]
+\arrow[uull, hook]
+&&\mathring{A}
+\arrow[uu, hook]
+\arrow[ul, hook]
+\arrow[ll, hook]
+\arrow[rr, hook]
+&&\mathring{\bar{\mathring{A}}}
+\arrow[uu, hook]
+\arrow[uull, hook]
+\end{tikzcd}
+\]
+Conclude that that given a set $A$ one can get at most 7 distinct subsets by repeatedly applying the set operations of closure and interior.
 \end{subthm}
 
 \begin{subthm}{ex:kuratowski:kuratowski}
@@ -162,11 +170,10 @@ Give an example of a topological space $\c{X}$ with a subset $A$ such that all t
 \[\bar{\mathring{\bar A}},\ \mathring{\bar A},\ \bar A,\  A,\  \mathring A,\ \bar{\mathring A},\ \mathring{\bar{\mathring A}}.\]
 \end{subthm}
 
-\begin{subthm}{ex:kuratowski:kuratowski7}
-Show that given a set $A$ one can get at most 7 distinct subsets by repeatedly applying the set operations of closure and interior.
-\end{subthm}
 
 \end{thm}
+
+
 
 \section{Boundary}
 

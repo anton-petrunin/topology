@@ -7,7 +7,7 @@
 \parbf{\ref{ex:morning}.}
 Topologically speaking, T-shirt is a disc with three holes, two for the hands and one for the head;
 pants have two holes, one for each leg.
-In an ideal universe socks should not have holes, but one of them apparently has a hole.
+In an ideal universe socks should not have holes, but apparently our universe is not ideal.
 
 \parbf{\ref{ex:mug}.}
 He saw a hole in the bottom, so the topology of the mug is the same as a donut (topologically speaking, a solid torus).
@@ -29,7 +29,7 @@ Draw the hair tie on each picture, the last one is shown.
 
 \parbf{\ref{ex:scissors}}; \ref{SHORT.ex:scissors:scissors}.
 Push the loop up thru the other handle, bring it
-around over the points and back over the handles, and the
+around over the points and back over the handles; the
 string will come off.
 
 \parit{\ref{SHORT.ex:scissors:4-hands}.}
@@ -325,36 +325,21 @@ Suppose $V$ is an open subset and $Q$ is its complement.
 Recall that $Q$ is closed; see \ref{sec:closed-sets}.
 Show and use that $V\subset A$ if and only if $Q\supset B$.
 
-\parbf{\ref{ex:kuratowski}}; \ref{SHORT.ex:closure-closure}.
-Each of the four statements can be deduced by spelling out the needed definition.
+\parbf{\ref{ex:kuratowski}};
+Show and use the following for any two subsets $A$ and $B$:
+\begin{itemize}
+\item $\mathring{\mathring A}=\mathring A\subset A\subset \bar A=\bar{\bar A}$.
+\item if $A\subset B$, then $\bar A\subset \bar B$ and
+$\mathring A\subset \mathring B$.
+\end{itemize}
 
-\parit{\ref{SHORT.ex:kuratowski-c}.} Use part \ref{SHORT.ex:closure-closure} together with the definitions of closure and interior.
-
-\parit{\ref{SHORT.ex:kuratowski-closed}.}
-Observe that $\mathring Q\subset Q$, and apply part \ref{SHORT.ex:kuratowski-c}.
-
-\parit{\ref{SHORT.ex:kuratowski-open}.}
-Observe that $\bar V\supset V$, and apply part \ref{SHORT.ex:kuratowski-c}.
-
-\parit{\ref{SHORT.ex:kuratowski:kuratowski}.}
-Try to choose a subset $A$ in $\RR$ so that it meets the following conditions:
+For the second part, try to choose a subset $A$ in $\RR$ so that it meets the following conditions:
 \begin{itemize}
 \item $A$ and $\RR\setminus A$ contain isolated points,
 \item $A$ and $\RR\setminus A$ contain intervals,
 \item $A$ and $\RR\setminus A$ are dense in some interval.
 \end{itemize}
 
-\parit{\ref{SHORT.ex:kuratowski:kuratowski7}.}
-For the second part, show and use the following 
-\[
-\bar{\bar A}=\bar A,
-\quad
-\mathring{\mathring A}=\mathring A,
-\quad
-\mathring{\bar{\mathring{\bar A}}}=\mathring{\bar A},
-\quad\text{and}\quad 
-\bar{\mathring{\bar{\mathring A}}}=\bar{\mathring A}.
-\]
 
 \parbf{\ref{ex:bry-closed}--\ref{ex:bry<closure}.}
 Apply the definitions of boundary and closed set.
@@ -639,6 +624,9 @@ The following function $f\:\RR\to\RR$ has closed graph, but is not continuous:
 \]
 It shows that compactness of $\c{K}$ is a necessary assumption.
 
+\parbf{\ref{ex:alexander+product}.}
+Apply the theorem to the prebase from \ref{ex:graph:prebase}.
+
 \parbf{\ref{ex:lebesgue=1}.}
 Consider an infinite set of points with discrete metric.
 
@@ -656,6 +644,13 @@ Show that if the sequence is Cauchy, then it converges to $x$.
 Since the space is Hausdorff we can choose disjoint neighborhoods $V\ni x$ and $W\ni y$.
 Since the sequence converges to $x$, the set $V$ contains all but finitely many elements of the sequence.
 The same holds for $W$ --- a contradiction.
+
+\parbf{\ref{ex:hausdorff-closure}.}
+Let $V$ and $W$ be a pair of open sets and $W'=\c{X}\setminus \bar V$.
+Show and use $V$ and $W$ meet \ref{def:hausdorff}
+if and only if
+$V$ and $W'$ meet \ref{def:hausdorff}.
+
 
 \parbf{\ref{ex:hausdorff-diagonal}.}
 The set $\Delta$ is closed if and only if its complement $U=(\c{X}\times\c{X})\setminus\Delta$ is open.
