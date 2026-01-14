@@ -1,92 +1,48 @@
-\chapter{Paths and homotopies}
+\chapter{Path-conneced spaces}
 
 Here we discuss paths and path-connected spaces,
-We start with homotopy, which is more general than path.
 
-\section{Homotopy}\label{sec:homotopy}
-
-Two continuous maps $f,g\:\c{X}\to \c{Y}$ are called \index{homotopic}\emph{homotopic} (briefly, $f\sim g$) if $f$ can be continuously deformed into $g$ within the class of continuous maps.
-Formally, this means that there exists a continuous map
-\[
-H\:\c{X}\times[0,1]\to \c{Y}
-\]
-such that $H(x,0)=f(x)$ and $H(x,1)=g(x)$ for all $x\in \c{X}$.
-The map $H\:\c{X}\times[0,1]\to \c{Y}$ is called \emph{homotopy} from $f$ to $g$.
-
-One should think of the homotopy $H$ is a one-parameter family of maps $h_t\:\c{X}\to \c{Y}$ defined by $h_t(x)=H(x,t)$.
-
-
-\begin{thm}{Exercise}
-Show that any two continous maps $\c{X}\to\RR^2$ are homotopic.
-\end{thm}
-
-\begin{thm}{Exercise}
-Let $f_0, f_1\:\c{X}\to\c{Y}$ and $g_0,g_1\:\c{Y}\to \c{Z}$ be
-four maps between topological spaces.
-Assume that $f_0\sim f_1$ and $g_0\sim g_1$.
-Show that $g_0\circ f_0\sim g_1\circ f_1$.
-\end{thm}
-
-
-\section{Operation on homotopies}\label{sec:homot-operations}
-
-Observe that
-\begin{itemize}
-\item the \index{constant homotopy}\emph{constant homotopy} $H(x,t)=f(x)$ joins $f$ with itself;
-\item if $H$ is a homotopy from $f$ with $g$, then the
-\index{time-reversed}\emph{time-reversed} homotopy defined by
-\[
-\bar H(x,t)=H(x,1-t)
-\]
-is a homotopy from $g$ to $f$;
-\item Consider two homotopies $H$ and $G$ from $f$ to $g$ and from $g$ to $h$, respectively.
-Then their \index{concatenation of homotopies}\emph{concatenation} $F=H*G$ defined by
-\[
-F(x,t)=
-\begin{cases}
-H(x,2\cdot t),& t\le \tfrac12,\\
-G(x,2\cdot t-1),& t\ge \tfrac12,
-\end{cases}
-\]
-defines a homotopy from $f$ with $h$.
-(By \ref{ex:closed-continuous}, $F$ is continuous.)
-\end{itemize}
-
-\section{Homotopy classes}
-
-The previous section implies that $\sim$ is an equivalence relation on the set of continuous maps $\c{X}\to\c{Y}$; in other words, the following properties hold for any continuous maps $f,g,h\: \c{X}\to\c{Y}$:
-\begin{itemize}
- \item $f\sim f$;
- \item if $f\sim g$, then $g\sim f$;
- \item if $f\sim g$, and $g\sim h$, then $f\sim h$.
-\end{itemize}
-
-The equivalence classes for $\sim$ are called \index{homotopy class}\emph{homotopy classes};
-the equivalence class of a map $f\:\c{X}\to\c{Y}$ will be denoted by $[f]$.
-Given two spaces $\c{X}$ and $\c{Y}$, the set of all homotopy classes will be denoted by
-$\pi(\c{X},\c{Y})$.
-
-Note that any homeomorphism $\c{Y}\to \c{Y}'$ defines a bijection between homotopy classes $\pi(\c{X},\c{Y})\to \pi(\c{X},\c{Y}')$ for any given space $\c{X}$.
-So, stydying the homotopy classes may help to distiguish topological spaces.
-
-Often the set $\pi(\c{X},\c{Y})$ admits a direct description; this is precisely its advantage over the vast set of all continuous maps $\c{X}\to \c{Y}$.
-
-This construction is meaningful even for very simple choices of $\c{X}$.
-If $\c{X}$ is the one-point space, then $\pi(\c{X},\c{Y})$ is also denoted by $\pi_0(\c{Y})$.
-This is the main subject of this chapter.
-Further we will do the case of circle, which is closely related to the fundamental group $\pi_1(\c{Y})$, which is the main subject of the following chapters.
-
-This observation will guide us in the right direction.
-However, the true motivation is different; it will described in Capter \ref{chap:algebra}.
-
-\section{Paths}
+\section{Paths}\label{sec:Operations on paths}
 
 A continuous map $f\:[0,1]\to \c{Y}$ is called a \index{path}\emph{path}.
 If $x=f(0)$ and $y=f(1)$ we say that $f$ is a path from $x$ to $y$.
 
-Note that path is a special case of homotopy with one-point sourse space $\c{X}$.
-In particular we can talk about \index{constant path}\emph{constant paths} (path that stays at one point, say $p$; it will be denoted by $\eps_p(t)$) \index{time-reversed path}\emph{time-reversed path} and \index{concatenation of paths}\emph{concatenation of paths} defined in Section~\ref{sec:homot-operations}.
-In this case the homotopy class corresponds to a subset of points in $\c{Y}$ which is called \index{path-connected component}\emph{path-connected component}.
+Let us start with several examples and constructions of paths
+\begin{itemize}
+\item A \emph{constant paths} is a path that stays at one point, say $p$, it will be denoted by $\eps_p(t)$.
+
+\item Given a path $f\:[0,1]\to \c{Y}$, one can consider the \index{time-reversed path}\emph{time-reversed} path $\bar f$, defined by
+\[\bar f(t)=f(1-t).\]
+Note that $\bar f$ is continuous since $f$ is.
+
+\item Let $f$ and $h$ be paths in the topological space $\c{Y}$.
+If $f(1)=h(0)$ we can join these two paths into one $g\:[0,1]\to \c{Y}$ defined as
+\[g(t)=
+\left[
+\begin{aligned}
+f(2\cdot t)&&\text{if}&\ t\le \tfrac12
+\\
+h(2\cdot t-1)&&\text{if}&\ t\ge \tfrac12
+\end{aligned}
+\right.
+\]
+The path $g$ is called the \index{product of paths}\emph{product} (or \index{concatenation}\emph{concatenation}) of paths $f$ and $h$, briefly it is denoted as $g=f * h$.
+By construction, the restrictions $f*h|_{[0,\frac12]}$ and $f*h|_{[\frac12,1]}$ are continuous.
+Therefore, \ref{ex:closed-continuous} implies that $f*h$ is continuous;
+in other words $f*h$ is indeed a path.
+\end{itemize}
+
+Consider the following relation on the set of points of a topological space:
+\[x\sim y \quad\Leftrightarrow\quad\text{there is a path from $x$ to $y$.}\]
+
+The discussion above implies that $\sim$ is an equivalence relation on the set of points in $\c{X}$; in other words, the following properties hold for any points $x,y,z\in \c{X}$:
+\begin{itemize}
+ \item $x\sim x$;
+ \item if $x\sim y$, then $y\sim x$;
+ \item if $x\sim y$ and $y\sim z$, then $x\sim z$.
+\end{itemize}
+
+The equivalence class of a point $x$ for the equivalence relation $\sim$ is called the \index{path-connected component}\emph{path-connected component} of $x$.
 Path-connected component of a point $y$, can be denoted by $[y]$; it is the set of all point in $\c{Y}$ that can be jointed with $y$ by a path.
 
 \section{Path-connected spaces}

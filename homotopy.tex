@@ -1,51 +1,80 @@
 \chapter{Homotopy}
 
+\section{Homotopy}\label{sec:homotopy}
 
-
-\section{Homotopies}
-
-\begin{thm}{Definition}
-Let $f,g\:\c{X}\to\c{Y}$ be continuous maps between topological spaces.
-A continuous map $(x,t)\mapsto h_t(x)$ from $\c{X}\times[0,1]$ to $\c{Y}$ is called a \index{homotopy}\emph{homotopy} from $f$ to $g$ if
+Two continuous maps $f,g\:\c{X}\to \c{Y}$ are called \index{homotopic}\emph{homotopic} (briefly, $f\sim g$) if $f$ can be continuously deformed into $g$ within the class of continuous maps.
+Formally, this means that there exists a continuous map
 \[
-h_0(x)=f(x)
-\quad\text{and}\quad
-h_1(x)=g(x)
+H\:\c{X}\times[0,1]\to \c{Y}
 \]
-for all $x\in\c{X}$.
+such that $H(x,0)=f(x)$ and $H(x,1)=g(x)$ for all $x\in \c{X}$.
+The map $H\:\c{X}\times[0,1]\to \c{Y}$ is called \emph{homotopy} from $f$ to $g$.
 
-Suppose that in addition all the maps \emph{agree} on a subset $A\subset \c{X}$; that is,
-$f(a)=g(a)=h_t(a)$ for any $a\in A$ and $t\in [0,1]$.
-Then we say that $h_t$ is a homotopy from $f$ to $g$ \emph{relative} $A$.
+It is often convinient to think of the homotopy $H$ is a one-parameter family of maps $h_t\:\c{X}\to \c{Y}$ defined by $h_t(x)=H(x,t)$.
+
+
+\begin{thm}{Exercise}
+Show that any two continous maps $\c{X}\to\RR^2$ are homotopic.
 \end{thm}
 
-The map $(x,t)\mapsto h_t(x)$ should be considered as a one-parameter family of maps; we choose notation that helps to visualize this.
+\begin{thm}{Exercise}
+Let $f_0, f_1\:\c{X}\to\c{Y}$ and $g_0,g_1\:\c{Y}\to \c{Z}$ be
+four maps between topological spaces.
+Assume that $f_0\sim f_1$ and $g_0\sim g_1$.
+Show that $g_0\circ f_0\sim g_1\circ f_1$.
+\end{thm}
 
-Two maps $f,g\:\c{X}\to\c{Y}$ are called \emph{homotopic} (\emph{homotopic relative} $A\subset \c{X}$) if there is a homotopy from $f$ to $g$ (respectively, homotopy relative $A$).
-In these cases, we write $f\sim g$ and $f\sim g \rel A$, respectively.
 
+\section{Operations on homotopies}\label{sec:homot-operations}
 
-
-\parit{Proof.}
-\emph{Reflexive.} For $f\:\c{X}\to\c{Y}$ set $H(x,t)=f(x)$.
-Then $H$ is a homotopy rel $A$ from $f$ to $f$.
-
-\emph{Symmetric.} Let $H$ be a homotopy rel $A$ from $f_0$ to $f_1$.
-Set $H'(x,t)=H(x,1-t)$.
-Then $H'$ is a homotopy rel $A$ from $f_1$ to $f_0$.
-
-\emph{Transitive.} Let $H$ be a homotopy rel $A$ from $f_0$ to $f_1$ and $G$ a homotopy rel $A$ from $f_1$ to $f_2$.
-Define $F\:\c{X}\times[0,1]\to\c{Y}$ by
+Observe that
+\begin{itemize}
+\item the \index{constant homotopy}\emph{constant homotopy} $H(x,t)=f(x)$ joins $f$ with itself;
+\item if $H$ is a homotopy from $f$ with $g$, then the
+\index{time-reversed}\emph{time-reversed} homotopy defined by
+\[
+\bar H(x,t)=H(x,1-t)
+\]
+is a homotopy from $g$ to $f$;
+\item Consider two homotopies $H$ and $G$ from $f$ to $g$ and from $g$ to $h$, respectively.
+Then their \index{concatenation of homotopies}\emph{concatenation} $F=H*G$ defined by
 \[
 F(x,t)=
 \begin{cases}
-H(x,2t)&\text{if } t\le \tfrac12,\\
-G(x,2t-1)&\text{if } t\ge \tfrac12.
+H(x,2\cdot t),& t\le \tfrac12,\\
+G(x,2\cdot t-1),& t\ge \tfrac12,
 \end{cases}
 \]
-Since $H(x,1)=f_1(x)=G(x,0)$, the two formulas agree on $\c{X}\times\{\tfrac12\}$; hence $F$ is continuous (apply the standard pasting argument, cf.\ Exercise 4.3 in the notes).
-Clearly $F$ is a homotopy from $f_0$ to $f_2$ and it is rel $A$ because both $H$ and $G$ are rel $A$.
-\qeds
+defines a homotopy from $f$ with $h$.
+(By \ref{ex:closed-continuous}, $F$ is continuous.)
+\end{itemize}
+
+\section{Homotopy classes}
+
+The previous section implies that $\sim$ is an equivalence relation on the set of continuous maps $\c{X}\to\c{Y}$; in other words, the following properties hold for any continuous maps $f,g,h\: \c{X}\to\c{Y}$:
+\begin{itemize}
+ \item $f\sim f$;
+ \item if $f\sim g$, then $g\sim f$;
+ \item if $f\sim g$, and $g\sim h$, then $f\sim h$.
+\end{itemize}
+
+The equivalence classes for $\sim$ are called \index{homotopy class}\emph{homotopy classes};
+the equivalence class of a map $f\:\c{X}\to\c{Y}$ will be denoted by $[f]$.
+Given two spaces $\c{X}$ and $\c{Y}$, the set of all homotopy classes will be denoted by
+$\pi(\c{X},\c{Y})$.
+
+Often the set $\pi(\c{X},\c{Y})$ admits a direct description; this is precisely its advantage over the vast set of all continuous maps $\c{X}\to \c{Y}$.
+Note that any homeomorphism $\c{Y}\to \c{Y}'$ defines a bijection between homotopy classes $\pi(\c{X},\c{Y})\to \pi(\c{X},\c{Y}')$ for any given space $\c{X}$.
+So, stydying the homotopy classes may help to distiguish topological spaces.
+
+
+This construction is meaningful even for very simple choices of $\c{X}$.
+If $\c{X}$ is the one-point space, then $\pi(\c{X},\c{Y})$ is also denoted by $\pi_0(\c{Y})$.
+This is the main subject of this chapter.
+If $\pi(\SS^1,\c{Y})$ is closely related to the fundamental group $\pi_1(\c{Y})$, which is the main subject of the following chapters.
+
+The idea to use homotopy classes to distiguish topological spaces will guide us in the right direction.
+However, the true motivation to consider homotopy classes is different; it will described in Capter \ref{chap:algebra}.
 
 \section{Homotopy type}
 
@@ -101,4 +130,56 @@ On the other hand, $r\circ \iota=\id_A$ since $r$ is a retraction.
 Therefore $\iota$ and $r$ define a homotopy equivalence between $A$ and $\c{X}$.
 \qeds
 
+\section{Contractible spaces}
 
+A topological space $\c{X}$ is called \index{contactable space}\emph{contactable} if the identity map $\id_\c{X}\:\c{X}\z\to \c{X}$ is homotopic to a constant map;
+that is, there is a homotopy $h_t\:\c{X}\to\c{X}$ such that $h_0(x)=x$ and $h_1(x)=p$ for some fixed point $p\in\c{X}$ and any $t$.
+
+\begin{thm}{Exercise}
+Show that any convex subset of the Euclidean space is contractible.
+\end{thm}
+
+
+\begin{thm}{Exercise}
+Show that any contractible space is path-connected.
+\end{thm}
+
+Later we will show that the circle $\mathbb{S}^1$ is an example of path-connected space that is not contractible.
+
+\begin{thm}{Exercise}
+Let $\c{X}$ be a contractible space.
+
+\begin{subthm}{}
+Show that any two continuous maps from a topological space to $\c{X}$ are homotopic.
+\end{subthm}
+
+\begin{subthm}{}
+Show that any two continuous maps from $\c{X}$ to a path-connected space are homotopic.
+\end{subthm}
+
+\end{thm}
+
+\section{Homotopy type}
+
+Two topological spaces $\c{X}$ and $\c{Y}$ have the same \index{homotopy type}\emph{homotopy type} (briefly $\c{X}\sim\c{Y}$) if there are continuous maps
+$f\: \c{X}\to \c{Y}$ and $h\:\c{Y}\to \c{X}$ such that $h\circ f\sim \id_\c{X}$ and $f\circ h\sim \id_\c{Y}$.
+
+\begin{thm}{Exercise}
+Show that a topological space $\c{X}$ is contractible if and only if it has the same homotopy type with the one-point space.
+\end{thm}
+
+\begin{thm}{Exercise}
+Suppose $A$ is a deformation retract of a topological space $\c{X}$.
+Show that $A$ and $\c{X}$ have the same homotopy type.
+\end{thm}
+
+
+\begin{thm}{Exercise}
+Show that the following two closed connected sets in the plane have the same homotopy type.
+(Each set is a union of line segments.)
+
+\begin{figure}[!ht]
+\centering
+\includegraphics{mppics/pic-40}
+\end{figure}
+\end{thm}
