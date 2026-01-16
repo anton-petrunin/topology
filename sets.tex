@@ -1,12 +1,11 @@
 \chapter{Subsets}
 
 This chapter starts with definition closed sets in general topological space.
-The definitions of open and closed sets are mirror-symmetric to each other.
-There is no particular reason why we define a topological space using open sets --- we could use closed sets instead.
-In fact, closed sets were considered before open sets --- the former were introduced by Georg Cantor in 1884 \cite{cantor}, and the latter by René Baire in 1899 \cite{baire}.
-
 Further, we introudce constructions of interior, closure and boundary.
-Finally,we define neighborhoods and discuss limits in general topological space.
+Finally, we define neighborhoods and discuss limits in general topological space.
+
+There is no particular reason why we define a topological space using open sets --- we could use closed sets instead.
+(In fact, closed sets were considered before open sets --- the former were introduced by Georg Cantor in 1884 \cite{cantor}, and the latter by René Baire in 1899 \cite{baire}.)
 
 \section{Closed sets}\label{sec:closed-sets}
 
@@ -71,6 +70,8 @@ By \ref{eq:inverse-image-complement},
 $f^{-1}(B)$ is the complement of $f^{-1}(A)$ in $\c{X}$.
 Hence $f^{-1}(B)$ is closed.
 
+The only-if part follows since $B$ is an arbitrary closed set in $\c{Y}$.
+
 \parit{If part.}
 Fix an open set $B$; its complement $A=\c{Y}\setminus B$ is closed.
 Therefore $f^{-1}(A)$ is closed.
@@ -78,14 +79,8 @@ By \ref{eq:inverse-image-complement},
 $f^{-1}(B)$ is the complement of $f^{-1}(A)$  in~$\c{X}$.
 Hence $f^{-1}(B)$ is open.
 
-The statement follows since $B$ is an arbitrary open set.
+The if part follows since $B$ is an arbitrary open set in $\c{Y}$.
 \qeds
-
-\begin{thm}{Exercise}\label{ex:closed-continuous}
-Let $f\:\c{X}\to \c{Y}$ be a map between topological spaces.
-Assume $A,B\subset \c{X}$ are closed sets such that $A\cup B=\c{X}$.
-Show that $f$ is continuous if and only if so are the restrictions $f|_A$ and $f|_B$.
-\end{thm}
 
 \begin{thm}{Exercise}\label{ex:open-intersection+metrizable}
 
@@ -108,7 +103,7 @@ Let $A$ be an arbitrary subset of a topological space $\c{X}$.
 The union of all open subsets of $A$ is called the \index{interior}\emph{interior} of $A$ and denoted as $\mathring A$.
 
 Note that $\mathring A$ is open.
-Indeed, it is defined as a union of open sets and such union has to be open by the definition of a topology (\ref{def:top-space}).
+Indeed, it is defined as a union of open sets and such union is open by the definition of a topology (\ref{def:top-space}).
 So we can say that $\mathring A$ is the \textit{maximal} open set in $A$, 
 as any open subset of $A$ lies in~$\mathring A$.
 
@@ -126,42 +121,43 @@ Show that
 \[\bar B=\c{X}\setminus \mathring A.\]
 \end{thm}
 
-The following long exercise is based on the so-called \textit{Kuratowski problem}.
+The following exercise is called \index{Kuratowski problem}\emph{Kuratowski problem}.
 
-\begin{thm}{Exercise}\label{ex:kuratowski}
+\begin{thm}{Advanced exercise}\label{ex:kuratowski}
 
 \begin{subthm}{ex:kuratowski-c}
 Prove that all the inclusions and equalities shown on the diagam hold for any subset $A$ in a topologocal space $\c{X}$.
-\[
-\begin{tikzcd}[column sep=1em, row sep=.6em]
+\begin{figure}[h!]
+\centering
+\begin{tikzcd}[column sep=1.4em, row sep={.1em,.1em}]
 &\bar{\mathring{\bar{A}}}
 \arrow[rr, hook]
 &&\bar{A}
 &&\bar{\mathring{A}}
-\arrow[ll, hook]
+\arrow[ll, hook']
 \arrow[rr, equals]
 &&\bar{\mathring{\bar{\mathring{A}}}}
 \\
-&&&&A
-\arrow[ul, hook]
+&&&&|[shift={(0,-17pt)}]|A
+\arrow[ul, hook']
 &&&
 \\
 &\mathring{\bar{\mathring{\bar{A}}}}
-\arrow[uu, hook]
+\arrow[uu, hook']
 \arrow[rr, equals]
 &&\mathring{\bar{A}}
 \arrow[uu, hook]
-\arrow[uull, hook]
+\arrow[uull, hook']
 &&\mathring{A}
-\arrow[uu, hook]
-\arrow[ul, hook]
-\arrow[ll, hook]
+\arrow[uu, hook']
+\arrow[ul, hook']
+\arrow[ll, hook']
 \arrow[rr, hook]
 &&\mathring{\bar{\mathring{A}}}
-\arrow[uu, hook]
-\arrow[uull, hook]
+\arrow[uu, hook']
+\arrow[uull, hook']
 \end{tikzcd}
-\]
+\end{figure}
 Conclude that that given a set $A$ one can get at most 7 distinct subsets by repeatedly applying the set operations of closure and interior.
 \end{subthm}
 
@@ -198,7 +194,8 @@ that have the same nonempty boundary.
 
 Let $x$ be a point in a topological space $\c{X}$.
 A \index{neighborhood}\emph{neighborhood} of $x$ is any open set $N$ containing $x$.
-In topology, neighborhoods often replace the notion of balls (the latter can be used only in metric spaces).  
+
+In topology, neighborhoods often replace balls, which make sence only in metric spaces.
 
 \begin{thm}{Exercise}\label{ex:bry-nbhd}
 Let $A$ be a set in a topological space $\c{X}$.
@@ -212,12 +209,6 @@ The set $A$ is said to be \index{dense}\emph{dense} in $B$ if $\bar A\supset B$.
 Show that $A$ is dense in $B$ if and only if any neighborhood of any point in $B$ intersects $A$.
 \end{thm}
 
-\begin{thm}{Exercise}\label{ex:nowhere-dense}
-Classify topological spaces (up to homeomorphism) containing a unique nowhere
-dense subset.
-\end{thm}
-
-
 \section{Limits}\label{sec:limits}
 
 \begin{thm}{Definition}\label{def:limit-top}
@@ -226,14 +217,12 @@ We say that $x_n$ \index{convergence}\emph{converges} to a point $x_\infty\in \c
 $x_n\in N$ for all sufficiently large $n$.
 \end{thm}
 
-\begin{thm}{Exercise}\label{ex:def:limit-metric=def:limit-top}
-Prove that the above definition agrees with \ref{def:limit-metric}.
+Obseve that the above definition agrees with \ref{def:limit-metric}.
 In other words, a sequence of points $x_1,x_2,\dots$ in a metric space converges to a point $x_\infty$ in the sense of the definition \ref{def:limit-metric} if and only if it converges in the sense of the definition \ref{def:limit-top}.
-\end{thm}
 
 \begin{thm}{Exercise}\label{ex:concrete-lim}
 Show that in a space with the concrete topology any sequence converges to any point.
-In particular, a sequence might have different limits.
+In particular, a sequence might have several different limits.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:lim-weaker}
@@ -242,7 +231,7 @@ Show that a convergent sequence of points in a topological space is also converg
 
 The following exercise shows that in general, converging sequences do \textit{not} adequately describe the topology of a space.
 In other words, an analog of \ref{ex:continuous-limit} does not hold.
-(The so-called \index{net}\emph{nets} provide an appropriate generalization of sequences that works well in topological spaces, but we are not going to consider them in the sequel.)
+(The so-called \index{net}\emph{nets} provide an appropriate generalization of sequences that works well in topological spaces, but we are not going to consider them.)
 
 Recall that a set is called \index{countable set}\emph{countable} if it admits a bijection to a subset of the set of natural numbers.
 In particular, all finite sets are countable.

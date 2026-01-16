@@ -17,6 +17,29 @@ It is straightforward to check that this notion agrees with the notion introduce
 that is, if $\c{Y}$ is a metric space, then any subset $A\subset\c{Y}$ comes with a metric,
 and the topology defined by this metric coincides with the induced topology on $A$.
 
+Recall the \emph{restriction} of a map $f:\c{Y}\to \c{Z}$ to a subset $A$ is obtained by keeping the same rule as $f$ but only allowing inputs from~$A$.
+It is usually denoted by $f|_A$; so $(f|_A)(a)=f(a)$ if $a\in A$ and otherwise it is undefined.
+
+Observe that if $f\:\c{Y}\to \c{Z}$ is a continuous map, then for any subspace $A\subset \c{Y}$, the restriction of $f$ to $A$ is continuous.
+The following exercise provides a partial converse.
+
+\begin{thm}{Exercise}\label{ex:u-continuous}
+Let $f\:\c{X}\to \c{Y}$ be a map between topological spaces.
+Suppose $A,B\subset\c{X}$ are sets such that $A\cup B=\c{X}$ and either
+\begin{subthm}{ex:u-continuous:open}
+both $A$ and $B$ are open sets, or
+\end{subthm}
+\begin{subthm}{ex:u-continuous:closed}
+both $A$ and $B$ are closed sets.
+\end{subthm}
+Show that $f$ is continuous if and only if so are the restrictions $f|_A$ and $f|_B$.
+
+\begin{subthm}{ex:u-continuous:none}
+Show that this is any not longer true without assumptions of \ref{SHORT.ex:u-continuous:open} or \ref{SHORT.ex:u-continuous:closed}.
+\end{subthm}
+
+\end{thm}
+
 A map $f\:\c{X}\to \c{Y}$ is called an \index{embedding}\emph{embedding} if $f$ defines a homeomorphism from $\c{X}$ to the subspace $f(\c{X})$ in $\c{Y}$.
 
 \parit{Proof.}

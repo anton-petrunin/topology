@@ -179,8 +179,12 @@ Figure out which is which.
 \end{Figure}
 
 \parbf{\ref{ex:r<2R}.}
-Apply the triangle inequality.
-For the second part, describe the balls $\Ball(2,3)$ and $\Ball(0,4)$ in $[0,\infty)$.
+Apply the triangle inequality to $x$, $y$, and $z\in \Ball(y,R)\setminus \Ball(x,r)$.
+For the second part, consider the balls $\Ball(2,3)$ and $\Ball(0,4)$ in $[0,\infty)$.
+
+\parit{Commnent.} Note that we used that $\Ball(y,R)\z\ne \Ball(x,r)$,
+without this condition there no general restrictions on $r$ in terms of $R$.
+FOr example the inclusion $\Ball(x,1000)\subset\Ball(y,1)$ holds in the discrete space.
 
 \parbf{\ref{ex:def:cont-epsilon-delta=def:cont-balls}.}
 Spell the definitions.
@@ -190,14 +194,15 @@ If $y\in \Ball(x,R)$, then $r=R-|x-y|\z>0$.
 Use the triangle inequality to show that $\Ball(y,r)\z\subset \Ball(x,R)$.
 Make a conclusion.
 
-\parbf{\ref{ex:open-union}.} Apply \ref{def:open}.
+\parbf{\ref{ex:open-union}.}
+Apply \ref{def:open}.
 
 \parbf{\ref{ex:open-intersection}.} Apply \ref{def:open}.
 
 \parbf{\ref{ex:union-of-balls}.} The if part follows from \ref{ex:ball-is-open} and \ref{ex:open-union}.
 It remains to prove the only-if part.
 
-Let $V$ be an open set. 
+Let $V$ be an open set.
 By \ref{def:open}, for any $x\in V$ there is $r_x>0$ such that $\Ball(x,r_x)\subset V$.
 Observe that
 \[V=\bigcup_{x\in V} \Ball(x,r_x).\]
@@ -304,13 +309,6 @@ that is, we can find $x<y$ such that $f(x)>f(y)$.
 Note that the inverse image $V=f^{-1}([f(x),\infty))$ contains $x$ but does not contain $y$.
 Show that $V$ is not open in $\RR_\ge$, so $f\:\RR_\ge\to\RR_\ge$ is not continuous. 
 
-\parbf{\ref{ex:closed-continuous}.} 
-Set $a=f|_A$ and $b=f|_{B}$; choose a closed set $Q\subset \c{Y}$.
-By \ref{prop:cont-closed}, $a^{-1}(Q)$ and $b^{-1}(Q)$ are closed.
-Note that $a^{-1}(Q)=f^{-1}(Q)\cap A$ and $b^{-1}(Q)=f^{-1}(Q)\cap B$.
-Apply \ref{def:closed-properties:n} to show that $f^{-1}(Q)$ is closed.
-Further, apply \ref{prop:cont-closed}.
-
 \parbf{\ref{ex:open-intersection+metrizable}}; \ref{SHORT.ex:open-intersection+metrizable:a}
 Choose a metric that induces the topology on $\c{X}$.
 Let $Q$ be a closed set in $\c{X}$.
@@ -356,18 +354,6 @@ Show and use that the statement is equivalent to the following
 \parbf{\ref{ex:dense-nbhd}.}
 Apply the definitions of neighborhood and dense set.
 
-\parbf{\ref{ex:nowhere-dense}.} 
-In other words, we need to classify spaces such that any nonempty subset is everywhere dense.
-Observe that every point of the space lies in every nonempty open set.
-Conclude that the space has concrete topology.
-Show that any such space has this property.
-
-\parbf{\ref{ex:def:limit-metric=def:limit-top}.}
-Note that any ball $\Ball(x_\infty,\eps)$ is a neighborhood of $x_\infty$.
-Observe that it implies the only-if part.
-
-To prove the if part, show and use that for any neighborhood $N$ of $x_\infty$ there is $\eps>0$ such that $\Ball(x_\infty,\eps)\subset N$.
-
 \parbf{\ref{ex:concrete-lim}--\ref{ex:cocountable-top}.}
 Apply the definition of the convergence.
 
@@ -389,6 +375,12 @@ Try to build the needed function from $x\mapsto \arctan x$ or $x\mapsto e^{-e^x}
 
 \parbf{\ref{ex:homeo=eq}.}
 Apply the definitions of homeomorphism and \ref{ex:composition-continuous}.
+
+\parbf{\ref{ex:nowhere-dense}.}
+In other words, we need to classify spaces such that any nonempty subset is everywhere dense.
+Observe that every point of the space lies in every nonempty open set.
+Conclude that the space has concrete topology.
+Show that any such space has this property.
 
 \parbf{\ref{ex:inversion}.}
 Learn about inversion and try to apply it.
@@ -429,6 +421,28 @@ Try the maps between two-point spaces with appropriate topologies.
 
 \parbf{\ref{ex:closed-open-cont-R}.}
 Consider a map that vanishes on the Cantor set and sends each remaining interval homeomorphically to the whole $\RR$.
+
+\parbf{\ref{ex:u-continuous}.}
+Set $a=f|_A$ and $b=f|_{B}$.
+Note that for any set $S\subset \c{Y}$, we have
+\begin{align*}
+a^{-1}(S)&=f^{-1}(S)\cap A,
+\\
+b^{-1}(S)&=f^{-1}(S)\cap B,
+\\
+f^{-1}(S)&=a^{-1}(S)\cup b^{-1}(S).
+\end{align*}
+
+\parit{\ref{SHORT.ex:u-continuous:open}.}
+Choose an open set $W\subset \c{Y}$.
+Show that $a^{-1}(W)$ and $b^{-1}(W)$ are open in $\c{X}$.
+Conclude that $f^{-1}(W)$ is open.
+
+\parit{\ref{SHORT.ex:u-continuous:closed}.}
+Choose a closed set $Q\subset \c{Y}$.
+Use \ref{prop:cont-closed} to show that $a^{-1}(Q)$ and $b^{-1}(Q)$ are closed.
+Apply \mbox{\ref{def:closed-properties:n}} to show that $f^{-1}(Q)$ is closed.
+Apply \ref{prop:cont-closed} again.
 
 \parbf{\ref{ex:cont-product}.} 
 Check the following function
@@ -671,7 +685,17 @@ Apply \ref{obs:compact-to-hausdorff} to the map $[0,1]\to \mathbb{S}^1$ defined 
 Apply \ref{obs:compact-to-hausdorff} to the map $\DD\to \RR^3$ that is written from polar to spherical coordinates as  
 \[(r,\theta)\mapsto (1, \theta, \pi\cdot r).\]
 
-\parbf{\ref{ex:quotient-connected}.} Apply \ref{prop:image-connected}.
+\parbf{\ref{ex:convex-body}.}
+Let $K\subset\RR^3$ be a convex body;
+we can assume that the origin lies in the interior of $K$.
+
+Show that the boundary $\partial K$ is compact.
+Show that any half-line that starts from the origin intersects $\partial K$ at a single point.
+Conclude that $x\mapsto \tfrac{x}{|x|}$ defines a continous bijection $\partial K\to \SS^2$ and apply \ref{cor:cont-bijection=homeomorphism}.
+
+
+\parbf{\ref{ex:quotient-connected}.}
+Apply \ref{prop:image-connected}.
 
 \parbf{\ref{ex:A<B<bar-A}.}
 Show that any open splitting of $B$ splits $A$ as well.

@@ -1,0 +1,100 @@
+\let\oldcdot\cdot
+\def\cdot{{\hskip0.5pt\z\oldcdot\hskip0.5pt}}
+
+%THEOREM
+\newcounter{thm}[chapter]
+\renewcommand{\thethm}{\thechapter.\arabic{thm}}
+\newcommand\claim[2][{}]{\par\medskip\noindent\refstepcounter{thm}\hbox{\bf \thechapter.\arabic{thm}. #2.#1}
+\it\ %\ignorespaces
+}
+\def\endclaim{
+\par\medskip}
+\newenvironment{thm}{\claim}{\endclaim}
+
+%MY STYLE
+\def\parit#1{\medskip\noindent{\it #1}}
+\def\parbf#1{\medskip\noindent{\bf #1}}
+\def\qeds{\qed\par\medskip}%END OF PROOF
+\def\qedsf{\vskip-6mm\qeds}%END OF PROOF BY FORMULA
+\def\qedsin{\eqno\square}%END OF PROOF in FORMULA
+
+%NUMBERONCIRC
+\newcommand*{\numform}[1]{\@numform{\@nameuse{c@#1}}}
+\newcommand*{\@numform}[1]%
+{\ifcase #1\or \ding{202}\or \ding{203}\or \ding{204}\or \ding{205}\or \ding{206}\or \ding{207}\or \ding{208}\or \ding{209}\or \ding{210}\or \ding{211}\else\@ctrerr \fi}
+%EQNUMBER
+\newcounter{eqtn}[chapter]
+\renewcommand{\@eqnnum}{\theeqtn}
+\renewcommand{\theeqtn}{\numform{eqtn}}
+\newcommand{\eqlbl}[1]{\refstepcounter{eqtn}\leqno\text{\numform{eqtn}\label{#1}}}
+\newcommand{\eqtag}[1]{\refstepcounter{eqtn}\tag*{\numform{eqtn}\label{#1}}}
+
+\def\@listi{%
+  \leftmargin\leftmargini
+  \topsep 0pt
+  \partopsep 0pt
+  \parsep 0pt
+  \itemsep 0pt
+}
+\let\@listI\@listi % some classes use \@listI
+
+\def\@listii{%
+  \leftmargin\leftmarginii
+  \topsep 0pt
+  \partopsep 0pt
+  \parsep 0pt
+  \itemsep 0pt
+}
+\def\@listiii{%
+  \leftmargin\leftmarginiii
+  \topsep 0pt
+  \partopsep 0pt
+  \parsep 0pt
+  \itemsep 0pt
+}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+%SUBTHEOREM
+\newcounter{subthm}[thm]
+\renewcommand{\thesubthm}{\thethm\textit{\hskip-0.03em \alph{subthm}}}
+\newcounter{clone}[thm]
+\renewcommand{\theclone}{\textit{(\alph{subthm})}}
+\newenvironment{subthm}[1]{\ifthenelse{\equal{#1}{}}
+{\par\refstepcounter{subthm}\begin{itemize}\item[(\alph{subthm})]}{\par\refstepcounter{subthm}\label{#1}\setcounter{clone}{\value{subthm}} \addtocounter{clone}{-1}\refstepcounter{clone}\label{SHORT.#1}\begin{itemize}
+\item [(\alph{subthm})]}}{\end{itemize}}
+
+%SUBTHEOREM A
+\newcounter{subthmA}[thm]
+\renewcommand{\thesubthmA}{\thethm\textit{\hskip-0.05em \Alph{subthmA}}}
+\newcounter{cloneA}[thm]
+\renewcommand{\thecloneA}{\textit{(\Alph{subthmA})}}
+\newenvironment{subthmA}[1]{\ifthenelse{\equal{#1}{}}
+{\par\refstepcounter{subthmA}\begin{itemize}\item[(\Alph{subthmA})]}{\par\refstepcounter{subthmA}\label{#1}\setcounter{cloneA}{\value{subthmA}} \addtocounter{cloneA}{-1}\refstepcounter{cloneA}\label{SHORT.#1}\begin{itemize}
+\item [(\Alph{subthmA})]}}{\end{itemize}}
+%SUBTHEOREM 1
+\newcounter{subthmN}[thm]
+\renewcommand{\thesubthmN}{\thethm-\arabic{subthmN}}
+\newcounter{cloneN}[thm]
+\renewcommand{\thecloneN}{\arabic{subthmN}}
+\newenvironment{subthmN}[1]{\ifthenelse{\equal{#1}{}}
+{\par\refstepcounter{subthmN}\begin{itemize}\item[\arabic{subthmN})]}{\par\refstepcounter{subthmN}\label{#1}\setcounter{cloneN}{\value{subthmN}} \addtocounter{cloneN}{-1}\refstepcounter{cloneN}\label{SHORT.#1}\begin{itemize}
+\item [\arabic{subthmN})]}}{\end{itemize}}
+
+%CLAIM
+\def\clmclaim#1{\par\medskip\noindent\refstepcounter{eqtn}\hbox{\rm\numform{eqtn} #1}
+\it%\ignorespaces
+}
+\def\endclmclaim{\par
+\medskip}
+\newenvironment{clm}{\clmclaim}{\endclmclaim}
+
+
+\makeatletter\renewcommand{\p@section}{\thechapter}\makeatother
+\renewcommand{\thesection}{\Alph{section}}
+
+\renewcommand{\chaptername}{Lecture}
+
+\newenvironment{Figure}
+  {\par\medskip\noindent\minipage{\linewidth}}
+  {\endminipage\par\medskip}
