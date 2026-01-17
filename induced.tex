@@ -2,66 +2,6 @@
 
 Here we introduce several constructions that produce new topological spaces from the given ones.
 
-\section{Induced topology}\label{sec:induced-topology}
-
-
-\begin{thm}{Proposition}
-Let $A$ be a subset of a topological space $\c{Y}$.
-Then all subsets $V\subset A$ such that $V=A\cap W$ for some open set $W$ in $\c{Y}$ form a topology on $A$.
-\end{thm}
-
-The described topology is called the \index{induced topology}\emph{induced topology} on $A$.
-
-A subset $A$ of a topological space $\c{Y}$ equipped with the induced topology is called a \index{subspace}\emph{subspace} of $\c{Y}$.
-It is straightforward to check that this notion agrees with the notion introduced in \ref{sec:subspaces-metric};
-that is, if $\c{Y}$ is a metric space, then any subset $A\subset\c{Y}$ comes with a metric,
-and the topology defined by this metric coincides with the induced topology on $A$.
-
-Recall the \emph{restriction} of a map $f:\c{Y}\to \c{Z}$ to a subset $A$ is obtained by keeping the same rule as $f$ but only allowing inputs from~$A$.
-It is usually denoted by $f|_A$; so $(f|_A)(a)=f(a)$ if $a\in A$ and otherwise it is undefined.
-
-Observe that if $f\:\c{Y}\to \c{Z}$ is a continuous map, then for any subspace $A\subset \c{Y}$, the restriction of $f$ to $A$ is continuous.
-The following exercise provides a partial converse.
-
-\begin{thm}{Exercise}\label{ex:u-continuous}
-Let $f\:\c{X}\to \c{Y}$ be a map between topological spaces.
-Suppose $A,B\subset\c{X}$ are sets such that $A\cup B=\c{X}$ and either
-\begin{subthm}{ex:u-continuous:open}
-both $A$ and $B$ are open sets, or
-\end{subthm}
-\begin{subthm}{ex:u-continuous:closed}
-both $A$ and $B$ are closed sets.
-\end{subthm}
-Show that $f$ is continuous if and only if so are the restrictions $f|_A$ and $f|_B$.
-
-\begin{subthm}{ex:u-continuous:none}
-Show that this is any not longer true without assumptions of \ref{SHORT.ex:u-continuous:open} or \ref{SHORT.ex:u-continuous:closed}.
-\end{subthm}
-
-\end{thm}
-
-A map $f\:\c{X}\to \c{Y}$ is called an \index{embedding}\emph{embedding} if $f$ defines a homeomorphism from $\c{X}$ to the subspace $f(\c{X})$ in $\c{Y}$.
-
-\parit{Proof.}
-We need to check the conditions in \ref{def:top-space}.
-
-First, the whole set $A$ and the empty set are included;
-indeed, $\emptyset=A\cap \emptyset$ and $A=A\cap \c{Y}$.
-
-Assume $\{V_\alpha\}$ is a collection of open sets in $A$; here $\alpha$ runs in some index set, say $\c{I}$.
-In other words, for each $V_\alpha$ there is an open set $W_\alpha\subset\c{Y}$ such that $V_\alpha\z=A\cap W_\alpha$.
-Note that
-\[\bigcup_\alpha V_\alpha=A\cap\left(\bigcup_\alpha W_\alpha\right).\]
-Since the union of $\{W_\alpha\}$ is open in $\c{Y}$ (\ref{def:top-space:u}), the union of $\{V_\alpha\}$ is open in the induced topology on $A$.
-
-Assume $V_1$ and $V_2$ are open in $A$; 
-that is, $V_1=A\cap W_1$ and  $V_2\z=A\cap W_2$ for some open sets $W_1,W_2\subset\c{Y}$.
-Note that
-\[V_1\cap V_2=A\cap(W_1\cap W_2).\]
-Since the intersection $W_1\cap W_2$ is open in $\c{Y}$ (\ref{def:top-space:n}),
-the intersection $V_1\cap V_2$ is open in the induced topology on $A$.
-\qeds
-
 \section{Product space}
 
 Recall that $\c{X}\times\c{Y}$ denotes the set of all pairs $(x,y)$ such that $x\in\c{X}$ and  $y\in\c{Y}$.
@@ -91,7 +31,7 @@ U'=\bigcup_\beta V'_\beta\times W'_\beta.
 where $\alpha$ and $\beta$ run in some index sets, say $\c{I}$ and $\c{J}$ respectively.
 We need to show that $U\cap U'$ can be presented as a union of products of open sets;
 the latter follows from the next set-theoretical identity
-\[U\cap U'=\bigcup_{\alpha,\beta} (V_\alpha\cup V'_\beta)\times (W_\alpha\cup W'_\beta).\eqlbl{eq:nu=un}\]
+\[U\cap U'=\bigcup_{\alpha,\beta} (V_\alpha\cap V'_\beta)\times (W_\alpha\cap W'_\beta).\eqlbl{eq:nu=un}\]
 
 Checking  \ref{eq:nu=un} is straightforward.
 Indeed, $(x,y)\in U\cap U'$ means that $(x,y)\in U$ and $(x,y)\in U'$;
@@ -116,8 +56,8 @@ By \ref{ex:union-of-balls}, \textit{open balls form a base of a metric space}.
 
 A base completely defines its topology,
 but typically a topology has many different bases.
-In metric spaces, for example, the set of all balls with rational radiuses is a base;
-another example is the set of all  balls with radiuses smaller than $1$.
+In metric spaces, for example, the set of all balls with rational radii is a base;
+another example is the set of all balls with radii smaller than $1$.
 
 In many cases, it is convenient (and also economical) to describe the topology by specifying its base.
 For example, the product topology on $\c{X}\times\c{Y}$ can be redefined as a \textit{topology with a base formed by all products $V\times W$, where $V$ is open in $\c{X}$, and $W$ is open in $\c{Y}$}.
@@ -176,7 +116,7 @@ It follows that $O\cap O'\in\s{O}$ if $O,O'\in\s{O}$.
 \begin{thm}{Exercise}\label{ex:base-N}
 Let $\NN=\{\,1,2,\dots\,\}$ be the set of natural numbers,
 and let $\s{B}$ be a set of all arithmetic progressions in $\NN$;
-that is, $\s{B}$ inculdes $\{\,a,a+d,a+2\cdot d,\dots\,\}$ for any $a, d\in \NN$.
+that is, $\s{B}$ includes $\{\,a,a+d,a+2\cdot d,\dots\,\}$ for any $a, d\in \NN$.
 
 Show that $\s{B}$ is a base of some topology on $\NN$.
 Is it true that in this topology the set $\{1\}$ is open and/or closed?
@@ -279,12 +219,12 @@ Let $g\:\c{X}\to\c{Y}$ be a continuous map.
 
 \begin{subthm}{}
 Suppose $\c{X}$ is equipped with the initial topology.
-Show that a map $f\:\c{W}\to\c{X}$ is continuous if and only if the composition $f\circ g\:\c{W}\to\c{Y}$ is continuous.
+Show that a map $f\:\c{W}\to\c{X}$ is continuous if and only if the composition $g\circ f\:\c{W}\to\c{Y}$ is continuous.
 \end{subthm}
 
 \begin{subthm}{}
 Suppose $\c{Y}$ is equipped with the final topology.
-Show that a map $h\:\c{Y}\to\c{Z}$ is continuous if and only if the composition $h\circ f\:\c{X}\z\to\c{Z}$ is continuous.
+Show that a map $h\:\c{Y}\to\c{Z}$ is continuous if and only if the composition $h\circ g\:\c{X}\z\to\c{Z}$ is continuous.
 \end{subthm}
 
 \end{thm}
@@ -300,7 +240,7 @@ Show that $\c{Y}$ is equipped with the final topology.
 The initial topology is used mostly for injective maps; in this case, it is nearly the same as the \index{induced topology}\emph{induced topology}.
 Similarly, the final topology is mostly used for surjective maps.
 This particular case of the construction is called the \index{quotient topology}\emph{quotient topology},
-which we about to describe.
+which we are about to describe.
 
 Let $\sim$ be an \index{equivalence relation}\emph{equivalence relation} on a topological space $\c{X}$;
 that is, for any $x,y,z\in\c{X}$ the following conditions hold:
@@ -336,8 +276,8 @@ Describe the quotient space $[0,1]/(0,1)$, where $[0,1]$ and $(0,1)$ are real in
 that is, list the points and the open sets of the quotient space.
 \end{thm}
 
-One may also check by hands that the quotient space $[0,1]/\{0,1\}\simeq\SS^1$;
-that is, the unit segment with identified ends is homeomorpic to the circle.
+One may also check by hand that the quotient space $[0,1]/\{0,1\}\simeq\SS^1$;
+that is, the unit segment with identified ends is homeomorphic to the circle.
 Theorem \ref{obs:compact-to-hausdorff} will provide a very general tool that helps to prove such statements.
 
 \section{Orbit spaces}

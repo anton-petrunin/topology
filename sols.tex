@@ -5,7 +5,7 @@
 
 
 \parbf{\ref{ex:morning}.}
-Topologically speaking, T-shirt is a disc with three holes, two for the hands and one for the head;
+Topologically speaking, a T-shirt is a disc with three holes, two for the hands and one for the head;
 pants have two holes, one for each leg.
 In an ideal universe socks should not have holes, but apparently our universe is not ideal.
 
@@ -127,30 +127,30 @@ $|x-y|_{\c{X}}<\eps$;
 make a conclusion.
 
 \parbf{\ref{ex:comp+cont}.}
-Fix $x\in \mathcal{X}$ and $y\in\mathcal{Y}$
+Fix $x\in \c{X}$ and $y\in\c{Y}$
 such that $f(x)=y$.
 
 Fix $\epsilon>0$.
 Since $g$ is continuous at $y$, there is a positive value $\delta_1$ such that 
-$$d_{\mathcal{Z}}(g(y'),g(y))<\epsilon
+$$|g(y')-g(y)|_{\c{Z}}<\epsilon
 \quad
 \text{if}
 \quad
-d_{\mathcal{Y}}(y',y)<\delta_1.$$ 
+|y'-y|_{\c{Y}}<\delta_1.$$
 
 Since $f$ is continuous at $x$, there is $\delta_2>0$ such that 
-$$d_{\mathcal{Y}}(f(x'),f(x))\z<\delta_1
+$$|f(x'-f(x)|_{\c{Y}}<\delta_1
 \quad
 \text{if}
 \quad
-d_{\mathcal{X}}(x',x)<\delta_2.$$ 
+|x'-x|_{\c{X}}<\delta_2.$$
 
 Since $f(x)=y$, we get that
-$$d_{\mathcal{Z}}(h(x'),h(x))<\epsilon
+$$|h(x')-h(x)|_{\c{Z}}<\epsilon
 \quad
 \text{if}
 \quad
-d_{\mathcal{X}}(x',x)<\delta_2.$$ 
+|x'-x|_{\c{X}}<\delta_2.$$
 Hence the result.
 
 \parbf{\ref{ex:isom-cont}.} \ref{SHORT.ex:isom-cont:continuous}
@@ -182,9 +182,9 @@ Figure out which is which.
 Apply the triangle inequality to $x$, $y$, and $z\in \Ball(y,R)\setminus \Ball(x,r)$.
 For the second part, consider the balls $\Ball(2,3)$ and $\Ball(0,4)$ in $[0,\infty)$.
 
-\parit{Commnent.} Note that we used that $\Ball(y,R)\z\ne \Ball(x,r)$,
-without this condition there no general restrictions on $r$ in terms of $R$.
-FOr example the inclusion $\Ball(x,1000)\subset\Ball(y,1)$ holds in the discrete space.
+\parit{Comment.} Note that we used that $\Ball(y,R)\z\ne \Ball(x,r)$,
+without this condition there are no general restrictions on $r$ in terms of $R$.
+For example the inclusion $\Ball(x,1000)\subset\Ball(y,1)$ holds in the discrete space.
 
 \parbf{\ref{ex:def:cont-epsilon-delta=def:cont-balls}.}
 Spell the definitions.
@@ -226,7 +226,7 @@ Assume the contrary; that is, a sequence $x_1,x_2,\dots$ has two limits $y$ and 
 Set $r=|y-z|$.
 Note that $\Ball(y,\tfrac r2)$ contains all but finitely many elements of the sequence $x_1,x_2,\dots$;
 the same holds for $\Ball(z,\tfrac r2)$.
-Observe that $\Ball(y,\tfrac r2)\cap \Ball(z,\tfrac r2)=\emptyset$ and arrive at a contradiction.
+Observe that $\Ball(y,\tfrac r2)\z\cap \Ball(z,\tfrac r2)=\emptyset$ and arrive at a contradiction.
 
 \parbf{\ref{ex:continuous-limit}.}
 Suppose $f$ is not continuous.
@@ -294,10 +294,11 @@ Then $\{b\}=f^{-1}(W)$ is an open set --- a contradiction.
 \parbf{\ref{ex:composition-continuous}.}
 Apply the definitions.
 
-\parbf{\ref{ex:Rge}}; \ref{SHORT.ex:Rge:top}.Check the conditions in \ref{def:top-space}.
+\parbf{\ref{ex:Rge}}; \ref{SHORT.ex:Rge:top}.
+Check the conditions in \ref{def:top-space}.
 
 \parit{\ref{SHORT.ex:Rge:nonmetr}.}
-Show that every two nonempty sets in $\RR_\ge$ intersect.
+Show that every two nonempty open sets in $(\RR,\s{T})$ intersect.
 Show that the latter statement does not hold in a metric space with at least two points.
 Make a conclusion.
 
@@ -307,7 +308,7 @@ To do the only-if part check the condition in \ref{def:cont-top}.
 To do the if part, suppose $f$ is not nondecreasing;
 that is, we can find $x<y$ such that $f(x)>f(y)$.
 Note that the inverse image $V=f^{-1}([f(x),\infty))$ contains $x$ but does not contain $y$.
-Show that $V$ is not open in $\RR_\ge$, so $f\:\RR_\ge\to\RR_\ge$ is not continuous. 
+Show that $V$ is not open in $(\RR,\s{T})$, so $f\:(\RR,\s{T})\to(\RR,\s{T})$ is not continuous.
 
 \parbf{\ref{ex:open-intersection+metrizable}}; \ref{SHORT.ex:open-intersection+metrizable:a}
 Choose a metric that induces the topology on $\c{X}$.
@@ -354,12 +355,34 @@ Show and use that the statement is equivalent to the following
 \parbf{\ref{ex:dense-nbhd}.}
 Apply the definitions of neighborhood and dense set.
 
+\parbf{\ref{ex:u-continuous}.}
+Set $a=f|_A$ and $b=f|_{B}$.
+Note that for any set $S\subset \c{Y}$, we have
+\begin{align*}
+a^{-1}(S)&=f^{-1}(S)\cap A,
+\\
+b^{-1}(S)&=f^{-1}(S)\cap B,
+\\
+f^{-1}(S)&=a^{-1}(S)\cup b^{-1}(S).
+\end{align*}
+
+\parit{\ref{SHORT.ex:u-continuous:open}.}
+Choose an open set $W\subset \c{Y}$.
+Show that $a^{-1}(W)$ and $b^{-1}(W)$ are open in $\c{X}$.
+Conclude that $f^{-1}(W)$ is open.
+
+\parit{\ref{SHORT.ex:u-continuous:closed}.}
+Choose a closed set $Q\subset \c{Y}$.
+Use \ref{prop:cont-closed} to show that $a^{-1}(Q)$ and $b^{-1}(Q)$ are closed.
+Apply \mbox{\ref{def:closed-properties:n}} to show that $f^{-1}(Q)$ is closed.
+Apply \ref{prop:cont-closed} again.
+
 \parbf{\ref{ex:concrete-lim}--\ref{ex:cocountable-top}.}
 Apply the definition of the convergence.
 
 \parbf{\ref{ex:bijection-ne-homeo}.}
 Let $f\:\c{X}\to\c{Y}$ be a homeomorphism.
-Recall that by definition of inverse, we have $f^{-1}(f(x))=x$ and $f(f^{-1}(y))=y$ for any $x\in \c{X}$ and $y\in\c{Y}$.
+Recall that by the definition of inverse, we have $f^{-1}(f(x))=x$ and $f(f^{-1}(y))=y$ for any $x\in \c{X}$ and $y\in\c{Y}$.
 It remains to show that the existence of $f^{-1}\:\c{Y}\to\c{X}$ implies that $f$ is a bijection $\c{X}\leftrightarrow\c{Y}$.
 
 For the second part,
@@ -387,9 +410,9 @@ Learn about inversion and try to apply it.
 
 \parbf{\ref{ex:star-shaped}.}
 Let $\Omega$ be an open star-shaped set with respect to the origin.
-Assume $\Omega$ can be described by the inequality $r<f_n(\theta)$ in the polar $(r,\theta)$-coordinates, were $f_n\:\mathbb{S}^1\to \RR$ is a continuous function.
+Assume $\Omega$ can be described by the inequality $r<f_n(\theta)$ in the polar $(r,\theta)$-coordinates, where $f_n\:\mathbb{S}^1\to \RR$ is a continuous function.
 In this case it is not hard to prove the statement.
-But general star-shaped set, for example one on the diagram is problematic.
+But a general star-shaped set, for example the one on the diagram is problematic.
 
 \begin{Figure}
 \vskip-0mm
@@ -403,7 +426,8 @@ such that each $\Omega_n$ can be described by the inequality $r<f_n(\theta)$ in 
 We can assume that $\Omega_0$ is a round disc around the origin.
 
 Further construct a sequence of homeomorphisms $\phi_n\:\Omega_{n-1}\to\Omega_{n}$ such that 
-the compositions $\Phi_n=\phi_n\circ\dots\circ\phi_1\:\Omega_0\to \Omega_n$ stabilises for each $x\in\Omega_0$; that is, $\Phi_n(x)$ is a fixed point for all sufficiently large $n$.
+the compositions $\Phi_n=\phi_n\circ\dots\circ\phi_1\:\Omega_0\to \Omega_n$ stabilizes for each $x\in\Omega_0$;
+that is, $\Phi_n(x)$ is a fixed point for all sufficiently large $n$.
 Set 
 \[\Phi(x)=\lim_{n\to\infty} \Phi_n(x),\]
 and show that $\Phi$ defines the needed homeomorphism $\Omega_0\leftrightarrow \Omega$.
@@ -421,28 +445,6 @@ Try the maps between two-point spaces with appropriate topologies.
 
 \parbf{\ref{ex:closed-open-cont-R}.}
 Consider a map that vanishes on the Cantor set and sends each remaining interval homeomorphically to the whole $\RR$.
-
-\parbf{\ref{ex:u-continuous}.}
-Set $a=f|_A$ and $b=f|_{B}$.
-Note that for any set $S\subset \c{Y}$, we have
-\begin{align*}
-a^{-1}(S)&=f^{-1}(S)\cap A,
-\\
-b^{-1}(S)&=f^{-1}(S)\cap B,
-\\
-f^{-1}(S)&=a^{-1}(S)\cup b^{-1}(S).
-\end{align*}
-
-\parit{\ref{SHORT.ex:u-continuous:open}.}
-Choose an open set $W\subset \c{Y}$.
-Show that $a^{-1}(W)$ and $b^{-1}(W)$ are open in $\c{X}$.
-Conclude that $f^{-1}(W)$ is open.
-
-\parit{\ref{SHORT.ex:u-continuous:closed}.}
-Choose a closed set $Q\subset \c{Y}$.
-Use \ref{prop:cont-closed} to show that $a^{-1}(Q)$ and $b^{-1}(Q)$ are closed.
-Apply \mbox{\ref{def:closed-properties:n}} to show that $f^{-1}(Q)$ is closed.
-Apply \ref{prop:cont-closed} again.
 
 \parbf{\ref{ex:cont-product}.} 
 Check the following function
@@ -489,11 +491,12 @@ Show that if $a\in B_1\cap B_2$, then
 where $d=d_1\cdot d_2$.
 Apply \ref{prop:base-any}.
 
-Do not forget about the second part.
+Show that the set $\{1\}$ is closed but not open.
 
 \parit{Comment.}
+Try to deduce from the last statement that the set of primes is infinite.
+The resulting proof is not truly new; it is just a topological reformulation of the classical proof from Euclid's Elements.
 
-Since $\{1\}$ is not open
 
 \parbf{\ref{ex:prebase};} \textit{only-if part.}
 Apply that a prebase is a collection of open sets.
@@ -504,7 +507,7 @@ is open.
 Further apply \ref{ex:base-nbhd}.
 
 \parbf{\ref{ex:graph}}; \ref{SHORT.ex:graph:prebase}
-Observe that $(V\times \c{Y})\cap(\c{X}\times W) = V\times W$.
+Observe that $(V\times \c{Y})\cap(\c{X}\times W) \z= V\times W$.
 Further, show and use that all the sets $V\times W$ for open subset $V\subset \c{X}$ and $W\subset \c{Y}$ form a base in $\c{X}\times\c{Y}$.
 
 \parit{\ref{SHORT.ex:graph:graph}.}
@@ -552,10 +555,10 @@ Show and use that $y\mapsto g^{-1}\cdot y$ is the inverse of $x\mapsto g\cdot x$
 \parbf{\ref{ex:R/R}.}
 Note that all positive numbers are in one $\RR_+$-orbit.
 Similarly, all negative numbers are in one orbit and $0$ forms another orbit.
-Thus, $\RR/\RR_+$ contains three points, say $p$, $n$, and $z$ that corespond to positive numbers, negative numbers, and zero.
+Thus, $\RR/\RR_+$ contains three points, say $p$, $n$, and $z$ that correspond to positive numbers, negative numbers, and zero.
 It remains to describe all open subsets in $\{p,n,z\}$.
 
-\parbf{\ref{ex:quotient-map}}
+\parbf{\ref{ex:quotient-map}.}
 Let $f\:\c{X}\to \c{X}/G$ be the quotient map.
 Show that for any set $V\subset \c{X}$ we have
 \[f^{-1}\circ f(V)=\bigcup_{g\in G}g\cdot V.\]

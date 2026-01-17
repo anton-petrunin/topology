@@ -1,14 +1,13 @@
 \chapter{Subsets}
 
-This chapter starts with definition closed sets in general topological space.
-Further, we introudce constructions of interior, closure and boundary.
-Finally, we define neighborhoods and discuss limits in general topological space.
+This chapter starts with the definition closed sets in a topological space.
+Further, we introduce constructions of interior, closure and boundary.
+Finally, we define neighborhoods and discuss limits in a general topological space.
 
 There is no particular reason why we define a topological space using open sets --- we could use closed sets instead.
 (In fact, closed sets were considered before open sets --- the former were introduced by Georg Cantor in 1884 \cite{cantor}, and the latter by René Baire in 1899 \cite{baire}.)
 
 \section{Closed sets}\label{sec:closed-sets}
-
 
 Let $\c{X}$ be a topological space. 
 A subset $K\subset \c{X}$ is called \index{close subset}\emph{closed} if its complement $\c{X}\setminus K$ is open.
@@ -45,7 +44,7 @@ The following proposition is completely analogous to the original definition of 
 
 \begin{thm}{Proposition}\label{prop:cont-closed}
 Let $\c{X}$ and $\c{Y}$ be topological spaces.
-A map $f\:\c{X}\z\to\c{Y}$ is continuous if and only if any closed set $Q$ has closed inverse image $f^{-1}(Q)$.
+A map $f\:\c{X}\z\to\c{Y}$ is continuous if and only if any closed set $Q\subset \c{Y}$ has closed inverse image $f^{-1}(Q)\subset\c{X}$.
 \end{thm}
 
 
@@ -121,12 +120,12 @@ Show that
 \[\bar B=\c{X}\setminus \mathring A.\]
 \end{thm}
 
-The following exercise is called \index{Kuratowski problem}\emph{Kuratowski problem}.
+The following exercise is called the \index{Kuratowski problem}\emph{Kuratowski problem}.
 
 \begin{thm}{Advanced exercise}\label{ex:kuratowski}
 
 \begin{subthm}{ex:kuratowski-c}
-Prove that all the inclusions and equalities shown on the diagam hold for any subset $A$ in a topologocal space $\c{X}$.
+Prove that all the inclusions and equalities shown on the diagram hold for any subset $A$ in a topological space $\c{X}$.
 \begin{figure}[h!]
 \centering
 \begin{tikzcd}[column sep=1.4em, row sep={.1em,.1em}]
@@ -158,7 +157,7 @@ Prove that all the inclusions and equalities shown on the diagam hold for any su
 \arrow[uull, hook']
 \end{tikzcd}
 \end{figure}
-Conclude that that given a set $A$ one can get at most 7 distinct subsets by repeatedly applying the set operations of closure and interior.
+Conclude that given a set $A$ one can get at most 7 distinct subsets by repeatedly applying the set operations of closure and interior.
 \end{subthm}
 
 \begin{subthm}{ex:kuratowski:kuratowski}
@@ -209,6 +208,63 @@ The set $A$ is said to be \index{dense}\emph{dense} in $B$ if $\bar A\supset B$.
 Show that $A$ is dense in $B$ if and only if any neighborhood of any point in $B$ intersects $A$.
 \end{thm}
 
+\section{Subspaces}\label{sec:induced-topology}
+
+\begin{thm}{Proposition}
+Let $A$ be a subset of a topological space $\c{Y}$.
+Then all subsets $V\subset A$ such that $V=A\cap W$ for some open set $W$ in $\c{Y}$ form a topology on $A$.
+\end{thm}
+
+The described topology is called the \index{induced topology}\emph{induced topology} on $A$.
+
+A subset $A$ of a topological space $\c{Y}$ equipped with the induced topology is called a \index{subspace}\emph{subspace} of $\c{Y}$.
+It is straightforward to check that this notion agrees with the notion introduced in \ref{sec:subspaces-metric};
+that is, if $\c{Y}$ is a metric space, then any subset $A\subset\c{Y}$ comes with a metric,
+and the topology defined by this metric coincides with the induced topology on $A$.
+
+\parit{Proof.}
+We need to check the conditions in \ref{def:top-space}.
+
+First, the whole set $A$ and the empty set are included;
+indeed, $\emptyset=A\cap \emptyset$ and $A=A\cap \c{Y}$.
+
+Assume $\{V_\alpha\}$ is a collection of open sets in $A$; here $\alpha$ runs in some index set, say $\c{I}$.
+In other words, for each $V_\alpha$ there is an open set $W_\alpha\subset\c{Y}$ such that $V_\alpha\z=A\cap W_\alpha$.
+Note that
+\[\bigcup_\alpha V_\alpha=A\cap\left(\bigcup_\alpha W_\alpha\right).\]
+Since the union of $\{W_\alpha\}$ is open in $\c{Y}$ (\ref{def:top-space:u}), the union of $\{V_\alpha\}$ is open in the induced topology on $A$.
+
+Assume $V_1$ and $V_2$ are open in $A$;
+that is, $V_1=A\cap W_1$ and  $V_2\z=A\cap W_2$ for some open sets $W_1,W_2\subset\c{Y}$.
+Note that
+\[V_1\cap V_2=A\cap(W_1\cap W_2).\]
+Since the intersection $W_1\cap W_2$ is open in $\c{Y}$ (\ref{def:top-space:n}),
+the intersection $V_1\cap V_2$ is open in the induced topology on $A$.
+\qeds
+
+Recall the \emph{restriction} of a map $f:\c{Y}\to \c{Z}$ to a subset $A$ is obtained by keeping the same rule as $f$ but only allowing inputs from~$A$.
+It is usually denoted by $f|_A$; so $(f|_A)(a)=f(a)$ if $a\in A$ and otherwise it is undefined.
+
+Observe that if $f\:\c{Y}\to \c{Z}$ is a continuous map, then for any subspace $A\subset \c{Y}$, the restriction of $f$ to $A$ is continuous.
+The following exercise provides a partial converse.
+
+\begin{thm}{Exercise}\label{ex:u-continuous}
+Let $f\:\c{X}\to \c{Y}$ be a map between topological spaces.
+Suppose $A,B\subset\c{X}$ are sets such that $A\cup B=\c{X}$ and either
+\begin{subthm}{ex:u-continuous:open}
+both $A$ and $B$ are open sets, or
+\end{subthm}
+\begin{subthm}{ex:u-continuous:closed}
+both $A$ and $B$ are closed sets.
+\end{subthm}
+Show that $f$ is continuous if and only if so are the restrictions $f|_A$ and $f|_B$.
+
+\begin{subthm}{ex:u-continuous:none}
+Show that this is no longer true without assumptions of \ref{SHORT.ex:u-continuous:open} or \ref{SHORT.ex:u-continuous:closed}.
+\end{subthm}
+
+\end{thm}
+
 \section{Limits}\label{sec:limits}
 
 \begin{thm}{Definition}\label{def:limit-top}
@@ -217,7 +273,7 @@ We say that $x_n$ \index{convergence}\emph{converges} to a point $x_\infty\in \c
 $x_n\in N$ for all sufficiently large $n$.
 \end{thm}
 
-Obseve that the above definition agrees with \ref{def:limit-metric}.
+Observe that the above definition agrees with \ref{def:limit-metric}.
 In other words, a sequence of points $x_1,x_2,\dots$ in a metric space converges to a point $x_\infty$ in the sense of the definition \ref{def:limit-metric} if and only if it converges in the sense of the definition \ref{def:limit-top}.
 
 \begin{thm}{Exercise}\label{ex:concrete-lim}
