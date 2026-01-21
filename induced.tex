@@ -2,7 +2,7 @@
 
 Here we introduce several constructions that produce new topological spaces from the given ones.
 
-\section{Product space}
+\section{Product space}\label{sec:Product space}
 
 Recall that $\c{X}\times\c{Y}$ denotes the set of all pairs $(x,y)$ such that $x\in\c{X}$ and  $y\in\c{Y}$.
 
@@ -39,6 +39,22 @@ the latter means that $x\in V_\alpha$, $y\in W_\alpha$ and $x\in V'_\beta$, $y\i
 In other words, $x\in V_\alpha\cap V'_\beta$ and $y\in W_\alpha\cap W'_\beta$ for \textit{some} $\alpha$ and $\beta$;
 the latter means that $(x,y)$ belongs to the right-hand side in \ref{eq:nu=un}.
 \qeds
+
+By spelling the definition of product topology, we get the following statement.
+
+\begin{thm}{Observation}
+Two maps $f\:\c{X}\to\c{Y}$ and $g\:\c{X}\to\c{Z}$ are coninuous if and only if
+the $x\mapsto (f(x),g(x))$ defines a continous map $f\:\c{X}\to\c{Y}\times \c{Z}$.
+\end{thm}
+
+
+\begin{thm}{Exercise}\label{ex:cont-product-constr}
+Let $f$ and $g$ be continous real-valued functions on the topological space $\c{X}$.
+Sho that (a) $h_1=f+g$, (b) $h_2=f\cdot g$, and (c) $h_3(x)\df\max\{\,f(x), g(x)\,\}$ are continuous
+
+\end{thm}
+
+
 
 \begin{thm}{Exercise}\label{ex:cont-product}
 Construct a function $f\:[0,1]\times [0,1]\to [0,1]$ such that $f$ is not continuous, but the functions

@@ -109,8 +109,6 @@ $W\supset S\ni x$.
 Show that $\s{W}$ is weaker than $\s{S}$.
 \end{thm}
 
-
-
 \section{Continuous maps}\label{sec:continuous-maps}
 
 Our challenge is to reformulate definitions from the previous chapter using only open sets.
@@ -160,6 +158,13 @@ Show that a function $f\:\RR\to\RR$ is nondecreasing if and only if it defines a
 
 \end{thm}
 
+In practice, continuity of maps between topological spaces is often verified indirectly.
+In particular, one can use \ref{ex:composition-continuous}
+together with results from \ref{sec:metric-continuous} and also apply the fact that \textit{any differentiable map defined on a subset of $\RR^n$ is continuous} (which should be familiar from calculus).
+Bit latter, we will be more flexible in constructing continuous maps; see \ref{ex:u-continuous} and \ref{ex:cont-product-constr}.
 
-
+\begin{thm}{Exercise}\label{ex:|x|}
+Let $f$ be a continuous real-valued function defined on a topological space.
+Show that the function $x\mapsto |f(x)|$ is continuous.
+\end{thm}
 

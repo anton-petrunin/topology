@@ -99,14 +99,14 @@ Construct a topological space $\c{Y}$ with a closed set $Q$ that is not an inter
 
 Let $A$ be an arbitrary subset of a topological space $\c{X}$.
 
-The union of all open subsets of $A$ is called the \index{interior}\emph{interior} of $A$ and denoted as $\mathring A$.
+The union of all open subsets of $A$ is called the \index{interior}\emph{interior} of $A$ and denoted as $\mathring A$ or $\interior A$.
 
 Note that $\mathring A$ is open.
 Indeed, it is defined as a union of open sets and such union is open by the definition of a topology (\ref{def:top-space}).
 So we can say that $\mathring A$ is the \textit{maximal} open set in $A$, 
 as any open subset of $A$ lies in~$\mathring A$.
 
-The intersection of all closed subsets containing $A$ is called the \index{closure}\emph{closure} of $A$ and denoted as $\bar A$.
+The intersection of all closed subsets containing $A$ is called the \index{closure}\emph{closure} of $A$ and denoted as $\bar A$ or $\closure A$.
 
 The set $\bar A$ is closed.
 Indeed, it is defined as an intersection of closed sets and such intersection has to be closed by \ref{prop:closed-properties}.
@@ -189,25 +189,6 @@ Find three disjoint open sets on the real line
 that have the same nonempty boundary.
 \end{thm}
 
-\section{Neighborhoods}
-
-Let $x$ be a point in a topological space $\c{X}$.
-A \index{neighborhood}\emph{neighborhood} of $x$ is any open set $N$ containing $x$.
-
-In topology, neighborhoods often replace balls, which make sence only in metric spaces.
-
-\begin{thm}{Exercise}\label{ex:bry-nbhd}
-Let $A$ be a set in a topological space $\c{X}$.
-Show that $x\in \partial A$ if and only if any neighborhood of $x$ contains points of $A$ and  of its complement $\c{X}\setminus A$.
-\end{thm}
-
-Let $A$ and $B$ be subsets of a topological space $\c{X}$.
-The set $A$ is said to be \index{dense}\emph{dense} in $B$ if $\bar A\supset B$.
-
-\begin{thm}{Exercise}\label{ex:dense-nbhd} 
-Show that $A$ is dense in $B$ if and only if any neighborhood of any point in $B$ intersects $A$.
-\end{thm}
-
 \section{Subspaces}\label{sec:induced-topology}
 
 \begin{thm}{Proposition}
@@ -242,14 +223,24 @@ Since the intersection $W_1\cap W_2$ is open in $\c{Y}$ (\ref{def:top-space:n}),
 the intersection $V_1\cap V_2$ is open in the induced topology on $A$.
 \qeds
 
-Recall the \emph{restriction} of a map $f:\c{Y}\to \c{Z}$ to a subset $A$ is obtained by keeping the same rule as $f$ but only allowing inputs from~$A$.
+\begin{thm}{Exercise}\label{ex:rel-int/cl}
+Let $\c{A}$ be a subspace in $\c{X}$.
+Given a set $S\subset \c{A}$ denote by $\interior_{\c{A}}S$, $\closure_{\c{A}}S$, $\interior_{\c{X}}S$, and $\closure_{\c{X}}S$ its interior and closure in $\c{A}$ and $\c{X}$, respectively.
+Show that
+$\interior_{\c{A}}S\supset \interior_{\c{X}}S$ and $\closure_{\c{A}}S\subset \closure_{\c{X}}S$.
+Provide examples showing that these inclusions might be strict.
+\end{thm}
+
+
+Recall the \emph{restriction} of a map $f:\c{X}\to \c{Y}$ to $A\subset\c{X}$ is obtained by keeping the same rule as $f$ but only allowing inputs from~$A$.
 It is usually denoted by $f|_A$; so $(f|_A)(a)=f(a)$ if $a\in A$ and otherwise it is undefined.
 
-Observe that if $f\:\c{Y}\to \c{Z}$ is a continuous map, then for any subspace $A\subset \c{Y}$, the restriction of $f$ to $A$ is continuous.
+Observe that $(f|_A)^{-1}(W)=A\cap f^{-1}(W)$ for any $W\subset \c{Y}$.
+It follows that if $f$ is continuous, then so $f|_A$.
 The following exercise provides a partial converse.
 
 \begin{thm}{Exercise}\label{ex:u-continuous}
-Let $f\:\c{X}\to \c{Y}$ be a map between topological spaces.
+Let $f\:\c{X}\to \c{X}$ be a map between topological spaces.
 Suppose $A,B\subset\c{X}$ are sets such that $A\cup B=\c{X}$ and either
 \begin{subthm}{ex:u-continuous:open}
 both $A$ and $B$ are open sets, or
@@ -260,9 +251,28 @@ both $A$ and $B$ are closed sets.
 Show that $f$ is continuous if and only if so are the restrictions $f|_A$ and $f|_B$.
 
 \begin{subthm}{ex:u-continuous:none}
-Show that this is no longer true without assumptions of \ref{SHORT.ex:u-continuous:open} or \ref{SHORT.ex:u-continuous:closed}.
+Show that this is no longer true without assumptions of \ref{SHORT.ex:u-continuous:open} or~\ref{SHORT.ex:u-continuous:closed}.
 \end{subthm}
 
+\end{thm}
+
+\section{Neighborhoods}
+
+Let $x$ be a point in a topological space $\c{X}$.
+A \index{neighborhood}\emph{neighborhood} of $x$ is any open set $N$ containing $x$.
+
+In topology, neighborhoods often replace balls, which make sence only in metric spaces.
+
+\begin{thm}{Exercise}\label{ex:bry-nbhd}
+Let $A$ be a set in a topological space $\c{X}$.
+Show that $x\in \partial A$ if and only if any neighborhood of $x$ contains points of $A$ and  of its complement $\c{X}\setminus A$.
+\end{thm}
+
+Let $A$ and $B$ be subsets of a topological space $\c{X}$.
+The set $A$ is said to be \index{dense}\emph{dense} in $B$ if $\bar A\supset B$.
+
+\begin{thm}{Exercise}\label{ex:dense-nbhd} 
+Show that $A$ is dense in $B$ if and only if any neighborhood of any point in $B$ intersects $A$.
 \end{thm}
 
 \section{Limits}\label{sec:limits}

@@ -16,9 +16,10 @@ Let us start with several examples and constructions of paths
 Note that $\bar f$ is continuous since $f$ is.
 
 \item Let $f$ and $h$ be paths in the topological space $\c{Y}$.
-If $f(1)=h(0)$ we can join these two paths into one $g\:[0,1]\to \c{Y}$ defined as
+If $f(1)=h(0)$ we can join these two paths into one $g\:[0,1]\to \c{Y}$ that follows $f$ and then $h$;
+so it is defined as
 \[g(t)=
-\left[
+\left\{
 \begin{aligned}
 f(2\cdot t)&&\text{if}&\ t\le \tfrac12
 \\
@@ -26,9 +27,9 @@ h(2\cdot t-1)&&\text{if}&\ t\ge \tfrac12
 \end{aligned}
 \right.
 \]
-The path $g$ is called the \index{product of paths}\emph{product} (or \index{concatenation}\emph{concatenation}) of paths $f$ and $h$, briefly it is denoted as $g=f * h$.
+The path $g$ is called the \index{product of paths}\emph{product} (or \index{concatenation}\emph{concatenation}) of paths $f$ and $h$; it is denoted as $g=f * h$.
 By construction, the restrictions $f*h|_{[0,\frac12]}$ and $f*h|_{[\frac12,1]}$ are continuous.
-Therefore, \ref{ex:closed-continuous} implies that $f*h$ is continuous;
+Therefore, \ref{ex:u-continuous:closed} implies that $f*h$ is continuous;
 in other words $f*h$ is indeed a path.
 \end{itemize}
 
@@ -127,13 +128,27 @@ Show that $A\cup B$ is path-connected.
 
 
 \begin{thm}{Exercise}\label{ex:path-connected-component-closed-open}
+
+\begin{subthm}{ex:path-connected-component-closed-open:open}
 Assume every path-connected component in a topological space $\c{Y}$ is open.
 Show that $\c{Y}$ is connected if and only if $\c{Y}$ is path-connected.
+\end{subthm}
+
+\begin{subthm}{ex:path-connected-component-closed-open:closed}
+Consider the lexicographical ordering $\prec$ on the unit square $\RR^2$:
+\[
+(x_1,y_1)\prec(x_2,y_2)
+\quad\Leftrightarrow\quad
+x_1<x_2\ \text{or}\  x_1<x_2\ \text{and}\  y_1<y_2.
+\]
+Show that the following sets for all pairs $(x_1,y_1),(x_2,y_2)\in\RR^2$
+\[\set{(x,y)\in [0,1]\times[0,1]}{(x_1,y_1)\prec(x,y)\prec(x_2,y_2)}\]
+form a base of some topology $\s{T}$ on $[0,1]\times[0,1]$.
+Furthermore, show that $([0,1]\times[0,1],\s{T})$ is compact, Hausdorff, connected, but not path-connected, and each path-conencted component in $([0,1]\times[0,1],\s{T})$ is closed.
+\end{subthm}
+
 \end{thm}
 
-\begin{thm}{Advanced exercise}\label{ex:path-connected-component-closed}
-Construct connectected compact Hausdorff space $\c{Y}$ that is not path-connected and each path-connected in $\c{Y}$ is closed.
-\end{thm}
 
 \begin{thm}{Exercise}\label{ex:image(path-connected)}
 Show that the image of a path-connected set under a continuous map is path-connected.

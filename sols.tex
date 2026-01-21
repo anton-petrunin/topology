@@ -223,7 +223,7 @@ Look at the image of $\RR$ under the function $x\mapsto |x|$.
 
 \parbf{\ref{ex:unique-lim-metr}.}
 Assume the contrary; that is, a sequence $x_1,x_2,\dots$ has two limits $y$ and $z$.
-Set $r=|y-z|$.
+Set $r\z=|y-z|$.
 Note that $\Ball(y,\tfrac r2)$ contains all but finitely many elements of the sequence $x_1,x_2,\dots$;
 the same holds for $\Ball(z,\tfrac r2)$.
 Observe that $\Ball(y,\tfrac r2)\z\cap \Ball(z,\tfrac r2)=\emptyset$ and arrive at a contradiction.
@@ -310,6 +310,9 @@ that is, we can find $x<y$ such that $f(x)>f(y)$.
 Note that the inverse image $V=f^{-1}([f(x),\infty))$ contains $x$ but does not contain $y$.
 Show that $V$ is not open in $(\RR,\s{T})$, so $f\:(\RR,\s{T})\to(\RR,\s{T})$ is not continuous.
 
+\parbf{\ref{ex:|x|}.}
+Apply \ref{ex:composition-continuous} together with the fact that $x\mapsto |x|$ is a continuous real-to-real function (the latter is assumed to be known from calculus).
+
 \parbf{\ref{ex:open-intersection+metrizable}}; \ref{SHORT.ex:open-intersection+metrizable:a}
 Choose a metric that induces the topology on $\c{X}$.
 Let $Q$ be a closed set in $\c{X}$.
@@ -346,14 +349,9 @@ Apply the definitions of boundary and closed set.
 \parbf{\ref{ex:3=bry}.}
 Read about the Cantor set and think.
 
-\parbf{\ref{ex:bry-nbhd}.}
-Let $A$ be a subset of a topological space $\c{X}$.
-Denote by $B$ its complement; that is $B\z=\c{X}\setminus A$.
-Show and use that the statement is equivalent to the following 
-\[\c{X}\setminus\partial A =\mathring A\cup \mathring B.\]
-
-\parbf{\ref{ex:dense-nbhd}.}
-Apply the definitions of neighborhood and dense set.
+\parbf{\ref{ex:rel-int/cl}.}
+Spell the definitions.
+The needed examples can be found for $\c{A}=[0,1)\subset \RR=\c{X}$.
 
 \parbf{\ref{ex:u-continuous}.}
 Set $a=f|_A$ and $b=f|_{B}$.
@@ -376,6 +374,15 @@ Choose a closed set $Q\subset \c{Y}$.
 Use \ref{prop:cont-closed} to show that $a^{-1}(Q)$ and $b^{-1}(Q)$ are closed.
 Apply \mbox{\ref{def:closed-properties:n}} to show that $f^{-1}(Q)$ is closed.
 Apply \ref{prop:cont-closed} again.
+
+\parbf{\ref{ex:bry-nbhd}.}
+Let $A$ be a subset of a topological space $\c{X}$.
+Denote by $B$ its complement; that is $B\z=\c{X}\setminus A$.
+Show and use that the statement is equivalent to the following 
+\[\c{X}\setminus\partial A =\mathring A\cup \mathring B.\]
+
+\parbf{\ref{ex:dense-nbhd}.}
+Apply the definitions of neighborhood and dense set.
 
 \parbf{\ref{ex:concrete-lim}--\ref{ex:cocountable-top}.}
 Apply the definition of the convergence.
@@ -446,6 +453,9 @@ Try the maps between two-point spaces with appropriate topologies.
 \parbf{\ref{ex:closed-open-cont-R}.}
 Consider a map that vanishes on the Cantor set and sends each remaining interval homeomorphically to the whole $\RR$.
 
+\parbf{\ref{ex:cont-product-constr}.}
+Apply the observation together with the facts that $(x,y)\mapsto x+y$, $(x,y)\mapsto x\cdot y$, and $(x,y)\mapsto \max{x,y}=\tfrac12\cdot |x+y|+\tfrac12\cdot |x-y|$ are continous functions on $\RR^2$.
+
 \parbf{\ref{ex:cont-product}.} 
 Check the following function
 \[f(x,y)=
@@ -494,8 +504,8 @@ Apply \ref{prop:base-any}.
 Show that the set $\{1\}$ is closed but not open.
 
 \parit{Comment.}
-Try to deduce from the last statement that the set of primes is infinite.
-The resulting proof is not truly new; it is just a topological reformulation of the classical proof from Euclid's Elements.
+This topology was introduced by Harry Furstenberg \cite{furstenberg}; he used it to deduce from the last statement that the set of primes is infinite.
+The resulting proof is not truly new; it is just the classical proof from Euclid's Elements written in the topological language.
 
 
 \parbf{\ref{ex:prebase};} \textit{only-if part.}
@@ -724,6 +734,9 @@ Use \ref{ex:nonopen-connected-component} and \ref{ex:connected-component-disjoin
 \parbf{\ref{ex:S1ne[0,1]}.}
 Show that $\mathbb{S}^1$ has no cut points, but $[0,1]$ has.
 
+\parbf{\ref{ex:colomb}.}
+Read the note by Solomon Colomb \cite{golomb}
+
 \parbf{\ref{ex:R2neR}.}
 Show that $\RR^2$ has no cut points, but $\RR$ has.
 
@@ -766,7 +779,7 @@ is a continuous map.
 \parbf{\ref{ex:QQ}.}
 Show and use that for any rational numbers $a$ and $b$, the line $y=a\cdot x+b$ lies in $A\cup B$.
 
-\parbf{\ref{ex:path-connected-component-closed-open}.}
+\parbf{\ref{ex:path-connected-component-closed-open}}; \ref{SHORT.ex:path-connected-component-closed-open:open}.
 Choose path-connected component $V$.
 Assume its complement, say $W$, is nonempty.
 Observe that $W$ is a union of path-connected components.
@@ -774,8 +787,14 @@ Therefore, $W$ is open, and the pair $V$, $W$ forms an open splitting of the spa
 
 To prove the converse, apply \ref{thm:conncted/path-connected}
 
-\parbf{\ref{ex:path-connected-component-closed}.}
-Read about lexicographic order topology, and apply it to the unit square.
+\parit{\ref{SHORT.ex:path-connected-component-closed-open:closed}.}
+Check the conditions in \ref{prop:base-any}.
+To prove compactness, try to modify the proof of \ref{thm:comp-interval}.
+Hausdorfness follows from the definition.
+To prove connectedness, modify the proof of \ref{prop:connected[0,1]}.
+To show that the space is not path-connected, use that any path contains at most countable subsets of isolated points.
+Finally observe that every path-connected component in $([0,1]\times[0,1],\s{T})$ is a vertical segnent $\{x\}\times [0,1]$.
+
 
 \parbf{\ref{ex:image(path-connected)}.}
 Show and use that for any continuous map $\phi$ and any path $f$, the composition $\phi\circ f$ is a path. 
