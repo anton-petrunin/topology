@@ -231,12 +231,15 @@ $\interior_{\c{A}}S\supset \interior_{\c{X}}S$ and $\closure_{\c{A}}S\subset \cl
 Provide examples showing that these inclusions might be strict.
 \end{thm}
 
+Let $A$ be a subset of a topological space $\c{X}$ and let $\c{Y}$ be another topological space.
+A map $h\:A\to \c{Y}$ is called \index{continuous map}\emph{continuous} if it is continuous with respect to the induced topology on $A$.
 
 Recall the \emph{restriction} of a map $f:\c{X}\to \c{Y}$ to $A\subset\c{X}$ is obtained by keeping the same rule as $f$ but only allowing inputs from~$A$.
 It is usually denoted by $f|_A$; so $(f|_A)(a)=f(a)$ if $a\in A$ and otherwise it is undefined.
 
 Observe that $(f|_A)^{-1}(W)=A\cap f^{-1}(W)$ for any $W\subset \c{Y}$.
-It follows that if $f$ is continuous, then so $f|_A$.
+It follows that if $f$ is continuous, then so is $f|_A\:A\to\c{Y}$;
+here we consider set $A$ with the induced topology.
 The following exercise provides a partial converse.
 
 \begin{thm}{Exercise}\label{ex:u-continuous}
