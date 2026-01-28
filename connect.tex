@@ -144,7 +144,9 @@ Since both $V$ and $W$ are open, one of them contains $a_n$ and $b_n$ for all la
 \qeds
 
 \begin{thm}{Exercise}\label{ex:R-connected}
-Show that the real line $\RR$ is a connected space. 
+Show that the real line $\RR$ is a connected space.
+Conclude that any continuos map $\RR\to \ZZ$ is constant;
+here $\ZZ\subset \RR$ denotes the set of integer numbers.
 \end{thm}
 
 \section{Connected components}
@@ -228,7 +230,6 @@ Repeat this procedure recursively for each of the remaining solid triangles.
 
 }
 
-
 \begin{thm}{Advanced exercise}\label{ex:sierpinski}
 
 \begin{subthm}{ex:sierpinski:connected}
@@ -239,4 +240,15 @@ Prove that the Sierpi\'nski triangle is connected (in particular, nonempty).
 Describe all the homeomorphisms from the Sierpi\'nski triangle to itself.
 \end{subthm}
 
+\end{thm}
+
+
+\section{Open-close argument}
+
+The followowing exercise gives an example of application of the so-called \emph{open-close argument}.
+
+\begin{thm}{Exercise}
+Let $f\:[0,1]\times[0,1] \to [0,1]\times[0,1]$ is an arbitrary map that increases the firs coordinate;
+that is, if $(x_1,y_1)=f(x_0,y_0)$ then $x_1>x_0$.
+Show that there is a path $h\:[0,1]\to[0,1]\times[0,1]$ that connects the point $(0,0)$ to some point $(1,y)$ such that for any any point $h(t)$ for $t\in [0,1)$ lies on a line segment from $(x,y)$ to $f(x,y)$
 \end{thm}

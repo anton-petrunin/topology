@@ -1,57 +1,23 @@
 \chapter{Fundamental group}
 
-\section{Relative homotopy}
-
-Recall that homotoy was defined in Section \ref{sec:homotopy}; here we introduce its generalized version.
-
-Let $A$ be a subset a topological space $\c{X}$, and let $\c{Y}$ be another topological space.
-Two maps $f,g\: \c{X}\to \c{Y}$ are called \index{homotopic relative to $A$}\emph{homotopic relative to $A$}, briefly, $f\sim g\rel A$, if there exists a homotopy
-\[
-H\:\c{X}\times[0,1]\to \c{Y}
-\]
-from $f$ to $g$ that is constant on $A$;
-that is, $H(a,t)$ is constnat for any $a\in A$ and $t$.
-In this case, the map $H\:\c{X}\times[0,1]\to \c{Y}$ is called \emph{homotopy reative to $A$} from $f$ to $g$.
-
-If $H$ is a homotopy reative to $A$ from $f$ to $g$, then each map $f$ and $g$ is a restriction of $H$.
-In particular, both maps $f$ and $g$ are continuous.
-Note also that $f$ agrees with $g$ on $A$;
-that is, $f(a)=g(a)$ for any $a\in A$.
-
-The properties of homotopies that was described in the previous chapter admit straightforward generalization to its relative version.
-Mainly, $\sim\rel A$ defines an equivalence relation on the space of maps from $\c{X}$ to $\c{Y}$; in particular, we can talk about its equivalence classes.
-
-\section{Informal description}
-
-Recall that $\SS^1$ denotes the unit circle.
 Let $\c{X}$ be a topological space with marked point $x_0\in \c{X}$.
 Choose a point $s_0$ on the circle $\SS^1$.
-Consider all maps $\SS^1\to \c{X}$ that map $u_0$ to $x_0$;
-let us denote by $\pi_1(\c{X},x_0)$ the set of homotopy classes of these mas relative to $\{u_0\}$.
-Soon we will equip this set with multiplication and show that it is indeed a group.
-As a rule, the fundamental group is considered only for path-connected $\c{Y}$.
+Consider all continuous maps $\SS^1\to \c{X}$ that send $u_0$ to $x_0$.
+Let us denote by $\pi_1(\c{X},x_0)$ the set of homotopy classes of these maps within the described class of maps.
+In this chpter we will equip this set with multiplication and show that it is indeed a group, after that we will have right to call it the fundamental group $\c{X}$ with marked point $x_0$.
 
-Let us apply the definition of realtive homotopy for unit segment with its ends;
-that is, $\c{X}=[0,1]$ and $A=\{0,1\}$.
 
-Let $\c{Y}$ be a topological space with chosen point $y_0$.
-A path $f\:[0,1]\z\to \c{Y}$ will be called \index{loop}\emph{loop} with base at $y_0$ if $f(0)=f(1)=y_0$.
-The set of homotopy classes relative to $\{0,1\}$ is called the \index{fundamental group}\emph{fundamental group} of the space $\c{Y}$ and is denoted by
-$\pi_1(\c{Y},y_0)$.
-Soon we will equip this set with multiplication and show that it is indeed a group.
-As a rule, the fundamental group is considered only for path-connected $\c{Y}$.
 
-The product of two loops $f$ and $g$ is defined as follows as their conctination $f*g$ (see ???): first we travel along $f$, and then along $g$.
 
-Associativity of the product holds up to homotopy; that is, altho in general $f*(g*h)\ne (f*g)*h$, we still have that $f*(g*h)\sim (f*g)*h$
-
-The identity element is the class of the constant map $[0,1]\to \c{Y}$ with value $y_0$.
-The inverse element is represented by the loop traversed in the opposite direction.
-In the followng sections all this will be discussed more formally.
 
 
 
 \section{Homotopy of paths}
+
+Any path is a continuous map defined on the unit interval $[0,1]$.
+By homotopy of paths we will understand homotopy realive to the ends of $[0,1]$;
+in the notations of \ref{sec:rel-homotopy}, we have $\c{X}=[0,1]$ and $A=\{0,1\}$.
+If we need to talk about general homotopy of paths we say \emph{free homotopy}.
 
 
 \begin{wrapfigure}{r}{33 mm}

@@ -1,10 +1,10 @@
 \chapter{Subsets}
 
-This chapter starts with the definition closed sets in a topological space.
-Further, we introduce constructions of interior, closure and boundary.
+This chapter starts with the definition of closed sets in a topological space.
+Further, we introduce constructions of interior, closure, and boundary.
 Finally, we define neighborhoods and discuss limits in a general topological space.
 
-There is no particular reason why we define a topological space using open sets --- we could use closed sets instead.
+There is no particular reason why we define a topological space in terms of open sets --- we could use closed sets instead.
 (In fact, closed sets were considered before open sets --- the former were introduced by Georg Cantor in 1884 \cite{cantor}, and the latter by René Baire in 1899 \cite{baire}.)
 
 \section{Closed sets}\label{sec:closed-sets}
@@ -44,7 +44,7 @@ The following proposition is completely analogous to the original definition of 
 
 \begin{thm}{Proposition}\label{prop:cont-closed}
 Let $\c{X}$ and $\c{Y}$ be topological spaces.
-A map $f\:\c{X}\z\to\c{Y}$ is continuous if and only if any closed set $Q\subset \c{Y}$ has closed inverse image $f^{-1}(Q)\subset\c{X}$.
+A map $f\:\c{X}\z\to\c{Y}$ is continuous if and only if any closed set $Q\subset \c{Y}$ has a closed inverse image  $f^{-1}(Q)\subset\c{X}$.
 \end{thm}
 
 
@@ -243,7 +243,7 @@ here we consider set $A$ with the induced topology.
 The following exercise provides a partial converse.
 
 \begin{thm}{Exercise}\label{ex:u-continuous}
-Let $f\:\c{X}\to \c{X}$ be a map between topological spaces.
+Let $f\:\c{X}\to \c{Y}$ be a map between topological spaces.
 Suppose $A,B\subset\c{X}$ are sets such that $A\cup B=\c{X}$ and either
 \begin{subthm}{ex:u-continuous:open}
 both $A$ and $B$ are open sets, or
@@ -264,7 +264,7 @@ Show that this is no longer true without assumptions of \ref{SHORT.ex:u-continuo
 Let $x$ be a point in a topological space $\c{X}$.
 A \index{neighborhood}\emph{neighborhood} of $x$ is any open set $N$ containing $x$.
 
-In topology, neighborhoods often replace balls, which make sence only in metric spaces.
+In topology, neighborhoods often replace balls, which makes sense only in metric spaces.
 
 \begin{thm}{Exercise}\label{ex:bry-nbhd}
 Let $A$ be a set in a topological space $\c{X}$.
@@ -289,18 +289,16 @@ $x_n\in N$ for all sufficiently large $n$.
 Observe that the above definition agrees with \ref{def:limit-metric}.
 In other words, a sequence of points $x_1,x_2,\dots$ in a metric space converges to a point $x_\infty$ in the sense of the definition \ref{def:limit-metric} if and only if it converges in the sense of the definition \ref{def:limit-top}.
 
-\begin{thm}{Exercise}\label{ex:concrete-lim}
-Show that in a space with the concrete topology any sequence converges to any point.
-In particular, a sequence might have several different limits.
-\end{thm}
-
 \begin{thm}{Exercise}\label{ex:lim-weaker}
 Show that a convergent sequence of points in a topological space is also convergent for every weaker topology.
 \end{thm}
 
-The following exercise shows that in general, converging sequences do \textit{not} adequately describe the topology of a space.
-In other words, an analog of \ref{ex:continuous-limit} does not hold.
-(The so-called \index{net}\emph{nets} provide an appropriate generalization of sequences that works well in topological spaces, but we are not going to consider them.)
+Note that in a space with the concrete topology any sequence converges to any point.
+In particular, a sequence might have several different limits.
+Furthermore, if we equip $\RR$ with the cofinite topology then any sequence of pairwise distinct numbers converges to every point in $\RR$.
+
+The following exercise shows that converging sequences do \textit{not} adequately describe the topology of a space;
+namely, an analog of \ref{ex:continuous-limit} does not hold.\footnote{So-called \index{net}\emph{nets} \cite{mcshane} provide an appropriate generalization of sequences that works well in topological spaces, but we are not going to consider them.}
 
 Recall that a set is called \index{countable set}\emph{countable} if it admits a bijection to a subset of the set of natural numbers.
 In particular, all finite sets are countable.
@@ -314,7 +312,7 @@ its closed sets are either countable or the whole $\RR$.
 \end{subthm}
 
 \begin{subthm}{}
- Describe all converging sequences in $\c{X}$.
+Describe all convergent sequences in $\c{X}$.
 \end{subthm}
 
 \begin{subthm}{}

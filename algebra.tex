@@ -1,10 +1,13 @@
 \chapter{Meeting algebra}\label{chap:algebra}
 
 In the previous chapter we gave a construction of the fundamental group for a given topological space with marked point.
-This construction is one of bridges between topology and abstract algebra.
-It makes possible to reformulate a topological problem on using the language of abstract algebra and sometimes the other way around.
-In order to be useful the construction should predictably behave with respect to change of topological space.
-In this chapter we discuss ...
+This construction gives a bridge between topology and abstract algebra.
+
+In this chapter we explain how to use this bridge.
+In this chapter we describe
+In the next chapter, we will calculate fundamental group of the circle --- this will be the first example of a space with nontrivial fundamntal group.
+Once this group is calculated, the connections of this chapter will lead to many applications.
+
 
 \section{Induced homomorphism}
 
@@ -56,7 +59,14 @@ $\c{X}\stackrel{\phi}{\to}\c{Y}\stackrel{\psi}{\to}\c{Z}$ between topological sp
 Show that $\psi_*\circ\phi_*=(\psi\circ\phi)_*$.
 \end{thm}
 
-\section{Dependence on base point}
+\begin{thm}{Exercise}
+Let $A$ be a retract of $\c{X}$ with retraction $r\:\c{X}\to A$.
+Choose $a\in A$.
+Show that $r_*\:\pi_1(\c{X},a)\to \pi_1(A,a)$ is a surjective homomorphism.
+\end{thm}
+
+
+\section{Base point}
 
 \begin{thm}{Theorem}
 Let $p$ and $q$ be two points in a topological space $\c{X}$.
@@ -128,7 +138,7 @@ Suppose that path-connected topological spaces $\c{X}$ and $\c{Y}$ have the same
 Use \ref{ex:uphi} to show that their fundamental groups are isomorphic.
 \end{thm}
 
-
+\section{Product space}
 
 \begin{thm}{Exercise}
 Let $\c{X}$ and $\c{Y}$ be two path-connected topological spaces.
@@ -161,34 +171,4 @@ Let $\c{X}$ be a topological space.
 Consider the quotient space $\c{Y}=(\c{X}\times \c{X})/\sim$ where $\sim$ is the minimal equivalence relation such that $(x,y)\sim (y,x)$.
 Show that the fundamental group $\pi_1(\c{Y},(x,x))$ is commutative for any $x\in \c{X}$.
 \end{thm}
-
-
-\section{Definitions}
-
-Assume $f_t\:\c{X}\to \c{Y}$ be a one-parameter family of maps, $t\in [0,1]$.
-If the map $[0,1]\times \c{X}\to \c{Y}$, defined as $(t,x)\mapsto f_t(x)$ is continuous, then $f_t$ is called a \index{homotopy}\emph{homotopy} of maps from $\c{X}$ to $\c{Y}$.
-
-If $f_t(a)$ is independent of $t$ for any point $a$ in some subset $A\subset \c{X}$, then we say that  $f_t$ is a {}\emph{homotopy relative to $A$}. 
-
-Two maps $g,h\:\c{X}\to \c{Y}$ are called {}\emph{homotopic} (briefly $g\sim h$)
-if there is a homotopy $f_t\:\c{X}\to \c{Y}$ such that $g=f_0$ and $h=f_1$.
-
-Two maps $g,h\:\c{X}\to \c{Y}$ are called \emph{homotopic relative to} $A$ (briefly, $g\sim h\rel A$)
-if there is a homotopy $f_t\:\c{X}\to \c{Y}$ relative to $A$ such that $g=f_0$ and $h=f_1$.
-
-\begin{thm}{Exercise}\label{ex:hom-eq}
-Show that ``$\sim$''  defines equivalence relations on the set of continuous maps between given topological spaces.
-That is, for any continuous maps $f,g,h\:\c{X}\to \c{Y}$, we have 
-\begin{itemize}
-\item $f\sim f$, 
-\item if $f\sim h$, then $h\sim f$, and
-\item if $f\sim g$ and $g\sim h$, then $f\sim h$.
-\end{itemize}
-Do the same for ``$\sim\rel A$''.
-\end{thm}
-
-Suppose that $f_\tau\:[0,1]\to\c{X}$ is homotopy of paths relative to its ends;
-that is, $f_\tau(0)$ and $f_\tau(1)$ do not depend on $t$.
-Then we say that $f_0$ is \index{homotopy of paths}\emph{homotopic} to $f_1$, briefly $f_0\sim f_1$.
-This is shortcut notation --- formally speaking, we had to say \textit{homotopic rel. $\{0,1\}$} and write $f_0\sim f_1\rel{\{0,1\}}$,
 

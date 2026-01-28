@@ -294,8 +294,10 @@ Then $\{b\}=f^{-1}(W)$ is an open set --- a contradiction.
 \parbf{\ref{ex:composition-continuous}.}
 Apply the definitions.
 
-\parbf{\ref{ex:Rge}}; \ref{SHORT.ex:Rge:top}.
-Check the conditions in \ref{def:top-space}.
+\parbf{\ref{ex:Rge}}. Note that $S\in \s{T}$ if and only for any $x_0\le x_1$, if $x_0\in S$, then $x_1\in S$.
+
+\parit{\ref{SHORT.ex:Rge:top}.}
+Check the conditions in \ref{def:top-space} using the property above.
 
 \parit{\ref{SHORT.ex:Rge:nonmetr}.}
 Show that every two nonempty open sets in $(\RR,\s{T})$ intersect.
@@ -306,9 +308,9 @@ Make a conclusion.
 To do the only-if part check the condition in \ref{def:cont-top}.
 
 To do the if part, suppose $f$ is not nondecreasing;
-that is, we can find $x<y$ such that $f(x)>f(y)$.
-Note that the inverse image $V=f^{-1}([f(x),\infty))$ contains $x$ but does not contain $y$.
-Show that $V$ is not open in $(\RR,\s{T})$, so $f\:(\RR,\s{T})\to(\RR,\s{T})$ is not continuous.
+that is, we can find $x_0<x_1$ such that $f(x_0)>f(x_1)$.
+Note that the inverse image $V=f^{-1}([f(x_0),\infty))$ contains $x_0$ but does not contain $x_1$.
+Conculde that $V$ is not open in $(\RR,\s{T})$, so $f\:(\RR,\s{T})\to(\RR,\s{T})$ is not continuous.
 
 \parbf{\ref{ex:|x|}.}
 Apply \ref{ex:composition-continuous} together with the fact that $x\mapsto |x|$ is a continuous real-to-real function (the latter is assumed to be known from calculus).
@@ -375,6 +377,9 @@ Use \ref{prop:cont-closed} to show that $a^{-1}(Q)$ and $b^{-1}(Q)$ are closed.
 Apply \mbox{\ref{def:closed-properties:n}} to show that $f^{-1}(Q)$ is closed.
 Apply \ref{prop:cont-closed} again.
 
+\parit{\ref{SHORT.ex:u-continuous:none}.}
+Consider function $f$ that is constant on disjint sets $A$ and $B$ such that $\bar A\cap B\ne\emptyset$.
+
 \parbf{\ref{ex:bry-nbhd}.}
 Let $A$ be a subset of a topological space $\c{X}$.
 Denote by $B$ its complement; that is $B\z=\c{X}\setminus A$.
@@ -384,7 +389,7 @@ Show and use that the statement is equivalent to the following
 \parbf{\ref{ex:dense-nbhd}.}
 Apply the definitions of neighborhood and dense set.
 
-\parbf{\ref{ex:concrete-lim}--\ref{ex:cocountable-top}.}
+\parbf{\ref{ex:lim-weaker}+\ref{ex:cocountable-top}.}
 Apply the definition of the convergence.
 
 \parbf{\ref{ex:bijection-ne-homeo}.}
@@ -405,12 +410,6 @@ Try to build the needed function from $x\mapsto \arctan x$ or $x\mapsto e^{-e^x}
 
 \parbf{\ref{ex:homeo=eq}.}
 Apply the definitions of homeomorphism and \ref{ex:composition-continuous}.
-
-\parbf{\ref{ex:nowhere-dense}.}
-In other words, we need to classify spaces such that any nonempty subset is everywhere dense.
-Observe that every point of the space lies in every nonempty open set.
-Conclude that the space has concrete topology.
-Show that any such space has this property.
 
 \parbf{\ref{ex:inversion}.}
 Learn about inversion and try to apply it.
@@ -451,10 +450,15 @@ Apply the definitions.
 Try the maps between two-point spaces with appropriate topologies.
 
 \parbf{\ref{ex:closed-open-cont-R}.}
-Read the paper by Ivan Baggs \cite{baggs}.
+Construct a nonempty closed nowhere dense set $K$ without isolated points.
+Map $K$ to $0$ and map each component of $\RR\setminus K$ by a homeomorphism to $\RR$.
+
+\parit{Comment.}
+If a function $f\:\RR\to \RR$ is closed and open, then it has to be continuous;
+see the paper by Ivan Baggs \cite{baggs}.
 
 \parbf{\ref{ex:cont-product-constr}.}
-Apply the observation together with the facts that $(x,y)\mapsto x+y$, $(x,y)\mapsto x\cdot y$, and $(x,y)\mapsto \max{x,y}=\tfrac12\cdot |x+y|+\tfrac12\cdot |x-y|$ are continous functions on $\RR^2$.
+Apply the observation together with the facts that $(x,y)\mapsto x+y$, $(x,y)\mapsto x\cdot y$, and $(x,y)\mapsto \max\{x,y\}=\tfrac12\cdot |x+y|+\tfrac12\cdot |x-y|$ are continuous functions on $\RR^2$.
 
 \parbf{\ref{ex:cont-product}.} 
 Check the following function
@@ -464,7 +468,7 @@ Check the following function
 \\
 \tfrac xy &\text{if}\quad 0<x\le y,
 \\
-\tfrac yx &\text{if}\quad 0<y\le x,
+\tfrac yx &\text{if}\quad 0<y< x,
 \end{cases}
 \]
 
@@ -556,11 +560,8 @@ Therefore, $W=\c{Y}\setminus B$ is open.
 Check the conditions in the definitions of equivalence relation and equivalence class.
 
 \parbf{\ref{ex:[0,1]/(0,1)}.}
-It has three points $a=[0]$, $b=[\tfrac12]$, and $c=[1]$ and the open sets are
-\[\emptyset,\  \{a,b\},\ \{b,c\},\  \{a,b,c\}.\]
-
-\parbf{\ref{ex:g-homeo}.}
-Show and use that $y\mapsto g^{-1}\cdot y$ is the inverse of $x\mapsto g\cdot x$.
+Show that it has three points $a=[0]$, $b=[\tfrac12]$, and $c=[1]$ and the open sets are
+\[\emptyset,\  \{b\},\ \{a,b\},\ \{b,c\},\  \{a,b,c\}.\]
 
 \parbf{\ref{ex:R/R}.}
 Note that all positive numbers are in one $\RR_+$-orbit.
@@ -574,11 +575,11 @@ Show that for any set $V\subset \c{X}$ we have
 \[f^{-1}\circ f(V)=\bigcup_{g\in G}g\cdot V.\]
 
 \parit{\ref{SHORT.ex:quotient-map:open}.}
-Apply this formula and \ref{ex:g-homeo} to show that if $V$ is open, then so is $f^{-1}\circ f(V)$.
+Apply this formula to show that if $V$ is open, then so is $f^{-1}\circ f(V)$.
 Finally apply the definition of quotient topology.
 
 \parit{\ref{SHORT.ex:quotient-map:closed}.}
-Apply this formula and \ref{ex:g-homeo} to show that if $G$ is finite and $V$ is closed, then so is $f^{-1}\circ f(V)$.
+Apply this formula to show that if $G$ is finite and $V$ is closed, then so is $f^{-1}\circ f(V)$.
 
 \parbf{\ref{ex:open-open-cover}.}
 Use \ref{def:top-space:u} and \ref{def:top-space:n}.
@@ -704,7 +705,7 @@ we can assume that the origin lies in the interior of $K$.
 
 Show that the boundary $\partial K$ is compact.
 Show that any half-line that starts from the origin intersects $\partial K$ at a single point.
-Conclude that $x\mapsto \tfrac{x}{|x|}$ defines a continous bijection $\partial K\to \SS^2$ and apply \ref{cor:cont-bijection=homeomorphism}.
+Conclude that $x\mapsto \tfrac{x}{|x|}$ defines a continuous bijection $\partial K\to \SS^2$ and apply \ref{cor:cont-bijection=homeomorphism}.
 
 
 \parbf{\ref{ex:quotient-connected}.}
@@ -807,6 +808,34 @@ Show and use that $t\z\mapsto (f(t),g(t))$ is a path in $\c{X}\times\c{Y}$.
 \parbf{\ref{ex:flea-and-comb}.} The flea and the comb.
 
 \parbf{\ref{ex:locally-path-connected}.} Mimic the proof of \ref{thm:open-connected=path-connected}.
+
+\parbf{\ref{ex:pseudocircle}.} Read about \emph{pseudo-arc} and think.
+
+\parbf{\ref{ex:S1}}; \ref{SHORT.ex:S1:R3>R^2}.
+Suppose there is a homeomorphism $h\:\RR^3\to\RR^2$.
+Choose a point $p\in \RR^3$ and let $q=h(p)$.
+Observe that $\RR^3\setminus\{p\}$ is homeomorphic to $\RR^2\setminus\{q\}$.
+Show that $\pi_1(\RR^3\setminus\{p\})$ is trivial, but $\pi_1(\RR^2\setminus\{q\})$ is not and arrive at a contradiction.
+
+\parit{\ref{SHORT.ex:D-->S}.}
+
+\parit{\ref{SHORT.ex:bry->bry}.}
+
+\parit{\ref{SHORT.ex:S1:finite-complement}.}
+
+\parbf{\ref{ex:KK}}; \ref{SHORT.ex:K!=K}.
+Assume there is a homeomorphism $h\:K_1\to K_2$.
+Argue as in \ref{ex:not-homeo} and \ref{ex:bry->bry} to show that
+(1) $h$ maps interior points of $K_1$ to inetrior points of $K_2$,
+(2) $h$ maps boundary points of $K_1$ to boundary points of $K_2$,
+and (3) $h$ maps the attached segents of $K_1$ to attached segents of $K_2$.
+Try to arrive at a contradiction.
+
+\parit{\ref{SHORT.ex:K=K}.}
+Realize that each products $K_1\times [0,1]$ and $K_2\times [0,1]$ is a solid torus with attaced pair of squares.
+To construct a homeomorphism, whist one solid torus.
+
+
 
 \parbf{\ref{ex:sc-VuW}.}
 Consider a loop $\gamma$ with the base point $p_0\in V\cap W$.

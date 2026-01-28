@@ -421,4 +421,76 @@ fill
 fill ((((p2 shifted z.b rotated 90)--p0--cycle)--(p2 shifted z.b rotated 210)--cycle)--(p2 shifted z.b rotated 330)--cycle) shifted (3*z.shift) withcolor .5;
 endfig;
 
+beginfig(1105)
+save u,p,n;
+path p[];
+u:=2cm;
+n:=5;
+
+draw (0,0)*u--(1,0)*u;
+
+for i = 1 upto n:
+draw (0,0)*u--(1,1/i)*u;
+endfor;
+
+label (btex {\tiny $\vdots$} etex, .5[(1,0)*u,(1,1/n)*u]+(1,3));
+label.bot (btex $J_\infty$ etex, .5[(0,0)*u,(1,0)*u]);
+label.top (btex $J_1$ etex, .5[(0,0)*u,(1,1)*u]+(0,2));
+
+endfig;
+
+beginfig(1405)
+save u,p;
+path p[];
+u:=.5cm;
+
+z.o=origin;
+z.r=(.5,.5)*u;
+z.R=2*(.7,.7)*u;
+z.x=(.7,.7)*u;
+z.shift= 2*z.R zscaled (1,-1);
+
+p0=circle(z.o,z.r);
+p1=circle(z.o,z.R);
+
+fill p0--reverse(p1)--cycle withcolor 0;
+draw p0;
+draw p1;
+draw -z.r--(-z.r+z.x) penbold;
+draw z.R--z.R+z.x penbold;
+
+fill (p0--reverse(p1)--cycle) shifted z.shift withcolor 0;
+draw p0 shifted z.shift;
+draw p1 shifted z.shift;
+draw (-z.R--(-z.R-z.x)) shifted z.shift penbold;
+draw (z.R--z.R+z.x) shifted z.shift penbold;
+
+label (btex {\color{white} $K_1$} etex, .5[z.r,z.R]);
+label (btex {\color{white} $K_2$} etex, .5[z.r,z.R]+z.shift);
+endfig;
+
+beginfig(1410)
+save u,p,n;
+path p[];
+u:=.5cm;
+n:=5;
+
+draw (0,0)*u--(n,0)*u--(n,n)*u--(0,n)*u--cycle \pensemibold;
+
+for i = 1 upto n-1:
+draw (i,0)*u--(i,n)*u penhair;
+draw (0,i)*u--(n,i)*u penhair;
+endfor;
+
+label (btex $1$ etex, .5[(0,0)*u,(1,1)*u]);
+label (btex $2$ etex, .5[(2,0)*u,(1,1)*u]);
+label (btex $3$ etex, .5[(2,0)*u,(3,1)*u]);
+label (btex $\cdots$ etex, .5[(4,0)*u,(3,1)*u]+(1,0));
+label (btex $n$ etex, .5[(n-1,0)*u,(n,1)*u]);
+label (btex {\small $2{\cdot}n$} etex, .5[(n-1,2)*u,(n,1)*u]);
+label (btex {\small $3{\cdot}n$} etex, .5[(n-1,2)*u,(n,3)*u]);
+label (btex $\vdots$ etex, .5[(n-1,4)*u,(n,3)*u]+(0,1));
+label (btex $n^2$ etex, .5[(n-1,n-1)*u,(n,n)*u]);
+endfig;
+
 end

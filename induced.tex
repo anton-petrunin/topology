@@ -43,14 +43,14 @@ the latter means that $(x,y)$ belongs to the right-hand side in \ref{eq:nu=un}.
 By spelling the definition of product topology, we get the following statement.
 
 \begin{thm}{Observation}
-Two maps $f\:\c{X}\to\c{Y}$ and $g\:\c{X}\to\c{Z}$ are coninuous if and only if
-the $x\mapsto (f(x),g(x))$ defines a continous map $f\:\c{X}\to\c{Y}\times \c{Z}$.
+Two maps $f\:\c{X}\to\c{Y}$ and $g\:\c{X}\to\c{Z}$ are continuous if and only if
+the $x\mapsto (f(x),g(x))$ defines a continuous map $\c{X}\to\c{Y}\times \c{Z}$.
 \end{thm}
 
 
 \begin{thm}{Exercise}\label{ex:cont-product-constr}
-Let $f$ and $g$ be continous real-valued functions on the topological space $\c{X}$.
-Sho that (a) $h_1=f+g$, (b) $h_2=f\cdot g$, and (c) $h_3(x)\df\max\{\,f(x), g(x)\,\}$ are continuous
+Let $f$ and $g$ be continuous real-valued functions on the topological space $\c{X}$.
+Show that (a) $h_1=f+g$, (b) $h_2=f\cdot g$, and (c) $h_3(x)\df\max\{\,f(x), g(x)\,\}$ are continuous.
 
 \end{thm}
 
@@ -164,14 +164,14 @@ Show that the product topology on $\c{X}\times\c{Y}$ can be redefined as a topol
 \end{subthm}
 
 \begin{subthm}{ex:graph:graph}
-Prove the following, using part \ref{SHORT.ex:graph:prebase}:
+Apply part \ref{SHORT.ex:graph:prebase} to prove the following:
 given a map $f\:\c{X}\z\to \c{Y}$, consider the map $F\:\c{X}\z\to \c{X}\times\c{Y}$ defined by $F\:x\mapsto (x,f(x))$.
 Show that $f$ is continuous if and only if $F$ is an embedding.
 \end{subthm}
 
 \end{thm}
 
-\section{Family of maps}\label{induced-family}
+\section{Initial topology}\label{induced-family}
 
 Let $\c{X}$ and $\c{Y}$ be topological spaces.
 Note that the product topology on $\c{X}\times\c{Y}$ is the weakest topology such that the following two projections $(x,y)\mapsto x$ and $(x,y)\mapsto y$ respectively are continuous.
@@ -180,14 +180,15 @@ Indeed, these projections are continuous if the inverse images of all open sets 
 In other words, the topology on $\c{X}\times\c{Y}$ must contain all sets of the form $V\times \c{Y}$ and $\c{X}\times W$ for open sets $V\subset \c{X}$ and $W\subset \c{Y}$.
 By \ref{ex:graph:prebase}, these sets form a prebase in $\c{X}\times\c{Y}$ and its topology is the weakest topology  that contains these sets.
 
-More generally, given a collection of maps $f_\alpha\:S\to \c{Y}_\alpha$ from a set $S$ to topological spaces $\c{Y}_\alpha$, we can introduce topology on $S$ by stating that the inverse images $f^{-1}_\alpha(W_\alpha)$ for open sets $W_\alpha\subset\c{Y}_\alpha$ form its prebase.
+More generally, given a collection of maps $f_\alpha\:S\to \c{Y}_\alpha$ from a set $S$ to topological spaces $\c{Y}_\alpha$, we can introduce a topology on $S$ by stating that the inverse images $f^{-1}_\alpha(W_\alpha)$ for open sets $W_\alpha\subset\c{Y}_\alpha$ form its prebase.
 It defines the topology on $S$ \index{induced topology}\emph{induced} by the maps $f_\alpha$;
 it is the weakest topology on $S$ that makes all maps $f_\alpha$ continuous.
 
 This construction produces a topology on the source space;
 for that reason it is also called the \index{initial topology}\emph{initial topology}.
 
-For example, this construction can be used to define a topology on an infinite product of spaces, as the induced topology for all its projections.
+Note that \emph{induced topology} on a subset $A\to \c{Y}_\alpha$ discussed in \ref{sec:induced-topology} is the initial topology for the inclusion map $A\to \c{Y}_\alpha$.
+Furthermore, this construction can be used to define a topology on an infinite product of spaces, as the induced topology for all its projections.
 This topology is called the \index{product topology}\emph{product topology}, or the \index{Tychonoff topology}\emph{Tychonoff topology}.
 
 \begin{thm}{Advanced exercise}\label{ex:induced-nonmetrizable}
@@ -195,14 +196,11 @@ Let $\s{O}$ be the topology on $\RR$ induced by the maps $x\mapsto (\cos(t\cdot 
 Show that the space $(\RR,\s{O})$ is not metrizable.
 \end{thm}
 
-\section{Moving topology by a map}\label{sec:final-topology}
+\section{Final topology}\label{sec:final-topology}
 
 In the previous section, we defined a natural way to move a topology from the target space to the source of a map.
-
 Namely, suppose $f\:\c{X}\to\c{Y}$ is a map between two sets.
-Assume $\c{Y}$ is equipped with a topology.
-Declare a subset $V\subset\c{X}$ to be open in the \index{initial topology}\emph{initial topology} for $f$ if there is an open subset $W\subset\c{Y}$
-such that $V=f^{-1}(W)$.
+If $\c{Y}$ is equipped with a topology, then we can declare a subset $V\subset\c{X}$ to be open if there is an open subset $W\subset\c{Y}$ such that $V=f^{-1}(W)$.
 
 The following exercise describes an analogous construction that moves a topology from source to target.
 It can be solved by checking the conditions in \ref{def:top-space} as we did in \ref{sec:induced-topology}.
@@ -253,7 +251,7 @@ Show that $\c{Y}$ is equipped with the final topology.
 
 \section{Quotient topology}
 
-The initial topology is used mostly for injective maps; in this case, it is nearly the same as the \index{induced topology}\emph{induced topology}.
+The initial topology is used mostly for injective maps; in this case, it is essentially the same as the \index{induced topology}\emph{induced topology}.
 Similarly, the final topology is mostly used for surjective maps.
 This particular case of the construction is called the \index{quotient topology}\emph{quotient topology},
 which we are about to describe.
@@ -296,49 +294,61 @@ One may also check by hand that the quotient space $[0,1]/\{0,1\}\z\simeq\SS^1$;
 that is, the unit segment with identified ends is homeomorphic to the circle.
 Theorem \ref{obs:compact-to-hausdorff} will provide a very general tool that helps to prove such statements.
 
-\section{Orbit spaces}
+\section{Actions}
 
-\begin{thm}{Definition}\label{def:action}
-Let $\c{X}$ be a topological space and $G$ be a group.
-Suppose that $(g,x)\mapsto g\cdot x$ is a map $G\times\c{X}\to \c{X}$ such that
-\begin{subthm}{def:action:1}
-$1\cdot x=x$ for any $x\in \c{X}$, where $1$ is the identity element of~$G$;
-\end{subthm}
-\begin{subthm}{def:action:assoc}
-$g\cdot (h\cdot x)=(g\cdot h)\cdot x$ for any $g,h\in G$ and $x\in \c{X}$;%
-\end{subthm}
-\begin{subthm}{}
-for any $g\in G$, the map $x\mapsto g\cdot x$ is continuous.
-\end{subthm}
-Then we say that $G$ \index{action}\emph{acts} on $\c{X}$, or $\c{X}$ is a $G$-space.
+Let $\c{X}$ be a set.
+A subset $G$ of bijections $\c{X}\to \c{X}$ that includes the identity map $\id_{\c{X}}$ and is closed under composition and inversion is called a \index{group of symmetries}\emph{group of symmetries} of $\c{X}$.
+In this case we may say that $G$ \emph{acts} on $\c{X}$, briefly $G\acts\c{X}$.
 
-In this case, the set
-\[G\cdot x:=\set{g\cdot x}{g\in G}\]
-is called the \index{orbit}\emph{$G$-orbit} of $x$ (or, briefly, {}\emph{orbit}).
-\end{thm}
+Typically we are interested in group actions that preserve some structure of the set $\c{X}$.
+If $\c{X}$ is a topological space, then it is natural to assume that each $g\in G$ is a continuous bijection $\c{X}\to \c{X}$.
+Such an action $G\acts\c{X}$ is called \index{continuous action}\emph{continuous}.
+For such an action each $g\in G$ defines a homeomorphism $\c{X}\to \c{X}$.
+Indeed, if $g\in G$, then $g^{-1}\in G$; therefore $g$ as well as its inverse must be continuous.
+Actions on topological spaces will always be assumed to be continuous.
 
-Note that \ref{SHORT.def:action:assoc} implies that the expression
+Given an action $G\acts\c{X}$, we can equip the set $G$ with product defined as composition;
+that is, if $g,h\in G$ then its product $g\cdot h\in G$ is defined as
+$(g\cdot h)(x)\df g(h(x))$.
+With this operation, $G$ becomes a \emph{group}; that is, it meets the following properties:
+\begin{itemize}
+\item (associativity) for any $f,g,h\in G$ we have
+\[(f\cdot g)\cdot h=f\cdot (g\cdot h);\]
+\item (existence of neutral element) there exists $1\in G$ such that for every $g\in G$ we have
+\[1\cdot g=g\cdot 1=g;\]
+\item (inverse) for each $g\in G$ there exists $g^{-1}\in G$ such that
+\[g\cdot g^{-1}\z=g^{-1}\cdot g=1.\]
+\end{itemize}
+Checking these properties is straightforward.
+Associativity follows since it holds for composition, and one can take $1=\id_{\c{X}}$.
+
+Finally note that an abstract group (that is, a set $G$ with product that meets the three properties above) acts on itself by $g\: h\mapsto g\cdot h$, so any group acts on some set.
+Furthermore, we may equip $G$ with discrete topology and this way we obtain a continuous action $G\acts G$.
+So you may think that actions are more fundamental than groups.
+A group should be defined by its action, not the other way around.
+
+For an action $G\acts \c{X}$, it is common to denote $g(x)$ by $g\cdot x$, where $g\in G$ and $x\in\c{X}$.
+Note that associativity implies that the expression
 \[g\cdot h\cdot x\]
 makes sense for any $g,h\in G$ and $x\in \c{X}$; that is, it does not depend on parentheses.
 
-\begin{thm}{Exercise}\label{ex:g-homeo}
-Suppose that a group $G$ acts on a topological space~$\c{X}$.
-Show that for any $g\in G$, the map $x\mapsto g\cdot x$ defines a homeomorphism $\c{X}\to \c{X}$.
-\end{thm}
+\section{Orbit spaces}
 
-Suppose that a group $G$ acts on a topological space $\c{X}$.
+Choose a continuous action $G\acts \c{X}$.
+The set
+\[G\cdot x:=\set{g\cdot x\in \c{X}}{g\in G}\]
+is called the \index{orbit}\emph{$G$-orbit} of $x$ (or, briefly, {}\emph{orbit}).
+
 Set $x\sim y$ if there is $g\in G$ such that $y=g\cdot x$.
-
 Observe that $\sim$ is an equivalence relation on $\c{X}$.
 Indeed,
 $x\sim x$ since $x=1\cdot x$.
-Further, if $y=g\cdot x$, then by \ref{SHORT.def:action:1} and \ref{SHORT.def:action:assoc} we get
+Further, if $y=g\cdot x$, then
 \[x=1\cdot x=g^{-1}\cdot g\cdot  x=g^{-1}\cdot y;\] since $g^{-1}\in G$ we get that $x\sim y$
 $\Longrightarrow$
 $y\sim x$.
 Finally, suppose $x\sim y$ and $y\sim z$;
-that is, $y=g\cdot x$ and $z=h\cdot y$ for some $g,h\in G$.
-By \ref{SHORT.def:action:assoc}, $z=(h\cdot g)\cdot x$;
+that is, $y=g\cdot x$ and $z=h\cdot y$ for some $g,h\in G$, then $z=(h\cdot g)\cdot x$;
 therefore $x\sim z$.
 
 For the described equivalence relation, the quotient space $\c{X}/{\sim}$ can also be denoted by $\c{X}/G$;
