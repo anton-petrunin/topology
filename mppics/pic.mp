@@ -421,6 +421,15 @@ fill
 fill ((((p2 shifted z.b rotated 90)--p0--cycle)--(p2 shifted z.b rotated 210)--cycle)--(p2 shifted z.b rotated 330)--cycle) shifted (3*z.shift) withcolor .5;
 endfig;
 
+beginfig(980)
+save u,p;
+path p[];
+u:=.5cm;
+
+draw circle(origin,1*u);
+draw (sqrt(2)-1,-(sqrt(2)-1))*u--(1,-1)*u;
+endfig;
+
 beginfig(1105)
 save u,p,n;
 path p[];
