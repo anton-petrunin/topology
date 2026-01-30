@@ -1,6 +1,6 @@
 \chapter{Compactness}
 
-In this chapter we define compact topological spaces --- especially nice spaces that behave in many ways like finite sets, yet are far more general.
+In this chapter we define compact topological spaces --- especially nice spaces that behave in many ways like finite sets.
 
 
 In practice, compactness is a powerful replacement for ``closed and bounded'' in $\RR^n$, but the general definition does not resemble it at first glance.
@@ -35,12 +35,9 @@ Analogously, a subset $S$ of a topological space $\c{X}$ is called {}\emph{compa
 contains a finite subcover of $S$.
 \end{thm}
 
-\begin{thm}{Exercise}\label{ex:compact-set-subspace}
-Show that a subset $S$ of a topological space is compact if and only if $S$ equipped with the induced topology is a compact space.
-\end{thm}
+Spelling the definitions, we get that \textit{a subset $S$ of a topological space is compact if and only if $S$ equipped with the induced topology is a compact space}.
 
 Clearly, \textit{any finite topological space is compact}.
-In fact, compact spaces in topology, in many ways, resemble finite sets in set theory.
 The next exercise provides a source of examples of infinite compact spaces.
 More interesting examples are given in Section~\ref{sec:compact-interval}.
 
@@ -48,18 +45,17 @@ More interesting examples are given in Section~\ref{sec:compact-interval}.
 Show that any set equipped with the cofinite topology is compact.
 \end{thm}
 
-\begin{thm}{Exercise}\label{ex:unbounded-noncompact}
-Let $S$ be an unbounded subset of the real line; that is, for any $c\in \RR$ there is $s\in S$ such that $|s|>c$.
-Show that $S$ is not compact.
-\end{thm}
+\begin{thm}{Exercise}
+Let $S\subset \RR$ be a compact subset.
 
-\begin{thm}{Exercise}\label{ex:closed-compact}
-Let $S\subset \RR$ be a subset that is not closed.
-Show that $S$ is not compact.
-\end{thm}
+\begin{subthm}{ex:closed-compact}
+Show that $S$ is closed.
+\end{subthm}
 
-\begin{thm}{Exercise}\label{ex:noncompact-n}
-Construct a topological space with two compact sets such that their intersection is not compact.
+\begin{subthm}{ex:unbounded-noncompact} Show that $S$ be an bounded;
+ that is, for there is $c\in \RR$ such that $|s|\le c$ for any $s\in S$.
+\end{subthm}
+
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:fun(compact)}
@@ -78,6 +74,38 @@ for any $x\in \c{K}$.
 
 \end{thm}
 
+\begin{thm}{Exercise}\label{ex:noncompact-un}
+
+\begin{subthm}{ex:ucompact}
+Show that union of two compact sets is compact.
+\end{subthm}
+
+\begin{subthm}{ex:noncompact-n}
+Construct a topological space with two compact sets such that their intersection is not compact.
+\end{subthm}
+\end{thm}
+
+\section{Compactification}
+
+As we mentioned, comact spaces are close reatives of finite sets,
+but, as you can see from the following statement, this relation is not too direct.
+
+\begin{thm}{Claim}
+Every topological space is homeomorphich to subspace of a compact space.
+\end{thm}
+
+\parit{Proof.}
+Choose a topological space $\c{X}$.
+Let us add to $\c{X}$ one extra point that will be denoted by $\infty$.
+A set $V$ in $\hat{\c{X}}=\c{X}\cup\{\infty\}$ is declared to be open if $V$ is an open subset in $\c{X}$ (in this case $\infty\notin V$) or $\infty\in V$ and its complement $\c{X}\setminus V$ is a closed and compact subset of $\c{X}$.
+
+We need to check the conditions in \ref{def:top-space}:
+\ref{SHORT.def:top-space:empty} and \ref{SHORT.def:top-space:u} are straightforward and \ref{def:top-space:n} follows since union of two closed sets is closed and \ref{ex:ucompact}.
+\qeds
+
+The space $\hat{\c{X}}$ constructed in the proof is called the \index{one-point compactification}\emph{one-point compactification} of $\c{X}$.
+
+
 
 \section{Finite intersection property} 
 
@@ -90,8 +118,8 @@ such that
 
 \end{thm}
 
-The condition in the above proposition is called the \index{finite intersection property}\emph{finite intersection property};
-it redefines compactness via closed sets.
+We say that a family of sets has \index{finite intersection property}\emph{finite intersection property} if any finite subfamily of has non-empty intersection.
+According to the proposition, compactness is equivalent to the following property: \textit{any collection of closed sets with finite intersection property has a nonempty intersection}.
 
 \parit{Proof.}
 By the definition of closed sets, the complements $V_\alpha=\c{X}\setminus Q_\alpha$ are open.
@@ -115,13 +143,17 @@ Let $Q_1\supset Q_2\supset\dots$ be a nested sequence of closed nonempty sets in
 Show that there is a point $q\in \c{K}$ such that $q\in Q_n$ for any $n$.
 \end{thm}
 
+\begin{thm}{Exercise}\label{ex:proper-point}
+Let $f\:\c{X}\to\c{Y}$ be a closed continuous map.
+Assume that $\c{Y}$ is compact and every point $y\in \c{Y}$ has compact inverse image $f^{-1}\{y\}\subset \c{X}$.
+Show that $\c{X}$ is compact.
+\end{thm}
+
 \begin{thm}{Advanced exercise}\label{ex:disjoint-closed}
 Let $Q_1,Q_2,\dots$ be a sequence of nonempty disjoint closed sets in $[0,1]$.
 Show that
 $Q_1\cup Q_2\cup\dots\ne [0,1]$.
 \end{thm}
-
-
 
 
 \section{Real interval}\label{sec:compact-interval}

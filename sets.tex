@@ -99,12 +99,13 @@ Construct a topological space $\c{Y}$ with a closed set $Q$ that is not an inter
 
 Let $A$ be an arbitrary subset of a topological space $\c{X}$.
 
-The union of all open subsets of $A$ is called the \index{interior}\emph{interior} of $A$ and denoted as $\mathring A$ or $\interior A$.
+The union of all open subsets of $A$ is called the \index{interior}\emph{interior} of $A$ and denoted as $\mathring A$, for longer expressions we may use $A^\circ$ or $\interior A$.
 
 Note that $\mathring A$ is open.
 Indeed, it is defined as a union of open sets and such union is open by the definition of a topology (\ref{def:top-space}).
 So we can say that $\mathring A$ is the \textit{maximal} open set in $A$, 
 as any open subset of $A$ lies in~$\mathring A$.
+In particular, $\mathring{\mathring A}=\mathring A$ for any set $A$.
 
 The intersection of all closed subsets containing $A$ is called the \index{closure}\emph{closure} of $A$ and denoted as $\bar A$ or $\closure A$.
 
@@ -112,6 +113,7 @@ The set $\bar A$ is closed.
 Indeed, it is defined as an intersection of closed sets and such intersection has to be closed by \ref{prop:closed-properties}.
 In other words, $\bar A$ is the \textit{minimal} closed set that contains $A$, 
 as any closed subset containing $A$ contains $\bar A$.
+In particular, $\bar{\bar A}=\bar A$ for any set $A$.
 
 \begin{thm}{Exercise}\label{ex:closure-interior-complement}
 Assume $A$ is a subset of a topological space $\c{X}$;
@@ -119,6 +121,9 @@ consider its complement $B=\c{X}\setminus A$.
 Show that 
 \[\bar B=\c{X}\setminus \mathring A.\]
 \end{thm}
+
+%\begin{thm}{Exercise}\label{ex:closure-interior}Let $A$ and $B$ be subsets of a topological space $\c{X}$. Show that (a) $\overline A\cup B=\bar A\cup \bar B$, (b) $\overline A\cap B\subset \bar A\cap \bar B$, (c) $(A\cup B)^\circ\supset\mathring A\cup \mathring B$, (d) $(A\cap B)^\circ=\mathring A\cap \mathring B$, (e) show that the inclusions in (b) and (c) might be strict. \end{thm}
+
 
 The following exercise is called the \index{Kuratowski problem}\emph{Kuratowski problem}.
 
@@ -173,7 +178,7 @@ Give an example of a topological space $\c{X}$ with a subset $A$ such that all t
 \section{Boundary}
 
 Let $A$ be an arbitrary subset of a topological space $\c{X}$.
-The \index{boundary}\emph{boundary} of $A$ (briefly $\partial A$) is defined as the complement 
+The \index{boundary}\emph{boundary}\footnote{Also known as \emph{frontier}.} of $A$ (briefly $\partial A$) is defined as the complement
 \[\partial A=\bar A\setminus \mathring A.\]
 
 \begin{thm}{Exercise}\label{ex:bry-closed}
@@ -272,11 +277,15 @@ Show that $x\in \partial A$ if and only if any neighborhood of $x$ contains poin
 \end{thm}
 
 Let $A$ and $B$ be subsets of a topological space $\c{X}$.
-The set $A$ is said to be \index{dense}\emph{dense} in $B$ if $\bar A\supset B$.
+The set $A$ is said to be \index{dense}\emph{dense} in $B$ if $\bar A\supset B$;
+if $\bar A=\c{X}$, then we say that $A$ is \index{everywhere dense}\emph{everywhere dense}.
 
 \begin{thm}{Exercise}\label{ex:dense-nbhd} 
 Show that $A$ is dense in $B$ if and only if any neighborhood of any point in $B$ intersects $A$.
 \end{thm}
+
+%\begin{thm}{Exercise}\label{ex:everywhere-dense} Assume that $A$ is an everywhere dense subset and $V$ is open subset in a topological space $\c{X}$. Show that $\overline (A\cap V)\supset V$. \end{thm}
+
 
 \section{Limits}\label{sec:limits}
 

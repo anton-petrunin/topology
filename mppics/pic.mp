@@ -430,6 +430,26 @@ draw circle(origin,1*u);
 draw (sqrt(2)-1,-(sqrt(2)-1))*u--(1,-1)*u;
 endfig;
 
+beginfig(1030)
+save u,p,n, N;
+path p[];
+u:=2cm;
+n:=20;
+N:=100;
+
+p0=
+(0,0)*u
+for i = 1 upto n:
+..(0,(-1)**i*(-1+1/i))*u{(-1)**i*(1,-.3183/i)}
+endfor
+;
+
+for i = 0 upto N-1:
+  draw subpath(n*i/N,n*(i+1)/N) of p0 withcolor ((i/N));
+endfor;
+
+endfig;
+
 beginfig(1105)
 save u,p,n;
 path p[];

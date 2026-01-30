@@ -460,6 +460,9 @@ see the paper by Ivan Baggs \cite{baggs}.
 \parbf{\ref{ex:cont-product-constr}.}
 Apply the observation together with the facts that $(x,y)\mapsto x+y$, $(x,y)\mapsto x\cdot y$, and $(x,y)\mapsto \max\{x,y\}=\tfrac12\cdot |x+y|+\tfrac12\cdot |x-y|$ are continuous functions on $\RR^2$.
 
+\parbf{\ref{ex:bryAxB}.}
+Show and use that $\overline {A\times B}=\bar A\times \bar B$ and $(A\times B)^\circ=\mathring A\times \mathring B$.
+
 \parbf{\ref{ex:cont-product}.} 
 Check the following function
 \[f(x,y)=
@@ -584,9 +587,6 @@ Apply this formula to show that if $G$ is finite and $V$ is closed, then so is $
 \parbf{\ref{ex:open-open-cover}.}
 Use \ref{def:top-space:u} and \ref{def:top-space:n}.
 
-\parbf{\ref{ex:compact-set-subspace}.}
-Spell the definitions.
-
 \parbf{\ref{ex:cofinite-compact}.}
 We may assume that the space is nonempty; otherwise there is nothing to prove.
 Choose a nonempty set $V_0$ from the cover.
@@ -605,7 +605,20 @@ Choose a noncompact space $\c{X}$ and consider topology on the union $\c{X}\cup\
 $\c{X}\cup\{a,b\}$, $\c{X}\cup\{a\}$, $\c{X}\cup\{b\}$ and all open sets in $\c{X}$.
 Observe that the sets $\c{X}\cup\{a\}$ and $\c{X}\cup\{b\}$ are compact, but their intersection is not.
 
+\parbf{\ref{ex:ucompact}.} Apply the definition of compact set.
+
 \parbf{\ref{ex:nested-compact}.} Apply the finite intersection property.
+
+\parbf{\ref{ex:proper-point}.}
+Choose a colletion of closed set $\{Q_\alpha\}$ with finite intersection property in $\c{X}$.
+Assume $\bigcap Q_\alpha=\emptyset$.
+Since $f^{-1}\{y\}$ is compact, for any $y\in \c{Y}$ we can choose a finite collection $Q_{\alpha_1},\ldots, Q_{\alpha_n}$ such that $f^{-1}\{y\}\cap Q_{\alpha_1}\cap\z\ldots\cap Q_{\alpha_n}=\emptyset$.
+Let $C_y=Q_{\alpha_1}\cap\ldots\cap Q_{\alpha_n}$.
+Show that (1) $y\notin f(C_y)$, (2) $f(C_y)$ is a closed set, and (3) $f(C_y)$ is compact for every $y\in \c{Y}$.
+
+Apply compacness of $\c{Y}$ to choose a finite set of points $y_1,\z\ldots,y_m\in \c{Y}$ such that $f(C_{y_1})\cap \z\ldots \cap f(C_{y_m})=\emptyset$.
+Conclude that $C_{y_1}\cap \z\ldots \cap C_{y_m}=\emptyset$ and arrive at a contradiction.
+
 
 \parbf{\ref{ex:disjoint-closed}.}
 Let us write $A\Supset B$ if the interior of $A$ contains closure of $B$.
@@ -788,8 +801,23 @@ b&\text{if\ }t=1
 \]
 is a continuous map.
 
-\parbf{\ref{ex:QQ}.}
-Show and use that for any rational numbers $a$ and $b$, the line $y=a\cdot x+b$ lies in $A\cup B$.
+\parbf{\ref{ex:image(path-connected)}.}
+Show and use that for any continuous map $\phi$ and any path $f$, the composition $\phi\circ f$ is a path.
+
+\parbf{\ref{ex:product(path-connected)}.}
+Suppose that $f$ and $g$ are paths in $\c{X}$ and $\c{Y}$ respectively.
+Show and use that $t\z\mapsto (f(t),g(t))$ is a path in $\c{X}\times\c{Y}$.
+
+\parbf{\ref{ex:flea-and-comb}.} The flea and the comb.
+
+\parbf{\ref{ex:nonpathconnected-closure}.} Look at the picture and think
+
+
+\begin{Figure}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-1030}
+\end{Figure}
 
 \parbf{\ref{ex:path-connected-component-closed-open}.}
 Choose path-connected component $V$.
@@ -798,6 +826,16 @@ Observe that $W$ is a union of path-connected components.
 Therefore, $W$ is open, and the pair $V$, $W$ forms an open splitting of the space.
 
 To prove the converse, apply \ref{thm:conncted/path-connected}
+
+\parbf{\ref{ex:monks}.}
+Read the note by Tatsuo Homma \cite{homma} and think.
+
+\parit{Comments.}
+This is a well known puzzle; for example, with following interpretation, it apperas in the book of
+Peter Winkler \cite[p. 121]{winkler}:
+\textit{Two monks climb the mountain on the same day, starting at the same time and altitude, but on different paths.
+The paths go up an down on the way to the summit (but never dip below the starting altitude).
+Can they vary their speed (sometimes going backwards) so that at every moment of the day they are at the same altitude?}
 
 \parbf{\ref{ex:path-connected-component-closed-open:closed}.}
 Check the conditions in \ref{prop:base-any}.
@@ -808,15 +846,11 @@ To show that the space is not path-connected, use that any path contains at most
 Finally observe that every path-connected component in $[0,1]\times[0,1]$ is a vertical segment $\{x\}\times [0,1]$.
 
 
-\parbf{\ref{ex:image(path-connected)}.}
-Show and use that for any continuous map $\phi$ and any path $f$, the composition $\phi\circ f$ is a path. 
+\parbf{\ref{ex:QQ}.}
+Show and use that for any rational numbers $a$ and $b$, the line $y=a\cdot x+b$ lies in $A\cup B$.
 
 
-\parbf{\ref{ex:product(path-connected)}.}
-Suppose that $f$ and $g$ are paths in $\c{X}$ and $\c{Y}$ respectively.
-Show and use that $t\z\mapsto (f(t),g(t))$ is a path in $\c{X}\times\c{Y}$.
 
-\parbf{\ref{ex:flea-and-comb}.} The flea and the comb.
 
 \parbf{\ref{ex:locally-path-connected}.} Mimic the proof of \ref{thm:open-connected=path-connected}.
 
@@ -882,10 +916,26 @@ Conclude that $f$ is continuos on the entire plane.
 For the second part, choose an increasing continuous  function $\sigma\:\RR\to (1,2)$ such that $\sigma(x)\to 1$ as $x\to -\infty$ and $\sigma(x)\to 2$ as $x\to +\infty$, say $\sigma(x)=1+\tfrac12\cdot\frac{e^x-e^{-x}}{e^x+e^{-x}}$.
 Consider function $\phi\:\Gamma\to (0,1)$ defined by $\sigma\circ h^{-1}$, apply the first part of the exercise and apply $\sigma^{-1}$ to the obtained function.
 
-\parbf{\ref{ex:z-axis}.} Show and use that the complement of $z$-axis has unit circle $\set{(x,y,0)\in\RR^3}{x^2+y^2=1}$
-as a homotopy retract.
+\parbf{\ref{ex:z-axis}.}
+Show and use that the complement of $z$-axis has the circle
+\[\set{(x,y,0)\in\RR^3}{x^2+y^2=1}\]
+as a deformation retract.
+
+
+\parbf{\ref{ex:jordanI}.}
+Let us consider $\RR^2$ as a subset of $\RR^3$.
+Argue as in \ref{prop:home-gamma-z-axis} to show that $\RR^3\setminus I$ is simply-connected.
+
+If $\RR^2\setminus I$ is not connected, then we can choose a circle $C$ in a vertical plane of $\RR^3$ that crosses $\RR^2$ at two points that lie in different conncted components of $\RR^2\setminus I$.
+Construct a retraction $\RR^3\setminus I\to C$ and arrive at a contradiction.
+
+\parit{Remark.}
+In fact any compact contractible set in $\RR^2$ has connected complement;
+a way more general statemnt is provided by Alexander's duality theorem.
+
 
 %\parbf{\ref.}
 
+%\parbf{\ref.}
 
 \spell{\end{multicols}}{}
