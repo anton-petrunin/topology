@@ -18,7 +18,7 @@ Suppose $V$ is a \index{proper subset}\emph{proper} clopen subset of a topologic
 Note that its complement $W=\c{X}\setminus V$ is also a proper clopen subset.
 In particular, there are two open sets $V,W\subset \c{X}$ such that $V\ne\emptyset$, $W\ne\emptyset$, $V\cup W=\c{X}$ and $V\cap W=\emptyset$.
 
-\begin{thm}{Exercise}\label{ex:quotient-connected}
+\begin{thm}{Exercise}\label{ex:connected->R}
 Let $f\:\c{X}\to\RR$ be a continuous function defined of a connected space.
 Suppose that for $f(x_1)>0$ and $f(x_2)<0$ for some $x_1,x_2\in \c{X}$.
 Show that there is $x_3\in \c{X}$ such that $f(x_3)=0$.
@@ -138,7 +138,7 @@ a_0\le a_1\le \dots \le b_1\le b_0.
 \]
 In particular, the sequence $a_n$ is nondecreasing and bounded above by $b_0$.
 Therefoe, it converges; denote its limit by $x$.
-Since $b_n-a_n=\tfrac1{2^n}\cdot(b_0-a_0)$, the sequence $b_n$ also converges to $x$.
+Since $b_n-a_n\z=\tfrac1{2^n}\cdot(b_0-a_0)$, the sequence $b_n$ also converges to $x$.
 The point $x$ has to belong to $V$ or $W$.
 Since both $V$ and $W$ are open, one of them contains $a_n$ and $b_n$ for all large $n$, which contradicts \ref{eq:ab-in-VW}.
 \qeds
@@ -172,7 +172,8 @@ Show that each connected component of $\c{X}$ is open.
 
 \begin{thm}{Advanced exercise}\label{ex:colomb}
 Let us denote by $\NN$ the set of positive integers.
-Show that that arithmetic progressions $\{a,a+d,a+2\cdot d,\dots\}$ for relatively prime all realtivley prime positive integers $a\le d$ form a basis of some topology, and $\NN$ equipped with this topology is a connected Hausdorff space.
+Show that that arithmetic progressions $\{a,a+d,a+2\cdot d,\dots\}$ for all realtivley prime positive integers $a\le d$ form a basis of some topology on $\NN$.
+Furthermore, $\NN$ equipped with this topology is a connected Hausdorff space.
 \end{thm}
 
 

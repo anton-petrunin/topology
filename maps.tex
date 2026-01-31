@@ -45,7 +45,7 @@ if $\c{X}\simeq\c{Y}$ and $\c{Y}\simeq\c{Z}$, then $\c{X}\simeq\c{Z}$.
 \end{thm}
 
 \begin{thm}{Advanced exercise}\label{ex:inversion}
-Prove that the complement of a circle in the Euclidean space is homeomorphic to the Euclidean space without a line $\ell$ and a point $p\not\in\ell$.
+Prove that the complement of a circle in $\RR^3$ is homeomorphic to $\RR^3$ without a line $\ell$ and a point $p\not\in\ell$.
 \end{thm}
 
 \begin{wrapfigure}{r}{34 mm}
@@ -54,7 +54,7 @@ Prove that the complement of a circle in the Euclidean space is homeomorphic to 
 \includegraphics{mppics/pic-70}
 \end{wrapfigure}
 
-Recall that a figure $F$ is called \index{star-shaped set}\emph{star-shaped} if there exists a point $p\in F$ such that for all $x\in F$ the line segment $px$ lies in~$F$.
+Recall that a set $V\subset\RR^2$ is called \index{star-shaped set}\emph{star-shaped} if there exists a point $p\in V$ such that for all $x\in V$ the line segment from $p$ to $x$ lies in~$V$.
 
 \begin{thm}{Advanced exercise}\label{ex:star-shaped}
 Show that any nonempty open star-shaped set in the plane is homeomorphic to the open disc.
@@ -70,14 +70,13 @@ Show that the complements of two countable dense subsets of the plane are homeom
 \label{sec:Closed and open maps}
 
 \begin{thm}{Definition}\label{def:open-closed-maps}
-A map between topological spaces 
-$f\:\c{X}\to\c{Y}$ is called \index{open map}\emph{open} if, for any open set $V\subset\c{X}$, the image $f(V)$ is open in~$\c{Y}$.
-
-A map between topological spaces 
-$f\:\c{X}\to\c{Y}$ is called \index{closed map}\emph{closed} if, for any closed set $Q\subset\c{X}$, the image $f(Q)$ is closed in $\c{Y}$.
+Let $f\:\c{X}\to\c{Y}$ be a map between topological spaces;
+$f$ is called \index{open map}\emph{open} if, for any open set $V\subset\c{X}$, the image $f(V)$ is open in~$\c{Y}$.
+Similarly,
+$f$ is called \index{closed map}\emph{closed} if, for any closed set $Q\subset\c{X}$, the image $f(Q)$ is closed in $\c{Y}$.
 \end{thm}
 
-Note that a homeomorphism can be defined as a \textit{continuous open bijection}.
+Observe that a homeomorphism can be defined as a \textit{continuous open bijection}.
 
 \begin{thm}{Exercise}\label{ex:bijective-closed-open}
 Show that a bijective map between topological spaces is closed if and only if it is open.

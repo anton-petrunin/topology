@@ -394,11 +394,11 @@ Apply the definition of the convergence.
 
 \parbf{\ref{ex:bijection-ne-homeo}.}
 Let $f\:\c{X}\to\c{Y}$ be a homeomorphism.
-Recall that by the definition of inverse, we have $f^{-1}(f(x))=x$ and $f(f^{-1}(y))=y$ for any $x\in \c{X}$ and $y\in\c{Y}$.
-It remains to show that the existence of $f^{-1}\:\c{Y}\to\c{X}$ implies that $f$ is a bijection $\c{X}\leftrightarrow\c{Y}$.
+By the definition of inverse, we have $f^{-1}(f(x))=x$ and $f(f^{-1}(y))=y$ for any $x\in \c{X}$ and $y\in\c{Y}$.
+Therefore, the existence of $f^{-1}\:\c{Y}\to\c{X}$ implies that $f$ is a bijection $\c{X}\leftrightarrow\c{Y}$.
 
 For the second part,
-try to find such bijection for the subspaces $A=[0,1)\cup \{2\}$ and $B=[0,1]$ of $\RR$.
+try to find a continuous  bijection for the subspaces $A=[0,1)\cup \{2\}$ and $B=[0,1]$ of $\RR$.
 
 \parbf{\ref{ex:exp}.}
 Observe that $y\mapsto \ln y$ is the inverse of $x\mapsto e^x$,
@@ -412,11 +412,11 @@ Try to build the needed function from $x\mapsto \arctan x$ or $x\mapsto e^{-e^x}
 Apply the definitions of homeomorphism and \ref{ex:composition-continuous}.
 
 \parbf{\ref{ex:inversion}.}
-Learn about inversion and try to apply it.
+Learn about inversion transformation and try to apply it.
 
 \parbf{\ref{ex:star-shaped}.}
-Let $\Omega$ be an open star-shaped set with respect to the origin.
-Assume $\Omega$ can be described by the inequality $r<f_n(\theta)$ in the polar $(r,\theta)$-coordinates, where $f_n\:\mathbb{S}^1\to \RR$ is a continuous function.
+Let $V$ be an open star-shaped set with respect to the origin.
+Assume $V$ can be described by the inequality $r<f(\theta)$ in the polar $(r,\theta)$-coordinates, where $f\:\mathbb{S}^1\to \RR$ is a continuous function.
 In this case it is not hard to prove the statement.
 But a general star-shaped set, for example the one on the diagram is problematic.
 
@@ -427,16 +427,16 @@ But a general star-shaped set, for example the one on the diagram is problematic
 \end{Figure}
 
 To do the general case,
-show that $\Omega$ can be presented as a union of a nested sequence of open sets $\Omega_0\subset \Omega_1\subset \dots$
-such that each $\Omega_n$ can be described by the inequality $r<f_n(\theta)$ in the polar $(r,\theta)$-coordinates with continuous $f_n\:\mathbb{S}^1\to \RR$.
-We can assume that $\Omega_0$ is a round disc around the origin.
+show that $V$ can be presented as a union of a nested sequence of open sets $V_0\subset V_1\subset \dots$
+such that each $V_n$ can be described by the inequality $r<f_n(\theta)$ in the polar $(r,\theta)$-coordinates with continuous $f_n\:\mathbb{S}^1\to \RR$.
+We can assume that $V_0$ is a round disc around the origin.
 
-Further construct a sequence of homeomorphisms $\phi_n\:\Omega_{n-1}\to\Omega_{n}$ such that 
-the compositions $\Phi_n=\phi_n\circ\dots\circ\phi_1\:\Omega_0\to \Omega_n$ stabilizes for each $x\in\Omega_0$;
+Further construct a sequence of homeomorphisms $\phi_n\:V_{n-1}\to V_{n}$ such that
+the compositions $\Phi_n=\phi_n\circ\dots\circ\phi_1\:V_0\to V_n$ stabilizes for each $x\in V_0$;
 that is, $\Phi_n(x)$ is a fixed point for all sufficiently large $n$.
 Set 
 \[\Phi(x)=\lim_{n\to\infty} \Phi_n(x),\]
-and show that $\Phi$ defines the needed homeomorphism $\Omega_0\leftrightarrow \Omega$.
+and show that $\Phi$ defines the needed homeomorphism $V_0\leftrightarrow V$.
 
 \parbf{\ref{ex:cont-dense}.}
 Suppose that the sets are $P=\{p_1,p_2,\dots \}$ and $Q=\{q_1,q_2,\dots\}$.
@@ -474,19 +474,6 @@ Check the following function
 \tfrac yx &\text{if}\quad 0<y< x,
 \end{cases}
 \]
-
-\parbf{\ref{ex:base};} \textit{only-if part.}
-Use that a base is a collection of open sets.
-
-\parit{If part.} 
-Choose an open set $W\subset\c{Y}$.
-By \ref{def:base}, 
-\[W=\bigcup_\alpha B_\alpha,\]
-for some collection $\{B_\alpha\}$ of sets in the base.
-Then 
-\[f^{-1}(W)=\bigcup_\alpha f^{-1}(B_\alpha).\]
-By the assumption $f^{-1}(B_\alpha)$ is open for any $\alpha$;
-it remains to apply \ref{def:top-space:u}.
 
 \parbf{\ref{ex:base-nbhd}}; \textit{if part.} 
 Choose an open set $N$.
@@ -585,7 +572,7 @@ Finally apply the definition of quotient topology.
 Apply this formula to show that if $G$ is finite and $V$ is closed, then so is $f^{-1}\circ f(V)$.
 
 \parbf{\ref{ex:open-open-cover}.}
-Use \ref{def:top-space:u} and \ref{def:top-space:n}.
+Apply \ref{def:top-space:u}, \ref{def:top-space:n} and \ref{def:cont-top}.
 
 \parbf{\ref{ex:cofinite-compact}.}
 We may assume that the space is nonempty; otherwise there is nothing to prove.
@@ -594,23 +581,21 @@ Its complement is a finite set, say $\{x_1,\dots,x_n\}$.
 For each $x_i$ choose a set $V_i\ni x_i$ from the cover.
 Observe that $\{V_0,\dots,V_0\}$ is a subcover.
 
-\parbf{\ref{ex:unbounded-noncompact}.}
-Consider cover of $S$ by intervals $(-c,c)$ for all $c>0$.
 
-\parbf{\ref{ex:closed-compact}.}
-Choose a point $s\in\bar S\setminus S$ and consider the cover by intervals $(-\infty, s-\eps)$ and $(s+\eps,+\infty)$ for all $\eps>0$.
 
-\parbf{\ref{ex:noncompact-n}.}
+\parbf{\ref{ex:noncompact-un}}; \ref{SHORT.ex:ucompact}. Apply the definition of compact set.
+
+\parit{\ref{SHORT.ex:noncompact-n}.}
 Choose a noncompact space $\c{X}$ and consider topology on the union $\c{X}\cup\{a,b\}$ that includes
 $\c{X}\cup\{a,b\}$, $\c{X}\cup\{a\}$, $\c{X}\cup\{b\}$ and all open sets in $\c{X}$.
 Observe that the sets $\c{X}\cup\{a\}$ and $\c{X}\cup\{b\}$ are compact, but their intersection is not.
 
-\parbf{\ref{ex:ucompact}.} Apply the definition of compact set.
+\parit{\ref{SHORT.ex:noncompact-closed}.} Check subsets in a concrete space.
 
 \parbf{\ref{ex:nested-compact}.} Apply the finite intersection property.
 
 \parbf{\ref{ex:proper-point}.}
-Choose a colletion of closed set $\{Q_\alpha\}$ with finite intersection property in $\c{X}$.
+Choose a colletion of closed set in $\c{X}$, say $\{Q_\alpha\}$, with finite intersection property.
 Assume $\bigcap Q_\alpha=\emptyset$.
 Since $f^{-1}\{y\}$ is compact, for any $y\in \c{Y}$ we can choose a finite collection $Q_{\alpha_1},\ldots, Q_{\alpha_n}$ such that $f^{-1}\{y\}\cap Q_{\alpha_1}\cap\z\ldots\cap Q_{\alpha_n}=\emptyset$.
 Let $C_y=Q_{\alpha_1}\cap\ldots\cap Q_{\alpha_n}$.
@@ -636,12 +621,13 @@ Apply \ref{prop:compact-closed} and \ref{thm:comp-interval}.
 \parbf{\ref{ex:compact-product}.}
 Apply \ref{prop:comp-image} to the projections $\c{X}\times\c{Y}\to\c{X}$ and $\c{X}\times\c{Y}\to\c{Y}$.
 
-\parbf{\ref{ex:inscribed-cover-base}.} Apply \ref{ex:base}.
+\parbf{\ref{ex:inscribed-cover-base}.} Spell the definitions.
 
 \parbf{\ref{ex:fake-proof(thm:compact-product)}.}
-Show by example that the obtained collection 
-$\{V_{\alpha_1}\times W_{\alpha_1},\z\dots,V_{\alpha_n}\z\times W_{\alpha_n},V_{\alpha_1'}\z\times W_{\alpha_1'},\z\dots,V_{\alpha_m'}\z\times W_{\alpha_m'}\}$
-might not cover the whole $\c{X}\times\c{Y}$.
+In general, the sets $V_{\alpha_i}\times W_{\alpha_j'}$ are not the cover $\{V_\alpha\times W_\alpha\}$.
+We only can take the following products,
+$V_{\alpha_i}\times W_{\alpha_i}$ and $V_{\alpha_j'}\z\times W_{\alpha_j'}$, but they
+might not cover the whole $\c{X}\times\c{Y}$ --- show it by example.
 
 \parbf{\ref{ex:closed-graph}.}
 By \ref{prop:cont-closed}, it is sufficient to show that any closed set $A\subset\c{K}$ has closed inverse image $B=f^{-1}(A)\subset\c{X}$.
@@ -831,7 +817,7 @@ To prove the converse, apply \ref{thm:conncted/path-connected}
 Read the note by Tatsuo Homma \cite{homma} and think.
 
 \parit{Comments.}
-This is a well known puzzle; for example, with following interpretation, it apperas in the book of
+This is a well known puzzle; with following interpretation, it apperas in the book of
 Peter Winkler \cite[p. 121]{winkler}:
 \textit{Two monks climb the mountain on the same day, starting at the same time and altitude, but on different paths.
 The paths go up an down on the way to the summit (but never dip below the starting altitude).

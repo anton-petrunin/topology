@@ -332,7 +332,7 @@ dOt z.x, z.y;
 
 whitelabel.lft(btex $p$ etex, z.x);
 whitelabel.bot(btex $x$ etex, z.y);
-whitelabel(btex $F$ etex, (0,-.5)*u);
+whitelabel(btex $V$ etex, (0,-.5)*u);
 endfig;
 
 beginfig(71)

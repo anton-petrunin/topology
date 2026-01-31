@@ -1,11 +1,9 @@
 \chapter{Compactness}
 
-In this chapter we define compact topological spaces --- especially nice spaces that behave in many ways like finite sets.
+In this chapter we define compact spaces --- especially nice topological spaces that behave in many ways like finite sets.
 
 
-In practice, compactness is a powerful replacement for ``closed and bounded'' in $\RR^n$, but the general definition does not resemble it at first glance.
-On compact spaces continuous functions behave well: they are bounded and attain their maxima and minima (\ref{ex:fun(compact)}).
-Moreover, many limiting and convergence arguments become simpler and more robust.
+In practice, compactness is a powerful replacement for ``closed and bounded set'' in $\RR^n$, but the general definition does not resemble it at first glance.
 
 \section{Definition}
 
@@ -22,7 +20,7 @@ A subset of cover $\{V_\alpha\}$ that is also a cover is called its \index{subco
 
 \begin{thm}{Exercise}\label{ex:open-open-cover}
 Let $\{V_\alpha\}$ be an open cover of a topological space $\c{X}$.
-Show that $W\subset \c{X}$ is open if and only if for any $\alpha$ the intersection $W\cap V_\alpha$ is open.
+Show that $W\subset \c{X}$ is open if and only if each intersection $W\cap V_\alpha$ is open.
 
 Conclude that a map $f\:\c{X}\to \c{Y}$ is continuous if for any $\alpha$ the restriction $f|_{V_\alpha}\:V_\alpha\to\c{Y}$ is continuous.
 \end{thm}
@@ -45,29 +43,24 @@ More interesting examples are given in Section~\ref{sec:compact-interval}.
 Show that any set equipped with the cofinite topology is compact.
 \end{thm}
 
-\begin{thm}{Exercise}
-Let $S\subset \RR$ be a compact subset.
-
-\begin{subthm}{ex:closed-compact}
-Show that $S$ is closed.
-\end{subthm}
-
-\begin{subthm}{ex:unbounded-noncompact} Show that $S$ be an bounded;
- that is, for there is $c\in \RR$ such that $|s|\le c$ for any $s\in S$.
-\end{subthm}
-
-\end{thm}
+Let show how to apply the definition.
+Suppose $S\subset \RR$ be a compact set;
+let us show that $S$ is closed.
+Assume $S$ the contrary,
+then we can choose a point $s\in\bar S\setminus S$ and consider the cover of $S$ by intervals $(-\infty, s-\eps)$ and $(s+\eps,+\infty)$ for all $\eps>0$.
+Since it has a finite subcover, a neighborhood of $s$ does not intersect $S$, so $s\notin\bar S$ --- a contradiction.
+Applying the same reasoning for cover of $S$ by all sets intervals $(-c,c)$, one can show that $S$ be an bounded; that is, there is $c\in \RR$ such that $|s|\le c$ for any $s\in S$.
+These two staements will be generalized soon; the following two exercises have similar solutions.
 
 \begin{thm}{Exercise}\label{ex:fun(compact)}
 Let $f$ be a continuous real-valued function that is defined on a compact space $\c{K}$.
 
 \begin{subthm}{ex:fun(compact):bounded}
-Show that $f$ is bounded; that is there is a constant $C$ such that $|f(x)|\le C$ for any $x\in\c{K}$.
+Show that $f$ is bounded; that is there is a constant $c$ such that $|f(x)|\le c$ for any $x\in\c{K}$.
 \end{subthm}
 
-
 \begin{subthm}{ex:fun(compact):min-max}
-Show that $f$ attains its maximum and minimum; that is there are points $x_{\min},x_{\max}\in \c{K}$ such that
+Show that $f$ attains its maximum and minimum; that is, there are points $x_{\min},x_{\max}\in \c{K}$ such that
 \[f(x_{\min})\le f(x)\le f(x_{\max})\]
 for any $x\in \c{K}$.
 \end{subthm}
@@ -83,12 +76,14 @@ Show that union of two compact sets is compact.
 \begin{subthm}{ex:noncompact-n}
 Construct a topological space with two compact sets such that their intersection is not compact.
 \end{subthm}
+
+\begin{subthm}{ex:noncompact-closed}
+Construct a topological space with a set that is compact, but not closed.
+\end{subthm}
+
 \end{thm}
 
 \section{Compactification}
-
-As we mentioned, comact spaces are close reatives of finite sets,
-but, as you can see from the following statement, this relation is not too direct.
 
 \begin{thm}{Claim}
 Every topological space is homeomorphich to subspace of a compact space.
@@ -97,13 +92,13 @@ Every topological space is homeomorphich to subspace of a compact space.
 \parit{Proof.}
 Choose a topological space $\c{X}$.
 Let us add to $\c{X}$ one extra point that will be denoted by $\infty$.
-A set $V$ in $\hat{\c{X}}=\c{X}\cup\{\infty\}$ is declared to be open if $V$ is an open subset in $\c{X}$ (in this case $\infty\notin V$) or $\infty\in V$ and its complement $\c{X}\setminus V$ is a closed and compact subset of $\c{X}$.
+A set $V$ in $\c{X}^\infty=\c{X}\cup\{\infty\}$ is declared to be open if $V$ is an open subset in $\c{X}$ (in this case $\infty\notin V$) or $\infty\in V$ and its complement $\c{X}\setminus V$ is a closed \textit{and} compact subset of $\c{X}$.
 
 We need to check the conditions in \ref{def:top-space}:
-\ref{SHORT.def:top-space:empty} and \ref{SHORT.def:top-space:u} are straightforward and \ref{def:top-space:n} follows since union of two closed sets is closed and \ref{ex:ucompact}.
+\ref{SHORT.def:top-space:empty} and \ref{SHORT.def:top-space:u} are straightforward and \ref{SHORT.def:top-space:n} follows since union of two closed sets is closed and union of two compact sets is compact \ref{ex:ucompact}.
 \qeds
 
-The space $\hat{\c{X}}$ constructed in the proof is called the \index{one-point compactification}\emph{one-point compactification} of $\c{X}$.
+The space $\c{X}^\infty$ constructed in the proof is called the \index{one-point compactification}\emph{one-point compactification} of $\c{X}$.
 
 
 
@@ -112,7 +107,7 @@ The space $\hat{\c{X}}$ constructed in the proof is called the \index{one-point 
 \begin{thm}{Proposition}\label{prop:finite intersection property}
 A space $\c{X}$ is compact if for any collection of closed sets $\{Q_\alpha\}$ in $\c{X}$ such that
 \[\bigcap_{\alpha}Q_\alpha=\emptyset\]
-There is a finite collection $\{Q_{\alpha_1},\dots,Q_{\alpha_n}\}$
+there is a finite collection $\{Q_{\alpha_1},\dots,Q_{\alpha_n}\}$
 such that
 \[Q_{\alpha_1}\cap\dots\cap Q_{\alpha_n}=\emptyset.\]
 
@@ -133,10 +128,10 @@ Observe that
 \[Q_{\alpha_1}\cap\dots\cap Q_{\alpha_n}=\c{X}\setminus(V_{\alpha_1}\cup\dots\cup V_{\alpha_n})=\emptyset.
 \qedsin\]
 
-\mbox{\index{Cantor set}\emph{Cantor set}} is constructed the following way:
-start with the unit interval $[0,1]$, subdivide it into three equal inervals and remove the interior of the middle one.
+Recall that the \mbox{\index{Cantor set}\emph{Cantor set}} is constructed the following way:
+we start with the unit interval $[0,1]$, subdivide it into three equal inervals and remove the interior of the middle one.
 Repeat this procedure recursively for each of the remaining closed intervals.
-Observe that the following exercise imlies that the Cantor set is not empty.
+The following exercise and Theorem~\ref{thm:comp-interval} below will imply that the Cantor set is not empty.
 
 \begin{thm}{Exercise}\label{ex:nested-compact}
 Let $Q_1\supset Q_2\supset\dots$ be a nested sequence of closed nonempty sets in a compact space $\c{K}$.
@@ -172,7 +167,7 @@ Note that $\{V_\alpha\}$ is also a cover for two intervals
 \quad\text{and}\quad
 [\tfrac{a_0+b_0}2,b_0].\]
 Furthermore, if $\{V_\alpha\}$ has a finite subcover of each of these two subintervals,
-then these two subcovers together give a finite cover of $[a,b]$.
+then these two subcovers together give a finite cover of $[a_0,b_0]$.
 Thus $\{V_\alpha\}$ must have no finite subcovers of \textit{at least one} of these subintervals;
 denote it by $[a_1,b_1]$;
 so either $a_1=a_0$ and $b_1=\tfrac{a_0+b_0}2$ or $a_1=\tfrac{a_0+b_0}2$ and $b_1=b_0$.
@@ -189,8 +184,9 @@ Observe that
 \[
 a_0\le a_1\le \dots \le b_1\le b_0
 \quad\text{and}\quad
-b_n-a_n=\tfrac{b-a}{2^n}.
+b_n-a_n=\tfrac{b-a}{2^n}
 \]
+for any $n$.
 Denote by $x$ the least upper bound of $\{a_n\}$.
 Note that $x\in [a_n,b_n]$ for any $n$.%
 \footnote{In fact, $a_n\to x$ and $b_n\to x$ as $n\to\infty$, but we will not use it directly.}
@@ -244,10 +240,10 @@ Since $\c{K}$ is compact, we can choose a finite subcover, say $\{W,V_{\alpha_1}
 Observe that $\{V_{\alpha_1},\dots,V_{\alpha_n}\}$ is a cover of $Q$, hence the result.
 \qeds
 
-In the proof, we add an extra open set to the cover, use it, and take it away.%
-\footnote{This type of reasoning is useful in all branches of mathematics;
-sometimes it is called the \index{17 camels trick}\emph{17 camels trick}~\cite{17-camels}.
-The name comes from the following mathematical parable:
+In the proof, we add an extra open set to the cover, use it, and take it away.
+This type of reasoning is useful in all branches of mathematics;
+sometimes it is called the \index{17 camels trick}\emph{17 camels trick}.%
+\footnote{The name comes from the following mathematical parable~\cite{17-camels}:
 \textit{A father left 17 camels to his three sons and, according to the will,
 the eldest son should be given half of all camels,
 the middle son the 1/3 part,
@@ -314,8 +310,7 @@ Since $\c{X}$ is compact, we can choose its finite subcover $\{V_{\alpha_1},\dot
 Similarly, $\{W_\alpha\}$ is a cover of $\c{Y}$.
 So we can choose its finite subcover $\{W_{\alpha_1'},\dots,W_{\alpha_m'}\}$.
 
-Finally observe that 
-\[\{V_{\alpha_1}\times W_{\alpha_1},\dots,V_{\alpha_n}\times W_{\alpha_n},V_{\alpha_1'}\times W_{\alpha_1'},\dots,V_{\alpha_m'}\times W_{\alpha_m'}\}\] is a finite cover of $\c{X}\times\c{Y}$.
+Finally observe that products $V_{\alpha_i}\times V_{\alpha_j'}$ cover $\c{X}\times\c{Y}$.
 \qeds
 
 \parit{Proof of \ref{thm:compact-product}.}
@@ -363,7 +358,7 @@ Show that $f$ is continuous if and only if its graph $\Gamma=\set{(x,f(x))}{x\in
 
 \section{Remarks}
 
-We omit the proof of the following theorem, but it is worth knowing this result.
+We omit the proof of the following theorem, but it is worth knowing.
 
 \begin{thm}{Alexander prebase theorem}
 A topological space $\c{X}$ is compact if and only if for some (and therefore any) prebase $\s{P}$ in $\c{X}$, every cover of $\c{X}$ by elements of $\s{P}$ admits a finite subcover.

@@ -7,9 +7,9 @@ Here we introduce several constructions that produce new topological spaces from
 Recall that $\c{X}\times\c{Y}$ denotes the set of all pairs $(x,y)$ such that $x\in\c{X}$ and  $y\in\c{Y}$.
 
 Suppose that the sets $\c{X}$ and $\c{Y}$ are equipped with topologies.
-Let us construct the \index{product topology}\emph{product topology} on $\c{X}\times\c{Y}$ by declaring that a set is open in $\c{X}\times\c{Y}$ if it can be presented as a union of sets of the following type: $V\times W$ for open sets $V\subset \c{X}$ and $W\subset \c{Y}$.
-In other words, a subset $U$ is open in $\c{X}\times\c{Y}$ if and only if there are collections of open sets $V_\alpha\subset \c{X}$ and $W_\alpha\subset \c{Y}$  such that 
-\[U=\bigcup_\alpha V_\alpha\times W_\alpha,\]
+Let us equip $\c{X}\times\c{Y}$ with topology by declaring that a set is open in $\c{X}\times\c{Y}$ if it can be presented as a union of sets of the following type: $V\times W$ for open sets $V\subset \c{X}$ and $W\subset \c{Y}$.
+In other words, a subset $O$ is open in $\c{X}\times\c{Y}$ if and only if there are collections of open sets $V_\alpha\subset \c{X}$ and $W_\alpha\subset \c{Y}$  such that
+\[O=\bigcup_\alpha V_\alpha\times W_\alpha,\]
 here $\alpha$ runs in some index set.
 
 By default, we assume that $\c{X}\times\c{Y}$ is equipped with the product topology;
@@ -24,27 +24,27 @@ Parts \ref{SHORT.def:top-space:empty} and \ref{SHORT.def:top-space:u} in \ref{de
 It remains to check \ref{SHORT.def:top-space:n}.
 Consider two sets
 \[
-U=\bigcup_\alpha V_\alpha\times W_\alpha
+O=\bigcup_\alpha V_\alpha\times W_\alpha
 \quad\text{and}\quad
-U'=\bigcup_\beta V'_\beta\times W'_\beta.
+O'=\bigcup_\beta V'_\beta\times W'_\beta.
 \]
 where $\alpha$ and $\beta$ run in some index sets, say $\c{I}$ and $\c{J}$ respectively.
-We need to show that $U\cap U'$ can be presented as a union of products of open sets;
+We need to show that $O\cap O'$ can be presented as a union of products of open sets;
 the latter follows from the next set-theoretical identity
-\[U\cap U'=\bigcup_{\alpha,\beta} (V_\alpha\cap V'_\beta)\times (W_\alpha\cap W'_\beta).\eqlbl{eq:nu=un}\]
+\[O\cap O'=\bigcup_{\alpha,\beta} (V_\alpha\cap V'_\beta)\times (W_\alpha\cap W'_\beta).\eqlbl{eq:nu=un}\]
 
 Checking  \ref{eq:nu=un} is straightforward.
-Indeed, $(x,y)\in U\cap U'$ means that $(x,y)\in U$ and $(x,y)\in U'$;
+Indeed, $(x,y)\in O\cap O'$ means that $(x,y)\in O$ and $(x,y)\in O'$;
 the latter means that $x\in V_\alpha$, $y\in W_\alpha$ and $x\in V'_\beta$, $y\in W'_\beta$ for \textit{some} $\alpha$ and $\beta$.
 In other words, $x\in V_\alpha\cap V'_\beta$ and $y\in W_\alpha\cap W'_\beta$ for \textit{some} $\alpha$ and $\beta$;
 the latter means that $(x,y)$ belongs to the right-hand side in \ref{eq:nu=un}.
 \qeds
 
-By spelling the definition of product topology, we get the following statement.
+By spelling out the above definition, we get the following.
 
 \begin{thm}{Observation}
 Two maps $f\:\c{X}\to\c{Y}$ and $g\:\c{X}\to\c{Z}$ are continuous if and only if
-the $x\mapsto (f(x),g(x))$ defines a continuous map $\c{X}\to\c{Y}\times \c{Z}$.
+$x\mapsto (f(x),g(x))$ is a continuous map $\c{X}\to\c{Y}\times \c{Z}$.
 \end{thm}
 
 
@@ -56,7 +56,7 @@ Show that (a) $h_1=f+g$, (b) $h_2=f\cdot g$, and (c) $h_3(x)\df\max\{\,f(x), g(x
 
 \begin{thm}{Exercise}\label{ex:bryAxB}
 Show that
-$\partial (A\times B)=(\partial A\times B)\cup(A\times \partial B)$
+$\partial (A\times B)=(\partial A\times \bar B)\cup(\bar A\times \partial B)$
 for any subsets $A\subset\c{X}$, $B\subset\c{Y}$ and their product $A\times B$ in the product space $\c{X}\times \c{Y}$.
 \end{thm}
 
@@ -84,12 +84,6 @@ another example is the set of all balls with radii smaller than $1$.
 
 In many cases, it is convenient (and also economical) to describe the topology by specifying its base.
 For example, the product topology on $\c{X}\times\c{Y}$ can be redefined as a \textit{topology with a base formed by all products $V\times W$, where $V$ is open in $\c{X}$, and $W$ is open in $\c{Y}$}.
-
-\begin{thm}{Exercise}\label{ex:base}
-Let $\s{B}$ be a base for the topology on $\c{Y}$.
-Show that a map $f\: \c{X} \to \c{Y}$ is continuous if and only if $f^{-1}(B)$ is open for any set $B$ in $\s{B}$.
-
-\end{thm}
 
 \begin{thm}{Exercise}\label{ex:base-nbhd}
 Let $\s{B}$ be a collection of open sets in a topological space $\c{X}$.
@@ -139,7 +133,7 @@ It follows that $O\cap O'\in\s{O}$ if $O,O'\in\s{O}$.
 \begin{thm}{Exercise}\label{ex:base-N}
 Let $\NN=\{\,1,2,\dots\,\}$ be the set of natural numbers,
 and let $\s{B}$ be a set of all arithmetic progressions in $\NN$;
-that is, $\s{B}$ includes $\{\,a,a+d,a+2\cdot d,\dots\,\}$ for any $a, d\in \NN$.
+that is, $\s{B}$ includes the set $\{\,a,a+d,a+2\cdot d,\dots\,\}$ for any $a, d\in \NN$.
 
 Show that $\s{B}$ is a base of some topology on $\NN$.
 Is it true that in this topology the set $\{1\}$ is open and/or closed?
@@ -153,6 +147,8 @@ Suppose $\s{P}$ is a collection of subsets of $\c{X}$ that covers the whole spac
 that is, $\c{X}$ is a union of all sets in $\s{P}$.
 By \ref{prop:base-any}, the set of all finite intersections of sets in $\s{P}$ is a base for \textit{some} topology on $\c{X}$.
 The set $\s{P}$ is called a \index{prebase}\emph{prebase} for this topology (also known as a \index{subbase}\emph{subbase}).
+
+Note that any base is a prebase, but not the other way around.
 
 \begin{thm}{Exercise}\label{ex:prebase}
 Let $\s{P}$ be a prebase for the topology on $\c{Y}$.
@@ -181,7 +177,7 @@ Show that $f$ is continuous if and only if $F$ is an embedding.
 \section{Initial topology}\label{induced-family}
 
 Let $\c{X}$ and $\c{Y}$ be topological spaces.
-Note that the product topology on $\c{X}\times\c{Y}$ is the weakest topology such that the following two projections $(x,y)\mapsto x$ and $(x,y)\mapsto y$ respectively are continuous.
+Note that the product topology on $\c{X}\times\c{Y}$ is the weakest topology such that projections $(x,y)\mapsto x$ and $(x,y)\mapsto y$ are continuous.
 
 Indeed, these projections are continuous if the inverse images of all open sets in $\c{X}$ and $\c{Y}$ are open in $\c{X}\times\c{Y}$.
 In other words, the topology on $\c{X}\times\c{Y}$ must contain all sets of the form $V\times \c{Y}$ and $\c{X}\times W$ for open sets $V\subset \c{X}$ and $W\subset \c{Y}$.
@@ -190,13 +186,12 @@ By \ref{ex:graph:prebase}, these sets form a prebase in $\c{X}\times\c{Y}$ and i
 More generally, given a collection of maps $f_\alpha\:S\to \c{Y}_\alpha$ from a set $S$ to topological spaces $\c{Y}_\alpha$, we can introduce a topology on $S$ by stating that the inverse images $f^{-1}_\alpha(W_\alpha)$ for open sets $W_\alpha\subset\c{Y}_\alpha$ form its prebase.
 It defines the topology on $S$ \index{induced topology}\emph{induced} by the maps $f_\alpha$;
 it is the weakest topology on $S$ that makes all maps $f_\alpha$ continuous.
+For example, if we apply this construction to the inclusion map $S\hookrightarrow \c{Y}$ of a subset $S\subset \c{Y}$, then we get \emph{induced topology} on $S$ (see \ref{sec:induced-topology}).
 
 This construction produces a topology on the source space;
 for that reason it is also called the \index{initial topology}\emph{initial topology}.
-
-Note that \emph{induced topology} on a subset $A\to \c{Y}_\alpha$ discussed in \ref{sec:induced-topology} is the initial topology for the inclusion map $A\to \c{Y}_\alpha$.
-Furthermore, this construction can be used to define a topology on an infinite product of spaces, as the induced topology for all its projections.
-This topology is called the \index{product topology}\emph{product topology}, or the \index{Tychonoff topology}\emph{Tychonoff topology}.
+It can be used to define a topology on an infinite product of spaces, as the induced topology for all its projections.
+This topology is called the \index{Tychonoff topology}\emph{Tychonoff topology}.
 
 \begin{thm}{Advanced exercise}\label{ex:induced-nonmetrizable}
 Let $\s{O}$ be the topology on $\RR$ induced by the maps $x\mapsto (\cos(t\cdot x),\sin(t\cdot x))$ for all $t\in \RR$.
@@ -206,8 +201,7 @@ Show that the space $(\RR,\s{O})$ is not metrizable.
 \section{Final topology}\label{sec:final-topology}
 
 In the previous section, we defined a natural way to move a topology from the target space to the source of a map.
-Namely, suppose $f\:\c{X}\to\c{Y}$ is a map between two sets.
-If $\c{Y}$ is equipped with a topology, then we can declare a subset $V\subset\c{X}$ to be open if there is an open subset $W\subset\c{Y}$ such that $V=f^{-1}(W)$.
+Namely, if $f\:\c{X}\z\to\c{Y}$ is a map, and $\c{Y}$ comes with a topology, then a subset $V\subset\c{X}$ is declared to be open if there is an open subset $W\subset\c{Y}$ such that $V=f^{-1}(W)$.
 
 The following exercise describes an analogous construction that moves a topology from source to target.
 It can be solved by checking the conditions in \ref{def:top-space} as we did in \ref{sec:induced-topology}.
@@ -221,6 +215,8 @@ Show that it defines a topology on $\c{Y}$.
 \end{thm}
 
 The constructed topology on $\c{Y}$ is called the \index{final topology}\emph{final} topology for $f$.
+Note that points in $\c{Y}$ outside the image of $\c{X}$ form open one-point sets;
+indeed, if $y\notin f(\c{X})$, then $f^{-1}\{y\}=\emptyset$, and so $\{y\}$ is open.
 
 \begin{thm}{Exercise}\label{ex:pullback/pushforward}
 Let $f\:\c{X}\to\c{Y}$ be a continuous map between topological spaces.
@@ -253,7 +249,7 @@ Show that a map $h\:\c{Y}\to\c{Z}$ is continuous if and only if the composition 
 \begin{thm}{Exercise}\label{ex:open-closed-pushforward}
 Let $f\:\c{X}\to \c{Y}$ be a continuous surjective map.
 Assume $f$ is (a) open or (b) closed.
-Show that $\c{Y}$ is equipped with the final topology.
+Show that $\c{Y}$ has the final topology induced by $f$.
 \end{thm}
 
 \section{Quotient topology}
@@ -277,7 +273,7 @@ is called the \index{equivalence class}\emph{equivalence class} of $x$.
 The set of all equivalence classes in $\c{X}$ will be denoted by $\c{X}/{\sim}$.
 
 Observe that $x\mapsto [x]$ defines a surjective map $\c{X}\to \c{X}/{\sim}$.
-The corresponding final topology on $\c{X}/{\sim}$ is called the \index{quotient topology}\emph{quotient topology} on $\c{X}/{\sim}$.
+The corresponding final topology on $\c{X}/{\sim}$ is called the \index{quotient topology}\emph{quotient topology}.
 By default, $\c{X}/{\sim}$ is equipped with the quotient topology;
 in this case, it is called a \index{quotient space}\emph{quotient space}.
 
@@ -285,9 +281,9 @@ The following exercise ties equivalence relations with maps.
 
 \begin{thm}{Exercise}\label{ex:eq-relation-f}
 Show that an arbitrary map $f\:\c{X}\to \c{Y}$ defines the following equivalence relation on $\c{X}$:
-\[x\sim x'\quad\text{if and only if}\quad f(x)=f(x').\]
+\[x\sim x'\quad\Leftrightarrow\quad f(x)=f(x').\]
 Moreover,
-\[y=f(x)\quad\text{if and only if}\quad [x]=f^{-1}\{f(x)\}.\]
+\[f(x)=y\quad\Leftrightarrow\quad [x]=f^{-1}\{y\}.\]
 \end{thm}
 
 Given a set $A$ in a topological space $\c{X}$, the space $\c{X}/A$ is defined as the quotient space $\c{X}/{\sim}$ for the minimal equivalence relation such that $a\sim b$ for any $a,b\in A$.
@@ -309,12 +305,12 @@ In this case we may say that $G$ \emph{acts} on $\c{X}$, briefly $G\acts\c{X}$.
 
 Typically we are interested in group actions that preserve some structure of the set $\c{X}$.
 If $\c{X}$ is a topological space, then it is natural to assume that each $g\in G$ is a continuous bijection $\c{X}\to \c{X}$.
-Such an action $G\acts\c{X}$ is called \index{continuous action}\emph{continuous}.
+In this case the action $G\acts\c{X}$ is called \index{continuous action}\emph{continuous}.
 For such an action each $g\in G$ defines a homeomorphism $\c{X}\to \c{X}$.
 Indeed, if $g\in G$, then $g^{-1}\in G$; therefore $g$ as well as its inverse must be continuous.
 Actions on topological spaces will always be assumed to be continuous.
 
-Given an action $G\acts\c{X}$, we can equip the set $G$ with product defined as composition;
+Given an action $G\acts\c{X}$, we can equip the set $G$ with a product defined as composition;
 that is, if $g,h\in G$ then its product $g\cdot h\in G$ is defined as
 $(g\cdot h)(x)\df g(h(x))$.
 With this operation, $G$ becomes a \emph{group}; that is, it meets the following properties:
@@ -332,12 +328,11 @@ Associativity follows since it holds for composition, and one can take $1=\id_{\
 Finally note that an abstract group (that is, a set $G$ with product that meets the three properties above) acts on itself by $g\: h\mapsto g\cdot h$, so any group acts on some set.
 Furthermore, we may equip $G$ with discrete topology and this way we obtain a continuous action $G\acts G$.
 So you may think that actions are more fundamental than groups.
-A group should be defined by its action, not the other way around.
 
 For an action $G\acts \c{X}$, it is common to denote $g(x)$ by $g\cdot x$, where $g\in G$ and $x\in\c{X}$.
 Note that associativity implies that the expression
 \[g\cdot h\cdot x\]
-makes sense for any $g,h\in G$ and $x\in \c{X}$; that is, it does not depend on parentheses.
+makes sense for any $g,h\in G$ and $x\in \c{X}$; that is, $g\cdot (h\cdot x)=(g\cdot h)\cdot x$.
 
 \section{Orbit spaces}
 
@@ -352,7 +347,7 @@ Indeed,
 $x\sim x$ since $x=1\cdot x$.
 Further, if $y=g\cdot x$, then
 \[x=1\cdot x=g^{-1}\cdot g\cdot  x=g^{-1}\cdot y;\] since $g^{-1}\in G$ we get that $x\sim y$
-$\Longrightarrow$
+$\Rightarrow$
 $y\sim x$.
 Finally, suppose $x\sim y$ and $y\sim z$;
 that is, $y=g\cdot x$ and $z=h\cdot y$ for some $g,h\in G$, then $z=(h\cdot g)\cdot x$;
@@ -361,7 +356,7 @@ therefore $x\sim z$.
 For the described equivalence relation, the quotient space $\c{X}/{\sim}$ can also be denoted by $\c{X}/G$;
 it is called the quotient of $\c{X}$ by the action of~$G$.
 
-Note that $[x]=G\cdot x$; that is, the orbit of $x$ coincides with its equivalence class.
+Note that $[x]=G\cdot x$; that is, the orbit of $x$ coincides with its equivalence class of $\sim$.
 For that reason, $\c{X}/G$ is also called the \index{orbit space}\emph{orbit space}.
 
 \begin{thm}{Exercise}\label{ex:R/R}
