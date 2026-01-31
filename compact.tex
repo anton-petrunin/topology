@@ -15,7 +15,7 @@ that is, if every $x\in \c{X}$ belongs to some~$V_\alpha$.
 
 More generally, $\{V_\alpha\}$ is an {}\emph{open cover of a subset} $S\subset \c{X}$ if any $s\in S$ belongs to some~$V_\alpha$.
 
-A subset of cover $\{V_\alpha\}$ that is also a cover is called its \index{subcover}\emph{subcover} of $\{V_\alpha\}$.
+A subcollection of the cover $\{V_\alpha\}$ that is also a cover is called its \index{subcover}\emph{subcover} of $\{V_\alpha\}$.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:open-open-cover}
@@ -43,14 +43,14 @@ More interesting examples are given in Section~\ref{sec:compact-interval}.
 Show that any set equipped with the cofinite topology is compact.
 \end{thm}
 
-Let show how to apply the definition.
+Let us show how to apply the definition.
 Suppose $S\subset \RR$ be a compact set;
 let us show that $S$ is closed.
-Assume $S$ the contrary,
+Assume the contrary,
 then we can choose a point $s\in\bar S\setminus S$ and consider the cover of $S$ by intervals $(-\infty, s-\eps)$ and $(s+\eps,+\infty)$ for all $\eps>0$.
 Since it has a finite subcover, a neighborhood of $s$ does not intersect $S$, so $s\notin\bar S$ --- a contradiction.
-Applying the same reasoning for cover of $S$ by all sets intervals $(-c,c)$, one can show that $S$ be an bounded; that is, there is $c\in \RR$ such that $|s|\le c$ for any $s\in S$.
-These two staements will be generalized soon; the following two exercises have similar solutions.
+Applying the same reasoning for cover of $S$ by all intervals $(-c,c)$, one can show that $S$ is bounded; that is, there is $c\in \RR$ such that $|s|\le c$ for any $s\in S$.
+These two statements will be generalized soon; the following two exercises have similar solutions.
 
 \begin{thm}{Exercise}\label{ex:fun(compact)}
 Let $f$ be a continuous real-valued function that is defined on a compact space $\c{K}$.
@@ -74,19 +74,23 @@ Show that union of two compact sets is compact.
 \end{subthm}
 
 \begin{subthm}{ex:noncompact-n}
-Construct a topological space with two compact sets such that their intersection is not compact.
+Construct a topological space with two compact sets such that their intersection is not compact.%
+\footnote{Such examples cannot be metrizable.}
 \end{subthm}
 
 \begin{subthm}{ex:noncompact-closed}
-Construct a topological space with a set that is compact, but not closed.
+Construct a topological space with a set that is compact, but not closed.%
+\footnotemark[\value{footnote}]
+
 \end{subthm}
+
 
 \end{thm}
 
 \section{Compactification}
 
 \begin{thm}{Claim}
-Every topological space is homeomorphich to subspace of a compact space.
+Every topological space is homeomorphic to a subspace of a compact space.
 \end{thm}
 
 \parit{Proof.}
@@ -95,7 +99,7 @@ Let us add to $\c{X}$ one extra point that will be denoted by $\infty$.
 A set $V$ in $\c{X}^\infty=\c{X}\cup\{\infty\}$ is declared to be open if $V$ is an open subset in $\c{X}$ (in this case $\infty\notin V$) or $\infty\in V$ and its complement $\c{X}\setminus V$ is a closed \textit{and} compact subset of $\c{X}$.
 
 We need to check the conditions in \ref{def:top-space}:
-\ref{SHORT.def:top-space:empty} and \ref{SHORT.def:top-space:u} are straightforward and \ref{SHORT.def:top-space:n} follows since union of two closed sets is closed and union of two compact sets is compact \ref{ex:ucompact}.
+\ref{SHORT.def:top-space:empty} and \ref{SHORT.def:top-space:u} are straightforward and \ref{SHORT.def:top-space:n} follows since union of two closed sets is closed and union of two compact sets is compact; see \ref{ex:ucompact}.
 \qeds
 
 The space $\c{X}^\infty$ constructed in the proof is called the \index{one-point compactification}\emph{one-point compactification} of $\c{X}$.
@@ -105,7 +109,7 @@ The space $\c{X}^\infty$ constructed in the proof is called the \index{one-point
 \section{Finite intersection property} 
 
 \begin{thm}{Proposition}\label{prop:finite intersection property}
-A space $\c{X}$ is compact if for any collection of closed sets $\{Q_\alpha\}$ in $\c{X}$ such that
+A topological space $\c{X}$ is compact if and only if for any collection of closed sets $\{Q_\alpha\}$ in $\c{X}$ such that
 \[\bigcap_{\alpha}Q_\alpha=\emptyset\]
 there is a finite collection $\{Q_{\alpha_1},\dots,Q_{\alpha_n}\}$
 such that
@@ -120,25 +124,22 @@ According to the proposition, compactness is equivalent to the following propert
 By the definition of closed sets, the complements $V_\alpha=\c{X}\setminus Q_\alpha$ are open.
 Note that 
 \[\bigcup_\alpha V_\alpha=\c{X}\setminus \left(\bigcap_{\alpha}Q_\alpha\right)=\c{X};\]
-that is, $\{V_\alpha\}$ is an open cover of $\c{X}$.
+that is, $\{V_\alpha\}$ is an open cover of $\c{X}$ if and only if $\bigcap Q_\alpha=\emptyset$.
 
-Choose a finite subcover $\{V_{\alpha_1},\dots,V_{\alpha_n}\}$;
-so, $V_{\alpha_1}\cup\dots\cup V_{\alpha_n}=\c{X}$.
+
 Observe that
 \[Q_{\alpha_1}\cap\dots\cap Q_{\alpha_n}=\c{X}\setminus(V_{\alpha_1}\cup\dots\cup V_{\alpha_n})=\emptyset.
-\qedsin\]
-
-Recall that the \mbox{\index{Cantor set}\emph{Cantor set}} is constructed the following way:
-we start with the unit interval $[0,1]$, subdivide it into three equal inervals and remove the interior of the middle one.
-Repeat this procedure recursively for each of the remaining closed intervals.
-The following exercise and Theorem~\ref{thm:comp-interval} below will imply that the Cantor set is not empty.
+\]
+Therefore, $\{V_{\alpha_1},\dots,V_{\alpha_n}\}$ is a finite subcover if and only if
+the intersection $Q_{\alpha_1}\cap\dots\cap Q_{\alpha_n}$ is empty, hence the result.
+\qeds
 
 \begin{thm}{Exercise}\label{ex:nested-compact}
 Let $Q_1\supset Q_2\supset\dots$ be a nested sequence of closed nonempty sets in a compact space $\c{K}$.
 Show that there is a point $q\in \c{K}$ such that $q\in Q_n$ for any $n$.
 \end{thm}
 
-\begin{thm}{Exercise}\label{ex:proper-point}
+\begin{thm}{Advanced exercise}\label{ex:proper-point}
 Let $f\:\c{X}\to\c{Y}$ be a closed continuous map.
 Assume that $\c{Y}$ is compact and every point $y\in \c{Y}$ has compact inverse image $f^{-1}\{y\}\subset \c{X}$.
 Show that $\c{X}$ is compact.
@@ -160,7 +161,7 @@ Any closed interval $[a,b]$ is a compact subset of $\RR$.
 \parit{Proof.}
 Set $a_0=a$ and $b_0=b$, so $[a,b]=[a_0,b_0]$.
 
-Arguing by contradiction, assume that there is an open cover $\{V_\alpha\}$ of $[a_0,b_0]$ that has no finite subcovers.
+Arguing by contradiction, assume that there is an open cover $\{V_\alpha\}$ of $[a_0,b_0]$ that has no finite subcover.
 
 Note that $\{V_\alpha\}$ is also a cover for two intervals 
 \[[a_0,\tfrac{a_0+b_0}2]
@@ -168,7 +169,7 @@ Note that $\{V_\alpha\}$ is also a cover for two intervals
 [\tfrac{a_0+b_0}2,b_0].\]
 Furthermore, if $\{V_\alpha\}$ has a finite subcover of each of these two subintervals,
 then these two subcovers together give a finite cover of $[a_0,b_0]$.
-Thus $\{V_\alpha\}$ must have no finite subcovers of \textit{at least one} of these subintervals;
+Thus $\{V_\alpha\}$ must have no finite subcover for \textit{at least one} of these subintervals;
 denote it by $[a_1,b_1]$;
 so either $a_1=a_0$ and $b_1=\tfrac{a_0+b_0}2$ or $a_1=\tfrac{a_0+b_0}2$ and $b_1=b_0$.
 
