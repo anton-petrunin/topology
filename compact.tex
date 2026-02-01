@@ -365,9 +365,41 @@ We omit the proof of the following theorem, but it is worth knowing.
 A topological space $\c{X}$ is compact if and only if for some (and therefore any) prebase $\s{P}$ in $\c{X}$, every cover of $\c{X}$ by elements of $\s{P}$ admits a finite subcover.
 \end{thm}
 
-\begin{thm}{Exercise}\label{ex:alexander+product}
-Use the Alexander prebase theorem to give a short proof of \ref{thm:compact-product}.
+Applying this theorem to the prebase from \ref{ex:graph:prebase} gives a short proof of \ref{thm:compact-product}.
+Indeed, suppose that a cover of the product space $\c{X}\times \c{Y}$ consists only of products $V_\alpha\times  \c{Y}$ and $\c{X}\times W_\beta$, where $V_\alpha\subset \c{X}$ and $W_\beta\subset \c{Y}$ are open sets.
+Note that that $\bigcup V_\alpha= \c{X}$ or $\bigcup W_\beta= \c{Y}$,
+otherwise the union of $V_\alpha\times  \c{Y}$ and $\c{X}\times W_\beta$ would not cover $\c{X}\times \c{Y}$.
+Therefore, we can assume that $\{V_\alpha\}$ cover $\c{X}$.
+Since $\c{X}$ is compact we can choose a finte subcover $\{V_{\alpha_1},\dots,V_{\alpha_n}\}$.
+It remains to observe that $\{V_{\alpha_1}\times  \c{Y},\dots,V_{\alpha_n}\times  \c{Y}\}$ covers $\c{X}\times\c{Y}$ and apply the Alexander prebase theorem.
+
+Let us show one more application of this theorem.
+
+Start with a set $S$.
+Denote by \index{Power}$\Power(S)$ the set of all subsets in $S$.
+Given $s\in S$, define sets
+\[\mathfrak{V}_s=\set{X\subset S}{X\ni s}
+\quad\text{and}\quad
+\mathfrak{W}_s=\set{X\subset S}{X\not\ni s}.
+\]
+Note that $X\subset S$ means that $X\in \Power(S)$, so $\mathfrak{V}_s,\mathfrak{W}_s\subset  \Power(S)$.
+
+Equip $\Power(S)$ with topology defined by prebase $\{\mathfrak{V}_s,\mathfrak{W}_s\}_{s\in S}$, now we can call it \index{power space}\emph{power space}.
+Applying the argument above one can see that $\Power(S)$ is a compact space for \textit{any} set $S$.
+This is a partial case of the \index{Tychonoff compactness theorem}\emph{Tychonoff compactness theorem}.
+
+For finite set $F$ the space $\Power(F)$ is a descrete space with $2^{|F|}$ points.
+For the set of natural numnbers $\NN=\{1,2,\dots\}$ its power space $\Power(\NN)$ is homeomorphic to the Cantor set $\c{C}\subset [0,1]$.
+(The set $\c{C}$ constructed as an intersection of nested sequence of subsets $[0,1]\z=\c{C}_0\supset \c{C}_1\supset \dots$ such that $\c{C}_{i+1}$ is obtained from $\c{C}_i$ by deleting the open middle third from every line segment in it.)
+The following exercise describes a tryully scare example of compact space.
+
+\begin{thm}{Advnced exercise}\label{ex:power-power}
+Let $\c{A}=\Power(\NN)$ and $\c{B}=\Power(\c{A})$; as we know $\c{B}$ is a compact space.
+Show that the following sequence of points $\mathfrak{p}_1$, $\mathfrak{p}_2,\dots$ in $\c{B}$ does not have a converginge subsequence:
+\[\mathfrak{p}_n=\set{P\in\c{A}}{P\not\ni n}.\]
+
 \end{thm}
+
 
 
 

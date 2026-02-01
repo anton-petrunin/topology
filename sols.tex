@@ -411,7 +411,7 @@ Try to build the needed function from $x\mapsto \arctan x$ or $x\mapsto e^{-e^x}
 \parbf{\ref{ex:homeo=eq}.}
 Apply the definitions of homeomorphism and \ref{ex:composition-continuous}.
 
-\parbf{\ref{ex:inversion}.}
+\parbf{\ref{ex:square}+\ref{ex:inversion}.}
 Learn about inversion transformation and try to apply it.
 
 \parbf{\ref{ex:star-shaped}.}
@@ -437,6 +437,16 @@ that is, $\Phi_n(x)$ is a fixed point for all sufficiently large $n$.
 Set 
 \[\Phi(x)=\lim_{n\to\infty} \Phi_n(x),\]
 and show that $\Phi$ defines the needed homeomorphism $V_0\leftrightarrow V$.
+
+\parit{Commnet.}
+Note that the boundary of $V$ might be not homeomorphic the the circle;
+an example can be guessed from the picture.
+
+\begin{Figure}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-72}
+\end{Figure}
 
 \parbf{\ref{ex:cont-dense}.}
 Suppose that the sets are $P=\{p_1,p_2,\dots \}$ and $Q=\{q_1,q_2,\dots\}$.
@@ -654,8 +664,11 @@ The following function $f\:\RR\to\RR$ has closed graph, but is not continuous:
 \]
 It shows that compactness of $\c{K}$ is a necessary assumption.
 
-\parbf{\ref{ex:alexander+product}.}
-Apply the theorem to the prebase from \ref{ex:graph:prebase}.
+\parbf{\ref{ex:power-power}.}
+If there is a converging subsequence $\mathfrak{p}_{i_1}$, $\mathfrak{p}_{i_2},\dots$,
+then we can choose a set $S\subset \NN$ (so $S\in \c{A}$) such that $i_n\in S$ if $n$ is even and otherwise $i_n\notin S$.
+Observe that $\mathfrak{p}_{i_n}\in \mathfrak{V}_{S}$ if $n$ is even and otherwise $\mathfrak{p}_{i_n}\in \mathfrak{W}_{S}=\c{B}\setminus \mathfrak{V}_{S}$.
+Make a conclusion.
 
 \parbf{\ref{ex:lebesgue=1}.}
 Consider an infinite set of points with discrete metric.
@@ -669,6 +682,18 @@ Show and use that $(x_n,y_n)$ converges to $(x_\infty,y_\infty)$ in $\c{X}\times
 By \ref{prop:seq-comp-metr}, any sequence has a converging subsequence;
 denote by $x$ the limit of this subsequence.
 Show that if the sequence is Cauchy, then it converges to $x$.
+
+\parbf{\ref{ex:compact-net}.}
+Choose a compact $\tfrac1{2\cdot n}$-net $K_n\subset \c{M}$.
+By \ref{prop:seq-comp-metr} and \ref{lem:net}, $K_n$ contains a finite $\tfrac1{2\cdot n}$-net, say~$F_n$.
+Observe that $F_n$ is a finite $\tfrac1n$-net of $\c{M}$;
+that is,
+\[\c{M}=\bigcup_{z\in F_n} \Ball(z,\tfrac1n).\]
+
+Choose a sequence of points in $x_1,x_2,\dots$ in $\c{M}$.
+Apply the \index{diagonal procedure}\emph{diagonal procedure} (should be known from calculus) to extract a subsequence $y_1,y_2,\dots$ such that for fixed choice $z_n\in F_n$ we have
+$y_m\in \Ball(z_n,\tfrac1n)$ for any $m\ge n$.
+Observe that $y_1,y_2,\dots$ is Cauchy and use completeness of $\c{M}$.
 
 \parbf{\ref{ex:hausdorff-unique-limit}.} Arguing by contradiction, assume a sequence has two limits $x$ and $y$.
 Since the space is Hausdorff we can choose disjoint neighborhoods $V\ni x$ and $W\ni y$.
@@ -759,7 +784,7 @@ List the open subset of $\{x, c, e, i\}$.
 
 \parbf{\ref{ex:sierpinski}};
 \ref{SHORT.ex:sierpinski:connected}
-Let $T_n$ be a the union of all sides of the $3^n$ thriangles after $n^{\text{th}}$ iteration.
+Let $T_n$ be a the union of all sides of the $3^n$ thriangles after $n$-th iteration.
 Note that the sequence is nested; that is, $T_0\subset T_1\subset \dots{}$
 Use induction to show that each $T_i$ is connected.
 Conclude that the union $T=T_0\cup T_1\cup\dots$ is connected.
@@ -777,6 +802,15 @@ Denote the Sierpi\'nski triangle by~$\triangle$.
 Let $\{x,y,z\}$ be a 3-point set in $\triangle$ such that $\triangle \setminus\{x,y,z\}$ has 3 connected components.
 Show and use that there is a unique choice for the set $\{x,y,z\}$ and 
 it is formed by the midpoints of the original triangle.
+
+\parbf{\ref{ex:open-close}.}
+Let $I\ni 0$ be the maximal subinterval of $[0,1)$ such that $I$ admits a unique cover by intervals $[x_\alpha,f(x_\alpha))$ with $x_\alpha\in I$ for all $\alpha$.
+
+Show that $I$ is open and closed.
+Conclude that $I=[0,1)$.
+
+\parit{Comment.}
+This is an application of the so-called \index{open-closed argument}\emph{open-closed argument}; it provides a geometric version of induction (or transfinite induction).
 
 \parbf{\ref{ex:two-point-path-connected}.}
 Recall that $\{a\}$ is an open set in $\c{X}$.
@@ -843,7 +877,7 @@ Show and use that for any rational numbers $a$ and $b$, the line $y=a\cdot x+b$ 
 
 \parbf{\ref{ex:locally-path-connected}.} Mimic the proof of \ref{thm:open-connected=path-connected}.
 
-\parbf{\ref{ex:pseudocircle}.} Read about \emph{pseudo-arc} and think.
+\parbf{\ref{ex:pseudocircle}.} Read about \index{pseudo-arc}\emph{pseudo-arc} and think.
 
 \parbf{\ref{ex:S1}}; \ref{SHORT.ex:S1:R3>R^2}.
 Suppose there is a homeomorphism $h\:\RR^3\to\RR^2$.

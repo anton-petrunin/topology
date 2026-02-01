@@ -6,6 +6,8 @@ A subset of a topological space is called \index{clopen subset}\emph{clopen} if 
 
 \begin{thm}{Definition}
 A topological space $\c{X}$ is called \index{connected space}\emph{connected} if it has exactly two clopen sets $\emptyset$ and the whole space $\c{X}$.
+
+A subset of a topological space is called \index{connected set}\emph{connected} if the corresponding subspace is connected.
 \end{thm}
 
 According to our definition, \textit{the empty space is not connected}.
@@ -14,32 +16,35 @@ Not everyone agrees with this convention.%
 Similarly, if a connected space meant \textit{no proper clopen sets}, then the empty set would be connected, but \textit{it is not} (at least in this course).
 }
 
-Suppose $V$ is a \index{proper subset}\emph{proper} clopen subset of a topological space $\c{X}$; that is, $V\ne\emptyset$ and $V\ne\c{X}$.
+Suppose $V$ is a \index{proper subset}\emph{proper} clopen subset of a topological space $\c{X}$;
+that is, $V\ne\emptyset$ and $V\ne\c{X}$.
 Note that its complement $W=\c{X}\setminus V$ is also a proper clopen subset.
-In particular, there are two open sets $V,W\subset \c{X}$ such that $V\ne\emptyset$, $W\ne\emptyset$, $V\cup W=\c{X}$ and $V\cap W=\emptyset$.
+In particular, there are two open sets $V,W\subset \c{X}$ such that
+\[V\ne\emptyset,
+\quad
+W\ne\emptyset,
+\quad
+V\cup W=\c{X},
+\quad\text{and}\quad
+V\cap W=\emptyset.\]
+Such a pair will be called an \index{open splitting}\emph{open splitting} of $\c{X}$.
+
+Spelling out the notion of subspace we get the following, makes us define an open \index{open splitting}\emph{open splitting} of a set $A\subset\c{X}$ as a pair of open sets $V,W\subset \c{X}$ such that
+\[
+V\cap W\cap A=\emptyset,\quad
+V\cap A\ne\emptyset,\quad
+W\cap A\ne\emptyset,\quad\text{and}\quad
+V\cup W\supset A.\]
+
+\begin{thm}{Observation}\label{def:connected-subset}
+A nonempty topological space (or its subset) is \index{disconnected subset}\emph{disconnected} if it admits an open splitting.
+\end{thm}
 
 \begin{thm}{Exercise}\label{ex:connected->R}
 Let $f\:\c{X}\to\RR$ be a continuous function defined of a connected space.
 Suppose that for $f(x_1)>0$ and $f(x_2)<0$ for some $x_1,x_2\in \c{X}$.
 Show that there is $x_3\in \c{X}$ such that $f(x_3)=0$.
 \end{thm}
-
-A subset of a topological space is called connected or disconnected if the corresponding subspace is connected or disconnected, respectively.
-Spelling out the notion of subspace we get the following definition.
-
-\begin{thm}{Definition}\label{def:connected-subset}
-A subset $A$ of a topological space is called \index{disconnected subset}\emph{disconnected} if it is empty or there are two open sets $V$ and $W$ such that 
-\[
-V\cap W\cap A=\emptyset,\quad
-V\cap A\ne\emptyset,\quad 
-W\cap A\ne\emptyset,\quad\text{and}\quad 
-V\cup W\supset A.\]
-
-Otherwise, we say that $A$ is \index{connected subset}\emph{connected}.
-\end{thm}
-
-A pair of open sets $V$ and $W$ as in the definition will be called an \index{open splitting}\emph{open splitting} of $A$.
-So we can say that \textit{a nonempty set $A$ is disconnected if and only if it admits an open splitting}.
 
 \begin{thm}{Proposition}\label{prop:image-connected}
 Let $f\:\c{X}\to \c{Y}$ be a continuous map between topological spaces.
@@ -55,7 +60,8 @@ Choose an open splitting $V$ and $W$ of $B$; that is,
 \[V\cap W\cap B=\emptyset,\quad
 V\cap B\ne\emptyset,\quad 
 W\cap B\ne\emptyset,\quad\text{and}\quad 
-V\cup W\supset B.\eqlbl{eq:VWB}\]
+V\cup W\supset B.
+\eqlbl{eq:VWB}\]
 
 Since $f$ is continuous, $V'=f^{-1}(V)$ and $W'=f^{-1}(W)$ are open sets in $\c{X}$.
 Note that \ref{eq:VWB} implies that $V'$ and $W'$ form an open splitting of $A$; that is,
@@ -86,14 +92,14 @@ Since $\bigcap_\alpha A_\alpha\ne\emptyset$, we can choose $p\in \bigcap_\alpha 
 Without loss of generality, we can assume that $p\in V$.
 
 In particular, $V\cap A_\alpha\ne\emptyset$ for any $\alpha$.
-Since $A_\alpha$ is connected, we have that $W\cap A_\alpha=\emptyset$ for each $\alpha$; otherwise $V$ and $W$ form an open splitting of $A_\alpha$.
+Since $A_\alpha$ is connected, we have that $W\cap A_\alpha=\emptyset$ for each $\alpha$; otherwise $V$ and $W$ would form an open splitting of $A_\alpha$.
 Therefore 
 \begin{align*}
 W\cap A&=W\cap\biggl(\bigcup_\alpha A_\alpha\biggr)=
 \\&=\bigcup_\alpha(W\cap A_\alpha)=
-\\&=\emptyset
+\\&=\emptyset.
 \end{align*}
---- a contradiction.
+Hence $V,W$ do not form an open splitting --- a contradiction.
 \qeds
 
 \begin{thm}{Exercise}\label{ex:A<B<bar-A}
@@ -113,7 +119,7 @@ The proof reuses the construction in \ref{sec:compact-interval}.
 
 \parit{Proof.}
 Assume the contrary;
-let $V$ and $W$ be an open splitting of $[0,1]$.
+Choose an open splitting of $[0,1]$, say $V$ and $W$.
 Fix a $a_0\in V$ and $b_0\in W$;
 without loss of generality, we can assume that $a_0<b_0$.
 
@@ -130,14 +136,14 @@ Set $c=\tfrac12\cdot(a_{n-1}+b_{n-1})$.
 If $c\in V$,
 then set $a_{n}=c$ and $b_{n}=b_{n-1}$;
 if $c\in W$, then set $a_{n}=a_{n-1}$ and $b_{n}=c$.
-In both cases, \ref{eq:ab-in-VW} holds.
+In both cases, we have \ref{eq:ab-in-VW}.
 
 Observe that
 \[
 a_0\le a_1\le \dots \le b_1\le b_0.
 \]
 In particular, the sequence $a_n$ is nondecreasing and bounded above by $b_0$.
-Therefoe, it converges; denote its limit by $x$.
+Therefore, $a_n$ converge to some limit, say $x$.
 Since $b_n-a_n\z=\tfrac1{2^n}\cdot(b_0-a_0)$, the sequence $b_n$ also converges to $x$.
 The point $x$ has to belong to $V$ or $W$.
 Since both $V$ and $W$ are open, one of them contains $a_n$ and $b_n$ for all large $n$, which contradicts \ref{eq:ab-in-VW}.
@@ -145,15 +151,20 @@ Since both $V$ and $W$ are open, one of them contains $a_n$ and $b_n$ for all la
 
 \begin{thm}{Exercise}\label{ex:R-connected}
 Show that the real line $\RR$ is a connected space.
-Conclude that any continuos map $\RR\to \ZZ$ is constant;
+Conclude that any continuous map $\RR\to \ZZ$ is constant;
 here $\ZZ\subset \RR$ denotes the set of integer numbers.
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:open-close}
+Let $f\:[0,1)\to [0,1)$ be an arbitrary function (not necessary continuous) such that $f(x)>x$ for every $x$.
+Show that there is a unique subdivision of $[0,1)$ into disjoint semiopen intervals of the type $[x,f(x))$.
 \end{thm}
 
 \section{Connected components}
 
 Let $x$ be a point in a topological space $\c{X}$.
 The intersection of all clopen sets containing $x$ is called the \index{connected component}\emph{connected component} of $x$.
-Note that the space $\c{X}$ is connected if and only if $\c{X}$ is a connected component of some (and therefore of any) point in $\c{X}$.
+Note that the space $\c{X}$ is connected if and only if a connected component of some (and therefore of any) point is the whole space $\c{X}$.
 
 \begin{thm}{Exercise}\label{ex:nonopen-connected-component}
 Show that any connected component is a closed set.
@@ -163,6 +174,7 @@ Construct an example of a topological space $\c{X}$ and a point $x\in \c{X}$ suc
 
 \begin{thm}{Exercise}\label{ex:connected-component-disjoint}
 Show that two connected components either coincide or are disjoint.
+In other words lying in the same connected component defines an equivalence relation.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:finite-number-connected-component}
@@ -179,18 +191,19 @@ Furthermore, $\NN$ equipped with this topology is a connected Hausdorff space.
 
 \section{Cut points}
 
-Evidently, the number of connected components is a topological invariant;
+Connectedness is defined in purely topological terms.
+In particular, the number of connected components is a topological invariant;
 that is, \textit{if two spaces are homeomorphic, then they have the same number of connected components}.
 In particular, a connected space is not homeomorphic to a disconnected space.
 
-Let us describe a more refined way to apply this observation.
+Here is a more refined way to apply this observation.
 Suppose $\c{X}$ is a connected space.
 A point $x \in\c{X}$ is called a \index{cut point}\emph{cut point} if removing $x$ from $\c{X}$ produces a disconnected space;
 that is, the subset $\c{X}\setminus\{x\}$ is disconnected.
 
 Note that if $f\:\c{X}\to \c{Y}$ is a homeomorphism, then a point $x \in\c{X}$ is a cut point of $\c{X}$ if and only if $y=f(x)$ is a cut point of $\c{Y}$.
-Indeed, the restriction of $f$ defines a homeomorphism $\c{X}\setminus\{x\}\to \c{Y}\setminus\{y\}$.
-In particular, we get that the spaces $\c{X}\setminus\{x\}$ and $\c{Y}\setminus\{y\}$ have the same number of connected components.
+Moreover, the number of connected components in $\c{X}\setminus\{x\}$ is the same as in $\c{Y}\setminus\{y\}$.
+The latter follows since the restriction of $f$ defines a homeomorphism $\c{X}\setminus\{x\}\to \c{Y}\setminus\{y\}$.
 
 These observations can be used to solve the following exercises.
 
@@ -228,7 +241,7 @@ Show that no two of the following four closed connected sets in the plane are ho
 \begin{thm}{Exercise}\label{ex:Q/H}
 Let $Q$ be the set shown in the picture;
 it is a union of a cicle with a crossing closed line segment.
-Consider that action on $Q$ of the group $H$ of all homeomorphisms $Q\to Q$.
+Consider the action on $Q$ of the group $H$ of all homeomorphisms $Q\to Q$.
 Describe the quotient space $Q/H$;
 that is, list its points and the open sets.
 
@@ -260,15 +273,4 @@ Prove that the Sierpi\'nski triangle is connected (in particular, nonempty).
 Describe all the homeomorphisms from the Sierpi\'nski triangle to itself.
 \end{subthm}
 
-\end{thm}
-
-
-\section{Open-close argument}
-
-The followowing exercise gives an example of application of the so-called \emph{open-close argument}.
-
-\begin{thm}{Exercise}
-Let $f\:[0,1]\times[0,1] \to [0,1]\times[0,1]$ is an arbitrary map that increases the firs coordinate;
-that is, if $(x_1,y_1)=f(x_0,y_0)$ then $x_1>x_0$.
-Show that there is a path $h\:[0,1]\to[0,1]\times[0,1]$ that connects the point $(0,0)$ to some point $(1,y)$ such that for any any point $h(t)$ for $t\in [0,1)$ lies on a line segment from $(x,y)$ to $f(x,y)$
 \end{thm}

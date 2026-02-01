@@ -359,6 +359,29 @@ draw p1 dashed evenly;
 
 endfig;
 
+beginfig(72)
+save u,p,n,N,r,R;
+path p[];
+u:=.5cm;
+n:=20;
+N:=19;
+R:=2*u;
+r:=1*u;
+
+p0=
+for i = -n upto -1:
+(R-((-1)**i)*r,0) rotated (360/(1.5**(-i))){(0,1) rotated (360/(1.5**(-i)))}..{(0,1) rotated (360/(1.5**(-i-1)))}
+(R-((-1)**i)*r,0) rotated (360/(1.5**(-i-1)))
+--
+endfor
+(R-r,0)
+;
+
+%draw p0;
+for i = 0 upto N:  draw subpath((length p0)*i/(N+1),(length p0)*(i+1)/(N+1)) of p0 withcolor (1-(i/N)**.7); endfor;
+
+endfig;
+
 beginfig(80)
 save u,p;
 path p[];
@@ -454,17 +477,16 @@ beginfig(1105)
 save u,p,n;
 path p[];
 u:=2cm;
-n:=5;
+n:=10;
+
+for i = n step -1 until 0:
+draw (0,0)*u--(1,1/2**i)*u withcolor (i/n);
+endfor;
 
 draw (0,0)*u--(1,0)*u;
 
-for i = 1 upto n:
-draw (0,0)*u--(1,1/i)*u;
-endfor;
-
-label (btex {\tiny $\vdots$} etex, .5[(1,0)*u,(1,1/n)*u]+(1,3));
 label.bot (btex $J_\infty$ etex, .5[(0,0)*u,(1,0)*u]);
-label.top (btex $J_1$ etex, .5[(0,0)*u,(1,1)*u]+(0,2));
+label.top (btex $J_0$ etex, .5[(0,0)*u,(1,1)*u]+(0,2));
 
 endfig;
 

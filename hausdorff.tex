@@ -2,10 +2,7 @@
 
 Hausdorff spaces are especially nice topological spaces that share many features of metric spaces;
 for example, any convergent sequence in a Hausdorff space has a unique limit.
-
-Historically, Hausdorff included an extra property in his definition of a topological space, and thus he defined what we now call a Hausdorff space.
-Later it became clear that this convention is too restrictive: dropping this extra property leads to a broader and more useful notion of a topological space.
-Nevertheless, many important examples of topological spaces are Hausdorff, so it makes sense to study them.
+(Historically, Hausdorff's definition of a topological space \cite[VII § 1]{hausdorff1914} included an exatra condition, and thus he defined what we now call a Hausdorff space.)
 
 
 \section{Definition}
@@ -20,16 +17,16 @@ Any metrizable space is Hausdorff.
 \end{thm}
 
 \parit{Proof.}
-Assume that the topology on the space $\c{X}$ is induced by a metric $|{*}-{*}|$.
+It is sufficient two show that a metric space $\c{M}$ is Hausdorff.
 
-If the points $x,y\in\c{X}$ are distinct, then $|x-y|>0$.
+If the points $x,y\in\c{M}$ are distinct, then $r=|x-y|_{\c{M}}>0$.
 By the triangle inequality
 $\Ball(x,\tfrac r2)\cap \Ball(y,\tfrac r2)=\emptyset$.
 Hence the statement follows
 \qeds
 
 Recall that in general, a sequence of points in a topological space might have different limits; see \ref{sec:limits}.
-For example, for the $\RR$ with the cofinite topology most sequences of points converge to \emph{every} point in~$\RR$.
+For example, for the $\RR$ with the cofinite topology most sequences of points converge to \textit{every} point in~$\RR$.
 
 \begin{thm}{Exercise}\label{ex:hausdorff-unique-limit}
 Show that any converging sequence in Hausdorff space has a unique limit.
@@ -69,18 +66,14 @@ Note that
 It follows that $\c{X}\setminus\{x\}$ is open, and therefore $\{x\}$ is closed.
 \qeds
 
+Suppose $x\in V$ and $y\in W$ are as in the definitin of Hausdorff space (\ref{def:hausdorff}).
+If $x,y$ lie in some subset $A$, then $V'=V\cap A\ni x$ and $W'=W\cap A\ni y$ are nonintersecting neighborhoods in the induced topology on $A$.
+This way we get the following.
+
+
 \begin{thm}{Observation}
 Any subspace of a Hausdorff space is Hausdorff.
 \end{thm}
-
-\parit{Proof.}
-Choose two points $x,y$ in a subspace $A$ of a Hausdorff space $\c{X}$.
-Since $\c{X}$ is Hausdorff, we can choose neighborhoods $V\ni x$ and $W\ni y$ such that $V\cap W=\emptyset$.
-Then $A\cap V$ and $A\cap W$ are neighborhoods of $x$ and $y$ in $A$.
-Clearly, 
-\[(A\cap V)\cap(A\cap W)\subset V\cap W=\emptyset.\]
-Whence the observation follows.
-\qeds
 
 
 \section{Hausdorff meets compactness}
@@ -92,11 +85,7 @@ Any compact  subset of a Hausdorff space is closed.
 Note that any one-point set is compact.
 Therefore the proposition generalizes Observation~\ref{obs:one-point=compact}.
 The proof is similar but requires an extra step.
-It is instructive to solve the following exercise before reading the proof.
-
-\begin{thm}{Exercise}\label{ex:nonclosed-compact}
-Describe a topological space $\c{X}$ with a nonclosed, but compact subset $K$. 
-\end{thm}
+Before reading the proof, it is instructive to refresh in your memory of \ref{ex:noncompact-closed}.
 
 The proof of the proposition is based on the following theorem.
 
@@ -146,7 +135,8 @@ Then $f$ is a closed map.
 If in addition, the map $f$ is onto, then $\c{Y}$ is equipped with the quotient topology induced by $f$.
 \end{thm}
 
-Recall that every homeomorphism is a continuous bijection, but not the other way around; see \ref{ex:bijection-ne-homeo}.
+Recall that every homeomorphism is a continuous bijection; see \ref{ex:bijection-ne-homeo}.
+The following corollary provides a partial converse.
 
 \begin{thm}{Corollary}\label{cor:cont-bijection=homeomorphism}
 A continuous bijection from a compact space to a Hausdorff space is a homeomorphism.
@@ -154,10 +144,9 @@ A continuous bijection from a compact space to a Hausdorff space is a homeomorph
 Furthermore, a continuous injective map from a compact space to a Hausdorff space is an embedding.
 \end{thm}
 
-
 \parit{Proof of \ref{obs:compact-to-hausdorff}.}
 Since $\c{K}$ is compact, any closed subset $Q\subset \c{K}$ is compact (\ref{prop:compact-closed}).
-Since the image of a compact set is compactl (\ref{prop:comp-image}), we have that $f(Q)$ is a compact subset of $\c{Y}$.
+Since the image of a compact set is compact (\ref{prop:comp-image}), we have that $f(Q)$ is a compact subset of $\c{Y}$.
 Since $\c{Y}$ is Hausdorff, $f(Q)$ is closed (\ref{prop:hausdorff-compact-closed}).
 Hence the first statement follows.
 

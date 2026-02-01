@@ -78,6 +78,8 @@ isbn=false]{biblatex}
 \renewbibmacro{in:}{}
 \renewcommand*{\bibfont}{\scriptsize}
 \addbibresource{library.bib}
+\DeclareFieldFormat{postnote}{#1}
+\DeclareFieldFormat{multipostnote}{#1}
 
 \usepackage[russian,
 german,
@@ -95,6 +97,7 @@ english]{babel}
 \def\id{\mathrm{id}}
 \def\interior{\mathop{\rm Int}\nolimits}
 \def\closure{\mathrm{Cl\,}}
+\def\Power{\mathrm{Power}}
 \def\rel#1{\textrm{\ (rel~$#1$)}}
 
 \def\eps{\varepsilon}
