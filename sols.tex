@@ -40,7 +40,7 @@ Use the same trick as in \ref{SHORT.ex:scissors:4-hands}.
 
 \parit{Source.}
 Part \ref{SHORT.ex:scissors:scissors} and \ref{SHORT.ex:scissors:4-hands} appear in Harry Houdini's book \cite{houdini}.
-A version of part \ref{SHORT.ex:scissors:scissors} appears earlier in the collection of Sam Loyd \cite{loyd} under the name ``The Gordian knot''.
+A version of part \ref{SHORT.ex:scissors:scissors} appears earlier in the family of Sam Loyd \cite{loyd} under the name ``The Gordian knot''.
 Part \ref{SHORT.ex:scissors:4-hands} under the name ``The prisoners' release puzzle'' appears in Cassell's book \cite{cassell} published in 1881.
 Both puzzles should be much older.
 
@@ -374,7 +374,7 @@ Conclude that $f^{-1}(W)$ is open.
 \parit{\ref{SHORT.ex:u-continuous:closed}.}
 Choose a closed set $Q\subset \c{Y}$.
 Use \ref{prop:cont-closed} to show that $a^{-1}(Q)$ and $b^{-1}(Q)$ are closed.
-Apply \mbox{\ref{def:closed-properties:n}} to show that $f^{-1}(Q)$ is closed.
+Apply \mbox{\ref{def:closed-properties:u}} to show that $f^{-1}(Q)$ is closed.
 Apply \ref{prop:cont-closed} again.
 
 \parit{\ref{SHORT.ex:u-continuous:none}.}
@@ -511,15 +511,6 @@ Show that the set $\{1\}$ is closed but not open.
 This topology was introduced by Harry Furstenberg \cite{furstenberg}; he used it to deduce from the last statement that the set of primes is infinite.
 The resulting proof is not truly new; it is just the classical proof from Euclid's Elements written in the topological language.
 
-
-\parbf{\ref{ex:prebase};} \textit{only-if part.}
-Apply that a prebase is a collection of open sets.
-
-\parit{If part.} Show that for any finite collection of sets $P_1,\dots,P_n$ in the prebase the inverse image 
-$f^{-1}(P_1\cap\dots\cap P_n)$
-is open.
-Further apply \ref{ex:base-nbhd}.
-
 \parbf{\ref{ex:graph}}; \ref{SHORT.ex:graph:prebase}
 Observe that $(V\times \c{Y})\cap(\c{X}\times W) \z= V\times W$.
 Further, show and use that all the sets $V\times W$ for open subset $V\subset \c{X}$ and $W\subset \c{Y}$ form a base in $\c{X}\times\c{Y}$.
@@ -593,21 +584,27 @@ Observe that $\{V_0,V_1\dots,V_n\}$ is a subcover.
 
 
 
-\parbf{\ref{ex:noncompact-un}}; \ref{SHORT.ex:ucompact}. Apply the definition of compact set.
+\parbf{\ref{ex:noncompact-un}}; \ref{SHORT.ex:noncompact-closed}.
+Check subsets in a concrete space.
+
+\parit{\ref{SHORT.ex:ucompact}.} Apply the definition of compact set.
 
 \parit{\ref{SHORT.ex:noncompact-n}.}
 Choose a noncompact space $\c{X}$ and consider topology on the union $\c{X}\cup\{a,b\}$ that includes
 $\c{X}\cup\{a,b\}$, $\c{X}\cup\{a\}$, $\c{X}\cup\{b\}$ and all open sets in $\c{X}$.
 Observe that the sets $\c{X}\cup\{a\}$ and $\c{X}\cup\{b\}$ are compact, but their intersection is not.
 
-\parit{\ref{SHORT.ex:noncompact-closed}.} Check subsets in a concrete space.
+\parit{\ref{SHORT.ex:noncompact-metric}.} If $A$ is a subset of metric space $\c{M}$ that is not closed, then we can choose a point $p\in \bar A\setminus A$.
+Check the definition of compactness for complements $V_n=\c{M}\setminus \cBall[p\tfrac1n]$.
+
+For the second part, try to use the argument in \ref{prop:compact-closed}.
 
 \parbf{\ref{ex:nested-compact}.} Apply the finite intersection property.
 
 \parbf{\ref{ex:proper-point}.}
-Choose a collection of closed set in $\c{X}$, say $\{Q_\alpha\}$, with finite intersection property.
+Choose a family of closed sets in $\c{X}$, say $\{Q_\alpha\}$, with finite intersection property.
 Assume $\bigcap Q_\alpha=\emptyset$.
-Since $f^{-1}\{y\}$ is compact, for any $y\in \c{Y}$ we can choose a finite collection $Q_{\alpha_1},\ldots, Q_{\alpha_n}$ such that $f^{-1}\{y\}\cap Q_{\alpha_1}\cap\z\ldots\cap Q_{\alpha_n}=\emptyset$.
+Since $f^{-1}\{y\}$ is compact, for any $y\in \c{Y}$ we can choose a finite family $Q_{\alpha_1},\ldots, Q_{\alpha_n}$ such that $f^{-1}\{y\}\cap Q_{\alpha_1}\cap\z\ldots\cap Q_{\alpha_n}=\emptyset$.
 Let $C_y=Q_{\alpha_1}\cap\ldots\cap Q_{\alpha_n}$.
 Show that (1) $y\notin f(C_y)$ and (2) $f(C_y)$ is a closed set for every $y\in \c{Y}$.
 
@@ -637,10 +634,8 @@ Apply \ref{prop:comp-image} to the projections $\c{X}\times\c{Y}\to\c{X}$ and $\
 \parbf{\ref{ex:inscribed-cover-base}.} Spell the definitions.
 
 \parbf{\ref{ex:fake-proof(thm:compact-product)}.}
-In general, the sets $V_{\alpha_i}\times W_{\alpha_j'}$ are not the cover $\{V_\alpha\times W_\alpha\}$.
-We only can take the following products,
-$V_{\alpha_i}\times W_{\alpha_i}$ and $V_{\alpha_j'}\z\times W_{\alpha_j'}$, but they
-might not cover the whole $\c{X}\times\c{Y}$ --- show it by example.
+The last statement is wrong.
+Show by example that in general, the product $V_{\beta_i}\times W_{\beta_i}$ do \textit{not} cover $\c{X}\times\c{Y}$.
 
 \parbf{\ref{ex:closed-graph}.}
 By \ref{prop:cont-closed}, it is sufficient to show that any closed set $A\subset\c{K}$ has closed inverse image $B=f^{-1}(A)\subset\c{X}$.
@@ -678,10 +673,28 @@ Suppose that a sequence $x_n$ converges to $x_\infty$ in $\c{X}$
 and $y_n$ converges to $y_\infty$ in $\c{Y}$.
 Show and use that $(x_n,y_n)$ converges to $(x_\infty,y_\infty)$ in $\c{X}\times\c{Y}$ as $n\to\infty$.
 
-\parbf{\ref{ex:compact-complete}.}
+\parbf{\ref{ex:compact-complete}}; \ref{SHORT.ex:compact-complete:a}.
 By \ref{prop:seq-comp-metr}, any sequence has a converging subsequence;
 denote by $x$ the limit of this subsequence.
 Show that if the sequence is Cauchy, then it converges to $x$.
+
+\parit{\ref{SHORT.ex:compact-complete:b}}.
+Check an infinite discrete space.
+
+\parbf{\ref{ex:contracction}.}
+Consider a sequence $x_0,x_1,\dots\in\c{M}$ such that $x_{i}=f(x_{i-1})$ for any $i$.
+Show that this sequence is Cauchy, since $\c{M}$ it must have a limit, say $p$.
+Observe that $p$ is a fixed point.
+Furthermore, show that if $q\ne p$, then $|f(q)-p|<|q-p|$;
+in particular, $f(q)\ne q$ and so $q$ is not fixed.
+
+\parit{Comment.}
+This is the \emph{Banach fixed-point theorem}; it combines extreme simplicity and extreme usefulness.
+
+\parbf{\ref{ex:alm-min}.} Assume such point does not exists.
+Then for any point $p$ there is a point $p'$ such that $|p-p'|<r(p)$ and $r(p')\le (1-\eps)\cdot r(p)$.
+Let $p_0,p_1,\dots \c{M}$ be a sequence such that $p_i=p_{i-1}'$.
+Show and use that this sequence is Cauchy.
 
 \parbf{\ref{ex:compact-net}.}
 Choose a compact $\tfrac1{2\cdot n}$-net $K_n\subset \c{M}$.
@@ -694,6 +707,21 @@ Choose a sequence of points in $x_1,x_2,\dots$ in $\c{M}$.
 Apply the \index{diagonal procedure}\emph{diagonal procedure} (should be known from calculus) to extract a subsequence $y_1,y_2,\dots$ such that for fixed choice $z_n\in F_n$ we have
 $y_m\in \Ball(z_n,\tfrac1n)$ for any $m\ge n$.
 Observe that $y_1,y_2,\dots$ is Cauchy and use completeness of $\c{M}$.
+
+\parbf{\ref{ex:non-contracting-map}.}
+Consider two sequences of points $x_0,x_1,\dots$ and $y_0,y_1,\dots$ in $\c{M}$ such that $x_i\z=f(x_{i-1})$ and $y_i\z=f(y_{i-1})$ for any $i$.
+Observe that
+\[|x_0-y_0|\le |x_1-y_1|\le\ldots\]
+Show that one pass to subsequenes $x_{i_1},x_{i_2},\dots$ and  $y_{i_1},y_{i_2},\dots$ such that $x_{i_n}\z\to x_0$ and $y_{i_n}\z\to y_0$ as $n\to\infty$.
+Conclude that $|x_0-y_0|\z=|x_1-y_1|$; since the points $x_0$ and $y_0$ can be chosen arbitrary, it implies that $f$ is distance-preserving.
+
+Observe that $f$ is injective.
+Use the argument above to conclude that $f(\c{M})$ is dense in $\c{M}$.
+Note that $f(\c{M})$ is compact and therefore closed (see \ref{prop:hausdorff-compact-closed}).
+Conclude that $f$ is surjective and therefore bijective.
+
+\parit{Comment.}
+This statement is used to prove key properties of so-called \index{Gromov--Hausdorff metric}\emph{Gromov--Hausdorff metric} --- a metric on space of all (isometry classes of) compact metric spaces.
 
 \parbf{\ref{ex:hausdorff-unique-limit}.} Arguing by contradiction, assume a sequence has two limits $x$ and $y$.
 Since the space is Hausdorff we can choose disjoint neighborhoods $V\ni x$ and $W\ni y$.
@@ -711,9 +739,6 @@ $V$ and $W'$ meet \ref{def:hausdorff}.
 The set $\Delta$ is closed if and only if its complement $U=(\c{X}\times\c{X})\setminus\Delta$ is open.
 Show and use that the latter means that there is a family $\{(V_\alpha,W_\alpha)\}$ of disjoint pairs of open sets in $\c{X}$ such that
 \[U=\bigcup_\alpha V_\alpha\times W_\alpha.\]
-
-\parbf{\ref{ex:nonclosed-compact}.}
-Look at the subsets of a concrete space.
 
 \parbf{\ref{ex:normal-hausdorff}.} By \ref{thm:hausdorff-compact-t3}, for any $y\in L$ there is a pair of open sets $V_y$, $W_y$ such that $V_y\supset K$ and $W_y\ni y$
 such that $V_y\cap W_y=\emptyset$.
@@ -758,6 +783,14 @@ Check that being in one connected component defines an equivalence relation on p
 
 \parbf{\ref{ex:finite-number-connected-component}.}
 Use \ref{ex:nonopen-connected-component} and \ref{ex:connected-component-disjoint}.
+
+\parbf{\ref{ex:R-open}.}
+Show and use that each connected component of a set in $\RR$ is an open interval.
+Note that any open interval contains a rational number, use that the set of rational numbers is countable.
+
+\parit{Comment.}
+Observe that the Cantor set (which is closed) does not contain isolated points and intervals;
+so, in some sense, closed sets are more complicated than open.
 
 \parbf{\ref{ex:S1ne[0,1]}.}
 Show that $\mathbb{S}^1$ has no cut points, but $[0,1]$ has.

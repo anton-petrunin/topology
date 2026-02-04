@@ -1,4 +1,4 @@
-\chapter{Compactness}
+\chapter{Compactness}\label{chap:compactness}
 
 In this chapter we define compact spaces --- especially nice topological spaces that behave in many ways like finite sets.
 
@@ -7,15 +7,15 @@ In practice, compactness is a powerful replacement for ``closed and bounded set'
 
 \section{Definition}
 
-We will denote by $\{V_\alpha\}=\{V_\alpha\}_{\alpha\in \c{I}}$ a collection of sets, where $\alpha$ runs in an arbitrary index set $\c{I}$. 
+We will denote by $\{V_\alpha\}=\{V_\alpha\}_{\alpha\in \c{I}}$ a family of sets, where $\alpha$ runs in an arbitrary index set $\c{I}$.
 
 \begin{thm}{Definition}
-A collection $\{V_\alpha\}$ of open subsets of a topological space $\c{X}$ is called its \index{open cover}\emph{open cover} if it covers the whole $\c{X}$;
+A family $\{V_\alpha\}$ of open subsets of a topological space $\c{X}$ is called its \index{open cover}\emph{open cover} if it covers the whole $\c{X}$;
 that is, if every $x\in \c{X}$ belongs to some~$V_\alpha$.
 
-More generally, $\{V_\alpha\}$ is an {}\emph{open cover of a subset} $S\subset \c{X}$ if any $s\in S$ belongs to some~$V_\alpha$.
+More generally, $\{V_\alpha\}$ is an \index{open cover}\emph{open cover} of a subset $S\subset \c{X}$ if any $s\in S$ belongs to some~$V_\alpha$.
 
-A subcollection of the cover $\{V_\alpha\}$ that is also a cover is called its \index{subcover}\emph{subcover} of $\{V_\alpha\}$.
+A subfamily of the cover $\{V_\alpha\}$ that is also a cover is called its \index{subcover}\emph{subcover} of $\{V_\alpha\}$.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:open-open-cover}
@@ -37,53 +37,38 @@ Spelling the definitions, we get that \textit{a subset $S$ of a topological spac
 
 Clearly, \textit{any finite topological space is compact}.
 The next exercise provides a source of examples of infinite compact spaces.
-More interesting examples are given in Section~\ref{sec:compact-interval}.
+More interesting examples are given in Section~\ref{sec:compact-interval} and further.
 
 \begin{thm}{Exercise}\label{ex:cofinite-compact}
 Show that any set equipped with the cofinite topology is compact.
 \end{thm}
 
-Let us show how to apply the definition.
-Suppose $S\subset \RR$ be a compact set;
+Let us show how one can apply the definition.
+Suppose $S\subset \RR$ is a compact set;
 let us show that $S$ is closed.
 Assume the contrary,
-then we can choose a point $s\in\bar S\setminus S$ and consider the cover of $S$ by intervals $(-\infty, s-\eps)$ and $(s+\eps,+\infty)$ for all $\eps>0$.
+then we can choose a point $s\in\bar S\setminus S$ and consider the cover of $S$ by the complements of $[ s-\eps,s+\eps]$ for all $\eps>0$.
 Since it has a finite subcover, a neighborhood of $s$ does not intersect $S$, so $s\notin\bar S$ --- a contradiction.
 Applying the same reasoning for cover of $S$ by all intervals $(-c,c)$, one can show that $S$ is bounded; that is, there is $c\in \RR$ such that $|s|\le c$ for any $s\in S$.
-These two statements will be generalized soon; the following two exercises have similar solutions.
-
-\begin{thm}{Exercise}\label{ex:fun(compact)}
-Let $f$ be a continuous real-valued function that is defined on a compact space $\c{K}$.
-
-\begin{subthm}{ex:fun(compact):bounded}
-Show that $f$ is bounded; that is there is a constant $c$ such that $|f(x)|\le c$ for any $x\in\c{K}$.
-\end{subthm}
-
-\begin{subthm}{ex:fun(compact):min-max}
-Show that $f$ attains its maximum and minimum; that is, there are points $x_{\min},x_{\max}\in \c{K}$ such that
-\[f(x_{\min})\le f(x)\le f(x_{\max})\]
-for any $x\in \c{K}$.
-\end{subthm}
-
-\end{thm}
 
 \begin{thm}{Exercise}\label{ex:noncompact-un}
+
+\begin{subthm}{ex:noncompact-closed}
+Construct a topological space with a set that is compact, but not closed.
+\end{subthm}
 
 \begin{subthm}{ex:ucompact}
 Show that union of two compact sets is compact.
 \end{subthm}
 
 \begin{subthm}{ex:noncompact-n}
-Construct a topological space with two compact sets such that their intersection is not compact.%
-\footnote{Such examples cannot be metrizable.}
+Construct a topological space with two compact sets such that their intersection is not compact.
 \end{subthm}
 
-\begin{subthm}{ex:noncompact-closed}
-Construct a topological space with a set that is compact, but not closed.%
-\footnotemark[\value{footnote}]
-
+\begin{subthm}{ex:noncompact-metric}
+Show that the space in \ref{SHORT.ex:noncompact-closed} cannot be metrizable.
+Try to do the same for \ref{SHORT.ex:noncompact-n}.
 \end{subthm}
-
 
 \end{thm}
 
@@ -96,10 +81,17 @@ Every topological space is homeomorphic to a subspace of a compact space.
 \parit{Proof.}
 Choose a topological space $\c{X}$.
 Let us add to $\c{X}$ one extra point that will be denoted by $\infty$.
-A set $V$ in $\c{X}^\infty=\c{X}\cup\{\infty\}$ is declared to be open if $V$ is an open subset in $\c{X}$ (in this case $\infty\notin V$) or $\infty\in V$ and its complement $\c{X}\setminus V$ is a closed \textit{and} compact subset of $\c{X}$.
+A set $V$ in $\c{X}^\infty=\c{X}\cup\{\infty\}$ is declared to be open if $V$ is an open subset in $\c{X}$ (in which case $\infty\notin V$) or $\infty\in V$ and its complement $\c{X}\setminus V$ is a closed \textit{and} compact subset of $\c{X}$.
 
-We need to check the conditions in \ref{def:top-space}:
-\ref{SHORT.def:top-space:empty} and \ref{SHORT.def:top-space:u} are straightforward and \ref{SHORT.def:top-space:n} follows since union of two closed sets is closed and union of two compact sets is compact; see \ref{ex:ucompact}.
+To show that we have defined a topology, we need to check the conditions in \ref{def:top-space}:
+\ref{SHORT.def:top-space:empty} and \ref{SHORT.def:top-space:u} are straightforward and \ref{SHORT.def:top-space:n} follows since union of two closed sets is closed and union of two compact sets is compact; see \ref{def:closed-properties:u} and \ref{ex:ucompact}.
+
+Now, choose an open cover $\{V_\alpha\}$ of $\c{X}^\infty$.
+Choose $\alpha_\infty$ such that $V_{\alpha_\infty}\ni\infty$.
+By construction, the complement $K=\c{X}^\infty\setminus V_{\alpha_\infty}$ is compact.
+Therefore we can choose a finite subcover $\{V_{\alpha_1}, \dots V_{\alpha_n}\}$ of $K$.
+Observe that $\{V_{\alpha_\infty},V_{\alpha_1}, \dots V_{\alpha_n}\}$ covers $\c{X}^\infty$;
+whence $\c{X}^\infty$ is compact.
 \qeds
 
 The space $\c{X}^\infty$ constructed in the proof is called the \index{one-point compactification}\emph{one-point compactification} of $\c{X}$.
@@ -109,26 +101,26 @@ The space $\c{X}^\infty$ constructed in the proof is called the \index{one-point
 \section{Finite intersection property} 
 
 \begin{thm}{Proposition}\label{prop:finite intersection property}
-A topological space $\c{X}$ is compact if and only if for any collection of closed sets $\{Q_\alpha\}$ in $\c{X}$ such that
+A topological space $\c{X}$ is compact if and only if for any family of closed sets $\{Q_\alpha\}$ in $\c{X}$ such that
 \[\bigcap_{\alpha}Q_\alpha=\emptyset\]
-there is a finite collection $\{Q_{\alpha_1},\dots,Q_{\alpha_n}\}$
+there is a finite family $\{Q_{\alpha_1},\dots,Q_{\alpha_n}\}$
 such that
 \[Q_{\alpha_1}\cap\dots\cap Q_{\alpha_n}=\emptyset.\]
 
 \end{thm}
 
 We say that a family of sets has \index{finite intersection property}\emph{finite intersection property} if any finite subfamily of has non-empty intersection.
-According to the proposition, compactness is equivalent to the following property: \textit{any collection of closed sets with finite intersection property has a nonempty intersection}.
+According to the proposition, compactness is equivalent to the following property: \textit{any family of closed sets with finite intersection property has a nonempty intersection}.
 
 \parit{Proof.}
 By the definition of closed sets, the complements $V_\alpha=\c{X}\setminus Q_\alpha$ are open.
 Note that 
-\[\bigcup_\alpha V_\alpha=\c{X}\setminus \left(\bigcap_{\alpha}Q_\alpha\right)=\c{X};\]
+\[\bigcup_\alpha V_\alpha=\c{X}\setminus \left(\bigcap_{\alpha}Q_\alpha\right);\]
 that is, $\{V_\alpha\}$ is an open cover of $\c{X}$ if and only if $\bigcap Q_\alpha=\emptyset$.
 
 
 Observe that
-\[Q_{\alpha_1}\cap\dots\cap Q_{\alpha_n}=\c{X}\setminus(V_{\alpha_1}\cup\dots\cup V_{\alpha_n})=\emptyset.
+\[Q_{\alpha_1}\cap\dots\cap Q_{\alpha_n}=\c{X}\setminus(V_{\alpha_1}\cup\dots\cup V_{\alpha_n}).
 \]
 Therefore, $\{V_{\alpha_1},\dots,V_{\alpha_n}\}$ is a finite subcover if and only if
 the intersection $Q_{\alpha_1}\cap\dots\cap Q_{\alpha_n}$ is empty, hence the result.
@@ -176,7 +168,7 @@ so either $a_1=a_0$ and $b_1=\tfrac{a_0+b_0}2$ or $a_1=\tfrac{a_0+b_0}2$ and $b_
 Continuing in this manner we get a sequence of intervals 
 \[[a_0,b_0]\supset [a_1,b_1]\supset\dots\] 
 such that no
-finite collection of sets from $\{V_\alpha\}$ covers any of the intervals $[a_n,b_n]$. 
+finite family of sets from $\{V_\alpha\}$ covers any of the intervals $[a_n,b_n]$.
 In particular,
 \[[a_n,b_n]\not\subset V_\alpha\quad\text{for any $n$ and $\alpha$.}
 \eqlbl{[a,b]-not-in-V}\]
@@ -190,7 +182,7 @@ b_n-a_n=\tfrac{b-a}{2^n}
 for any $n$.
 Denote by $x$ the least upper bound of $\{a_n\}$.
 Note that $x\in [a_n,b_n]$ for any $n$.%
-\footnote{In fact, $a_n\to x$ and $b_n\to x$ as $n\to\infty$, but we will not use it directly.}
+\footnote{We also have that $a_n\to x$ and $b_n\to x$ as $n\to\infty$, but we will not use it.}
 
 Since $\{V_\alpha\}$ is a cover, we can choose $V_\alpha\ni x$.
 Since $V_\alpha$ is open, it contains an interval $(x-\eps,x+\eps)$ for some $\eps>0$.
@@ -216,10 +208,19 @@ Since $K$ is compact, there is a finite subcover $\{V_{\alpha_1},\z\dots, V_{\al
 It remains to observe that $\{W_{\alpha_1},\dots, W_{\alpha_n}\}$ covers $Q$.
 \qeds
 
-\begin{thm}{Exercise}\label{ex:S1-compact}
-Show that the circle
-\[\mathbb{S}^1=\set{(x,y)\in\RR^2}{x^2+y^2=1}\]
-is compact.
+\begin{thm}{Exercise}\label{ex:fun(compact)}
+Let $f$ be a continuous real-valued function that is defined on a compact space $\c{K}$.
+
+\begin{subthm}{ex:fun(compact):bounded}
+Show that $f$ is \index{bounded set}\emph{bounded}; that is, there is a constant $c$ such that $|f(x)|\le c$ for any $x\in\c{K}$.
+\end{subthm}
+
+\begin{subthm}{ex:fun(compact):min-max}
+Show that $f$ attains its maximum and minimum; that is, there are points $x_{\min},x_{\max}\in \c{K}$ such that
+\[f(x_{\min})\le f(x)\le f(x_{\max})\]
+for any $x\in \c{K}$.
+\end{subthm}
+
 \end{thm}
 
 \section{Closed subsets}
@@ -233,7 +234,7 @@ Let $Q$ be a closed set in a compact space $\c{K}$.
 Since $Q$ is closed, its complement $W=\c{K}\setminus Q$ is open.
 
 Consider an open cover $\{V_\alpha\}_{\alpha\in\c{I}}$ of $Q$.
-Add to it $W$; that is, consider the collection of sets that includes $W$ as well as $V_\alpha$ for all $\alpha\in\c{I}$.
+Add to it $W$; that is, consider the family of sets that includes $W$ as well as $V_\alpha$ for all $\alpha\in\c{I}$.
 Note that we get an open cover of $\c{K}$.
 Indeed, $W$ covers all points in the complement of $Q$ and any point of $Q$ is covered by some~$V_\alpha$.
 
@@ -301,25 +302,24 @@ Find a flaw in the following argument.
 \end{thm}
 
 \parit{Fake proof of \ref{thm:compact-product}.}
-Fix an open cover $\{U_\beta\}$ of $\c{X}\times\c{Y}$.
-Consider all product sets $V_\alpha\times W_\alpha$ such that $V_\alpha\times W_\alpha\subset U_\beta$ for some $\beta$ (as before, $V_\alpha$ and $W_\alpha$ are open in $\c{X}$ and $\c{Y}$ respectively).
-Note that $\{V_\alpha\times W_\alpha\}$ is a cover of $\c{X}\times\c{Y}$ that is inscribed in $\{U_\beta\}$.
-By the observation, it is sufficient to find a finite subcover of $\{V_\alpha\times W_\alpha\}$.
+Fix an open cover $\{O_\alpha\}$ of $\c{X}\times\c{Y}$.
+Consider all product sets $V_\beta\times W_\beta$ such that $V_\beta\times W_\beta\subset O_\alpha$ for some $\alpha$ (as before, $V_\beta$ and $W_\beta$ are open in $\c{X}$ and $\c{Y}$ respectively).
+Note that $\{V_\beta\times W_\beta\}$ is a cover of $\c{X}\times\c{Y}$ that is inscribed in $\{U_\beta\}$.
+By the observation, it is sufficient to find a finite subcover of $\{V_\beta\times W_\beta\}$.
 
-Note that $\{V_\alpha\}$ is a cover of $\c{X}$.
-Since $\c{X}$ is compact, we can choose its finite subcover $\{V_{\alpha_1},\dots,V_{\alpha_n}\}$.
-Similarly, $\{W_\alpha\}$ is a cover of $\c{Y}$.
-So we can choose its finite subcover $\{W_{\alpha_1'},\dots,W_{\alpha_m'}\}$.
-
-Finally observe that products $V_{\alpha_i}\times V_{\alpha_j'}$ cover $\c{X}\times\c{Y}$.
+Note that $\{V_\beta\}$ is a cover of $\c{X}$.
+Since $\c{X}$ is compact, we can choose its finite subcover $\{V_{\beta_1},\dots,V_{\beta_n}\}$.
+Similarly, $\{W_\beta\}$ is a cover of $\c{Y}$;
+so we can choose its finite subcover $\{W_{\beta_{n+1}},\dots,W_{\beta_{n+m}}\}$.
+It remains to observe that the products $V_{\beta_i}\times W_{\beta_i}$ for all $i$ cover $\c{X}\times\c{Y}$.
 \qeds
 
 \parit{Proof of \ref{thm:compact-product}.}
 Recall that by definition of the product topology, any open set in $\c{X}\times\c{Y}$ is a union of product sets
 $V_\alpha\times W_\alpha$, where $V_\alpha$ is open in $\c{X}$ and $W_\alpha$ is open in $\c{Y}$.
 
-Fix an open cover $\{U_\beta\}$ of $\c{X}\times\c{Y}$.
-Consider all product sets $V_\alpha\times W_\alpha$ such that $V_\alpha\times W_\alpha\subset U_\beta$ for some $\beta$ (as before, $V_\alpha$ and $W_\alpha$ are open in $\c{X}$ and $\c{Y}$ respectively).
+Fix an open cover $\{O_\beta\}$ of $\c{X}\times\c{Y}$.
+Consider all product sets $V_\alpha\times W_\alpha$ such that $V_\alpha\times W_\alpha\subset O_\beta$ for some $\beta$ (as before, $V_\alpha$ and $W_\alpha$ are open in $\c{X}$ and $\c{Y}$ respectively).
 Note that $\{V_\alpha\times W_\alpha\}$ is a cover of $\c{X}\times\c{Y}$ that is inscribed in $\{U_\beta\}$.
 By the observation, it is sufficient to find a finite subcover of $\{V_\alpha\times W_\alpha\}$.
 
@@ -357,6 +357,22 @@ Assume $\c{K}$ is compact.
 Show that $f$ is continuous if and only if its graph $\Gamma=\set{(x,f(x))}{x\in\c{X}}$ is a closed set in $\c{X}\times\c{K}$. 
 \end{thm}
 
+\begin{thm}{Exercise}\label{ex:S1-compact}
+Give two proofs that the circle
+\[\mathbb{S}^1=\set{(x,y)\in\RR^2}{x^2+y^2=1}\]
+is compact.
+
+\begin{subthm}{ex:S1-compact:comp-image}
+Using \ref{prop:comp-image}.
+\end{subthm}
+
+
+\begin{subthm}{ex:S1-compact:compact-closed}
+Using \ref{thm:compact-product} and \ref{prop:compact-closed}.
+\end{subthm}
+
+\end{thm}
+
 \section{Remarks}
 
 We omit the proof of the following theorem, but it is worth knowing.
@@ -367,13 +383,13 @@ A topological space $\c{X}$ is compact if and only if for some (and therefore an
 
 Applying this theorem to the prebase from \ref{ex:graph:prebase} gives a short proof of \ref{thm:compact-product}.
 Indeed, suppose that a cover of the product space $\c{X}\times \c{Y}$ consists only of products $V_\alpha\times  \c{Y}$ and $\c{X}\times W_\beta$, where $V_\alpha\subset \c{X}$ and $W_\beta\subset \c{Y}$ are open sets.
-Note that that $\bigcup V_\alpha= \c{X}$ or $\bigcup W_\beta= \c{Y}$,
-otherwise the union of $V_\alpha\times  \c{Y}$ and $\c{X}\times W_\beta$ would not cover $\c{X}\times \c{Y}$.
-Therefore, we can assume that $\{V_\alpha\}$ cover $\c{X}$.
-Since $\c{X}$ is compact we can choose a finte subcover $\{V_{\alpha_1},\dots,V_{\alpha_n}\}$.
+Note that that $\bigcup V_\alpha= \c{X}$ or $\bigcup W_\beta= \c{Y}$;
+indeed, if there are $x\in \c{X}\setminus \bigcup V_\alpha$ and $y\in \c{Y}\setminus\bigcup W_\beta$, then $(x,y)$ is not covered by any $V_\alpha\times  \c{Y}$ or $\c{X}\times W_\beta$ --- a contradiction.
+Without loss of generality, we can assume that $\{V_\alpha\}$ cover $\c{X}$.
+Since $\c{X}$ is compact we can choose a finite subcover $\{V_{\alpha_1},\dots,V_{\alpha_n}\}$.
 It remains to observe that $\{V_{\alpha_1}\times  \c{Y},\dots,V_{\alpha_n}\times  \c{Y}\}$ covers $\c{X}\times\c{Y}$ and apply the Alexander prebase theorem.
 
-Let us show one more application of this theorem.
+Let us show a more serious application of this theorem.
 
 Start with a set $S$.
 Denote by \index{Power}$\Power(S)$ the set of all subsets in $S$.
@@ -384,18 +400,26 @@ Given $s\in S$, define sets
 \]
 Note that $X\subset S$ means that $X\in \Power(S)$, so $\mathfrak{V}_s,\mathfrak{W}_s\subset  \Power(S)$.
 
-Equip $\Power(S)$ with topology defined by prebase $\{\mathfrak{V}_s,\mathfrak{W}_s\}_{s\in S}$, now we can call it \index{power space}\emph{power space}.
-Applying the argument above one can see that $\Power(S)$ is a compact space for \textit{any} set $S$.
+Let us equip the set $\Power(S)$ with topology defined by the prebase $\{\mathfrak{V}_s,\mathfrak{W}_s\}_{s\in S}$, now we can call it \index{power space}\emph{power space}.
+Applying the argument above, one sees that \textit{$\Power(S)$ is a compact space for any set $S$}.
 This is a partial case of the \index{Tychonoff compactness theorem}\emph{Tychonoff compactness theorem}.
 
-For finite set $F$ the space $\Power(F)$ is a descrete space with $2^{|F|}$ points.
-For the set of natural numnbers $\NN=\{1,2,\dots\}$ its power space $\Power(\NN)$ is homeomorphic to the Cantor set $\c{C}\subset [0,1]$.
-(The set $\c{C}$ constructed as an intersection of nested sequence of subsets $[0,1]\z=\c{C}_0\supset \c{C}_1\supset \dots$ such that $\c{C}_{i+1}$ is obtained from $\c{C}_i$ by deleting the open middle third from every line segment in it.)
-The following exercise describes a tryully scare example of compact space.
+For finite set $F$ the space $\Power(F)$ is a discrete space with $2^{|F|}$ points, which is compact --- not a surprise.
 
-\begin{thm}{Advnced exercise}\label{ex:power-power}
+For the set of natural numbers $\NN=\{1,2,\dots\}$, a point $p\in \Power(\NN)$ is a subset $p\subset \NN$ and the map $p\mapsto 2\cdot \sum_{n\in p}3^{-n}$
+defines a homeomorphism from $\Power(\NN)$ to the standard Cantor set $\c{C}\subset [0,1]$.
+
+\begin{thm}{Exercise}
+Read about the Cantor set and check the last statement carefully.
+\end{thm}
+
+%Recall that the set $\c{C}$ constructed as an intersection of nested sequence of subsets $[0,1]\z=\c{C}_0\supset \c{C}_1\supset \dots$ such that $\c{C}_{i+1}$ is obtained from $\c{C}_i$ by deleting the open middle third from every line segment in it.
+
+The following exercise describes a truly scary example of compact space.
+
+\begin{thm}{Advanced exercise}\label{ex:power-power}
 Let $\c{A}=\Power(\NN)$ and $\c{B}=\Power(\c{A})$; as we know $\c{B}$ is a compact space.
-Show that the following sequence of points $\mathfrak{p}_1$, $\mathfrak{p}_2,\dots$ in $\c{B}$ does not have a converginge subsequence:
+Show that the following sequence of points $\mathfrak{p}_1$, $\mathfrak{p}_2,\dots$ in $\c{B}$ does not have a converging subsequence:
 \[\mathfrak{p}_n=\set{P\in\c{A}}{P\not\ni n}.\]
 
 \end{thm}

@@ -23,8 +23,8 @@ Let $\c{X}$ be a topological space.
  The empty set and $\c{X}$ are closed.
 \end{subthm}
 
-\begin{subthm}{}
-The intersection of any collection of closed sets is a closed set.
+\begin{subthm}{def:closed-properties:n}
+The intersection of any family of closed sets is a closed set.
 That is, if $K_\alpha$ is closed for any $\alpha$ in the index set $\c{I}$,
 then the set
 \[Q=\bigcap_{\alpha\in \c{I}} K_\alpha
@@ -33,8 +33,8 @@ then the set
 is closed.
 \end{subthm}
 
-\begin{subthm}{def:closed-properties:n}
-The union of two closed sets (or any finite collection of closed sets) is closed.  
+\begin{subthm}{def:closed-properties:u}
+The union of two closed sets (or any finite family of closed sets) is closed.
 That is,  if $K_1$ and $K_2$ are closed, then the union $Q=K_1 \cup K_2$ is closed. 
 \end{subthm}
 
@@ -85,11 +85,11 @@ The if part follows since $B$ is an arbitrary open set in $\c{Y}$.
 
 \begin{subthm}{ex:open-intersection+metrizable:a}
 Let $\c{X}$ be a metrizable topological space.
-Show that any closed set in $\c{X}$ is an intersection of a collection of open sets.
+Show that any closed set in $\c{X}$ is an intersection of a family of open sets.
 \end{subthm}
 
 \begin{subthm}{ex:open-intersection+metrizable:b}
-Construct a topological space $\c{Y}$ with a closed set $Q$ that is not an intersection of any collection of open sets.
+Construct a topological space $\c{Y}$ with a closed set $Q$ that is not an intersection of any family of open sets.
 \end{subthm}
 
 \end{thm}
@@ -214,7 +214,7 @@ We need to check the conditions in \ref{def:top-space}.
 First, the whole set $A$ and the empty set are included;
 indeed, $\emptyset=A\cap \emptyset$ and $A=A\cap \c{Y}$.
 
-Assume $\{V_\alpha\}$ is a collection of open sets in $A$; here $\alpha$ runs in some index set, say $\c{I}$.
+Assume $\{V_\alpha\}$ is a family of open sets in $A$; here $\alpha$ runs in some index set, say $\c{I}$.
 In other words, for each $V_\alpha$ there is an open set $W_\alpha\subset\c{Y}$ such that $V_\alpha\z=A\cap W_\alpha$.
 Note that
 \[\bigcup_\alpha V_\alpha=A\cap\left(\bigcup_\alpha W_\alpha\right).\]
@@ -313,19 +313,23 @@ Recall that a set is called \index{countable set}\emph{countable} if it admits a
 In particular, all finite sets are countable.
 
 \begin{thm}{Advanced exercise}\label{ex:cocountable-top}
-Let $\c{X}$ be $\RR$ with the so-called \index{cocountable topology}\emph{cocountable topology};
+Let $\c{X}$ be the set of real numbers with the so-called \index{cocountable topology}\emph{cocountable topology};
 its closed sets are either countable or the whole $\RR$.
 
 \begin{subthm}{}
- Construct a map $f\:\c{X}\to \c{X}$ that is not continuous.
+Show that a sequence $x_1,x_2,\dots \in \c{X}$ converges to $x_\infty$ if and only if $x_n=x_\infty$ for all sufficiently large $n$.
 \end{subthm}
 
 \begin{subthm}{}
-Describe all convergent sequences in $\c{X}$.
+Show that any set $A\subset \c{X}$ is \index{sequentially closed set}\emph{sequentially closed};
+that is, if $a_1,a_2,\dots \in A$ is a converging sequence, then its limit lies in $A$.
+Observe that not all subsets of $\c{X}$ are closed.
 \end{subthm}
 
 \begin{subthm}{}
-Show that if the sequence $x_n$ converges to $x_\infty$ in $\c{X}$, then for any map $f\:\c{X}\to \c{X}$ the sequence $y_n=f(x_n)$ converges to $y_\infty\z=f(x_\infty)$.
+Show that any map $f\:\c{X}\to \c{X}$ is \index{sequentially continuous map}\emph{sequentially continuous};
+that is, if a sequence $x_1,x_2,\dots \in \c{X}$ converges to $x_\infty$ in $\c{X}$, then  $y_n=f(x_n)$ converges to $y_\infty\z=f(x_\infty)$.
+Observe that not all maps $f\:\c{X}\to \c{X}$ are continuous.
 \end{subthm}
 
 \end{thm}

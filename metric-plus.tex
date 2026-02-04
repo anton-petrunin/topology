@@ -1,14 +1,14 @@
-\chapter{Metric spaces revisited}
+\chapter{Metric spaces revisited}\label{chap:metric+}
 
-Recall that any metric space comes with a natural topology.
+Recall that any metric space comes with a topology.
 In particular, we may talk about \textit{compact metric spaces}.
 In this chapter we discuss specific properties of metric spaces that are related to compctness.
 
 \section{Lebesgue number}
 
 \begin{thm}{Theorem}\label{prop:lebesgue-number}
-Let $\{V_\alpha\}$ be an open cover of a compact metric space $\c{M}$.
-Then there is $\eps > 0$ such that for every $x\in\c{M}$ there is $\alpha$ such that $V_\alpha\supset \Ball(x,\eps)$.
+Given an open cover $\{V_\alpha\}$ of a compact metric space $\c{M}$,
+there is $\eps > 0$ such that every $\eps$-ball in $\c{M}$ lies in $V_\alpha$ for some~$\alpha$.
 \end{thm}
 
 The number $\eps$ that meets the condition in the lemma is called the \index{Lebesgue number}\emph{Lebesgue number} of the cover.
@@ -54,7 +54,7 @@ A metric space $\c{M}$ is compact if and only if it is sequentially compact.
 
 In this section, we prove the only-if part.
 The if part requires deeper diving into metric spaces;
-it will be done in \ref{sec:seq-comp-if} after proving asequence of auxiliary statements.
+it will be done in \ref{sec:seq-comp-if} after proving a sequence of auxiliary statements.
 
 \parit{Proof of the only-if part in \ref{prop:seq-comp-metr}.}
 Choose a sequence $x_1,x_2,\dots{}\in \c{M}$.
@@ -67,7 +67,8 @@ The obtained subsequence $x_{i_1},x_{i_2},\dots$ converges to $p$.
 Assume the sequence $x_n$ has no converging subsequence.
 Then for any point $p$ there is $\eps_p>0$ such that $\Ball(p,\eps_p)$ contains only finitely many elements of $x_n$.
 Note that all balls $\Ball(p,\eps_p)$ form a cover of~$\c{M}$.
-Since the sequence is infinite, this cover does not have a finite subcover, hence the only-if part follows.
+Since the sequence is infinite, this cover does not have a finite subcover,
+in particular, $\c{M}$ is not compact.
 \qeds
 
 \section{Complete spaces}
@@ -77,12 +78,46 @@ for any $\eps>0$ there is $n$ such that $|x_i-x_j|<\eps$ for all $i,j>n$.
 It is easy to prove that any converging sequence is Cauchy, the converse does not hold in general.
 A metric space $\c{M}$ is called \index{complete space}\emph{complete} if any Cauchy sequence in $\c{M}$ converges to a point in $\c{M}$.
 
-The Cauchy test (which is assumed to be known from calculus) implies that the real line $\RR$ with the standard metric is a complete space.
+The Cauchy test (which is assumed to be known from calculus) implies that the real line $\RR$ with the standard metric is complete.
 On the other hand, an open interval $(0,2)$ forms a noncomplete subspace of $\RR$;
-indeed, the sequence $x_n=\tfrac 1n$ is Cauchy, but it does not converge in $(0,2)$ (it converges to $0$ in $\RR$, but $0\notin(0,2)$).
+indeed, the sequence $x_n=\tfrac 1n$ is Cauchy, but it does not converge in $(0,2)$ --- it converges to $0$ in $\RR$, but $0\notin(0,2)$.
+
+\begin{samepage}
+
+
+
 
 \begin{thm}{Exercise}\label{ex:compact-complete}
-Show that any compact metric space is complete. 
+
+\begin{subthm}{ex:compact-complete:a} Show that any compact metric space is complete.
+\end{subthm}
+
+\begin{subthm}{ex:compact-complete:b}
+Give an example of noncomact complete space $\c{M}$ with finite \index{diameter}\emph{diameter};
+that is, $d=\sup\set{|x-y|_{\c{M}}}{x,y\in \c{M}}<\infty$.
+\end{subthm}
+
+\end{thm}
+\end{samepage}
+
+\begin{thm}{Exercise}\label{ex:contracction}
+Let $\c{M}$ be a complete nonempty metric space, and let
+$f\:\c{M}\to \c{M}$ be a \emph{contraction map};
+that is, there is $\lambda<1$ such that
+\[|f(x)-f(y)|_{\c{M}}\le \lambda\cdot|x-y|_{\c{M}}\]
+for any $x,y\in \c{M}$.
+Show that $f$ has a unique \index{fixed point}\emph{fixed point};
+that is, a point $p\in\c{M}$ such that $f(p)=p$.
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:alm-min}
+Let $\c{M}$ be a complete metric space, and let $r\:\c{M}\to \RR$ be a positive continuous function.
+Show that for any $\eps>0$, there exists a point $p\in \c{M}$ such that
+\[
+r(x)> (1-\eps)\cdot r(p)
+\]
+for every $x\in \Ball (p, r(p))$.
+
 \end{thm}
 
 
@@ -101,8 +136,8 @@ Choose $\eps>0$.
 Consider the following recursive procedure. 
 
 Choose a point $x_1$ in $\c{M}$.
-Further, choose a point $x_2$ so that $|x_1\z-x_2|>\eps$.
-Further, choose a point $x_3$ so that $|x_1\z-x_3|>\eps$ and $|x_2\z-x_3|>\eps$; and so on.
+Further, choose a point $x_2$ such that $|x_1\z-x_2|>\eps$.
+Further, choose a point $x_3$ such that $|x_1\z-x_3|>\eps$ and $|x_2\z-x_3|>\eps$; and so on.
 On the $n$-th step we choose a point $x_n$ such that $|x_i\z-x_n|>\eps$ for all $i<n$.
 
 This procedure might teminate on the $n$-th step if there is no point $x_n$ such that $|x_i\z-x_n|>\eps$ for all $i<n$.
@@ -122,7 +157,7 @@ Sequentially compact metric spaces are separable.
 Let $\c{M}$ be a sequentially compact metric space.
 
 By \ref{lem:net}, for each positive integer $n$,
-we can choose a finite $\eps$-net $N_n\subset\c{M}$.
+we can choose a finite $\tfrac1n$-net $N_n\subset\c{M}$.
 It remains to observe that the union $N_1\cup N_2\cup \dots$ is countable and dense.
 \qeds
 
@@ -132,7 +167,7 @@ It remains to observe that the union $N_1\cup N_2\cup \dots$ is countable and de
 Any sequentially compact metric space has a countable base.
 \end{thm}
 
-Topological spaces that admit a countable base are called \index{second-countable space}\emph{second-countable}.\footnote{A space is called \index{first-countable space}\emph{first-countable} if for each point $x$ there exists a sequence of neighbourhoods $U_1$, $U_2,\dots$ of $x$ such that for any open set $V\ni x$ we can chose $n$ such that $V\supset U_n\ni x$. For example, any metric space is first-countable; indeed, one can take $U_n=\Ball(x,\tfrac1n)$.}
+Topological spaces that admit a countable base are called \index{second-countable space}\emph{second-countable}.\footnote{A space is called \index{first-countable space}\emph{first-countable} if for each point $x$ there exists a sequence of neighbourhoods $U_1$, $U_2,\dots$ such that for any open set $V\ni x$ we can chose $n$ such that $V\supset U_n\ni x$. For example, any metric space is first-countable; indeed, one can take $U_n=\Ball(x,\tfrac1n)$.}
 So the proposition states that \textit{any sequentially compact metric space is second-countable}.
 
 \parit{Proof.}
@@ -174,19 +209,155 @@ It remains to observe that $\{V_{\alpha_i}\}_{i\in S}$ is a countable cover of $
 
 \parit{Proof of the if part in \ref{prop:seq-comp-metr}.}
 Choose an open cover of $\c{M}$.
-By \ref{lem:lind}, we can pass to its countable countable, say $\{V_1,V_2,\dots\}$.
-Assume it does not have a finite subcover.
+By \ref{lem:lind}, we can assume that it is countable; denote it by $\{V_1,V_2,\dots\}$.
+Assume it has no finite subcover.
 Then we can choose a sequence of points $x_1,x_2,\dots\in\c{M}$ such that
 \[x_n\notin  V_1\cup \dots\cup V_n\]
 for any $n$.
 
 Since $\c{M}$ is sequentially compact, a subsequence of $x_1,x_2,\dots$ has a limit, say $x$;
 we have that $x\in V_n$ for some $n$.
-It follows that $x_i\in V_n$ for an infinite set of indices $i$, but by construction, $x_i\notin V_n$ for all $i>n$ --- a contradiction.
+It follows that $x_i\in V_n$ for an infinite set of indices $i$, but by construction, $x_i\notin V_n$ for all $i\ge n$ --- a contradiction.
 \qeds
 
 \begin{thm}{Exercise}\label{ex:compact-net}
 Show that a complete metric space $\c{M}$ is compact if for any $\eps>0$ there is a comapct $\eps$-net in $\c{M}$.
 \end{thm}
 
+\begin{thm}{Advanced exercise}\label{ex:non-contracting-map}
+Let $\c{M}$ be a compact metric space and
+$f\:\c{M}\z\to \c{M}$
+be a \index{distance-noncontracting map}\emph{distance-noncontracting map}; that is,
+\[|f(x)-f(y)|_{\c{M}}\ge |x-y|_{\c{M}}\eqlbl{eq:distance-noncontracting}\]
+for any $x,y\in\c{M}$
+Show that $f$ is an \index{isometry}\emph{isometry};
+that is, $f$ is a bijection and equality always holds in \ref{eq:distance-noncontracting}.
+\end{thm}
 
+\section{An application}
+
+\begin{thm}{Theorem}\label{thm:isoperim}
+Among all plane curves of given length $L$, only circles of length $L$ bound the greatest area.
+\end{thm}
+
+Since circle of length $L$ has area $\tfrac{L^2}{4\cdot \pi}$, the statement can be reformulatied in a more algebraic manner: \textit{plane curve $\gamma$ of given length $L$ bounds are at most $\tfrac{L^2}{4\cdot \pi}$, and, in the case of equality $\gamma$ is a circle of length $L$.}
+This statement is called \emph{isoperimetric inequality}.
+
+Given a plane curve $\gamma$ denote by $F_\gamma$ its \emph{convex hull}; that is, minimal convex set that includes $\gamma$.
+If a figure is bounded by $\gamma$, then it lies in $F_\gamma$.
+Furthermore, if $\gamma$ is a circle then it bounds $F_\gamma$.
+Therefore, it is sufficient to prove the following two statemnts:
+
+\begin{thm}{Claim}\label{clm:isoperim-exist}
+Among all closed plane curves $\gamma$ of length $\le L$ there is a curve that maximize the area of $F_\gamma$.
+\end{thm}
+
+\begin{thm}{Claim}\label{clm:isoperim-circle}
+If a closed plane curve $\gamma$ of length $\le L$ maximize  the area of $F_\gamma$, then $\gamma$ must be a circle of length $L$.
+\end{thm}
+
+Note that \ref{clm:isoperim-circle} does not say that a circle maximizes the area, it only says that no other curve does.
+But together with \ref{clm:isoperim-exist} it implies \ref{thm:isoperim}.
+
+Claim~\ref{clm:isoperim-circle} will be proved by means of elementary geometry;
+Claim \ref{clm:isoperim-exist} is an application of comactness.
+Note that the compact set that will be used in its proof is huge;
+say, it cannot be embedded into $\RR^n$ for any $n$.
+This is a very common type of argument, so it is worth knowing.
+
+\parit{Proof of \ref{clm:isoperim-exist}.}
+We can assume that a closed plane curve $\gamma$ with length at most $L$ is described by parametrization $\gamma\:[0,L]\to\RR^2$ such that
+\[|\gamma(t_0)-\gamma(t_1)|_{\RR^2}\le |t_0-t_1|.\]
+Without loss of generality, we can assume that $\gamma(0)=\gamma(L)=0\in\RR^2$.
+Consider the space $\Gamma$ of all such parametrized curves with the metric defined by
+\[|\gamma_1-\gamma_2|_\Gamma= \max\set{|\gamma_1(t)-\gamma_2(t)|_{\RR^2}}{t\in[0,L]}\]
+
+\begin{thm}{Exercise}
+Prove the following statements:
+\begin{subthm}{}
+The formula defines a metric on $\Gamma$; in particular, the maximum in the right-hand side of the formula is defined.
+\end{subthm}
+
+\begin{subthm}{}
+The space $\Gamma$ is complete.
+\end{subthm}
+
+\begin{subthm}{}
+The space $\Gamma$ is compact.
+\end{subthm}
+
+\end{thm}
+
+
+It remains to prove the following claim and apply \ref{ex:fun(compact):min-max}.
+\qeds
+
+We will need a more precise definition of enclosed area, that will work for curves with self-intersections.
+Namely, given $\gamma\in \Gamma$, denote by $F_\gamma$ the maximal closed set with boundary contained in the union of $\gamma([0,L])$ and the line segment from $\gamma(0)$ to $\gamma(L)$.
+
+\begin{thm}{Claim}\label{clm:dido3}
+$\gamma\mapsto \area F_\gamma$ defines a continuous function $\Gamma\to\RR$.
+\end{thm}
+
+
+\parit{Proof.}
+It is sufficient to show that
+\[|\gamma_1-\gamma_2|_\Gamma<L/n
+\quad\Rightarrow\quad
+\area F_{\gamma_2}\le \area F_{\gamma_1}+4\cdot\pi\cdot L^2/n
+\eqlbl{eq:area-cont}\]
+for any $\gamma_1,\gamma_2\in \Gamma$.
+
+\begin{wrapfigure}{r}{46 mm}
+\vskip-5mm
+\centering
+\includegraphics{mppics/pic-790}
+\end{wrapfigure}
+
+Note that $F_{\gamma_2}$ lies in an $\tfrac Ln$-neighborhood of $F_{\gamma_1}$;
+moreover if $p\in F_{\gamma_2}\setminus F_{\gamma_1}$, then $|p-x|<\tfrac Ln$ for some $x\in\partial F_{\gamma_1}$.
+Since the length of $\gamma$ is at most $L$, so it the line segment from $\gamma(0)$ to $\gamma(L)$.
+Whence we can choose an $2\cdot n$-point $L/n$-net of $\partial F_{\gamma_1}$, say $\{x_1,\dots,x_{2\cdot n}\}$.
+It follows that
+\[F_{\gamma_2}\setminus F_{\gamma_1}\subset \bigcup_{i=1}^{2\cdot n}\Ball(x_i,2\cdot L/n).\]
+Since $\area\Ball(x,r)_{\RR^2}=\pi\cdot r^2$ we get
+\[\area (F_{\gamma_2}\setminus F_{\gamma_1})\le 2\cdot n\cdot\pi \cdot (2\cdot L/n)^2,\]
+and \ref{eq:area-cont} follows.
+\qeds
+
+
+
+
+
+
+\parit{Sketch.}
+It is sufficient to consider only convex figures of the given perimeter; if a figure is not convex, pass to its convex hull and observe that it has a larger area and smaller perimeter.
+
+It remains to show that $D$ is a round disk;
+it will be done by means of elementary geometry.
+
+Let us cut $D$ along a chord $[ab]$ into two lenses, $L_1$ and $L_2$.
+Denote by $L_1'$ the reflection of $L_1$ across the perpendicular bisector of $[ab]$.
+Note that $D$ and $D'=L_1'\cup L_2$ have the same perimeter and area.
+That is, $D'$ has perimeter $\ell$ and maximal possible area;
+in particular, $D'$ is convex.
+
+The following exercise will finish the proof.
+\qeds
+
+{
+
+\begin{wrapfigure}{r}{57 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-405}
+\end{wrapfigure}
+
+\begin{thm}{Exercise}\label{ex:round-disc}
+Suppose $D$ is a convex figure such that for any chord $[ab]$ of $D$ the above construction produces a convex figure $D'$.
+Show that $D$ is a round disk.
+\end{thm}
+
+}
+
+Another popular way to prove that $D$ is a round disk is given by the so-called \textit{Steiner's 4-joint method} \cite{blaschke}.

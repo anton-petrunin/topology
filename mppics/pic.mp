@@ -444,6 +444,184 @@ fill
 fill ((((p2 shifted z.b rotated 90)--p0--cycle)--(p2 shifted z.b rotated 210)--cycle)--(p2 shifted z.b rotated 330)--cycle) shifted (3*z.shift) withcolor .5;
 endfig;
 
+beginfig(405)
+save u,p,a;
+path p[];
+u:=1cm;
+a:=60;
+
+z.a=(1,0)*u;
+z.b=-z.a;
+z.shift=(3,0)*u;
+
+p0=z.a{.7,1}..z.b{-.4,-1}..cycle;
+
+draw p0;
+draw z.a--z.b;
+hatchfill  p0 withcolor (a, 1mm, -.5bp);
+
+draw (subpath (0,1) of p0) xscaled -1 shifted z.shift;
+draw (subpath (1,2) of p0) shifted z.shift;
+draw (z.a--z.b) shifted z.shift;
+hatchfill  ((subpath (0,1) of p0) xscaled -1 shifted z.shift)--cycle withcolor (180-a, 1mm, -.5bp);
+hatchfill  ((subpath (1,2) of p0) shifted z.shift)--cycle withcolor (a, 1mm, -.5bp);
+
+dOt z.a,z.b,z.a shifted z.shift,z.b shifted z.shift;
+
+whitelabel.top(btex $L_1$ etex, origin);
+whitelabel.bot(btex $L_2$ etex, origin);
+whitelabel.top(btex $L_1'$ etex, z.shift);
+whitelabel.bot(btex $L_2$ etex, z.shift);
+
+label.bot(btex $D$ etex, point 1.6 of p0);
+label.bot(btex $D'$ etex, z.shift+ point 1.6 of p0);
+label.rt(btex $a$ etex, z.a);
+label.lft(btex $b$ etex, z.b);
+label.rt(btex $a$ etex, z.a shifted z.shift);
+label.lft(btex $b$ etex, z.b shifted z.shift);
+endfig;
+
+beginfig(770)
+save u,p;
+path p[];
+u:=1cm;
+
+z.a=(0,0)*u;
+z.b=(2,0)*u;
+z.x=(1.2,1)*u;
+
+p1=z.a..z.x{1,-.5}..z.b--cycle;
+
+hatchfill p1  withcolor (67, 2mm, -.5bp);
+draw p1 penbold;
+
+dOt z.a,z.b;
+
+label.top (btex $\gamma$ etex, point 1 of p1);
+whitelabel (btex $F$ etex, (z.a+z.b+point .7 of p1)/3);
+
+endfig;
+
+beginfig(775)
+save u,p;
+path p[];
+u:=1cm;
+
+z.a=(0,0)*u;
+z.b=(2,0)*u;
+z.x=(.7,1)*u;
+z.y=(1.4,.8)*u;
+z.v=.5[z.x,z.y]+(0,-.2)*u;
+
+
+p1=z.a{(-1,1)}..z.x{z.y-z.x}..z.v..{z.y-z.x}z.y..z.b--cycle;
+
+hatchfill p1  withcolor (67, 2mm, -.5bp);
+draw p1 penbold;
+draw z.x--z.y;
+
+dOt z.a,z.b;
+
+whitelabel (btex $F$ etex, (z.a+point 1 of p1)/2);
+
+endfig;
+
+beginfig(776)
+save u,p;
+path p[];
+u:=1cm;
+
+z.a=(0,0)*u;
+z.b=(2,0)*u;
+
+p1=z.a{up}..tension 1.5..{down}z.b;
+
+z.x=point .7 of p1;
+
+hatchfill p1--z.x--cycle  withcolor (67, 2mm, -.5bp);
+draw p1 penbold;
+draw z.a--z.x--z.b--cycle;
+
+drawarrow arc(z.a-z.x, (z.a-z.x) rotated 10 , (z.a-z.x) rotated 30) scaled .3 shifted z.x;
+
+dOt z.a,z.b,z.x;
+
+label.bot (btex $a$ etex, z.a);
+label.bot (btex $b$ etex, z.b);
+label.top (btex $x$ etex, z.x);
+whitelabel (btex $F_a$ etex, point .4 of p1);
+whitelabel (btex $F_b$ etex, point .8 of p1);
+
+endfig;
+
+beginfig(777)
+save u,p;
+path p[];
+u:=1cm;
+
+z.a=(0,0)*u;
+z.b=(2,0)*u;
+z.x=.5[z.b,z.b rotated 70];
+z.m=.5[z.a,z.b];
+
+p1=z.a{up}..z.x..{down}z.b;
+
+rimmark(z.a--z.m,z.b--z.m,z.x--z.m);
+mark_rt_angle(z.a, z.x, z.b);
+arcs(z.m, z.a, z.x, 11);
+arcs(z.m, z.x, z.a, 11);
+arcs2(z.m, z.b, z.x, 11);
+arcs2(z.m, z.x, z.b, 11);
+
+draw p1 penbold;
+draw z.a--z.x--z.b--cycle;
+draw z.x--z.m;
+
+
+dOt z.a,z.b,z.x,z.m;
+
+label.bot (btex $a$ etex, z.a);
+label.bot (btex $b$ etex, z.b);
+label.bot (btex $m$ etex, z.m);
+label.top (btex $x$ etex, z.x);
+
+endfig;
+
+beginfig(790)
+save u,p,n;
+path p[];
+u:=1.4cm;
+n:=20;
+
+z.a=(0,0)*u;
+z.b=(2,0)*u;
+z.x=(1.2,1)*u;
+
+p1=z.a..z.x{1,-1}..z.b;
+
+hatchfill p1--cycle  withcolor (67, 2mm, -.5bp);
+draw p1--cycle penbold;
+
+numeric L;
+L := arclength p1;
+
+for i = 0 upto n:
+draw circle(point (arctime (i/n) * L of p1) of p1, 2*L/n);
+endfor;
+for i = 1 upto n-1:
+draw circle((i/n)[z.a,z.b], 2*L/n);
+endfor;
+dOt
+for i = 0 upto n:
+point (arctime (i/n) * L of p1) of p1,
+endfor
+for i = 1 upto n-1:
+(i/n)[z.a,z.b],
+endfor;
+
+
+endfig;
+
 beginfig(980)
 save u,p;
 path p[];

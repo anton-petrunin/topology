@@ -1,3 +1,174 @@
+\section{An application}
+
+According to the legend, Queen Dido was allowed to claim land bounded by oxhide,
+and she fenced the land for Carthage on the sea shore with a long strip made from oxhide.
+
+\begin{wrapfigure}{r}{23 mm}
+\vskip-5mm
+\centering
+\includegraphics{mppics/pic-770}
+\end{wrapfigure}
+
+\begin{thm}{Dido's Problem}\label{thm:dido}
+Show that among all plane curves of given length $L$, a semicircle {}\emph{enclose} the greatest area;
+we say that figure $F$ is enclosed by a curve $\gamma$ if it is bounded by $\gamma$ and the line segment between its endpoints.
+
+\end{thm}
+
+\begin{thm}{Claim}\label{clm:dido1}
+Suppose a curve $\gamma$ encloses the largest area among all curves of length $\le L$.
+Then $\gamma$ is a semicircle of length $L$.
+\end{thm}
+
+The proof uses elementary geometry.
+
+\parit{Proof.}
+Let $F$ be enclosed by $\gamma$.
+Let us show that if the area is largest, then $F$ is convex.
+Indeed, assume $F$ is not convex.
+Then one can enlarge its area by shortening $\gamma$ (as shown in the picture).
+
+\begin{wrapfigure}{r}{26 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-775}
+
+\bigskip
+
+\includegraphics{mppics/pic-776}
+
+\bigskip
+
+\includegraphics{mppics/pic-777}
+\end{wrapfigure}
+
+Denote by $a$ and $b$ the endpoints of $\gamma$.
+Let $x$ be another point on~$\gamma$.
+
+Let us show that $\measuredangle axb=\tfrac\pi2$.
+Cut from $F$ two parts $F_a$ and $F_b$ with chords $ax$ and $bx$, so $F$ is subdivided into $F_a$, $F_b$ and $\triangle axb$.
+In particular, $\area F=\area F_a+\area F_b+\area \triangle axb$.
+Think that $F_a$ and $F_b$ are attached to the sides of $\triangle axb$, we have a joint in $x$ and can rotate one side of the triangle.
+If the angle of $\triangle axb$ at $x$ is not right, then a slight rotation makes area of the triangle bigger;
+therefore, we can enlarge enclosed area of the curve.
+
+Let $\alpha$ and $\beta$ be the angles of $\triangle axb$ at $a$ and $b$, respectively.
+Since $\measuredangle axb=\tfrac\pi2$, we have $\alpha+\beta=\tfrac\pi2$.
+Draw a line from $x$ to a point $m$ on the opposite side of the triangle such that $\measuredangle axm=\alpha$ and therefore $\measuredangle bxm=\beta$.
+Triangle $\triangle amx$ and $\triangle bmx$ are isosceles since each has a pair of equal angles.
+Therefore, $|a-m|=|x-m|=|b-m|$.
+In particular $m$ is the midpoint of $a$ and $b$, and $x$ lies on a semicircle with diameter $ab$.
+It follows that $\gamma$ is a semicircle.
+
+It remains to observe that among semicircle of length $\le L$, the semicircle of maximal length maximizes the enclosed area.
+\qeds
+
+\begin{thm}{Claim}\label{clm:dido2}
+Among all plane curves of length $\le L$ there is a curve that maximizes the enclosed area.
+\end{thm}
+
+\parit{Proof.}
+Any plane curve $\gamma$ with length at most $L$ can be equipped with a parametrization $\gamma\:[0,L]\to\RR^2$ such that
+\[|\gamma(t_0)-\gamma(t_1)|_{\RR^2}\le |t_0-t_1|.\]
+Consider the space $\Gamma$ of all such parametrized curves with the metric defined by
+\[|\gamma_1-\gamma_2|_\Gamma= \max\set{|\gamma_1(t)-\gamma_2(t)|_{\RR^2}}{t\in[0,L]}\]
+
+\begin{thm}{Exercise}
+Prove the following statements:
+\begin{subthm}{}
+The formula defines a metric on $\Gamma$; in particular, the maximum in the right-hand side of the formula is defined.
+\end{subthm}
+
+\begin{subthm}{}
+The space $\Gamma$ is complete.
+\end{subthm}
+
+\begin{subthm}{}
+Any closed and bounded set in $\Gamma$ is compact.%
+\footnote{A metric space $\c{M}$ is called \index{proper space}\emph{proper} if any bounded closed set in $\c{M}$ is compact;
+so, this part states that \textit{$\Gamma$ is proper}.}
+\end{subthm}
+
+\end{thm}
+
+Each point in $\Gamma$ is a curve.
+Choose a point $a$ and consider the set $K_a$ of all curves $\gamma$ in $\Gamma$ such that $\gamma(0)=a$.
+Observe that $K_a$ is a closed and bounded set in $\Gamma$;
+applying the exercise we get that $K_a$ is compact.
+
+It remains to prove the following claim and apply \ref{ex:fun(compact):min-max}.
+\qeds
+
+We will need a more precise definition of enclosed area, that will work for curves with self-intersections.
+Namely, given $\gamma\in \Gamma$, denote by $F_\gamma$ the maximal closed set with boundary contained in the union of $\gamma([0,L])$ and the line segment from $\gamma(0)$ to $\gamma(L)$.
+
+\begin{thm}{Claim}\label{clm:dido3}
+$\gamma\mapsto \area F_\gamma$ defines a continuous function $\Gamma\to\RR$.
+\end{thm}
+
+
+\parit{Proof.}
+It is sufficient to show that
+\[|\gamma_1-\gamma_2|_\Gamma<L/n
+\quad\Rightarrow\quad
+\area F_{\gamma_2}\le \area F_{\gamma_1}+8\cdot\pi\cdot L^2/n
+\eqlbl{eq:area-cont}\]
+for any $\gamma_1,\gamma_2\in \Gamma$.
+
+\begin{wrapfigure}{r}{46 mm}
+\vskip-5mm
+\centering
+\includegraphics{mppics/pic-790}
+\end{wrapfigure}
+
+Note that $F_{\gamma_2}$ lies in an $\tfrac Ln$-neighborhood of $F_{\gamma_1}$;
+moreover if $p\in F_{\gamma_2}\setminus F_{\gamma_1}$, then $|p-x|<\tfrac Ln$ for some $x\in\partial F_{\gamma_1}$.
+Since the length of $\gamma$ is at most $L$, so it the line segment from $\gamma(0)$ to $\gamma(L)$.
+Whence we can choose an $2\cdot n$-point $L/n$-net of $\partial F_{\gamma_1}$, say $\{x_1,\dots,x_{2\cdot n}\}$.
+It follows that
+\[F_{\gamma_2}\setminus F_{\gamma_1}\subset \bigcup_{i=1}^{2\cdot n}\Ball(x_i,2\cdot L/n).\]
+Since $\area\Ball(x,r)_{\RR^2}=\pi\cdot r^2$ we get
+\[\area (F_{\gamma_2}\setminus F_{\gamma_1})\le 2\cdot n\cdot\pi \cdot (2\cdot L/n)^2,\]
+and \ref{eq:area-cont} follows.
+\qeds
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\parbf{\ref{ex:prebase};} \textit{only-if part.}
+Apply that a prebase is a collection of open sets.
+
+\parit{If part.} Show that for any finite collection of sets $P_1,\dots,P_n$ in the prebase the inverse image
+$f^{-1}(P_1\cap\dots\cap P_n)$
+is open.
+Further apply \ref{ex:base-nbhd}.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \begin{thm}{Exercise}\label{ex:nowhere-dense}
 Classify topological spaces (up to homeomorphism) containing a unique nowhere
 dense subset.

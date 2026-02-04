@@ -8,7 +8,7 @@ Recall that $\c{X}\times\c{Y}$ denotes the set of all pairs $(x,y)$ such that $x
 
 Suppose that the sets $\c{X}$ and $\c{Y}$ are equipped with topologies.
 Let us equip $\c{X}\times\c{Y}$ with topology by declaring that a set is open in $\c{X}\times\c{Y}$ if it can be presented as a union of sets of the following type: $V\times W$ for open sets $V\subset \c{X}$ and $W\subset \c{Y}$.
-In other words, a subset $O$ is open in $\c{X}\times\c{Y}$ if and only if there are collections of open sets $V_\alpha\subset \c{X}$ and $W_\alpha\subset \c{Y}$  such that
+In other words, a subset $O$ is open in $\c{X}\times\c{Y}$ if and only if there are familys of open sets $V_\alpha\subset \c{X}$ and $W_\alpha\subset \c{Y}$  such that
 \[O=\bigcup_\alpha V_\alpha\times W_\alpha,\]
 here $\alpha$ runs in some index set.
 
@@ -72,7 +72,7 @@ $x\mapsto f(a,x)$ and $x\mapsto f(x,b)$ are continuous for any $a,b\in [0,1]$.
 \section{Base}
 
 \begin{thm}{Definition}\label{def:base}
-A collection $\s{B}$ of open sets in a topological space $\c{X}$ is called its \index{base}\emph{base} if every open set in $\c{X}$ is a union of sets in $\s{B}$.
+A family $\s{B}$ of open sets in a topological space $\c{X}$ is called its \index{base}\emph{base} if every open set in $\c{X}$ is a union of sets in $\s{B}$.
 \end{thm}
 
 By \ref{ex:union-of-balls}, \textit{open balls form a base of a metric space}.
@@ -86,7 +86,7 @@ In many cases, it is convenient (and also economical) to describe the topology b
 For example, the product topology on $\c{X}\times\c{Y}$ can be redefined as a \textit{topology with a base formed by all products $V\times W$, where $V$ is open in $\c{X}$, and $W$ is open in $\c{Y}$}.
 
 \begin{thm}{Exercise}\label{ex:base-nbhd}
-Let $\s{B}$ be a collection of open sets in a topological space $\c{X}$.
+Let $\s{B}$ be a family of open sets in a topological space $\c{X}$.
 Show that $\s{B}$ is a base in $\c{X}$ if and only if for any point $x\in \c{X}$ and any neighborhood $N\ni x$ there is $B\in\s{B}$ such that $x\in B\subset N$.
 \end{thm}
 
@@ -110,9 +110,9 @@ For each pair of sets $B_1, B_2\in \s{B}$ and each point $x \in B_1 \cap B_2$ th
 Denote by $\s{O}$ the set of all unions of sets in $\s{B}$.
 We need to show that $\s{O}$ is a topology on $\c{X}$.
 
-Evidently, the union of any collection of sets in $\s{O}$ is in $\s{O}$.
+Evidently, the union of any family of sets in $\s{O}$ is in $\s{O}$.
 Further, $\c{X}$ is in $\s{O}$ by \ref{SHORT.prop:base-any:covers}.
-The empty set is in $\s{O}$ since it is a union of the empty collection.
+The empty set is in $\s{O}$ since it is a union of the empty family.
 
 It remains to check \ref{def:top-space:n}; suppose
 \[O=\bigcup_\alpha B_\alpha
@@ -143,20 +143,21 @@ Is it true that in this topology the set $\{1\}$ is open and/or closed?
 
 \section{Prebase}\label{prebase}
 
-Suppose $\s{P}$ is a collection of subsets of $\c{X}$ that covers the whole space;
+Suppose $\s{P}$ is a family of subsets of $\c{X}$ that covers the whole space;
 that is, $\c{X}$ is a union of all sets in $\s{P}$.
 By \ref{prop:base-any}, the set of all finite intersections of sets in $\s{P}$ is a base for \textit{some} topology on $\c{X}$.
 The set $\s{P}$ is called a \index{prebase}\emph{prebase} for this topology (also known as a \index{subbase}\emph{subbase}).
 
 Note that any base is a prebase, but not the other way around.
+Spelling the defining properties of open sets (\ref{def:top-space}) and the definition of prebase we get the following.
 
-\begin{thm}{Exercise}\label{ex:prebase}
+\begin{thm}{Observation}\label{ex:prebase}
 Let $\s{P}$ be a prebase for the topology on $\c{Y}$.
-Show that a map $f\: \c{X} \to \c{Y}$ is continuous if and only if $f^{-1}(P)$ is open for any set $P$ in $\s{P}$.
+Then a map $f\: \c{X} \to \c{Y}$ is continuous if and only if $f^{-1}(P)$ is open for any set $P$ in $\s{P}$.
 
 \end{thm}
 
-There are almost no restrictions on a prebase --- we may start with any collection $\s{P}$ of subsets that covers the whole space $\c{X}$ and define a topology by declaring that \textit{$\s{P}$ is a prebase for the topology}.
+There are almost no restrictions on a prebase --- we may start with any family $\s{P}$ of subsets that covers the whole space $\c{X}$ and define a topology by declaring that \textit{$\s{P}$ is a prebase for the topology}.
 It defines the weakest topology on $\c{X}$ such that every set of $\s{P}$ is open.
 
 \begin{thm}{Exercise}\label{ex:graph}
@@ -167,8 +168,8 @@ Show that the product topology on $\c{X}\times\c{Y}$ can be redefined as a topol
 \end{subthm}
 
 \begin{subthm}{ex:graph:graph}
-Apply part \ref{SHORT.ex:graph:prebase} to prove the following:
-given a map $f\:\c{X}\z\to \c{Y}$, consider the map $F\:\c{X}\z\to \c{X}\times\c{Y}$ defined by $F\:x\mapsto (x,f(x))$.
+Apply part \ref{SHORT.ex:graph:prebase} and \ref{ex:prebase} to prove the following:
+given a map $f\:\c{X}\z\to \c{Y}$, consider the map $F\:\c{X}\z\to \c{X}\times\c{Y}$ defined by $F\:x\z\mapsto (x,f(x))$.
 Show that $f$ is continuous if and only if $F$ is an embedding.
 \end{subthm}
 
@@ -183,7 +184,7 @@ Indeed, these projections are continuous if the inverse images of all open sets 
 In other words, the topology on $\c{X}\times\c{Y}$ must contain all sets of the form $V\times \c{Y}$ and $\c{X}\times W$ for open sets $V\subset \c{X}$ and $W\subset \c{Y}$.
 By \ref{ex:graph:prebase}, these sets form a prebase in $\c{X}\times\c{Y}$ and its topology is the weakest topology  that contains these sets.
 
-More generally, given a collection of maps $f_\alpha\:S\to \c{Y}_\alpha$ from a set $S$ to topological spaces $\c{Y}_\alpha$, we can introduce a topology on $S$ by stating that the inverse images $f^{-1}_\alpha(W_\alpha)$ for open sets $W_\alpha\subset\c{Y}_\alpha$ form its prebase.
+More generally, given a family of maps $f_\alpha\:S\to \c{Y}_\alpha$ from a set $S$ to topological spaces $\c{Y}_\alpha$, we can introduce a topology on $S$ by stating that the inverse images $f^{-1}_\alpha(W_\alpha)$ for open sets $W_\alpha\subset\c{Y}_\alpha$ form its prebase.
 It defines the topology on $S$ \index{induced topology}\emph{induced} by the maps $f_\alpha$;
 it is the weakest topology on $S$ that makes all maps $f_\alpha$ continuous.
 For example, if we apply this construction to the inclusion map $S\hookrightarrow \c{Y}$ of a subset $S\subset \c{Y}$, then we get {}\emph{induced topology} on $S$ (see \ref{sec:induced-topology}).
