@@ -655,7 +655,7 @@ Argue as in \ref{thm:compact-product} to prove that there is an open set $N_p\ni
 Arrive at a contradiction.
 
 \parit{Remark.}
-This is a part of the \index{closed graph theorem}\emph{closed graph theorem}.
+This is a part of the \index{closed graph theorem}\emph{closed graph theorem}; compare to \ref{ex:hausdorff-diagonal} and \ref{ex:graph:graph}.
 The following function $f\:\RR\to\RR$ has closed graph, but is not continuous:
 \[f(x)=
 \begin{cases}
@@ -732,11 +732,17 @@ Conclude that $f$ is surjective and therefore bijective.
 \parit{Comment.}
 This statement is used to prove key properties of so-called \index{Gromov--Hausdorff metric}\emph{Gromov--Hausdorff metric} --- a metric on space of all (isometry classes of) compact metric spaces.
 
-\parbf{\ref{ex:aa}}; \ref{SHORT.ex:aa:def}.
+\parbf{\ref{ex:aa}}; \ref{SHORT.ex:aa:def}.  Apply \ref{thm:comp-interval} and \ref{ex:fun(compact):min-max}. Check the conditions in \ref{def:metric-space}.
 
-\ref{SHORT.ex:aa:complete}.
+\parit{\ref{SHORT.ex:aa:complete}.} Choose a Cauchy sequence $\gamma_1,\gamma_2,\dots\in\Gamma$.
+Observe that $\gamma_n(t)$ is a Cauchy sequence in $\RR^2$ for any fixed $t\in [0,L]$.
+Since $\RR^2$ is complete, we can define
+\[\gamma_\infty(t)=\lim_{n\to\infty}\gamma_n(t).\]
+Show that $\gamma_\infty\in\Gamma$.
 
-\ref{SHORT.ex:aa:compact}.
+\parit{\ref{SHORT.ex:aa:compact}.} Choose a sequence $\gamma_1,\gamma_2,\dots\in\Gamma$ and a countable dense set $\{t_1,t_2,\dots\}$ in $[0,L]$.
+Apply the diagonal precedure to extract a subsequence $\gamma_{i_1}, \gamma_{i_2},\dots$ such that for any $t_t$ the sequence $\gamma_{i_n}(t_k)$ fonverges as $n\to\infty$.
+Show that this subsequence converges in $\Gamma$.
 
 \parbf{\ref{ex:hausdorff-unique-limit}.} Arguing by contradiction, assume a sequence has two limits $x$ and $y$.
 Since the space is Hausdorff we can choose disjoint neighborhoods $V\ni x$ and $W\ni y$.
@@ -755,7 +761,18 @@ The set $\Delta$ is closed if and only if its complement $U=(\c{X}\times\c{X})\s
 Show and use that the latter means that there is a family $\{(V_\alpha,W_\alpha)\}$ of disjoint pairs of open sets in $\c{X}$ such that
 \[U=\bigcup_\alpha V_\alpha\times W_\alpha.\]
 
-\parbf{\ref{ex:normal-hausdorff}.} By \ref{thm:hausdorff-compact-t3}, for any $y\in L$ there is a pair of open sets $V_y$, $W_y$ such that $V_y\supset K$ and $W_y\ni y$
+\parbf{\ref{ex:closed-graph-hausdorff}.}
+Choose a point $(x,y_1)\notin \Gamma$.
+Let $y_0=f(x)$.
+Let $V\ni y_0$ and $W\ni y_1$ be as in the neighborhoods provided by Hausdoffness of $\c{Y}$.
+Show that $f^{-1}(V)\times W$ is a neighborhood of $(x,y_1)$ that does not intersect $\Gamma$;
+make a conculsion.
+
+\parit{Remark.}
+This is another part of the \index{closed graph theorem}\emph{closed graph theorem}; compare to \ref{ex:closed-graph} and \ref{ex:graph:graph}.
+
+\parbf{\ref{ex:normal-hausdorff}.}
+By \ref{thm:hausdorff-compact-t3}, for any $y\in L$ there is a pair of open sets $V_y$, $W_y$ such that $V_y\supset K$ and $W_y\ni y$
 such that $V_y\cap W_y=\emptyset$.
 Mimic the proof of \ref{thm:hausdorff-compact-t3} using these pairs.
 
@@ -850,15 +867,6 @@ Denote the Sierpi\'nski triangle by~$\triangle$.
 Let $\{x,y,z\}$ be a 3-point set in $\triangle$ such that $\triangle \setminus\{x,y,z\}$ has 3 connected components.
 Show and use that there is a unique choice for the set $\{x,y,z\}$ and 
 it is formed by the midpoints of the original triangle.
-
-\parbf{\ref{ex:open-close}.}
-Let $I\ni 0$ be the maximal subinterval of $[0,1)$ such that $I$ admits a unique cover by intervals $[x_\alpha,f(x_\alpha))$ with $x_\alpha\in I$ for all $\alpha$.
-
-Show that $I$ is open and closed.
-Conclude that $I=[0,1)$.
-
-\parit{Comment.}
-This is an application of the so-called \index{open-closed argument}\emph{open-closed argument}; it provides a geometric version of induction (or transfinite induction).
 
 \parbf{\ref{ex:two-point-path-connected}.}
 Recall that $\{a\}$ is an open set in $\c{X}$.

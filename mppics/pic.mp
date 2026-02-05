@@ -477,6 +477,50 @@ label.bot(btex $F$ etex, point 1.6 of p0);
 label.bot(btex $F'$ etex, z.shift+ point 1.6 of p0);
 endfig;
 
+beginfig(685)
+save u,p, a;
+path p[];
+u:=.7cm;
+a:=10;
+
+z.x=(.6*a*u,-1*u);
+
+p1=(0,.3)*a*u--(.8,.3)*a*u--(.8,.6)*a*u--(0,.6)*a*u;
+p2=(.1,1)*a*u--(.1,.5)*a*u--(.7,.5)*a*u--(.7,1)*a*u;
+p3=(.5,0)*a*u--(.5,.4)*a*u--(1,.4)*a*u--(1,0)*a*u;
+p0=(.5,0)*a*u--(.5,1)*a*u--(.7,1)*a*u--(.7,0)*a*u--cycle;
+
+draw p1 dashed evenly;
+fill p1--cycle withcolor .9;
+draw p2 dashed evenly;
+fill p2--cycle withcolor .9;
+draw subpath (0,2) of p3 dashed evenly;
+fill p3--cycle withcolor .9;
+hatchfill p0  withcolor (30, 1mm, -.5bp);
+draw subpath (0,2) of p0 dashed evenly;
+draw subpath (2,3) of p0 dashed evenly;
+
+draw (0,0)*u--(a,0)*u--(a,a)*u--(0,a)*u--cycle;
+draw (0,-1)*u--(a,-1)*u ;
+draw (-1,0)*u--(-1,a)*u ;
+draw (x.x,0)--(x.x,1*a*u) pensemibold;
+
+draw (.5*a*u,-1*u)--(.7*a*u,-1*u) penbold withcolor .5;
+
+dOt z.x;
+
+label.bot(btex $x$ etex, z.x);
+label.lrt(btex $\c{X}$ etex, (0,-1*u));
+label.ulft(btex $\c{Y}$ etex, (-1*u,0));
+whitelabel(btex $N_x\times\c{Y}$ etex, (x.x,.45*a*u));
+whitelabel(btex $\{x\}\times\c{Y}$ etex rotated 90, (x.x,.7*a*u)+(7,0));
+label.urt(btex $N_x$ etex , z.x+(5,0)) withcolor (.5);
+label.urt(btex $V_{\alpha_1}\times W_{\alpha_1}$ etex, (0,.3)*a*u);
+label.lrt(btex $V_{\alpha_2}\times W_{\alpha_2}$ etex, (.1,1)*a*u);
+label.ulft(btex $V_{\alpha_3}\times W_{\alpha_3}$ etex, (1,0)*a*u);
+label.urt(btex $\c{X}\times \c{Y}$ etex, (0,0)*a*u);
+endfig;
+
 beginfig(770)
 save u,p;
 path p[];
