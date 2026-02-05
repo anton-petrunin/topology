@@ -18,6 +18,9 @@ More generally, $\{V_\alpha\}$ is an \index{open cover}\emph{open cover} of a su
 A subfamily of the cover $\{V_\alpha\}$ that is also a cover is called its \index{subcover}\emph{subcover} of $\{V_\alpha\}$.
 \end{thm}
 
+Observe that any base of a space is a cover, but not every cover is its base.
+For example, any space admits a cover by one set (the whole space), but it forms a base only for concrete spaces.
+
 \begin{thm}{Exercise}\label{ex:open-open-cover}
 Let $\{V_\alpha\}$ be an open cover of a topological space $\c{X}$.
 Show that $W\subset \c{X}$ is open if and only if each intersection $W\cap V_\alpha$ is open.
@@ -358,12 +361,6 @@ that is, $\c{X}\times\c{Y}$ can be covered by a finite set of sets from $\{N_x\t
 Applying \ref{clm:Nx}, we get that $\c{X}\times\c{Y}$ can be covered by a finite number of product sets from $\{V_\alpha\times W_\alpha\}$.
 \qeds
 
-\begin{thm}{Advanced exercise}\label{ex:closed-graph} 
-Let $f\:\c{X}\to\c{K}$ be a map between topological spaces.
-Assume $\c{K}$ is compact.
-Show that $f$ is continuous if and only if its graph $\Gamma=\set{(x,f(x))}{x\in\c{X}}$ is a closed set in $\c{X}\times\c{K}$. 
-\end{thm}
-
 \begin{thm}{Exercise}\label{ex:S1-compact}
 Give two proofs that the circle
 \[\mathbb{S}^1=\set{(x,y)\in\RR^2}{x^2+y^2=1}\]
@@ -378,6 +375,12 @@ Using \ref{prop:comp-image}.
 Using \ref{thm:compact-product} and \ref{prop:compact-closed}.
 \end{subthm}
 
+\end{thm}
+
+\begin{thm}{Advanced exercise}\label{ex:closed-graph}
+Let $f\:\c{X}\to\c{K}$ be a map between topological spaces.
+Assume $\c{K}$ is compact.
+Show that $f$ is continuous if its graph $\Gamma=\set{(x,f(x))}{x\in\c{X}}$ is a closed set in $\c{X}\times\c{K}$.
 \end{thm}
 
 \section{Remarks}

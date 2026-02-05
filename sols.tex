@@ -576,7 +576,7 @@ Apply this formula to show that if $G$ is finite and $V$ is closed, then so is $
 Apply \ref{def:top-space:u}, \ref{def:top-space:n} and \ref{def:cont-top}.
 
 \parbf{\ref{ex:cofinite-compact}.}
-We may assume that the space is nonempty; otherwise there is nothing to prove.
+Assume that the space is nonempty; otherwise there is nothing to prove.
 Choose a nonempty set $V_0$ from the cover.
 Its complement is a finite set, say $\{x_1,\dots,x_n\}$.
 For each $x_i$ choose a set $V_i\ni x_i$ from the cover.
@@ -595,7 +595,7 @@ $\c{X}\cup\{a,b\}$, $\c{X}\cup\{a\}$, $\c{X}\cup\{b\}$ and all open sets in $\c{
 Observe that the sets $\c{X}\cup\{a\}$ and $\c{X}\cup\{b\}$ are compact, but their intersection is not.
 
 \parit{\ref{SHORT.ex:noncompact-metric}.} If $A$ is a subset of metric space $\c{M}$ that is not closed, then we can choose a point $p\in \bar A\setminus A$.
-Check the definition of compactness for complements $V_n=\c{M}\setminus \cBall[p\tfrac1n]$.
+Check the definition of compactness for complements $V_n=\c{M}\setminus \cBall[p,\tfrac1n]$.
 
 For the second part, try to use the argument in \ref{prop:compact-closed}.
 
@@ -628,7 +628,7 @@ This is a baby case of the \index{Baire category theorem}\emph{Baire category th
 Apply \ref{prop:compact-closed} and \ref{thm:comp-interval}.
 
 \parbf{\ref{ex:compact-product}.}
-Apply \ref{prop:comp-image} to the projections $\c{X}\times\c{Y}\to\c{X}$ and $\c{X}\times\c{Y}\to\c{Y}$.
+Apply \ref{prop:comp-image} to the projections $\c{X}\times\c{Y}\to\c{X}$ and $\c{X}\times\c{Y}\to\c{Y}$ (which are continuous).
 
 \parbf{\ref{ex:inscribed-cover-base}.} Spell the definitions.
 
@@ -636,11 +636,18 @@ Apply \ref{prop:comp-image} to the projections $\c{X}\times\c{Y}\to\c{X}$ and $\
 The last statement is wrong.
 Show by example that in general, the product $V_{\beta_i}\times W_{\beta_i}$ do \textit{not} cover $\c{X}\times\c{Y}$.
 
+\parbf{\ref{ex:S1-compact}};
+\ref{SHORT.ex:S1-compact:comp-image}.
+Write $\mathbb{S}^1$ is an image of closed interval under a continuous map, and apply \ref{prop:comp-image}.
+
+\parit{\ref{SHORT.ex:S1-compact:compact-closed}.}
+Use that $\mathbb{S}^1$ is a closed subset of $[-1,1]\times[-1,1]$.
+
 \parbf{\ref{ex:closed-graph}.}
 By \ref{prop:cont-closed}, it is sufficient to show that any closed set $A\subset\c{K}$ has closed inverse image $B=f^{-1}(A)\subset\c{X}$.
 
 Observe that the set $C=\Gamma\cap (\c{X}\times A)$ is closed,
-so its complement $U$ can be presented as a union $\bigcup_\alpha V_\alpha\times W_\alpha$.
+so its complement $U$ can be presented as a union $\bigcup V_\alpha\times W_\alpha$.
 
 Suppose $B$ is not closed, choose a point $p\z\in \bar B\backslash B$.
 Note that $\{p\}\times \c{K}$ is a compact set in~$U$.
@@ -648,6 +655,7 @@ Argue as in \ref{thm:compact-product} to prove that there is an open set $N_p\ni
 Arrive at a contradiction.
 
 \parit{Remark.}
+This is a part of the \index{closed graph theorem}\emph{closed graph theorem}.
 The following function $f\:\RR\to\RR$ has closed graph, but is not continuous:
 \[f(x)=
 \begin{cases}
@@ -657,13 +665,6 @@ The following function $f\:\RR\to\RR$ has closed graph, but is not continuous:
 \end{cases}
 \]
 It shows that compactness of $\c{K}$ is a necessary assumption.
-
-\parbf{\ref{ex:S1-compact}};
-\ref{SHORT.ex:S1-compact:comp-image}.
-Write $\mathbb{S}^1$ is an image of closed interval under a continuous map, and apply \ref{prop:comp-image}.
-
-\parit{\ref{SHORT.ex:S1-compact:compact-closed}.}
-Use that $\mathbb{S}^1$ is a closed subset of $[-1,1]\times[-1,1]$.
 
 \parbf{\ref{ex:power-power}.}
 If there is a converging subsequence $\mathfrak{p}_{i_1}$, $\mathfrak{p}_{i_2},\dots$,
