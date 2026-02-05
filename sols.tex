@@ -622,8 +622,7 @@ Note that $X\cap Q_m=\emptyset$ for any $m$.
 \parit{Comment.}
 This is a baby case of the \index{Baire category theorem}\emph{Baire category theorem}.
 
-\parbf{\ref{ex:S1-compact}.} 
-Show that $\mathbb{S}^1$ is an image of closed interval under a continuous map, and apply \ref{prop:comp-image}.
+\parbf{\ref{ex:fun(compact)}.} Apply \ref{prop:comp-image} and \ref{obs:closed-bounded}.
 
 \parbf{\ref{ex:closed-bounded=compact}.}
 Apply \ref{prop:compact-closed} and \ref{thm:comp-interval}.
@@ -659,6 +658,13 @@ The following function $f\:\RR\to\RR$ has closed graph, but is not continuous:
 \]
 It shows that compactness of $\c{K}$ is a necessary assumption.
 
+\parbf{\ref{ex:S1-compact}};
+\ref{SHORT.ex:S1-compact:comp-image}.
+Write $\mathbb{S}^1$ is an image of closed interval under a continuous map, and apply \ref{prop:comp-image}.
+
+\parit{\ref{SHORT.ex:S1-compact:compact-closed}.}
+Use that $\mathbb{S}^1$ is a closed subset of $[-1,1]\times[-1,1]$.
+
 \parbf{\ref{ex:power-power}.}
 If there is a converging subsequence $\mathfrak{p}_{i_1}$, $\mathfrak{p}_{i_2},\dots$,
 then we can choose a set $S\subset \NN$ (so $S\in \c{A}$) such that $i_n\in S$ if $n$ is even and otherwise $i_n\notin S$.
@@ -673,10 +679,12 @@ Suppose that a sequence $x_n$ converges to $x_\infty$ in $\c{X}$
 and $y_n$ converges to $y_\infty$ in $\c{Y}$.
 Show and use that $(x_n,y_n)$ converges to $(x_\infty,y_\infty)$ in $\c{X}\times\c{Y}$ as $n\to\infty$.
 
-\parbf{\ref{ex:compact-complete}}; \ref{SHORT.ex:compact-complete:a}.
+\parbf{\ref{ex:compact-complete}}; \textit{(a)}.
 By \ref{prop:seq-comp-metr}, any sequence has a converging subsequence;
 denote by $x$ the limit of this subsequence.
 Show that if the sequence is Cauchy, then it converges to $x$.
+
+\parit{(b)}. Apply the standard definiton of compactness to the cover by balls  $\Ball(p,r)$ for all $r>0$.
 
 \parit{\ref{SHORT.ex:compact-complete:b}}.
 Check an infinite discrete space.
@@ -722,6 +730,12 @@ Conclude that $f$ is surjective and therefore bijective.
 
 \parit{Comment.}
 This statement is used to prove key properties of so-called \index{Gromov--Hausdorff metric}\emph{Gromov--Hausdorff metric} --- a metric on space of all (isometry classes of) compact metric spaces.
+
+\parbf{\ref{ex:aa}}; \ref{SHORT.ex:aa:def}.
+
+\ref{SHORT.ex:aa:complete}.
+
+\ref{SHORT.ex:aa:compact}.
 
 \parbf{\ref{ex:hausdorff-unique-limit}.} Arguing by contradiction, assume a sequence has two limits $x$ and $y$.
 Since the space is Hausdorff we can choose disjoint neighborhoods $V\ni x$ and $W\ni y$.

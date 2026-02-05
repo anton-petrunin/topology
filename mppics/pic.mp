@@ -456,12 +456,12 @@ z.shift=(3,0)*u;
 
 p0=z.a{.7,1}..z.b{-.4,-1}..cycle;
 
-draw p0;
+draw p0 penbold;
 draw z.a--z.b;
 hatchfill  p0 withcolor (a, 1mm, -.5bp);
 
-draw (subpath (0,1) of p0) xscaled -1 shifted z.shift;
-draw (subpath (1,2) of p0) shifted z.shift;
+draw (subpath (0,1) of p0) xscaled -1 shifted z.shift penbold;
+draw (subpath (1,2) of p0) shifted z.shift penbold;
 draw (z.a--z.b) shifted z.shift;
 hatchfill  ((subpath (0,1) of p0) xscaled -1 shifted z.shift)--cycle withcolor (180-a, 1mm, -.5bp);
 hatchfill  ((subpath (1,2) of p0) shifted z.shift)--cycle withcolor (a, 1mm, -.5bp);
@@ -473,12 +473,8 @@ whitelabel.bot(btex $L_2$ etex, origin);
 whitelabel.top(btex $L_1'$ etex, z.shift);
 whitelabel.bot(btex $L_2$ etex, z.shift);
 
-label.bot(btex $D$ etex, point 1.6 of p0);
-label.bot(btex $D'$ etex, z.shift+ point 1.6 of p0);
-label.rt(btex $a$ etex, z.a);
-label.lft(btex $b$ etex, z.b);
-label.rt(btex $a$ etex, z.a shifted z.shift);
-label.lft(btex $b$ etex, z.b shifted z.shift);
+label.bot(btex $F$ etex, point 1.6 of p0);
+label.bot(btex $F'$ etex, z.shift+ point 1.6 of p0);
 endfig;
 
 beginfig(770)
@@ -514,15 +510,16 @@ z.y=(1.4,.8)*u;
 z.v=.5[z.x,z.y]+(0,-.2)*u;
 
 
-p1=z.a{(-1,1)}..z.x{z.y-z.x}..z.v..{z.y-z.x}z.y..z.b--cycle;
+p1=z.a{(-1,1)}..z.x{z.y-z.x}..z.v..{z.y-z.x}z.y..z.b..tension 2..cycle;
 
-hatchfill p1  withcolor (67, 2mm, -.5bp);
+%hatchfill p1  withcolor (67, 2mm, -.5bp);
 draw p1 penbold;
-draw z.x--z.y;
+draw (subpath (1,3) of p1) reflectedabout(z.x, z.y);
 
-dOt z.a,z.b;
+%draw z.x--z.y;
+%dOt z.a,z.b;
 
-whitelabel (btex $F$ etex, (z.a+point 1 of p1)/2);
+%whitelabel (btex $F$ etex, (z.a+point 1 of p1)/2);
 
 endfig;
 
@@ -591,35 +588,29 @@ beginfig(790)
 save u,p,n;
 path p[];
 u:=1.4cm;
-n:=20;
+n:=30;
 
 z.a=(0,0)*u;
 z.b=(2,0)*u;
 z.x=(1.2,1)*u;
 
-p1=z.a..z.x{1,-1}..z.b;
+p1=z.a..z.x{1,-.8}..z.b..tension 2..cycle;
 
-hatchfill p1--cycle  withcolor (67, 2mm, -.5bp);
-draw p1--cycle penbold;
+hatchfill p1  withcolor (67, 1mm, -.5bp);
+draw p1 penbold;
 
 numeric L;
 L := arclength p1;
 
-for i = 0 upto n:
+for i = 0 upto n-1:
 draw circle(point (arctime (i/n) * L of p1) of p1, 2*L/n);
 endfor;
-for i = 1 upto n-1:
-draw circle((i/n)[z.a,z.b], 2*L/n);
-endfor;
 dOt
-for i = 0 upto n:
+for i = 0 upto n-1:
 point (arctime (i/n) * L of p1) of p1,
-endfor
-for i = 1 upto n-1:
-(i/n)[z.a,z.b],
 endfor;
 
-
+whitelabel (btex $F_{\gamma_1}$ etex, .6[z.a,point 1 of p1]);
 endfig;
 
 beginfig(980)

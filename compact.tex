@@ -44,12 +44,19 @@ Show that any set equipped with the cofinite topology is compact.
 \end{thm}
 
 Let us show how one can apply the definition.
-Suppose $S\subset \RR$ is a compact set;
-let us show that $S$ is closed.
-Assume the contrary,
-then we can choose a point $s\in\bar S\setminus S$ and consider the cover of $S$ by the complements of $[ s-\eps,s+\eps]$ for all $\eps>0$.
+
+\begin{thm}{Observation}\label{obs:closed-bounded}
+A comact subset $S$ of the real line has to be closed and \index{bounded set}\emph{bounded}; that is there is $c\in \RR$ such that $|s|\le c$ for any $s\in S$.
+\end{thm}
+
+\parit{Proof.}
+Suppose $S\subset \RR$ is a compact set.
+Assume $S$ is not closed.
+Then we can choose a point $s\in\bar S\setminus S$ and consider the cover of $S$ by the complements of $[ s-\eps,s+\eps]$ for all $\eps>0$.
 Since it has a finite subcover, a neighborhood of $s$ does not intersect $S$, so $s\notin\bar S$ --- a contradiction.
-Applying the same reasoning for cover of $S$ by all intervals $(-c,c)$, one can show that $S$ is bounded; that is, there is $c\in \RR$ such that $|s|\le c$ for any $s\in S$.
+
+Applying the same reasoning for cover of $S$ by all intervals $(-c,c)$, one can show that $S$ is bounded.
+\qeds
 
 \begin{thm}{Exercise}\label{ex:noncompact-un}
 

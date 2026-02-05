@@ -88,13 +88,13 @@ indeed, the sequence $x_n=\tfrac 1n$ is Cauchy, but it does not converge in $(0,
 
 
 \begin{thm}{Exercise}\label{ex:compact-complete}
+Show that any compact metric space $\c{M}$ is (a) complete and (b) \index{bounded metric space}\emph{bounded};
+that is, $\c{M}$ has finite \index{diameter}\emph{diameter}:
+\[\diam\c{M}=\sup\set{|x-y|_{\c{M}}}{x,y\in \c{M}}<\infty.\]
 
-\begin{subthm}{ex:compact-complete:a} Show that any compact metric space is complete.
-\end{subthm}
-
+\addtocounter{subthm}{2}
 \begin{subthm}{ex:compact-complete:b}
-Give an example of noncomact complete space $\c{M}$ with finite \index{diameter}\emph{diameter};
-that is, $d=\sup\set{|x-y|_{\c{M}}}{x,y\in \c{M}}<\infty$.
+Give an example of noncomact complete bounded metric space.
 \end{subthm}
 
 \end{thm}
@@ -237,127 +237,137 @@ that is, $f$ is a bijection and equality always holds in \ref{eq:distance-noncon
 \section{An application}
 
 \begin{thm}{Theorem}\label{thm:isoperim}
-Among all plane curves of given length $L$, only circles of length $L$ bound the greatest area.
+Among all plane curves of given length $L$, only circles bound the greatest area.
 \end{thm}
 
-Since circle of length $L$ has area $\tfrac{L^2}{4\cdot \pi}$, the statement can be reformulatied in a more algebraic manner: \textit{plane curve $\gamma$ of given length $L$ bounds are at most $\tfrac{L^2}{4\cdot \pi}$, and, in the case of equality $\gamma$ is a circle of length $L$.}
+Note that a circle of length $L$ has area $\tfrac{L^2}{4\cdot \pi}$.
+Therefore the statement can be reformulated in a more algebraic manner: \textit{a plane curve $\gamma$ of given length $L$ bounds area  $a\le \tfrac{L^2}{4\cdot \pi}$, and, in the case of equality $\gamma$ is a circle.}
 This statement is called \emph{isoperimetric inequality}.
 
 Given a plane curve $\gamma$ denote by $F_\gamma$ its \emph{convex hull}; that is, minimal convex set that includes $\gamma$.
-If a figure is bounded by $\gamma$, then it lies in $F_\gamma$.
+A figure bounded by $\gamma$ must lie in $F_\gamma$.
 Furthermore, if $\gamma$ is a circle then it bounds $F_\gamma$.
-Therefore, it is sufficient to prove the following two statemnts:
+Therefore, it is sufficient to prove the following two statements:
 
-\begin{thm}{Claim}\label{clm:isoperim-exist}
-Among all closed plane curves $\gamma$ of length $\le L$ there is a curve that maximize the area of $F_\gamma$.
+\begin{thm}{Lemma}\label{clm:isoperim-exist}
+Among all closed plane curves of length $\le L$ there is a curve $\gamma$ that maximizes the area of $F_\gamma$.
 \end{thm}
 
-\begin{thm}{Claim}\label{clm:isoperim-circle}
-If a closed plane curve $\gamma$ of length $\le L$ maximize  the area of $F_\gamma$, then $\gamma$ must be a circle of length $L$.
+\begin{thm}{Lemma}\label{clm:isoperim-circle}
+If a closed plane curve $\gamma$ of length $\le L$ maximizes the area of $F_\gamma$, then $\gamma$ must be a circle of length $L$.
 \end{thm}
 
 Note that \ref{clm:isoperim-circle} does not say that a circle maximizes the area, it only says that no other curve does.
-But together with \ref{clm:isoperim-exist} it implies \ref{thm:isoperim}.
-
-Claim~\ref{clm:isoperim-circle} will be proved by means of elementary geometry;
-Claim \ref{clm:isoperim-exist} is an application of comactness.
-Note that the compact set that will be used in its proof is huge;
-say, it cannot be embedded into $\RR^n$ for any $n$.
-This is a very common type of argument, so it is worth knowing.
+But together with \ref{clm:isoperim-exist} it proves the theorem.
 
 \parit{Proof of \ref{clm:isoperim-exist}.}
-We can assume that a closed plane curve $\gamma$ with length at most $L$ is described by parametrization $\gamma\:[0,L]\to\RR^2$ such that
+A closed plane curve $\gamma$ with length $\le L$ can be described by a parametrization $\gamma\:[0,L]\to\RR^2$ such that $\gamma(0)=\gamma(L)$ and
 \[|\gamma(t_0)-\gamma(t_1)|_{\RR^2}\le |t_0-t_1|.\]
 Without loss of generality, we can assume that $\gamma(0)=\gamma(L)=0\in\RR^2$.
 Consider the space $\Gamma$ of all such parametrized curves with the metric defined by
-\[|\gamma_1-\gamma_2|_\Gamma= \max\set{|\gamma_1(t)-\gamma_2(t)|_{\RR^2}}{t\in[0,L]}\]
+\[|\gamma_1-\gamma_2|_\Gamma= \max\set{|\gamma_1(t)-\gamma_2(t)|_{\RR^2}}{t\in[0,L]}
+\eqlbl{eq:Gamma-metric}\]
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:aa}
 Prove the following statements:
-\begin{subthm}{}
-The formula defines a metric on $\Gamma$; in particular, the maximum in the right-hand side of the formula is defined.
+\begin{subthm}{ex:aa:def}
+The formula defines a metric on $\Gamma$; in particular, the maximum in the right-hand side in \ref{eq:Gamma-metric} is defined.
 \end{subthm}
 
-\begin{subthm}{}
+\begin{subthm}{ex:aa:complete}
 The space $\Gamma$ is complete.
 \end{subthm}
 
-\begin{subthm}{}
+\begin{subthm}{ex:aa:compact}
 The space $\Gamma$ is compact.
 \end{subthm}
 
 \end{thm}
 
 
-It remains to prove the following claim and apply \ref{ex:fun(compact):min-max}.
+It remains to prove the following sublemma and apply \ref{ex:fun(compact):min-max}.
 \qeds
 
-We will need a more precise definition of enclosed area, that will work for curves with self-intersections.
-Namely, given $\gamma\in \Gamma$, denote by $F_\gamma$ the maximal closed set with boundary contained in the union of $\gamma([0,L])$ and the line segment from $\gamma(0)$ to $\gamma(L)$.
-
-\begin{thm}{Claim}\label{clm:dido3}
-$\gamma\mapsto \area F_\gamma$ defines a continuous function $\Gamma\to\RR$.
+\begin{thm}{Sublemma}\label{clm:dido3}
+The function $\Gamma\to\RR$ defined by
+$\gamma\mapsto \area F_\gamma$ is continuous.
 \end{thm}
 
+{
 
-\parit{Proof.}
-It is sufficient to show that
-\[|\gamma_1-\gamma_2|_\Gamma<L/n
-\quad\Rightarrow\quad
-\area F_{\gamma_2}\le \area F_{\gamma_1}+4\cdot\pi\cdot L^2/n
-\eqlbl{eq:area-cont}\]
-for any $\gamma_1,\gamma_2\in \Gamma$.
-
-\begin{wrapfigure}{r}{46 mm}
+\begin{wrapfigure}[6]{r}{46 mm}
 \vskip-5mm
 \centering
 \includegraphics{mppics/pic-790}
 \end{wrapfigure}
 
-Note that $F_{\gamma_2}$ lies in an $\tfrac Ln$-neighborhood of $F_{\gamma_1}$;
-moreover if $p\in F_{\gamma_2}\setminus F_{\gamma_1}$, then $|p-x|<\tfrac Ln$ for some $x\in\partial F_{\gamma_1}$.
-Since the length of $\gamma$ is at most $L$, so it the line segment from $\gamma(0)$ to $\gamma(L)$.
-Whence we can choose an $2\cdot n$-point $L/n$-net of $\partial F_{\gamma_1}$, say $\{x_1,\dots,x_{2\cdot n}\}$.
-It follows that
-\[F_{\gamma_2}\setminus F_{\gamma_1}\subset \bigcup_{i=1}^{2\cdot n}\Ball(x_i,2\cdot L/n).\]
+\parit{Proof.}
+It is sufficient to show that
+\[
+\begin{aligned}
+|\gamma_1-\gamma_2|_\Gamma&<\tfrac Ln
+\\
+&\Downarrow
+\\
+\area F_{\gamma_2}< \area &F_{\gamma_1}+\tfrac{4\cdot\pi\cdot L^2}n
+\end{aligned}
+\eqlbl{eq:area-cont}\]
+for any $\gamma_1,\gamma_2\in \Gamma$.
+
+
+Note that $F_{\gamma_2}$ lies in an $\tfrac Ln$-neighborhood of $F_{\gamma_1}$.
+Moreover for any $p\in F_{\gamma_2}\setminus F_{\gamma_1}$ there is $x\in\partial F_{\gamma_1}$ such that $|p-x|<\tfrac Ln$.
+Observe that length of $\partial F_{\gamma_1}$ cannot exceed~$L$.
+Whence we can choose an $n$ points $x_1,\dots,x_n$ such that for any $x\in \partial F_{\gamma_1}$ there is $x_i$ such that $|x-x_i|<\tfrac Ln$.
+It follows that $|p-x_i|<2\cdot\tfrac Ln$ for some $i$, and
+\[F_{\gamma_2}\setminus F_{\gamma_1}\subset \bigcup_{i=1}^{n}\Ball(x_i,2\cdot \tfrac Ln).\]
 Since $\area\Ball(x,r)_{\RR^2}=\pi\cdot r^2$ we get
-\[\area (F_{\gamma_2}\setminus F_{\gamma_1})\le 2\cdot n\cdot\pi \cdot (2\cdot L/n)^2,\]
+\[\area (F_{\gamma_2}\setminus F_{\gamma_1})\le  n\cdot\pi \cdot (2\cdot \tfrac Ln)^2,\]
 and \ref{eq:area-cont} follows.
 \qeds
 
+}
 
+We just described a very common type of application of compactness, which is worth knowing.
+Note that we used a huge compact space $\Gamma$;
+say, $\Gamma$ cannot be embedded into $\RR^n$ for any $n$.
+In particular, one cannot apply standard calculus to $\Gamma$.
 
+Lemma~\ref{clm:isoperim-circle} will be proved by means of elementary geometry;
+it will use the following characterization of round disc.
 
+Let $F$ be a convex figure;
+cut it along a chord $\ell$ into two lenses, $L_1$ and $L_2$.
+Let us denote by $L'_1$ the reflection of  $L_1$ across the perpendicular bisector to the chord.
+The figure $F'=L_1'\cup L_2$ will be called a \emph{flip} of $F$ along the chord $\ell$.
 
-
-\parit{Sketch.}
-It is sufficient to consider only convex figures of the given perimeter; if a figure is not convex, pass to its convex hull and observe that it has a larger area and smaller perimeter.
-
-It remains to show that $D$ is a round disk;
-it will be done by means of elementary geometry.
-
-Let us cut $D$ along a chord $[ab]$ into two lenses, $L_1$ and $L_2$.
-Denote by $L_1'$ the reflection of $L_1$ across the perpendicular bisector of $[ab]$.
-Note that $D$ and $D'=L_1'\cup L_2$ have the same perimeter and area.
-That is, $D'$ has perimeter $\ell$ and maximal possible area;
-in particular, $D'$ is convex.
-
-The following exercise will finish the proof.
-\qeds
-
-{
-
-\begin{wrapfigure}{r}{57 mm}
+\begin{figure}[ht!]
 \vskip-0mm
 \centering
 \includegraphics{mppics/pic-405}
-\end{wrapfigure}
+\end{figure}
 
 \begin{thm}{Exercise}\label{ex:round-disc}
-Suppose $D$ is a convex figure such that for any chord $[ab]$ of $D$ the above construction produces a convex figure $D'$.
-Show that $D$ is a round disk.
+A convex figure $F$ is a round disc if and only if its flip along any chord is convex.
 \end{thm}
+
+{
+
+\begin{wrapfigure}{r}{26 mm}
+\vskip-5mm
+\centering
+\includegraphics{mppics/pic-775}
+\end{wrapfigure}
+
+\parit{Proof of \ref{clm:isoperim-circle}.}
+If $\gamma$ maximizes the area, then it must be convex; that is, it must bound a convex figure, say $F$.
+If this is not the case, then one can exchange $\gamma$ to another curve (as in the picture) enlarging the area while keeping the length the same.
 
 }
 
-Another popular way to prove that $D$ is a round disk is given by the so-called \textit{Steiner's 4-joint method} \cite{blaschke}.
+Choose a chord of $F$ and consider its flip $F'$;
+it has the same area and perimeter.
+Therefore if $\gamma$ was a maximizer, then so is $\partial F'$.
+In particular $F'$ must be convex.
+It remains to apply \ref{ex:round-disc}.
+\qeds
