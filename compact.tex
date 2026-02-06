@@ -82,29 +82,6 @@ Try to do the same for \ref{SHORT.ex:noncompact-n}.
 
 \end{thm}
 
-\section{Compactification}
-
-\begin{thm}{Claim}
-Every topological space is homeomorphic to a subspace of a compact space.
-\end{thm}
-
-\parit{Proof.}
-Choose a topological space $\c{X}$.
-Let us add to $\c{X}$ one extra point that will be denoted by $\infty$.
-A set $V$ in $\c{X}^\infty=\c{X}\cup\{\infty\}$ is declared to be open if $V$ is an open subset in $\c{X}$ (in which case $\infty\notin V$) or $\infty\in V$ and its complement $\c{X}\setminus V$ is a closed \textit{and} compact subset of $\c{X}$.
-
-To show that we have defined a topology, we need to check the conditions in \ref{def:top-space}:
-\ref{SHORT.def:top-space:empty} and \ref{SHORT.def:top-space:u} are straightforward and \ref{SHORT.def:top-space:n} follows since union of two closed sets is closed and union of two compact sets is compact; see \ref{def:closed-properties:u} and \ref{ex:ucompact}.
-
-Now, choose an open cover $\{V_\alpha\}$ of $\c{X}^\infty$.
-Choose $\alpha_\infty$ such that $V_{\alpha_\infty}\ni\infty$.
-By construction, the complement $K=\c{X}^\infty\setminus V_{\alpha_\infty}$ is compact.
-Therefore we can choose a finite subcover $\{V_{\alpha_1}, \dots V_{\alpha_n}\}$ of $K$.
-Observe that $\{V_{\alpha_\infty},V_{\alpha_1}, \dots V_{\alpha_n}\}$ covers $\c{X}^\infty$;
-whence $\c{X}^\infty$ is compact.
-\qeds
-
-The space $\c{X}^\infty$ constructed in the proof is called the \index{one-point compactification}\emph{one-point compactification} of $\c{X}$.
 
 
 
@@ -268,6 +245,35 @@ He added his own camel, the oldest son took $18/2=9$ camels, the second son took
 Show that any closed bounded subset of the real line is compact.
 \end{thm}
 
+
+\section{Compactification}
+
+\begin{thm}{Claim}
+Every topological space is homeomorphic to a subspace of a compact space.
+\end{thm}
+
+\parit{Proof.}
+Choose a topological space $\c{X}$.
+Let us add to $\c{X}$ one extra point that will be denoted by $\infty$.
+A set $V$ in $\c{X}^\infty=\c{X}\cup\{\infty\}$ is declared to be open if $V$ is an open subset in $\c{X}$ (in which case $\infty\notin V$) or $\infty\in V$ and its complement $\c{X}\setminus V$ is a closed \textit{and} compact subset of $\c{X}$.
+
+To show that we have defined a topology, we need to check the conditions in \ref{def:top-space}:
+\ref{SHORT.def:top-space:empty} is straightforward, \ref{SHORT.def:top-space:u} follows since intersection of closed and compact sets are closed and compact (see \ref{prop:compact-closed}), and \ref{SHORT.def:top-space:n} follows since union of two closed sets is closed and union of two compact sets is compact (see \ref{def:closed-properties:u} and \ref{ex:ucompact}).
+
+Now, choose an open cover $\{V_\alpha\}$ of $\c{X}^\infty$.
+Choose $\alpha_\infty$ such that $V_{\alpha_\infty}\ni\infty$.
+By construction, the complement $K=\c{X}^\infty\setminus V_{\alpha_\infty}$ is compact.
+Therefore we can choose a finite subcover $\{V_{\alpha_1}, \dots V_{\alpha_n}\}$ of $K$.
+Observe that $\{V_{\alpha_\infty},V_{\alpha_1}, \dots V_{\alpha_n}\}$ covers $\c{X}^\infty$;
+whence $\c{X}^\infty$ is compact.
+\qeds
+
+The space $\c{X}^\infty$ constructed in the proof is called the \index{one-point compactification}\emph{one-point compactification} of $\c{X}$.
+
+\begin{thm}{Exercise}\label{ex:one-point-comp}
+Show that one-point compactification of the real $\RR$ line is homeomorphic to the circle $\SS^1$.
+\end{thm}
+
  
 \section{Product spaces}
 
@@ -312,34 +318,35 @@ Find a flaw in the following argument.
 \end{thm}
 
 \parit{Fake proof of \ref{thm:compact-product}.}
-Fix an open cover $\{O_\alpha\}$ of $\c{X}\times\c{Y}$.
-Consider all product sets $V_\beta\times W_\beta$ such that $V_\beta\times W_\beta\subset O_\alpha$ for some $\alpha$ (as before, $V_\beta$ and $W_\beta$ are open in $\c{X}$ and $\c{Y}$ respectively).
-Note that $\{V_\beta\times W_\beta\}$ is a cover of $\c{X}\times\c{Y}$ that is inscribed in $\{U_\beta\}$.
-By the observation, it is sufficient to find a finite subcover of $\{V_\beta\times W_\beta\}$.
+Fix an open cover $\{O_\beta\}$ of $\c{X}\times\c{Y}$.
+Consider all product sets $V_\alpha\times W_\alpha$ such that $V_\alpha\times W_\alpha\subset O_\beta$ for some $\beta$ (as before, $V_\alpha$ and $W_\alpha$ are open in $\c{X}$ and $\c{Y}$ respectively).
+Note that $\{V_\alpha\times W_\alpha\}$ is a cover of $\c{X}\times\c{Y}$ that is inscribed in $\{O_\beta\}$.
+By the observation, it is sufficient to find a finite subcover of $\{V_\alpha\times W_\alpha\}$.
 
-Note that $\{V_\beta\}$ is a cover of $\c{X}$.
-Since $\c{X}$ is compact, we can choose its finite subcover $\{V_{\beta_1},\dots,V_{\beta_n}\}$.
-Similarly, $\{W_\beta\}$ is a cover of $\c{Y}$;
-so we can choose its finite subcover $\{W_{\beta_{n+1}},\dots,W_{\beta_{n+m}}\}$.
-It remains to observe that the products $V_{\beta_i}\times W_{\beta_i}$ for all $i$ cover $\c{X}\times\c{Y}$.
+Note that $\{V_\alpha\}$ is a cover of $\c{X}$.
+Since $\c{X}$ is compact, we can choose its finite subcover $\{V_{\alpha_1},\dots,V_{\alpha_n}\}$.
+Similarly, $\{W_\alpha\}$ is a cover of $\c{Y}$;
+so we can choose its finite subcover $\{W_{\alpha_{n+1}},\dots,W_{\alpha_{n+m}}\}$.
+It remains to observe that the products $V_{\alpha_i}\times W_{\alpha_i}$ for all $i$ cover $\c{X}\times\c{Y}$.
 \qeds
 
 \parit{Proof of \ref{thm:compact-product}.}
 Recall that by definition of the product topology, any open set in $\c{X}\times\c{Y}$ is a union of product sets
 $V_\alpha\times W_\alpha$, where $V_\alpha$ is open in $\c{X}$ and $W_\alpha$ is open in $\c{Y}$.
 
-Fix an open cover $\{O_\beta\}$ of $\c{X}\times\c{Y}$.
+Choose an open cover $\{O_\beta\}$ of $\c{X}\times\c{Y}$.
 Consider all product sets $V_\alpha\times W_\alpha$ such that $V_\alpha\times W_\alpha\subset O_\beta$ for some $\beta$ (as before, $V_\alpha$ and $W_\alpha$ are open in $\c{X}$ and $\c{Y}$ respectively).
-Note that $\{V_\alpha\times W_\alpha\}$ is a cover of $\c{X}\times\c{Y}$ that is inscribed in $\{U_\beta\}$.
+Note that $\{V_\alpha\times W_\alpha\}$ is a cover of $\c{X}\times\c{Y}$ that is inscribed in $\{O_\beta\}$.
 By the observation, it is sufficient to find a finite subcover of $\{V_\alpha\times W_\alpha\}$.
+
+\begin{figure}[b!]
+\centering
+\includegraphics{mppics/pic-685}
+\end{figure}
 
 Fix $x \in \c{X}$.
 Note that the subspace $\{x\}\times \c{Y}$ is homeomorphic to $\c{Y}$; see \ref{ex:graph}.
 In particular, the  set $\{x\}\times \c{Y}$ is compact.
-\begin{figure}[ht!]
-\centering
-\includegraphics{mppics/pic-685}
-\end{figure}
 Therefore, $\{x\}\times \c{Y}$ has a finite cover $\{V_{\alpha_1}\times W_{\alpha_1},\dots,V_{\alpha_n}\times W_{\alpha_n}\}$; that is,
 \[(V_{\alpha_1}\times W_{\alpha_1})\cup\dots\cup
 (V_{\alpha_n}\times W_{\alpha_n})

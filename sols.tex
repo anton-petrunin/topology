@@ -519,7 +519,7 @@ Further, show and use that all the sets $V\times W$ for open subset $V\subset \c
 To show that the map $F$ is continuous,
 apply \ref{ex:prebase} to the prebase described before the exercise.
 Further, show and use that projection $G\:(x,f(x))\to x$ is a continuous left inverse;
-that is $G(F(x))=x$ for any $x$.
+that is, $G(F(x))=x$ for any $x$.
 
 \parbf{\ref{ex:induced-nonmetrizable}.}
 Show that \textit{every two disjoint closed sets of a metric space have disjoint open neighborhoods};
@@ -549,6 +549,10 @@ Therefore, $W=\c{Y}\setminus B$ is open.
 
 \parbf{\ref{ex:eq-relation-f}.}
 Check the conditions in the definitions of equivalence relation and equivalence class.
+
+\parbf{\ref{ex:example/~}.}
+Coose a subset $A\subset [0,1]$ with nonempty complement and let $x\sim y$ if $x,y\in A$ or $x,y\notin A$.
+For part \textit{(a)}, choose $A$ to be open; for part \textit{(b)} chose a set that is neither open nor closed in $[0,1]$.
 
 \parbf{\ref{ex:[0,1]/(0,1)}.}
 Show that it has three points $a=[0]$, $b=[\tfrac12]$, and $c=[1]$ and the open sets are
@@ -627,6 +631,10 @@ This is a baby case of the \index{Baire category theorem}\emph{Baire category th
 \parbf{\ref{ex:closed-bounded=compact}.}
 Apply \ref{prop:compact-closed} and \ref{thm:comp-interval}.
 
+\parbf{\ref{ex:one-point-comp}.}
+Consder the map $h\:\RR\cup\{\infty\}\to \SS^1$ defined by $x\mapsto (\tfrac{2\cdot x}{1+x^2},\tfrac{1-x^2}{1+x^2})$ and $\infty\mapsto (0,-1)$.
+Show that $h$ is a homeomorphisms $\RR^\infty\to \SS^1$.
+
 \parbf{\ref{ex:compact-product}.}
 Apply \ref{prop:comp-image} to the projections $\c{X}\times\c{Y}\to\c{X}$ and $\c{X}\times\c{Y}\to\c{Y}$ (which are continuous).
 
@@ -641,7 +649,7 @@ Show by example that in general, the product $V_{\beta_i}\times W_{\beta_i}$ do 
 Write $\mathbb{S}^1$ is an image of closed interval under a continuous map, and apply \ref{prop:comp-image}.
 
 \parit{\ref{SHORT.ex:S1-compact:compact-closed}.}
-Use that $\mathbb{S}^1$ is a closed subset of $[-1,1]\times[-1,1]$.
+Use that $\mathbb{S}^1$ is a closed subset of $[-1,1]\z\times[-1,1]$.
 
 \parbf{\ref{ex:closed-graph}.}
 By \ref{prop:cont-closed}, it is sufficient to show that any closed set $A\subset\c{K}$ has closed inverse image $B=f^{-1}(A)\subset\c{X}$.
@@ -685,14 +693,15 @@ By \ref{prop:seq-comp-metr}, any sequence has a converging subsequence;
 denote by $x$ the limit of this subsequence.
 Show that if the sequence is Cauchy, then it converges to $x$.
 
-\parit{(b)}. Apply the standard definiton of compactness to the cover by balls  $\Ball(p,r)$ for all $r>0$.
+\parit{(b)}. Apply the standard definition of compactness to the cover by balls  $\Ball(p,r)$ for all $r>0$.
 
 \parit{\ref{SHORT.ex:compact-complete:b}}.
 Check an infinite discrete space.
 
 \parbf{\ref{ex:contracction}.}
 Consider a sequence $x_0,x_1,\dots\in\c{M}$ such that $x_{i}=f(x_{i-1})$ for any $i$.
-Show that this sequence is Cauchy, since $\c{M}$ it must have a limit, say $p$.
+Show that this sequence is Cauchy.
+Since $\c{M}$ is complete, the sequence has a limit, say $p$.
 Observe that $p$ is a fixed point.
 Furthermore, show that if $q\ne p$, then $|f(q)-p|<|q-p|$;
 in particular, $f(q)\ne q$ and so $q$ is not fixed.
@@ -700,9 +709,10 @@ in particular, $f(q)\ne q$ and so $q$ is not fixed.
 \parit{Comment.}
 This is the \emph{Banach fixed-point theorem}; it combines extreme simplicity and extreme usefulness.
 
-\parbf{\ref{ex:alm-min}.} Assume such point does not exists.
+\parbf{\ref{ex:alm-min}.}
+Assume such point does not exist.
 Then for any point $p$ there is a point $p'$ such that $|p-p'|<r(p)$ and $r(p')\le (1-\eps)\cdot r(p)$.
-Let $p_0,p_1,\dots \c{M}$ be a sequence such that $p_i=p_{i-1}'$.
+Let $p_0,p_1,\dots \in\c{M}$ be a sequence such that $p_i=p_{i-1}'$.
 Show and use that this sequence is Cauchy.
 
 \parbf{\ref{ex:compact-net}.}
@@ -721,7 +731,7 @@ Observe that $y_1,y_2,\dots$ is Cauchy and use completeness of $\c{M}$.
 Consider two sequences of points $x_0,x_1,\dots$ and $y_0,y_1,\dots$ in $\c{M}$ such that $x_i\z=f(x_{i-1})$ and $y_i\z=f(y_{i-1})$ for any $i$.
 Observe that
 \[|x_0-y_0|\le |x_1-y_1|\le\ldots\]
-Show that one pass to subsequenes $x_{i_1},x_{i_2},\dots$ and  $y_{i_1},y_{i_2},\dots$ such that $x_{i_n}\z\to x_0$ and $y_{i_n}\z\to y_0$ as $n\to\infty$.
+Show that one can pass to subsequences $x_{i_1},x_{i_2},\dots$ and  $y_{i_1},y_{i_2},\dots$ such that $x_{i_n}\z\to x_0$ and $y_{i_n}\z\to y_0$ as $n\to\infty$.
 Conclude that $|x_0-y_0|\z=|x_1-y_1|$; since the points $x_0$ and $y_0$ can be chosen arbitrary, it implies that $f$ is distance-preserving.
 
 Observe that $f$ is injective.
@@ -741,7 +751,7 @@ Since $\RR^2$ is complete, we can define
 Show that $\gamma_\infty\in\Gamma$.
 
 \parit{\ref{SHORT.ex:aa:compact}.} Choose a sequence $\gamma_1,\gamma_2,\dots\in\Gamma$ and a countable dense set $\{t_1,t_2,\dots\}$ in $[0,L]$.
-Apply the diagonal precedure to extract a subsequence $\gamma_{i_1}, \gamma_{i_2},\dots$ such that for any $t_t$ the sequence $\gamma_{i_n}(t_k)$ fonverges as $n\to\infty$.
+Apply the diagonal procedure to extract a subsequence $\gamma_{i_1}, \gamma_{i_2},\dots$ such that for any $t_t$ the sequence $\gamma_{i_n}(t_k)$ converges as $n\to\infty$.
 Show that this subsequence converges in $\Gamma$.
 
 \parbf{\ref{ex:hausdorff-unique-limit}.} Arguing by contradiction, assume a sequence has two limits $x$ and $y$.

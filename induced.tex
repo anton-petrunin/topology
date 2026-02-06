@@ -6,11 +6,16 @@ Here we introduce several constructions that produce new topological spaces from
 
 Recall that $\c{X}\times\c{Y}$ denotes the set of all pairs $(x,y)$ such that $x\in\c{X}$ and  $y\in\c{Y}$.
 
+\begin{figure}[ht!]
+\centering
+\includegraphics{mppics/pic-686}
+\end{figure}
+
 Suppose that the sets $\c{X}$ and $\c{Y}$ are equipped with topologies.
 Let us equip $\c{X}\times\c{Y}$ with topology by declaring that a set is open in $\c{X}\times\c{Y}$ if it can be presented as a union of sets of the following type: $V\times W$ for open sets $V\subset \c{X}$ and $W\subset \c{Y}$.
-In other words, a subset $O$ is open in $\c{X}\times\c{Y}$ if and only if there are familys of open sets $V_\alpha\subset \c{X}$ and $W_\alpha\subset \c{Y}$  such that
-\[O=\bigcup_\alpha V_\alpha\times W_\alpha,\]
-here $\alpha$ runs in some index set.
+In other words, a subset $O$ is open in $\c{X}\times\c{Y}$ if and only if
+for any point $(x,y)\in O$ there are open neighborhoods $V\subset \c{X}$ and $W\subset \c{Y}$ of $x$ and $y$, respectively
+such that $O\supset  V\times W$.
 
 By default, we assume that $\c{X}\times\c{Y}$ is equipped with the product topology;
 in this case, $\c{X}\times\c{Y}$ is called the \index{product space}\emph{product space}.
@@ -90,6 +95,12 @@ Let $\s{B}$ be a family of open sets in a topological space $\c{X}$.
 Show that $\s{B}$ is a base in $\c{X}$ if and only if for any point $x\in \c{X}$ and any neighborhood $N\ni x$ there is $B\in\s{B}$ such that $x\in B\subset N$.
 \end{thm}
 
+\begin{wrapfigure}{r}{27 mm}
+\vskip-5mm
+\centering
+\includegraphics{mppics/pic-540}
+\end{wrapfigure}
+
 \begin{thm}{Proposition}\label{prop:base-any}
 Let $\s{B}$ be a set of subsets of some set $\c{X}$.
 Then $\s{B}$ is a base of some topology on $\c{X}$ if and only if it satisfies the following conditions:
@@ -101,7 +112,9 @@ that is, every point $x\in\c{X}$ lies in some set $B\in \s{B}$.
 
 \begin{subthm}{prop:base-any:n}
 For each pair of sets $B_1, B_2\in \s{B}$ and each point $x \in B_1 \cap B_2$ there exists a set $B
-\in \s{B}$ such that $x\in B\subset B_1 \cap B_2$.
+\in \s{B}$ such that
+\[x\in B\subset B_1 \cap B_2.\]
+
 \end{subthm}
 
 \end{thm}
@@ -146,7 +159,8 @@ Is it true that in this topology the set $\{1\}$ is open and/or closed?
 Suppose $\s{P}$ is a family of subsets of $\c{X}$ that covers the whole space;
 that is, $\c{X}$ is a union of all sets in $\s{P}$.
 By \ref{prop:base-any}, the set of all finite intersections of sets in $\s{P}$ is a base for \textit{some} topology on $\c{X}$.
-The set $\s{P}$ is called a \index{prebase}\emph{prebase} for this topology (also known as a \index{subbase}\emph{subbase}).
+The set $\s{P}$ is called a \index{prebase}\emph{prebase} for this topology.%
+\footnote{Prebase is also known as a \index{subbase}\emph{subbase}, but this is bad choice of term. Indeed, prebase is \textit{not} a subset of base that is a base, so subbase brakes the pattern of subset, subspace, subgroup, subsequence and so on.}
 
 Note that any base is a prebase, but not the other way around.
 Spelling the defining properties of open sets (\ref{def:top-space}) and the definition of prebase we get the following.
@@ -286,6 +300,11 @@ Show that an arbitrary map $f\:\c{X}\to \c{Y}$ defines the following equivalence
 Moreover,
 \[f(x)=y\quad\Leftrightarrow\quad [x]=f^{-1}\{y\}.\]
 \end{thm}
+
+\begin{thm}{Exercise}\label{ex:example/~}
+Construct an equivalence relation $\sim$ on $[0,1]$ such that the quotient space $[0,1]/\sim$ is (a) a connected two-point space or (b) a concrete two-point space.
+\end{thm}
+
 
 Given a set $A$ in a topological space $\c{X}$, the space $\c{X}/A$ is defined as the quotient space $\c{X}/{\sim}$ for the minimal equivalence relation such that $a\sim b$ for any $a,b\in A$.
 

@@ -477,6 +477,39 @@ label.bot(btex $F$ etex, point 1.6 of p0);
 label.bot(btex $F'$ etex, z.shift+ point 1.6 of p0);
 endfig;
 
+beginfig(540)
+save u,p;
+path p[];
+u:=1cm;
+
+z.a=(0,0)*u;
+z.b=(2,0)*u;
+z.x=(.8,.2)*u;
+
+
+p1=z.a{(1,2)}..z.b{(1,-1.9)}..tension 1.4..cycle;
+p2=z.a{(1,-1.8)}..z.b{(1,1.7)}..tension 1.6..cycle;
+p3=.1[z.a,z.b]{up}..tension 1.6..(.6)[z.a,z.b]{down}..tension 1.7..cycle;
+
+fill p3 withcolor .7;
+drawoptions(withcolor .5);
+hatchfill p1  withcolor (30, 2mm, -.5bp);
+hatchfill p2 withcolor (-60, 2mm, -.5bp);
+drawoptions();
+
+draw p1 dashed evenly;
+draw p2 dashed evenly;
+draw p3 dashed evenly;
+
+dOt z.x;
+
+
+whitelabel.lrt(btex $x$ etex, z.x);
+whitelabel.top(btex $B_1$ etex, point 1.5 of p1);
+whitelabel.bot(btex $B_2$ etex, point 1.5 of p2);
+whitelabel.rt(btex $B$ etex, point 0 of p3);
+endfig;
+
 beginfig(685)
 save u,p, a;
 path p[];
@@ -485,18 +518,18 @@ a:=10;
 
 z.x=(.6*a*u,-1*u);
 
-p1=(0,.3)*a*u--(.8,.3)*a*u--(.8,.6)*a*u--(0,.6)*a*u;
+p1=(.03,.3)*a*u--(.8,.3)*a*u--(.8,.6)*a*u--(.03,.6)*a*u--cycle;
 p2=(.1,1)*a*u--(.1,.5)*a*u--(.7,.5)*a*u--(.7,1)*a*u;
 p3=(.5,0)*a*u--(.5,.4)*a*u--(1,.4)*a*u--(1,0)*a*u;
 p0=(.5,0)*a*u--(.5,1)*a*u--(.7,1)*a*u--(.7,0)*a*u--cycle;
 
 draw p1 dashed evenly;
-fill p1--cycle withcolor .9;
+fill p1 withcolor .9;
 draw p2 dashed evenly;
 fill p2--cycle withcolor .9;
 draw subpath (0,2) of p3 dashed evenly;
 fill p3--cycle withcolor .9;
-hatchfill p0  withcolor (30, 1mm, -.5bp);
+hatchfill p0  withcolor (45, 1mm, -.5bp);
 draw subpath (0,2) of p0 dashed evenly;
 draw subpath (2,3) of p0 dashed evenly;
 
@@ -515,9 +548,46 @@ label.ulft(btex $\c{Y}$ etex, (-1*u,0));
 whitelabel(btex $N_x\times\c{Y}$ etex, (x.x,.45*a*u));
 whitelabel(btex $\{x\}\times\c{Y}$ etex rotated 90, (x.x,.7*a*u)+(7,0));
 label.urt(btex $N_x$ etex , z.x+(5,0)) withcolor (.5);
-label.urt(btex $V_{\alpha_1}\times W_{\alpha_1}$ etex, (0,.3)*a*u);
+label.urt(btex $V_{\alpha_1}\times W_{\alpha_1}$ etex, (.03,.3)*a*u);
 label.lrt(btex $V_{\alpha_2}\times W_{\alpha_2}$ etex, (.1,1)*a*u);
 label.ulft(btex $V_{\alpha_3}\times W_{\alpha_3}$ etex, (1,0)*a*u);
+label.urt(btex $\c{X}\times \c{Y}$ etex, (0,0)*a*u);
+endfig;
+
+beginfig(686)
+save u,p, a;
+path p[];
+u:=.7cm;
+a:=10;
+
+z.p=(.6*a*u,.48*a*u);
+
+p1=(.4,.4)*a*u--(.7,.4)*a*u--(.7,.6)*a*u--(.4,.6)*a*u--cycle;
+p2=(.3,.3)*a*u..tension 1.7..(.8,.7)*a*u..tension 1.7..cycle;
+
+fill p2 withcolor .9;
+fill p1 withcolor .7;
+draw p2 dashed evenly;
+draw p1 dashed evenly;
+
+draw (0,0)*u--(a,0)*u--(a,a)*u--(0,a)*u--cycle;
+draw (0,-1)*u--(a,-1)*u ;
+draw (-1,0)*u--(-1,a)*u ;
+
+draw (.4*a*u,-1*u)--(.7*a*u,-1*u) penbold withcolor .5;
+draw (-1*u,.4*a*u)--(-1*u,.6*a*u) penbold withcolor .5;
+
+dOt z.p, (x.p,-1*u), (-1*u, y.p);
+
+label.bot(btex $x$ etex, (x.p,-1*u));
+label.lft(btex $y$ etex, (-1*u,y.p));
+label.ulft(btex $V$ etex, (x.p,-1*u)+(-10,0)) withcolor .5;
+label.urt(btex $W$ etex, (-1*u,y.p)+(0,10)) withcolor .5;
+label.top(btex $(x,y)$ etex, z.p);
+label.lrt(btex $\c{X}$ etex, (0,-1*u));
+label.ulft(btex $\c{Y}$ etex, (-1*u,0));
+label.urt(btex $V\times W$ etex, (.4,.4)*a*u);
+label.llft(btex $O$ etex, (.8,.7)*a*u);
 label.urt(btex $\c{X}\times \c{Y}$ etex, (0,0)*a*u);
 endfig;
 

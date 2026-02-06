@@ -2,7 +2,7 @@
 
 Recall that any metric space comes with a topology.
 In particular, we may talk about \textit{compact metric spaces}.
-In this chapter we discuss specific properties of metric spaces that are related to compctness.
+In this chapter we discuss specific properties of metric spaces that are related to compactness.
 
 \section{Lebesgue number}
 
@@ -11,7 +11,7 @@ Given an open cover $\{V_\alpha\}$ of a compact metric space $\c{M}$,
 there is $\eps > 0$ such that every $\eps$-ball in $\c{M}$ lies in $V_\alpha$ for some~$\alpha$.
 \end{thm}
 
-The number $\eps$ that meets the condition in the lemma is called the \index{Lebesgue number}\emph{Lebesgue number} of the cover.
+The number $\eps$ that meets the condition in the theorem is called the \index{Lebesgue number}\emph{Lebesgue number} of the cover.
 
 \parit{Proof.}
 Given a point $p\in \c{M}$ we can choose $r=r(p)>0$ such that the ball $\Ball(p,2\cdot r)$ lies in $V_\alpha$ for some $\alpha$.
@@ -42,7 +42,7 @@ Show that the product of two sequentially compact spaces is sequentially compact
 }
 
 For general topological spaces sequential compactness does not imply compactness, and the other way around.%
-\footnote{An example of compact, but not sequentially compact space have been constructed in \ref{ex:power-power}.
+\footnote{An example of compact, but not sequentially compact space has been constructed in \ref{ex:power-power}.
 A standard example of sequentially compact, but not compact space is $[0,\Omega)$ --- the set of all countable ordinals, with the order topology;
 it is discussed in the classical book of Lynn Arthur Steen and J. Arthur, Jr. Seebach~\cite{steen-seebach}.
 }
@@ -94,7 +94,7 @@ that is, $\c{M}$ has finite \index{diameter}\emph{diameter}:
 
 \addtocounter{subthm}{2}
 \begin{subthm}{ex:compact-complete:b}
-Give an example of noncomact complete bounded metric space.
+Give an example of noncompact complete bounded metric space.
 \end{subthm}
 
 \end{thm}
@@ -140,7 +140,7 @@ Further, choose a point $x_2$ such that $|x_1\z-x_2|>\eps$.
 Further, choose a point $x_3$ such that $|x_1\z-x_3|>\eps$ and $|x_2\z-x_3|>\eps$; and so on.
 On the $n$-th step we choose a point $x_n$ such that $|x_i\z-x_n|>\eps$ for all $i<n$.
 
-This procedure might teminate on the $n$-th step if there is no point $x_n$ such that $|x_i\z-x_n|>\eps$ for all $i<n$.
+This procedure might terminate on the $n$-th step if there is no point $x_n$ such that $|x_i\z-x_n|>\eps$ for all $i<n$.
 In this case, the set $\{x_1,\dots,x_{n-1}\}$ is an $\eps$-net in $\c{M}$ --- the lemma is proved.
 
 If the procedure does not terminate, we get an infinite sequence of points $x_1,x_2,\dots$ such that $|x_i-x_j|>\eps$ for all $i\ne j$.
@@ -167,7 +167,7 @@ It remains to observe that the union $N_1\cup N_2\cup \dots$ is countable and de
 Any sequentially compact metric space has a countable base.
 \end{thm}
 
-Topological spaces that admit a countable base are called \index{second-countable space}\emph{second-countable}.\footnote{A space is called \index{first-countable space}\emph{first-countable} if for each point $x$ there exists a sequence of neighbourhoods $U_1$, $U_2,\dots$ such that for any open set $V\ni x$ we can chose $n$ such that $V\supset U_n\ni x$. For example, any metric space is first-countable; indeed, one can take $U_n=\Ball(x,\tfrac1n)$.}
+Topological spaces that admit a countable base are called \index{second-countable space}\emph{second-countable}.\footnote{A space is called \index{first-countable space}\emph{first-countable} if for each point $x$ there exists a sequence of neighbourhoods $N_1$, $N_2,\dots$ such that for any open set $V\ni x$ we can choose $n$ such that $V\supset N_n\ni x$. For example, any metric space is first-countable; indeed, one can take $N_n=\Ball(x,\tfrac1n)$.}
 So the proposition states that \textit{any sequentially compact metric space is second-countable}.
 
 \parit{Proof.}
@@ -221,7 +221,7 @@ It follows that $x_i\in V_n$ for an infinite set of indices $i$, but by construc
 \qeds
 
 \begin{thm}{Exercise}\label{ex:compact-net}
-Show that a complete metric space $\c{M}$ is compact if for any $\eps>0$ there is a comapct $\eps$-net in $\c{M}$.
+Show that a complete metric space $\c{M}$ is compact if for any $\eps>0$ there is a compact $\eps$-net in $\c{M}$.
 \end{thm}
 
 \begin{thm}{Advanced exercise}\label{ex:non-contracting-map}
