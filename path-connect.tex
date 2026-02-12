@@ -4,39 +4,48 @@ Here we discuss paths and path-connected spaces,
 
 \section{Paths}\label{sec:Operations on paths}
 
+Let $\c{X}$ be a topological space.
 A continuous map $f\:[0,1]\to \c{X}$ is called a \index{path}\emph{path}.
 If $x=f(0)$ and $y=f(1)$ we say that $f$ is a path from $x$ to $y$.
 
-Let us start with several examples and constructions of paths
+Let us start with several examples and constructions of paths.
 \begin{itemize}
-\item A path $f$ is called \index{constant path}\emph{constant} if stays at one point.
+\item A path $f$ is called \index{constant path}\emph{constant} if it stays at one point.
 In other words, $f(t)=p$ for some fixed point $p$; in this case, the path $f$ can be denoted by $\eps_p$.
 
 \item Given a path $f\:[0,1]\to \c{X}$, one can consider the \index{time-reversed path}\emph{time-reversed} path $\bar f$, defined by
 \[\bar f(t)=f(1-t).\]
 Note that $\bar f$ is continuous since $f$ is.
 
-\item Let $f$ and $h$ be paths in the topological space $\c{X}$.
-If $f(1)=h(0)$ we can join these two paths into one $g\:[0,1]\to \c{X}$ that follows $f$ and then $h$;
-so it is defined as
+\item Let $f$ and $h$ be paths such that $f(1)=h(0)$.
+Then we can join them into one $g\:[0,1]\to \c{X}$ defined as
 \[g(t)=
 \left\{
 \begin{aligned}
-f(2\cdot t)&&\text{if}&\ t\le \tfrac12
+f(2\cdot t)&&\text{if}&\ t\le \tfrac12,
 \\
-h(2\cdot t-1)&&\text{if}&\ t\ge \tfrac12
+h(2\cdot t-1)&&\text{if}&\ t\ge \tfrac12;
 \end{aligned}
 \right.
 \]
-The path $g$ is called the \index{product of paths}\emph{product} (or \index{concatenation}\emph{concatenation}) of paths $f$ and $h$; it is denoted as $g=f * h$.
+so, $g$ follows $f$ and then $h$.
+The path $g$ is called the \index{product of paths}\emph{product} (or \index{concatenation}\emph{concatenation}) of $f$ and $h$; it is denoted as $g=f * h$.
 Note that \ref{ex:u-continuous:closed} implies that $f*h$ is continuous;
 in other words $f*h$ is indeed a path.
 \end{itemize}
 
+\begin{thm}{Advanced exercise}\label{ex:simple-path}
+Let $f$ be a path from $x$ to $y$ in a Hausdorff space $\c{X}$.
+Assume $x\ne y$.
+Show that there is an injective path $h$ form $x$ to $y$ such that $h([0,1])\subset f([0,1])$.
+\end{thm}
+
+\section{Path-connected components}
+
 Consider the following relation on the set of points of a topological space:
 \[x\sim y \quad\Leftrightarrow\quad\text{there is a path from $x$ to $y$.}\]
 
-From above we have that $\sim$ is an equivalence relation on the set of points in $\c{X}$; in other words, the following properties hold for any points $x,y,z\in \c{X}$:
+From \ref{sec:Operations on paths}, $\sim$ is an equivalence relation on the set of points in $\c{X}$; in other words, the following properties hold for any points $x,y,z\in \c{X}$:
 \begin{itemize}
  \item $x\sim x$ (since $\eps_x$ is a path from $x$ to $x$);
  \item if $x\sim y$, then $y\sim x$ (indeed, if $f$ is a path from $x$ to $y$, then $\bar f$ is a path from $y$ to $x$);
@@ -46,6 +55,7 @@ From above we have that $\sim$ is an equivalence relation on the set of points i
 
 The equivalence class of a point $x$ for the equivalence relation $\sim$ is called the \index{path-connected component}\emph{path-connected component} of $x$;
 this is the set of all point in $\c{X}$ that can be jointed with $y$ by a path.
+
 
 \section{Path-connected spaces}
 
@@ -79,6 +89,11 @@ It remains to apply~\ref{prop:union-connect}.
 \parit{Second part.}
 We need to present an example of a space that is connected, but not path-connected.
 
+\begin{wrapfigure}{r}{33mm}
+\vskip-0mm
+\includegraphics{mppics/pic-20}
+\end{wrapfigure}
+
 Denote by $I$ the closed line segment from $(0,0)$ to $(1,0)$ in $\RR^2$.
 Further, denote by $J_n$ the closed line segment from $(\tfrac1n,0)$ to $(\tfrac1n,1)$.
 Consider the union of all these segments
@@ -89,11 +104,6 @@ where $y=(0,1)$.
 The space $W'$ is called the {}\emph{flea and comb};
 the set $W$ is called the \index{comb}\emph{comb},
 and the point $y$ is called the \index{flea}\emph{flea}.
-
-\begin{wrapfigure}{r}{33mm}
-\vskip-4mm
-\includegraphics{mppics/pic-20}
-\end{wrapfigure}
 
 Note that $W\subset W'\subset \bar W$.
 Therefore, by \ref{ex:A<B<bar-A}, $W'$ is connected.
@@ -108,12 +118,11 @@ In particular, the set $f^{-1}(\{y\})$ has the minimal element,
 denote it by $b$.
 Note that $b>0$, $f(b)=y$ and $f(t)\ne y$ for any $t<b$.
 
-Choose a positive $\eps<1$.
-Since $f$ is continuous, there is $a<b$ such that $|f(t)-y|<\eps$ for any $t\in [a,b]$.
-Note that $f(a)\in J_n$ for some $n$.
+Since $f$ is continuous, there is $a<b$ such that $|f(t)-y|<\tfrac1{10}$ for any $t\in [a,b]$.
+Since $|f(a)-y|<\tfrac1{10}$, we have $f(a)\in J_n$ for some $n$ (in other words, $f(a)\notin I$).
 
-Denote by $N$ the intersection of the $\eps$-neighborhood of $y$ with the comb.
-Note that the intersection of $J_n$ with $\eps$-neighborhood of $y$ forms a connected component of $N$.
+Denote by $N$ the intersection of the $\tfrac1{10}$-neighborhood of $y$ with the comb.
+The intersection of $J_n$ with $\tfrac1{10}$-neighborhood of $y$ forms a connected component of $N$.
 By \ref{prop:image-connected}, $f(t)\in J_n$ for any $t\in [a,b]$;
 in particular, $f(b)\ne y$ --- a contradiction.
 \qeds
@@ -156,21 +165,6 @@ Give an example of $f$ and $h$ such that $p$ and $q$ lie in different path-conne
 
 \end{thm}
 
-
-\begin{thm}{Advanced exercise}\label{ex:path-connected-component-closed-open:closed}
-Consider the \index{lexicographical order}\emph{lexicographical order} $\prec$ on $\RR^2$:
-\[
-(x_1,y_1)\prec(x_2,y_2)
-\quad\Leftrightarrow\quad
-x_1<x_2\quad \text{or}\quad x_1=x_2\ \text{and}\  y_1<y_2.
-\]
-Show that the following sets for all pairs $(x_1,y_1)\prec(x_2,y_2)$ in $\RR^2$
-\[I_{(x_1,y_1),(x_2,y_2)}\df\set{(x,y)\in \RR^2}{(x_1,y_1)\prec(x,y)\prec(x_2,y_2)}\]
-form a base of some topology $\s{T}$ on $\RR^2$.
-
-Furthermore, show that the squre $([0,1]\times[0,1]$ with the topology induced by $\s{T}$ is compact, Hausdorff, connected, but not path-connected, and each path-conencted component in $([0,1]\times[0,1],\s{T})$ is a veritcal interval $\{x\}\times[0,1]$.
-\end{thm}
-
 \begin{thm}{Advanced exercise}\label{ex:QQ}
 Recall that $\mathbb{Q}$ denotes the set of rational numbers.
 Consider the following sets in the plane:
@@ -180,7 +174,7 @@ B=\set{(x,y)\in\RR^2}{x,y\notin\mathbb{Q}}.\]
 Show that $A\cup B$ is path-connected.
 \end{thm}
 
-\section{Sets of Euclidean space}
+\section{Sets in Euclidean space}
 
 The following theorem provides a class of topological spaces for which connectedness implies path-connectedness.
 
@@ -215,7 +209,8 @@ Show that a connected open set in a locally path-connected space is path-connect
 \end{thm}
 
 \begin{thm}{Advaneced exercise}\label{ex:pseudocircle}
-Construct a bounded open set $V$ in the plane such its boundary is connected, but \index{totally path-disconnected space}\emph{totally path-disconnected}; that is each connected component in $\partial V$ consists of a sinle point.
+Construct a bounded open set $V$ in the plane such its boundary is connected, but \index{totally path-disconnected space}\emph{totally path-disconnected};
+that is, each connected component in $\partial V$ consists of a sinle point.
 \end{thm}
 
 

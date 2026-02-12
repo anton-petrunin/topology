@@ -1,9 +1,8 @@
-\chapter{Hausdorff spaces}
+\chapter{Hausdorff spaces}\label{chap:hausdorff}
 
-Hausdorff spaces are especially nice topological spaces that share many features of metric spaces;
+
+Historically, the first definition of a topological space \cite[VII § 1]{hausdorff1914} defined what we now call a Hausdorff space; these are especially nice topological spaces that share many features of metric spaces;
 for example, any convergent sequence in a Hausdorff space has a unique limit.
-(Historically, Hausdorff's definition of a topological space \cite[VII § 1]{hausdorff1914} included an exatra condition, and thus he defined what we now call a Hausdorff space.)
-
 
 \section{Definition}
 
@@ -17,16 +16,16 @@ Any metrizable space is Hausdorff.
 \end{thm}
 
 \parit{Proof.}
-It is sufficient two show that a metric space $\c{M}$ is Hausdorff.
+It is sufficient to show that a metric space $\c{M}$ is Hausdorff.
 
 If the points $x,y\in\c{M}$ are distinct, then $r=|x-y|_{\c{M}}>0$.
 By the triangle inequality
 $\Ball(x,\tfrac r2)\cap \Ball(y,\tfrac r2)=\emptyset$.
-Hence the statement follows
+Hence the statement follows.
 \qeds
 
-Recall that in general, a sequence of points in a topological space might have different limits; see \ref{sec:limits}.
-For example, for the $\RR$ with the cofinite topology most sequences of points converge to \textit{every} point in~$\RR$.
+Recall that in general, a sequence of points in a topological space might have different limits (see \ref{sec:limits}).
+For example, for the real line with the cofinite topology most sequences of points converge to \textit{every} point.
 
 \begin{thm}{Exercise}\label{ex:hausdorff-unique-limit}
 Show that any converging sequence in Hausdorff space has a unique limit.
@@ -49,17 +48,19 @@ is a closed set in the product space $\c{X}\times\c{X}$.
 \begin{thm}{Exercise}\label{ex:closed-graph-hausdorff}
 Let $f\:\c{X}\to\c{Y}$ be a continuous map between topological spaces.
 Assume $\c{Y}$ is Hausdorff.
-Show that the graph $\Gamma=\set{(x,f(x))}{x\in\c{X}}$ is a closed set in $\c{X}\times\c{Y}$.
+Show that the graph
+\[\Gamma\z=\set{(x,f(x))}{x\in\c{X}}\]
+is a closed set in $\c{X}\times\c{Y}$.
 \end{thm}
 
 
-\section{Observations}
+\section{Observations}\label{sec:haus-observations}
 
 \begin{thm}{Observation}\label{obs:one-point=compact}
 Any one-point set in a Hausdorff space is closed. 
 \end{thm}
 
-If every one-point set is closed in a topological space is closed, then the space is called \index{$T_1$-space}\emph{$T_1$-space} or sometimes \index{Tikhonov space}\emph{Tikhonov space}.
+If every one-point set is closed, then the space is called \index{$T_1$-space}\emph{$T_1$-space} or sometimes \index{Tikhonov space}\emph{Tikhonov space}.
 Therefore the observation above states that \textit{any Hausdorff space is $T_1$}.
 
 \parit{Proof.}
@@ -73,9 +74,8 @@ Note that
 It follows that $\c{X}\setminus\{x\}$ is open, and therefore $\{x\}$ is closed.
 \qeds
 
-Suppose $x\in V$ and $y\in W$ are as in the definitin of Hausdorff space (\ref{def:hausdorff}).
-If $x,y$ lie in some subset $A$, then $V'=V\cap A\ni x$ and $W'=W\cap A\ni y$ are nonintersecting neighborhoods in the induced topology on $A$.
-This way we get the following.
+Suppose $x\in V$ and $y\in W$ are as in the definition of Hausdorff space (\ref{def:hausdorff}).
+If $x,y$ lie in some subset $A$, then $V'=V\cap A\ni x$ and $W'=W\cap A\ni y$ are nonintersecting neighborhoods in the induced topology on $A$, and we get the following.
 
 
 \begin{thm}{Observation}
@@ -128,10 +128,8 @@ It remains to observe that $V$ and $W$ are open, $y\in W$, $K\subset V$, and
 \[V\cap W\subset \bigcup_i(V_{x_i}\cap W_{x_i})=\emptyset.\qedsin\]
 
 \begin{thm}{Exercise}\label{ex:normal-hausdorff}
-Let $\c{X}$ be a Hausdorff space and $K,L\subset X$ be two compact subsets.
-Assume $K\cap L=\emptyset$.
-Show that there are open sets $V\supset K$ and $W\supset L$
-such that $V\cap W=\emptyset$.
+Let $\c{X}$ be a Hausdorff space and $K,L\subset X$ be two disjoint compact subsets.
+Show that there are disjoint open sets $V\supset K$ and $W\supset L$.
 \end{thm}
 
 \section{Compact-to-Hausdorff maps}\label{sec:compact-to-hausdorff}
@@ -182,6 +180,85 @@ Show that the quotient space $\DD^2/\mathbb{S}^1$ is homeomorphic to the unit sp
 Recall that a \index{convex body}\emph{convex body} is a compact convex set with non-empty interior in $\RR^3$.
 
 \begin{thm}{Exercise}\label{ex:convex-body}
-Show that the boundary or a convex body is homeomorphic to $\mathbb{S}^2$.
+Show that the boundary of a convex body is homeomorphic to $\mathbb{S}^2$.
 \end{thm}
+
+
+\section{Comments}
+
+Recall that any metrizable compact space is Hausdorff and second-countable; the latter means that it has a countable base.
+The following theorem provides a converse, but we are not going to prove it.
+
+\begin{thm}{Theorem}
+A compact second-countable Hausdorff space is metrizable.
+\end{thm}
+
+This theorem is a corollary of the Urysohn metrization theorem; it gives a very satisfactory topological characterization of compact metrizable spaces.
+There are analogous characterizations of all metrizable spaces;
+if you are interested in the subject then start with Nagata--Smirnov theorem.
+Both theorems are discussed in the book by James Munkres \cite{munkres}.
+
+Let us mention several other conditions that (like Hausdorffness) make a topological space behave more like metrizable.
+
+Recall that a topological space $\c{X}$ is called \index{first-countable space}\emph{first-countable} if for each point $x\in\c{X}$ there exists a sequence of neighbourhoods $N_1$, $N_2,\dots$ such that for any open set $V\ni x$ we can choose $n$ such that $V\supset N_n\ni x$.
+Observe that any metric space is first-countable; indeed, one can take $N_n=\Ball(x,\tfrac1n)$.
+
+\begin{thm}{Exercise}\label{ex:first-countable-seq}
+Let $A$ be a subset in a first-countable space $\c{X}$.
+Show that $x\in \bar A$ if and only if $x$ is a limit of some sequence $x_1,x_2,\dots \in A$.
+
+Observe that \ref{ex:cocountable-top:closed} implies that this is no longer true without assuming that $\c{X}$ is first-countable.
+
+\end{thm}
+
+Given a nonempty set $A$ in a metric space $\c{M}$, consider function $\dist_A\:\c{M}\to \RR$ defined by
+\[\dist_Ax=\inf\set{|x-a|_{\c{M}}}{a\in A}.\]
+By triangle inequality, $|\dist_Ax-\dist_Ay|\le |x-y|_{\c{M}}$.
+Therefore, \textit{$\dist_A$ is a continuous nonnegative function}.
+Directly from the definition, we have that $x\in\bar A\ \Leftrightarrow\ \dist_Ax=0$.
+
+
+\begin{thm}{Exercise}\label{ex:distfun}
+Consider two disjoint closed sets $A$ and $B$ in a metric space $\c{M}$.
+Show that the function defined by
+\[f\:x\mapsto \frac{\dist_Ax}{\dist_Ax+\dist_Bx}.\]
+is a continuous function $\c{M}\to[0,1]$.
+Moreover,
+\[f(a)=0\ \Leftrightarrow\ a\in A
+\quad\text{and}\quad
+f(b)=1\ \Leftrightarrow\ b\in B.
+\]
+Conclude that there are disjoint open sets $V\supset A$ and $W\supset B$.
+\end{thm}
+
+
+The last exercise provides a purely topological property of metrizable spaces.
+Topological spaces that meet the statement about existence of open sets $V$ and $W$ are called
+$T_4$; by \ref{ex:normal-hausdorff}, \textit{any compact Hausdorff space is $T_4$}.
+There is a sequence of its related conditions $T_0$, $T_1$, $T_2$, $T_3$, $T_4$, and $T_5$ which are listed below for your entertainment.
+There are also additional conditions related to the existence of function in the first part of the exercise.
+(One can easily spend weeks studying difference between all these conditions.)
+
+All these conditions hold for metrizable spaces; they were extensively studied.
+Hausdorffness is $T_2$, and this is the most important condition in this line.
+We met $T_1$ in \ref{obs:one-point=compact}; also by \ref{thm:hausdorff-compact-t3}, \textit{any compact Huasdorff space is $T_3$}.
+
+\pagebreak
+\medskip
+
+\begin{itemize}
+\item[$T_0$.] For any distinct points $a,b\in \c{X}$ there is an open set $V$ such that $a\in V$ and $b\notin V$ or an open set $W$ such that $a\notin W$ and $b\in W$.
+\item[$T_1$.] For any distinct points $a,b\in \c{X}$ there is an open set $V$ such that $a\in V$ and $b\notin V$.
+\item[$T_2$.] For any distinct points $a,b\in \c{X}$ there are disjoint open sets $V$ and $W$ such that $a\in V$ and $b\in W$.
+\item[$T_3$.] For any point $a\in \c{X}$ and closed set $B\subset \c{X}$ such that $a\notin B$ there are disjoint open sets $V$ and $W$ such that $a\in V$ and $B\subset W$.
+\item[$T_4$.] For any two disjoint closed sets $A,B\subset \c{X}$ there are disjoint open sets $V$ and $W$ such that $A\subset V$ and $B\subset W$.
+\item[$T_5$.] For any sets $A,B\subset \c{X}$ such that $\bar A\cap B= A\cap \bar B=\emptyset$ there are disjoint open sets $V$ and $W$ such that $A\subset V$ and $B\subset W$.
+\end{itemize}
+
+\medskip
+
+Often one includes $T_1$ in the definition of $T_i$ for $i\ge 3$;
+in this case, one-point sets are closed, and  $T_5\Rightarrow T_4\Rightarrow T_3\Rightarrow T_2\Rightarrow T_1\Rightarrow T_0$.
+Spaces that meet $T_3$ and $T_4$ are also called \index{regular space}\emph{regular}and \index{normal space}\emph{normal}, respectively; again different authors might define them with or without $T_1$.
+I see no reason for particular choice of terms regular and normal; but I remember that Hausdorff ($T_2$), regular ($T_3$), and normal ($T_4$) do not go in the alphabetical order.
 

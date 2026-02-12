@@ -49,7 +49,7 @@ Show that any set equipped with the cofinite topology is compact.
 Let us show how one can apply the definition.
 
 \begin{thm}{Observation}\label{obs:closed-bounded}
-A comact subset $S$ of the real line has to be closed and \index{bounded set}\emph{bounded}; that is there is $c\in \RR$ such that $|s|\le c$ for any $s\in S$.
+A compact subset $S$ of the real line has to be closed and \index{bounded set}\emph{bounded}; that is there is $c\in \RR$ such that $|s|\le c$ for any $s\in S$.
 \end{thm}
 
 \parit{Proof.}
@@ -68,7 +68,7 @@ Construct a topological space with a set that is compact, but not closed.
 \end{subthm}
 
 \begin{subthm}{ex:ucompact}
-Show that union of two compact sets is compact.
+Show that the union of two compact sets is compact.
 \end{subthm}
 
 \begin{subthm}{ex:noncompact-n}
@@ -246,16 +246,13 @@ Show that any closed bounded subset of the real line is compact.
 \end{thm}
 
 
-\section{Compactification}
+\section{One-point compactification}
 
-\begin{thm}{Claim}
-Every topological space is homeomorphic to a subspace of a compact space.
-\end{thm}
+%??? change notation to $\dot{\c{X}}$ or so.
 
-\parit{Proof.}
-Choose a topological space $\c{X}$.
-Let us add to $\c{X}$ one extra point that will be denoted by $\infty$.
-A set $V$ in $\c{X}^\infty=\c{X}\cup\{\infty\}$ is declared to be open if $V$ is an open subset in $\c{X}$ (in which case $\infty\notin V$) or $\infty\in V$ and its complement $\c{X}\setminus V$ is a closed \textit{and} compact subset of $\c{X}$.
+Choose a topological space $\c{X}$ and add to $\c{X}$ one extra point that will be denoted by $\infty$.
+Let us define topology on $\c{X}^\infty=\c{X}\cup\{\infty\}$ such that
+a set $V$ in $\c{X}^\infty$ is open if $V$ is an open subset in $\c{X}$ (in which case $\infty\notin V$) or $\infty\in V$ and its complement $\c{X}\setminus V$ is a closed \textit{and} compact subset of $\c{X}$.
 
 To show that we have defined a topology, we need to check the conditions in \ref{def:top-space}:
 \ref{SHORT.def:top-space:empty} is straightforward, \ref{SHORT.def:top-space:u} follows since intersection of closed and compact sets are closed and compact (see \ref{prop:compact-closed}), and \ref{SHORT.def:top-space:n} follows since union of two closed sets is closed and union of two compact sets is compact (see \ref{def:closed-properties:u} and \ref{ex:ucompact}).
@@ -266,9 +263,17 @@ By construction, the complement $K=\c{X}^\infty\setminus V_{\alpha_\infty}$ is c
 Therefore we can choose a finite subcover $\{V_{\alpha_1}, \dots V_{\alpha_n}\}$ of $K$.
 Observe that $\{V_{\alpha_\infty},V_{\alpha_1}, \dots V_{\alpha_n}\}$ covers $\c{X}^\infty$;
 whence $\c{X}^\infty$ is compact.
-\qeds
+
 
 The space $\c{X}^\infty$ constructed in the proof is called the \index{one-point compactification}\emph{one-point compactification} of $\c{X}$.
+Observe that inclusion map $\c{X}\hookrightarrow\c{X}^\infty$ is an embedding.
+Furthermore, if $\c{X}$ is not compact, then it is dense in $\c{X}^\infty$.
+In particular, we proved the following statement.
+
+\begin{thm}{Claim}
+Every topological space is homeomorphic to a subspace of a compact space.
+\end{thm}
+
 
 \begin{thm}{Exercise}\label{ex:one-point-comp}
 Show that one-point compactification of the real $\RR$ line is homeomorphic to the circle $\SS^1$.
@@ -293,7 +298,9 @@ In the proof, we will need the following definition.
 
 \begin{thm}{Definition}
 Let $\{V_\alpha\}$ and $\{W_\beta\}$ be two covers of a topological space $\c{X}$.
-We say that $\{V_\alpha\}$ is \index{inscribed cover}\emph{inscribed} in $\{W_\beta\}$ if for any $\alpha$ there is $\beta$ such that $V_\alpha\subset W_\beta$.
+We say that $\{V_\alpha\}$ is \index{inscribed cover}\emph{inscribed}%
+\footnote{One can also say that $\{V_\alpha\}$ \index{refinement}\emph{refines} $\{W_\beta\}$.}
+in $\{W_\beta\}$ if for any $\alpha$ there is $\beta$ such that $V_\alpha\subset W_\beta$.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:inscribed-cover-base}
@@ -427,7 +434,8 @@ This is a partial case of the \index{Tychonoff compactness theorem}\emph{Tychono
 
 For finite set $F$ the space $\Power(F)$ is a discrete space with $2^{|F|}$ points, which is compact --- not a surprise.
 
-For the set of natural numbers $\NN=\{1,2,\dots\}$, a point $p\in \Power(\NN)$ is a subset $p\subset \NN$ and the map $p\mapsto 2\cdot \sum_{n\in p}3^{-n}$
+For the set of natural numbers $\NN=\{1,2,\dots\}$, a point $p\in \Power(\NN)$ is a subset $p\subset \NN$ and the map
+\[p\mapsto 2\cdot \sum_{n\in p}3^{-n}\]
 defines a homeomorphism from $\Power(\NN)$ to the standard Cantor set $\c{C}\subset [0,1]$.
 
 \begin{thm}{Exercise}

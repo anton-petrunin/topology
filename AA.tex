@@ -1,3 +1,53 @@
+\begin{thm}{Exercise}\label{ex:distfun}
+Consider two subsets $A,B\subset \c{M}$ such that $\bar A\cap B=A\cap \bar B=\emptyset$.
+
+\begin{subthm}{ex:distfun:T5}
+Assume $A,B\subset \c{M}$ be two subsets such that $\bar A\cap B=A\cap \bar B=\emptyset$.
+Consider the sets
+\begin{align*}
+V=\bigcup_{a\in A} \Ball(a,\tfrac12\cdot \dist_Ba),
+&
+W=\bigcup_{b\in B} \Ball(b,\tfrac12\cdot \dist_Ab).
+\end{align*}
+Show that $V$ and $W$ are open $V\supset A$, $W\supset B$, and $V\cap W$
+\end{subthm}
+
+\end{thm}
+
+
+
+\begin{thm}{Advanced exercise}\label{ex:path-connected-component-closed-open:closed}
+Consider the \index{lexicographical order}\emph{lexicographical order} $\prec$ on $\RR^2$:
+\[
+(x_1,y_1)\prec(x_2,y_2)
+\quad\Leftrightarrow\quad
+x_1<x_2\quad \text{or}\quad x_1=x_2\ \text{and}\  y_1<y_2.
+\]
+Show that the following sets for all pairs $(x_1,y_1)\prec(x_2,y_2)$ in $\RR^2$
+\[I_{(x_1,y_1),(x_2,y_2)}\df\set{(x,y)\in \RR^2}{(x_1,y_1)\prec(x,y)\prec(x_2,y_2)}\]
+form a base of some topology $\s{T}$ on $\RR^2$.
+
+Furthermore, show that the squre $([0,1]\times[0,1]$ with the topology induced by $\s{T}$ is compact, Hausdorff, connected, but not path-connected, and each path-conencted component in $([0,1]\times[0,1],\s{T})$ is a veritcal interval $\{x\}\times[0,1]$.
+\end{thm}
+
+
+\parbf{\ref{ex:path-connected-component-closed-open:closed}.}
+Check the conditions in \ref{prop:base-any}.
+To prove compactness, try to modify the proof of \ref{thm:comp-interval}.
+Hausdorfness follows from the definition.
+To prove connectedness, modify the proof of \ref{prop:connected[0,1]}.
+To show that the space is not path-connected, use that any path contains at most countable subsets of isolated points.
+Finally observe that every path-connected component in $[0,1]\times[0,1]$ is a vertical segment $\{x\}\times [0,1]$.
+
+
+
+
+
+
+
+
+
+
 
 \begin{thm}{Exercise}\label{ex:open-close}
 Let $f\:[0,1)\to [0,1)$ be an arbitrary function (not necessary continuous) such that $f(x)>x$ for every $x$.

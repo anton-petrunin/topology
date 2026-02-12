@@ -1,0 +1,190 @@
+\chapter{Baire spaces}\label{chap:baire}
+
+Here we will develop a language to talk rigorously about typical objects in many contexts.
+In practice, it is used to prove existence of examples with weird properties,
+and it often comes with a surprise: typical object looks like nothing we saw before.
+
+\section{Baire theorem}
+
+A topological space is called \index{Baire space}\emph{Baire} if any countable family of dense open sets in $\c{X}$ has a dense intersection.
+
+For example, the space of rational numbers $\QQ$ is not a Baire.
+Indeed, the complement of a one-point set $\QQ\setminus \{q\}$ is dense and open in $\QQ$;
+the intersection of all these complements is empty, and since $\QQ$ is countable, this is a countable intersection.
+On the other hand the set of integers $\ZZ$ is a Baire space, since $\ZZ$ is the only dense open set in $\ZZ$.
+The following theorem implies that $\RR$ is a Baire space.
+
+
+\begin{thm}{Theorem}\label{thm:baire-category}
+Any complete metric space is Baire.
+\end{thm}
+
+Given two subsets $A$ and $B$ of a topological space, we will write \index{$A\Supset B$}$A\Supset B$ (equivalently, $B\Subset A$) if $\mathring{A}\supset \bar B$; that is, the interior of $A$ contains closure of $B$.
+
+\parit{Proof.}
+Let $V_1,V_2\ldots$ be a sequence of dense open sets in a complete metric space $\c{M}$.
+We need to show that $G=V_1\cap V_2\cap\ldots$ intersects any open ball in $\c{M}$.
+
+Choose a ball $B_0=\Ball(p_0,r_0)$.
+Since $V_1$ is dense and open, we can choose another ball $B_1=\Ball(p_1,r_1)\subset B_0\cap V_1$; moreover, taking the radius $r_1$ smaller we can achieve
+$B_1\Subset B_0\cap V_1$ and $r_1\le\tfrac12\cdot r_0$.
+Continue this process for $V_2$, $V_3$, and so on;
+on the $n$-th step we choose a ball $B_n=\Ball(p_n,r_n)\Subset B_{n-1}\cap V_n$ and $r_n\le\tfrac12\cdot r_{n-1}$.
+
+If $i<j$, then  $|p_i-p_j|<r_i\le\tfrac 1{2^i}\cdot r_0$.
+It follows that $p_0,p_1,\ldots$ is a Cauchy sequence.
+Since $\c{M}$ is complete, the sequence must converge; denote its limit by $p_\infty$.
+It remains to observe that $p_\infty\in \bar B_n$ for any $n$; in particular, $p_\infty\in G\cap B_0$.
+\qeds
+
+
+\begin{thm}{Exercise}\label{ex:haus-comp-bair}
+Let $\c{K}$ be a compact Hausdorff space.
+\begin{subthm}{ex:haus-comp-bair:Subset}
+Show that for any open set $V\subset \c{K}$ there is an open set $W\Subset V$.
+\end{subthm}
+\begin{subthm}{ex:haus-comp-bair:bair}
+Use part \ref{SHORT.ex:haus-comp-bair:Subset} and \ref{ex:nested-compact} to show that $\c{K}$ is a Baire space.
+\end{subthm}
+
+\end{thm}
+
+\begin{thm}{Exercise}
+Show that irrational numbers $\RR\setminus\QQ$ form a Baire space.
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:union-closures}
+Let $\c{X}=\bigcup_{n=1}^\infty B_n$.
+Show that if $\c{X}$ is a nonempty Baire space, then at least one of the sets $\bar B_n$
+has nonempty interior.
+\end{thm}
+
+
+\section{G-delta sets}
+
+Let $G$ be a set in a topological space $\c{X}$.
+We say that $G$ is a \index{G-delta set}\emph{G-delta set}
+if it can be written as a countable intersection of open sets;
+that is, $G=V_1\cap V_2\cap\ldots$ for a sequence of open sets $V_1,V_2,\ldots \subset \c{X}$.
+In the definition we can assume that the sequence of open sets is nested;
+that is $V_1\supset V_2\supset\ldots$;
+if not, pass to the sequence
+\[V_1,V_1\cap V_2,V_1\cap V_2\cap V_3,\dots\]
+
+Observe that countable intersection of G-delta sets is G-delta.
+The following identity implies that  union of two G-delta sets is G-delta:
+\[\biggl(\bigcap_i V_i\biggr)\cup \biggl(\bigcap_j W_j\biggr)=\bigcap_{i,j} (V_i\cup W_j).\]
+
+\begin{thm}{Observation}
+Let $\c{X}$ be a Baire space.
+Then countable intersection of dense G-delta sets in $\c{X}$ is dense.
+\end{thm}
+
+Note that the set of irrational numbers $\II=\RR\setminus \QQ$ is G-delta --- it is an intersection of all complements $\RR\setminus\{q\}$ for $q\in\QQ$.
+Since $Q$ and $\II$ are dense, the observation implies that $\QQ\subset\RR$ is not G-delta.
+On the other hand,  $\QQ\subset\RR$ is a countable union of one-point sets; each one-point set $\{q\}$ can be written as intersection of open intervals $(p-\tfrac1n,p+\tfrac1n)$.
+Therefore, countable union of G-delta sets does not have to be G-delta.
+
+\begin{thm}{Exercise}\label{ex:continuity-Gdelta}
+Given a function $f\: \RR\to \RR$, denote by $\Cont(f)\subset \RR$ the set of points at which $f$ is continuous.
+
+\begin{subthm}{ex:continuity-Gdelta:cont}
+Show that $\Cont(f)$ is a G-delta set for any function $f\: \RR\to \RR$.
+\end{subthm}
+
+\begin{subthm}{ex:continuity-Gdelta:Q}
+Show that there is no function $f\: \RR\to \RR$ such that $\Cont(f)=\QQ$.
+\end{subthm}
+
+\begin{subthm}{ex:continuity-Gdelta:Q}
+Let us enumerate all rational numbers $r_1,r_2,\dots$
+Consider function $f\: \RR\to \RR$ defined by $f(r_n)=\tfrac1n$ and $f(x)=0$ for any irrational $x$.
+Show that $\Cont(f)=\RR\setminus\QQ$.
+\end{subthm}
+
+\end{thm}
+
+\section{Large and small subsets}
+
+According to the observation, dense G-delta sets contain all points in Baire space except a \textit{negligible} set.
+At least, we cannot cover an open set with complements of dense G-delta sets.
+The sets of full measure in spaces with measure have an analogous feature, but as we will see in an incompatible way.
+
+Let us enumerate rational numbers $q_1,q_2,\dots$, consider the unions of open intervals:
+\[V_n\df \bigcup_i (q_i-\tfrac1{2^{n+i}},q_i+\tfrac1{2^{n+i}}).\]
+Observe that the Lebesgue measure of $V_n$ (its total length) is less than $\tfrac1{2^{n-1}}$.
+Therefore the G-delta set $G=V_1\cap V_2\cap \ldots$ has vanishing measure,
+so it is nothing with respect to measure theory and everything with respect to topology.
+
+
+\section{An application}
+
+Let $\c{C}$ be the set of all continuous functions $[0,1]\to\RR$,
+equipped with the \index{supnorm metric}\emph{supnorm metric}
+\[|f-g|_{\c{C}}\df\sup\set{|f(x)-g(x)|}{x\in [0,1]}.\]
+It is straightforward to check that this is indeed a metric;
+that is, it meets all conditions in \ref{def:metric-space}.
+The following claim is not that obvious.
+
+\begin{thm}{Claim}
+The space $\c{C}$ is complete.
+\end{thm}
+
+\parit{Proof.}
+In the space $\c{C}$ every point is a continuous function $[0,1]\to\RR$.
+We need to show that a Cauchy sequence $f_1,f_2,\ldots \in \c{C}$ converges in~$\c{C}$.
+
+Choose $x\in [0,1]$.
+Observe that $f_1(x), f_2(x),\dots$ is a Cauchy sequence of real numbers; so,
+it must converge; let us denote its limit by $f_\infty(x)$.
+
+Evidently
+\[\sup\set{|f_n(x)-f_\infty(x)|}{x\in[0,1]}\to 0.\eqlbl{eq:|f-f|->0}\]
+Fix $x_0\in [0,1]$ and $\eps>0$.
+By \ref{eq:|f-f|->0}, we can choose $n$ such that
+\[|f_n(x)-f_\infty(x)|<\tfrac\eps3\]
+for any $x\in [0,1]$.
+By continuity of $f_n$, we can choose $\delta>0$ such that
+\[|x-x_0|<\delta
+\quad\Rightarrow\quad |f_n(x)-f_n(x_0)|<\tfrac\eps3\]
+If $|x-x_0|<\delta$, then
+\begin{align*}
+\eps&>|f_\infty(x)-f_n(x)|+|f_n(x)-f_n(x_0)|
++|f_n(x_0)-f_\infty(x_0)|\ge
+\\
+&\ge
+|f_\infty(x)-f_\infty(x_0)|.
+\end{align*}
+Since $\eps>0$ and $x_0$ are arbitrary, $f_\infty$ is continuous; that is, $f_\infty\in\c{C}$.
+Finally by \ref{eq:|f-f|->0}, $f_n\to f_\infty$ in $\c{C}$.
+\qeds
+
+\begin{thm}{Claim}
+The set of all continuous functions $[0,1]\to\RR$ that are not differentiable at any point contains a dense G-delta set in $\c{C}$.
+\end{thm}
+
+\parit{Sketch of proof.}
+Given a positive integer $n$ consider the set $V_n$ of all functions $f$ in $\c{C}$ such that
+for some integer $m>n$ we have the following inequality
+\[|f(\tfrac{k}{m})-f(\tfrac{k-1}{m})|>\tfrac nm\]
+for any integer $k$ from $1$ to $m$.
+
+Observe that $V_n$ is open and dense in $\c{C}$;
+to prove the latter statement, take huge value $m$ and approximate a given function by zig-zag-looking function with large slope.
+
+It remains to note that if $f\in V_n$ for every $n$, then $f$ is not differentiable at any point and apply the Baire theorem.
+\qeds
+
+We just proved that \textit{most} of continuous functions $[0,1]\z\to\RR$ are not differentiable at any point.
+Try to come up with an explicit construction of one such function --- it is not easy.
+Likely, you did not see such function before, but you know many functions --- apparently they are very nontypical in this sense.
+Here one more statement that can be proved via the same technology; see~\cite{kirchheim-spadaro-szekelyhidi}.
+
+\begin{thm}{Claim}
+In the space of distance nonexpanding maps $\SS^2\to\RR^2$, equipped with supnorm metric, the set of length-preserving maps forms a G-delta dense subset; a map $f\:\SS^2\to\RR^2$ is \index{length-preserving map}\emph{length-preserving} if $\length f\circ\gamma=\length \gamma$ for any curve $\gamma\:[a,b]\to \SS^2$.
+\end{thm}
+
+According to the claim there are length-preserving maps $\SS^2\to\RR^2$, but
+finding just one such a map is a challenging problem.
+It is a typical situation: it is hard to see the typical objects and these objects often have surprising properties.
+

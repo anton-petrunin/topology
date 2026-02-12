@@ -591,6 +591,37 @@ label.llft(btex $O$ etex, (.8,.7)*a*u);
 label.urt(btex $\c{X}\times \c{Y}$ etex, (0,0)*a*u);
 endfig;
 
+beginfig(750)
+save u,p;
+path p[];
+u:=2cm;
+
+z.x=(0,0)*u;
+z.r=(1,0)*u;
+z.a=(-.2,0)*u;
+
+p1=circle(z.x,z.r);
+p2=circle(z.a,z.r/2);
+p3=-2*z.r{(.2,1)}..tension 1.3..{(-.1,-1)}1.6*z.r..tension 1.2..cycle;
+
+fill p3 withcolor .9;
+fill p1 withcolor .7;
+fill p2 withcolor .5;
+
+draw p3 dashed evenly;
+draw p1 dashed evenly;
+draw p2 dashed evenly;
+
+
+dOt z.x,z.a;
+
+label.top(btex $x$ etex, z.x);
+label.top(btex $a$ etex, z.a);
+label.lft(btex $\Ball(x,\eps)$ etex, point 0 of p1);
+label.top(btex $\Ball(a,\tfrac1n)$ etex, (0,2)+point 3 of p2);
+label.lrt(btex $V$ etex, point 0 of p3);
+endfig;
+
 beginfig(770)
 save u,p;
 path p[];

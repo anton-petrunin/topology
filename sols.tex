@@ -565,7 +565,8 @@ Thus, $\RR/\RR_+$ contains three points, say $p$, $n$, and $z$ that correspond t
 It remains to describe all open subsets in $\{p,n,z\}$.
 
 \parbf{\ref{ex:quotient-map}.}
-Let $f\:\c{X}\to \c{X}/G$ be the quotient map.
+Recall that
+\[f(x)=[x]=G\cdot x=\set{g\cdot x}{g\in G}\]
 Show that for any set $V\subset \c{X}$ we have
 \[f^{-1}\circ f(V)=\bigcup_{g\in G}g\cdot V.\]
 
@@ -632,8 +633,8 @@ This is a baby case of the \index{Baire category theorem}\emph{Baire category th
 Apply \ref{prop:compact-closed} and \ref{thm:comp-interval}.
 
 \parbf{\ref{ex:one-point-comp}.}
-Consder the map $h\:\RR\cup\{\infty\}\to \SS^1$ defined by $x\mapsto (\tfrac{2\cdot x}{1+x^2},\tfrac{1-x^2}{1+x^2})$ and $\infty\mapsto (0,-1)$.
-Show that $h$ is a homeomorphisms $\RR^\infty\to \SS^1$.
+Consider the map $h\:\RR\cup\{\infty\}\to \SS^1$ defined by $x\mapsto (\tfrac{2\cdot x}{1+x^2},\tfrac{1-x^2}{1+x^2})$ and $\infty\mapsto (0,-1)$.
+Show that $h$ is a homeomorphism $\RR^\infty\to \SS^1$.
 
 \parbf{\ref{ex:compact-product}.}
 Apply \ref{prop:comp-image} to the projections $\c{X}\times\c{Y}\to\c{X}$ and $\c{X}\times\c{Y}\to\c{Y}$ (which are continuous).
@@ -688,15 +689,10 @@ Suppose that a sequence $x_n$ converges to $x_\infty$ in $\c{X}$
 and $y_n$ converges to $y_\infty$ in $\c{Y}$.
 Show and use that $(x_n,y_n)$ converges to $(x_\infty,y_\infty)$ in $\c{X}\times\c{Y}$ as $n\to\infty$.
 
-\parbf{\ref{ex:compact-complete}}; \textit{(a)}.
-By \ref{prop:seq-comp-metr}, any sequence has a converging subsequence;
-denote by $x$ the limit of this subsequence.
-Show that if the sequence is Cauchy, then it converges to $x$.
+\parbf{\ref{ex:compact-complete}.}
+If the space is not bounded, consider a sequence $x_1,x_2,\dots$ such that $|x_n-p|\to\infty$ for some (and therefore any) point $p$.
 
-\parit{(b)}. Apply the standard definition of compactness to the cover by balls  $\Ball(p,r)$ for all $r>0$.
-
-\parit{\ref{SHORT.ex:compact-complete:b}}.
-Check an infinite discrete space.
+For the second part, check an infinite discrete space.
 
 \parbf{\ref{ex:contracction}.}
 Consider a sequence $x_0,x_1,\dots\in\c{M}$ such that $x_{i}=f(x_{i-1})$ for any $i$.
@@ -715,6 +711,9 @@ Then for any point $p$ there is a point $p'$ such that $|p-p'|<r(p)$ and $r(p')\
 Let $p_0,p_1,\dots \in\c{M}$ be a sequence such that $p_i=p_{i-1}'$.
 Show and use that this sequence is Cauchy.
 
+\parit{Comment.}
+This statement can be used on complete spaces in place of existence of minimum point of a continuous function on a compact space; as far as I know it was discovered by Ivar Ekeland \cite{ekeland}.
+
 \parbf{\ref{ex:compact-net}.}
 Choose a compact $\tfrac1{2\cdot n}$-net $K_n\subset \c{M}$.
 By \ref{prop:seq-comp-metr} and \ref{lem:net}, $K_n$ contains a finite $\tfrac1{2\cdot n}$-net, say~$F_n$.
@@ -723,7 +722,7 @@ that is,
 \[\c{M}=\bigcup_{z\in F_n} \Ball(z,\tfrac1n).\]
 
 Choose a sequence of points in $x_1,x_2,\dots$ in $\c{M}$.
-Apply the \index{diagonal procedure}\emph{diagonal procedure} (should be known from calculus) to extract a subsequence $y_1,y_2,\dots$ such that for fixed choice $z_n\in F_n$ we have
+Apply the \index{diagonal procedure}\emph{diagonal procedure} (should be known from calculus) to extract a subsequence $y_1,y_2,\dots$ such that for fixed choice $z_n\z\in F_n$ we have
 $y_m\in \Ball(z_n,\tfrac1n)$ for any $m\ge n$.
 Observe that $y_1,y_2,\dots$ is Cauchy and use completeness of $\c{M}$.
 
@@ -754,6 +753,13 @@ Show that $\gamma_\infty\in\Gamma$.
 Apply the diagonal procedure to extract a subsequence $\gamma_{i_1}, \gamma_{i_2},\dots$ such that for any $t_t$ the sequence $\gamma_{i_n}(t_k)$ converges as $n\to\infty$.
 Show that this subsequence converges in $\Gamma$.
 
+\parbf{\ref{ex:round-disc}.}
+Assume that the boundary curve $\gamma$ is not a circle.
+Use convexity to show that all points of $\gamma$ except for a countable set $S$ are smooth; that is, their tangent lines is well-defined.
+Show that there is a circle $\sigma$ that crosses $\gamma$ at three distinct smooth points; furthermore, at one of these points, the tangent lines of $\gamma$ and $\sigma$ are distinct.
+Arrive at a contradiction.
+
+
 \parbf{\ref{ex:hausdorff-unique-limit}.} Arguing by contradiction, assume a sequence has two limits $x$ and $y$.
 Since the space is Hausdorff we can choose disjoint neighborhoods $V\ni x$ and $W\ni y$.
 Since the sequence converges to $x$, the set $V$ contains all but finitely many elements of the sequence.
@@ -774,9 +780,9 @@ Show and use that the latter means that there is a family $\{(V_\alpha,W_\alpha)
 \parbf{\ref{ex:closed-graph-hausdorff}.}
 Choose a point $(x,y_1)\notin \Gamma$.
 Let $y_0=f(x)$.
-Let $V\ni y_0$ and $W\ni y_1$ be as in the neighborhoods provided by Hausdoffness of $\c{Y}$.
+Let $V\ni y_0$ and $W\ni y_1$ be as in the neighborhoods provided by Hausdorffness of $\c{Y}$.
 Show that $f^{-1}(V)\times W$ is a neighborhood of $(x,y_1)$ that does not intersect $\Gamma$;
-make a conculsion.
+make a conclusion.
 
 \parit{Remark.}
 This is another part of the \index{closed graph theorem}\emph{closed graph theorem}; compare to \ref{ex:closed-graph} and \ref{ex:graph:graph}.
@@ -801,6 +807,14 @@ Show that the boundary $\partial K$ is compact.
 Show that any half-line that starts from the origin intersects $\partial K$ at a single point.
 Conclude that $x\mapsto \tfrac{x}{|x|}$ defines a continuous bijection $\partial K\to \SS^2$ and apply \ref{cor:cont-bijection=homeomorphism}.
 
+\parbf{\ref{ex:first-countable-seq}.}
+Let $N_1$, $N_2,\dots$ be the sequence of neighbourhoods of $x$ provided by the definition of first-countable space.
+If $x\in\bar A$, then we can choose $x_n\in N_n\cap A$ for every $n$.
+Show that $x_n\to x$.
+This proves the only-if part.
+Show that the if part holds for any space, not necessary first-countable.
+
+\parbf{\ref{ex:distfun}.} Argue as in \ref{ex:cont-product-constr} and do some algebra.
 
 \parbf{\ref{ex:quotient-connected}.}
 Apply \ref{prop:image-connected}.
@@ -834,11 +848,28 @@ Note that any open interval contains a rational number, use that the set of rati
 Observe that the Cantor set (which is closed) does not contain isolated points and intervals;
 so, in some sense, closed sets are more complicated than open.
 
+\parbf{\ref{ex:colomb}.}
+Let us denote by $\gcd(a,b)$ the gratest common divisor of positive integers $a$ and $b$.
+
+Suppose $\gcd(a_1,d_1)=\gcd(a_2,d_2)=1$.
+Show that the set $(a_1+\NN\cdot d_1)\cap(a_2+\NN\cdot d_2)$ is either empty or it can be written as $a_3+\NN\cdot d_3$ for some positive integers $a_3$ and $d_3$ such that $\gcd(a_3,d_3)=1$.
+Use it to check the conditions in \ref{prop:base-any}.
+
+If a prime number $d$ is larger than $a_1$ and $a_2$, then $(a_1+\NN\cdot d)\cap (a_1+\NN\cdot d)=\emptyset$.
+Use this to show that the space is Hausdorff.
+
+Finally, assume $V$ and $W$ is an open splitting of $\NN$ with the describe topology.
+Observe that $a_1+\NN\cdot d_1\subset V$ and $a_2\z+\NN\cdot d_2\subset W$ for some positive integers $a_1$, $d_1$, $a_2$ and $d_2$ such that $\gcd(a_1,d_1)=\gcd(a_2,d_2)=1$.
+Let $a_3=d_1\cdot d_2$;
+without loss of generality we can assume that $a_3\in  V$.
+Observe that $a_3+\NN\cdot  d_3\subset V$ for some $d_3$ such that $\gcd(a_3,d_3)=1$
+Show that $(a_3+\NN\cdot d_3)\cap (a_2+\NN\cdot d_2)\ne \emptyset$ and arrive at a contraditcion.
+
+\parit{Comment.}
+This problem and solution with more details are discussed in the note by Solomon Colomb \cite{golomb}
+
 \parbf{\ref{ex:S1ne[0,1]}.}
 Show that $\mathbb{S}^1$ has no cut points, but $[0,1]$ has.
-
-\parbf{\ref{ex:colomb}.}
-Read the note by Solomon Colomb \cite{golomb}
 
 \parbf{\ref{ex:R2neR}.}
 Show that $\RR^2$ has no cut points, but $\RR$ has.
@@ -877,6 +908,21 @@ Denote the Sierpi\'nski triangle by~$\triangle$.
 Let $\{x,y,z\}$ be a 3-point set in $\triangle$ such that $\triangle \setminus\{x,y,z\}$ has 3 connected components.
 Show and use that there is a unique choice for the set $\{x,y,z\}$ and 
 it is formed by the midpoints of the original triangle.
+
+\parbf{\ref{ex:simple-path}.}
+Passing to a subinterval, we can assume that $f(t)\ne x$ and $f(t)\ne y$ if $0<t<1$.
+Show that there is a maximal (with respect to inclusion) open set $V\subset [0,1]$ such that if $(a,b)$  is a connected componnent of $V$, then $f(a)=f(b)$.
+Consider map $\hat f\:[0,1]\to \c{X}$ defined by
+$\hat f(t)=f(t)$ if $t\notin V$ and $f(t)=f(a)$ if $t$ lies in a connected component $(a,b)$ of $V$.
+Show that $\hat f$ is a path.
+Read about Devil's staircase and apply similar construction to make $\hat f$ injective,
+or follow the argument in the note by Jeremy Brazas \cite{brazas}.
+
+\parit{Comment.}
+From this statement we get that any path-connected Hausdorff space with at least two points must have at least continuum of points.
+Note that connected two-point space provides an example of finite path-connected space.
+On the other hand, \ref{ex:colomb} provides an example of countable connected space.
+
 
 \parbf{\ref{ex:two-point-path-connected}.}
 Recall that $\{a\}$ is an open set in $\c{X}$.
@@ -926,13 +972,6 @@ Peter Winkler \cite[p. 121]{winkler}:
 The paths go up an down on the way to the summit (but never dip below the starting altitude).
 Can they vary their speed (sometimes going backwards) so that at every moment of the day they are at the same altitude?}
 
-\parbf{\ref{ex:path-connected-component-closed-open:closed}.}
-Check the conditions in \ref{prop:base-any}.
-To prove compactness, try to modify the proof of \ref{thm:comp-interval}.
-Hausdorfness follows from the definition.
-To prove connectedness, modify the proof of \ref{prop:connected[0,1]}.
-To show that the space is not path-connected, use that any path contains at most countable subsets of isolated points.
-Finally observe that every path-connected component in $[0,1]\times[0,1]$ is a vertical segment $\{x\}\times [0,1]$.
 
 
 \parbf{\ref{ex:QQ}.}
