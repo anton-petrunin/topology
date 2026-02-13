@@ -83,8 +83,6 @@ The Cauchy test (which is assumed to be known from calculus) implies that the re
 On the other hand, an open interval $(0,1)$ forms a noncomplete subspace of $\RR$;
 indeed, the sequence $x_n=\tfrac 1{2^n}$ is Cauchy, but it does not converge in $(0,1)$ --- it converges to $0$ in $\RR$, but $0\notin(0,1)$.
 
-\begin{samepage}
-
 
 \begin{thm}{Proposition}\label{prop:compact-complete}
 Any (sequentially) compact metric space $\c{M}$ is complete.
@@ -102,6 +100,8 @@ for any $i>n$.
 Since $\eps>0$ is arbitrary, the sequence $x_1,x_2,\ldots$ converges to $p$.
 \qeds
 
+%\begin{thm}{Exercise}\label{ex:closed-complete} Show that closed subset of complete metric space forms a complete subspace. \end{thm}
+
 \begin{thm}{Exercise}\label{ex:compact-complete}
 Show that any sequentially compact metric space $\c{M}$ is \index{bounded metric space}\emph{bounded};
 that is, $\c{M}$ has finite \index{diameter}\emph{diameter}:
@@ -109,7 +109,7 @@ that is, $\c{M}$ has finite \index{diameter}\emph{diameter}:
 Give an example of noncompact complete bounded metric space.
 
 \end{thm}
-\end{samepage}
+
 
 \begin{thm}{Exercise}\label{ex:contracction}
 Let $\c{M}$ be a complete nonempty metric space, and let
@@ -280,7 +280,7 @@ But together with \ref{clm:isoperim-exist} it proves the theorem.
 A closed plane curve $\gamma$ with length $\le L$ can be described by a parametrization $\gamma\:[0,L]\to\RR^2$ such that $\gamma(0)=\gamma(L)$ and
 \[|\gamma(t_0)-\gamma(t_1)|_{\RR^2}\le |t_0-t_1|.\]
 Without loss of generality, we can assume that $\gamma(0)=\gamma(L)=0\in\RR^2$.
-Consider the space $\Gamma$ of all such parametrized curves with the metric defined by
+Consider the space $\Gamma$ of all such parametrized curves with the \index{sup-norm metric}\emph{sup-norm metric} defined by
 \[|\gamma_1-\gamma_2|_\Gamma= \max\set{|\gamma_1(t)-\gamma_2(t)|_{\RR^2}}{t\in[0,L]}
 \eqlbl{eq:Gamma-metric}\]
 

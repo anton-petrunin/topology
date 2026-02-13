@@ -758,6 +758,32 @@ endfor;
 whitelabel (btex $F_{\gamma_1}$ etex, .6[z.a,point 1 of p1]);
 endfig;
 
+beginfig(940)
+save u,p,m;
+path p[];
+u:=2cm;
+m:=30;
+
+z.shift=(0,.2)*u;
+
+p1=(0,.6)*u{1,-.1}..{1,-.2}(1,1.6)*u;
+
+p2=
+point 0 of p1 +z.shift
+--
+for i=1 upto m-1:
+(p1 intersectionpoint ((i/m,-10)*u--(i/m,10)*u))+(-1)**i*z.shift
+--
+endfor
+point 1 of p1+(-1)**m*z.shift;
+
+draw p1 pensemibold;
+draw p2;
+drawarrow (0,-.1)*u--(0,2)*u;
+drawarrow (-.1,0)*u--(1.1,0)*u;
+
+endfig;
+
 beginfig(980)
 save u,p;
 path p[];
