@@ -689,6 +689,11 @@ Suppose that a sequence $x_n$ converges to $x_\infty$ in $\c{X}$
 and $y_n$ converges to $y_\infty$ in $\c{Y}$.
 Show and use that $(x_n,y_n)$ converges to $(x_\infty,y_\infty)$ in $\c{X}\times\c{Y}$ as $n\to\infty$.
 
+\parbf{\ref{ex:closed-complete}.}
+We need to show that any Cauchy sequenc $q_1,q_2,\ldots$ in a closed subset $Q$ of a complete space $\c{M}$ converges to a point in $Q$.
+Convergence follows from completness of $\c{M}$.
+It remains to use that $Q$ is closed.
+
 \parbf{\ref{ex:compact-complete}.}
 If the space is not bounded, consider a sequence $x_1,x_2,\dots$ such that $|x_n-p|\to\infty$ for some (and therefore any) point $p$.
 
@@ -703,7 +708,7 @@ Furthermore, show that if $q\ne p$, then $|f(q)-p|<|q-p|$;
 in particular, $f(q)\ne q$ and so $q$ is not fixed.
 
 \parit{Comment.}
-This is the \emph{Banach fixed-point theorem}; it combines extreme simplicity and extreme usefulness.
+This is the \index{Banach fixed-point theorem}\emph{Banach fixed-point theorem}; it combines extreme simplicity and extreme usefulness.
 
 \parbf{\ref{ex:alm-min}.}
 Assume such point does not exist.
@@ -837,9 +842,15 @@ Choose a sequence of open dense sets $V_1,V_2,\dots$ such that $V_i\not\ni q_i$ 
 \parbf{\ref{ex:union-closures}.}
 Apply the Baire theorem to the complements $V_n=\c{X}\setminus\bar B_n$.
 
+\parbf{\ref{ex:Baire-subsets}};
+\ref{SHORT.ex:Baire-subsets:open}.
+Let $W$ be an open set in a Baire space $\c{X}$, and let $V_1,V_2,\dots$ be a sequence of open dense sets in $W$.
+Apply the definition of Bair space to the sets $V_i'=V_i\cup (\c{X}\setminus W)^\circ$.
+
+\parit{\ref{SHORT.ex:Baire-subsets:loc}.} Spell the definitons.
+
 \parbf{\ref{ex:uncountable-Gdelta}.}
 Show and use that a complement of countable set in $\RR$ is G-delta.
-
 
 \parbf{\ref{ex:continuity-Gdelta}};
 \ref{SHORT.ex:continuity-Gdelta:cont}.
@@ -851,7 +862,6 @@ Further, show and use that $\Cont(f)=V_1\cap V_2\cap\ldots$
 
 \parit{\ref{SHORT.ex:continuity-Gdelta:Q}.} Show and use that for any integer $n$ and any irrational number $s$ there is $\eps>0$ such that $\eps$-neighborhood of $s$ contains none of the first $n$ rational numbers $q_1,\dots,q_n$.
 
-
 \parbf{\ref{ex:quotient-connected}.}
 Apply \ref{prop:image-connected}.
 
@@ -860,6 +870,14 @@ Show that any open splitting of $B$ splits $A$ as well.
 
 \parbf{\ref{ex:R-connected}.}
 Apply \ref{prop:connected[0,1]}, \ref{prop:image-connected}, and \ref{prop:union-connect}.
+
+\parbf{\ref{ex:Baire-closed-subsets}.}
+Let $G$ be a G-delta subset of complete metric space.
+Show and use that $G$ admits another metric that induces the same topology and makes $G$ to be a complete metric space.
+
+For the second part, check the following subspace in $\RR^2$:
+\[(\QQ\times\{0\})\cup(\RR\times (0,\infty)),\]
+here $\QQ\subset\RR$ denotes the set or rational numbers.
 
 \parbf{\ref{ex:nonopen-connected-component}.}
 Connected component is an intersection of clopen sets; in particular it is closed.

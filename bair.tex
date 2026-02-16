@@ -57,7 +57,20 @@ Show that irrational numbers $\RR\setminus\QQ$ form a Baire space.
 Let $\c{X}$ be a nonempty Baire space.
 Assume
 \[\c{X}=B_1\z\cup B_2\cup\dots\]
-Show that at least one of the sets $\bar B_n$ has nonempty interior.
+Show that at least one of the closures $\bar B_n$ has nonempty interior.
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:Baire-subsets}
+Prove the following statements.
+
+\begin{subthm}{ex:Baire-subsets:open}
+Any open set in Baire space is Baire.
+\end{subthm}
+
+\begin{subthm}{ex:Baire-subsets:loc}
+Any locally Baire space is Baire; that is, if any point $p$ in a topological space $\c{X}$ has a Baire neighborhood, then $\c{X}$ is Baire.
+\end{subthm}
+
 \end{thm}
 
 
@@ -72,8 +85,12 @@ that is $V_1\supset V_2\supset\ldots$;
 if not, pass to the sequence
 \[V_1,\ V_1\cap V_2,\ V_1\cap V_2\cap V_3,\ \dots\]
 
+\begin{thm}{Exercise}\label{ex:closed-G-delta}
+Show that any closed set in a metrizable space is G-delta.
+\end{thm}
+
 Observe that a countable intersection of G-delta sets is G-delta.
-The following identity implies that  union of two G-delta sets is G-delta:
+The following identity implies that  union of two (and therefore finitely many) G-delta sets is G-delta:
 \[\biggl(\bigcap_i V_i\biggr)\cup \biggl(\bigcap_j W_j\biggr)=\bigcap_{i,j} (V_i\cup W_j).\]
 
 \begin{thm}{Observation}
@@ -110,6 +127,12 @@ Show that $\Cont(f)=\RR\setminus\QQ$.
 
 \end{thm}
 
+\begin{thm}{Advanced exercise}\label{ex:Baire-closed-subsets}
+Show that G-delta set in a complete metric space is Baire.
+
+Give an example of a Baire space $\c{X}$ with a G-delta set that is not Baire.
+\end{thm}
+
 \section{Large or small?}
 
 According to the observation, dense G-delta sets contain all points in Baire space except a \textit{negligible} set.
@@ -129,7 +152,7 @@ So, measure-theoretically, $G$ is nearly nothing, but topologically it is nearly
 \section{An application}
 
 Let $\c{C}$ be the set of all continuous functions $[0,1]\to\RR$,
-equipped with the \index{supnorm metric}\emph{supnorm metric}
+equipped with the \index{sup-norm metric}\emph{sup-norm metric}
 \[|f-g|_{\c{C}}\df\sup\set{|f(x)-g(x)|}{x\in [0,1]}.\]
 It is straightforward to check that this is indeed a metric;
 that is, it meets all conditions in \ref{def:metric-space}.
@@ -197,6 +220,11 @@ It remains to note that if $f\in V_n$ for every $n$, then $f$ is not differentia
 We just proved that \textit{most} of continuous functions $[0,1]\z\to\RR$ are not differentiable at any point.
 Try to come up with an explicit construction of one such function --- it is not easy.
 Maybe you did not see such function before, altho you know many functions; in this case the functions you know are very nontypical and you did not meet a typical one.
+
+You might heard of Cantor's stair case, it is a nondecreasing surjective function $f\:[0,1]\to[0,1]$ that has vanishing derivative at all points where it is defined.
+It takes some effort to construct this example.
+Try to show that typical nondecreasing surjective function $f\:[0,1]\to[0,1]$ has the same property and it is strictly increasing; that is $f(x_0)<f(x_1)$ if $x_0<x_1$.
+
 Here is one more statement that can be proved via the same technology; see~\cite{kirchheim-spadaro-szekelyhidi}.
 
 \begin{thm}{Claim}
@@ -212,3 +240,5 @@ The \index{Hausdorff metric}\emph{Hausdorff metric} gives a natural of metric on
 The obtained metric space is complete, so we can use Baire theorem to talk about typical compact sets in the plane.
 It turns out that a typical compact set in the plane is homeomorphic to the Cantor set.
 Furthermore, typical compact \textit{connected} set (defined in the next chapter) is homeomorphic to the pseudo-arc, which is truly weird example in many ways.
+
+%the uniform boundedness principle
