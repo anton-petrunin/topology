@@ -758,6 +758,46 @@ endfor;
 whitelabel (btex $F_{\gamma_1}$ etex, .6[z.a,point 1 of p1]);
 endfig;
 
+beginfig(870)
+save u,p;
+path p[];
+u:=2.6cm;
+
+p1=(0,0)*u--(1,0)*u--(1,1)*u--(0,1)*u--cycle;
+
+vardef midarrow(expr A,B) =
+  save m,u;
+  pair m,u;
+  m := 0.5[A,B];
+  u := unitvector(B-A);           % direction A -> B
+  draw m-1*u +2*u rotated 90  -- (m + 1*u)--m-1*u +2*u rotated -90;
+enddef;
+
+vardef midarrowtwo(expr A,B) =
+  save m,u;
+  pair m,u;
+  m := 0.5[A,B];
+  u := unitvector(B-A);           % direction A -> B
+  draw m +2*u rotated 90-- (m + 2*u)--m +2*u rotated -90;
+  draw m +2*u rotated 90 -2*u-- (m)--m +2*u rotated -90-2*u;
+enddef;
+
+for i = 0 upto 19:
+draw (i/20,0)*u--(i/20,1)*u penhair withcolor .5;
+draw (0,i/20)*u--(1,i/20)*u penhair withcolor .5;
+endfor;
+
+draw p1;
+midarrow((0,0)*u,(1,0)*u);
+midarrow((0,1)*u,(1,1)*u);
+midarrowtwo((0,0)*u,(0,1)*u);
+midarrowtwo((1,0)*u,(1,1)*u);
+drawarrow (1.25,.5)*u--(1.5,.5)*u;
+
+label.top (btex $f$ etex, .5[(1.25,.5)*u,(1.5,.5)*u]);
+
+endfig;
+
 beginfig(940)
 save u,p,m;
 path p[];

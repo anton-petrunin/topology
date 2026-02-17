@@ -107,28 +107,31 @@ Therefore, countable union of G-delta sets does not have to be G-delta.
 Show that any dense G-delta set in $\RR$ is uncountable.
 \end{thm}
 
+Let us consider a map $f\:\c{X}\to\c{Y}$ between topological spaces.
+We say that $f$ is \index{continuous at a point}\emph{continuous} at $x\in \c{X}$ if for any open set $W\subset \c{Y}$ such that $W\ni f(x)$ there is an open set $V\ni x$ such that $f(V)\subset W$.
+Observe that $f$ is continuous if and only if it is continuous at every point $x\in \c{X}$.
 
 \begin{thm}{Exercise}\label{ex:continuity-Gdelta}
-Given a function $f\: \RR\to \RR$, denote by $\Cont(f)\subset \RR$ the set of points at which $f$ is continuous.
+Given a function $f\: \RR\to \RR$, denote by $\Cont f\subset \RR$ the set of points at which $f$ is continuous.
 
 \begin{subthm}{ex:continuity-Gdelta:cont}
-Show that $\Cont(f)$ is a G-delta set for any function $f\: \RR\to \RR$.
+Show that $\Cont f$ is a G-delta set for any function $f\: \RR\to \RR$.
 \end{subthm}
 
 \begin{subthm}{ex:continuity-Gdelta:R-Q}
-Show that there is no function $f\: \RR\to \RR$ such that $\Cont(f)=\QQ$.
+Show that there is no function $f\: \RR\to \RR$ such that $\Cont f=\QQ$.
 \end{subthm}
 
 \begin{subthm}{ex:continuity-Gdelta:Q}
 Let us enumerate all rational numbers $r_1,r_2,\dots$
 Consider function $f\: \RR\to \RR$ defined by $f(r_n)=\tfrac1n$ and $f(x)=0$ for any irrational $x$.
-Show that $\Cont(f)=\RR\setminus\QQ$.
+Show that $\Cont f=\RR\setminus\QQ$.
 \end{subthm}
 
 \end{thm}
 
 \begin{thm}{Advanced exercise}\label{ex:Baire-closed-subsets}
-Show that G-delta set in a complete metric space is Baire.
+Show that any G-delta set in a complete metric space is Baire.
 
 Give an example of a Baire space $\c{X}$ with a G-delta set that is not Baire.
 \end{thm}

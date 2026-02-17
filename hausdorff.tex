@@ -82,6 +82,12 @@ If $x,y$ lie in some subset $A$, then $V'=V\cap A\ni x$ and $W'=W\cap A\ni y$ ar
 Any subspace of a Hausdorff space is Hausdorff.
 \end{thm}
 
+\begin{thm}{Exercise}\label{ex:product}
+Assume that $\c{X}$ and $\c{Y}$ are Hausdorff spaces. Show that the product space $\c{X}\times\c{Y}$ is Hausdorff.
+Prove the converse, assuming $\c{X}$ and $\c{Y}$ are nonempty.
+\end{thm}
+
+
 
 \section{Hausdorff meets compactness}
 
@@ -158,6 +164,22 @@ Hence the first statement follows.
 
 The second statement follows from \ref{ex:open-closed-pushforward}.
 \qeds
+
+The corollary is used to describe the quotient topology.
+\begin{figure}[h!]
+\centering
+\includegraphics{mppics/pic-870}
+\hskip 4mm
+\includegraphics[scale=1]{asy/torus}
+\caption*{\footnotesize $f\:(u,v)\mapsto (\sin (2\cdot\pi\cdot u),(2+\cos (2\cdot\pi\cdot u))\cdot \cos (2\cdot\pi\cdot v), (2+\cos (2\cdot\pi\cdot u))\cdot \sin (2\cdot\pi\cdot v))$.}
+\end{figure}
+For example, consider the map $f$, described in the picture; it maps the unit square $[0,1]\times[0,1]$ to the torus of revolution.
+The map $f$ defines an equivalence relation on the square $[0,1]\times[0,1]$:
+\[f(u_1,v_1)=f(u_2,v_2)\quad\Leftrightarrow\quad(u_1,v_1)\sim(u_2,v_2);\]
+this is the minimal equivalence relation such that
+$(u,0)\sim (u,1)$ and $(0,v)\sim (1,v)$ for any $u,v\in[0,1]$.
+Since $[0,1]\times[0,1]$ is compact and $\RR^3$ is Hausdorff, we can conclude that $f$ defines a homeomorphism from the quotient space $[0,1]\times[0,1]/\sim$ onto its image (the torus).
+
 
 Recall that $\DD^2$ denotes the unit disc and $\mathbb{S}^1$ denotes the unit circle;
 that is,
@@ -248,9 +270,6 @@ There are also additional conditions related to the existence of function in the
 All these conditions hold for metrizable spaces; they were extensively studied.
 Hausdorffness is $T_2$, and this is the most important condition in this line.
 We met $T_1$ in \ref{obs:one-point=compact}; also by \ref{thm:hausdorff-compact-t3}, \textit{any compact Hausdorff space is $T_3$}.
-
-\pagebreak
-\medskip
 
 \index{$T_0$, $T_1$, $T_2$, $T_3$, $T_4$, $T_5$}
 \begin{itemize}

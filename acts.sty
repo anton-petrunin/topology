@@ -1,0 +1,22 @@
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
+% #1 = math style (unused here but kept for consistency), #2 = scale factor
+\newcommand{\acts@draw}[2]{%
+  \mathrel{%
+    \tikz[x=1em,y=1em,scale=#2,baseline=-0.45ex,line cap=round,line join=round]{
+      % Geometry:
+      % start at (1,0), go left to (0,0), go up to (0,0.6), go right to (1,0.6)
+      \draw[-{Latex[length=1.2mm,width=1.0mm]},line width=.4pt,arrows = {->[]}]
+      (0.7,-.1) to[out=200,in=270] (0,0.1) to[out=90,in=160] (.8,0.3)
+    }%
+  }%
+}
+
+\newcommand{\acts}{%
+  \mathchoice
+    {\acts@draw\displaystyle{1.00}}%
+    {\acts@draw\textstyle{1.00}}%
+    {\acts@draw\scriptstyle{0.75}}%
+    {\acts@draw\scriptscriptstyle{0.60}}%
+}
