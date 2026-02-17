@@ -801,7 +801,7 @@ Mimic the proof of \ref{thm:hausdorff-compact-t3} using these pairs.
 Apply \ref{obs:compact-to-hausdorff} to the map $[0,1]\to \mathbb{S}^1$ defined by $t\mapsto (\cos (2\cdot\pi\cdot t), \sin(2\cdot\pi\cdot t))$.
 
 \parbf{\ref{ex:D/S}.}
-Apply \ref{obs:compact-to-hausdorff} to the map $\DD\to \RR^3$ that is written from polar to spherical coordinates as  
+Apply \ref{obs:compact-to-hausdorff} to the map $\DD^2\to \RR^3$ that is written from polar to spherical coordinates as
 \[(r,\theta)\mapsto (1, \theta, \pi\cdot r).\]
 
 \parbf{\ref{ex:convex-body}.}
@@ -811,6 +811,14 @@ we can assume that the origin lies in the interior of $K$.
 Show that the boundary $\partial K$ is compact.
 Show that any half-line that starts from the origin intersects $\partial K$ at a single point.
 Conclude that $x\mapsto \tfrac{x}{|x|}$ defines a continuous bijection $\partial K\to \SS^2$ and apply \ref{cor:cont-bijection=homeomorphism}.
+
+\parbf{\ref{ex:compact-Hausdorff-closed}.}
+Compactness of $\c{Y}$ follows from \ref{prop:comp-image}; it remains to show its Hausdorffness.
+
+Choose two points $y_1,y_2\in\c{Y}$.
+Observe that $K_1=f^{-1}\{y_1\}$ and $K_2=f^{-1}\{y_2\}$ are closed and therefore compact subsets of $\c{X}$.
+Apply \ref{ex:normal-hausdorff} to get disjoint open sets $V_1\supset K_1$ and $V_2\supset K_2$.
+Further, look at the sets $W_i=\c{Y}\setminus f(\c{X}\setminus V_i)$ and think.
 
 \parbf{\ref{ex:first-countable-seq}.}
 Let $N_1$, $N_2,\dots$ be the sequence of neighbourhoods of $x$ provided by the definition of first-countable space.
@@ -862,6 +870,14 @@ Further, show and use that $\Cont(f)=V_1\cap V_2\cap\ldots$
 
 \parit{\ref{SHORT.ex:continuity-Gdelta:Q}.} Show and use that for any integer $n$ and any irrational number $s$ there is $\eps>0$ such that $\eps$-neighborhood of $s$ contains none of the first $n$ rational numbers $q_1,\dots,q_n$.
 
+\parbf{\ref{ex:Baire-closed-subsets}.}
+Let $G$ be a G-delta subset of complete metric space.
+Show and use that $G$ admits another metric that induces the same topology and makes $G$ to be a complete metric space.
+
+For the second part, check the following subspace in $\RR^2$:
+\[(\QQ\times\{0\})\cup(\RR\times (0,\infty)),\]
+here $\QQ\subset\RR$ denotes the set or rational numbers.
+
 \parbf{\ref{ex:quotient-connected}.}
 Apply \ref{prop:image-connected}.
 
@@ -870,14 +886,6 @@ Show that any open splitting of $B$ splits $A$ as well.
 
 \parbf{\ref{ex:R-connected}.}
 Apply \ref{prop:connected[0,1]}, \ref{prop:image-connected}, and \ref{prop:union-connect}.
-
-\parbf{\ref{ex:Baire-closed-subsets}.}
-Let $G$ be a G-delta subset of complete metric space.
-Show and use that $G$ admits another metric that induces the same topology and makes $G$ to be a complete metric space.
-
-For the second part, check the following subspace in $\RR^2$:
-\[(\QQ\times\{0\})\cup(\RR\times (0,\infty)),\]
-here $\QQ\subset\RR$ denotes the set or rational numbers.
 
 \parbf{\ref{ex:nonopen-connected-component}.}
 Connected component is an intersection of clopen sets; in particular it is closed.
