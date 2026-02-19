@@ -167,6 +167,15 @@ Apply \ref{def:metric-space:b}.
 
 \parbf{\ref{ex:infinite-inverse-image}.}
 Learn about space-filling curves and think.
+Alternatively, guess the patern in in the following graphs and pass to the limit.
+
+\begin{Figure}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-150}
+\vskip-0mm
+\end{Figure}
+
 
 \parbf{\ref{ex:d1+d2+dinfty-balls}.}
 Figure out which is which.
@@ -485,6 +494,8 @@ Check the following function
 \end{cases}
 \]
 
+\parbf{\ref{ex:open-projection}.} Spell the definitions.
+
 \parbf{\ref{ex:base-nbhd}}; \textit{if part.} 
 Choose an open set $N$.
 For any $x\in N$ choose an element $B_x$ of the base such that $x\in B_x\subset N$.
@@ -625,7 +636,7 @@ Apply the finite intersection property (\ref{prop:finite intersection property})
 Note that $X\cap Q_m=\emptyset$ for any $m$.
 
 \parit{Comment.}
-This is a baby case of the \index{Baire category theorem}\emph{Baire category theorem}.
+This is a close relative of the \index{Baire category theorem}\emph{Baire category theorem}.
 
 \parbf{\ref{ex:fun(compact)}.} Apply \ref{prop:comp-image} and \ref{obs:closed-bounded}.
 
@@ -685,9 +696,10 @@ Make a conclusion.
 Consider an infinite set of points with discrete metric.
 
 \parbf{\ref{ex:product-sequentially-compact}.}
-Suppose that a sequence $x_n$ converges to $x_\infty$ in $\c{X}$ 
-and $y_n$ converges to $y_\infty$ in $\c{Y}$.
-Show and use that $(x_n,y_n)$ converges to $(x_\infty,y_\infty)$ in $\c{X}\times\c{Y}$ as $n\to\infty$.
+Given a sequence $z_n=(x_n,y_n)$, pass to a subsequence such that the $x$-coordinate converges.
+Pass to a subsequence again to make the $y$-coordinate converge.
+Show and use that the obtained sequence converges in $\c{X}\times\c{Y}$.
+
 
 \parbf{\ref{ex:closed-complete}.}
 We need to show that any Cauchy sequenc $q_1,q_2,\ldots$ in a closed subset $Q$ of a complete space $\c{M}$ converges to a point in $Q$.
@@ -857,6 +869,9 @@ Choose a sequence of open dense sets $V_1,V_2,\dots$ such that $V_i\not\ni q_i$ 
 \parbf{\ref{ex:union-closures}.}
 Apply the Baire theorem to the complements $V_n=\c{X}\setminus\bar B_n$.
 
+\parit{Comment.}
+This is the first step in the proof of the \index{uniform boundedness principle}\emph{uniform boundedness principle}.
+
 \parbf{\ref{ex:Baire-subsets}};
 \ref{SHORT.ex:Baire-subsets:open}.
 Let $W$ be an open set in a Baire space $\c{X}$, and let $V_1,V_2,\dots$ be a sequence of open dense sets in $W$.
@@ -890,6 +905,12 @@ Apply \ref{prop:image-connected}.
 
 \parbf{\ref{ex:A<B<bar-A}.}
 Show that any open splitting of $B$ splits $A$ as well.
+
+\parbf{\ref{ex:connected-product}.}
+Given an open splitting of $\c{X}$ or $\c{Y}$ construct an open splitting of $\c{X}\times\c{Y}$; this will prove the if part.
+For the only-if part, apply \ref{prop:union-connect} to show that $(\{x\}\times \c{Y})\cup(\c{X}\times \{y\})$ is connected for any $x\in\c{X}$ and $y\in \c{Y}$.
+And apply it again to show that
+$\c{X}\times \c{Y}$ is connected.
 
 \parbf{\ref{ex:R-connected}.}
 Apply \ref{prop:connected[0,1]}, \ref{prop:image-connected}, and \ref{prop:union-connect}.

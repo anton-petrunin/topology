@@ -444,6 +444,52 @@ fill
 fill ((((p2 shifted z.b rotated 90)--p0--cycle)--(p2 shifted z.b rotated 210)--cycle)--(p2 shifted z.b rotated 330)--cycle) shifted (3*z.shift) withcolor .5;
 endfig;
 
+beginfig(150)
+save u,gap,p;
+path p[];
+u:=1.4cm;
+
+z1=(1.5,0)*u;
+
+p0=(0,0)*u--(1,0)*u--(1,1)*u--(0,1)*u--cycle;
+
+p1=(0,0)*u--(1,1)*u;
+
+vardef cont(text t) =
+  begingroup
+    save res, first, pp, sh;
+    path res;
+    boolean first;
+    pair sh;
+
+    first := true;
+    for pp = t:
+      if first:
+        res := pp;
+        first := false;
+      else:
+        sh := (point length res of res) - (point 0 of pp);
+        res := res & (pp shifted sh);
+      fi
+    endfor
+    res
+  endgroup
+enddef;
+
+p2= cont(p1,p1 yscaled -1, p1,p1,p1 yscaled -1,p1) xscaled 1/6 yscaled 1/2;
+p3= cont(p2,p2 yscaled -1, p2,p2,p2 yscaled -1,p2) xscaled 1/6 yscaled 1/2;
+
+
+draw p1 pensemibold;
+draw p2 shifted z1 pensemibold;
+draw p3 shifted (2*z1) pensemibold;
+
+draw p0 penhair;
+draw p0 shifted z1 penhair;
+draw p0 shifted (2*z1) penhair;
+
+endfig;
+
 beginfig(405)
 save u,p,a;
 path p[];

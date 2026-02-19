@@ -220,28 +220,15 @@ Observe that $h\in \c{C}$ and $|h-f|_{\c{C}}<2\cdot \eps$; moreover given $\eps>
 It remains to note that if $f\in V_n$ for every $n$, then $f$ is not differentiable at any point and apply the Baire theorem.
 \qeds
 
-We just proved that \textit{most} of continuous functions $[0,1]\z\to\RR$ are not differentiable at any point.
-Try to come up with an explicit construction of one such function --- it is not easy.
-Maybe you did not see such function before, altho you know many functions; in this case the functions you know are very nontypical and you did not meet a typical one.
+We just proved that \textit{most} continuous functions $[0,1]\z\to\RR$ are not differentiable at any point.
+Try to come up with an explicit example of one such function --- it is not easy.
+Maybe you did not see such functions before, altho you know many functions; in this case the functions you know are very non-typical and you did not meet a typical one.
 
-You might heard of Cantor's stair case, it is a nondecreasing surjective function $f\:[0,1]\to[0,1]$ that has vanishing derivative at all points where it is defined.
-It takes some effort to construct this example.
-Try to show that typical nondecreasing surjective function $f\:[0,1]\to[0,1]$ has the same property and it is strictly increasing; that is $f(x_0)<f(x_1)$ if $x_0<x_1$.
-
-Here is one more statement that can be proved via the same technology; see~\cite{kirchheim-spadaro-szekelyhidi}.
-
-\begin{thm}{Claim}
-In the space of distance nonexpanding maps $\SS^2\z\to\RR^2$, equipped with sup-norm metric, the set of length-preserving maps forms a G-delta dense subset; a map $f\:\SS^2\to\RR^2$ is \index{length-preserving map}\emph{length-preserving} if $\length f\circ\gamma=\length \gamma$ for any curve $\gamma\:[a,b]\to \SS^2$.
-\end{thm}
-
-According to the claim there are length-preserving maps $\SS^2\to\RR^2$, but
-finding just one such a map is a challenging problem (try).
-It is a typical situation: it is hard to see the typical objects and these objects often have surprising properties (what do you know about a typical man?).
-
-Let me mention two more examples of the same type.
-The \index{Hausdorff metric}\emph{Hausdorff metric} gives a natural of metric on the set of all nonempty compact subsets in the plane.
-The obtained metric space is complete, so we can use Baire theorem to talk about typical compact sets in the plane.
-It turns out that a typical compact set in the plane is homeomorphic to the Cantor set.
-Furthermore, typical compact \textit{connected} set (defined in the next chapter) is homeomorphic to the pseudo-arc, which is truly weird example in many ways.
+Let me list several more statements that can be proved essentially the same way; try to think of explicit examples of that type.
+\begin{itemize}
+\item A typical surjective nondecreasing function $f\:[0,1]\to[0,1]$ is strictly increasing, but its derivative vanishes at every point where it is defined.
+\item  A typical distance-nonexpanding map $f\:\SS^2\z\to\RR^2$ is \index{length-preserving map}\emph{length-preserving}; that is, $\length f\circ\gamma=\length \gamma$ for any curve $\gamma\:[a,b]\to \SS^2$.
+\item  A typical compact set in the plane is homeomorphic to the Cantor set. Furthermore, a typical compact \textit{connected} set (defined in the next chapter) is homeomorphic to the pseudo-arc, which is a truly weird example in many ways (read about it).
+\end{itemize}
 
 %the uniform boundedness principle

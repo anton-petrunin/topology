@@ -166,6 +166,7 @@ The second statement follows from \ref{ex:open-closed-pushforward}.
 \qeds
 
 The corollary is used to describe the quotient topology.
+For example, consider the map $f$,
 \begin{figure}[h!]
 \centering
 \includegraphics{mppics/pic-870}
@@ -175,14 +176,18 @@ The corollary is used to describe the quotient topology.
 \lbl[t]{30,11;$y$}
 \lbl[l]{14,35;$z$}
 \end{lpic}
-\caption*{\footnotesize $f\:(u,v)\mapsto (\sin (2\cdot\pi\cdot u),(2+\cos (2\cdot\pi\cdot u))\cdot \cos (2\cdot\pi\cdot v), (2+\cos (2\cdot\pi\cdot u))\cdot \sin (2\cdot\pi\cdot v))$.}
+\caption*{
+\parbox{0.8\linewidth}{
+$f\:(u,v)\mapsto (a(u),(2+b(u))\cdot b(v), (2+b(u))\cdot a(v))$,
+where $a(t)=\cos (2\cdot\pi\cdot t)$ and $b(t)=\sin (2\cdot\pi\cdot t)$. Arrows of the same type on line segments indicate that corresponding points on the segments are equivalent.}}
 \end{figure}
-For example, consider the map $f$, described in the picture; it maps the unit square $[0,1]\times[0,1]$ to the torus of revolution.
+described in the picture; it maps the unit square $[0,1]\times[0,1]$ to the torus of revolution $T$.
 The map $f$ defines an equivalence relation on the square $[0,1]\times[0,1]$:
 \[f(u_1,v_1)=f(u_2,v_2)\quad\Leftrightarrow\quad(u_1,v_1)\sim(u_2,v_2);\]
 this is the minimal equivalence relation such that
 $(u,0)\sim (u,1)$ and $(0,v)\sim (1,v)$ for any $u,v\in[0,1]$.
-Since $[0,1]\times[0,1]$ is compact and $\RR^3$ is Hausdorff, we can conclude that $f$ defines a homeomorphism from the quotient space $[0,1]\times[0,1]/\sim$ onto its image (the torus).
+Since $[0,1]\times[0,1]$ is compact and $\RR^3$ is Hausdorff, we can conclude that $f$ defines a homeomorphism from the quotient space $[0,1]\times[0,1]/{\sim}\to T$.
+Note that we did not have to check that inverse map $T\to[0,1]\times[0,1]/\sim$ is continuous.
 
 
 Recall that $\DD^2$ denotes the unit disc and $\mathbb{S}^1$ denotes the unit circle;
