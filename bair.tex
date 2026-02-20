@@ -197,12 +197,6 @@ Finally by \ref{eq:|f-f|->0}, $f_n\to f_\infty$ in $\c{C}$.
 The set of all continuous functions $[0,1]\to\RR$ that are not differentiable at any point contains a dense G-delta set in $\c{C}$.
 \end{thm}
 
-\begin{wrapfigure}{r}{26 mm}
-\vskip-0mm
-\centering
-\includegraphics{mppics/pic-940}
-\end{wrapfigure}
-
 \parit{Sketch of proof.}
 Given a positive integer $n$ consider the set $V_n$ of all functions $f$ in $\c{C}$ such that
 for some integer $m>n$ we have the following inequality
@@ -216,7 +210,24 @@ Given a continuous function $f$ we can choose large $m$ so that if $|x_0-x_1|\le
 Now define a new function $h$ by setting $h(\tfrac im)=f(\tfrac im)+(-1)^i\cdot\eps$ for integer $i$ from $0$ to $m$ and extend $h$ linearly on each interval $[\tfrac {i-1}m,\tfrac im]$.
 Observe that $h\in \c{C}$ and $|h-f|_{\c{C}}<2\cdot \eps$; moreover given $\eps>0$ and a positive integer $n$, one can choose $m$ sufficiently large so that $h\in V_n$.}
 
-It remains to note that if $f\in V_n$ for every $n$, then $f$ is not differentiable at any point and apply the Baire theorem.
+\begin{wrapfigure}[9]{r}{26 mm}
+\vskip-6mm
+\centering
+\includegraphics{mppics/pic-940}
+\end{wrapfigure}
+
+Now, assume $f\in V_n$ for every $n$.
+Observe that for any $x_0\in [0,1]$ we can choose a point $x\in [0,1]$ such that
+\[|x-x_0|< \tfrac1n,
+\quad\text{and}\quad
+\left|\frac{f(x)-f(x_0)}{x-x_0}\right|>n.
+\]
+It follwos that the limit
+\[\lim_{x\to x_0}\frac{f(x)-f(x_0)}{x-x_0}\]
+is undefined.
+Therefore $f$ is not differentiable at every $x_0\in [0,1]$.
+
+It remains to apply \ref{thm:baire-category} to $G=V_1\cap V_2\cap\ldots$
 \qeds
 
 We just proved that \textit{most} continuous functions $[0,1]\z\to\RR$ are not differentiable at any point.

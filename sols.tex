@@ -846,7 +846,13 @@ Show that $x_n\to x$.
 This proves the only-if part.
 Show that the if part holds for any space, not necessary first-countable.
 
-\parbf{\ref{ex:distfun}.} Argue as in \ref{ex:cont-product-constr} and do some algebra.
+\parbf{\ref{ex:ezh}.}
+Let $V_1,V_2,\dots$ be sequence of neighborhoods of $x_0=[0]\in \c{X}$.
+Construct an open set $W$ in $\c{X}$ such that $V_n\not\subset W$ for any $n$.
+Concule that $\c{X}$ is not first-countable.
+
+\parbf{\ref{ex:distfun}.}
+Argue as in \ref{ex:cont-product-constr} and do some algebra.
 Take $V=f^{-1}(-\infty,\frac12)$ and $W=f^{-1}(\frac12,+\infty)$.
 
 \parbf{\ref{ex:Т5}.}
@@ -900,14 +906,19 @@ For the second part, check the following subspace in $\RR^2$:
 \[(\QQ\times\{0\})\cup(\RR\times (0,\infty)),\]
 here $\QQ\subset\RR$ denotes the set or rational numbers.
 
+\parbf{\ref{ex:nested-in-compact}.}
+Apply \ref{ex:nested-compact} to show that $Q_\infty$ is not empty.
+Futher, assume $V$ and $W$ separate $Q_\infty$.
+Apply \ref{ex:nested-compact} to the sequence $Q'_n=Q_n\setminus(V\cup W)$.
+
 \parbf{\ref{ex:quotient-connected}.}
 Apply \ref{prop:image-connected}.
 
 \parbf{\ref{ex:A<B<bar-A}.}
-Show that any open splitting of $B$ splits $A$ as well.
+Show that any separating pair of $B$ separates $A$ as well.
 
 \parbf{\ref{ex:connected-product}.}
-Given an open splitting of $\c{X}$ or $\c{Y}$ construct an open splitting of $\c{X}\times\c{Y}$; this will prove the if part.
+Given a separating pair of $\c{X}$ or $\c{Y}$ construct a separating pair of $\c{X}\times\c{Y}$; this will prove the if part.
 For the only-if part, apply \ref{prop:union-connect} to show that $(\{x\}\times \c{Y})\cup(\c{X}\times \{y\})$ is connected for any $x\in\c{X}$ and $y\in \c{Y}$.
 And apply it again to show that
 $\c{X}\times \c{Y}$ is connected.
@@ -948,7 +959,7 @@ Use it to check the conditions in \ref{prop:base-any}.
 If a prime number $d$ is larger than $a_1$ and $a_2$, then $(a_1+\NN\cdot d)\cap (a_1+\NN\cdot d)=\emptyset$.
 Use this to show that the space is Hausdorff.
 
-Finally, assume $V$ and $W$ is an open splitting of $\NN$ with the describe topology.
+Finally, assume $V$ and $W$ separate $\NN$ with the described topology.
 Observe that $a_1+\NN\cdot d_1\subset V$ and $a_2\z+\NN\cdot d_2\subset W$ for some positive integers $a_1$, $d_1$, $a_2$ and $d_2$ such that $\gcd(a_1,d_1)=\gcd(a_2,d_2)=1$.
 Let $a_3=d_1\cdot d_2$;
 without loss of generality we can assume that $a_3\in  V$.
@@ -1048,7 +1059,7 @@ Show and use that $t\z\mapsto (f(t),g(t))$ is a path in $\c{X}\times\c{Y}$.
 Choose path-connected component $V$.
 Assume its complement, say $W$, is nonempty.
 Observe that $W$ is a union of path-connected components.
-Therefore, $W$ is open, and the pair $V$, $W$ forms an open splitting of the space.
+Therefore, $W$ is open, and the pair $V$, $W$ separates the space.
 
 To prove the converse, apply \ref{thm:conncted/path-connected}
 
