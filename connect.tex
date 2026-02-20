@@ -27,7 +27,7 @@ W\ne\emptyset,
 V\cup W=\c{X},
 \quad\text{and}\quad
 V\cap W=\emptyset.\]
-In this case, we say that $V$ and $W$ \index{separate}\emph{separate} of $\c{X}$.
+In this case, we say that $V$ and $W$ \index{separate}\emph{separate} $\c{X}$.
 
 Spelling out the notion of subspace, makes us define an open {}\emph{separating pair} of a set $A\subset\c{X}$ as two open sets $V,W\subset \c{X}$ such that
 \[
@@ -41,14 +41,14 @@ A nonempty topological space (or its subset) is \index{disconnected subset}\emph
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:connected->R}
-Let $f\:\c{X}\to\RR$ be a continuous function defined of a connected space.
-Suppose that for $f(x_1)>0$ and $f(x_2)<0$ for some $x_1,x_2\in \c{X}$.
+Let $f\:\c{X}\to\RR$ be a continuous function defined on a connected space.
+Suppose that $f(x_1)>0$ and $f(x_2)<0$ for some $x_1,x_2\in \c{X}$.
 Show that there is $x_3\in \c{X}$ such that $f(x_3)=0$.
 \end{thm}
 
 \begin{thm}{Advanced exercise}\label{ex:nested-in-compact}
 Let $Q_1\supset Q_2\supset\ldots $ be a nested sequence of closed connected sets in a compact space.
-Show that the intersecction $Q_\infty=Q_1\cap Q_2\cap\ldots $ is connected.
+Show that the intersection $Q_\infty=Q_1\cap Q_2\cap\ldots $ is connected.
 \end{thm}
 
 \begin{thm}{Proposition}\label{prop:image-connected}
@@ -69,7 +69,7 @@ V\cup W\supset B.
 \eqlbl{eq:VWB}\]
 
 Since $f$ is continuous, $V'=f^{-1}(V)$ and $W'=f^{-1}(W)$ are open sets in $\c{X}$.
-Note that \ref{eq:VWB} implies that $V'$ and $W'$ is a separating pair of $A$; that is,
+Note that \ref{eq:VWB} implies that $V'$ and $W'$ separate $A$; that is,
 \[
 V'\cap W'\cap A=\emptyset,\quad
 V'\cap A\ne\emptyset,\quad 
@@ -98,7 +98,7 @@ is connected.
 \end{thm}
 
 \parit{Proof.}
-Assume that $A$ is disconnected; choose a separating pair $V$, $W$.
+Assume that $A$ is disconnected; choose separating open sets $V$ and $W$.
 Since $\bigcap_\alpha A_\alpha\ne\emptyset$, we can choose $p\in \bigcap_\alpha A_\alpha$.
 Without loss of generality, we can assume that $p\in V$.
 
@@ -110,12 +110,12 @@ W\cap A&=W\cap\biggl(\bigcup_\alpha A_\alpha\biggr)=
 \\&=\bigcup_\alpha(W\cap A_\alpha)=
 \\&=\emptyset.
 \end{align*}
-Hence $V,W$ is not a separating pair --- a contradiction.
+Hence $V$ and $W$ do not separate $A$ --- a contradiction.
 \qeds
 
 \begin{thm}{Exercise}\label{ex:connected-product}
 Show that two topological spaces $\c{X}$ and $\c{Y}$ are connected
-if and ony if the product space $\c{X}\times\c{Y}$ is connected.
+if and only if the product space $\c{X}\times\c{Y}$ is connected.
 \end{thm}
 
 
@@ -130,7 +130,7 @@ The proof reuses the construction in \ref{sec:compact-interval}.
 \parit{Proof.}
 Assume the contrary;
 choose a separating pair of $[0,1]$, say $V$ and $W$.
-Fix a $a_0\in V$ and $b_0\in W$;
+Fix $a_0\in V$ and $b_0\in W$;
 without loss of generality, we can assume that $a_0<b_0$.
 
 Let us construct a nested sequence of closed intervals 
@@ -179,7 +179,7 @@ Construct an example of a topological space $\c{X}$ and a point $x\in \c{X}$ suc
 
 \begin{thm}{Exercise}\label{ex:connected-component-disjoint}
 Show that two connected components either coincide or are disjoint.
-In other words lying in the same connected component defines an equivalence relation.
+In other words, lying in the same connected component defines an equivalence relation.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:finite-number-connected-component}
@@ -188,12 +188,12 @@ Show that each connected component of $\c{X}$ is open.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:R-open}
-Show that any open set in $\RR$ is a union of countably many disjoint open intevals.
+Show that any open set in $\RR$ is a union of countably many disjoint open intervals.
 \end{thm}
 
 
 \begin{thm}{Advanced exercise}\label{ex:colomb}
-Show that the set of positive integers $\NN=\{1,2,\dots\}$ has a topology with base made from all arithmetic progressions $a+\NN\cdot d=\{a,a+d,a+2\cdot d,\dots\}$ for all realtivley prime positive integers $a$ and $d$ such that $a\le d$.
+Show that the set of positive integers $\NN=\{1,2,\dots\}$ has a topology with base made from all arithmetic progressions $a+\NN\cdot d=\{a,a+d,a+2\cdot d,\dots\}$ for all relatively prime positive integers $a$ and $d$ such that $a\le d$.
 Furthermore, $\NN$ equipped with this topology is a connected Hausdorff space.
 \end{thm}
 
@@ -228,7 +228,7 @@ Show that the plane $\RR^2$ is not homeomorphic to the real line $\RR$.
 
 \begin{thm}{Exercise}\label{ex:not-homeo}
 Show that no two of the following four closed connected sets in the plane are homeomorphic.
-(Each set is a union of four line segments, and if it looks like they share an end point, then this is ideed so.)
+(Each set is a union of four line segments, and if it looks like they share an end point, then this is indeed so.)
 
 \begin{figure}[!ht]
 \centering
@@ -249,7 +249,7 @@ Show that no two of the following four closed connected sets in the plane are ho
 
 \begin{thm}{Exercise}\label{ex:Q/H}
 Let $Q$ be the set shown in the picture;
-it is a union of a cicle with a crossing closed line segment.
+it is a union of a circle with a crossing closed line segment.
 Consider the action on $Q$ of the group $H$ of all homeomorphisms $Q\to Q$.
 Describe the quotient space $Q/H$;
 that is, list its points and the open sets.
@@ -266,7 +266,7 @@ that is, list its points and the open sets.
 \includegraphics{mppics/pic-50}
 \end{wrapfigure}
 
-\mbox{\index{Sierpi\'nski gaske}\emph{Sierpi\'nski gasket}} is constructed the following way:
+\mbox{\index{Sierpi\'nski gaske}\emph{Sierpi\'nski gasket}} is constructed in the following way:
 start with a solid equilateral triangle, subdivide it into four smaller congruent equilateral triangles and remove the interior of the central one.
 Repeat this procedure recursively for each of the remaining solid triangles.
 

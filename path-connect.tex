@@ -1,6 +1,4 @@
-\chapter{Path-conneced spaces}
-
-Here we discuss paths and path-connected spaces,
+\chapter{Path-connected spaces}
 
 \section{Paths}\label{sec:Operations on paths}
 
@@ -37,7 +35,7 @@ in other words $f*h$ is indeed a path.
 \begin{thm}{Advanced exercise}\label{ex:simple-path}
 Let $f$ be a path from $x$ to $y$ in a Hausdorff space $\c{X}$.
 Assume $x\ne y$.
-Show that there is an injective path $h$ form $x$ to $y$ such that $h([0,1])\subset f([0,1])$.
+Show that there is an injective path $h$ from $x$ to $y$ such that $h([0,1])\subset f([0,1])$.
 \end{thm}
 
 \section{Path-connected components}
@@ -50,18 +48,18 @@ From \ref{sec:Operations on paths}, $\sim$ is an equivalence relation on the set
  \item $x\sim x$ (since $\eps_x$ is a path from $x$ to $x$);
  \item if $x\sim y$, then $y\sim x$ (indeed, if $f$ is a path from $x$ to $y$, then $\bar f$ is a path from $y$ to $x$);
  \item if $x\sim y$ and $y\sim z$, then $x\sim z$ (indeed, if $f$ is a path from $x$ to $y$,
- and $h$ is a path from $y$ to $x$ then $f*h$ is a path from $x$ to $z$).
+ and $h$ is a path from $y$ to $z$ then $f*h$ is a path from $x$ to $z$).
 \end{itemize}
 
 The equivalence class of a point $x$ for the equivalence relation $\sim$ is called the \index{path-connected component}\emph{path-connected component} of $x$;
-this is the set of all point in $\c{X}$ that can be jointed with $y$ by a path.
+this is the set of all points in $\c{X}$ that can be joined with $x$ by a path.
 
 
 \section{Path-connected spaces}
 
 A space $\c{X}$ is called \index{path-connected space}\emph{path-connected} if it is nonempty and any two points in $\c{X}$ can be connected by a path;
 that is, for any $x,y\in \c{X}$ there is a path $f$ from $x$ to $y$.
-One can say that $\c{X}$ is path-connected if $\c{X}$ is a connected component of one (and therefore every) point $x\in\c{X}$.
+One can say that $\c{X}$ is path-connected if $\c{X}$ is a path-connected component of one (and therefore every) point $x\in\c{X}$.
 
 %\begin{thm}{Exercise}\label{ex:convex-path-connected}Show that any convex set in a Euclidean space is path-connected.\end{thm}
 
@@ -140,7 +138,7 @@ Describe path-connected components in the flea and comb.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:nonpathconnected-closure}
-Construct a path-connected set in the plane with non path-connecteed closure.
+Construct a path-connected set in the plane with non path-connected closure.
 \end{thm}
 
 
@@ -208,9 +206,9 @@ Therefore the following exercise generalizes the theorem above.
 Show that a connected open set in a locally path-connected space is path-connected.
 \end{thm}
 
-\begin{thm}{Advaneced exercise}\label{ex:pseudocircle}
-Construct a bounded open set $V$ in the plane such its boundary is connected, but \index{totally path-disconnected space}\emph{totally path-disconnected};
-that is, each connected component in $\partial V$ consists of a sinle point.
+\begin{thm}{Advanced exercise}\label{ex:pseudocircle}
+Construct a bounded open set $V$ in the plane such that its boundary is connected, but \index{totally path-disconnected space}\emph{totally path-disconnected};
+that is, each path-connected component in $\partial V$ consists of a single point.
 \end{thm}
 
 
