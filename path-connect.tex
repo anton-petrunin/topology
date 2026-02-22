@@ -67,6 +67,14 @@ One can say that $\c{X}$ is path-connected if $\c{X}$ is a path-connected compon
 Show that the connected two-point space (defined in \ref{sec:ecamples(top)}) is path-connected.
 \end{thm}
 
+\begin{thm}{Exercise}\label{ex:image(path-connected)}
+Show that the image of a path-connected set under a continuous map is path-connected.
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:product(path-connected)}
+Show that the product of path-connected spaces is path-connected.
+\end{thm}
+
 \begin{thm}{Theorem}\label{thm:conncted/path-connected}
 Any path-connected space is connected;
 the converse does not hold.
@@ -125,14 +133,6 @@ By \ref{prop:image-connected}, $f(t)\in J_n$ for any $t\in [a,b]$;
 in particular, $f(b)\ne y$ --- a contradiction.
 \qeds
 
-\begin{thm}{Exercise}\label{ex:image(path-connected)}
-Show that the image of a path-connected set under a continuous map is path-connected.
-\end{thm}
-
-\begin{thm}{Exercise}\label{ex:product(path-connected)}
-Show that the product of path-connected spaces is path-connected.
-\end{thm}
-
 \begin{thm}{Exercise}\label{ex:flea-and-comb}
 Describe path-connected components in the flea and comb.
 \end{thm}
@@ -164,17 +164,16 @@ Give an example of $f$ and $h$ such that $p$ and $q$ lie in different path-conne
 \end{thm}
 
 \begin{thm}{Advanced exercise}\label{ex:QQ}
-Recall that $\mathbb{Q}$ denotes the set of rational numbers.
 Consider the following sets in the plane:
 \[A=\set{(x,y)\in\RR^2}{ x,y\in\mathbb{Q}}
 \quad\text{and}\quad
-B=\set{(x,y)\in\RR^2}{x,y\notin\mathbb{Q}}.\]
+B=\set{(x,y)\in\RR^2}{x,y\notin\mathbb{Q}},\]
+where $\mathbb{Q}$ denotes the set of rational numbers.
 Show that $A\cup B$ is path-connected.
 \end{thm}
 
 \section{Sets in Euclidean space}
 
-The following theorem provides a class of topological spaces for which connectedness implies path-connectedness.
 
 \begin{thm}{Theorem}\label{thm:open-connected=path-connected}
 An open set in a Euclidean space $\RR^n$ is path-connected if and only if it is connected.
@@ -184,17 +183,17 @@ An open set in a Euclidean space $\RR^n$ is path-connected if and only if it is 
 The only-if part follows from \ref{thm:conncted/path-connected};
 it remains to prove the if part.
 
-Let $W\subset\RR^n$ be an open subset.
-Choose a point $p\in W$; denote by $P\subset W$ the path-connected component of $p$.
+Let $\Omega\subset\RR^n$ be an open subset.
+Choose a point $p\in \Omega$; denote by $P\subset \Omega$ the path-connected component of $p$.
 
-Let us show that for any point $q\in W$ there is $\eps>0$ such that either $\Ball(q,\eps)\subset P$, or $\Ball(q,\eps)\cap P=\emptyset$.
+Let us show that for any point $q\in \Omega$ there is $\eps>0$ such that either $\Ball(q,\eps)\subset P$, or $\Ball(q,\eps)\cap P=\emptyset$.
 
-Indeed, since $W$ is open, we can choose $\eps>0$ such that the ball $\Ball(q,\eps)$ lies in $W$.
+Indeed, since $\Omega$ is open, we can choose $\eps>0$ such that the ball $\Ball(q,\eps)$ lies in $\Omega$.
 Note that $\Ball(q,\eps)$ is convex, in particular path-connected.
 Therefore $\Ball(q,\eps)\cap P\ne\emptyset$ if and only if $\Ball(q,\eps)\subset P$.
 
-It follows that $P$ and its complement $W\setminus P$ are open.
-Since $W$ is connected, we get that $W\setminus P=\emptyset$ --- hence the result.
+It follows that $P$ and its complement $\Omega\setminus P$ are open.
+Since $\Omega$ is connected, we get that $\Omega\setminus P=\emptyset$ --- hence the result.
 \qeds
 
 A topological space $\c{X}$ is called \index{locally path-connected}\emph{locally path-connected} if for any point $p\in\c{X}$ and any open set $V\ni p$ there is a path-connected open set $W$ such that $V\supset W\ni p$.

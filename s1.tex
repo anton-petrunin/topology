@@ -1,5 +1,11 @@
 \chapter{Fundamental group of a circle}
 
+
+In this chapter we will caclulate fundamental group of a circle;
+it will give a first example of a space has a nontrivial fundamental group.
+In the proof one has to show nonexistence of homotopies between certain loops;
+this is a new and hard part.
+
 \section{The statement}
 
 \begin{thm}{Theorem}\label{thm:pi1(S1)}
@@ -197,4 +203,23 @@ $t\mapsto p(r\exp(2\pi i t))/|p(r\exp(2\pi i t))|$ lies in $\SS^1$.
 For large $r$ this loop is homotopic to $t\mapsto \exp(2\pi i k t)$, where $k$ is
 the degree of $p$, while for $r=0$ it is constant; this forces a change of degree,
 which is impossible under a homotopy rel endpoints.
+
+\section{Borsuk--Ulam theorem}
+
+\begin{thm}{Theorem}\label{thm:Borsuk-Ulam}
+For every continuous map $f\: \SS^2\to \RR^2$ there exists a pair of antipodal
+points $x$ and $-x$ in $\SS^2$ that map to a single point; that is  $f(x)=f(-x)$.
+\end{thm}
+
+\begin{thm}{Exercse}\label{ex:ABC}
+Let $A$, $B$, and $C$ be closed subsets $\SS^2$ such that $A\cup B\cup C=\SS^2$
+Apply the Borsuk--Ulam theorem to the map $f\: \SS^2\to \RR^2$ defined by
+\[f\:x\mapsto (\dist_Ax,\dist_Bx)\]
+to conclude that one of the sets $A$, $B$, or $C$
+contains a pair of antipodal
+points in $\SS^2$.
+
+Give an example showing that analogous statement does not hold for four closed set $A$, $B$, $C$, and $D$.
+
+\end{thm}
 

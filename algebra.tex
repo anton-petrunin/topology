@@ -3,10 +3,11 @@
 In the previous chapter we gave a construction of the fundamental group for a given topological space with marked point.
 This construction gives a bridge between topology and abstract algebra.
 
-In this chapter we explain how to use this bridge.
-In this chapter we describe
-In the next chapter, we will calculate fundamental group of the circle --- this will be the first example of a space with nontrivial fundamntal group.
-Once this group is calculated, the connections of this chapter will lead to many applications.
+
+In this chapter we show that crossing this bridge respects maps between topological spaces;
+in a more fancy language, the passage from a space to its fundamental group is determined by a \index{functor}\emph{functor}.
+Bit latter, we will calculate fundamental group of the circle --- this will be the first example of a space with nontrivial fundamntal group.
+Once this group is calculated, the connections of this chapter will lead to several applications.
 
 
 \section{Induced homomorphism}
@@ -71,7 +72,7 @@ Show that $\iota_*\:\pi_1(A,a)\to \pi_1(\c{X},a)$ is an injective homomorphism.
 \end{subthm}
 
 \begin{subthm}{}
-Show that is $A$ is deformation retract then $r_*$ and $\iota_*$ are isomorphisms.
+Show that is $A$ is weak deformation retract then $r_*$ and $\iota_*$ are isomorphisms.
 \end{subthm}
 
 
@@ -138,17 +139,22 @@ According to the theorem, the fundamental group (more precisely its \textit{isom
 Therefore, for a path-connected space $\c{X}$ we do not need to specify the base point of its fundamental group; so we could write $\pi_1(\c{X})$ instead of $\pi_1(\c{X},p)$ (if we think about the group up to isomorphism).
 
 \begin{thm}{Exercise}\label{ex:uphi}
-Let $\phi_\tau\:\c{X}\to\c{Y}$ be a homotopy.
-Suppose that $q_0=\phi_0(p)$ and $q_1=\phi_1(p)$; 
-consider the path from $q_0$ to $q_1$ defined by $h(t)=\phi_\tau(p)$.
-Show that 
+
+\begin{subthm}{ex:uphi:uphi}
+ Let $\phi_\tau\:\c{X}\to\c{Y}$ be a homotopy.
+Suppose that $q_0=\phi_0(p)$ and $q_1=\phi_1(p)$;
+consider the path from $q_0$ to $q_1$ defined by $h(\tau)=\phi_\tau(p)$.
+Show that
 \[u_h\circ \phi_{0*}=\phi_{1*}.\]
+\end{subthm}
+
+\begin{subthm}{ex:uphi:hom-type}
+Conclude that if path-connected topological spaces $\c{X}$ and $\c{Y}$ have the same homotopy type, then
+ their fundamental groups are isomorphic.
+\end{subthm}
+
 \end{thm}
 
-\begin{thm}{Exercise}
-Suppose that path-connected topological spaces $\c{X}$ and $\c{Y}$ have the same homotopy type.
-Use \ref{ex:uphi} to show that their fundamental groups are isomorphic.
-\end{thm}
 
 \section{Product space}
 

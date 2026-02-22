@@ -1,24 +1,21 @@
 \chapter{Fundamental group}
 
-Let $\c{X}$ be a topological space with marked point $x_0\in \c{X}$.
-Choose a point $s_0$ on the circle $\SS^1$.
-Consider all continuous maps $\SS^1\to \c{X}$ that send $u_0$ to $x_0$.
-Let us denote by $\pi_1(\c{X},x_0)$ the set of homotopy classes of these maps within the described class of maps.
-In this chpter we will equip this set with multiplication and show that it is indeed a group, after that we will have right to call it the fundamental group $\c{X}$ with marked point $x_0$.
 
+Let $\c{X}$ be a topological space with a chosen basepoint $x_0 \in X$.
+Fix a point $s_0 \in \SS^1$, and  consider all continuous maps $\SS^1\to \c{X}$ that send $u_0$ to $x_0$.
+Denote by $\pi_1(X,x_0)$ the set of homotopy classes of such maps.
 
-
-
-
-
+In this chpter we will equip this set with multiplication and show that it makes $\pi_1(\c{X},x_0)$ into a group.
+This will justify calling $\pi_1(\c{X},x_0)$ the \textit{fundamental group} of $\c{X}$ with marked point $x_0$.
+The fundamental group is the first meaningful construction in algebraic topology, and the rest of the course will be largely devoted to it.
 
 \section{Homotopy of paths}
 
-Any path is a continuous map defined on the unit interval $[0,1]$.
-By homotopy of paths we will understand homotopy realive to the ends of $[0,1]$;
-in the notations of \ref{sec:rel-homotopy}, we have $\c{X}=[0,1]$ and $A=\{0,1\}$.
-If we need to talk about general homotopy of paths we say \index{free homotopy}\emph{free homotopy}.
 
+Any path is a continuous map defined on the unit interval $[0,1]$.
+By \index{homotopy of paths}\emph{homotopy of paths} we will understand homotopy realive to the ends of $[0,1]$;
+in the notations of \ref{sec:rel-homotopy}, we have sourse space $[0,1]$ with subsets of two points  $\{0,1\}$.
+If we need to talk about general homotopy of paths (alowing moving its ends) we say \index{free homotopy}\emph{free homotopy}.
 
 \begin{wrapfigure}{r}{33 mm}
 \vskip-4mm
@@ -26,39 +23,27 @@ If we need to talk about general homotopy of paths we say \index{free homotopy}\
 \includegraphics{mppics/pic-80}
 \end{wrapfigure}
 
-Let $p$ and $q$ be two points in a topological sapce $\c{X}$ and
- $f_\tau\:[0,1]\to \c{X}$ be a one-parameter family of paths from $p$ to $q$; here $\tau\in [0,1]$.
-If the map $[0,1]\times [0,1]\to \c{X}$, defined as $(\tau,t)\mapsto f_\tau(t)$ is continuous, then $f_\tau$ is called a \index{homotopy of paths}\emph{homotopy of paths} in $\c{X}$.
-
-Intuitively, homotopy of paths is a path in the space of paths with fixed ends.
-To make this statement precise, one has to introduce an appropriate topology on the space of all paths with fixed ends; the so-called \index{compact-open topology}\emph{compact-open topology} provides a right choice, but we are not going to touch this subject. 
-
+A homotopy of paths is defined by a continuous map $H\:[0,1]\times [0,1]\to \c{X}$ such that $H(0,\tau)=p$ and $H(1,\tau)=q$ for some points $p,q$ in the targen space $\c{X}$.
+But as usual, it is convinient to think that homotopy is a one-parameter family of paths $f_\tau\:[0,1]\to \c{X}$ from $p$ to $q$.
 Two paths $g,h\:[0,1]\to \c{X}$ are called {}\emph{homotopic} (briefly $g\sim h$)
 if there is a homotopy $f_\tau\:[0,1]\to \c{X}$ such that $g=f_0$ and $h=f_1$.
-
 Recall that $\sim$ is an equivalence relation.
 Therefore, we can talk about the equivalence class of a path $f$ that will be called its \index{homotopy class of paths}\emph{homotopy class};
 it will be denoted by~$[f]$.
-
-\begin{thm}{Exercise}
-Suppose that $f$ and $g$ are two paths in $\RR$ with common ends;
-that is, $f(0)=g(0)$ and $f(1)=g(1)$.
-Show that $f\sim g$.
-\end{thm}
-
-
 
 
 \section{Technical claims}\label{sec:homotopy-claim}
 
 \begin{thm}{Claim}\label{clm:product}
 Suppose $f_0$ is a path from $p$ to $q$,
-and 
+and
 $g_0$ is a path from $q$ to $r$.
 Suppose $f_0\sim f_1$ and $g_0\sim g_1$,
 then
 \[f_0*g_0\sim f_1*g_1.\]
 \end{thm}
+
+%???PIC
 
 \parit{Proof.}
 Choose homotopies $f_\tau$ from $f_0$ to $f_1$, and $g_\tau$ from $g_0$ to $g_1$.
@@ -66,127 +51,133 @@ Observe that \ref{ex:u-continuous:closed} implies that
 $f_\tau*g_\tau$ is a homotopy from $f_0*g_0$ to $f_1*g_1$.
 \qeds
 
-Each of the following claims proved by explicit construction of the needed homotopy.
-Each time the homotopy constructed as a composition $h\circ s_\tau(t)$, where $h$ is a fixed path and  $s_\tau$ is a one-parameter family of functions $[0,1]\to [0,1]$.
-The graphs of $s_\tau$ provide more intuitive descriptions of the families;
-the formulas presented just to make it formally correct.
-
-Recall that $\eps_p$ is the constant path with image $p$;
-that is, $\eps_p(t)=p$ for any $t$.
-
-\begin{thm}{Claim}\label{clm:neutral}
-Suppose $f$ is a path from $p$ to $q$, then
-\[\eps_p*f\sim f*\eps_q\sim  f.\]
+\begin{thm}{Observation}\label{obs:homot-paths}
+Let $s_0,s_1\:[0,1]\to[0,1]$ be two paths such that $s_0(0)=s_1(0)$ and $s_0(1)=s_1(1)$.
+Then $s_0\sim s_1$.
+Moreover, for any path $f$ we have $f\circ s_0\sim f\circ s_1$.
 \end{thm}
 
-\begin{wrapfigure}{r}{30mm}
-\centering
-\vskip-5mm
-\includegraphics{mppics/pic-30}
-\end{wrapfigure}
+\parit{Proof.}
+The linear homotopy
+\[s_\tau(t)=(1-\tau)\cdot s_0(t)+\tau \cdot s_1(t)\]
+provedes a homotopy from $s_0$ to $s_1$.
+The conditions $s_0(0)=s_1(0)$ and $s_0(1)=s_1(1)$ imply that $s_\tau(0)$ and $s_\tau(1)$ doe not depend on $\tau$;
+that is, $s_\tau$ is a homoptoy relative to the endpoints.
+
+To prove the last statement, observe that $f\circ s_\tau$ is a homotopy of paths from $f\circ s_0$ to  $f\circ s_1$.
+\qeds
+
+
+\begin{thm}{Claims}\label{clm:homot-claims}
+
+\begin{subthm}{clm:neutral}
+Suppose $f$ is a path from $p$ to $q$, then
+\[\eps_p*f\sim f*\eps_q\sim  f.\]
+\end{subthm}
+
+\begin{subthm}{clm:f-bar-f}
+Suppose $f$ is a path from $p$ to $q$, then
+\[f*\bar f\sim \eps_p
+\quad\text{and}\quad
+\bar f*f\sim \eps_q.\]
+\end{subthm}
+
+\begin{subthm}{clm:assoc}
+Suppose $f$,
+$g$,
+and
+$h$ are paths such that $f(1)=g(0)$ and $g(1)=h(0)$.
+Then
+\[(f*g)*h\sim f*(g*h).\]
+\end{subthm}
+
+\end{thm}
 
 \parit{Proof.}
-Consider the function
-\[s_\tau(t)=
-\begin{cases}
-2\cdot \tau \cdot t&\text{if}\ t\le \tfrac12,
-\\
-2\cdot\tau-1+2\cdot (1-\tau) \cdot t&\text{if}\ t\ge \tfrac12.
-\end{cases}
-\]
-Observe that $(\tau,t)\mapsto s_\tau(t)$ and therefore $(\tau,t)\mapsto f(s_\tau(t))$ are continuous maps.
-Therefore $h_\tau(t)=f(s_\tau(t))$ is a homotopy.
+Each claim is proved by applying \ref{obs:homot-paths};
+each time we have to choose a path $f$ and rewrite the sides of equation as $f\circ s_0$ and  $f\circ s_1$ for appropriate paths $s_0,s_1\:[0,1]\to[0,1]$ that share the ends.
 
-Further,
+\parit{\ref{SHORT.clm:neutral}.} Note that $\eps_p*f=f\circ s_0$ and $f*\eps_q=f\circ s_1$, where
 \begin{align*}
-f(s_0(t))&=\eps_p*f(t),
+s_0(t)&\df
+\begin{cases}
+0&\text{if\ } t\le \tfrac12,
 \\
-f(s_{\frac12}(t))&=f(t),
+2\cdot t-1 &\text{if\ } t\ge \tfrac12,
+\end{cases}
+&&\text{and}
+&
+s_1(t)&\df
+\begin{cases}
+2\cdot t&\text{if\ }  t\le \tfrac12,
 \\
-f(s_1(t))&=f(t)*\eps_q
+1 &\text{if\ } t\ge \tfrac12.
+\end{cases}
 \end{align*}
-for any $t$.
-Whence the claim follows.
+Note that $f\z=f\circ s_2$ where $s_2(t)\z\df t$;
+furthermore,
+$s_0(0)\z=s_1(0)\z=s_2(0)=0$ and
+$s_0(1)\z=s_1(1)=s_2(1)=1$.
+It remains to apply \ref{obs:homot-paths}.
+
+\parit{\ref{SHORT.clm:f-bar-f}.}
+Note that $f*\bar f=f\circ s_0$ and $\eps_p=f\circ s_1$, where
+\begin{align*}
+s_0(t)&\df
+\begin{cases}
+2\cdot t&\text{if\ } t\le \tfrac12,
+\\
+1-2\cdot t &\text{if\ } t\ge \tfrac12,
+\end{cases}
+&&\text{and}
+&
+s_1(t)&\df0
+\end{align*}
+Since $s_0(0)\z=s_1(0)\z=s_0(1)\z=s_1(1)\z=0$, \ref{obs:homot-paths} implies $f*\bar f\sim \eps_p$.
+
+Applying the same argument to $h=\bar f$, we get $\bar f*f\sim \eps_q$.
+
+\parit{\ref{SHORT.clm:assoc}.}
+Spelling the definition of product of paths, we get
+\begin{align*}
+(f*g)*h(t)&\df
+\begin{cases}
+f(4\cdot t)&\text{if\ } 0\le t\le \tfrac14,
+\\
+g(4\cdot t-1) &\text{if\ } \tfrac14\le t\le \tfrac12,
+\\
+h(2\cdot t-1) &\text{if\ } \tfrac12\le t\le 1,
+\end{cases}
+\intertext{and}
+f*(g*h)(t)&\df
+\begin{cases}
+f(2\cdot t)&\text{if\ } 0\le t\le \tfrac12,
+\\
+g(4\cdot t-2) &\text{if\ } \tfrac12\le t\le \tfrac34,
+\\
+h(4\cdot t-3) &\text{if\ } \tfrac34\le t\le 1.
+\end{cases}
+\intertext{Therefore, $(f*g)*h(t)=(f*(g*h))\circ s_1(t)$, where}
+s_1(t)&\df
+\begin{cases}
+2\cdot t&\text{if\ } 0\le t\le \tfrac14,
+\\
+t+\tfrac14 &\text{if\ } \tfrac14\le t\le \tfrac12,
+\\
+\tfrac12\cdot \cdot t+\tfrac12 &\text{if\ } \tfrac12\le t\le 1.
+\end{cases}
+\end{align*}
+Observe that $(f*g)*h(t)=((f*g)*h)\circ s_0(t)$ where $s_0(t)\df t$, both functions $s_0,s_1\:[0,1]\to[0,1]$ are continuous and  $s_0(0)\z=s_1(0)=0$ and
+$s_0(1)\z=s_1(1)=1$.
+It remains to apply \ref{obs:homot-paths}.
 \qeds
+
 
 \begin{thm}{Exercise}\label{ex:neutral}
 Suppose that $f$ is a path in a Hausdorff space.
 Assume $f(0)=p$, $f(1)=q$, and $\eps_p*f= f$.
 Show that $f=\eps_p$; in particular, $p=q$.
 \end{thm}
-
-\begin{thm}{Claim}\label{clm:f-bar-f}
-Suppose $f$ is a path from $p$ to $q$, then
-\[f*\bar f\sim \eps_p
-\quad\text{and}\quad
-\bar f*f\sim \eps_q.\]
-\end{thm}
-
-\begin{wrapfigure}[4]{r}{30mm}
-\centering
-\vskip-10mm
-\includegraphics{mppics/pic-31}
-\end{wrapfigure}
-
-\parit{Proof.}
-Consider the function
-\[s_\tau(t)=
-\begin{cases}
-2\cdot \tau \cdot t&\text{if}\ t\le \tfrac12,
-\\
-1-2\cdot \tau \cdot t&\text{if}\ t\ge \tfrac12.
-\end{cases}
-\]
-Observe that $(\tau,t)\mapsto s_\tau(t)$ and therefore $(\tau,t)\mapsto f(s_\tau(t))$ are continuous maps.
-
-Note that $f(s_1(t))=f*\bar f(t)$ for any $t$.
-Therefore $h_\tau(t)=f(s_\tau(t))$ is a homotopy from $\eps_p$ to $f*\bar f$.
-
-It proves the first statement.
-The second statement follows from the first one since $\bar{\bar f}=f$.
-\qeds
-
-The product of paths is not associative;
-that is, in general,
-\[(f*g)*h\ne f*(g*h)\]
-for paths $f,g,h$ such that both products are defined.
-In other words, we have to specify the order of product.
-The following claim says that \textit{product of paths is not associative up to homotopy}.
-
-\begin{thm}{Claim}\label{clm:assoc}
-Suppose $f$, 
-$g$,
-and
-$h$ are paths such that $f(1)=g(0)$ and $g(1)=h(0)$.
-Then
-\[(f*g)*h\sim f*(g*h).\]
-\end{thm}
-
-\begin{wrapfigure}[3]{r}{30mm}
-\centering
-\vskip-4mm
-\includegraphics{mppics/pic-32}
-\end{wrapfigure}
-
-\parit{Proof.}
-Consider the function $s_\tau$ defined by 
-\[s_\tau(t)=
-\begin{cases}
-\tfrac{1+\tau}2\cdot t&\text{if}\ t\le \tfrac12,
-\\
-\tfrac{\tau-1}4+t&\text{if}\ \tfrac 34\ge t\ge \tfrac12,
-\\
-\tau-1+ (2-\tau)\cdot t&\text{if}\  t\ge \tfrac34.
-\end{cases}
-\]
-Observe that $(\tau,t)\mapsto s_\tau(t)$ and therefore $(\tau,t)\mapsto f*(g*h)(s_\tau(t))$ are continuous maps.
-
-Note that $s_1(t)=t$,
-and therefore \[f*(g*h)(t)\z=f*(g*h)(s_1(t))\] for any $t$.
-Further, 
-\[(f*g)*h(t)\z=f*(g*h)(s_0(t))\] for any $t$.
-It remains to observe that $f*(g*h)(s_\tau(t))$ is the needed homotopy.
-\qeds
 
 \begin{thm}{Exercise}
 Let $f$ and $g$ be paths from $p$ to $q$.
@@ -201,7 +192,6 @@ and both sides of the equation are defined.
 Show that $f=g=h=\eps_p$ for some point $p$.
 \end{thm}
 
-
 \section{Fundamental group}
 
 Let $\c{X}$ be a topological space.
@@ -212,8 +202,8 @@ Note that if $f$ and $g$ are loops based at $p$, then their products $f*g$, $g*f
 Moreover, the time-reversed paths $\bar f$, $\bar g$ are also loops based at $p$.
 
 
-Recall that $[f]$ denotes the homotopy class of $f$; recall that homotopy of paths and loops does not move their ends. 
-The multiplication of homotopy classes of loops based at $p$ is defined by 
+Recall that $[f]$ denotes the homotopy class of $f$; recall that homotopy of paths and loops does not move their ends.
+The multiplication of homotopy classes of loops based at $p$ is defined by
 \[[f]\cdot [g]=[f*g];\]
 that is, \textit{the product of homotopy classes of loops $f$ and $g$ is the homotopy class of the product $f*g$.}
 
@@ -246,7 +236,7 @@ These statements are provided by \ref{clm:neutral}, \ref{clm:f-bar-f}, and \ref{
 \qeds
 
 \begin{thm}{Exercise}
-Suppose that $V$ and $W$ are open subsets of topological space $\c{X}$ such that 
+Suppose that $V$ and $W$ are open subsets of topological space $\c{X}$ such that
 $\c{X}=V\cup W$, and the set $V\cap W$ is path-connected.
 Let $p\in V\cap W$.
 Show that any loop in $\c{X}$ based at $p$  is homotopic to a product of loops in $V$ or $W$ with the same base.
@@ -272,5 +262,6 @@ If the fundamental group $\pi_1(\c{X},p)$ is trivial, it is common to write $\pi
 Show that any contractible space is simply-connected.
 \end{thm}
 
-
-
+\begin{thm}{Exercise}\label{ex:sc=homot-paths}
+Show that a topological space $\c{X}$ is simply-connected if and only if there is a unique homotopy class of paths connecting any two points in $\c{X}$.
+\end{thm}

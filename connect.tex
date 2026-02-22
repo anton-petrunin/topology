@@ -30,11 +30,10 @@ V\cap W=\emptyset.\]
 In this case, we say that $V$ and $W$ \index{separate}\emph{separate} $\c{X}$.
 
 Spelling out the notion of subspace, makes us define an open {}\emph{separating pair} of a set $A\subset\c{X}$ as two open sets $V,W\subset \c{X}$ such that
-\[
-V\cap W\cap A=\emptyset,\quad
-V\cap A\ne\emptyset,\quad
-W\cap A\ne\emptyset,\quad\text{and}\quad
-V\cup W\supset A.\]
+\[V\cap A\ne\emptyset,\quad
+W\cap A\ne\emptyset,\quad
+V\cup W\supset A,\quad\text{and}\quad
+V\cap W\cap A=\emptyset.\]
 
 \begin{thm}{Observation}\label{def:connected-subset}
 A nonempty topological space (or its subset) is \index{disconnected subset}\emph{disconnected} if it has a separating pair.
@@ -58,24 +57,18 @@ Then the image $B=f(A)$ is a connected set in $\c{Y}$.
 \end{thm}
 
 \parit{Proof.}
-We can assume that $B\ne\emptyset$; otherwise the statement is trivial.
+Since $A$ is a connected, $A\ne \emptyset$, and $B\ne\emptyset$.
 
 Assume that $B=f(A)$ is disconnected.
-Choose a separating pair $V$ and $W$ of $B$; that is,
-\[V\cap W\cap B=\emptyset,\quad
-V\cap B\ne\emptyset,\quad 
-W\cap B\ne\emptyset,\quad\text{and}\quad 
-V\cup W\supset B.
+Choose open sets $V$ and $W$ that separate $B$; that is,
+\[V\cap B\ne\emptyset,\ W\cap B\ne\emptyset,\ V\cup W\supset B,\ \text{and}\ V\cap W\cap B=\emptyset.
 \eqlbl{eq:VWB}\]
 
 Since $f$ is continuous, $V'=f^{-1}(V)$ and $W'=f^{-1}(W)$ are open sets in $\c{X}$.
 Note that \ref{eq:VWB} implies that $V'$ and $W'$ separate $A$; that is,
 \[
-V'\cap W'\cap A=\emptyset,\quad
-V'\cap A\ne\emptyset,\quad 
-W'\cap A\ne\emptyset,\quad\text{and}\quad 
-V'\cup W'\supset A.\]
-Therefore $A$ is disconnected --- a contradiction.
+V'\cap A\ne\emptyset,\ W'\cap A\ne\emptyset,\ V'\cup W'\supset A,\ \text{and}\ V'\cap W'\cap A=\emptyset.\]
+Therefore, $A$ is disconnected --- a contradiction.
 \qeds
 
 \begin{thm}{Exercise}\label{ex:quotient-connected}
@@ -91,19 +84,20 @@ Show that $B$ is connected.
 
 \begin{thm}{Proposition}\label{prop:union-connect}
 Assume $\{A_\alpha\}_{\alpha\in\c{I}}$ is a family of connected subsets of a topological space.
-Suppose that  $\bigcap_\alpha A_\alpha\ne\emptyset$.
-Then 
+If $\bigcap_\alpha A_\alpha\ne\emptyset$,
+then
 \[A=\bigcup_\alpha A_\alpha\] 
 is connected.
 \end{thm}
 
 \parit{Proof.}
 Assume that $A$ is disconnected; choose separating open sets $V$ and $W$.
-Since $\bigcap_\alpha A_\alpha\ne\emptyset$, we can choose $p\in \bigcap_\alpha A_\alpha$.
+Choose $p\in \bigcap_\alpha A_\alpha$.
 Without loss of generality, we can assume that $p\in V$.
 
 In particular, $V\cap A_\alpha\ne\emptyset$ for any $\alpha$.
-Since $A_\alpha$ is connected, we have that $W\cap A_\alpha=\emptyset$ for each $\alpha$; otherwise $V$ and $W$ would form a separating pair of $A_\alpha$.
+Since $A_\alpha$ is connected, we have that $W\cap A_\alpha=\emptyset$ for each $\alpha$;
+otherwise $V$ and $W$ would separate $A_\alpha$.
 Therefore 
 \begin{align*}
 W\cap A&=W\cap\biggl(\bigcup_\alpha A_\alpha\biggr)=
@@ -171,21 +165,26 @@ Let $x$ be a point in a topological space $\c{X}$.
 The intersection of all clopen sets containing $x$ is called the \index{connected component}\emph{connected component} of $x$.
 Note that the space $\c{X}$ is connected if and only if a connected component of some (and therefore of any) point is the whole space $\c{X}$.
 
-\begin{thm}{Exercise}\label{ex:nonopen-connected-component}
-Show that any connected component is a closed set.
-
-Construct an example of a topological space $\c{X}$ and a point $x\in \c{X}$ such that the connected component of $x$ is not open.
-\end{thm}
-
-\begin{thm}{Exercise}\label{ex:connected-component-disjoint}
-Show that two connected components either coincide or are disjoint.
+Observe that two connected components either coincide or are disjoint.
 In other words, lying in the same connected component defines an equivalence relation.
-\end{thm}
 
-\begin{thm}{Exercise}\label{ex:finite-number-connected-component}
+\begin{thm}{Exercise}\label{ex:nonopen-connected-component}
+
+\begin{subthm}{ex:nonopen-connected-component:closed}
+Show that any connected component is a closed set.
+\end{subthm}
+
+\begin{subthm}{ex:nonopen-connected-component:open}
+Construct an example of a topological space $\c{X}$ and a point $x\in \c{X}$ such that the connected component of $x$ is not open.
+\end{subthm}
+
+\begin{subthm}{ex:nonopen-connected-component:finite}
 Suppose that a space $\c{X}$ has a finite number of connected components.
 Show that each connected component of $\c{X}$ is open.
+\end{subthm}
+
 \end{thm}
+
 
 \begin{thm}{Exercise}\label{ex:R-open}
 Show that any open set in $\RR$ is a union of countably many disjoint open intervals.
@@ -193,8 +192,17 @@ Show that any open set in $\RR$ is a union of countably many disjoint open inter
 
 
 \begin{thm}{Advanced exercise}\label{ex:colomb}
-Show that the set of positive integers $\NN=\{1,2,\dots\}$ has a topology with base made from all arithmetic progressions $a+\NN\cdot d=\{a,a+d,a+2\cdot d,\dots\}$ for all relatively prime positive integers $a$ and $d$ such that $a\le d$.
-Furthermore, $\NN$ equipped with this topology is a connected Hausdorff space.
+Consider the set of positive integers $\NN=\{1,2,\dots\}$.
+Denote by $\c{B}$ the set of all arithmetic progressions $a+\NN\cdot d=\{a,a+d,a+2\cdot d,\dots\}$ in $\NN$ for all relatively prime positive integers $a$ and $d$ such that $a\le d$.
+
+\begin{subthm}{ex:colomb:base}
+Show that $\c{B}$ is a base of some topology on $\NN$.
+\end{subthm}
+
+\begin{subthm}{ex:colomb:base}
+Show that that $\NN$ equipped with this topology is a connected Hausdorff space.
+\end{subthm}
+
 \end{thm}
 
 

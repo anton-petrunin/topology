@@ -1,3 +1,143 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Each of the following claims proved by explicit construction of the needed homotopy.
+Each time the homotopy constructed as a composition $h\circ s_\tau(t)$, where $h$ is a fixed path and  $s_\tau$ is a one-parameter family of functions $[0,1]\to [0,1]$.
+The graphs of $s_\tau$ provide more intuitive descriptions of the families;
+the formulas presented just to make it formally correct.
+
+Recall that $\eps_p$ is the constant path with image $p$;
+that is, $\eps_p(t)=p$ for any $t$.
+
+
+\begin{wrapfigure}{r}{30mm}
+\centering
+\vskip-5mm
+\includegraphics{mppics/pic-30}
+\end{wrapfigure}
+
+\parit{Proof.}
+Consider the function
+\[s_\tau(t)=
+\begin{cases}
+2\cdot \tau \cdot t&\text{if}\ t\le \tfrac12,
+\\
+2\cdot\tau-1+2\cdot (1-\tau) \cdot t&\text{if}\ t\ge \tfrac12.
+\end{cases}
+\]
+Observe that $(\tau,t)\mapsto s_\tau(t)$ and therefore $(\tau,t)\mapsto f(s_\tau(t))$ are continuous maps.
+Therefore $h_\tau(t)=f(s_\tau(t))$ is a homotopy.
+
+Further,
+\begin{align*}
+f(s_0(t))&=\eps_p*f(t),
+\\
+f(s_{\frac12}(t))&=f(t),
+\\
+f(s_1(t))&=f(t)*\eps_q
+\end{align*}
+for any $t$.
+Whence the claim follows.
+\qeds
+
+
+
+
+\begin{wrapfigure}[4]{r}{30mm}
+\centering
+\vskip-10mm
+\includegraphics{mppics/pic-31}
+\end{wrapfigure}
+
+\parit{Proof.}
+Consider the function
+\[s_\tau(t)=
+\begin{cases}
+2\cdot \tau \cdot t&\text{if}\ t\le \tfrac12,
+\\
+1-2\cdot \tau \cdot t&\text{if}\ t\ge \tfrac12.
+\end{cases}
+\]
+Observe that $(\tau,t)\mapsto s_\tau(t)$ and therefore $(\tau,t)\mapsto f(s_\tau(t))$ are continuous maps.
+
+Note that $f(s_1(t))=f*\bar f(t)$ for any $t$.
+Therefore $h_\tau(t)=f(s_\tau(t))$ is a homotopy from $\eps_p$ to $f*\bar f$.
+
+It proves the first statement.
+The second statement follows from the first one since $\bar{\bar f}=f$.
+\qeds
+
+The product of paths is not associative;
+that is, in general,
+\[(f*g)*h\ne f*(g*h)\]
+for paths $f,g,h$ such that both products are defined.
+In other words, we have to specify the order of product.
+The following claim says that \textit{product of paths is not associative up to homotopy}.
+
+
+\begin{wrapfigure}[3]{r}{30mm}
+\centering
+\vskip-4mm
+\includegraphics{mppics/pic-32}
+\end{wrapfigure}
+
+\parit{Proof.}
+Consider the function $s_\tau$ defined by
+\[s_\tau(t)=
+\begin{cases}
+\tfrac{1+\tau}2\cdot t&\text{if}\ t\le \tfrac12,
+\\
+\tfrac{\tau-1}4+t&\text{if}\ \tfrac 34\ge t\ge \tfrac12,
+\\
+\tau-1+ (2-\tau)\cdot t&\text{if}\  t\ge \tfrac34.
+\end{cases}
+\]
+Observe that $(\tau,t)\mapsto s_\tau(t)$ and therefore $(\tau,t)\mapsto f*(g*h)(s_\tau(t))$ are continuous maps.
+
+Note that $s_1(t)=t$,
+and therefore \[f*(g*h)(t)\z=f*(g*h)(s_1(t))\] for any $t$.
+Further,
+\[(f*g)*h(t)\z=f*(g*h)(s_0(t))\] for any $t$.
+It remains to observe that $f*(g*h)(s_\tau(t))$ is the needed homotopy.
+\qeds
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \begin{thm}{Exercise}\label{ex:distfun}
 Consider two subsets $A,B\subset \c{M}$ such that $\bar A\cap B=A\cap \bar B=\emptyset$.
 
