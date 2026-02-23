@@ -902,11 +902,12 @@ Further, show and use that $\Cont f=V_1\cap V_2\cap\ldots$
 Let $G$ be a G-delta subset of complete metric space.
 Show and use that $G$ admits another metric that induces the same topology and makes $G$ to be a complete metric space.
 
-For the second part, check the following subspace in $\RR^2$:
-\[(\QQ\times\{0\})\cup(\RR\times (0,\infty)),\]
+For the second part, check the complement of $(\RR\setminus \QQ)\times \{0\}$ in $\RR^2$,
 here $\QQ\subset\RR$ denotes the set or rational numbers.
 
 \parbf{\ref{ex:connected->R}.}
+Assume contrary.
+Show and use that the sets $V=f^{-1}((0,\infty))$ and $W=f^{-1}((-\infty,0))$ form an open separating pair of $\c{X}$.
 
 \parbf{\ref{ex:nested-in-compact}.}
 Apply \ref{ex:nested-compact} to show that $Q_\infty$ is not empty.
@@ -949,12 +950,18 @@ so, in some sense, closed sets are more complicated than open.
 \parbf{\ref{ex:colomb}.}
 Let us denote by $\gcd(a,b)$ the greatest common divisor of positive integers $a$ and $b$.
 
+\parit{\ref{SHORT.ex:colomb:base}.}
 Suppose $\gcd(a_1,d_1)=\gcd(a_2,d_2)=1$.
 Show that the set $(a_1+\NN\cdot d_1)\cap(a_2+\NN\cdot d_2)$ is either empty or it can be written as $a_3+\NN\cdot d_3$ for some positive integers $a_3$ and $d_3$ such that $\gcd(a_3,d_3)=1$.
 Use it to check the conditions in \ref{prop:base-any}.
 
+\parit{\ref{SHORT.ex:colomb:connected}.}
 If a prime number $d$ is larger than $a_1$ and $a_2$, then $(a_1+\NN\cdot d)\cap (a_2+\NN\cdot d)=\emptyset$.
 Use this to show that the space is Hausdorff.
+
+Consider a finite sequence of elements of base $a_1+\NN\cdot d_1,\dots, a_n+\NN\cdot d_n$.
+Show that the product $d_1\cdots d_n$ does not belong to any of them.
+Apply \ref{ex:inscribed-cover-base} and \ref{obs:inscribed-cover} to conclude that the space is noncompact.
 
 Finally, assume $V$ and $W$ separate $\NN$ with the described topology.
 Observe that $a_1+\NN\cdot d_1\subset V$ and $a_2\z+\NN\cdot d_2\subset W$ for some positive integers $a_1$, $d_1$, $a_2$ and $d_2$ such that $\gcd(a_1,d_1)=\gcd(a_2,d_2)=1$.
@@ -1078,31 +1085,86 @@ Show and use that for any rational numbers $a\ne 0$ and $b$, the line $y=a\cdot 
 \parbf{\ref{ex:pseudocircle}.} Read about \index{pseudo-arc}\emph{pseudo-arc} and think.
 
 \parbf{\ref{ex:comp-hom}.}
+Let $f_\tau$ and $g_\tau$ be the homotopies from $f_0$ to $f_1$ and from $g_0$ to $g_1$, respectively.
+Show and use that $g_\tau \circ f_\tau$ is a homotopy from $g_0\circ f_0$ to $g_1\circ f_1$.
 
-\parbf{\ref{ex:homot-sphere}.}
+\parbf{\ref{ex:homot-sphere}.} Consider linear homotopy in $\RR^3$:
+\[f_t(x)=(1-t)\cdot f_0(x)+t\cdot f_1(x).\]
+Observe that $f_t(x)\ne 0$ for any $t$ and $x$.
+Compose $f_t$ with the radial projection $\RR^3\setminus\{0\}\to\SS^2$ defined by $y\mapsto \tfrac y{|y|}$.
+
 
 \parbf{\ref{ex:homot-S1}.}
+Argue as in \ref{ex:homot-sphere} to construct a homotopy from $f$ to the antipodal map $x\mapsto -x$.
+Further, use rotation of $\SS^1$ to construct a homotopy from the antipodal map to the identity map.
+Consider concatenation of these two homotopies.
 
 \parbf{\ref{ex:retract-closed}.}
+Choose $x\in \c{X}$; let $y=r(x)$.
+Assume $y\ne x$.
+Let $V\ni x$ and $W\ni y$ be disjoint neighborhoods provided by Hausdorffness.
+Show and use that the set $V\cap r^{-1}(W)$ contains $x$ and does not intersect $r(\c{X})$.
 
-\parbf{\ref{ex:retract-strong-weak}.}
+\parbf{\ref{ex:retract-strong-weak}};
+\ref{SHORT.ex:retract-strong-weak:retract}.
+Consider homotopy $h_t$ defined by
+\[h_t(x)=
+\begin{cases}
+x&\text{if\ }x\in J_0
+\\
+t\cdot x&\text{if\ }x\notin J_0
+\end{cases}
+\]
 
-\parbf{\ref{ex:retract-contractible}};
-\ref{SHORT.ex:contractible:path-connected}.
+\parit{\ref{SHORT.ex:retract-strong-weak:weak}.}
+Assume $J_\infty$ is deformation retract;
+let $h_t$ be the corresponding homotopy relative to $J_\infty$.
+Show that for any large $n$ we have
+\[|h_t((1,\tfrac1{2^n}))-(1,0)|_{\RR^2}<\tfrac1{10}\] for any $t$
+and arrive at a contradiction.
+
+\parbf{\ref{ex:retract-contractible}.}
+Let $r\:\c{X}\to A\subset \c{X}$ be a retraction
+and $h_t\:\c{X}\to \c{X}$ be a homotopy from the identity map to a constant map.
+Show and use that $r\circ h_t$ is a homotopy from the identity map $A\to A$ to a constant map.
+
+\parbf{\ref{ex:contractible}}.
+Let $h_t\:\c{X}\to \c{X}$ be a homotopy from the identity map to a constant map,
+so, $h_1(x)=p$ for any $x\in \c{X}$
+
+\parit{\ref{SHORT.ex:contractible:path-connected}.}
+Show and use that $t\mapsto h_t(x)$ is a path from $x$ to $p$.
 
 \parit{\ref{SHORT.ex:contractible:target}.}
+Choose two continuous maps $f_0, f_1\:\c{Y}\to \c{X}$.
+Note that $h_t\circ f_i$ is a homotopy from $f_i$ to the constant map $y\mapsto p$.
+Concatenate the obtained homotopies.
 
 \parit{\ref{SHORT.ex:contractible:sourse}.}
+Choose two continuous maps $f_0, f_1\:\c{X}\to \c{Y}$.
+Note that $f_i\circ h_t$ is a homotopy from $f_i$ to the constant map $x\mapsto y_i=f_i(p)$.
+Choose a path from $y_1$ to $y_2$ and use it to construct a homotopy from $f_0\circ h_1$ to $f_1\circ h_1$.
+Concatinate the obtained homotopies.
 
 \parbf{\ref{ex:homotopy-type}.}
+Spell the definitions.
 
 \parbf{\ref{ex:homotopy-type-contractible}.}
+Spell the definitions.
 
-\parbf{\ref{ex:homotopy-equivalence}.}
+\parbf{\ref{ex:homotopy-equivalence}.} Show and use that $h\sim h\circ f\circ g\sim g$.
 
 \parbf{\ref{ex:8-theta}.}
+Observe and use that both sets form retracts of the plane figure in the picture.
+
+\begin{Figure}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-1260}
+\end{Figure}
 
 \parbf{\ref{ex:mapping-cylinder}.}
+Read about mapping cylinder.
 
 \parbf{\ref{ex:S1}}; \ref{SHORT.ex:S1:R3>R^2}.
 Suppose there is a homeomorphism $h\:\RR^3\to\RR^2$.

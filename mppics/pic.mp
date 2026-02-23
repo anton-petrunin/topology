@@ -916,6 +916,22 @@ label.top (btex $J_0$ etex, .5[(0,0)*u,(1,1)*u]+(0,2));
 
 endfig;
 
+beginfig(1260)
+save u,p;
+path p[];
+u:=.3cm;
+
+p1=circle((0,5)*u,5*u);
+p2=circle((0,3)*u,1*u);
+p3=circle((0,7)*u,1*u);
+
+hatchfill reverse p2--p1-- reverse p3--cycle  withcolor (67, 1mm, -.5bp);
+draw p1;
+draw p2;
+draw p3;
+
+endfig;
+
 beginfig(1405)
 save u,p;
 path p[];
