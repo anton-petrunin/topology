@@ -172,43 +172,33 @@ where $\mathbb{Q}$ denotes the set of rational numbers.
 Show that $A\cup B$ is path-connected.
 \end{thm}
 
-\section{Sets in Euclidean space}
-
-
-\begin{thm}{Theorem}\label{thm:open-connected=path-connected}
-An open set in a Euclidean space $\RR^n$ is path-connected if and only if it is connected.
-\end{thm}
-
-\parit{Proof.}
-The only-if part follows from \ref{thm:conncted/path-connected};
-it remains to prove the if part.
-
-Let $\Omega\subset\RR^n$ be an open subset.
-Choose a point $p\in \Omega$; denote by $P\subset \Omega$ the path-connected component of $p$.
-
-Let us show that for any point $q\in \Omega$ there is $\eps>0$ such that either $\Ball(q,\eps)\subset P$, or $\Ball(q,\eps)\cap P=\emptyset$.
-
-Indeed, since $\Omega$ is open, we can choose $\eps>0$ such that the ball $\Ball(q,\eps)$ lies in $\Omega$.
-Note that $\Ball(q,\eps)$ is convex, in particular path-connected.
-Therefore $\Ball(q,\eps)\cap P\ne\emptyset$ if and only if $\Ball(q,\eps)\subset P$.
-
-It follows that $P$ and its complement $\Omega\setminus P$ are open.
-Since $\Omega$ is connected, we get that $\Omega\setminus P=\emptyset$ --- hence the result.
-\qeds
-
-A topological space $\c{X}$ is called \index{locally path-connected}\emph{locally path-connected} if for any point $p\in\c{X}$ and any open set $V\ni p$ there is a path-connected open set $W$ such that $V\supset W\ni p$.
-For instance, Euclidean space is locally path-connected;
-it follows since any open ball in a Euclidean space is path-connected.
-Therefore the following exercise generalizes the theorem above.
-
-\begin{thm}{Exercise}\label{ex:locally-path-connected}
-Show that a connected open set in a locally path-connected space is path-connected.
-\end{thm}
-
 \begin{thm}{Advanced exercise}\label{ex:pseudocircle}
 Construct a bounded open set $V$ in the plane such that its boundary is connected, but \index{totally path-disconnected space}\emph{totally path-disconnected};
 that is, each path-connected component in $\partial V$ consists of a single point.
 \end{thm}
+
+\section{Locally path-connected spaces}
+
+A topological space $\c{X}$ is called \index{locally path-connected}\emph{locally path-connected} if for any point $p\in\c{X}$ and any open set $V\ni p$ there is a path-connected open set $W$ such that $V\supset W\ni p$.
+For instance, Euclidean space is locally path-connected;
+it follows since any open ball in a Euclidean space is path-connected.
+
+\begin{thm}{Theorem}\label{thm:open-connected=path-connected}
+A connected open set in a locally path-connected space is path-connected.
+\end{thm}
+
+\parit{Proof.}
+Let $V$ be an open subset in a path-connected space.
+Choose a point $p\in V$;
+denote by $P\subset V$ the path-connected component of $p$ in $V$.
+
+Choose $q\in V$ and let $W_q$ be the neighborhood provided by the definition of locally path-connected space;
+that is, $V\supset W_q\ni q$.
+Since $W_q$ is path connected, we have $W_q\subset P$ or $W_q\cap P=\emptyset$.
+
+It follows that $P$ and its complement $V\setminus P$ are open.
+Since $V$ is connected, we get that $V\setminus P=\emptyset$ --- hence the result.
+\qeds
 
 
 

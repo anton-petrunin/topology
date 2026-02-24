@@ -2,9 +2,9 @@
 
 
 In this chapter we will caclulate fundamental group of a circle;
-it will give a first example of a space has a nontrivial fundamental group.
+it will give a first example of a space with a nontrivial fundamental group.
 In the proof one has to show nonexistence of homotopies between certain loops;
-this is a new and hard part.
+this is part requres new ideas.
 
 \section{The statement}
 
@@ -12,10 +12,9 @@ this is a new and hard part.
 The fundamental group of the circle $\mathbb{S}^1$ is isomorphic to the additive group of integers $\mathbb{Z}$.
 \end{thm}
 
+The proof is done in several steps.
 Given a loop $f\:[0,1]\to \mathbb{S}^1$, denote by $\deg f$ the number of times it goes aroond $\mathbb{S}^1$ counteclockwise (each clockwise turn is counded with minus).
-In the following sections we will define $\deg$ formally, prove that it depends only on the homotopy class of $f$ (in other words, if $f_0\sim f_1$, then $\deg f_0=\deg f_1$) and then show that $\deg\:\pi_1(\SS^1)\to\ZZ$ is an isomorphism.
-
-Let us show how to apply this theorem before diving into the proof.
+In the following sections we will define degree formally, prove that it depends only on the homotopy class of the loop and then show that $\deg\:\pi_1(\SS^1)\to\ZZ$ is an isomorphism.
 
 \begin{thm}{Exercise}\label{ex:S1}
 Apply the theorem to show the following.
@@ -46,11 +45,19 @@ Part \ref{SHORT.ex:D-->S} in the last exercise has the following application.
 Any continuous map $f\:\DD^2\to\DD^2$ has a fixed point.
 \end{thm}
 
+\begin{wrapfigure}[6]{r}{20 mm}
+\vskip-6mm
+\centering
+\includegraphics{mppics/pic-1515}
+\end{wrapfigure}
+
 \parit{Proof.}
 Arguing by contradiction, assume $x\neq f(x)$ for all $x\in\DD^2$.
-Consider given $x\in\DD^2$ consider the half-line $H$ from $f(x)$ to $x$.
-Note that $H$ intesects $\SS^1=\partial \DD^2$ at a sinle point; denote it by $h(x)$.
-Note that $h$ is continuous and $h(x)=x$ if $x\in\partial \DD^2$;
+Given $x\in\DD^2$ consider the half-line $H$ from $f(x)$ to $x$.%
+\footnote{Remember that $H$ goes backwards, from $f(x)$ to $x$, not the other way around.}
+
+The half-line $H$ intesects $\SS^1=\partial \DD^2$ at a sinle point; denote it by $h(x)$.
+Note that the map $h\:\DD^2\to\SS^1$ is continuous and $h(x)=x$ if $x\in\SS^1$;
 that is, $h$ defines a retruction $\DD^2\to \SS^1$.
 The later contradicts \ref{ex:D-->S}.
 \qeds
@@ -80,9 +87,16 @@ Show that $K_1 \times[0,1]\simeq K_2 \times[0,1]$.
 
 \section{Liftings}
 
+\begin{wrapfigure}{r}{16 mm}
+\vskip-12mm
+\centering
+\includegraphics{mppics/pic-1525}
+\end{wrapfigure}
+
 Let us identify $\RR^2$ with the complex plane $\CC$;
 namely, we will encode a point $(x,y)\in\RR^2$ by the complex number $z=x+i\cdot y$; here $i$ denotes the imaginary unit.
-In particular, $\SS^1=\set{z=x+i\cdot y\in \CC}{|z|^2=x^2+y^2=1}$.
+In particular,
+\[\SS^1=\set{z=x+i\cdot y\in \CC}{|z|^2=x^2+y^2=1}.\]
 
 Consider the map $e\:\RR\to \mathbb{S}^1\subset \CC$ defined by
 \[e\:x\mapsto \exp(2\cdot\pi\cdot i\cdot x)=\cos(2\cdot\pi\cdot x)+i\cdot\sin(2\cdot\pi\cdot x)).\]
@@ -90,7 +104,8 @@ Consider the map $e\:\RR\to \mathbb{S}^1\subset \CC$ defined by
 
 Let $f\:\c{X}\to \SS^1$ be a continuous map.
 A continuous map $\tilde f\:\c{X}\to \RR$ will be called \index{lifting}\emph{lifting} of $f$ if $f=e\circ \tilde f$;
-in other words if the following diagram \index{commutative diagram}\emph{commutes};
+in other words if the following diagram \index{commutative diagram}\emph{commutes}\footnote{It means that following directed paths in the diagram with the same start and endpoints lead to the same result.
+Even in this simple case, using a commutative diagram is helpful, and later on you simply can't do without them.}.
 \begin{figure}[h!]
 \centering
 \begin{tikzcd}
@@ -98,13 +113,14 @@ in other words if the following diagram \index{commutative diagram}\emph{commute
 \c{X} \arrow[r, "f"']\arrow[ru, "\tilde f"] & \SS^1
 \end{tikzcd}
 \end{figure}
-the latter means that following directed paths in the diagram with the same start and endpoints lead to the same result.
-Even in this simple case, using a commutative diagram is helpful, and later on you simply can't do without them.
+
 
 \begin{thm}{Proposition}\label{prop:lifting}
 Let $f_0\:[0,1]\to\SS^1$ be a path and let $x_0\in \RR$ be a point such that $e(x_0)=f_0(0)$.
-Then there is unidue lifting $\tilde f_0$ of $f$ such that $\tilde f_0(0)=x_0$.
-Moreover, if $f_0\sim f_1$ then $\tilde f_0\sim \tilde f_1$.
+Then there is unique lifting $\tilde f_0$ of $f$ such that $\tilde f_0(0)=x_0$.
+
+Moreover, given a homotopy of paths $f_\tau$ from $f_0$ to $f_1$ there is unique lifting $\tilde f_\tau$ such that $\tilde f_0(0)=x_0$.
+In particular, if $f_0\sim f_1$ then $\tilde f_0\sim \tilde f_1$.
 \end{thm}
 
 \begin{thm}{Lemma}\label{lem:covering}
@@ -130,12 +146,13 @@ Since $e_n=e|_{V_n}$ is a homeomorpism, we have $\tilde f=e_n^{-1}\circ f$, whic
 
 
 \parit{Proof of \ref{prop:lifting}.}
-Consider two open subsets $W_1=\SS^1\setminus (1,0)$ and $W_2=\SS^1\setminus (-1,0)$.
+Consider two open subsets $W_1=\SS^1\setminus \{1\}$ and $W_2=\SS^1\setminus \{-1\}$.
 Note that $\SS^1=W_1\cup W_2$.
-Therefore, $[0,1]=f^{-1}(W_1)\z\cup f^{-1}(W_2)$.
+Therefore,
+\[[0,1]=f^{-1}(W_1)\z\cup f^{-1}(W_2).\]
 
 Let $\eps>0$ be the Lebesgue number of this covering; see \ref{prop:lebesgue-number}.
-Consider a particition $0=t_0<t_1<\dots<t_n=1$ of $[0,1]$ into equal intervals shorter than $\eps$.
+Consider a partition $0=t_0<t_1<\dots<t_n=1$ of $[0,1]$ into equal intervals shorter than $\eps$.
 Note that $f([t_i,t_{i+1}])\subset W_1$ or  $f([t_i,t_{i+1}])\subset W_2$ for each $i$.
 
 By \ref{lem:covering}, there is unique lifting of $f|_{[t_0,t_1]}$ such that $\tilde f(0)=x_0$; let $x_1=\tilde f(t_1)$.
@@ -144,7 +161,7 @@ Repeating this argument finitely many times produces a lift of $f$, which is uni
 The continuity of $f$ follows from \ref{ex:u-continuous:closed}.
 
 \begin{wrapfigure}{r}{30 mm}
-\vskip-6mm
+\vskip-0mm
 \centering
 \includegraphics{mppics/pic-1410}
 \end{wrapfigure}
@@ -160,35 +177,45 @@ The part of $\square$ on which $\tilde F$ was already defined is one or two side
 In both cases this set is connected and by \ref{lem:covering} the extension agrees with the already constructed part.
 Again, the continuity of $\tilde F$ follows from \ref{ex:u-continuous:closed}.\qeds
 
-\subsection*{Degree}
+\section{Degree}
 
 A loop in $\SS^1$ based at $1$ is a continuous map $f\:[0,1]\to\SS^1$
 such that $f(0)=f(1)=1$.
-Let $\tilde f\:[0,1]\to\RR$ be the unique lift with $\tilde f(0)=0$.
+Let $\tilde f\:[0,1]\to\RR$ be the unique lift with $\tilde f(0)=0$ provided by \ref{prop:lifting}.
 Since $e^{-1}(1)=\ZZ$, we have $\tilde f(1)\in\ZZ$.
 The integer $\tilde f(1)$ will be called \index{degree of loop}\emph{degree} of the loop $f$, it will be denoted by $\deg f$.
 
 
 \begin{thm}{Theorem}\label{thm:pi1S1Z}
-The map $[f]\mapsto \deg f$ defines an isomorphism $\pi_1(\SS^1,1)\to\ZZ$.
+The map $[f]\mapsto \deg f$ defines an isomorphism
+\[\pi_1(\SS^1,1)\to\ZZ.\]
 \end{thm}
 
 \parit{Proof.}
-First let us show that $\deg f$ depends only on the
-homotopy class of $f$.
+Suppose $f_0$ and $f_1$ are two homotopic loops in $\SS^1$ with base point $1$.
+Let $f_\tau$ be the corresponding homotopy and $\tilde f_\tau$ be its lifting to $\RR$.
+By \ref{prop:lifting}, it has a unique lifting $\tilde f_\tau\:[0,1]\to \RR$ such that $f_0(0)=0$.
+
+Observe that the function $\tau\mapsto =f_\tau(1)=\deg f_\tau$ is continuous integer valued function defined on $[0,1]$.
+Hence this function is constant; in particular $\deg f_0=\deg f_1$
+
+It follows that $\deg f$ depends only on the homotopy class of $f$.
 In other words the map $[f]\mapsto \deg f$ is well defined.
 
-Suppose $f_0$ and $f_1$ are two homotopic loops in $\SS^1$.
-...
+Choose two paths $\tilde f_0$ and $\tilde f_1$ based at $1$ in $\SS^1$.
+Let $\tilde f_0$ and $\tilde f_1$ be their liftings such that $\tilde f_0(0)=\tilde f_1(0)=0$.
+Observe that the path $t\mapsto \deg f_0+\tilde f_1(t)$ is a lifting of $f_1$ that starts at $\deg f_0=\tilde f_0(1)$.
+Concatenating $\tilde f_0$ with this path we get a lift of $f_0*f_1$ with the endpoint at $\deg f_0+\deg f_1$.
+Hence $\deg (f_0*f_1)=\deg f_0+\deg f_1$ for any two loops $f_0$ and $f_1$, and we proved that degree defines a homomorphism $\deg\:\pi_1(\SS^1,1)\cong\ZZ$.
 
-It remains to show that $\deg f_0*f_1=\deg f_0+\deg f_1$ for any two loops $f_0$ and $f_1$.
-Let $\tilde f_0$ and $\tilde f_1$ be liftings of $f_0$ and $f_1$ such that $\tilde f_0(0)=\tilde f_1(0)=0$.
-Recall that $\deg f_0=\tilde f_0(1)$ and $\deg f_1=\tilde f_1(1)$.
-Observe that $t\mapsto \deg f_0+\tilde f_1$ is a lifting of $f_1$ s
+Surjectivity of $\deg\:\pi_1(\SS^1,1)\cong\ZZ$ follows follows since given the path $f_n\:t\mapsto e(n\cdot t)$ has degree $n$.
 
-We proved that degree defines a homomorphism $\pi_1(\SS^1,1)\cong\ZZ$;
-it remains to show that this homomorphism is injective and surjective.
-Surjectivity follows ???.
+Let $f_0$ and $f_1$ be two loops at $\SS^1$ with base point $1$, and let $\tilde f_0$ and $\tilde f_1$ be their liftings such that $\tilde f_0(0)=\tilde f_1(0)=0$.
+If $\deg f_0=\deg f_1$, then $\tilde f_0(1)=\tilde f_1(1)$.
+Therefore there is linear homotopy of paths $\tilde f_\tau$ from $\tilde f_0$ to $\tilde f_1$.
+Note that $f_\tau=e\circ \tilde f_\tau$ is a homotopy from $f_0$ to $f_1$.
+Therefore, if $\deg f_0=\deg f_1$, then $f_0\sim f_1$;
+in other words $\deg$ is an injective homomorphism.
 \qeds
 
 \section{Fundamental theorem of algebra}
@@ -198,28 +225,19 @@ Every non-constant complex polynomial has a complex root.
 \end{thm}
 
 \parit{Proof.}
-If a polynomial $p$ has no roots, then for each $r\ge 0$ the loop
-$t\mapsto p(r\exp(2\pi i t))/|p(r\exp(2\pi i t))|$ lies in $\SS^1$.
-For large $r$ this loop is homotopic to $t\mapsto \exp(2\pi i k t)$, where $k$ is
-the degree of $p$, while for $r=0$ it is constant; this forces a change of degree,
-which is impossible under a homotopy rel endpoints.
+Assume that a polynomial $p$ has no roots.
 
-\section{Borsuk--Ulam theorem}
+Recall that $e(t)=\exp(2\cdot\pi\cdot i\cdot t)$.
+Given $r\ge 0$, consider the loop
+\[f_r\:t\mapsto p(r\cdot e(t))/|p(r\cdot e(t))|\]
+in $\SS^1$.
+Observe that $f_0$ is a constant loop.
+Note that $f_r$ converges to $e(k\cdot t)$ as $r\to\infty$, here $k$ is
+the degree of $p$.
+In particular, if $r$ is large then $f_r(t)-e(k\cdot t)\ne 0$ for any $t$;
+arguing as in \ref{ex:homot-sphere}, we get that $f_r$ is homotopic to path $t\mapsto e(k\cdot t)$ for large $r$.
+This forces a change of degree, which is impossible under a homotopy of paths.
+\qeds
 
-\begin{thm}{Theorem}\label{thm:Borsuk-Ulam}
-For every continuous map $f\: \SS^2\to \RR^2$ there exists a pair of antipodal
-points $x$ and $-x$ in $\SS^2$ that map to a single point; that is  $f(x)=f(-x)$.
-\end{thm}
 
-\begin{thm}{Exercse}\label{ex:ABC}
-Let $A$, $B$, and $C$ be closed subsets $\SS^2$ such that $A\cup B\cup C=\SS^2$
-Apply the Borsuk--Ulam theorem to the map $f\: \SS^2\to \RR^2$ defined by
-\[f\:x\mapsto (\dist_Ax,\dist_Bx)\]
-to conclude that one of the sets $A$, $B$, or $C$
-contains a pair of antipodal
-points in $\SS^2$.
-
-Give an example showing that analogous statement does not hold for four closed set $A$, $B$, $C$, and $D$.
-
-\end{thm}
 

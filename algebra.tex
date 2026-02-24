@@ -4,8 +4,8 @@ In the previous chapter we gave a construction of the fundamental group for a gi
 This construction gives a bridge between topology and abstract algebra.
 
 
-In this chapter we show that crossing this bridge respects maps between topological spaces;
-in a more fancy language, the passage from a space to its fundamental group is determined by a \index{functor}\emph{functor}.
+In this chapter we show that this bridge respects maps between topological spaces;
+in a more fancy language, it means the passage from a space to its fundamental group is determined by a \index{functor}\emph{functor}.
 Bit latter, we will calculate fundamental group of the circle --- this will be the first example of a space with nontrivial fundamntal group.
 Once this group is calculated, the connections of this chapter will lead to several applications.
 
@@ -81,31 +81,31 @@ Show that is $A$ is weak deformation retract then $r_*$ and $\iota_*$ are isomor
 
 \section{Base point}
 
-\begin{thm}{Theorem}
-Let $p$ and $q$ be two points in a topological space $\c{X}$.
-Suppose there is a path $h$ from $p$ to $q$, then 
-the fundamental groups $\pi_1(\c{X},p)$ and $\pi_1(\c{X},q)$ are isomorphic.
-\end{thm}
 
 Recall that product of paths is not associative;
-that is, we might have that $(f*g)*h\ne f*(g*h)$ for some paths $f,g,h$ such that both sides of the equation are defined.
-In other words, we have to fully parenthesize the products of paths.
-If the product is not parenthesized we assume that the product is taken in the usual order;
+in other words, we have to fully parenthesize the products of paths since $(f*g)*h\ne f*(g*h)$.
+But, if the product is not parenthesized, then it means that any parenthesization will do the job.
+Forally speaing,  we can assume that the product is taken in the usual order;
 that is,
 \[f*g*h*k\df((f*g)*h)*k.\]
 
-\parit{Proof.}
-Suppose $f$ is a loop based at $p$.
-Note that $\bar h*f*h$ is a loop at $q$.
-Moreover, the map $f\mapsto \bar h*f*h$ induces a homomorphism $u_h\:\pi_1(M,p)\to\pi_1(M,q)$.
+\begin{thm}{Theorem}
+Let $h$ be a path between points $p$ and $q$ in a topological space $\c{X}$.
+Then $f\mapsto \bar h * f* h$ defines a isomorphism of fundamental groups $u_h\:\pi_1(\c{X},p)\to \pi_1(\c{X},q)$.
+\end{thm}
 
-Indeed, suppose $f_\tau$ is a homotopy of loops at $p$.
+
+
+\parit{Proof.}
+Suppose $f_\tau$ is a homotopy of loops at $p$.
 Then $\bar h*f_\tau*h$ is a homotopy of loops at $q$.
 It follows that the map 
-\[u_h\:[f]\mapsto [\bar h*f*h]\]
-is defined; that is, the right-hand side does not depend on the choice of loop $f$ in the homotopy class $[f]$. 
+\[u_h\:[f]\mapsto [\bar h*f*h]\eqlbl{eq:[f]->[hfh]}\]
+is defined.
+Indeed if $f_0\sim f_1$, then $\bar h*f_0*h\sim \bar h*f_1*h$,
+which means that $[\bar h*f_0*h]=[\bar h*f_1*h]$; so the right-hand side in \ref{eq:[f]->[hfh]} does not depend on the choice of loop $f$ in the homotopy class $[f]$.
 
-Further, if $f$ and $g$ are loops based at $p$, then \ref{clm:neutral}, \ref{clm:f-bar-f}, and  \ref{clm:assoc} imply that
+Further, if $f$ and $g$ are loops based at $p$, then \ref{clm:homot-claims} implies that
 \begin{align*}
 (\bar h*f*h)*(\bar h*g*h)&\sim \bar h*f*(h*\bar h)*g*h\sim
 \\
@@ -113,9 +113,10 @@ Further, if $f$ and $g$ are loops based at $p$, then \ref{clm:neutral}, \ref{clm
 \\
 &\sim \bar h*(f*g)*h.
 \end{align*}
-Whence the map $u_h\:\pi_1(M,p)\to \pi_1(M,q)$ is a homomorphism;
-that is, 
-\[u_h([f]\cdot [g])=u_h[f]\cdot u_h[g]\quad\text{for any}\quad [f],[g]\in \pi_1(\c{X},p).\]
+In other words,
+\[u_h([f]\cdot [g])=u_h[f]\cdot u_h[g]\quad\text{for any}\quad [f],[g]\in \pi_1(\c{X},p);\]
+that is, $u_h\:\pi_1(M,p)\to \pi_1(M,q)$ is a homomorphism.
+
 
 The same argument shows that $u_{\bar h}\: \pi_1(M,q)\to \pi_1(M,p)$ defined by 
 \[u_{\bar h}\:[k]\mapsto [h*(k*\bar h)]\]
@@ -131,7 +132,7 @@ h*(\bar h*f*h)*\bar h&\sim (h*\bar h)*f*(h*\bar h)\sim
 \end{align*}
 for any loop $f$ based at $p$.
 Therefore, $u_{\bar h}$ is a left inverse of $u_h$.
-The same way we show that $u_{h}$ is a left inverse of $u_{\bar h}$.
+(The same way we show that $u_{h}$ is a left inverse of $u_{\bar h}$.)
 It follows that $u_h$ is an isomorphism.
 \qeds
 
@@ -142,8 +143,7 @@ Therefore, for a path-connected space $\c{X}$ we do not need to specify the base
 
 \begin{subthm}{ex:uphi:uphi}
  Let $\phi_\tau\:\c{X}\to\c{Y}$ be a homotopy.
-Suppose that $q_0=\phi_0(p)$ and $q_1=\phi_1(p)$;
-consider the path from $q_0$ to $q_1$ defined by $h(\tau)=\phi_\tau(p)$.
+Consider the path defined by $h(\tau)=\phi_\tau(p)$.
 Show that
 \[u_h\circ \phi_{0*}=\phi_{1*}.\]
 \end{subthm}
@@ -185,8 +185,8 @@ Conclude that $\pi_1(\c{X}\times\c{Y})$ is isomorphic to $\pi_1(\c{X})\times\pi_
 \end{thm}
 
 \begin{thm}{Advanced exercise}
-Let $\c{X}$ be a topological space.
+Let $\c{X}$ be a path-connected topological space.
 Consider the quotient space $\c{Y}=(\c{X}\times \c{X})/\sim$ where $\sim$ is the minimal equivalence relation such that $(x,y)\sim (y,x)$.
-Show that the fundamental group $\pi_1(\c{Y},(x,x))$ is commutative for any $x\in \c{X}$.
+Show that the fundamental group of $\c{Y}$ is commutative.
 \end{thm}
 

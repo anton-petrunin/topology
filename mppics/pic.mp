@@ -978,12 +978,65 @@ endfor;
 label (btex $1$ etex, .5[(0,0)*u,(1,1)*u]);
 label (btex $2$ etex, .5[(2,0)*u,(1,1)*u]);
 label (btex $3$ etex, .5[(2,0)*u,(3,1)*u]);
-label (btex $\cdots$ etex, .5[(4,0)*u,(3,1)*u]+(1,0));
-label (btex $n$ etex, .5[(n-1,0)*u,(n,1)*u]);
-label (btex {\small $2{\cdot}n$} etex, .5[(n-1,2)*u,(n,1)*u]);
-label (btex {\small $3{\cdot}n$} etex, .5[(n-1,2)*u,(n,3)*u]);
-label (btex $\vdots$ etex, .5[(n-1,4)*u,(n,3)*u]+(0,1));
-label (btex $n^2$ etex, .5[(n-1,n-1)*u,(n,n)*u]);
+label (btex $4$ etex, .5[(4,0)*u,(3,1)*u]+(1,0));
+label (btex $5$ etex, .5[(n-1,0)*u,(n,1)*u]);
+label (btex $6$ etex, .5[(0,2)*u,(1,1)*u]);
+label (btex $7$ etex, .5[(2,2)*u,(1,1)*u]);
+label (btex {\footnotesize $\dots$} etex, .5[(2,2)*u,(3,1)*u]);
+
+endfig;
+
+beginfig(1515)
+save u,p;
+path p[];
+u:=1cm;
+
+z.r=(0,1)*u rotated 130;
+z.f=(.2,.4)*u;
+z.x=.6[z.r,z.f];
+
+p1=circle(origin, 1*u);
+
+draw p1;
+draw ddline(z.f,z.r)(0,.2);
+
+dOt z.r,z.f,z.x;
+
+endfig;
+
+beginfig(1525)
+save u,p,n,m,t;
+path p[];
+u:=1cm;
+m:=2;
+n:=9;
+t:=2;
+
+
+z.a=(0,0)*u;
+z.b=(1,0)*u;
+z.s=(0,.4)*u;
+
+p1=(z.a{up}..tension t..z.b{down}..tension t..cycle) shifted ((0,-.2)*u);
+
+p2=
+for i=m step 1 until n:
+z.a+i*z.s {up}..tension t..z.b+(i+.5)*z.s {down}..tension t..
+endfor
+z.a+(n+1)*z.s {up};
+
+draw p1;
+
+draw subpath (.3,1) of p2 dashed evenly;
+for i=1 step 1 until 2*(n-m)-1:
+draw subpath (i+.1,i+.9) of p2 withpen pencircle scaled 4 withcolor 1;
+draw subpath (i,i+1) of p2;
+endfor
+draw subpath (2*(n-m),2*(n-m)+.7) of p2  dashed evenly;
+
+label (btex $\downarrow\! e$ etex, (.5,.7)*u+(3,-5));
+label.rt (btex $\RR$ etex, .5[point 7 of p2,point 9 of p2]);
+label.rt (btex $\SS^1$ etex, point 1 of p1);
 endfig;
 
 end
