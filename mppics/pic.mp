@@ -989,7 +989,7 @@ endfig;
 beginfig(1515)
 save u,p;
 path p[];
-u:=1cm;
+u:=1.4cm;
 
 z.r=(0,1)*u rotated 130;
 z.f=(.2,.4)*u;
@@ -998,9 +998,14 @@ z.x=.6[z.r,z.f];
 p1=circle(origin, 1*u);
 
 draw p1;
-draw ddline(z.f,z.r)(0,.2);
+draw ddline(z.f,z.r)(0,.4);
 
 dOt z.r,z.f,z.x;
+
+label.lrt (btex $x$ etex, z.x);
+label.rt (btex $f(x)$ etex, z.f);
+label.rt (btex $h(x)$ etex, z.r+(1,0));
+label.bot (btex $H$ etex, 1.4[z.f,z.r]);
 
 endfig;
 
