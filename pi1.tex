@@ -1,6 +1,5 @@
 \chapter{Fundamental group}
 
-
 Let $\c{X}$ be a topological space with a chosen basepoint $x_0 \in X$.
 Fix a point $s_0 \in \SS^1$, and  consider all continuous maps $\SS^1\to \c{X}$ that send $u_0$ to $x_0$.
 Denote by $\pi_1(X,x_0)$ the set of homotopy classes of such maps.
@@ -24,37 +23,37 @@ If we need to talk about general homotopy of paths (alowing moving its ends) we 
 \end{wrapfigure}
 
 A homotopy of paths is defined by a continuous map $H\:[0,1]\times [0,1]\to \c{X}$ such that $H(0,\tau)=p$ and $H(1,\tau)=q$ for some points $p,q$ in the targen space $\c{X}$.
-But as usual, it is convinient to think that homotopy is a one-parameter family of paths $f_\tau\:[0,1]\to \c{X}$ from $p$ to $q$.
-Two paths $g,h\:[0,1]\to \c{X}$ are called {}\emph{homotopic} (briefly $g\sim h$)
-if there is a homotopy $f_\tau\:[0,1]\to \c{X}$ such that $g=f_0$ and $h=f_1$.
+But as usual, it is convinient to think that homotopy is a one-parameter family of paths $a_\tau\:[0,1]\to \c{X}$ from $p$ to $q$.
+Two paths $b,c\:[0,1]\to \c{X}$ are called {}\emph{homotopic} (briefly $b\sim c$)
+if there is a homotopy $a_\tau\:[0,1]\to \c{X}$ such that $b=a_0$ and $c=a_1$.
 Recall that $\sim$ is an equivalence relation.
-Therefore, we can talk about the equivalence class of a path $f$ that will be called its \index{homotopy class of paths}\emph{homotopy class};
-it will be denoted by~$[f]$.
+Therefore, we can talk about the equivalence class of a path $a$ that will be called its \index{homotopy class of paths}\emph{homotopy class};
+it will be denoted by~$[a]$.
 
 
 \section{Technical claims}\label{sec:homotopy-claim}
 
 \begin{thm}{Claim}\label{clm:product}
-Suppose $f_0$ is a path from $p$ to $q$,
+Suppose $a_0$ is a path from $p$ to $q$,
 and
-$g_0$ is a path from $q$ to $r$.
-Suppose $f_0\sim f_1$ and $g_0\sim g_1$,
+$b_0$ is a path from $q$ to $r$.
+Suppose $a_0\sim a_1$ and $b_0\sim b_1$,
 then
-\[f_0*g_0\sim f_1*g_1.\]
+\[a_0*b_0\sim a_1*b_1.\]
 \end{thm}
 
 %???PIC
 
 \parit{Proof.}
-Choose homotopies $f_\tau$ from $f_0$ to $f_1$, and $g_\tau$ from $g_0$ to $g_1$.
+Choose homotopies $a_\tau$ from $a_0$ to $a_1$, and $b_\tau$ from $b_0$ to $b_1$.
 Observe that \ref{ex:u-continuous:closed} implies that
-$f_\tau*g_\tau$ is a homotopy from $f_0*g_0$ to $f_1*g_1$.
+$a_\tau*b_\tau$ is a homotopy from $a_0*b_0$ to $a_1*b_1$.
 \qeds
 
 \begin{thm}{Observation}\label{obs:homot-paths}
 Let $s_0,s_1\:[0,1]\to[0,1]$ be two paths such that $s_0(0)=s_1(0)$ and $s_0(1)=s_1(1)$.
 Then $s_0\sim s_1$.
-Moreover, for any path $f$ we have $f\circ s_0\sim f\circ s_1$.
+Moreover, for any path $a$ we have $a\circ s_0\sim a\circ s_1$.
 \end{thm}
 
 \parit{Proof.}
@@ -64,40 +63,41 @@ provedes a homotopy from $s_0$ to $s_1$.
 The conditions $s_0(0)=s_1(0)$ and $s_0(1)=s_1(1)$ imply that $s_\tau(0)$ and $s_\tau(1)$ doe not depend on $\tau$;
 that is, $s_\tau$ is a homoptoy relative to the endpoints.
 
-To prove the last statement, observe that $f\circ s_\tau$ is a homotopy of paths from $f\circ s_0$ to  $f\circ s_1$.
+To prove the last statement, observe that $a\circ s_\tau$ is a homotopy of paths from $a\circ s_0$ to  $a\circ s_1$.
 \qeds
 
 
 \begin{thm}{Claims}\label{clm:homot-claims}
 
 \begin{subthm}{clm:neutral}
-Suppose $f$ is a path from $p$ to $q$, then
-\[\eps_p*f\sim f*\eps_q\sim  f.\]
+Suppose $a$ is a path from $p$ to $q$, then
+\[e_p*a\sim a*e_q\sim  a.\]
 \end{subthm}
 
 \begin{subthm}{clm:f-bar-f}
-Suppose $f$ is a path from $p$ to $q$, then
-\[f*\bar f\sim \eps_p
+Suppose $a$ is a path from $p$ to $q$, then
+\[a*\bar a\sim e_p
 \quad\text{and}\quad
-\bar f*f\sim \eps_q.\]
+\bar a*a\sim e_q.\]
 \end{subthm}
 
 \begin{subthm}{clm:assoc}
-Suppose $f$,
-$g$,
+Suppose $a$,
+$a$,
 and
-$h$ are paths such that $f(1)=g(0)$ and $g(1)=h(0)$.
+$c$ are paths such that $a(1)=b(0)$ and $b(1)=c(0)$.
 Then
-\[(f*g)*h\sim f*(g*h).\]
+\[(a*b)*c\sim a*(b*c).\]
 \end{subthm}
 
 \end{thm}
 
 \parit{Proof.}
 Each claim is proved by applying \ref{obs:homot-paths};
-each time we have to choose a path $f$ and rewrite the sides of equation as $f\circ s_0$ and  $f\circ s_1$ for appropriate paths $s_0,s_1\:[0,1]\to[0,1]$ that share the ends.
+each time we have to choose a path $f$ and rewrite the sides of equation as $a\circ s_0$ and  $a\circ s_1$ for appropriate paths $s_0,s_1\:[0,1]\to[0,1]$ that share the ends.
 
-\parit{\ref{SHORT.clm:neutral}.} Note that $\eps_p*f=f\circ s_0$ and $f*\eps_q=f\circ s_1$, where
+\parit{\ref{SHORT.clm:neutral}.}
+Note that $e_p*a=a\circ s_0$ and $a*e_q=a\circ s_1$, where
 \begin{align*}
 s_0(t)&\df
 \begin{cases}
@@ -114,14 +114,14 @@ s_1(t)&\df
 1 &\text{if\ } t\ge \tfrac12.
 \end{cases}
 \end{align*}
-Note that $f\z=f\circ s_2$ where $s_2(t)\z\df t$;
+Note that $a\z=a\circ s_2$ where $s_2(t)\z\df t$;
 furthermore,
 $s_0(0)\z=s_1(0)\z=s_2(0)=0$ and
 $s_0(1)\z=s_1(1)=s_2(1)=1$.
 It remains to apply \ref{obs:homot-paths}.
 
 \parit{\ref{SHORT.clm:f-bar-f}.}
-Note that $f*\bar f=f\circ s_0$ and $\eps_p=f\circ s_1$, where
+Note that $a*\bar a=a\circ s_0$ and $e_p=a\circ s_1$, where
 \begin{align*}
 s_0(t)&\df
 \begin{cases}
@@ -133,31 +133,31 @@ s_0(t)&\df
 &
 s_1(t)&\df0
 \end{align*}
-Since $s_0(0)\z=s_1(0)\z=s_0(1)\z=s_1(1)\z=0$, \ref{obs:homot-paths} implies $f*\bar f\sim \eps_p$.
+Since $s_0(0)\z=s_1(0)\z=s_0(1)\z=s_1(1)\z=0$, \ref{obs:homot-paths} implies $f*\bar f\sim e_p$.
 
-Applying the same argument to $h=\bar f$, we get $\bar f*f\sim \eps_q$.
+Applying the same argument to $b=\bar a$, we get $\bar a*a\sim e_q$.
 
 \parit{\ref{SHORT.clm:assoc}.}
 Spelling the definition of product of paths, we get
 \begin{align*}
-(f*g)*h(t)&\df
+(a*b)*c(t)&\df
 \begin{cases}
-f(4\cdot t)&\text{if\ } 0\le t\le \tfrac14,
+a(4\cdot t)&\text{if\ } 0\le t\le \tfrac14,
 \\
-g(4\cdot t-1) &\text{if\ } \tfrac14\le t\le \tfrac12,
+b(4\cdot t-1) &\text{if\ } \tfrac14\le t\le \tfrac12,
 \\
-h(2\cdot t-1) &\text{if\ } \tfrac12\le t\le 1,
+c(2\cdot t-1) &\text{if\ } \tfrac12\le t\le 1,
 \end{cases}
 \intertext{and}
-f*(g*h)(t)&\df
+a*(b*c)(t)&\df
 \begin{cases}
-f(2\cdot t)&\text{if\ } 0\le t\le \tfrac12,
+a(2\cdot t)&\text{if\ } 0\le t\le \tfrac12,
 \\
-g(4\cdot t-2) &\text{if\ } \tfrac12\le t\le \tfrac34,
+b(4\cdot t-2) &\text{if\ } \tfrac12\le t\le \tfrac34,
 \\
-h(4\cdot t-3) &\text{if\ } \tfrac34\le t\le 1.
+c(4\cdot t-3) &\text{if\ } \tfrac34\le t\le 1.
 \end{cases}
-\intertext{Therefore, $(f*g)*h(t)=(f*(g*h))\circ s_1(t)$, where}
+\intertext{Therefore, $(a*b)*c(t)=(a*(b*c))\circ s_1(t)$, where}
 s_1(t)&\df
 \begin{cases}
 2\cdot t&\text{if\ } 0\le t\le \tfrac14,
@@ -167,49 +167,49 @@ t+\tfrac14 &\text{if\ } \tfrac14\le t\le \tfrac12,
 \tfrac12\cdot \cdot t+\tfrac12 &\text{if\ } \tfrac12\le t\le 1.
 \end{cases}
 \end{align*}
-Observe that $(f*g)*h(t)=((f*g)*h)\circ s_0(t)$ where $s_0(t)\df t$, both functions $s_0,s_1\:[0,1]\to[0,1]$ are continuous and  $s_0(0)\z=s_1(0)=0$ and
+Observe that $(a*b)*c(t)=((a*b)*c)\circ s_0(t)$ where $s_0(t)\df t$, both functions $s_0,s_1\:[0,1]\to[0,1]$ are continuous and  $s_0(0)\z=s_1(0)=0$ and
 $s_0(1)\z=s_1(1)=1$.
 It remains to apply \ref{obs:homot-paths}.
 \qeds
 
 
 \begin{thm}{Exercise}\label{ex:neutral}
-Suppose that $f$ is a path in a Hausdorff space.
-Assume $f(0)=p$, $f(1)=q$, and $\eps_p*f= f$.
-Show that $f=\eps_p$; in particular, $p=q$.
+Suppose that $a$ is a path in a Hausdorff space.
+Assume $a(0)=p$, $a(1)=q$, and $e_p*a= a$.
+Show that $a=e_p$; in particular, $p=q$.
 \end{thm}
 
 \begin{thm}{Exercise}
-Let $f$ and $g$ be paths from $p$ to $q$.
-Show that $f\sim g$ if and only if $f*\bar g\sim \eps_p$.
+Let $a$ and $b$ be paths from $p$ to $q$.
+Show that $a\sim b$ if and only if $a*\bar b\sim e_p$.
 \end{thm}
 
 
 \begin{thm}{Advanced exercise}\label{ex:assoc}
-Let $f$, $g$, and $h$ be paths in a Hausdorff space.
-Suppose that $(f*g)*h= f*(g*h)$
+Let $a$, $b$, and $c$ be paths in a Hausdorff space.
+Suppose that $(a*b)*c= a*(b*c)$
 and both sides of the equation are defined.
-Show that $f=g=h=\eps_p$ for some point $p$.
+Show that $a=b=c=e_p$ for some point $p$.
 \end{thm}
 
 \section{Fundamental group}
 
 Let $\c{X}$ be a topological space.
-A path $f\:[0,1]\to\c{X}$ is called a \index{loop}\emph{loop} with base at $p\in\c{X}$ if $f(0)=f(1)=p$;
+A path $a\:[0,1]\to\c{X}$ is called a \index{loop}\emph{loop} with base at $p\in\c{X}$ if $a(0)=a(1)=p$;
 
 
-Note that if $f$ and $g$ are loops based at $p$, then their products $f*g$, $g*f$ are defined and they are loops based at $p$ as well; see Section~\ref{sec:homot-operations}.
-Moreover, the time-reversed paths $\bar f$, $\bar g$ are also loops based at $p$.
+Note that if $a$ and $b$ are loops based at $p$, then their products $a*b$, $b*a$ are defined and they are loops based at $p$ as well; see Section~\ref{sec:homot-operations}.
+Moreover, the time-reversed paths $\bar a$, $\bar b$ are also loops based at $p$.
 
 
-Recall that $[f]$ denotes the homotopy class of $f$; recall that homotopy of paths and loops does not move their ends.
+Recall that $[a]$ denotes the homotopy class of $a$; recall that homotopy of paths and loops does not move their ends.
 The multiplication of homotopy classes of loops based at $p$ is defined by
-\[[f]\cdot [g]=[f*g];\]
-that is, \textit{the product of homotopy classes of loops $f$ and $g$ is the homotopy class of the product $f*g$.}
+\[[a]\cdot [b]=[a*b];\]
+that is, \textit{the product of homotopy classes of loops $a$ and $b$ is the homotopy class of the product $a*b$.}
 
 Observe that the product is well defined;
-that is, if $[f_0]= [f_1]$ and $[g_0]=[g_1]$, then  $[f_0*g_0]=[f_1*g_1]$.
-In other words, if $f_0\sim f_1$ and $g_0\sim g_1$, then $f_0*g_0\sim f_1*g_1$.
+that is, if $[a_0]= [a_1]$ and $[b_0]=[b_1]$, then  $[a_0*b_0]=[a_1*b_1]$.
+In other words, if $a_0\sim a_1$ and $b_0\sim b_1$, then $a_0*b_0\sim a_1*b_1$.
 The latter is stated in Claim \ref{clm:product}.
 
 Denote by $\pi_1(\c{X},p)$ the set of all homotopy classes of loops at $p$.
@@ -221,16 +221,16 @@ $\pi_1(\c{X},p)$ with the introduced multiplication is a group.
 The group $\pi_1(\c{X},p)$ is called the \index{fundamental group}\emph{fundamental group} of $\c{X}$ with base point $p$.
 
 \parit{Proof.}
-Recall that $\eps_p$ denotes the constant loop at $p$ in $\c{X}$;
-that is, $\eps_p(t)=p$ for any $t$.
-We will show that the homotopy class $[\eps_p]$ is the neutral element of $\pi_1(\c{X},p)$
-and $[\bar f\,]=[f\,]^{-1}$, where $\bar f$ denoted the time-reversed $f$.
+Recall that $e_p$ denotes the constant loop at $p$ in $\c{X}$;
+that is, $e_p(t)=p$ for any $t$.
+We will show that the homotopy class $[e_p]$ is the neutral element of $\pi_1(\c{X},p)$
+and $[\bar a]=[a]^{-1}$, where $\bar a$ denoted the time-reversed $a$.
 
-Note that conditions in the definition of group follow from the next three conditions for any loops $f$, $g$, and $h$ based at $p$ in $\c{X}$.
+Note that conditions in the definition of group follow from the next three conditions for any loops $a$, $b$, and $c$ based at $p$ in $\c{X}$.
 \begin{enumerate}[(i)]
-\item $f*\eps_p\sim \eps_p*f\sim f$;
-\item $f*\bar f\sim\bar f* f\sim \eps_p$;
-\item $(f*g)*h\sim f*(g*h)$.
+\item $a*e_p\sim e_p*a\sim a$;
+\item $a*\bar a\sim\bar a* a\sim e_p$;
+\item $(a*b)*c\sim a*(b*c)$.
 \end{enumerate}
 These statements are provided by \ref{clm:neutral}, \ref{clm:f-bar-f}, and \ref{clm:assoc}.
 \qeds
@@ -245,8 +245,8 @@ Show that any loop in $\c{X}$ based at $p$  is homotopic to a product of loops i
 \begin{thm}{Exercise}
 Let $G$ be a \index{topological group}\emph{topological group}; that is a group equipped with topology such that the maps $G\times G\to G$ and $G\to G$ defined by $(g,h)\mapsto g\cdot h$ and $g\mapsto g^{-1}$ are continuous.
 Show that the fundamental group $\pi_1(G,1)$ is abelian;
-in other words, $f_1*f_2\sim f_2*f_1$
-for any two loops $f_1$ and $f_2$ with base point $1\in G$.
+in other words, $a_1*a_2\sim a_2*a_1$
+for any two loops $a_1$ and $a_2$ with base point $1\in G$.
 \end{thm}
 
 

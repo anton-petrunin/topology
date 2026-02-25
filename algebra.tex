@@ -14,41 +14,41 @@ Once this group is calculated, the connections of this chapter will lead to seve
 
 \begin{thm}{Claim}\label{clm:ind-hom}
 Let $\phi\:\c{X}\to \c{Y}$ be a continuous map and $\phi(p)=q$.
-Suppose that $f_0$ and $f_1$ are loops bases at $p$ in $\c{X}$.
+Suppose that $a_0$ and $a_1$ are loops bases at $p$ in $\c{X}$.
 Then
 
 \begin{subthm}{clm:ind-hom-prod}
-$\phi\circ(f_0*f_1)=(\phi\circ f_0)*(\phi\circ f_1)$,
+$\phi\circ(a_0*a_1)=(\phi\circ a_0)*(\phi\circ a_1)$,
 \end{subthm}
 
 \begin{subthm}{clm:ind-hom-homotopy}
-if $f_0\sim f_1$, then $\phi\circ f_0\sim\phi\circ f_1$.
+if $a_0\sim a_1$, then $\phi\circ a_0\sim\phi\circ a_1$.
 \end{subthm}
 
 \end{thm}
 
 \parit{Proof; \ref{SHORT.clm:ind-hom-prod}.}
-Applying the definition of the product of paths and composition of maps to $\phi\circ(f_0*f_1)$ and $(\phi\circ f_0)*(\phi\circ f_1)$ we get exactly the same expression:
+Applying the definition of the product of paths and composition of maps to $\phi\circ(a_0*a_1)$ and $(\phi\circ a_0)*(\phi\circ a_1)$ we get exactly the same expression:
 \begin{align*}
 \begin{cases}
-\phi\circ f_0(t)&\text{if}\ t\le \tfrac12,
+\phi\circ a_0(t)&\text{if}\ t\le \tfrac12,
 \\
-\phi\circ f_1(t)&\text{if}\ t\ge \tfrac12.
+\phi\circ a_1(t)&\text{if}\ t\ge \tfrac12.
 \end{cases}
 \end{align*}
 Hence \ref{SHORT.clm:ind-hom-prod} follows.
 
 \parit{\ref{SHORT.clm:ind-hom-homotopy}.}
-Observe that if $f_\tau$ is a homotopy from $f_0$ to $f_1$, then $\phi\circ f_\tau$ is a homotopy from $\phi\circ f_0$ to $\phi\circ f_1$.
+Observe that if $f_\tau$ is a homotopy from $a_0$ to $a_1$, then $\phi\circ a_\tau$ is a homotopy from $\phi\circ a_0$ to $\phi\circ a_1$.
 Hence \ref{SHORT.clm:ind-hom-homotopy} follows.
 \qeds
 
 \begin{thm}{Corollary}
 Let $\phi\:\c{X}\to \c{Y}$ be a continuous map between topological spaces;
 suppose $\phi(p)=q$.
-Given a loop $f$ with base at $p$ in $\c{X}$, the composition $\phi\circ f$ is a loop with base at $q$ in $\c{Y}$.
+Given a loop $a$ with base at $p$ in $\c{X}$, the composition $\phi\circ a$ is a loop with base at $q$ in $\c{Y}$.
 Moreover, 
-$\phi_*\:[f]\mapsto [\phi\circ f]$
+$\phi_*\:[a]\mapsto [\phi\circ a]$
 defines a homomorphism $\phi_*\:\pi_1(\c{X},p)\to \pi_1(\c{Y},q)$.
 \end{thm}
 
@@ -62,13 +62,13 @@ Show that $\psi_*\circ\phi_*=(\psi\circ\phi)_*$.
 
 \begin{thm}{Exercise}\label{ex:retract*}
 Let $A$ be a retract of $\c{X}$ with retraction $r\:\c{X}\to A$.
-Choose $a\in A$; let $\iota\:A\to\c{X}$ be the inclusion map.
+Choose $x_0\in A$; let $\iota\:A\to\c{X}$ be the inclusion map.
 \begin{subthm}{}
-Show that $r_*\:\pi_1(\c{X},a)\to \pi_1(A,a)$ is a surjective homomorphism.
+Show that $r_*\:\pi_1(\c{X},x_0)\to \pi_1(A,x_0)$ is a surjective homomorphism.
 \end{subthm}
 
 \begin{subthm}{}
-Show that $\iota_*\:\pi_1(A,a)\to \pi_1(\c{X},a)$ is an injective homomorphism.
+Show that $\iota_*\:\pi_1(A,x_0)\to \pi_1(\c{X},x_0)$ is an injective homomorphism.
 \end{subthm}
 
 \begin{subthm}{}
@@ -83,57 +83,57 @@ Show that is $A$ is weak deformation retract then $r_*$ and $\iota_*$ are isomor
 
 
 Recall that product of paths is not associative;
-in other words, we have to fully parenthesize the products of paths since $(f*g)*h\ne f*(g*h)$.
+in other words, we have to fully parenthesize the products of paths since $(a*b)*c\ne a*(b*c)$.
 But, if the product is not parenthesized, then it means that any parenthesization will do the job.
 Forally speaing,  we can assume that the product is taken in the usual order;
 that is,
-\[f*g*h*k\df((f*g)*h)*k.\]
+\[a*b*c*d\df((a*b)*c)*d.\]
 
 \begin{thm}{Theorem}
-Let $h$ be a path between points $p$ and $q$ in a topological space $\c{X}$.
-Then $f\mapsto \bar h * f* h$ defines a isomorphism of fundamental groups $u_h\:\pi_1(\c{X},p)\to \pi_1(\c{X},q)$.
+Let $c$ be a path between points $p$ and $q$ in a topological space $\c{X}$.
+Then $a\mapsto \bar c * a* c$ defines a isomorphism of fundamental groups $u_c\:\pi_1(\c{X},p)\to \pi_1(\c{X},q)$.
 \end{thm}
 
 
 
 \parit{Proof.}
-Suppose $f_\tau$ is a homotopy of loops at $p$.
-Then $\bar h*f_\tau*h$ is a homotopy of loops at $q$.
+Suppose $a_\tau$ is a homotopy of loops at $p$.
+Then $\bar c*a_\tau*c$ is a homotopy of loops at $q$.
 It follows that the map 
-\[u_h\:[f]\mapsto [\bar h*f*h]\eqlbl{eq:[f]->[hfh]}\]
+\[u_c\:[a]\mapsto [\bar c*a*c]\eqlbl{eq:[f]->[hfh]}\]
 is defined.
-Indeed if $f_0\sim f_1$, then $\bar h*f_0*h\sim \bar h*f_1*h$,
-which means that $[\bar h*f_0*h]=[\bar h*f_1*h]$; so the right-hand side in \ref{eq:[f]->[hfh]} does not depend on the choice of loop $f$ in the homotopy class $[f]$.
+Indeed if $a_0\sim a_1$, then $\bar c*a_0*c\sim \bar c*a_1*c$,
+which means that $[\bar c*a_0*c]=[\bar c*a_1*c]$; so the right-hand side in \ref{eq:[f]->[hfh]} does not depend on the choice of loop $a$ in the homotopy class $[a]$.
 
-Further, if $f$ and $g$ are loops based at $p$, then \ref{clm:homot-claims} implies that
+Further, if $a$ and $b$ are loops based at $p$, then \ref{clm:homot-claims} implies that
 \begin{align*}
-(\bar h*f*h)*(\bar h*g*h)&\sim \bar h*f*(h*\bar h)*g*h\sim
+(\bar c*a*c)*(\bar c*a*c)&\sim \bar c*a*(c*\bar c)*b*c\sim
 \\
-&\sim \bar h*(f*\eps_p)*g*h\sim 
+&\sim \bar c*(a*e_p)*b*c\sim
 \\
-&\sim \bar h*(f*g)*h.
+&\sim \bar c*(a*b)*c.
 \end{align*}
 In other words,
-\[u_h([f]\cdot [g])=u_h[f]\cdot u_h[g]\quad\text{for any}\quad [f],[g]\in \pi_1(\c{X},p);\]
-that is, $u_h\:\pi_1(M,p)\to \pi_1(M,q)$ is a homomorphism.
+\[u_c([a]\cdot [b])=u_c[a]\cdot u_c[b]\quad\text{for any}\quad [a],[b]\in \pi_1(\c{X},p);\]
+that is, $u_c\:\pi_1(M,p)\to \pi_1(M,q)$ is a homomorphism.
 
 
-The same argument shows that $u_{\bar h}\: \pi_1(M,q)\to \pi_1(M,p)$ defined by 
-\[u_{\bar h}\:[k]\mapsto [h*(k*\bar h)]\]
+The same argument shows that $u_{\bar c}\: \pi_1(M,q)\to \pi_1(M,p)$ defined by
+\[u_{\bar c}\:[d]\mapsto [c*(d*\bar c)]\]
 is a homomorphism.
 
 Finally note that 
 \begin{align*}
-h*(\bar h*f*h)*\bar h&\sim (h*\bar h)*f*(h*\bar h)\sim
+c*(\bar c*a*c)*\bar c&\sim (c*\bar c)*f*(c*\bar c)\sim
 \\
-&\sim \eps_p*f*\eps_p\sim
+&\sim e_p*a*e_p\sim
 \\
 &\sim f
 \end{align*}
-for any loop $f$ based at $p$.
-Therefore, $u_{\bar h}$ is a left inverse of $u_h$.
-(The same way we show that $u_{h}$ is a left inverse of $u_{\bar h}$.)
-It follows that $u_h$ is an isomorphism.
+for any loop $a$ based at $p$.
+Therefore, $u_{\bar c}$ is a left inverse of $u_c$.
+(The same way we show that $u_{h}$ is a left inverse of $u_{\bar c}$.)
+It follows that $u_c$ is an isomorphism.
 \qeds
 
 According to the theorem, the fundamental group (more precisely its \textit{isomorphism class}) of path-connected space does not depend on its base point.
@@ -143,9 +143,9 @@ Therefore, for a path-connected space $\c{X}$ we do not need to specify the base
 
 \begin{subthm}{ex:uphi:uphi}
  Let $\phi_\tau\:\c{X}\to\c{Y}$ be a homotopy.
-Consider the path defined by $h(\tau)=\phi_\tau(p)$.
+Consider the path defined by $c(\tau)=\phi_\tau(p)$.
 Show that
-\[u_h\circ \phi_{0*}=\phi_{1*}.\]
+\[u_c\circ \phi_{0*}=\phi_{1*}.\]
 \end{subthm}
 
 \begin{subthm}{ex:uphi:hom-type}

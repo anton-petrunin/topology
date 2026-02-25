@@ -3,39 +3,39 @@
 \section{Paths}\label{sec:Operations on paths}
 
 Let $\c{X}$ be a topological space.
-A continuous map $f\:[0,1]\to \c{X}$ is called a \index{path}\emph{path}.
-If $x=f(0)$ and $y=f(1)$ we say that $f$ is a path from $x$ to $y$.
+A continuous map $a\:[0,1]\to \c{X}$ is called a \index{path}\emph{path}.
+If $x=a(0)$ and $y=a(1)$ we say that $a$ is a path from $x$ to $y$.
 
 Let us start with several examples and constructions of paths.
 \begin{itemize}
-\item A path $f$ is called \index{constant path}\emph{constant} if it stays at one point.
-In other words, $f(t)=p$ for some fixed point $p$; in this case, the path $f$ can be denoted by $\eps_p$.
+\item A path $a$ is called \index{constant path}\emph{constant} if it stays at one point.
+In other words, $a(t)=p$ for some fixed point $p$; in this case, the path $a$ can be denoted by $e_p$.
 
-\item Given a path $f\:[0,1]\to \c{X}$, one can consider the \index{time-reversed path}\emph{time-reversed} path $\bar f$, defined by
-\[\bar f(t)=f(1-t).\]
-Note that $\bar f$ is continuous since $f$ is.
+\item Given a path $a\:[0,1]\to \c{X}$, one can consider the \index{time-reversed path}\emph{time-reversed} path $\bar a$, defined by
+\[\bar a(t)=a(1-t).\]
+Note that $\bar a$ is continuous since $a$ is.
 
-\item Let $f$ and $h$ be paths such that $f(1)=h(0)$.
-Then we can join them into one $g\:[0,1]\to \c{X}$ defined as
-\[g(t)=
+\item Let $a$ and $b$ be paths such that $a(1)=b(0)$.
+Then we can join them into one $c\:[0,1]\to \c{X}$ defined as
+\[c(t)=
 \left\{
 \begin{aligned}
-f(2\cdot t)&&\text{if}&\ t\le \tfrac12,
+a(2\cdot t)&&\text{if}&\ t\le \tfrac12,
 \\
-h(2\cdot t-1)&&\text{if}&\ t\ge \tfrac12;
+b(2\cdot t-1)&&\text{if}&\ t\ge \tfrac12;
 \end{aligned}
 \right.
 \]
-so, $g$ follows $f$ and then $h$.
-The path $g$ is called the \index{product of paths}\emph{product} (or \index{concatenation}\emph{concatenation}) of $f$ and $h$; it is denoted as $g=f * h$.
-Note that \ref{ex:u-continuous:closed} implies that $f*h$ is continuous;
-in other words $f*h$ is indeed a path.
+so, $c$ follows $a$ and then $b$.
+The path $c$ is called the \index{product of paths}\emph{product} (or \index{concatenation}\emph{concatenation}) of $a$ and $b$; it is denoted as $c=a * b$.
+Note that \ref{ex:u-continuous:closed} implies that $a*b$ is continuous;
+in other words $a*b$ is indeed a path.
 \end{itemize}
 
 \begin{thm}{Advanced exercise}\label{ex:simple-path}
-Let $f$ be a path from $x$ to $y$ in a Hausdorff space $\c{X}$.
+Let $a$ be a path from $x$ to $y$ in a Hausdorff space $\c{X}$.
 Assume $x\ne y$.
-Show that there is an injective path $h$ from $x$ to $y$ such that $h([0,1])\subset f([0,1])$.
+Show that there is an injective path $b$ from $x$ to $y$ such that $b([0,1])\subset a([0,1])$.
 \end{thm}
 
 \section{Path-connected components}
@@ -45,10 +45,10 @@ Consider the following relation on the set of points of a topological space:
 
 From \ref{sec:Operations on paths}, $\sim$ is an equivalence relation on the set of points in $\c{X}$; in other words, the following properties hold for any points $x,y,z\in \c{X}$:
 \begin{itemize}
- \item $x\sim x$ (since $\eps_x$ is a path from $x$ to $x$);
- \item if $x\sim y$, then $y\sim x$ (indeed, if $f$ is a path from $x$ to $y$, then $\bar f$ is a path from $y$ to $x$);
- \item if $x\sim y$ and $y\sim z$, then $x\sim z$ (indeed, if $f$ is a path from $x$ to $y$,
- and $h$ is a path from $y$ to $z$ then $f*h$ is a path from $x$ to $z$).
+ \item $x\sim x$ (since $e_x$ is a path from $x$ to $x$);
+ \item if $x\sim y$, then $y\sim x$ (indeed, if $a$ is a path from $x$ to $y$, then $\bar a$ is a path from $y$ to $x$);
+ \item if $x\sim y$ and $y\sim z$, then $x\sim z$ (indeed, if $a$ is a path from $x$ to $y$,
+ and $b$ is a path from $y$ to $z$ then $a*b$ is a path from $x$ to $z$).
 \end{itemize}
 
 The equivalence class of a point $x$ for the equivalence relation $\sim$ is called the \index{path-connected component}\emph{path-connected component} of $x$;
@@ -58,7 +58,7 @@ this is the set of all points in $\c{X}$ that can be joined with $x$ by a path.
 \section{Path-connected spaces}
 
 A space $\c{X}$ is called \index{path-connected space}\emph{path-connected} if it is nonempty and any two points in $\c{X}$ can be connected by a path;
-that is, for any $x,y\in \c{X}$ there is a path $f$ from $x$ to $y$.
+that is, for any $x,y\in \c{X}$ there is a path $a$ from $x$ to $y$.
 One can say that $\c{X}$ is path-connected if $\c{X}$ is a path-connected component of one (and therefore every) point $x\in\c{X}$.
 
 %\begin{thm}{Exercise}\label{ex:convex-path-connected}Show that any convex set in a Euclidean space is path-connected.\end{thm}
@@ -84,12 +84,12 @@ the converse does not hold.
 Let $\c{X}$ be a path-connected space.
 
 By Proposition~\ref{prop:connected[0,1]}, the unit interval $[0,1]$ is connected.
-By Proposition~\ref{prop:image-connected}, for any path $f\:[0,1]\to \c{X}$ the image $f([0,1])$ is connected.
+By Proposition~\ref{prop:image-connected}, for any path $a\:[0,1]\to \c{X}$ the image $a([0,1])$ is connected.
 
 Fix $x\in \c{X}$.
 Since $\c{X}$ is path-connected,
-\[\c{X}=\bigcup_f f([0,1]),\]
-where the union is taken for all paths $f$ starting from $x$.
+\[\c{X}=\bigcup_a a([0,1]),\]
+where the union is taken for all paths $a$ starting from $x$.
 It remains to apply~\ref{prop:union-connect}.
 
 \parit{Second part.}
@@ -116,21 +116,21 @@ Therefore, by \ref{ex:A<B<bar-A}, $W'$ is connected.
 
 It remains to show that $W'$ is not path-connected.
 Assume the contrary. 
-Let $f$ be a path from $x=(0,0)$ to $y=(0,1)$.
+Let $a$ be a path from $x=(0,0)$ to $y=(0,1)$.
 
-Note that $f^{-1}(\{y\})$ is closed subset of compact space $[0,1]$.
-Therefore $f^{-1}(\{y\})$ is compact (\ref{prop:compact-closed}).
-In particular, the set $f^{-1}(\{y\})$ has the minimal element,
-denote it by $b$.
-Note that $b>0$, $f(b)=y$ and $f(t)\ne y$ for any $t<b$.
+Note that $a^{-1}(\{y\})$ is closed subset of compact space $[0,1]$.
+Therefore $a^{-1}(\{y\})$ is compact (\ref{prop:compact-closed}).
+In particular, the set $a^{-1}(\{y\})$ has the minimal element,
+denote it by $t_1$.
+Note that $t_1>0$, $a(t_1)=y$ and $a(t)\ne y$ for any $t<t_1$.
 
-Since $f$ is continuous, there is $a<b$ such that $|f(t)-y|<\tfrac1{10}$ for any $t\in [a,b]$.
-Since $|f(a)-y|<\tfrac1{10}$, we have $f(a)\in J_n$ for some $n$ (in other words, $f(a)\notin I$).
+Since $a$ is continuous, there is $t_0<t_1$ such that $|a(t)-y|<\tfrac1{10}$ for any $t\in [t_0,t_1]$.
+Since $|a(t_0)-y|<\tfrac1{10}$, we have $a(t_0)\in J_n$ for some $n$ (in other words, $a(t_0)\notin I$).
 
 Denote by $N$ the intersection of the $\tfrac1{10}$-neighborhood of $y$ with the comb.
 The intersection of $J_n$ with $\tfrac1{10}$-neighborhood of $y$ forms a connected component of $N$.
-By \ref{prop:image-connected}, $f(t)\in J_n$ for any $t\in [a,b]$;
-in particular, $f(b)\ne y$ --- a contradiction.
+By \ref{prop:image-connected}, $a(t)\in J_n$ for any $t\in [t_0,t_1]$;
+in particular, $a(t_1)\ne y$ --- a contradiction.
 \qeds
 
 \begin{thm}{Exercise}\label{ex:flea-and-comb}
@@ -148,9 +148,9 @@ Show that $\c{X}$ is connected if and only if $\c{X}$ is path-connected.
 \end{thm}
 
 \begin{thm}{Advanced exercise}\label{ex:monks}
-Let $f,h\:[0,1]\to [0,1]$ be two continuous functions such that $f(0)=h(0)=0$ and $f(1)=h(1)=1$.
+Let $a,b\:[0,1]\to [0,1]$ be two continuous functions such that $a(0)=b(0)=0$ and $a(1)=b(1)=1$.
 Consider the set
-\[S=\set{(x,y)\in[0,1]\times [0,1]}{f(x)=h(y)}.\]
+\[S=\set{(x,y)\in[0,1]\times [0,1]}{a(x)=b(y)}.\]
 Note that two points $p=(0,0)$ and $q=(1,1)$ lie in $S$.
 
 \begin{subthm}{}
@@ -158,7 +158,7 @@ Show that $p$ and $q$ lie in the same connected component of $S$.
 \end{subthm}
 
 \begin{subthm}{}
-Give an example of $f$ and $h$ such that $p$ and $q$ lie in different path-connected components of $S$.
+Give an example of $a$ and $b$ such that $p$ and $q$ lie in different path-connected components of $S$.
 \end{subthm}
 
 \end{thm}
@@ -200,5 +200,9 @@ It follows that $P$ and its complement $V\setminus P$ are open.
 Since $V$ is connected, we get that $V\setminus P=\emptyset$ --- hence the result.
 \qeds
 
+\begin{thm}{Exercise}\label{ex:locally-path-connected}
+According to the theorem, the flea-and-comb space $W'$ must fail to be locally path-connected at some subset of poins.
+Find this subset.
+\end{thm}
 
 
