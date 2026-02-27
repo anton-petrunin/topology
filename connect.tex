@@ -29,14 +29,15 @@ V\cup W=\c{X},
 V\cap W=\emptyset.\]
 In this case, we say that $V$ and $W$ \index{separate}\emph{separate} $\c{X}$.
 
-Spelling out the notion of subspace, makes us define an open {}\emph{separating pair} of a set $A\subset\c{X}$ as two open sets $V,W\subset \c{X}$ such that
+Spelling out the notion of subspace leads to the following definition:
+an open {}\emph{separating pair} of a set $A\subset\c{X}$ is two open sets $V,W\subset \c{X}$ such that
 \[V\cap A\ne\emptyset,\quad
 W\cap A\ne\emptyset,\quad
 V\cup W\supset A,\quad\text{and}\quad
 V\cap W\cap A=\emptyset.\]
 
 \begin{thm}{Observation}\label{def:connected-subset}
-A nonempty topological space (or its subset) is \index{disconnected subset}\emph{disconnected} if it has a separating pair.
+A nonempty topological space (or its subset) is \index{disconnected subset}\emph{disconnected} if and only if it has an open separating pair.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:connected->R}
@@ -57,7 +58,7 @@ Then the image $B=f(A)$ is a connected set in $\c{Y}$.
 \end{thm}
 
 \parit{Proof.}
-Since $A$ is a connected, $A\ne \emptyset$, and $B\ne\emptyset$.
+Since $A$ is connected, $A\ne \emptyset$, and $B\ne\emptyset$.
 
 Assume that $B=f(A)$ is disconnected.
 Choose open sets $V$ and $W$ that separate $B$; that is,
@@ -91,7 +92,7 @@ is connected.
 \end{thm}
 
 \parit{Proof.}
-Assume that $A$ is disconnected; choose separating open sets $V$ and $W$.
+Assume that $A$ is disconnected; choose an open separating pair $V$ and $W$.
 Choose $p\in \bigcap_\alpha A_\alpha$.
 Without loss of generality, we can assume that $p\in V$.
 
@@ -123,7 +124,7 @@ The proof reuses the construction in \ref{sec:compact-interval}.
 
 \parit{Proof.}
 Assume the contrary;
-choose a separating pair of $[0,1]$, say $V$ and $W$.
+choose an open separating pair of $[0,1]$, say $V$ and $W$.
 Fix $a_0\in V$ and $b_0\in W$;
 without loss of generality, we can assume that $a_0<b_0$.
 
@@ -147,7 +148,7 @@ Observe that
 a_0\le a_1\le \dots \le b_1\le b_0.
 \]
 In particular, the sequence $a_n$ is nondecreasing and bounded above by $b_0$.
-Therefore, $a_n$ converge to some limit, say $x$.
+Therefore, $a_n$ converges to some limit, say $x$.
 Since $b_n-a_n\z=\tfrac1{2^n}\cdot(b_0-a_0)$, the sequence $b_n$ also converges to $x$.
 The point $x$ has to belong to $V$ or $W$.
 Since both $V$ and $W$ are open, one of them contains $a_n$ and $b_n$ for all large $n$, which contradicts \ref{eq:ab-in-VW}.
@@ -156,13 +157,13 @@ Since both $V$ and $W$ are open, one of them contains $a_n$ and $b_n$ for all la
 \begin{thm}{Exercise}\label{ex:R-connected}
 Show that the real line $\RR$ is a connected space.
 Conclude that any continuous map $\RR\to \ZZ$ is constant;
-here $\ZZ\subset \RR$ denotes the set of integer numbers.
+here $\ZZ\subset \RR$ denotes the set of integers.
 \end{thm}
 
 \section{Connected components}
 
 Let $x$ be a point in a topological space $\c{X}$.
-The intersection of all clopen sets containing $x$ is called the \index{connected component}\emph{connected component} of $x$.
+The union of all connected sets containing $x$ is called the \index{connected component}\emph{connected component} of $x$.
 Note that the space $\c{X}$ is connected if and only if a connected component of some (and therefore of any) point is the whole space $\c{X}$.
 
 Observe that two connected components either coincide or are disjoint.
@@ -200,10 +201,15 @@ Show that $\c{B}$ is a base of some topology on $\NN$.
 \end{subthm}
 
 \begin{subthm}{ex:colomb:connected}
-Show that that $\NN$ equipped with this topology is connected, Hausdorff, and noncompact.
+Show that $\NN$ equipped with this topology is connected, Hausdorff, and noncompact.
 \end{subthm}
 
 \end{thm}
+
+\begin{thm}{Advanced exercise}\label{ex:quasi-component}
+Find an example of topological space $\c{X}$ with a connected component that is not an intersection of a family of clopen sets in $\c{X}$.
+\end{thm}
+
 
 
 \section{Cut points}
@@ -266,19 +272,17 @@ that is, list its points and the open sets.
 
 }
 
-{
+
+\index{Sierpi\'nski gaske}\emph{Sierpi\'nski gasket} is constructed in the following way:
+start with a solid equilateral triangle, subdivide it into four smaller congruent equilateral triangles and remove the interior of the central one.
+Repeat this procedure recursively for each of the remaining solid triangles.
+
 
 \begin{wrapfigure}{r}{23 mm}
 \vskip-0mm
 \centering
 \includegraphics{mppics/pic-50}
 \end{wrapfigure}
-
-\mbox{\index{Sierpi\'nski gaske}\emph{Sierpi\'nski gasket}} is constructed in the following way:
-start with a solid equilateral triangle, subdivide it into four smaller congruent equilateral triangles and remove the interior of the central one.
-Repeat this procedure recursively for each of the remaining solid triangles.
-
-}
 
 \begin{thm}{Advanced exercise}\label{ex:sierpinski}
 

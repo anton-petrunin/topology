@@ -1,77 +1,73 @@
 \chapter{Meeting algebra}\label{chap:algebra}
 
-In the previous chapter we constructed the fundamental group for a given topological space with marked point.
-This construction gives a bridge between topology and abstract algebra.
-
-In this chapter we show that this bridge respects maps between topological spaces;
-in a more fancy language, it means the passage from a space to its fundamental group is determined by a \index{functor}\emph{functor}.
+In this chapter we show that the fundamental-group construction respects\footnote{In a more fancy language, it behaves as a \index{functor}\emph{functor}.} the maps between topological spaces and behaves predictably  when one changes the marked point of the space.
 Bit latter, we will calculate fundamental group of the circle --- this will be the first example of a space with nontrivial fundamntal group.
-Once this group is calculated, the connections of this chapter will lead to several applications.
+Once this group is calculated, the results of this chapter will lead to applications.
 
 
 \section{Induced homomorphism}
 
 \begin{thm}{Claim}\label{clm:ind-hom}
-Let $\phi\:\c{X}\to \c{Y}$ be a continuous map and $\phi(p)=q$.
+Let $f\:\c{X}\to \c{Y}$ be a continuous map and $f(p)=q$.
 Suppose that $a_0$ and $a_1$ are loops bases at $p$ in $\c{X}$.
 Then
 
 \begin{subthm}{clm:ind-hom-prod}
-$\phi\circ(a_0*a_1)=(\phi\circ a_0)*(\phi\circ a_1)$,
+$f\circ(a_0*a_1)=(f\circ a_0)*(f\circ a_1)$,
 \end{subthm}
 
 \begin{subthm}{clm:ind-hom-homotopy}
-if $a_0\sim a_1$, then $\phi\circ a_0\sim\phi\circ a_1$.
+if $a_0\sim a_1$, then $f\circ a_0\sim f\circ a_1$.
 \end{subthm}
 
 \end{thm}
 
 \parit{Proof; \ref{SHORT.clm:ind-hom-prod}.}
-Applying the definition of the product of paths and composition of maps to $\phi\circ(a_0*a_1)$ and $(\phi\circ a_0)*(\phi\circ a_1)$ we get exactly the same expression:
+Applying the definition of the product of paths and composition of maps to $f\circ(a_0*a_1)$ and $(f\circ a_0)*(f\circ a_1)$ we get exactly the same expression:
 \begin{align*}
 \begin{cases}
-\phi\circ a_0(t)&\text{if}\ t\le \tfrac12,
+f\circ a_0(t)&\text{if}\ t\le \tfrac12,
 \\
-\phi\circ a_1(t)&\text{if}\ t\ge \tfrac12.
+f\circ a_1(t)&\text{if}\ t\ge \tfrac12.
 \end{cases}
 \end{align*}
 Hence \ref{SHORT.clm:ind-hom-prod} follows.
 
 \parit{\ref{SHORT.clm:ind-hom-homotopy}.}
-Observe that if $f_\tau$ is a homotopy from $a_0$ to $a_1$, then $\phi\circ a_\tau$ is a homotopy from $\phi\circ a_0$ to $\phi\circ a_1$.
+Observe that if $f_\tau$ is a homotopy from $a_0$ to $a_1$, then $f\circ a_\tau$ is a homotopy from $f\circ a_0$ to $f\circ a_1$.
 Hence \ref{SHORT.clm:ind-hom-homotopy} follows.
 \qeds
 
 \begin{thm}{Corollary}
-Let $\phi\:\c{X}\to \c{Y}$ be a continuous map between topological spaces;
-suppose $\phi(p)=q$.
-Given a loop $a$ with base at $p$ in $\c{X}$, the composition $\phi\circ a$ is a loop with base at $q$ in $\c{Y}$.
+Let $f\:\c{X}\to \c{Y}$ be a continuous map between topological spaces;
+suppose $f(p)=q$.
+Given a loop $a$ with base at $p$ in $\c{X}$, the composition $f\circ a$ is a loop with base at $q$ in $\c{Y}$.
 Moreover, 
-$\phi_*\:[a]\mapsto [\phi\circ a]$
-defines a homomorphism $\phi_*\:\pi_1(\c{X},p)\to \pi_1(\c{Y},q)$.
+$f_*\:[a]\mapsto [f\circ a]$
+defines a homomorphism $f_*\:\pi_1(\c{X},p)\to \pi_1(\c{Y},q)$.
 \end{thm}
 
 
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:comp-induced}
 Consider continuous maps 
-$\c{X}\stackrel{\phi}{\to}\c{Y}\stackrel{\psi}{\to}\c{Z}$ between topological spaces.
-Show that $\psi_*\circ\phi_*=(\psi\circ\phi)_*$.
+$\c{X}\stackrel{f}{\to}\c{Y}\stackrel{g}{\to}\c{Z}$ between topological spaces.
+Show that $g_*\circ f_*=(g\circ f)_*$.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:retract*}
 Let $A$ be a retract of $\c{X}$ with retraction $r\:\c{X}\to A$.
-Choose $x_0\in A$; let $\iota\:A\to\c{X}$ be the inclusion map.
-\begin{subthm}{}
+Choose $x_0\in A$; let $i\:A\to\c{X}$ be the inclusion map.
+\begin{subthm}{ex:retract*:r}
 Show that $r_*\:\pi_1(\c{X},x_0)\to \pi_1(A,x_0)$ is a surjective homomorphism.
 \end{subthm}
 
-\begin{subthm}{}
-Show that $\iota_*\:\pi_1(A,x_0)\to \pi_1(\c{X},x_0)$ is an injective homomorphism.
+\begin{subthm}{ex:retract*:i}
+Show that $i_*\:\pi_1(A,x_0)\to \pi_1(\c{X},x_0)$ is an injective homomorphism.
 \end{subthm}
 
-\begin{subthm}{}
-Show that is $A$ is weak deformation retract then $r_*$ and $\iota_*$ are isomorphisms.
+\begin{subthm}{ex:retract*:ri}
+Show that is $A$ is weak deformation retract then $r_*$ and $i_*$ are isomorphisms.
 \end{subthm}
 
 
@@ -90,7 +86,7 @@ that is, \index{$a*b*c*d$}
 
 \begin{thm}{Theorem}
 Let $c$ be a path between points $p$ and $q$ in a topological space $\c{X}$.
-Then $a\mapsto \bar c * a* c$ defines a isomorphism of fundamental groups $u_c\:\pi_1(\c{X},p)\to \pi_1(\c{X},q)$.
+Then $a\mapsto \bar c * a* c$ defines a isomorphism of fundamental groups $\phi_c\:\pi_1(\c{X},p)\to \pi_1(\c{X},q)$.
 \end{thm}
 
 
@@ -99,7 +95,7 @@ Then $a\mapsto \bar c * a* c$ defines a isomorphism of fundamental groups $u_c\:
 Suppose $a_\tau$ is a homotopy of loops at $p$.
 Then $\bar c*a_\tau*c$ is a homotopy of loops at $q$.
 It follows that the map 
-\[u_c\:[a]\mapsto [\bar c*a*c]\eqlbl{eq:[f]->[hfh]}\]
+\[\phi_c\:[a]\mapsto [\bar c*a*c]\eqlbl{eq:[f]->[hfh]}\]
 is defined.
 Indeed if $a_0\sim a_1$, then $\bar c*a_0*c\sim \bar c*a_1*c$,
 which means that $[\bar c*a_0*c]=[\bar c*a_1*c]$; so the right-hand side in \ref{eq:[f]->[hfh]} does not depend on the choice of loop $a$ in the homotopy class $[a]$.
@@ -113,12 +109,12 @@ Further, if $a$ and $b$ are loops based at $p$, then \ref{clm:homot-claims} impl
 &\sim \bar c*(a*b)*c.
 \end{align*}
 In other words,
-\[u_c([a]\cdot [b])=u_c[a]\cdot u_c[b]\quad\text{for any}\quad [a],[b]\in \pi_1(\c{X},p);\]
-that is, $u_c\:\pi_1(M,p)\to \pi_1(M,q)$ is a homomorphism.
+\[\phi_c([a]\cdot [b])=\phi_c[a]\cdot \phi_c[b]\quad\text{for any}\quad [a],[b]\in \pi_1(\c{X},p);\]
+that is, $\phi_c\:\pi_1(M,p)\to \pi_1(M,q)$ is a homomorphism.
 
 
-The same argument shows that $u_{\bar c}\: \pi_1(M,q)\to \pi_1(M,p)$ defined by
-\[u_{\bar c}\:[d]\mapsto [c*(d*\bar c)]\]
+The same argument shows that $\phi_{\bar c}\: \pi_1(M,q)\to \pi_1(M,p)$ defined by
+\[\phi_{\bar c}\:[d]\mapsto [c*(d*\bar c)]\]
 is a homomorphism.
 
 Finally note that 
@@ -130,21 +126,21 @@ c*(\bar c*a*c)*\bar c&\sim (c*\bar c)*f*(c*\bar c)\sim
 &\sim f
 \end{align*}
 for any loop $a$ based at $p$.
-Therefore, $u_{\bar c}$ is a left inverse of $u_c$.
-(The same way we show that $u_{h}$ is a left inverse of $u_{\bar c}$.)
-It follows that $u_c$ is an isomorphism.
+Therefore, $\phi_{\bar c}$ is a left inverse of $\phi_c$.
+(The same way we show that $\phi_{h}$ is a left inverse of $\phi_{\bar c}$.)
+It follows that $\phi_c$ is an isomorphism.
 \qeds
 
 According to the theorem, the fundamental group (more precisely its \textit{isomorphism class}) of path-connected space does not depend on its base point.
-Therefore, for a path-connected space $\c{X}$ we do not need to specify the base point of its fundamental group; so we could write $\pi_1(\c{X})$ instead of $\pi_1(\c{X},p)$ (if we think about the group up to isomorphism).
+Therefore, for a path-connected space $\c{X}$ we do not need to specify the base point of its fundamental group; so we could write $\pi_1\c{X}$ instead of $\pi_1(\c{X},p)$ (if we think about the group up to isomorphism).
 
 \begin{thm}{Exercise}\label{ex:uphi}
 
 \begin{subthm}{ex:uphi:uphi}
- Let $\phi_\tau\:\c{X}\to\c{Y}$ be a homotopy.
-Consider the path defined by $c(\tau)=\phi_\tau(p)$.
+ Let $f_\tau\:\c{X}\to\c{Y}$ be a homotopy.
+Consider the path defined by $c(\tau)=f_\tau(p)$.
 Show that
-\[u_c\circ \phi_{0*}=\phi_{1*}.\]
+\[\phi_c\circ f_{0*}=f_{1*}.\]
 \end{subthm}
 
 \begin{subthm}{ex:uphi:hom-type}
@@ -157,33 +153,33 @@ Conclude that if path-connected topological spaces $\c{X}$ and $\c{Y}$ have the 
 
 \section{Product space}
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:hom-product}
 Let $\c{X}$ and $\c{Y}$ be two path-connected topological spaces.
 Choose points $p\in \c{X}$ and $q\in \c{Y}$.
-Consider the projections $\phi\:\c{X}\times\c{Y}\to \c{X}$ and $\psi\:\c{X}\times\c{Y}\to \c{Y}$
+Consider the projections $f\:\c{X}\times\c{Y}\to \c{X}$ and $g\:\c{X}\times\c{Y}\to \c{Y}$
 and their induced homomorphisms
-$\phi_*\:\pi_1(\c{X}\times\c{Y},(p,q))\to \pi_1(\c{X},p)$
-and $\psi_*\:\pi_1(\c{X}\times\c{Y},(p,q))\to \pi_1(\c{Y},q)$.
-Define $\Phi\:\pi_1(\c{X}\times\c{Y},(p,q))\to \pi_1(\c{X},p)\times \pi_1(\c{Y},q)$ by
-\[\Phi\:\alpha\mapsto (\phi_*(\alpha),\psi_*(\alpha))\]
+$f_*\:\pi_1(\c{X}\times\c{Y},(p,q))\to \pi_1(\c{X},p)$
+and $g_*\:\pi_1(\c{X}\times\c{Y},(p,q))\to \pi_1(\c{Y},q)$.
+Define $\phi\:\pi_1(\c{X}\times\c{Y},(p,q))\to \pi_1(\c{X},p)\times \pi_1(\c{Y},q)$ by
+\[\phi\:\alpha\mapsto (f_*(\alpha),g_*(\alpha))\]
 for any $\alpha\in \pi_1(\c{X}\times\c{Y},(p,q))$.
-Note that the map $\Phi$ is a homomorphism.
+Note that the map $\phi$ is a homomorphism.
 
-\begin{subthm}{}
-Show that $\Phi$ is a monomorphism;
-that is, if $\Phi(\alpha)=\Phi(\beta)$ for some $\alpha,\beta\in \pi_1(\c{X}\times\c{Y},(p,q))$, then 
+\begin{subthm}{ex:hom-product:mono}
+Show that $\phi$ is a monomorphism;
+that is, if $\phi(\alpha)=\phi(\beta)$ for some $\alpha,\beta\in \pi_1(\c{X}\times\c{Y},(p,q))$, then
 $\alpha=\beta$.
 \end{subthm}
 
-\begin{subthm}{}
-Show that $\Phi$ is an epimorphism;
-that is, for any $\gamma\in \pi_1(\c{X},p)\z\times\pi_1(\c{Y},q)$ there is $\alpha\in\pi_1(\c{X}\times\c{Y},(p,q))$ such that $\Phi(\alpha)=\gamma$.
+\begin{subthm}{ex:hom-product:epi}
+Show that $\phi$ is an epimorphism;
+that is, for any $\gamma\in \pi_1(\c{X},p)\z\times\pi_1(\c{Y},q)$ there is $\alpha\in\pi_1(\c{X}\times\c{Y},(p,q))$ such that $\phi(\alpha)=\gamma$.
 \end{subthm}
 
 Conclude that $\pi_1(\c{X}\times\c{Y})$ is isomorphic to $\pi_1(\c{X})\times\pi_1(\c{Y})$.
 \end{thm}
 
-\begin{thm}{Advanced exercise}
+\begin{thm}{Advanced exercise}\label{ex:sim-product}
 Let $\c{X}$ be a path-connected topological space.
 Consider the quotient space $\c{Y}=(\c{X}\times \c{X})/\sim$ where $\sim$ is the minimal equivalence relation such that $(x,y)\sim (y,x)$.
 Show that the fundamental group of $\c{Y}$ is commutative.

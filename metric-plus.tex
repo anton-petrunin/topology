@@ -4,7 +4,7 @@ Recall that any metric space comes with a topology.
 In particular, we may talk about \textit{compact metric spaces}.
 In this chapter we discuss specific properties of metric spaces that are related to compactness.
 
-\section{Lebesgue number}
+\section{Lebesgue number}%???MOVE
 
 \begin{thm}{Theorem}\label{prop:lebesgue-number}
 Given an open cover $\{V_\alpha\}$ of a compact metric space $\c{M}$,
@@ -13,7 +13,7 @@ there is $\eps > 0$ such that every $\eps$-ball in $\c{M}$ is contained in $V_\a
 
 The number $\eps$ that meets the condition in the theorem is called the \index{Lebesgue number}\emph{Lebesgue number} of the cover.
 
-\parit{Proof.}
+\parit{Proof.} %??? redo with cont r(p)
 Given a point $p\in \c{M}$ we can choose $r=r(p)>0$ such that the ball $\Ball(p,2\cdot r)$ lies in $V_\alpha$ for some $\alpha$.
 Observe that all balls $\Ball(p,r(p))$ form an open cover of $\c{M}$.
 Since $\c{M}$ is compact, we can choose a finite subcover $\{\Ball(p_1,r_1),\ldots,\Ball(p_n,r_n)\}$.
@@ -55,9 +55,6 @@ The following proposition states that these two notions are equivalent for metri
 A metric space $\c{M}$ is compact if and only if it is sequentially compact.
 \end{thm}
 
-In this section, we prove the only-if part.
-The if part will be done in \ref{sec:seq-comp-if} after proving a sequence of auxiliary statements.
-
 \parit{Proof of the only-if part in \ref{prop:seq-comp-metr}.}
 Choose a sequence $x_1,x_2,\ldots{}\in \c{M}$.
 
@@ -75,69 +72,14 @@ Since the sequence is infinite, this cover does not have a finite subcover,
 in particular, $\c{M}$ is not compact.
 \qeds
 
-\section{Complete spaces} %???MOVE
-
-A sequence $x_1,x_2,\ldots$ of points in a metric space is called \index{Cauchy sequence}\emph{Cauchy} if
-for any $\eps>0$ there is $n$ such that $|x_i-x_j|<\eps$ for all $i,j>n$.
-It is easy to prove that any converging sequence is Cauchy, the converse does not hold in general.
-A metric space $\c{M}$ is called \index{complete space}\emph{complete} if any Cauchy sequence in $\c{M}$ converges to a point in $\c{M}$.
-
-The Cauchy test (which is assumed to be known from calculus) implies that the real line $\RR$ with the standard metric is complete.
-On the other hand, an open interval $(0,1)$ forms a noncomplete subspace of $\RR$;
-indeed, the sequence $x_n=\tfrac 1{2^n}$ is Cauchy, but it does not converge in $(0,1)$ --- it converges to $0$ in $\RR$, but $0\notin(0,1)$.
+The if part of the theorem will be done in \ref{sec:seq-comp-if} after proving a sequence of auxiliary statements.
+The proof can be divided in three steps.
+On the fist step (\ref{sec:nets}) we show that any sequentially compact is \textit{separable}; that is, it has a countable dense subset.
+On the second step (\ref{sec:countable-base}) we show that a separable metric space have countable base and any topological space with a countable base is \textit{Lindelöf}; that  is, every open cover contains a countable subcover
+On the last step (\ref{sec:seq-comp-if}) we combine these results.
 
 
-\begin{thm}{Proposition}\label{prop:compact-complete}
-Any (sequentially) compact metric space $\c{M}$ is complete.
-\end{thm}
-
-\parit{Proof.}
-Choose a Cauchy sequence $x_1,x_2,\ldots\in \c{M}$.
-By the only-if part of \ref{prop:seq-comp-metr} (which is proved already), we can assume that the space is sequentially compact; therefore, we can find a converging subsequence; denote its limit by $p$.
-
-Choose $\eps>0$ and let $n$ be as in the definition of Cauchy sequence, so $|x_i-x_j|<\eps$ for all $i,j>n$.
-Note that the ball $\Ball(p,\eps)$ contains infinitely many elements of the sequence; in particular, $|x_j-p|<\eps$ for some $j>n$.
-By the triangle inequality,
-\[|x_i-p|\le|x_i-x_j| +|x_j-p|<2\cdot \eps\]
-for any $i>n$.
-Since $\eps>0$ is arbitrary, the sequence $x_1,x_2,\ldots$ converges to $p$.
-\qeds
-
-\begin{thm}{Exercise}\label{ex:closed-complete}
-Show that closed subset of complete metric space forms a complete subspace.
-\end{thm}
-
-\begin{thm}{Exercise}\label{ex:compact-complete}
-Show that any sequentially compact metric space $\c{M}$ is \index{bounded metric space}\emph{bounded};
-that is, $\c{M}$ has finite \index{diameter}\emph{diameter}:
-\[\diam\c{M}=\sup\set{|x-y|_{\c{M}}}{x,y\in \c{M}}<\infty.\]
-Give an example of noncompact complete bounded metric space.
-
-\end{thm}
-
-
-\begin{thm}{Exercise}\label{ex:contracction}
-Let $\c{M}$ be a complete nonempty metric space, and let
-$f\:\c{M}\to \c{M}$ be a {}\emph{contraction map};
-that is, there is $\lambda<1$ such that
-\[|f(x)-f(y)|_{\c{M}}\le \lambda\cdot|x-y|_{\c{M}}\]
-for any $x,y\in \c{M}$.
-Show that $f$ has a unique \index{fixed point}\emph{fixed point};
-that is, a point $p\in\c{M}$ such that $f(p)=p$.
-\end{thm}
-
-\begin{thm}{Exercise}\label{ex:alm-min}
-Let $\c{M}$ be a complete metric space, and let $r\:\c{M}\to \RR$ be a positive continuous function.
-Show that for any $\eps>0$, there exists a point $p\in \c{M}$ such that
-\[
-r(x)> (1-\eps)\cdot r(p)
-\]
-for every $x\in \Ball (p, r(p))$.
-
-\end{thm}
-
-
-\section{Nets and separability}
+\section{Nets and separability}\label{sec:nets}
 
 Let $\c{M}$ be a metric space.
 A subset $A\subset\c{M}$ is called an \index{$\eps$-net}\emph{$\eps$-net} of $\c{M}$ if for any $p\in \c{M}$  there is $a\in A$ such that $|p-a|_{\c{M}}<\eps$.
@@ -177,7 +119,7 @@ we can choose a finite $\tfrac1n$-net $N_n\subset\c{M}$.
 It remains to observe that the union $N_1\cup N_2\cup \ldots$ is countable and dense.
 \qeds
 
-\section{Countable base}
+\section{Countable base}\label{sec:countable-base}
 
 \begin{thm}{Proposition}\label{cor:comp>2count}
 Any sequentially compact metric space has a countable base.
@@ -242,9 +184,6 @@ and $x\in V_n$ for some $n$.
 It follows that $x_i\in V_n$ for an infinite set of indices $i$, but by construction, $x_i\notin V_n$ for all $i\ge n$ --- a contradiction.
 \qeds
 
-\begin{thm}{Exercise}\label{ex:compact-net}
-Show that a complete metric space $\c{M}$ is compact if for any $\eps>0$ there is a compact $\eps$-net in $\c{M}$.
-\end{thm}
 
 \begin{thm}{Advanced exercise}\label{ex:non-contracting-map}
 Let $\c{M}$ be a compact metric space and
@@ -254,6 +193,71 @@ be a \index{distance-noncontracting map}\emph{distance-noncontracting map}; that
 for any $x,y\in\c{M}$.
 Show that $f$ is an \index{isometry}\emph{isometry};
 that is, $f$ is a bijection and equality always holds in \ref{eq:distance-noncontracting}.
+\end{thm}
+
+\section{Complete spaces}
+
+A sequence $x_1,x_2,\ldots$ of points in a metric space is called \index{Cauchy sequence}\emph{Cauchy} if
+for any $\eps>0$ there is $n$ such that $|x_i-x_j|<\eps$ for all $i,j>n$.
+It is easy to prove that any converging sequence is Cauchy, the converse does not hold in general.
+A metric space $\c{M}$ is called \index{complete space}\emph{complete} if any Cauchy sequence in $\c{M}$ converges to a point in $\c{M}$.
+
+The Cauchy test (which is assumed to be known from calculus) implies that the real line $\RR$ with the standard metric is complete.
+On the other hand, an open interval $(0,1)$ forms a noncomplete subspace of $\RR$;
+indeed, the sequence $x_n=\tfrac 1{2^n}$ is Cauchy, but it does not converge in $(0,1)$ --- it converges to $0$ in $\RR$, but $0\notin(0,1)$.
+
+
+\begin{thm}{Proposition}\label{prop:compact-complete}
+Any (sequentially) compact metric space $\c{M}$ is complete.
+\end{thm}
+
+\parit{Proof.}
+Choose a Cauchy sequence $x_1,x_2,\ldots\in \c{M}$.
+By the only-if part of \ref{prop:seq-comp-metr} (which is proved already), we can assume that the space is sequentially compact; therefore, we can find a converging subsequence; denote its limit by $p$.
+
+Choose $\eps>0$ and let $n$ be as in the definition of Cauchy sequence, so $|x_i-x_j|<\eps$ for all $i,j>n$.
+Note that the ball $\Ball(p,\eps)$ contains infinitely many elements of the sequence; in particular, $|x_j-p|<\eps$ for some $j>n$.
+By the triangle inequality,
+\[|x_i-p|\le|x_i-x_j| +|x_j-p|<2\cdot \eps\]
+for any $i>n$.
+Since $\eps>0$ is arbitrary, the sequence $x_1,x_2,\ldots$ converges to $p$.
+\qeds
+
+\begin{thm}{Exercise}\label{ex:closed-complete}
+Show that closed subset of complete metric space forms a complete subspace.
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:compact-complete}
+Show that any sequentially compact metric space $\c{M}$ is \index{bounded metric space}\emph{bounded};
+that is, $\c{M}$ has finite \index{diameter}\emph{diameter}:
+\[\diam\c{M}=\sup\set{|x-y|_{\c{M}}}{x,y\in \c{M}}<\infty.\]
+Give an example of noncompact complete bounded metric space.
+
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:compact-net}
+Show that a complete metric space $\c{M}$ is compact if for any $\eps>0$ there is a compact $\eps$-net in $\c{M}$.
+\end{thm}
+
+
+\begin{thm}{Exercise}\label{ex:contracction}
+Let $\c{M}$ be a complete nonempty metric space, and let
+$f\:\c{M}\to \c{M}$ be a {}\emph{contraction map};
+that is, there is $\lambda<1$ such that
+\[|f(x)-f(y)|_{\c{M}}\le \lambda\cdot|x-y|_{\c{M}}\]
+for any $x,y\in \c{M}$.
+Show that $f$ has a unique \index{fixed point}\emph{fixed point};
+that is, a point $p\in\c{M}$ such that $f(p)=p$.
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:alm-min}
+Let $\c{M}$ be a complete metric space, and let $r\:\c{M}\to \RR$ be a positive continuous function.
+Show that for any $\eps>0$, there exists a point $p\in \c{M}$ such that
+\[
+r(x)> (1-\eps)\cdot r(p)
+\]
+for every $x\in \Ball (p, r(p))$.
+
 \end{thm}
 
 \section{An application}

@@ -354,7 +354,7 @@ For the second part, try to choose a subset $A$ in $\RR$ so that it meets the fo
 \end{itemize}
 
 
-\parbf{\ref{ex:bry-closed}--\ref{ex:bry<closure}.}
+\parbf{\ref{ex:bry-closed}--\ref{ex:bry-bry}.}
 Apply the definitions of boundary and closed set.
 
 \parbf{\ref{ex:3=bry}.}
@@ -700,6 +700,20 @@ Given a sequence $z_n=(x_n,y_n)$, pass to a subsequence such that the $x$-coordi
 Pass to a subsequence again to make the $y$-coordinate converge.
 Show and use that the obtained sequence converges in $\c{X}\times\c{Y}$.
 
+\parbf{\ref{ex:non-contracting-map}.}
+Consider two sequences of points $x_0,x_1,\dots$ and $y_0,y_1,\dots$ in $\c{M}$ such that $x_i\z=f(x_{i-1})$ and $y_i\z=f(y_{i-1})$ for any $i$.
+Observe that
+\[|x_0-y_0|\le |x_1-y_1|\le\ldots\]
+Show that one can pass to subsequences $x_{i_1},x_{i_2},\dots$ and  $y_{i_1},y_{i_2},\dots$ such that $x_{i_n}\z\to x_0$ and $y_{i_n}\z\to y_0$ as $n\to\infty$.
+Conclude that $|x_0-y_0|\z=|x_1-y_1|$; since the points $x_0$ and $y_0$ can be chosen arbitrary, it implies that $f$ is distance-preserving.
+
+Observe that $f$ is injective.
+Use the argument above to conclude that $f(\c{M})$ is dense in $\c{M}$.
+Note that $f(\c{M})$ is compact and therefore closed (see \ref{prop:hausdorff-compact-closed}).
+Conclude that $f$ is surjective and therefore bijective.
+
+\parit{Comment.}
+This statement is used to prove key properties of so-called \index{Gromov--Hausdorff metric}\emph{Gromov--Hausdorff metric} --- a metric on space of all (isometry classes of) compact metric spaces.
 
 \parbf{\ref{ex:closed-complete}.}
 We need to show that any Cauchy sequenc $q_1,q_2,\ldots$ in a closed subset $Q$ of a complete space $\c{M}$ converges to a point in $Q$.
@@ -710,6 +724,18 @@ It remains to use that $Q$ is closed.
 If the space is not bounded, consider a sequence $x_1,x_2,\dots$ such that $|x_n-p|\to\infty$ for some (and therefore any) point $p$.
 
 For the second part, check an infinite discrete space.
+
+\parbf{\ref{ex:compact-net}.}
+Choose a compact $\tfrac1{2\cdot n}$-net $K_n\subset \c{M}$.
+By \ref{prop:seq-comp-metr} and \ref{lem:net}, $K_n$ contains a finite $\tfrac1{2\cdot n}$-net, say~$F_n$.
+Observe that $F_n$ is a finite $\tfrac1n$-net of $\c{M}$;
+that is,
+\[\c{M}=\bigcup_{z\in F_n} \Ball(z,\tfrac1n).\]
+
+Choose a sequence of points in $x_1,x_2,\dots$ in $\c{M}$.
+Apply the \index{diagonal procedure}\emph{diagonal procedure} (should be known from calculus) to extract a subsequence $y_1,y_2,\dots$ such that for fixed choice $z_n\z\in F_n$ we have
+$y_m\in \Ball(z_n,\tfrac1n)$ for any $m\ge n$.
+Observe that $y_1,y_2,\dots$ is Cauchy and use completeness of $\c{M}$.
 
 \parbf{\ref{ex:contracction}.}
 Consider a sequence $x_0,x_1,\dots\in\c{M}$ such that $x_{i}=f(x_{i-1})$ for any $i$.
@@ -731,34 +757,10 @@ Show and use that this sequence is Cauchy.
 \parit{Comment.}
 This statement can be used on complete spaces in place of existence of minimum point of a continuous function on a compact space; as far as I know it was discovered by Ivar Ekeland \cite{ekeland}.
 
-\parbf{\ref{ex:compact-net}.}
-Choose a compact $\tfrac1{2\cdot n}$-net $K_n\subset \c{M}$.
-By \ref{prop:seq-comp-metr} and \ref{lem:net}, $K_n$ contains a finite $\tfrac1{2\cdot n}$-net, say~$F_n$.
-Observe that $F_n$ is a finite $\tfrac1n$-net of $\c{M}$;
-that is,
-\[\c{M}=\bigcup_{z\in F_n} \Ball(z,\tfrac1n).\]
 
-Choose a sequence of points in $x_1,x_2,\dots$ in $\c{M}$.
-Apply the \index{diagonal procedure}\emph{diagonal procedure} (should be known from calculus) to extract a subsequence $y_1,y_2,\dots$ such that for fixed choice $z_n\z\in F_n$ we have
-$y_m\in \Ball(z_n,\tfrac1n)$ for any $m\ge n$.
-Observe that $y_1,y_2,\dots$ is Cauchy and use completeness of $\c{M}$.
 
-\parbf{\ref{ex:non-contracting-map}.}
-Consider two sequences of points $x_0,x_1,\dots$ and $y_0,y_1,\dots$ in $\c{M}$ such that $x_i\z=f(x_{i-1})$ and $y_i\z=f(y_{i-1})$ for any $i$.
-Observe that
-\[|x_0-y_0|\le |x_1-y_1|\le\ldots\]
-Show that one can pass to subsequences $x_{i_1},x_{i_2},\dots$ and  $y_{i_1},y_{i_2},\dots$ such that $x_{i_n}\z\to x_0$ and $y_{i_n}\z\to y_0$ as $n\to\infty$.
-Conclude that $|x_0-y_0|\z=|x_1-y_1|$; since the points $x_0$ and $y_0$ can be chosen arbitrary, it implies that $f$ is distance-preserving.
-
-Observe that $f$ is injective.
-Use the argument above to conclude that $f(\c{M})$ is dense in $\c{M}$.
-Note that $f(\c{M})$ is compact and therefore closed (see \ref{prop:hausdorff-compact-closed}).
-Conclude that $f$ is surjective and therefore bijective.
-
-\parit{Comment.}
-This statement is used to prove key properties of so-called \index{Gromov--Hausdorff metric}\emph{Gromov--Hausdorff metric} --- a metric on space of all (isometry classes of) compact metric spaces.
-
-\parbf{\ref{ex:aa}}; \ref{SHORT.ex:aa:def}.  Apply \ref{thm:comp-interval} and \ref{ex:fun(compact):min-max}. Check the conditions in \ref{def:metric-space}.
+\parbf{\ref{ex:aa}}; \ref{SHORT.ex:aa:def}.
+Apply \ref{thm:comp-interval} and \ref{ex:fun(compact):min-max}. Check the conditions in \ref{def:metric-space}.
 
 \parit{\ref{SHORT.ex:aa:complete}.} Choose a Cauchy sequence $\gamma_1,\gamma_2,\dots\in\Gamma$.
 Observe that $\gamma_n(t)$ is a Cauchy sequence in $\RR^2$ for any fixed $t\in [0,L]$.
@@ -929,18 +931,23 @@ $\c{X}\times \c{Y}$ is connected.
 \parbf{\ref{ex:R-connected}.}
 Apply \ref{prop:connected[0,1]}, \ref{prop:image-connected}, and \ref{prop:union-connect}.
 
-\parbf{\ref{ex:nonopen-connected-component}.}
-Connected component is an intersection of clopen sets; in particular it is closed.
+\parbf{\ref{ex:nonopen-connected-component}};
+\ref{SHORT.ex:nonopen-connected-component:closed}
+Apply \ref{ex:A<B<bar-A}.
 
+\parit{\ref{SHORT.ex:nonopen-connected-component:open}.}
 Consider the following subspace of real line $A=\{0,1,\tfrac12,\tfrac13,\dots\}$.
-Show that the one-point set $\{0\}$ is a connected component in $A$ and it is not open in $A$. 
+Show that the one-point set $\{0\}$ is a connected component in $A$ and it is not open in $A$.
 
-\parit{Remark.} A more interesting example is the Cantor set; denote it by $K$.
-Each connected component of $K$ is a one-point set is not open in $K$.
+\parit{\ref{SHORT.ex:nonopen-connected-component:finite}.}
+Apply  \ref{SHORT.ex:nonopen-connected-component:closed}.
 
+\parit{Comment.}
+The Cantor set $K$ gives a more interesting example in \ref{SHORT.ex:nonopen-connected-component:finite}.
+Each connected component of $K$ is a one-point set, and such sets are not open in $K$.
 
 \parbf{\ref{ex:R-open}.}
-Show and use that each connected component of a set in $\RR$ is an open interval.
+Show and use that each connected component of an open set in $\RR$ is an open interval.
 Note that any open interval contains a rational number, use that the set of rational numbers is countable.
 
 \parit{Comment.}
@@ -973,6 +980,11 @@ Show that $(a_3+\NN\cdot d_3)\cap (a_2+\NN\cdot d_2)\ne \emptyset$ and arrive at
 \parit{Comment.}
 This problem and solution with more details are discussed in the note by Solomon Colomb \cite{golomb}
 
+\parbf{\ref{ex:quasi-component}.}
+Check the closure of following set in $\RR^2$:
+\[\set{(x,n+\tfrac1{1-x^2})}{n\in \ZZ\ \text{and}\  x\in (-1,1)},\]
+here $\ZZ$ denotes the set of integers.
+
 \parbf{\ref{ex:S1ne[0,1]}.}
 Show that $\mathbb{S}^1$ has no cut points, but $[0,1]$ has.
 
@@ -990,14 +1002,14 @@ Observe that there is a homeomorphism that sends $e_1$ to $e_2$; let $e$ be the 
 Observe that any two points on the line segments distinct from $x$, $e_1$ and $e_2$ can be mapped to each other by a homeomorphism $Q\to Q$; denote by $i$ the corresponding point on $Q/H$.
 
 Argue as in \ref{ex:not-homeo} to show that $x$, $c$, $e$, and $i$ are distinct points in $Q/H$.
-List the open subset of $\{x, c, e, i\}$.
+List the open subsets of $\{x, c, e, i\}$.
 
 
 \parbf{\ref{ex:sierpinski}};
 \ref{SHORT.ex:sierpinski:connected}
 Let $T_n$ be the union of all sides of the $3^n$ triangles after $n$-th iteration.
 Note that the sequence is nested; that is, $T_0\subset T_1\subset \dots{}$
-Use induction to show that each $T_i$ is connected.
+Use induction to show that each $T_n$ is connected.
 Conclude that the union $T=T_0\cup T_1\cup\dots$ is connected.
 Finally, show that Sierpi\'nski triangle is the closure of $T$ and apply \ref{ex:A<B<bar-A}.
 
@@ -1030,7 +1042,8 @@ On the other hand, \ref{ex:colomb} provides an example of countable connected sp
 
 
 \parbf{\ref{ex:two-point-path-connected}.}
-Recall that $\{a\}$ is an open set in $\c{X}$.
+Recall that connected two-point space has two point $a$ and $b$,
+and its open sets are $\emptyset$m $\{a\}$ and $\{a,b\}$.
 Show and use that $f\:[0,1]\to\c{X}$ defined by
 \[f(t)=
 \begin{cases}
@@ -1071,7 +1084,7 @@ To prove the converse, apply \ref{thm:conncted/path-connected}
 Read the note by Tatsuo Homma \cite{homma} and think.
 
 \parit{Comments.}
-This is a well known puzzle; with following interpretation, it appears in the book of
+This is a well known puzzle; with the following interpretation, it appears in the book of
 Peter Winkler \cite[p. 121]{winkler}:
 \textit{Two monks climb the mountain on the same day, starting at the same time and altitude, but on different paths.
 The paths go up and down on the way to the summit (but never dip below the starting altitude).
@@ -1090,8 +1103,8 @@ Show that the local path-connectedness holds at all points of comb, but does not
 
 \parit{\ref{SHORT.ex:locally-path-connected:not}.} Consider closure of the comb in $\RR^2$.
 
-\parit{Comments.}
-Try to construct a path connected space that is not locally path-connected at any point.
+\parit{Comment.}
+Try to construct a path-connected space that is not locally path-connected at any point.
 
 \parbf{\ref{ex:comp-hom}.}
 Let $f_\tau$ and $g_\tau$ be the homotopies from $f_0$ to $f_1$ and from $g_0$ to $g_1$, respectively.
@@ -1237,6 +1250,34 @@ Observe that $V$ and $W$ are homeomorphic to an open disc and the intersection $
 \parit{Comment.}
 Part \ref{SHORT.ex:van-kamp:sc} is a special case of Van Kampen's theorem, which makes possible to calculate the fundamental group of $\c{X}$ in terms of fundamental groups of $V$, $W$, $V\cap W$ and the homomorpisms
 $\pi_1(V\cap W,x_0)\to\pi_1(V,x_0)$, $\pi_1(V\cap W,x_0)\to\pi_1(W,x_0)$ induced by the inclusions $V\cap W\hookrightarrow V$ and $V\cap W\hookrightarrow W$.
+
+\parbf{\ref{ex:comp-induced}.} Spell the definitions.
+
+\parbf{\ref{ex:retract*}}; \ref{SHORT.ex:retract*:r}. Show and use that $r\circ a=a$ for any loop $a$ in $A$.
+
+\parit{\ref{SHORT.ex:retract*:i}.} Let $a_\tau$ be a homotopy in $\c{X}$ between two loops $a_0$ and $a_1$ in $A$.
+Show and use that $r\circ a_\tau$ is a homotopy in $A$ between the same loops.
+
+\parit{\ref{SHORT.ex:retract*:ri}.}
+By \ref{SHORT.ex:retract*:r} and \ref{SHORT.ex:retract*:i}, it is sufficient to show that $r_*$ is a monomorphism and $i_*$ is an epimorphism.
+
+The first statement means that if $r\circ a_0\sim r\circ a_1$ in $A$ for some loops $a_0$ and $a_1$ in $\c{X}$, then $a_0\sim a_1$ in $\c{X}$.
+Let $r_\tau$ be the homotopy from $r_0=\id_{\c{X}}$ to $r_1=r$.
+Show and use that $r_\tau\circ a_i$ is a homotopy from
+$a_i$ to $r\circ a_i$.
+
+The same homotopy $r_\tau\circ a_i$ can be used to show that $i_*$ is an epimorphism.
+
+
+\parbf{\ref{ex:uphi}}; \ref{SHORT.ex:uphi:uphi}
+
+\parit{\ref{SHORT.ex:uphi:hom-type}.}
+
+\parbf{\ref{ex:hom-product}}; \ref{SHORT.ex:hom-product:mono}
+
+\parit{\ref{SHORT.ex:hom-product:epi}.}
+
+\parbf{\ref{ex:sim-product}.}
 
 \parbf{\ref{ex:S1}}; \ref{SHORT.ex:S1:R3>R^2}.
 Suppose there is a homeomorphism $h\:\RR^3\to\RR^2$.

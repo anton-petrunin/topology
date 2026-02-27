@@ -83,8 +83,8 @@ the converse does not hold.
 \parit{Proof; main part.}
 Let $\c{X}$ be a path-connected space.
 
-By Proposition~\ref{prop:connected[0,1]}, the unit interval $[0,1]$ is connected.
-By Proposition~\ref{prop:image-connected}, for any path $a\:[0,1]\to \c{X}$ the image $a([0,1])$ is connected.
+By \ref{prop:connected[0,1]}, the unit interval $[0,1]$ is connected.
+By \ref{prop:image-connected}, for any path $a\:[0,1]\to \c{X}$ the image $a([0,1])$ is connected.
 
 Fix $x\in \c{X}$.
 Since $\c{X}$ is path-connected,
@@ -118,9 +118,9 @@ It remains to show that $W'$ is not path-connected.
 Assume the contrary. 
 Let $a$ be a path from $x=(0,0)$ to $y=(0,1)$.
 
-Note that $a^{-1}(\{y\})$ is closed subset of compact space $[0,1]$.
+Note that $a^{-1}(\{y\})$ is a closed subset of the compact space $[0,1]$.
 Therefore $a^{-1}(\{y\})$ is compact (\ref{prop:compact-closed}).
-In particular, the set $a^{-1}(\{y\})$ has the minimal element,
+In particular, the set $a^{-1}(\{y\})$ has the minimum element,
 denote it by $t_1$.
 Note that $t_1>0$, $a(t_1)=y$ and $a(t)\ne y$ for any $t<t_1$.
 
@@ -128,7 +128,7 @@ Since $a$ is continuous, there is $t_0<t_1$ such that $|a(t)-y|<\tfrac1{10}$ for
 Since $|a(t_0)-y|<\tfrac1{10}$, we have $a(t_0)\in J_n$ for some $n$ (in other words, $a(t_0)\notin I$).
 
 Denote by $N$ the intersection of the $\tfrac1{10}$-neighborhood of $y$ with the comb.
-The intersection of $J_n$ with $\tfrac1{10}$-neighborhood of $y$ forms a connected component of $N$.
+The intersection of $J_n\cap N$ is a connected component of $N$.
 By \ref{prop:image-connected}, $a(t)\in J_n$ for any $t\in [t_0,t_1]$;
 in particular, $a(t_1)\ne y$ --- a contradiction.
 \qeds
@@ -138,7 +138,7 @@ Describe path-connected components in the flea and comb.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:nonpathconnected-closure}
-Construct a path-connected set in the plane with non path-connected closure.
+Construct a path-connected set in the plane with non-path-connected closure.
 \end{thm}
 
 
@@ -193,13 +193,13 @@ A connected open set in a locally path-connected space is path-connected.
 \end{thm}
 
 \parit{Proof.}
-Let $V$ be an open subset in a path-connected space.
+Let $V$ be an open subset in a locally path-connected space.
 Choose a point $p\in V$;
 denote by $P\subset V$ the path-connected component of $p$ in $V$.
 
 Choose $q\in V$ and let $W_q$ be the neighborhood provided by the definition of locally path-connected space;
 that is, $V\supset W_q\ni q$.
-Since $W_q$ is path connected, we have $W_q\subset P$ or $W_q\cap P=\emptyset$.
+Since $W_q$ is path-connected, we have $W_q\subset P$ or $W_q\cap P=\emptyset$.
 
 It follows that $P$ and its complement $V\setminus P$ are open.
 Since $V$ is connected, we get that $V\setminus P=\emptyset$ --- hence the result.
@@ -208,12 +208,12 @@ Since $V$ is connected, we get that $V\setminus P=\emptyset$ --- hence the resul
 \begin{thm}{Exercise}\label{ex:locally-path-connected}
 
 \begin{subthm}{ex:locally-path-connected:comb}
-According to the theorem, the flea-and-comb space $W'$ must fail to be locally path-connected at some subset of poins.
+According to the theorem, the flea-and-comb space $W'$ must fail to be locally path-connected at some subset of points.
 Find this subset.
 \end{subthm}
 
 \begin{subthm}{ex:locally-path-connected:not}
-Construct a path-connected space that is not locally path connected.
+Construct a path-connected space that is not locally path-connected.
 \end{subthm}
 
 

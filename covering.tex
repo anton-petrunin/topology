@@ -1,0 +1,247 @@
+\chapter{Coverings}
+
+Now we will study main features of the map $w\:\RR\to \SS^1$,
+which was introduced in the previous chapter in order to calculate fundamental group of $\SS^1$.
+It will lead us to the definition of covering map and generalization of several statement;
+they can be used to caluclate fundamental gropus of other spaces, but more importantly, it will give another connection between algebra and geometry that has applications from both sides.
+
+\section{Definition}
+
+\begin{thm}{Definition}\label{def:evenly-covered}
+Let $w\:\tilde{\c{X}}\to \c{X}$ be a continuous map.
+
+An open set $V\subset \c{X}$ is called \index{evenly covered open set}\emph{evenly covered} by $w$ if
+\[w^{-1}(V)=\bigcup_{\alpha\in \c{I}}V_\alpha,\]
+where $V_\alpha$ are pairwise disjoint open sets in $\tilde{\c{X}}$ such that restriction
+$w|_{V_\alpha}$ is a is a homeomorphism $V_\alpha\to V$ for each $\alpha\in \c{I}$.
+The sets $V_\alpha$ are called \index{sheet}\emph{sheets} over $V$.
+
+If for every point $x\in \c{X}$ there is an open neighborhood $V\ni x$ that is evenly by $w$, then $w$ is a \index{covering map}\emph{covering map}, $\tilde{\c{X}}$ is a \index{covering space}\emph{covering space} of $\c{X}$.
+\end{thm}
+
+Note that $w\:\tilde{\c{X}}\to \c{X}$ is a covering if $\c{X}$ admits an open cover by evenly covered sets.
+In particular, from the proof of \ref{prop:lifting}, $w(x)=\exp(2\cdot\pi\cdot i\cdot x)$  defines a covering map $\RR\to\SS^1$ --- this maps and its properties will guide us to study general covering maps.
+
+Most interesting examples of covering maps have path-connected source $\tilde{\c{X}}$ and target  $\c{X}$.
+Many authors assume that coverings must be surjective and have connected sourse space.
+I might silently assume that this, but formally speaking it is not required (in this text).
+For example, one may take several disjoint copies of space $\c{X}$ as $\tilde{\c{X}}$ and map a point in one copy to the corresponding point in $\c{X}$ --- this is a bouring example of a covering map.
+More boring examples will appear if $\c{X}$ is not connected; then one may take different number of copies of its connected components and apply the same map.
+
+The following observation says that a covering map must be open.
+Note that restriction $w$ to a bounded open interval provides an example of open map which is not covering; so the converse does not hold in general.
+
+
+\begin{thm}{Observation}\label{thm:covering-open}
+Any covering map is an open map.
+\end{thm}
+
+\parit{Proof.}
+Let $w\:\tilde{\c{X}}\to \c{X}$ be a covering map.
+Choose an open set $W\subset \tilde{\c{X}}$ and a point $\tilde x\in W$.
+
+Choose an evenly covered open set $V\ni x=w(\tilde x)$; let $\{V_\alpha\}$ is a family of its sheets.
+Since $\tilde x\in w^{-1}(V)$, we have $\tilde x\in V_\alpha$ for some $\alpha$.
+Let $V'_\alpha=V_\alpha\cap W$.
+Since $w|_{V_\alpha}$ is a homeomorphism, $V'=w(V_\alpha')$ is open in $V$, and (since $V$ is open) $V'$ is open in $\c{X}$.
+That is, any $x\in w(W)$ admits an open neighborhood $V'\subset w(W)$;
+in other words, $w(W)$ is open.
+\qeds
+
+\begin{thm}{Exercise}
+Let $w\:\tilde{\c{X}}\to\c{X}$ be a covering map.
+Show that the image $w(\tilde{\c{X}})$ is clopen set in $\c{X}$.
+In particular, if $\c{X}$ is connected, and $\tilde{\c{X}}\ne\emptyset$, then $w(\tilde{\c{X}})=\c{X}$.
+\end{thm}
+
+Let $n$ be an integer.
+A covering map $w\:\tilde{\c{X}}\to \c{X}$ is called \emph{$n$-folded} if inverse image of every point $x\in \c{X}$ has exactly $n$ points.
+
+\begin{thm}{Exercise}
+Let $w\:\tilde{\c{X}}\to \c{X}$ is a covering map, and let $n$ be an integer.
+Assume that $\c{X}$ is connected, and an inverse image of some point $x\in \c{X}$ has exactly $n$ points.
+Show that $w$ is $n$-folded.
+\end{thm}
+
+\begin{thm}{Exercise}
+The following picture shows figure eight and its covering spaces.
+Redraw them and mark the arcs of the covering by arrows that correspond to the image in the figure eight.
+(The solution is not unique.)
+\end{thm}
+
+
+\begin{figure}[!ht]
+\centering
+\includegraphics{mppics/pic-1620}
+\end{figure}
+
+\section{Real projective plane}
+
+An action $G\acts \c{X}$ is called \index{free action}\emph{free} if for any $x\in\c{X}$ and any $g\in G$, we have
+\[g\cdot x=x\quad\iff\quad g=1.\]
+
+\begin{thm}{Proposition}
+Let $G\acts \c{X}$ be a continuous free action, let $G$ be finite, and let $\c{X}$ be Hausdorff.
+Then the quotient map $\c{X}\to \c{X}/G$ is covering.
+\end{thm}
+
+\parit{Proof}
+Choose $x\in \c{X}$.
+Since $\c{X}$ is Hausdorff we can choose open disjoint sets $V_g\ni x$ and $W_g\ni g\cdot x$ for any $g\ne 1$.
+We can assume that $W_g=g\cdot V_g$; if not pass to the intersections $V_g\cap g^{-1}\cdot W_g\ni x$ and
+$g\cdot (V_g\cap g^{-1}\cdot W_g)=g\cdot V_g\cap W_g\ni g\cdot x$.
+Now consider set
+\[V=\bigcap_{g\ne 1}V_g\ni x.\]
+Note that $g\cdot V$ are disjoint for all $g\in G$.
+The restriction of the quotient map $f$ to $g\cdot V$ is injective, and by \ref{ex:quotient-map:open} it is open.
+In other words, $f|_{g\cdot V}$ is a homeomorphism for any $g\in G$, which means that $f$ is a covering.
+\qeds
+
+We will denote by $\ZZ_n$ integers modulo $n$;
+this is an example of cyclic group of order $n$.
+(Recall that all cyclic groups of order $n$ are isomorphic.)
+
+Consider $\ZZ_2$ action on $\SS^2$ generated by the involution $x\mapsto -x$.
+The quotient space is called \emph{real protective plane} and denoted by $\RP^2$.
+According to the proposition, this gives another intersrting example of covering maps ---  the quotient map $\SS^2\to\RP^2$.
+Soon we will use it to calculate $\pi_1(\RP^2)$.
+
+
+
+
+\section{Path liftings}
+
+Recall that in Section~\ref{sec:lifting-s1}, we defined liftings with respect to the covering $\RR\to\SS^1$.
+Now we repeat the same definition for general continuous map.
+
+Let $f\:\tilde{\c{X}}\to \c{X}$ and $g\:\c{Y}\to \c{X}$ be continuous maps.
+A continuous map $\tilde g\:\c{Y}\to \tilde{\c{X}}$ is called a \index{lift}\emph{lift} of $g$ (with respect to $f$) if
+\[f\circ \tilde g=g.\]
+In this case we also say that $g$ \index{lifting}\emph{lifts} to $\tilde{\c{X}}$.
+In particular, if $\c{Y}=[0,1]$, then $g$ is a path, and the path $\tilde g\:[0,1]\to \tilde{\c{X}}$ is a \emph{lift} of $g$.
+
+The following lemma is a direct generalization of \ref{prop:lifting}, and it can be proved along the same lines.
+
+\begin{thm}{Lemma}\label{lem:path-lifting}
+Let $w\:\tilde{\c{X}}\to \c{X}$ be a covering map, and let $a_0\:[0,1]\to \c{X}$ be a path.
+Suppose that $\tilde x_0\in \tilde{\c{X}}$ and $x_0\in \c{X}$ be a points such that $w(\tilde x_0)=x_0=a_0(0)$.
+Then there is unique lifting $\tilde a_0$ of $a$ such that $\tilde a_0(0)=\tilde x_0$.
+
+Moreover, given a homotopy of paths $a_\tau$ from $a_0$ to $a_1$ there is unique lifting $\tilde a_\tau$ such that $\tilde a_0(0)=\tilde x_0$.
+In particular, if $a_0\sim a_1$ then $\tilde a_0\sim \tilde a_1$.
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:induced-hom-covering}
+Let $w\:\tilde{\c{X}}\to \c{X}$ be a covering map.
+Suppose that $\tilde x_0\in \tilde{\c{X}}$ and $x_0\in \c{X}$ be a points such that $w(\tilde x_0)=x_0$.
+
+\begin{subthm}{ex:induced-hom-covering:injective}
+Show that $w_*\:\pi_1(\tilde{\c{X}},\tilde x_0)\to \pi_1(\c{X}, x_0)$ is a \index{monomorphism}\emph{monomorphism} (which means injective homeomorphism).
+\end{subthm}
+
+\begin{subthm}{ex:induced-hom-covering:lift}
+Let $b$ be a loop in $\c{X}$ with base point $x_0$ and $\tilde b$ be its lift in $\tilde{\c{X}}$ such that $\tilde b(0)=\tilde x_0$.
+Show that $\tilde b$ is a loop if and only in $[b]\in \Im w_*$.
+\end{subthm}
+
+
+\begin{subthm}{ex:induced-hom-covering:sc}
+Assume  $\tilde{\c{X}}$ is simply connected.
+Let $b$ be a loop in $\c{X}$ based at $x_0$ and $\tilde b$  be its lift in $\tilde{\c{X}}$ such that $\tilde b(0)=\tilde x_0$.
+Show that $[b]=1\in\pi_1(\c{X},x_0)$ if and only if $\tilde b$ is a loop.
+\end{subthm}
+
+
+
+\begin{subthm}{ex:induced-hom-covering:endpoint}
+Let $a_0$ and $a_1$ be two paths in $\c{X}$ such that $a_0(0)=a_1(0)=x_0$ and $a_0(1)=a_1(1)$.
+Suppose $\tilde a_0$ and $\tilde a_1$ be lifts of $a_0$ and $a_1$ such that $\tilde a_0(0)=\tilde a_1(0)=\tilde x_0$.
+Show that $\tilde a_0(1)=\tilde a_1(1)$ if and only if $[a_0*\bar a_1]\in w_*(\pi_1(\tilde{\c{X}})$.
+\end{subthm}
+
+\end{thm}
+
+\section{Map liftings}
+
+\begin{thm}{Theorem}\label{thm:lifting-criterion}
+Let $w\:\tilde{\c{X}}\z\to \c{X}$ be a covering map and let $f\:\c{Y}\z\to \c{X}$ be a continuous map.
+Suppose $\c{Y}$ is a path-connected and locally path-connected and $y_0\in \c{Y}$, $x_0\in \c{X}$ and $\tilde x_0\in \tilde{\c{X}}$ be points
+such that $w(\tilde x_0)=x_0=f(y_0)$.
+Then there exists a unique lift $\tilde f\:\c{Y}\to \tilde{\c{X}}$ such that
+$\tilde g(y_0)=\tilde x_0$
+if and only if $\Im f_*<\Im w_*$.
+\end{thm}
+
+\parit{Proof.}
+Assume the lift $\tilde f$ exists, so $f=w\circ \tilde f$.
+Then for the induced homeomorphisms, we have $f_*=w_*\circ \tilde f_*$, and hence $\Im f_*<\Im w_*$.
+
+
+
+Now choose $y\in \c{Y}$ and a path $a_0$ in $\c{Y}$ from $y_0$ to $y$.
+Consider the paths $b_0=f\circ a_0$ in $\c{X}$, and let $\tilde b_0$ be its unique lift such that $\tilde b_0(0)=\tilde x_0$, which is provided by \ref{lem:path-lifting}.
+
+We want to define $\tilde f(y)$ as $\tilde b_0(1)$, but in order to do this we have to check that the point $\tilde b_0(1)\in \tilde{\c{X}}$ does not depend on the choice of path $a_0$ from $y_0$ to $y$.
+In other words, if we construct in the same way paths $b_1$ and $\tilde b_1$ for another path $a_1$ from $y_0$ to $y$, then $\tilde b_1(1)=\tilde b_0(1)$.
+%Note that $[b_0*\bar b_1]=f_*[a_0*\bar a_1]$. Note that $\widetilde{b_0*\bar b_1}=\tilde b_0* \tilde{\bar b}_1$, where $\tilde{\bar b}_1$ is the lift of $\bar b_1$ such that $\tilde{\bar b}_1(0)= \tilde b_0(1)$. The time-reversed path  $\bar{\tilde{\bar b}}_1$ is another lift of $b_1$. By uniqueness of lift we have that $\bar{\tilde{\bar b}}_1(t)=\tilde b_1(t)$ for any $t$ or $\bar{\tilde{\bar b}}_1(t)\ne\tilde b_1(t)$ for any $t$.
+Since $\Im f_*<\Im w_*$, we have that $[b_0*\bar b_1]=f_*[a_0*\bar a_1]$
+By \ref{ex:induced-hom-covering:endpoint}, this is equivalent to $[b_0*\bar b_1]\in \Im w_*$, which is the case since $[b_0*\bar b_1]=f_*[a_0*\bar a_1]$ and  $\Im f_*<\Im w_*$.
+
+Now we can define $\tilde f$ by setting $\tilde f(y)\df \tilde b_0(1)$.
+By construction $f=w\circ \tilde f$, and it remains to check that $\tilde f$ is continuous.
+
+Fix $y\in \c{Y}$;
+let $x\df f(y)$ and $\tilde x=\tilde f(y)$.
+Choose an evenly covered open set $V\ni x$.
+Let $V_\alpha$ be the unique sheet over $V$ that contains $\tilde x$.
+
+Since $f$ is continuous, we can choose an open neighborhood $W\ni y$ such that $f(W)\subset V$.
+Since $\c{Y}$ is locally path-connected, we can assume that $W$ is path-connected.
+Choose a path $a_0$ from $y_0$ to $y$
+Choose a point $y'\in W$.
+Choose a path $a_0$ from $y_0$ to $y$ and a path $a_1$ in $W$ from $y$ to $y'$.
+Let $b_0=f\circ a_0$ and $b_1=f\circ a_1$, then $\tilde f(y')=\widetilde{b_0*b_1}(1)$.
+Observe that...
+\qeds
+
+
+\section{Lifting lemmas}
+
+Statement of path-lifting lemma (without proof).
+
+Statement about lifting theorem for locally path-connected spaces.
+
+\begin{thm}{Borsuk--Ulam theorem}\label{thm:Borsuk-Ulam}
+For every continuous map $f\: \SS^2\to \RR^2$ there exists a pair of antipodal
+points $x$ and $-x$ in $\SS^2$ that map to a single point; that is  $f(x)=f(-x)$.
+\end{thm}
+
+\parit{Proof.}
+Suppose $f(x)\ne f(-x)$ for any $x\in\SS^2$.
+Consider the map
+\[g(x)=\frac{f(x)- f(-x)}{|f(x)- f(-x)|}.\]
+Note that $g$ is a continuous \index{odd map}\emph{odd} map $\SS^2\to\SS^1$; that is $g(-x)=-g(x)$ for any $x\in \SS^2$.
+
+Consider the minimal equivalence relation on $\SS^2$ and $\SS^1$ such that $x\sim -x$.
+Let $\RP^2=\SS^2/\sim$
+
+Choose $x\in g^{-1}(1)$, let $f$ be a path from $x$ to $-x$ in $\SS^2$.
+Let $w\: \SS^2 \to \SS^2/sim=\RP^2$ is a caovering map.
+The compsition $w\circ f$ is a loop in $\RP^2$.
+
+
+Note that $g\circ f$ is a path from $1$ to $-1$ in $\SS^1$;
+its lifting $\widetilde{g\circ f}\: [0,1]\to \RR$ connects a $0$ to a half-integer $n+\tfrac12$ for $n\in \ZZ$.
+\qeds
+
+\begin{thm}{Exercse}\label{ex:ABC}
+Let $A$, $B$, and $C$ be closed subsets $\SS^2$ such that $A\cup B\cup C=\SS^2$.
+Apply the Borsuk--Ulam theorem to the map $f\: \SS^2\to \RR^2$ defined by
+\[f\:x\mapsto (\dist_Ax,\dist_Bx)\]
+to conclude that one of the sets $A$, $B$, or $C$
+contains a pair of antipodal
+points in $\SS^2$.
+
+Give an example showing that analogous statement does not hold for four closed set $A$, $B$, $C$, and $D$.
+
+\end{thm}
