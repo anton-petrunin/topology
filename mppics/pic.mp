@@ -390,9 +390,11 @@ u:=1.4cm;
 z.p=(0,0)*u;
 z.q=(2,0)*u;
 
-for i=0 upto 9:
-draw z.p{dir (45+6i)}..{dir -10i}z.q;
+for i=1 upto 8:
+draw z.p{dir (45+6*i)}..{dir (-10*i)}z.q;
 endfor
+draw z.p{dir (45+6*0)}..{dir (-10*0)}z.q pensemibold;
+draw z.p{dir (45+6*9)}..{dir (-10*9)}z.q pensemibold;
 
 dOt z.p,z.q;
 
@@ -932,6 +934,81 @@ draw p3;
 
 endfig;
 
+beginfig(1305)
+save u,p;
+path p[];
+u:=1.4cm;
+
+
+z.p=(0,0)*u;
+z.q=(2,0)*u;
+z.r=(4,0)*u;
+
+for i=1 upto 8:
+draw z.p{dir (35+6*i)}..{dir (-10*i)}z.q;
+draw z.q{dir (-20+8*i)}..{dir (20-12*i)}z.r;
+endfor
+draw z.p{dir (35+6*0)}..{dir (-10*0)}z.q pensemibold;
+draw z.q{dir (-20+8*0)}..{dir (20-12*0)}z.r pensemibold;
+draw z.p{dir (35+6*9)}..{dir (-10*9)}z.q pensemibold;
+draw z.q{dir (-20+8*9)}..{dir (20-12*9)}z.r pensemibold;
+
+dOt z.p,z.q,z.r;
+
+
+label.llft (btex $p$ etex, z.p);
+label.bot (btex $q$ etex, z.q);
+label.lrt (btex $r$ etex, z.r);
+label.bot (btex $a_0$ etex, point .5 of (z.p{dir (35)}..{dir (0)}z.q));
+label.bot (btex $b_0$ etex, point .5 of (z.q{dir (-20)}..{dir (20)}z.r));
+label.top (btex $a_1$ etex, point .5 of (z.p{dir (35+6*9)}..{dir (-10*9)}z.q));
+label.top (btex $b_1$ etex, point .5 of (z.q{dir (-20+8*9)}..{dir (20-12*9)}z.r));
+
+endfig;
+
+beginfig(1350)
+save u,p;
+path p[];
+u:=1.4cm;
+
+z.a=(0,0)*u;
+z.b=(2,0)*u;
+z.x0=.45[z.a,z.b];
+z.x1=.23[z.a,z.b];
+z.x2=.75[z.a,z.b];
+
+p1=z.a{(1,-1)}..z.b{(1,.9)}..tension 1.4..cycle;
+p2=z.a{(1,1)}..z.b{(1,-1.1)}..tension 1.4..cycle;
+p3=z.x0{-.3,-1}..(.5)[z.x0,z.x1]+(-.2,-1)*u{(-1,-.3)}..z.x1{up}..(.5)[z.x1,z.x1]+(0,1)*u..z.x2{down}..(.5)[z.x2,z.x1]+(.2,-1)*u{(-1,.3)}..{-.2,1}z.x0--cycle;
+p4=z.x0{(-1,.3)}..{(-1,-.3)}z.x1;
+p5=z.x0{(1,.3)}..{(1,-.3)}z.x2;
+
+draw p1;
+draw p2;
+draw p3;
+drawarrow subpath (0,1) of p3 pensemibold;
+drawarrow subpath (1,3.3) of p3 pensemibold;
+drawarrow subpath (3.3,5) of p3 pensemibold;
+draw subpath (5,6) of p3 pensemibold;
+drawarrow subpath (0,.6) of p4 pensemibold;
+draw subpath (.6,1) of p4 pensemibold;
+drawarrow subpath (0,.6) of p5 pensemibold;
+draw subpath (.6,1) of p5 pensemibold;
+
+dOt z.x0,z.x1,z.x2;
+
+label.bot (btex $V$ etex, point 1.5 of p1);
+label.top (btex $W$ etex, point 1.5 of p2);
+label.bot (btex $a_1$ etex, point 1 of p3);
+label.top (btex $a_2$ etex, point 3.3 of p3);
+label.bot (btex $a_3$ etex, point 5 of p3);
+label.bot (btex $b_1$ etex, point .5 of p4);
+label.bot (btex $b_2$ etex, point .5 of p5);
+label.top (btex $x_0$ etex, z.x0);
+label.lft (btex $x_1$ etex, z.x1);
+label.rt (btex $x_2$ etex, z.x2);
+endfig;
+
 beginfig(1405)
 save u,p;
 path p[];
@@ -1043,5 +1120,39 @@ label (btex $\downarrow\! e$ etex, (.5,.7)*u+(3,-5));
 label.rt (btex $\RR$ etex, .5[point 7 of p2,point 9 of p2]);
 label.rt (btex $\SS^1$ etex, point 1 of p1);
 endfig;
+
+beginfig(1620)
+save u,p;
+path p[];
+u:=1cm;
+
+p1=(1,0)*u..{up}(2,0)*u..(1,0)*u..(0,0)*u{up}..cycle;
+
+z.a0=(0,1)*u;
+z.b0=(0,2)*u;
+z.a1=z.a0 rotated 120;
+z.b1=z.b0 rotated 120;
+z.a2=z.a0 rotated -120;
+z.b2=z.b0 rotated -120;
+
+p2=z.a0{z.a0 rotated 90}..tension 1.6..z.a2{z.a2 rotated 90}..tension 1.6..z.a1{z.a1 rotated 90}..tension 1.6..cycle;
+
+p3=z.b0{z.b0 rotated 90}..tension 5..z.b2{z.b2 rotated 90}..tension 5..z.b1{z.b1 rotated 90}..tension 5..cycle;
+
+p4=(0,0)*u{up}..(1,0)*u..(3,0)*u..(4,0)*u{down}..(3,0)*u..(1,0)*u..cycle;
+
+
+drawarrow subpath (0,1) of p1 shifted ((.4,0)*u);
+drawarrow subpath (1,1.15) of p1 shifted ((.4,0)*u);
+drawarrow subpath (1.15,3.05) of p1 shifted ((.4,0)*u);
+draw subpath (3.05,4) of p1 shifted ((.4,0)*u);
+
+draw p2 shifted ((4,0)*u);
+draw p3 shifted ((6,-1)*u);
+draw p4 shifted ((0,-1.4)*u);
+
+
+endfig;
+
 
 end

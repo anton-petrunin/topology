@@ -1,6 +1,5 @@
 \chapter{Fundamental group of a circle}
 
-
 In this chapter we will caclulate fundamental group of a circle;
 it will give a first example of a space with a nontrivial fundamental group.
 In the proof one has to show nonexistence of homotopies between certain loops;
@@ -102,25 +101,25 @@ namely, we will encode a point $(x,y)\in\RR^2$ by the complex number $z=x+i\cdot
 In particular,
 \[\SS^1=\set{z=x+i\cdot y\in \CC}{|z|^2=x^2+y^2=1}.\]
 
-Consider the map $e\:\RR\to \mathbb{S}^1\subset \CC$ defined by
-\[e\:x\mapsto \exp(2\cdot\pi\cdot i\cdot x)=\cos(2\cdot\pi\cdot x)+i\cdot\sin(2\cdot\pi\cdot x)).\]
+Consider the map $w\:\RR\to \mathbb{S}^1\subset \CC$ defined by
+\[w\:x\mapsto \exp(2\cdot\pi\cdot i\cdot x)=\cos(2\cdot\pi\cdot x)+i\cdot\sin(2\cdot\pi\cdot x)).\]
 (The last equality is called Euler's idenity, it can be taken as a definition of $\exp(2\cdot\pi\cdot i\cdot x)$.)
 
 Let $f\:\c{X}\to \SS^1$ be a continuous map.
-A continuous map $\tilde f\:\c{X}\to \RR$ will be called \index{lifting}\emph{lifting} of $f$ if $f=e\circ \tilde f$;
+A continuous map $\tilde f\:\c{X}\to \RR$ will be called \index{lifting}\emph{lifting} of $f$ if $f=w\circ \tilde f$;
 in other words if the following diagram \index{commutative diagram}\emph{commutes}\footnote{It means that following directed paths in the diagram with the same start and endpoints lead to the same result.
 Even in this simple case, using a commutative diagram is helpful, and later on you simply can't do without them.}.
 \begin{figure}[h!]
 \centering
 \begin{tikzcd}
-& \RR \arrow[d, "e"]\\
+& \RR \arrow[d, "w"]\\
 \c{X} \arrow[r, "f"']\arrow[ru, "\tilde f"] & \SS^1
 \end{tikzcd}
 \end{figure}
 
 
 \begin{thm}{Proposition}\label{prop:lifting}
-Let $f_0\:[0,1]\to\SS^1$ be a path and let $x_0\in \RR$ be a point such that $e(x_0)=f_0(0)$.
+Let $f_0\:[0,1]\to\SS^1$ be a path and let $x_0\in \RR$ be a point such that $w(x_0)=f_0(0)$.
 Then there is unique lifting $\tilde f_0$ of $f$ such that $\tilde f_0(0)=x_0$.
 
 Moreover, given a homotopy of paths $f_\tau$ from $f_0$ to $f_1$ there is unique lifting $\tilde f_\tau$ such that $\tilde f_0(0)=x_0$.
@@ -128,24 +127,24 @@ In particular, if $f_0\sim f_1$ then $\tilde f_0\sim \tilde f_1$.
 \end{thm}
 
 \begin{thm}{Lemma}\label{lem:covering}
-Let $W=\SS^1\setminus \{u_0\}$ for some $u_0=e(x_0)\in\SS^1$.
-Then $e^{-1}(W)$ is a disjoint union of open intervals $V_n=(x_0+n,x_0+n+1)$ for $n\in \ZZ$
-and $e$ defines a homeomorphism $V_n\to U$ for each $n$.
+Let $W=\SS^1\setminus \{u_0\}$ for some $u_0=w(x_0)\in\SS^1$.
+Then $w^{-1}(W)$ is a disjoint union of open intervals $V_n=(x_0+n,x_0+n+1)$ for $n\in \ZZ$
+and $w$ defines a homeomorphism $V_n\to U$ for each $n$.
 
-In particular, given a connected space $\c{X}$, continuous map $f\:\c{X}\z\to W$, and a point $q\in \RR$ such that $e(q)=f(p)$ for some $p\in \c{X}$ there is a unique lifting $\tilde f\:\c{X}\to \RR$ of $f$ such that $\tilde f(p)=q$.
+In particular, given a connected space $\c{X}$, continuous map $f\:\c{X}\z\to W$, and a point $q\in \RR$ such that $w(q)=f(p)$ for some $p\in \c{X}$ there is a unique lifting $\tilde f\:\c{X}\to \RR$ of $f$ such that $\tilde f(p)=q$.
 \end{thm}
 
 
 \parit{Proof.}
-Observe that $e_n=e|_{V_n}$ is homeomorphism $V_n\to W$.
-Indeed, $e_n$ is a continuous bijection.
-Furthermore, by \ref{obs:compact-to-hausdorff} $e|_{\bar V_n}$ is a closed map.
-Therefore $e_n=e|_{V_n}$ is a closed continuous bijection $V_n\to W$ and hence a homeomorphism.
+Observe that $w_n=w|_{V_n}$ is homeomorphism $V_n\to W$.
+Indeed, $w_n$ is a continuous bijection.
+Furthermore, by \ref{obs:compact-to-hausdorff} $w|_{\bar V_n}$ is a closed map.
+Therefore $w_n=w|_{V_n}$ is a closed continuous bijection $V_n\to W$ and hence a homeomorphism.
 
-Note that the intervals $V_n$ are connected components of $e^{-1}W$.
+Note that the intervals $V_n$ are connected components of $w^{-1}W$.
 In particular, $q\in V_n$ for some $n$.
-Since $\c{X}$ is connected, $\tilde f(\c{X})\subset V_n$ for any lifting $\tilde f$ lifting of $f$ such that $e(q)=f(p)$.
-Since $e_n=e|_{V_n}$ is a homeomorpism, we have $\tilde f=e_n^{-1}\circ f$, which proves existance and uiqueness.
+Since $\c{X}$ is connected, $\tilde f(\c{X})\subset V_n$ for any lifting $\tilde f$ lifting of $f$ such that $w(q)=f(p)$.
+Since $w_n=w|_{V_n}$ is a homeomorpism, we have $\tilde f=w_n^{-1}\circ f$, which proves existance and uiqueness.
 \qeds
 
 
@@ -186,7 +185,7 @@ Again, the continuity of $\tilde F$ follows from \ref{ex:u-continuous:closed}.\q
 A loop in $\SS^1$ based at $1$ is a continuous map $f\:[0,1]\to\SS^1$
 such that $f(0)=f(1)=1$.
 Let $\tilde f\:[0,1]\to\RR$ be the unique lift with $\tilde f(0)=0$ provided by \ref{prop:lifting}.
-Since $e^{-1}(1)=\ZZ$, we have $\tilde f(1)\in\ZZ$.
+Since $w^{-1}(1)=\ZZ$, we have $\tilde f(1)\in\ZZ$.
 The integer $\tilde f(1)$ will be called \index{degree of loop}\emph{degree} of the loop $f$, it will be denoted by $\deg f$.
 
 
@@ -212,7 +211,7 @@ Observe that the path $t\mapsto \deg f_0+\tilde f_1(t)$ is a lifting of $f_1$ th
 Concatenating $\tilde f_0$ with this path we get a lift of $f_0*f_1$ with the endpoint at $\deg f_0+\deg f_1$.
 Hence $\deg (f_0*f_1)=\deg f_0+\deg f_1$ for any two loops $f_0$ and $f_1$, and we proved that degree defines a homomorphism $\deg\:\pi_1(\SS^1,1)\cong\ZZ$.
 
-Surjectivity of $\deg\:\pi_1(\SS^1,1)\cong\ZZ$ follows follows since given the path $f_n\:t\mapsto e(n\cdot t)$ has degree $n$.
+Surjectivity of $\deg\:\pi_1(\SS^1,1)\cong\ZZ$ follows follows since given the path $f_n\:t\mapsto w(n\cdot t)$ has degree $n$.
 
 Let $f_0$ and $f_1$ be two loops at $\SS^1$ with base point $1$, and let $\tilde f_0$ and $\tilde f_1$ be their liftings such that $\tilde f_0(0)=\tilde f_1(0)=0$.
 If $\deg f_0=\deg f_1$, then $\tilde f_0(1)=\tilde f_1(1)$.
@@ -231,17 +230,15 @@ Every non-constant complex polynomial has a complex root.
 \parit{Proof.}
 Assume that a polynomial $p$ has no roots.
 
-Recall that $e(t)=\exp(2\cdot\pi\cdot i\cdot t)$.
+Recall that $w(t)=\exp(2\cdot\pi\cdot i\cdot t)$.
 Given $r\ge 0$, consider the loop
-\[f_r\:t\mapsto p(r\cdot e(t))/|p(r\cdot e(t))|\]
+\[f_r\:t\mapsto p(r\cdot w(t))/|p(r\cdot w(t))|\]
 in $\SS^1$.
 Observe that $f_0$ is a constant loop.
-Note that $f_r$ converges to $e(k\cdot t)$ as $r\to\infty$, here $k$ is
+Note that $f_r$ converges to $w(k\cdot t)$ as $r\to\infty$, here $k$ is
 the degree of $p$.
-In particular, if $r$ is large then $f_r(t)-e(k\cdot t)\ne 0$ for any $t$;
-arguing as in \ref{ex:homot-sphere}, we get that $f_r$ is homotopic to path $t\mapsto e(k\cdot t)$ for large $r$.
+In particular, if $r$ is large then $f_r(t)-w(k\cdot t)\ne 0$ for any $t$;
+arguing as in \ref{ex:homot-sphere}, we get that $f_r$ is homotopic to path $t\mapsto w(k\cdot t)$ for large $r$.
 This forces a change of degree, which is impossible under a homotopy of paths.
 \qeds
-
-
 

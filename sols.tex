@@ -1015,13 +1015,13 @@ Show and use that there is a unique choice for the set $\{x,y,z\}$ and
 it is formed by the midpoints of the original triangle.
 
 \parbf{\ref{ex:simple-path}.}
-Passing to a subinterval, we can assume that $f(t)\ne x$ and $f(t)\ne y$ if $0<t<1$.
-Show that there is a maximal (with respect to inclusion) open set $V\subset [0,1]$ such that if $(a,b)$ is a connected component of $V$, then $f(a)=f(b)$.
-Consider map $\hat f\:[0,1]\to \c{X}$ defined by
-$\hat f(t)=f(t)$ if $t\notin V$ and $\hat f(t)=f(a)$ if $t$ lies in a connected component $(a,b)$ of $V$.
-Show that $\hat f$ is a path.
-Read about Devil's staircase and apply similar construction to make $\hat f$ injective,
-or follow the argument in the note by Jeremy Brazas \cite{brazas}.
+Passing to a subinterval, we can assume that $a(t)\ne x$ and $a(t)\ne y$ if $0<t<1$.
+Show that there is a maximal (with respect to inclusion) open set $V\subset [0,1]$ such that if $(t_0,t_1)$ is a connected component of $V$, then $a(t_0)=a(t_1)$.
+Consider map $\hat a\:[0,1]\to \c{X}$ defined by
+$\hat a(t)=a(t)$ if $t\notin V$ and $\hat a(t)=a(t_0)$ if $t$ lies in a connected component $(t_0,t_1)$ of $V$.
+Show that $\hat a$ is a path.
+Read about Devil's staircase and apply similar construction to make $\hat a$ injective,
+or follow the argument in the note by Reinhard Börger \cite{borger}; see also \cite{brazas}.
 
 \parit{Comment.}
 From this statement we get that any path-connected Hausdorff space with at least two points must have at least continuum of points.
@@ -1031,7 +1031,7 @@ On the other hand, \ref{ex:colomb} provides an example of countable connected sp
 
 \parbf{\ref{ex:two-point-path-connected}.}
 Recall that $\{a\}$ is an open set in $\c{X}$.
-Show and use that $f\:[0,1]\to\c{X}$ defined by 
+Show and use that $f\:[0,1]\to\c{X}$ defined by
 \[f(t)=
 \begin{cases}
 a&\text{if\ }t<1,
@@ -1042,11 +1042,11 @@ b&\text{if\ }t=1
 is a continuous map.
 
 \parbf{\ref{ex:image(path-connected)}.}
-Show and use that for any continuous map $\phi$ and any path $f$, the composition $\phi\circ f$ is a path.
+Show and use that for any continuous map $\phi$ and any path $a$, the composition $\phi\circ a$ is a path.
 
 \parbf{\ref{ex:product(path-connected)}.}
-Suppose that $f$ and $g$ are paths in $\c{X}$ and $\c{Y}$ respectively.
-Show and use that $t\z\mapsto (f(t),g(t))$ is a path in $\c{X}\times\c{Y}$.
+Suppose that $a$ and $b$ are paths in $\c{X}$ and $\c{Y}$ respectively.
+Show and use that $t\z\mapsto (a(t),b(t))$ is a path in $\c{X}\times\c{Y}$.
 
 \parbf{\ref{ex:flea-and-comb}.} The flea and the comb.
 
@@ -1078,12 +1078,20 @@ The paths go up and down on the way to the summit (but never dip below the start
 Can they vary their speed (sometimes going backwards) so that at every moment of the day they are at the same altitude?}
 
 \parbf{\ref{ex:QQ}.}
-Show and use that for any rational numbers $a\ne 0$ and $b$, the line $y=a\cdot x+b$ lies in $A\cup B$.
+Show and use that for any rational numbers $r\ne 0$ and $q$, the line $y=r\cdot x+q$ lies in $A\cup B$.
 
 \parbf{\ref{ex:pseudocircle}.} Read about \index{pseudo-arc}\emph{pseudo-arc} and think.
 
-\parbf{\ref{ex:locally-path-connected}.}
+\parbf{\ref{ex:finite-connecte}.}
+Describe paths with two-point images and use this description to construct a path between given two points in a connected finite space.
+
+\parbf{\ref{ex:locally-path-connected}}; \ref{SHORT.ex:locally-path-connected:comb}
 Show that the local path-connectedness holds at all points of comb, but does not hold at the flea.
+
+\parit{\ref{SHORT.ex:locally-path-connected:not}.} Consider closure of the comb in $\RR^2$.
+
+\parit{Comments.}
+Try to construct a path connected space that is not locally path-connected at any point.
 
 \parbf{\ref{ex:comp-hom}.}
 Let $f_\tau$ and $g_\tau$ be the homotopies from $f_0$ to $f_1$ and from $g_0$ to $g_1$, respectively.
@@ -1137,7 +1145,7 @@ so, $h_1(x)=p$ for any $x\in \c{X}$
 Show and use that $t\mapsto h_t(x)$ is a path from $x$ to $p$.
 
 \parit{\ref{SHORT.ex:contractible:target}.}
-Choose two continuous maps $f_0, f_1\:\c{Y}\to \c{X}$.
+Choose two continuous maps $f_0, f_1\:\c{Y}\z\to \c{X}$.
 Note that $h_t\circ f_i$ is a homotopy from $f_i$ to the constant map $y\mapsto p$.
 Concatenate the obtained homotopies.
 
@@ -1167,17 +1175,83 @@ Observe and use that both sets form retracts of the plane figure in the picture.
 \parbf{\ref{ex:mapping-cylinder}.}
 Read about mapping cylinder.
 
+\parbf{\ref{ex:ab=e}.}
+Apply the claim.
+
+
+\parbf{\ref{ex:assoc+neutral}}; \ref{SHORT.ex:assoc}.
+Let $d=(a*b)*c= a*(b*c)$.
+Show that
+\begin{align*}
+d([0,\tfrac{t_0}2])&\supset d([0,t_0])\ \text{and}
+\\
+d([0,1-t_0])&\supset d([0,1-\tfrac{t_0}2])
+\end{align*}
+if $0<t_0\le \tfrac12$.
+Apply Hausdorffness.
+
+\parit{\ref{SHORT.ex:neutral}.}
+Use induction to show that given integer $n\ge 1$ we have $a(t)=p$ for any $t\le 1-\tfrac1{2^n}$.
+Apply Hausdorffness.
+
+\parit{Comment.}
+It is instructive to check that both statements fail in the connected two-point space.
+
+\parbf{\ref{ex:group}.}
+Consider the map $f\:[0,1]\times [0,1]\z\to G$ defined by
+$f\:(s,t)\mapsto a(t)\cdot b(s)$.
+Show that $f$ is continuous.
+Write both $a*b$ and $b*a$ as a composition of $f$ with a path from $(0,0)$ to $(1,1)$ in $[0,1]\times [0,1]$ and apply linear homotopy.
+
+\parbf{\ref{ex:contractible=>sc}.} Spell both definitions.
+
+\parbf{\ref{ex:sc=homot-paths}.} Apply \ref{ex:ab=e}.
+
+\parbf{\ref{ex:van-kamp}.}
+Let us agree that if the product of paths is not parenthesized, then it is taken in the usual order;
+that is, \index{$a*b*c*d$} $a*b*c*d\df((a*b)*c)*d$.
+
+\begin{Figure}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-1350}
+\end{Figure}
+
+\parit{\ref{SHORT.ex:van-kamp:loops}.}
+Show that any loop can be subdivided into small arcs $a_1,\dots,a_n$ such that each $a_i$ lies completely in $V$ or $W$ and has ends in $V\cap W$ (use here \ref{prop:lebesgue-number} if needed).
+We may assume that each $a_i$ is parametrized by $[0,1]$, thus our loop is homotopic to $a_1*\ldots*a_n$.
+Connect $x_0$ to every point $x_i=a_i(1)$ for $i<n$ by a path $b_i$ in $V\cap W$.
+Apply the claims in \ref{sec:homotopy-claim} to show that
+\[a_1*\ldots*a_n{\sim}(a_1*\bar b_1)*(b_1*a_2*\bar b_2)*\ldots*(b_{n-1}*a_n).\]
+Observe that each loop $a_1*\bar b_1$, $b_1*a_2*\bar b_2, \z\dots, b_{n-1}*a_n$ lies entirely in $V$ or $W$.
+
+\parit{\ref{SHORT.ex:van-kamp:sc}.}
+Let $a_i$ and $b_i$ be as above.
+Since $V$ and $W$ are simply connected, $a_1*\bar b_1\sim e_{x_0}$, $b_1*a_2*\bar b_2\sim e_{x_0}, \z\dots, b_{n-1}*a_n\sim e_{x_0}$.
+Hence $a_1*\ldots*a_n\sim e_{x_0}$.
+
+\parit{\ref{SHORT.ex:van-kamp:s2}.}
+Subdivide $\SS^2$ into subsets $V$ and $W$ defined by $z>-\tfrac12$ and $z<\tfrac12$, respectively.
+Observe that $V$ and $W$ are homeomorphic to an open disc and the intersection $V\cap W$ is homeomorphic to the product $\SS^1\times (0,1)$ and apply \ref{SHORT.ex:van-kamp:sc}.
+
+\parit{Comment.}
+Part \ref{SHORT.ex:van-kamp:sc} is a special case of Van Kampen's theorem, which makes possible to calculate the fundamental group of $\c{X}$ in terms of fundamental groups of $V$, $W$, $V\cap W$ and the homomorpisms
+$\pi_1(V\cap W,x_0)\to\pi_1(V,x_0)$, $\pi_1(V\cap W,x_0)\to\pi_1(W,x_0)$ induced by the inclusions $V\cap W\hookrightarrow V$ and $V\cap W\hookrightarrow W$.
+
 \parbf{\ref{ex:S1}}; \ref{SHORT.ex:S1:R3>R^2}.
 Suppose there is a homeomorphism $h\:\RR^3\to\RR^2$.
 Choose a point $p\in \RR^3$ and let $q=h(p)$.
 Observe that $\RR^3\setminus\{p\}$ is homeomorphic to $\RR^2\setminus\{q\}$.
 Show that $\pi_1(\RR^3\setminus\{p\})$ is trivial, but $\pi_1(\RR^2\setminus\{q\})$ is not and arrive at a contradiction.
 
-\parit{\ref{SHORT.ex:D-->S}.} Apply \ref{ex:convex=>contractible}, \ref{ex:contractible=>sc}, \ref{ex:retract*}, \ref{thm:pi1(S1)}.
+\parit{\ref{SHORT.ex:D-->S}.}
+Apply linear homotopy, \ref{ex:contractible=>sc}, \ref{ex:retract*}, \ref{thm:pi1(S1)}.
 
-\parit{\ref{SHORT.ex:bry->bry}.} Apply \ref{ex:convex=>contractible}, \ref{ex:contractible=>sc}, and \ref{thm:pi1(S1)}.
+\parit{\ref{SHORT.ex:bry->bry}.}
+Apply linear homotopy, \ref{ex:contractible=>sc}, and \ref{thm:pi1(S1)}.
 
-\parit{\ref{SHORT.ex:S1:finite-complement}.} Apply \ref{ex:convex=>contractible} and \ref{thm:pi1(S1)}.
+\parit{\ref{SHORT.ex:S1:finite-complement}.}
+Apply linear homotopy and \ref{thm:pi1(S1)}.
 
 \parbf{\ref{ex:KK}}; \ref{SHORT.ex:K!=K}.
 Assume there is a homeomorphism $h\:K_1\to K_2$.

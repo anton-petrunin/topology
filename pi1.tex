@@ -1,29 +1,28 @@
 \chapter{Fundamental group}
 
 Let $\c{X}$ be a topological space with a chosen basepoint $x_0 \in X$.
-Fix a point $s_0 \in \SS^1$, and  consider all continuous maps $\SS^1\to \c{X}$ that send $u_0$ to $x_0$.
+Fix a point $s_0 \in \SS^1$, and  consider all continuous maps $\SS^1\to \c{X}$ that send $s_0$ to $x_0$.
 Denote by $\pi_1(X,x_0)$ the set of homotopy classes of such maps.
 
-In this chpter we will equip this set with multiplication and show that it makes $\pi_1(\c{X},x_0)$ into a group.
+In this chapter we will equip this set with multiplication and show that it makes $\pi_1(\c{X},x_0)$ into a group.
 This will justify calling $\pi_1(\c{X},x_0)$ the \textit{fundamental group} of $\c{X}$ with marked point $x_0$.
 The fundamental group is the first meaningful construction in algebraic topology, and the rest of the course will be largely devoted to it.
 
 \section{Homotopy of paths}
 
-
 Any path is a continuous map defined on the unit interval $[0,1]$.
-By \index{homotopy of paths}\emph{homotopy of paths} we will understand homotopy realive to the ends of $[0,1]$;
-in the notations of \ref{sec:rel-homotopy}, we have sourse space $[0,1]$ with subsets of two points  $\{0,1\}$.
-If we need to talk about general homotopy of paths (alowing moving its ends) we say \index{free homotopy}\emph{free homotopy}.
+By \index{homotopy of paths}\emph{homotopy of paths} we will understand homotopy relative to the ends of $[0,1]$;
+in the notations of \ref{sec:rel-homotopy}, we have source space $[0,1]$ with subsets of two points  $\{0,1\}$.
+If we need to talk about general homotopy of paths (allowing moving its ends) we say \index{free homotopy}\emph{free homotopy}.
 
-\begin{wrapfigure}{r}{33 mm}
-\vskip-4mm
+\begin{wrapfigure}{r}{35 mm}
+\vskip-2mm
 \centering
 \includegraphics{mppics/pic-80}
 \end{wrapfigure}
 
-A homotopy of paths is defined by a continuous map $H\:[0,1]\times [0,1]\to \c{X}$ such that $H(0,\tau)=p$ and $H(1,\tau)=q$ for some points $p,q$ in the targen space $\c{X}$.
-But as usual, it is convinient to think that homotopy is a one-parameter family of paths $a_\tau\:[0,1]\to \c{X}$ from $p$ to $q$.
+A homotopy of paths is defined by a continuous map $H\:[0,1]\times [0,1]\to \c{X}$ such that $H(0,\tau)=p$ and $H(1,\tau)=q$ for some points $p,q$ in the target space $\c{X}$.
+But as usual, it is convenient to think that homotopy is a one-parameter family of paths $a_\tau\:[0,1]\to \c{X}$ from $p$ to $q$.
 Two paths $b,c\:[0,1]\to \c{X}$ are called {}\emph{homotopic} (briefly $b\sim c$)
 if there is a homotopy $a_\tau\:[0,1]\to \c{X}$ such that $b=a_0$ and $c=a_1$.
 Recall that $\sim$ is an equivalence relation.
@@ -40,9 +39,14 @@ $b_0$ is a path from $q$ to $r$.
 Suppose $a_0\sim a_1$ and $b_0\sim b_1$,
 then
 \[a_0*b_0\sim a_1*b_1.\]
+
 \end{thm}
 
-%???PIC
+\begin{wrapfigure}{l}{65 mm}
+\vskip-8mm
+ \centering
+\includegraphics{mppics/pic-1305}
+\end{wrapfigure}
 
 \parit{Proof.}
 Choose homotopies $a_\tau$ from $a_0$ to $a_1$, and $b_\tau$ from $b_0$ to $b_1$.
@@ -59,34 +63,33 @@ Moreover, for any path $a$ we have $a\circ s_0\sim a\circ s_1$.
 \parit{Proof.}
 The linear homotopy
 \[s_\tau(t)=(1-\tau)\cdot s_0(t)+\tau \cdot s_1(t)\]
-provedes a homotopy from $s_0$ to $s_1$.
-The conditions $s_0(0)=s_1(0)$ and $s_0(1)=s_1(1)$ imply that $s_\tau(0)$ and $s_\tau(1)$ doe not depend on $\tau$;
-that is, $s_\tau$ is a homoptoy relative to the endpoints.
+provides a homotopy from $s_0$ to $s_1$.
+The conditions $s_0(0)=s_1(0)$ and $s_0(1)=s_1(1)$ imply that $s_\tau(0)$ and $s_\tau(1)$ do not depend on $\tau$;
+that is, $s_\tau$ is a homotopy relative to the endpoints.
 
 To prove the last statement, observe that $a\circ s_\tau$ is a homotopy of paths from $a\circ s_0$ to  $a\circ s_1$.
 \qeds
 
-
 \begin{thm}{Claims}\label{clm:homot-claims}
 
 \begin{subthm}{clm:neutral}
-Suppose $a$ is a path from $p$ to $q$, then
+For any path $a$ from $p$ to $q$, we have
 \[e_p*a\sim a*e_q\sim  a.\]
 \end{subthm}
 
 \begin{subthm}{clm:f-bar-f}
-Suppose $a$ is a path from $p$ to $q$, then
+For any path $a$ from $p$ to $q$, we have
 \[a*\bar a\sim e_p
 \quad\text{and}\quad
 \bar a*a\sim e_q.\]
 \end{subthm}
 
 \begin{subthm}{clm:assoc}
-Suppose $a$,
-$a$,
+For any paths $a$,
+$b$,
 and
-$c$ are paths such that $a(1)=b(0)$ and $b(1)=c(0)$.
-Then
+$c$ such that $a(1)=b(0)$ and $b(1)\z=c(0)$,
+we have
 \[(a*b)*c\sim a*(b*c).\]
 \end{subthm}
 
@@ -133,7 +136,7 @@ s_0(t)&\df
 &
 s_1(t)&\df0
 \end{align*}
-Since $s_0(0)\z=s_1(0)\z=s_0(1)\z=s_1(1)\z=0$, \ref{obs:homot-paths} implies $f*\bar f\sim e_p$.
+Since $s_0(0)\z=s_1(0)\z=s_0(1)\z=s_1(1)\z=0$, \ref{obs:homot-paths} implies $a*\bar a\sim e_p$.
 
 Applying the same argument to $b=\bar a$, we get $\bar a*a\sim e_q$.
 
@@ -157,39 +160,43 @@ b(4\cdot t-2) &\text{if\ } \tfrac12\le t\le \tfrac34,
 \\
 c(4\cdot t-3) &\text{if\ } \tfrac34\le t\le 1.
 \end{cases}
-\intertext{Therefore, $(a*b)*c(t)=(a*(b*c))\circ s_1(t)$, where}
+\intertext{Therefore, $((a*b)*c)(t)=(a*(b*c))\circ s_1(t)$, where}
 s_1(t)&\df
 \begin{cases}
 2\cdot t&\text{if\ } 0\le t\le \tfrac14,
 \\
 t+\tfrac14 &\text{if\ } \tfrac14\le t\le \tfrac12,
 \\
-\tfrac12\cdot \cdot t+\tfrac12 &\text{if\ } \tfrac12\le t\le 1.
+\tfrac12\cdot t+\tfrac12 &\text{if\ } \tfrac12\le t\le 1.
 \end{cases}
 \end{align*}
-Observe that $(a*b)*c(t)=((a*b)*c)\circ s_0(t)$ where $s_0(t)\df t$, both functions $s_0,s_1\:[0,1]\to[0,1]$ are continuous and  $s_0(0)\z=s_1(0)=0$ and
+Observe that $((a*b)*c)(t)=((a*b)*c)\circ s_0(t)$ where $s_0(t)\df t$, both functions $s_0,s_1\:[0,1]\to[0,1]$ are continuous and  $s_0(0)\z=s_1(0)=0$ and
 $s_0(1)\z=s_1(1)=1$.
 It remains to apply \ref{obs:homot-paths}.
 \qeds
 
 
-\begin{thm}{Exercise}\label{ex:neutral}
-Suppose that $a$ is a path in a Hausdorff space.
-Assume $a(0)=p$, $a(1)=q$, and $e_p*a= a$.
-Show that $a=e_p$; in particular, $p=q$.
-\end{thm}
-
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:ab=e}
 Let $a$ and $b$ be paths from $p$ to $q$.
 Show that $a\sim b$ if and only if $a*\bar b\sim e_p$.
 \end{thm}
 
 
-\begin{thm}{Advanced exercise}\label{ex:assoc}
+\begin{thm}{Exercise}\label{ex:assoc+neutral}
 Let $a$, $b$, and $c$ be paths in a Hausdorff space.
+
+\begin{subthm}{ex:assoc}
 Suppose that $(a*b)*c= a*(b*c)$
 and both sides of the equation are defined.
 Show that $a=b=c=e_p$ for some point $p$.
+\end{subthm}
+
+\begin{subthm}{ex:neutral}
+Assume $a(0)=p$, and $e_p*a= a$.
+Show that $a=e_p$.
+\end{subthm}
+
+
 \end{thm}
 
 \section{Fundamental group}
@@ -215,7 +222,7 @@ The latter is stated in Claim \ref{clm:product}.
 Denote by $\pi_1(\c{X},p)$ the set of all homotopy classes of loops at $p$.
 
 \begin{thm}{Theorem}
-$\pi_1(\c{X},p)$ with the introduced multiplication is a group.
+The set $\pi_1(\c{X},p)$ with the introduced multiplication is a group.
 \end{thm}
 
 The group $\pi_1(\c{X},p)$ is called the \index{fundamental group}\emph{fundamental group} of $\c{X}$ with base point $p$.
@@ -224,7 +231,7 @@ The group $\pi_1(\c{X},p)$ is called the \index{fundamental group}\emph{fundamen
 Recall that $e_p$ denotes the constant loop at $p$ in $\c{X}$;
 that is, $e_p(t)=p$ for any $t$.
 We will show that the homotopy class $[e_p]$ is the neutral element of $\pi_1(\c{X},p)$
-and $[\bar a]=[a]^{-1}$, where $\bar a$ denoted the time-reversed $a$.
+and $[\bar a]=[a]^{-1}$, where $\bar a$ denotes the time-reversed $a$.
 
 Note that conditions in the definition of group follow from the next three conditions for any loops $a$, $b$, and $c$ based at $p$ in $\c{X}$.
 \begin{enumerate}[(i)]
@@ -235,14 +242,7 @@ Note that conditions in the definition of group follow from the next three condi
 These statements are provided by \ref{clm:neutral}, \ref{clm:f-bar-f}, and \ref{clm:assoc}.
 \qeds
 
-\begin{thm}{Exercise}
-Suppose that $V$ and $W$ are open subsets of topological space $\c{X}$ such that
-$\c{X}=V\cup W$, and the set $V\cap W$ is path-connected.
-Let $p\in V\cap W$.
-Show that any loop in $\c{X}$ based at $p$  is homotopic to a product of loops in $V$ or $W$ with the same base.
-\end{thm}
-
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:group}
 Let $G$ be a \index{topological group}\emph{topological group}; that is a group equipped with topology such that the maps $G\times G\to G$ and $G\to G$ defined by $(g,h)\mapsto g\cdot h$ and $g\mapsto g^{-1}$ are continuous.
 Show that the fundamental group $\pi_1(G,1)$ is abelian;
 in other words, $a_1*a_2\sim a_2*a_1$
@@ -252,11 +252,11 @@ for any two loops $a_1$ and $a_2$ with base point $1\in G$.
 
 \section{Simply-connected spaces}
 
-Recall that a group is called \index{trivial group}\emph{trivial} if it contains only one element which is necessary the neutral element.
+Recall that a group is called \index{trivial group}\emph{trivial} if it contains only one element, which is necessarily the neutral element.
 
 A path connected topological space with trivial fundamental group is called \index{simply-connected space}\emph{simply-connected}.
 
-If the fundamental group $\pi_1(\c{X},p)$ is trivial, it is common to write $\pi_1(\c{X},p)=0$ despite that this equality does not have much sense --- in general the group $\pi_1(\c{X},p)$ is not commutative and so it would be more reasonable to write $\pi_1(\c{X},p)\z=\{1\}$, meaning that $1$ is the only element of $\pi_1(\c{X},p)$.
+If the fundamental group $\pi_1(\c{X},p)$ is trivial, it is common to write $\pi_1(\c{X},p)=0$ despite that it does not makes no sense --- in general the group $\pi_1(\c{X},p)$ is not commutative and so it would be more reasonable to write $\pi_1(\c{X},p)\z=\{1\}$, meaning that $1$ is the only element of $\pi_1(\c{X},p)$.
 
 \begin{thm}{Exercise}\label{ex:contractible=>sc}
 Show that any contractible space is simply-connected.
@@ -264,4 +264,24 @@ Show that any contractible space is simply-connected.
 
 \begin{thm}{Exercise}\label{ex:sc=homot-paths}
 Show that a topological space $\c{X}$ is simply-connected if and only if there is a unique homotopy class of paths connecting any two points in $\c{X}$.
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:van-kamp}
+Suppose that $V$ and $W$ are open subsets of topological space $\c{X}$ such that
+$\c{X}=V\cup W$, and the set $V\cap W$ is path-connected.
+Let $x_0\in V\cap W$.
+
+\begin{subthm}{ex:van-kamp:loops}
+Show that any loop in $\c{X}$ based at $x_0$ is homotopic to a product of loops in $V$ or $W$ with the same base.
+\end{subthm}
+
+\begin{subthm}{ex:van-kamp:sc}
+Conclude that if $V$ and $W$ are simply connected, then so is $\c{X}$.
+\end{subthm}
+
+\begin{subthm}{ex:van-kamp:s2}
+Apply \ref{ex:van-kamp:sc} to show that $\SS^2$ is simply connected.
+\end{subthm}
+
+
 \end{thm}
