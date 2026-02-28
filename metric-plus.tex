@@ -24,6 +24,11 @@ Observe that $\Ball(p,\eps)\subset \Ball(p_i,2\cdot r_i)$.
 Since $\Ball(p_i,2\cdot r_i)$ lies in some $V_{\alpha}$, so is $\Ball(p,\eps)$.
 \qeds
 
+%\parit{Proof.} Consider the function $R\:\c{M}\to \RR$ defined by \[R(x)=\sup\set{r\in(0,1)}{\Ball(x,r)\subset V_\alpha\ \text{for some}\ \alpha}.\] Since $\{V_\alpha\}$ is an open cover of $\c{M}$, we have $R(x)>0$ for any $x$.
+
+%Choose two points $x,y\in \c{M}$; let $d=|x-y|_{\c{M}}$. By the triangle inequality, \[\Ball(x,r)\subset \Ball(y,r+d)\quad \text{and}\quad  \Ball(y,r)\subset \Ball(x,r+d)\] for any $x,y\in \c{M}$ and $r>0$. Therefore, if $\Ball(y,r+d)\subset V_\alpha$ for some~$\alpha$, then $\Ball(x,r)\subset V_\alpha$. It follows that $|R(x)-R(y)|\le |x-y|_{\c{M}}$ for any $x,y\in \c{M}$.
+
+%In particular, $R$ is a continuous function. By \ref{ex:fun(compact):min-max}, $R$ attains its minimum; that is, there is a point $x_{\min}\in \c{M}$ such that $R(x)\ge R(x_{\min})$ for any $x\in\c{M}$. It remains to observe that $\eps=\tfrac12\cdot R(x_{\min})$ meets the conditions in the theorem. \qeds
 
 \begin{thm}{Exercise}\label{ex:lebesgue=1}
 Construct a noncompact metric space $\c{M}$ such that $1$ is a Lebesgue number for any open cover of $\c{M}$.
@@ -170,7 +175,7 @@ A topological space is called \index{Lindelöf space}\emph{Lindelöf} if every o
 so the lemma says that \textit{any space with a countable base is Lindelöf}.
 
 \begin{thm}{Advanced exercise}\label{ex:lindelof}
-The intervals $[a,b)$ form a base of the so called \emph{right half-open interval topology} on the real line; let $\c{X}$ be the corresponding topological space.
+The intervals $[a,b)$ form a base of the so-called \emph{right half-open interval topology} on the real line; let $\c{X}$ be the corresponding topological space.
 
 \begin{subthm}{ex:lindelof:yes}
 Show that $\c{X}$ is Lindelöf.

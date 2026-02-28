@@ -701,10 +701,12 @@ Pass to a subsequence again to make the $y$-coordinate converge.
 Show and use that the obtained sequence converges in $\c{X}\times\c{Y}$.
 
 \parbf{\ref{ex:lindelof}}; \ref{SHORT.ex:lindelof:yes}.
-Show and use that every interval $[a,b)$ contains a rational number.
+Choose an open cover $\{V_\alpha\}$.
+Let $W$ be the union of all intervals $(a,b)$ such that $(a,b)\subset V_\alpha$ for some $\alpha$ and $a,b\in\QQ$.
+Show and use that $\c{X}\setminus W$ is countable.
 
 \parit{\ref{SHORT.ex:lindelof:no}.}
-Consider cover of $\c{X}\times \c{X}$ by the following open sets:
+Consider a cover of $\c{X}\times \c{X}$ by the following open sets:
 \[[x,\infty)\times[-x,\infty)\ \text{and}\ (-\infty,x)\times(-\infty,-x)\]
 for all $x\in\RR$.
 
@@ -913,7 +915,7 @@ Let $G$ be a G-delta subset of complete metric space.
 Show and use that $G$ admits another metric that induces the same topology and makes $G$ to be a complete metric space.
 
 For the second part, check the complement of $(\RR\setminus \QQ)\times \{0\}$ in $\RR^2$,
-here $\QQ\subset\RR$ denotes the set or rational numbers.
+here $\QQ\subset\RR$ denotes the subset or rational numbers.
 
 \parbf{\ref{ex:connected->R}.}
 Assume contrary.
@@ -994,12 +996,15 @@ Observe that $Q_x$ is closed.
 Assume $Q_x$ is not connected; subdivide it into two disjoint closed sets;
 apply \ref{ex:normal-hausdorff} and try to reach a contradiction.
 
-The closure of following set in $\RR^2$ gives an noncompact Hausdorff example:
+The closure of the following set in $\RR^2$ gives a noncompact Hausdorff example:
 \[\set{(x,n+\tfrac1{1-x^2})}{n\in \ZZ\ \text{and}\  x\in (-1,1)},\]
 here $\ZZ$ denotes the set of integers.
-For compact, but not Hausdorff, consider the set $\c{X}=\ZZ\cup\{+\infty,-\infty\}$;
-declare any subset in $\ZZ$ and any complement of finite set to be open.
+For a compact, but not Hausdorff example, consider the set $\c{X}=\ZZ\cup\{+\infty,-\infty\}$;
+declare any subset in $\ZZ$ and any complement of a finite set to be open.
 
+\parit{Comment.}
+The set $Q_x$ is called the \index{quasi-component}\emph{quasi-component} of $x$;
+note that $y\in Q_x$ if and only if $f(x)=f(y)$ for any continuous map $f$ from $\c{X}$ to the discrete two-point space.
 
 
 \parbf{\ref{ex:S1ne[0,1]}.}
