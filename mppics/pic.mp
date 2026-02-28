@@ -1116,7 +1116,7 @@ draw subpath (i,i+1) of p2;
 endfor
 draw subpath (2*(n-m),2*(n-m)+.7) of p2  dashed evenly;
 
-label (btex $\downarrow\! e$ etex, (.5,.7)*u+(3,-5));
+label (btex $\downarrow\! w$ etex, (.5,.7)*u+(3,-5));
 label.rt (btex $\RR$ etex, .5[point 7 of p2,point 9 of p2]);
 label.rt (btex $\SS^1$ etex, point 1 of p1);
 endfig;

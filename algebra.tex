@@ -1,6 +1,6 @@
 \chapter{Meeting algebra}\label{chap:algebra}
 
-In this chapter we show that the fundamental-group construction respects\footnote{In a more fancy language, it behaves as a \index{functor}\emph{functor}.} the maps between topological spaces and behaves predictably  when one changes the marked point of the space.
+In this chapter we show that the fundamental-group construction respects\footnote{In a more fancy language, it is defined by a  \index{functor}\emph{functor}.} the maps between topological spaces and behaves predictably  when one changes the marked point of the space.
 Bit latter, we will calculate fundamental group of the circle --- this will be the first example of a space with nontrivial fundamntal group.
 Once this group is calculated, the results of this chapter will lead to applications.
 
@@ -119,11 +119,11 @@ is a homomorphism.
 
 Finally note that 
 \begin{align*}
-c*(\bar c*a*c)*\bar c&\sim (c*\bar c)*f*(c*\bar c)\sim
+c*(\bar c*a*c)*\bar c&\sim (c*\bar c)*а*(c*\bar c)\sim
 \\
 &\sim e_p*a*e_p\sim
 \\
-&\sim f
+&\sim а
 \end{align*}
 for any loop $a$ based at $p$.
 Therefore, $\phi_{\bar c}$ is a left inverse of $\phi_c$.
@@ -141,6 +141,7 @@ Therefore, for a path-connected space $\c{X}$ we do not need to specify the base
 Consider the path defined by $c(\tau)=f_\tau(p)$.
 Show that
 \[\phi_c\circ f_{0*}=f_{1*}.\]
+Here $f_{i*}$ is the induced homomorphism $\pi_1(\c{X},p)\to\pi_1(\c{Y},f_i(p))$.
 \end{subthm}
 
 \begin{subthm}{ex:uphi:hom-type}
@@ -156,14 +157,20 @@ Conclude that if path-connected topological spaces $\c{X}$ and $\c{Y}$ have the 
 \begin{thm}{Exercise}\label{ex:hom-product}
 Let $\c{X}$ and $\c{Y}$ be two path-connected topological spaces.
 Choose points $p\in \c{X}$ and $q\in \c{Y}$.
-Consider the projections $f\:\c{X}\times\c{Y}\to \c{X}$ and $g\:\c{X}\times\c{Y}\to \c{Y}$
-and their induced homomorphisms
-$f_*\:\pi_1(\c{X}\times\c{Y},(p,q))\to \pi_1(\c{X},p)$
-and $g_*\:\pi_1(\c{X}\times\c{Y},(p,q))\to \pi_1(\c{Y},q)$.
+Consider the projections and their induced homomorphisms:
+\begin{align*}
+f\:\c{X}\times\c{Y}&\to \c{X},
+&
+f_*\:\pi_1(\c{X}\times\c{Y},(p,q))&\to \pi_1(\c{X},p),
+\\
+g\:\c{X}\times\c{Y}&\to \c{Y},
+&
+g_*\:\pi_1(\c{X}\times\c{Y},(p,q))&\to \pi_1(\c{Y},q).
+\end{align*}
 Define $\phi\:\pi_1(\c{X}\times\c{Y},(p,q))\to \pi_1(\c{X},p)\times \pi_1(\c{Y},q)$ by
 \[\phi\:\alpha\mapsto (f_*(\alpha),g_*(\alpha))\]
 for any $\alpha\in \pi_1(\c{X}\times\c{Y},(p,q))$.
-Note that the map $\phi$ is a homomorphism.
+Note that $\phi$ is a homomorphism.
 
 \begin{subthm}{ex:hom-product:mono}
 Show that $\phi$ is a monomorphism;

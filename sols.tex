@@ -700,6 +700,14 @@ Given a sequence $z_n=(x_n,y_n)$, pass to a subsequence such that the $x$-coordi
 Pass to a subsequence again to make the $y$-coordinate converge.
 Show and use that the obtained sequence converges in $\c{X}\times\c{Y}$.
 
+\parbf{\ref{ex:lindelof}}; \ref{SHORT.ex:lindelof:yes}.
+Show and use that every interval $[a,b)$ contains a rational number.
+
+\parit{\ref{SHORT.ex:lindelof:no}.}
+Consider cover of $\c{X}\times \c{X}$ by the following open sets:
+\[[x,\infty)\times[-x,\infty)\ \text{and}\ (-\infty,x)\times(-\infty,-x)\]
+for all $x\in\RR$.
+
 \parbf{\ref{ex:non-contracting-map}.}
 Consider two sequences of points $x_0,x_1,\dots$ and $y_0,y_1,\dots$ in $\c{M}$ such that $x_i\z=f(x_{i-1})$ and $y_i\z=f(y_{i-1})$ for any $i$.
 Observe that
@@ -981,9 +989,18 @@ Show that $(a_3+\NN\cdot d_3)\cap (a_2+\NN\cdot d_2)\ne \emptyset$ and arrive at
 This problem and solution with more details are discussed in the note by Solomon Colomb \cite{golomb}
 
 \parbf{\ref{ex:quasi-component}.}
-Check the closure of following set in $\RR^2$:
+Denote by $Q_x$ the intersection of all clopen sets containing $x$.
+Observe that $Q_x$ is closed.
+Assume $Q_x$ is not connected; subdivide it into two disjoint closed sets;
+apply \ref{ex:normal-hausdorff} and try to reach a contradiction.
+
+The closure of following set in $\RR^2$ gives an noncompact Hausdorff example:
 \[\set{(x,n+\tfrac1{1-x^2})}{n\in \ZZ\ \text{and}\  x\in (-1,1)},\]
 here $\ZZ$ denotes the set of integers.
+For compact, but not Hausdorff, consider the set $\c{X}=\ZZ\cup\{+\infty,-\infty\}$;
+declare any subset in $\ZZ$ and any complement of finite set to be open.
+
+
 
 \parbf{\ref{ex:S1ne[0,1]}.}
 Show that $\mathbb{S}^1$ has no cut points, but $[0,1]$ has.
@@ -1145,6 +1162,11 @@ Show that for any large $n$ we have
 \[|h_t((1,\tfrac1{2^n}))-(1,0)|_{\RR^2}<\tfrac1{10}\] for any $t$
 and arrive at a contradiction.
 
+\parit{\ref{SHORT.ex:retract-strong-weak:triangle}.}
+Assume that $F$ is a retract of the square.
+Show that in this case $J_\infty$ is a deformation retract of $F$;
+the latter contradicts \ref{SHORT.ex:retract-strong-weak:weak}.
+
 \parbf{\ref{ex:retract-contractible}.}
 Let $r\:\c{X}\to A\subset \c{X}$ be a retraction
 and $h_t\:\c{X}\to \c{X}$ be a homotopy from the identity map to a constant map.
@@ -1269,15 +1291,22 @@ $a_i$ to $r\circ a_i$.
 The same homotopy $r_\tau\circ a_i$ can be used to show that $i_*$ is an epimorphism.
 
 
-\parbf{\ref{ex:uphi}}; \ref{SHORT.ex:uphi:uphi}
+\parbf{\ref{ex:uphi}}; \ref{SHORT.ex:uphi:uphi} Show and use that
+$f_1\circ a\sim \bar c*(f_0\circ a)*c$ for any loop in $\c{X}$ based at $p$.
 
 \parit{\ref{SHORT.ex:uphi:hom-type}.}
+Apply \ref{SHORT.ex:uphi:uphi} for homotopy equivalence $\c{X}\z\to\c{Y}$ and its homotopy inverse.
 
-\parbf{\ref{ex:hom-product}}; \ref{SHORT.ex:hom-product:mono}
-
-\parit{\ref{SHORT.ex:hom-product:epi}.}
+\parbf{\ref{ex:hom-product}.} Spell the definitions.
 
 \parbf{\ref{ex:sim-product}.}
+Let $f\:\c{X}\times\c{X}\to \c{Y}$ be the quotient map.
+Choose a marked point $f(x,x)\in \c{Y}$.
+Given two loops $a$ and $b$ based at $x$ in $\c{X}$ denote by $(a,b)$ the loop in $\c{X}\times \c{X}$ defined by $t\mapsto (a(t),b(t))$.
+Observe that $f\circ (a,e_x)= f\circ (e_x,a)$ for any loop $a$.
+Use it to show that
+\[f\circ(a*b,e_x)\sim f\circ(a,b)\sim f\circ(b*a,e_x)\]
+and make a conclusion.
 
 \parbf{\ref{ex:S1}}; \ref{SHORT.ex:S1:R3>R^2}.
 Suppose there is a homeomorphism $h\:\RR^3\to\RR^2$.

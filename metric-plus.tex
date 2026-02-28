@@ -156,9 +156,6 @@ Let $\c{X}$ be a topological space with a countable base.
 Then any open cover of $\c{X}$ has a countable subcover.
 \end{thm}
 
-A topological space is called \index{Lindelöf space}\emph{Lindelöf} if every open cover contains a countable subcover;
-so the lemma says that \textit{any space with a countable base is Lindelöf}.
-
 \parit{Proof.}
 Choose an open cover $\{V_\alpha\}$.
 Let $\{B_1,B_2,\ldots\}$ be a countable base of $\c{X}$.
@@ -169,13 +166,30 @@ That is, for every $B_i$ there is $\alpha_i$ such that $B_i\subset V_{\alpha_i}$
 It remains to observe that $\{V_{\alpha_i}\}_{i\in S}$ is a countable cover of $\c{X}$.
 \qeds
 
+A topological space is called \index{Lindelöf space}\emph{Lindelöf} if every open cover contains a countable subcover;
+so the lemma says that \textit{any space with a countable base is Lindelöf}.
+
+\begin{thm}{Advanced exercise}\label{ex:lindelof}
+The intervals $[a,b)$ form a base of the so called \emph{right half-open interval topology} on the real line; let $\c{X}$ be the corresponding topological space.
+
+\begin{subthm}{ex:lindelof:yes}
+Show that $\c{X}$ is Lindelöf.
+\end{subthm}
+
+\begin{subthm}{ex:lindelof:no}
+Show that $\c{X}\times \c{X}$ is not Lindelöf.
+\end{subthm}
+
+
+\end{thm}
+
+
 \section[\texorpdfstring{Sequential compactness $\Rightarrow$  compactness}{Sequential compactness ⇒ compactness}]{Sequential compactness $\bm{\Rightarrow}$ compactness}\label{sec:seq-comp-if}
 
 \parit{Proof of the if part in \ref{prop:seq-comp-metr}.}
 Choose an open cover of $\c{M}$.
 By \ref{lem:lind}, we can assume that it is countable; denote it by $\{V_1,V_2,\ldots\}$.
-Assume it has no finite subcover.
-Then we can choose a sequence of points $x_1,x_2,\ldots\in\c{M}$ such that
+If it has no finite subcover, then we can choose a sequence of points $x_1,x_2,\ldots\in\c{M}$ such that
 \[x_n\notin  V_1\cup \ldots\cup V_n\]
 for any $n$.
 
