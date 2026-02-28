@@ -8,7 +8,7 @@ Formally, this means that there exists a continuous map
 H\:\c{X}\times[0,1]\to \c{Y}
 \]
 such that $H(x,0)=f(x)$ and $H(x,1)=g(x)$ for all $x\in \c{X}$.
-The map $H\:\c{X}\times[0,1]\to \c{Y}$ is called \index{homotopy}\emph{homotopy} from $f$ to $g$.
+The map $H\:\c{X}\times[0,1]\to \c{Y}$ is called a \index{homotopy}\emph{homotopy} from $f$ to $g$.
 
 It is often convenient to think of the homotopy $H$ as a one-parameter family of maps $h_t\:\c{X}\to \c{Y}$ defined by $h_t(x)=H(x,t)$.
 
@@ -110,8 +110,8 @@ If $\c{X}$ is the one-point space, then $\pi(\c{X},\c{Y})$ is also denoted by $\
 Note that $\pi_0(\c{Y})$ is the set of path-connected components in $\c{Y}$ --- this was the main subject of the previous chapter.
 The set $\pi(\SS^1,\c{Y})$ is closely related to the fundamental group of $\c{Y}$, which will be soon introduced.
 
-The idea to use homotopy classes to distiguish topological spaces will guide us in the right direction.
-However, the true reason to consider homotopy classes is different; it will be described in Capter \ref{chap:algebra}.
+The idea to use homotopy classes to distinguish topological spaces will guide us in the right direction.
+However, the true reason to consider homotopy classes is different; it will be described in Chapter~\ref{chap:algebra}.
 
 \section{Retracts}
 
@@ -120,7 +120,7 @@ A continuous map $r\:\c{X}\z\to A$ is called a \index{retraction}\emph{retractio
 \footnote{The notion of retraction is closely related to projection in linear algebra; say, a continuous map $r\:\c{X}\to \c{X}$ defines a retraction to $r(\c{X})$ if and only if $r\circ r=r$.}
 In this case $A$ is called a \index{retract}\emph{retract} of $\c{X}$.
 If in addition, $r\:\c{X}\to A$ is homotopic to the identity map $\id_{\c{X}}$, then $A$ is called a \index{weak deformation retract}\emph{weak deformation retract} of $\c{X}$.
-If $r\sim \id_{\c{X}}\rel A$, then $A$ is called \index{deformation retract}\emph{deformation retract} of $\c{X}$.
+If $r\sim \id_{\c{X}}\rel A$, then $A$ is called a \index{deformation retract}\emph{deformation retract} of $\c{X}$.
 
 Note that a one-point subset is a retract of any space --- the retraction maps the whole space to this single point.
 On the other hand, if a one-point set $\{p\}$ is a deformation retract of space $\c{X}$, then any point can be connected to $p$ by a path; in particular, $\c{X}$ has to be path-connected.
@@ -129,26 +129,32 @@ On the other hand, if a one-point set $\{p\}$ is a deformation retract of space 
 Show that a retract of a Hausdorff space has to be a closed subset.
 \end{thm}
 
-\begin{wrapfigure}{r}{23mm}
-\vskip-0mm
+{
+
+\begin{wrapfigure}[]{r}{23mm}
+\vskip-4mm
 \includegraphics{mppics/pic-1105}
 \end{wrapfigure}
 
 \begin{thm}{Exercise}\label{ex:retract-strong-weak}
-Given an integer $n\ge0$, denote by $J_n$ the closed line segment from the origin to the point $(1,\tfrac1{2^n})$ in $\RR^2$, and let $J_\infty$ be the closed line segment from the origin to the point $(1,0)$.
-Let $F$ be the union of all the these line segments; it is called \index{fan}\emph{fan}.
+Consider the \index{fan}\emph{fan} $F$ in $\RR^2$;
+it is defined as the union closed line segments $J_n$ from the origin to the point $(1,\tfrac1{2^n})$ for each positive integer $n$ and the line segment $J_\infty$ from the origin to the point $(1,0)$.
 
 \begin{subthm}{ex:retract-strong-weak:retract}
 Show that $J_0$ is a deformation retract of $F$.
 \end{subthm}
 
 \begin{subthm}{ex:retract-strong-weak:weak}
-Show that $J_\infty$ is a weak deformation retrtact of $F$, but not a deformation retract of $F$.
+Show that $J_\infty$ is a weak deformation retract of $F$, but not a deformation retract of $F$.
+\end{subthm}
+
+\begin{subthm}{ex:retract-strong-weak:triangle}
+Is it true that $F$ is a retract of the solid triangle with vertices $(0,0)$, $(1,0)$, and $(1,1)$?
 \end{subthm}
 
 \end{thm}
 
-
+}
 
 \section{Contractible spaces}
 
@@ -162,7 +168,7 @@ Applying linear homotopy, one can see that any convex subset of the Euclidean sp
 This provides a good source of contractible spaces.
 
 \begin{thm}{Exercise}\label{ex:retract-contractible}
-Show that a retract of contractible space is contractible.
+Show that a retract of a contractible space is contractible.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:contractible}
@@ -170,7 +176,6 @@ Let $\c{X}$ be a contractible space.
 
 \begin{subthm}{ex:contractible:path-connected}
 Show that $\c{X}$ is path-connected.
-
 \end{subthm}
 
 \begin{subthm}{ex:contractible:target}
