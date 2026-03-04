@@ -1139,7 +1139,7 @@ p2=z.a0{z.a0 rotated 90}..tension 1.6..z.a2{z.a2 rotated 90}..tension 1.6..z.a1{
 
 p3=z.b0{z.b0 rotated 90}..tension 5..z.b2{z.b2 rotated 90}..tension 5..z.b1{z.b1 rotated 90}..tension 5..cycle;
 
-p4=(0,0)*u{up}..(1,0)*u..(3,0)*u..(4,0)*u{down}..(3,0)*u..(1,0)*u..cycle;
+p4=(-2,0)*u{up}..(-1,0)*u{(1,-1)}..(1,0)*u{(1,1)}..(3,0)*u{(1,-1)}..(4,0)*u{up}..(3,0)*u{(-1,-1)}..(1,0)*u{(-1,1)}..(-1,0)*u{(-1,-1)}..cycle;
 
 
 drawarrow subpath (0,1) of p1 shifted ((.4,0)*u);

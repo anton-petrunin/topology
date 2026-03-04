@@ -88,7 +88,7 @@ Show that $K_1 \times[0,1]\simeq K_2 \times[0,1]$.
 \end{thm}
 
 
-\section{Liftings}\label{sec:lifting-s1}
+\section{Lifts}\label{sec:lifting-s1}
 
 \begin{wrapfigure}{r}{16 mm}
 \vskip-14mm
@@ -106,7 +106,7 @@ Consider the map $w\:\RR\to \mathbb{S}^1\subset \CC$ defined by
 (The last equality is called Euler's idenity, it can be taken as a definition of $\exp(2\cdot\pi\cdot i\cdot x)$.)
 
 Let $f\:\c{X}\to \SS^1$ be a continuous map.
-A continuous map $\tilde f\:\c{X}\to \RR$ will be called \index{lifting}\emph{lifting} of $f$ if $f=w\circ \tilde f$;
+A continuous map $\tilde f\:\c{X}\to \RR$ will be called \index{lift}\emph{lift} of $f$ if $f=w\circ \tilde f$;
 in other words if the following diagram \index{commutative diagram}\emph{commutes}\footnote{It means that following directed paths in the diagram with the same start and endpoints lead to the same result.
 Even in this simple case, using a commutative diagram is helpful, and later on you simply can't do without them.}.
 \begin{figure}[h!]
@@ -120,9 +120,9 @@ Even in this simple case, using a commutative diagram is helpful, and later on y
 
 \begin{thm}{Proposition}\label{prop:lifting}
 Let $f_0\:[0,1]\to\SS^1$ be a path and let $x_0\in \RR$ be a point such that $w(x_0)=f_0(0)$.
-Then there is unique lifting $\tilde f_0$ of $f$ such that $\tilde f_0(0)=x_0$.
+Then there is unique lift $\tilde f_0$ of $f$ such that $\tilde f_0(0)=x_0$.
 
-Moreover, given a homotopy of paths $f_\tau$ from $f_0$ to $f_1$ there is unique lifting $\tilde f_\tau$ such that $\tilde f_0(0)=x_0$.
+Moreover, given a homotopy of paths $f_\tau$ from $f_0$ to $f_1$ there is unique lift $\tilde f_\tau$ such that $\tilde f_0(0)=x_0$.
 In particular, if $f_0\sim f_1$ then $\tilde f_0\sim \tilde f_1$.
 \end{thm}
 
@@ -131,7 +131,7 @@ Let $W=\SS^1\setminus \{u_0\}$ for some $u_0=w(x_0)\in\SS^1$.
 Then $w^{-1}(W)$ is a disjoint union of open intervals $V_n=(x_0+n,x_0+n+1)$ for $n\in \ZZ$
 and $w$ defines a homeomorphism $V_n\to U$ for each $n$.
 
-In particular, given a connected space $\c{X}$, continuous map $f\:\c{X}\z\to W$, and a point $q\in \RR$ such that $w(q)=f(p)$ for some $p\in \c{X}$ there is a unique lifting $\tilde f\:\c{X}\to \RR$ of $f$ such that $\tilde f(p)=q$.
+In particular, given a connected space $\c{X}$, continuous map $f\:\c{X}\z\to W$, and a point $q\in \RR$ such that $w(q)=f(p)$ for some $p\in \c{X}$ there is a unique lift $\tilde f\:\c{X}\to \RR$ of $f$ such that $\tilde f(p)=q$.
 \end{thm}
 
 
@@ -143,7 +143,7 @@ Therefore $w_n=w|_{V_n}$ is a closed continuous bijection $V_n\to W$ and hence a
 
 Note that the intervals $V_n$ are connected components of $w^{-1}W$.
 In particular, $q\in V_n$ for some $n$.
-Since $\c{X}$ is connected, $\tilde f(\c{X})\subset V_n$ for any lifting $\tilde f$ lifting of $f$ such that $w(q)=f(p)$.
+Since $\c{X}$ is connected, $\tilde f(\c{X})\subset V_n$ for any lift $\tilde f$ of $f$ such that $w(q)=f(p)$.
 Since $w_n=w|_{V_n}$ is a homeomorpism, we have $\tilde f=w_n^{-1}\circ f$, which proves existance and uiqueness.
 \qeds
 
@@ -158,8 +158,8 @@ Let $\eps>0$ be the Lebesgue number of this covering; see \ref{prop:lebesgue-num
 Consider a partition $0=t_0<t_1<\dots<t_n=1$ of $[0,1]$ into equal intervals shorter than $\eps$.
 Note that $f([t_i,t_{i+1}])\subset W_1$ or  $f([t_i,t_{i+1}])\subset W_2$ for each $i$.
 
-By \ref{lem:covering}, there is unique lifting of $f|_{[t_0,t_1]}$ such that $\tilde f(0)=x_0$; let $x_1=\tilde f(t_1)$.
-By the same argument, there is unique lifting of $f|_{[t_1,t_2]}$ such that $\tilde f(t_1)=x_1$.
+By \ref{lem:covering}, there is unique lift of $f|_{[t_0,t_1]}$ such that $\tilde f(0)=x_0$; let $x_1=\tilde f(t_1)$.
+By the same argument, there is unique lift of $f|_{[t_1,t_2]}$ such that $\tilde f(t_1)=x_1$.
 Repeating this argument finitely many times produces a lift of $f$, which is unique by construction.
 The continuity of $f$ follows from \ref{ex:u-continuous:closed}.
 
@@ -172,7 +172,7 @@ The continuity of $f$ follows from \ref{ex:u-continuous:closed}.
 The proof of the last statement is similar.
 Choose a homotopy $F\:[0,1]\times [0,1]\to\SS^1$ from $f_0$ to $f_1$.
 Applying \ref{prop:lebesgue-number} again, we can subdivide $[0,1]\times [0,1]$ into small squares by horizontal and vertical lines so that $F$ maps each small square in $W_1$ or in $W_2$.
-Then we can build the lifting $\tilde F$ square by square, from button up in the order shown in the picture.
+Then we can build the lift $\tilde F$ square by square, from button up in the order shown in the picture.
 
 When we extending $\tilde F$ over a small square $\square$ the value of $\tilde F$ is already defined at its lower left corner, say $v$.
 So we can apply \ref{lem:covering}.
@@ -196,8 +196,8 @@ The map $[f]\mapsto \deg f$ defines an isomorphism
 
 \parit{Proof.}
 Suppose $f_0$ and $f_1$ are two homotopic loops in $\SS^1$ with base point $1$.
-Let $f_\tau$ be the corresponding homotopy and $\tilde f_\tau$ be its lifting to $\RR$.
-By \ref{prop:lifting}, it has a unique lifting $\tilde f_\tau\:[0,1]\to \RR$ such that $f_0(0)=0$.
+Let $f_\tau$ be the corresponding homotopy and $\tilde f_\tau$ be its lift to $\RR$.
+By \ref{prop:lifting}, it has a unique lift $\tilde f_\tau\:[0,1]\to \RR$ such that $f_0(0)=0$.
 
 Observe that the function $\tau\mapsto =f_\tau(1)=\deg f_\tau$ is continuous integer valued function defined on $[0,1]$.
 Hence this function is constant; in particular $\deg f_0=\deg f_1$
@@ -206,14 +206,14 @@ It follows that $\deg f$ depends only on the homotopy class of $f$.
 In other words the map $[f]\mapsto \deg f$ is well defined.
 
 Choose two paths $\tilde f_0$ and $\tilde f_1$ based at $1$ in $\SS^1$.
-Let $\tilde f_0$ and $\tilde f_1$ be their liftings such that $\tilde f_0(0)=\tilde f_1(0)=0$.
-Observe that the path $t\mapsto \deg f_0+\tilde f_1(t)$ is a lifting of $f_1$ that starts at $\deg f_0=\tilde f_0(1)$.
+Let $\tilde f_0$ and $\tilde f_1$ be their lifts such that $\tilde f_0(0)=\tilde f_1(0)=0$.
+Observe that the path $t\mapsto \deg f_0+\tilde f_1(t)$ is a lift of $f_1$ that starts at $\deg f_0=\tilde f_0(1)$.
 Concatenating $\tilde f_0$ with this path we get a lift of $f_0*f_1$ with the endpoint at $\deg f_0+\deg f_1$.
 Hence $\deg (f_0*f_1)=\deg f_0+\deg f_1$ for any two loops $f_0$ and $f_1$, and we proved that degree defines a homomorphism $\deg\:\pi_1(\SS^1,1)\cong\ZZ$.
 
 Surjectivity of $\deg\:\pi_1(\SS^1,1)\cong\ZZ$ follows follows since given the path $f_n\:t\mapsto w(n\cdot t)$ has degree $n$.
 
-Let $f_0$ and $f_1$ be two loops at $\SS^1$ with base point $1$, and let $\tilde f_0$ and $\tilde f_1$ be their liftings such that $\tilde f_0(0)=\tilde f_1(0)=0$.
+Let $f_0$ and $f_1$ be two loops at $\SS^1$ with base point $1$, and let $\tilde f_0$ and $\tilde f_1$ be their lifts such that $\tilde f_0(0)=\tilde f_1(0)=0$.
 If $\deg f_0=\deg f_1$, then $\tilde f_0(1)=\tilde f_1(1)$.
 Therefore there is linear homotopy of paths $\tilde f_\tau$ from $\tilde f_0$ to $\tilde f_1$.
 Note that $f_\tau=e\circ \tilde f_\tau$ is a homotopy from $f_0$ to $f_1$.

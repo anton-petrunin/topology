@@ -327,8 +327,8 @@ Apply \ref{ex:composition-continuous} together with the fact that $x\mapsto |x|$
 \parbf{\ref{ex:open-intersection+metrizable}}; \ref{SHORT.ex:open-intersection+metrizable:a}
 Choose a metric that induces the topology on $\c{X}$.
 Let $Q$ be a closed set in $\c{X}$.
-Given $\eps>0$, let $W_\eps$ be the union of $\eps$-balls centered at points in $Q$.
-Show that $W_\eps$ is open and that $Q=\bigcap W_\eps$.
+Let $W_n$ be the union of $\tfrac1n$-balls centered at points in $Q$.
+Show that $W_n$ is open and that $Q=\bigcap W_n$.
 
 \parit{\ref{SHORT.ex:open-intersection+metrizable:b}.}
 Try to find the needed closed set in the connected two-point space; see \ref{sec:ecamples(top)}.
@@ -816,7 +816,7 @@ make a conclusion.
 \parit{Remark.}
 This is another part of the \index{closed graph theorem}\emph{closed graph theorem}; compare to \ref{ex:closed-graph} and \ref{ex:graph:graph}.
 
-\parbf{\ref{ex:product}.} Spell the definitions.
+\parbf{\ref{ex:product} + \ref{ex:Hausdorff+inj}.} Spell the definitions.
 
 \parbf{\ref{ex:normal-hausdorff}.}
 By \ref{thm:hausdorff-compact-t3}, for any $y\in L$ there is a pair of open sets $V_y$, $W_y$ such that $V_y\supset K$ and $W_y\ni y$
@@ -896,6 +896,18 @@ Let $W$ be an open set in a Baire space $\c{X}$, and let $V_1,V_2,\dots$ be a se
 Apply the definition of Bair space to the sets $V_i'=V_i\cup (\c{X}\setminus W)^\circ$.
 
 \parit{\ref{SHORT.ex:Baire-subsets:loc}.} Spell the definitons.
+
+\parbf{\ref{ex:closed-G-delta}.} Argue as in \ref{ex:open-intersection+metrizable:a}.
+
+\parbf{\ref{ex:G-delta=closed n dense-G-delta}}; \ref{SHORT.ex:G-delta=closed n dense-G-delta:closed}
+Let $G=V_1\cap V_2\cap\dots$ be a G-delta set in a topological space $\c{X}$; here each $V_i$ is an open set.
+Observe that $D=G\cup (\c{X}\setminus \bar G)$ is a dence G-delta set, $\bar G$ is closed, and
+$G=\bar G\cap D$.
+
+\parit{\ref{SHORT.ex:G-delta=closed n dense-G-delta:open}.}
+Note that $S=[0,\infty)$ is a G-delta set in $\RR$.
+Apply \ref{obs:G-delta} to show that $S$ is not an intersection of dence G-delta set with an open set in $\RR$.
+
 
 \parbf{\ref{ex:uncountable-Gdelta}.}
 Show and use that a complement of countable set in $\RR$ is G-delta.
@@ -1006,26 +1018,19 @@ declare any subset in $\ZZ$ and any complement of a finite set to be open.
 The set $Q_x$ is called the \index{quasi-component}\emph{quasi-component} of $x$;
 note that $y\in Q_x$ if and only if $f(x)=f(y)$ for any continuous map $f$ from $\c{X}$ to the discrete two-point space.
 
-
-\parbf{\ref{ex:S1ne[0,1]}.}
-Show that $\mathbb{S}^1$ has no cut points, but $[0,1]$ has.
-
 \parbf{\ref{ex:R2neR}.}
 Show that $\RR^2$ has no cut points, but $\RR$ has.
 
 \parbf{\ref{ex:not-homeo}.}
-Count cut points and noncut points for each space.
+Count points with given number of components in the complement for each space.
 
-\parbf{\ref{ex:Q/H}.} Let $x$ be the cross point; let us keep notation $x$ for the corresponding point in $Q/H$.
-Observe that any two points distinct from $x$ on the circle can be mapped to each other by a homeomorphism $Q\to Q$.
-It implies that all these points correspond to one point in $Q/H$; denote it by $c$.
-Further, let $e_1$ and $e_2$ be the endpoints of the segment.
-Observe that there is a homeomorphism that sends $e_1$ to $e_2$; let $e$ be the corresponding point in $Q/H$.
-Observe that any two points on the line segments distinct from $x$, $e_1$ and $e_2$ can be mapped to each other by a homeomorphism $Q\to Q$; denote by $i$ the corresponding point on $Q/H$.
-
-Argue as in \ref{ex:not-homeo} to show that $x$, $c$, $e$, and $i$ are distinct points in $Q/H$.
-List the open subsets of $\{x, c, e, i\}$.
-
+\parbf{\ref{ex:Q/H}.}
+Let $x$ be the cross point,
+let $c\ne x$ be a point on the circle,
+let $e$ be one of two endpoints of the segment,
+and let $i$ be a point on the segment that is disctinct from $x$ and not an endpoint.
+Show that $Q/H$ has just 4 points $[x]$, $[c]$, $[e]$, and $[i]$ (argue as in \ref{ex:not-homeo}).
+List the open subsets of $\{[x], [c], [e], [i]\}$.
 
 \parbf{\ref{ex:sierpinski}};
 \ref{SHORT.ex:sierpinski:connected}
@@ -1340,6 +1345,32 @@ Try to arrive at a contradiction.
 Realize that each products $K_1\times [0,1]$ and $K_2\times [0,1]$ is a solid torus with attaced pair of squares.
 To construct a homeomorphism, whist one solid torus.
 
+\parbf{\ref{ex:covering-clopen}.}
+
+\parbf{\ref{ex:n-folded}.}
+
+\parbf{\ref{ex:ofverings(8)}.}
+
+\parbf{\ref{ex:induced-hom-covering}};
+\ref{SHORT.ex:induced-hom-covering:injective}.
+
+\parit{\ref{SHORT.ex:induced-hom-covering:lift}.}
+
+\parit{\ref{SHORT.ex:induced-hom-covering:sc}.}
+
+\parit{\ref{SHORT.ex:induced-hom-covering:endpoint}.}
+
+\parbf{\ref{ex:Borsuk-Ulam}}; \ref{SHORT.ex:Borsuk-Ulam:Borsuk-Ulam}
+Assume the contrary and apply the Borsuk-Ulam theorem for the map
+\[\tilde h(x)=\frac{f(x)- f(-x)}{|f(x)- f(-x)|}.\]
+
+\parit{\ref{SHORT.ex:ABC}.}
+
+\parit{\ref{SHORT.ex:ABCD}.}
+
+\parit{Comments.}
+Part \ref{SHORT.ex:Borsuk-Ulam:Borsuk-Ulam} of the exersise can be interpreted the following way:
+\textit{at any moment of time there exists a pair of antipodal points on the surface of the earth that have the same temperature and pressure.}
 
 
 \parbf{\ref{ex:sc-VuW}.}

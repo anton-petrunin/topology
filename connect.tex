@@ -230,11 +230,16 @@ Note that if $f\:\c{X}\to \c{Y}$ is a homeomorphism, then a point $x \in\c{X}$ i
 Moreover, the number of connected components in $\c{X}\setminus\{x\}$ is the same as in $\c{Y}\setminus\{y\}$.
 The latter follows since the restriction of $f$ defines a homeomorphism $\c{X}\setminus\{x\}\to \c{Y}\setminus\{y\}$.
 
-These observations can be used to solve the following exercises.
+For example, consider the circle $\mathbb{S}^1$ and the line segment $[0,1]$.
+Note that both spaces are connected, compact, Hausdorff, metrizable, and Baire;
+so, we cannot distinguish these two spaces by all these properties.
+Now choose the midpoint $\tfrac12\in [0,1]$;
+observe that its complement $[0,1]\setminus \{\tfrac12\}$ has two connected components.
+If there is a homeomorphism $f\:[0,1]\to \mathbb{S}^1$, then the set $\mathbb{S}^1\setminus \{f(\tfrac12)\}$ must have two connected components.
+On the other hand $\mathbb{S}^1\setminus \{x\}$ is connected for any point $x\in \mathbb{S}^1$ (prove it).
+This leads to a contradiction, proving that $\mathbb{S}^1$ is not homeomorphic to the line segment $[0,1]$.
 
-\begin{thm}{Exercise}\label{ex:S1ne[0,1]}
-Show that the circle $\mathbb{S}^1$ is not homeomorphic to the line segment $[0,1]$.
-\end{thm}
+The same type of argument can be used to solve the following exercises.
 
 \begin{thm}{Exercise}\label{ex:R2neR}
 Show that the plane $\RR^2$ is not homeomorphic to the real line $\RR$.
@@ -257,8 +262,8 @@ Show that no two of the following four closed connected sets in the plane are ho
 
 {
 
-\begin{wrapfigure}[3]{r}{12 mm}
-\vskip-6mm
+\begin{wrapfigure}[2]{r}{12 mm}
+\vskip-10mm
 \centering
 \includegraphics{mppics/pic-980}
 \end{wrapfigure}
@@ -266,7 +271,7 @@ Show that no two of the following four closed connected sets in the plane are ho
 \begin{thm}{Exercise}\label{ex:Q/H}
 Let $Q$ be the set shown in the picture;
 it is a union of a circle with a crossing closed line segment.
-Consider the action on $Q$ of the group $H$ of all homeomorphisms $Q\to Q$.
+Consider the action on $Q$ of the group $H$ of all homeomorphisms from $Q$ to itself.
 Describe the quotient space $Q/H$;
 that is, list its points and the open sets.
 
