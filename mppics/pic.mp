@@ -1126,8 +1126,6 @@ save u,p;
 path p[];
 u:=1cm;
 
-p1=(1,0)*u..{up}(2,0)*u..(1,0)*u..(0,0)*u{up}..cycle;
-
 z.a0=(0,1)*u;
 z.b0=(0,2)*u;
 z.a1=z.a0 rotated 120;
@@ -1142,17 +1140,127 @@ p3=z.b0{z.b0 rotated 90}..tension 5..z.b2{z.b2 rotated 90}..tension 5..z.b1{z.b1
 p4=(-2,0)*u{up}..(-1,0)*u{(1,-1)}..(1,0)*u{(1,1)}..(3,0)*u{(1,-1)}..(4,0)*u{up}..(3,0)*u{(-1,-1)}..(1,0)*u{(-1,1)}..(-1,0)*u{(-1,-1)}..cycle;
 
 
-drawarrow subpath (0,1) of p1 shifted ((.4,0)*u);
-drawarrow subpath (1,1.15) of p1 shifted ((.4,0)*u);
-drawarrow subpath (1.15,3.05) of p1 shifted ((.4,0)*u);
-draw subpath (3.05,4) of p1 shifted ((.4,0)*u);
-
-draw p2 shifted ((4,0)*u);
-draw p3 shifted ((6,-1)*u);
-draw p4 shifted ((0,-1.4)*u);
+draw p2 shifted ((1,-1.3)*u);
+draw p3 shifted ((5,-1)*u);
+draw p4 shifted ((0,.5)*u);
 
 
 endfig;
 
+beginfig(1655)
+save u,p;
+path p[];
+u:=1cm;
+
+p1=(1,0)*u..{up}(2,0)*u..(1,0)*u..(0,0)*u{up}..cycle;
+
+draw p1;
+
+endfig;
+
+beginfig(1660)
+save u,p;
+path p[];
+u:=1cm;
+
+z.shift0=(1,-.5)*u;
+z.shift1=(0,-1)*u;
+z.shift2=(4,-.5)*u;
+z.shift3=(8,-.5)*u;
+
+p1=(1,0)*u..{up}(2,0)*u..(1,0)*u..(0,0)*u{up}..cycle;
+
+p2=(0,-1)*u{(1,1)}..(0,1)*u{(-1,1)}..tension 2..cycle;
+p3=(0,1)*u{(-1,-1)}..(0,-1)*u{(1,-1)}..tension 2..cycle;
+
+p4=(-1,0)*u{(1,-1)}..(1,0)*u{(1,1)}..(2,0)*u{down}..(1,0)*u{(-1,1)}..(-1,0)*u{(-1,-1)}..(-2,0)*u{up}..cycle;
+
+
+vardef midarrowpath(expr p) =
+  save t, m, v;
+  numeric t;
+  pair m, v;
+
+  t := arctime ((arclength p)/2) of p;  % <-- FIXED
+  m := point t of p;
+  v := unitvector(direction t of p);
+
+  draw (m - 1*v + 2*v rotated  90) -- (m + 1*v) -- (m - 1*v + 2*v rotated -90);
+enddef;
+
+vardef midarrowtwopath(expr p) =
+  save t, m, v;
+  numeric t;
+  pair m, v;
+
+  t := arctime ((arclength p)/2) of p;  % <-- FIXED
+  m := point t of p;
+  v := unitvector(direction t of p);
+
+  draw (m + 2*v rotated  90) -- (m + 2*v) -- (m + 2*v rotated -90);
+  draw (m + 2*v rotated  90 - 2*v) -- m -- (m + 2*v rotated -90 - 2*v);
+enddef;
+
+draw p1;
+
+midarrowpath(subpath (0,2) of p1);
+midarrowtwopath(subpath (2,4) of p1);
+
+draw p1 shifted z.shift1;
+
+midarrowpath(subpath (0,2) of p1 shifted z.shift1);
+midarrowtwopath(subpath (2,4) of p1 shifted z.shift1);
+
+draw p2 shifted z.shift2;
+draw p3 shifted z.shift2;
+
+midarrowpath(subpath (0,1) of p2 shifted z.shift2);
+midarrowtwopath(subpath (1,2) of p2 shifted z.shift2);
+midarrowpath(subpath (0,1) of p3 shifted z.shift2);
+midarrowtwopath(subpath (1,2) of p3 shifted z.shift2);
+
+draw p4 shifted z.shift3;
+
+midarrowpath(subpath (0,1) of p4 shifted z.shift3);
+midarrowtwopath(subpath (1,3) of p4 shifted z.shift3);
+midarrowpath(subpath (3,4) of p4 shifted z.shift3);
+midarrowtwopath(subpath (4,6) of p4 shifted z.shift3);
+
+label (btex $1$ etex, z.shift0);
+label (btex $2$ etex, z.shift2);
+label (btex $3$ etex, z.shift3);
+endfig;
+
+beginfig(1665)
+save u,v,p;
+path p[];
+u:=.5cm;
+v:=.3cm;
+
+z.shift1=(0,-1)*u;
+z.shift2=(-3,-2.5)*u;
+z.shift3=(3,-2.5)*u;
+z.shift4=(0,-2.5)*u;
+
+p1=(-4,0)*u{up}..(-3,0)*u{(1,-1)}..(-1,0)*u{(1,1)}..(1,0)*u{(1,-1)}..(3,0)*u{(1,1)}..(4,0)*u{down}
+..(3,0)*u{(-1,1)}..(1,0)*u{(-1,-1)}..(-1,0)*u{(-1,1)}..(-3,0)*u{(-1,-1)}..cycle;
+
+p2=(-1,1)*v{1,0}..(1,1)*v{(1,0)}..(1,-1)*v{(-1,0)}..(-1,-1)*v{(-1,0)}..cycle;
+p3=(-1,1)*v{0,1}..(1,1)*v{(0,-1)}..(1,-1)*v{(0,-1)}..(-1,-1)*v{(0,1)}..cycle;
+
+p4=(-1,1)*v{0,1}..(-1,1)*2*v..(-1,1)*v{1,0}..(1,1)*v{(1,0)}..(1,1)*2*v..(1,1)*v{(0,-1)}..(1,-1)*v{(0,-1)}..(1,-1)*2*v..(1,-1)*v{(-1,0)}..(-1,-1)*v{(-1,0)}..(-1,-1)*2*v..(-1,-1)*v{(0,1)}..cycle;
+
+p5=(-1,1)*v{1,0}..tension 1.4..(-1,-1)*v{(-1,0)}..tension 1.4..cycle;
+p6=p5 shifted ((2,0)*v);
+
+draw p1;
+draw p2 shifted z.shift2;
+draw p3 shifted z.shift2;
+draw p4 shifted z.shift3;
+draw p3 shifted z.shift4;
+draw p5 shifted z.shift4;
+draw p6 shifted z.shift4;
+
+endfig;
 
 end

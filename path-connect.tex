@@ -127,7 +127,7 @@ Note that $t_1>0$, $a(t_1)=y$ and $a(t)\ne y$ for any $t<t_1$.
 Since $a$ is continuous, there is $t_0<t_1$ such that $|a(t)-y|<\tfrac1{10}$ for any $t\in [t_0,t_1]$.
 Since $|a(t_0)-y|<\tfrac1{10}$, we have $a(t_0)\in J_n$ for some $n$ (in other words, $a(t_0)\notin I$).
 
-Denote by $N$ the intersection of the $\tfrac1{10}$-neighborhood of $y$ with the comb.
+Denote by $N$ the intersection of the $\tfrac1{10}$-neighborhood of $y$ with $W$.
 The intersection of $J_n\cap N$ is a connected component of $N$.
 By \ref{prop:image-connected}, $a(t)\in J_n$ for any $t\in [t_0,t_1]$;
 in particular, $a(t_1)\ne y$ --- a contradiction.
@@ -186,7 +186,7 @@ Show that a finite topological space is path-connected if it is connected.
 
 A topological space $\c{X}$ is called \index{locally path-connected}\emph{locally path-connected} if for any point $p\in\c{X}$ and any open set $V\ni p$ there is a path-connected open set $W$ such that $V\supset W\ni p$.
 For instance, Euclidean space is locally path-connected;
-it follows since any open ball in a Euclidean space is path-connected.
+it follows since any open ball in a Euclidean space is convex, and therefore path-connected.
 
 \begin{thm}{Theorem}\label{thm:open-connected=path-connected}
 A connected open set in a locally path-connected space is path-connected.
@@ -209,15 +209,16 @@ Since $V$ is connected, we get that $V\setminus P=\emptyset$ --- hence the resul
 
 \begin{subthm}{ex:locally-path-connected:comb}
 According to the theorem, the flea-and-comb space $W'$ must fail to be locally path-connected at some points.
-Find this the set of such points.
+Find the set of such points.
 \end{subthm}
 
 \begin{subthm}{ex:locally-path-connected:not}
 Construct a path-connected, but not locally path-connected space.
 \end{subthm}
 
-
-
 \end{thm}
 
-
+\begin{thm}{Exercise}\label{ex:open-path-connected-component}
+Let $V$ be an open set in a locally path-connected space.
+Show that any path-connected component of $V$ is open.
+\end{thm}

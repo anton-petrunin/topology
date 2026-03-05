@@ -319,7 +319,7 @@ To do the only-if part check the condition in \ref{def:cont-top}.
 To do the if part, suppose $f$ is not nondecreasing;
 that is, we can find $x_0<x_1$ such that $f(x_0)>f(x_1)$.
 Note that the inverse image $V=f^{-1}([f(x_0),\infty))$ contains $x_0$ but does not contain $x_1$.
-Conculde that $V$ is not open in $(\RR,\s{T})$, so $f\:(\RR,\s{T})\to(\RR,\s{T})$ is not continuous.
+Conclude that $V$ is not open in $(\RR,\s{T})$, so $f\:(\RR,\s{T})\to(\RR,\s{T})$ is not continuous.
 
 \parbf{\ref{ex:|x|}.}
 Apply \ref{ex:composition-continuous} together with the fact that $x\mapsto |x|$ is a continuous real-to-real function (the latter is assumed to be known from calculus).
@@ -852,7 +852,7 @@ Apply \ref{ex:normal-hausdorff} to get disjoint open sets $V_1\supset K_1$ and $
 Further, look at the sets $W_i=\c{Y}\setminus f(\c{X}\setminus V_i)$ and think.
 
 \parbf{\ref{ex:first-countable-seq}.}
-Let $N_1$, $N_2,\dots$ be the sequence of neighbourhoods of $x$ provided by the definition of first-countable space.
+Let $N_1$, $N_2,\dots$ be the sequence of neighborhoods of $x$ provided by the definition of first-countable space.
 If $x\in\bar A$, then we can choose $x_n\in N_n\cap A$ for every $n$.
 Show that $x_n\to x$.
 This proves the only-if part.
@@ -938,11 +938,39 @@ Apply \ref{ex:nested-compact} to show that $Q_\infty$ is not empty.
 Further, assume $V$ and $W$ separate $Q_\infty$.
 Apply \ref{ex:nested-compact} to the sequence $Q'_n=Q_n\setminus(V\cup W)$.
 
-\parbf{\ref{ex:quotient-connected}.}
-Apply \ref{prop:image-connected}.
-
 \parbf{\ref{ex:A<B<bar-A}.}
 Show that any separating pair of $B$ separates $A$ as well.
+
+\parbf{\ref{ex:colomb}.}
+Let us denote by $\gcd(a,b)$ the greatest common divisor of positive integers $a$ and $b$.
+Denote by $\NN_0$ the set of all nonnegative integers,
+so the arithmetic progression  $\{a$, $a+d$, $a+2\cdot d,\dots\}$ can be written as $a+\NN_0\cdot d$.
+
+\parit{\ref{SHORT.ex:colomb:base}.}
+Suppose $\gcd(a_1,d_1)=\gcd(a_2,d_2)=1$.
+Show that the set $(a_1+\NN_0\cdot d_1)\cap(a_2+\NN_0\cdot d_2)$ is either empty or it can be written as $a_3+\NN_0\cdot d_3$ for some positive integers $a_3$ and $d_3$ such that $\gcd(a_3,d_3)=1$.
+Use it to check the conditions in \ref{prop:base-any}.
+
+\parit{\ref{SHORT.ex:colomb:connected}.}
+If a prime number $d$ is larger than $a_1$ and $a_2$, then $(a_1+\NN_0\cdot d)\cap (a_2+\NN_0\cdot d)=\emptyset$.
+Use this to show that the space is Hausdorff.
+
+Consider a finite sequence of elements of base $a_1+\NN_0\cdot d_1,\dots, a_n+\NN_0\cdot d_n$.
+Show that the product $d_1\cdots d_n$ does not belong to any of them.
+Apply \ref{ex:inscribed-cover-base} and \ref{obs:inscribed-cover} to conclude that the space is noncompact.
+
+Finally, assume $V$ and $W$ separate $\NN$ with the described topology.
+Observe that $a_1+\NN_0\cdot d_1\subset V$ and $a_2\z+\NN_0\cdot d_2\subset W$ for some positive integers $a_1$, $d_1$, $a_2$ and $d_2$ such that $\gcd(a_1,d_1)=\gcd(a_2,d_2)=1$.
+Let $a_3=d_1\cdot d_2$;
+without loss of generality we can assume that $a_3\in  V$.
+Observe that $a_3+\NN_0\cdot  d_3\subset V$ for some $d_3$ such that $\gcd(a_3,d_3)=1$.
+Show that $(a_3+\NN_0\cdot d_3)\cap (a_2+\NN_0\cdot d_2)\ne \emptyset$ and arrive at a contradiction.
+
+\parit{Comment.}
+This problem and solution with more details are discussed in the note by Solomon Colomb \cite{golomb}
+
+\parbf{\ref{ex:quotient-connected}.}
+Apply \ref{prop:image-connected}.
 
 \parbf{\ref{ex:connected-product}.}
 Given a separating pair of $\c{X}$ or $\c{Y}$ construct a separating pair of $\c{X}\times\c{Y}$; this will prove the if part.
@@ -950,7 +978,7 @@ For the only-if part, apply \ref{prop:union-connect} to show that $(\{x\}\times 
 And apply it again to show that
 $\c{X}\times \c{Y}$ is connected.
 
-\parbf{\ref{ex:R-connected}.}
+\parbf{\ref{ex:R-connected}+\ref{ex:connected-star-shaped}.}
 Apply \ref{prop:connected[0,1]}, \ref{prop:image-connected}, and \ref{prop:union-connect}.
 
 \parbf{\ref{ex:nonopen-connected-component}};
@@ -968,40 +996,6 @@ Apply  \ref{SHORT.ex:nonopen-connected-component:closed}.
 The Cantor set $K$ gives a more interesting example in \ref{SHORT.ex:nonopen-connected-component:finite}.
 Each connected component of $K$ is a one-point set, and such sets are not open in $K$.
 
-\parbf{\ref{ex:R-open}.}
-Show and use that each connected component of an open set in $\RR$ is an open interval.
-Note that any open interval contains a rational number, use that the set of rational numbers is countable.
-
-\parit{Comment.}
-Observe that the Cantor set (which is closed) does not contain isolated points and intervals;
-so, in some sense, closed sets are more complicated than open.
-
-\parbf{\ref{ex:colomb}.}
-Let us denote by $\gcd(a,b)$ the greatest common divisor of positive integers $a$ and $b$.
-
-\parit{\ref{SHORT.ex:colomb:base}.}
-Suppose $\gcd(a_1,d_1)=\gcd(a_2,d_2)=1$.
-Show that the set $(a_1+\NN\cdot d_1)\cap(a_2+\NN\cdot d_2)$ is either empty or it can be written as $a_3+\NN\cdot d_3$ for some positive integers $a_3$ and $d_3$ such that $\gcd(a_3,d_3)=1$.
-Use it to check the conditions in \ref{prop:base-any}.
-
-\parit{\ref{SHORT.ex:colomb:connected}.}
-If a prime number $d$ is larger than $a_1$ and $a_2$, then $(a_1+\NN\cdot d)\cap (a_2+\NN\cdot d)=\emptyset$.
-Use this to show that the space is Hausdorff.
-
-Consider a finite sequence of elements of base $a_1+\NN\cdot d_1,\dots, a_n+\NN\cdot d_n$.
-Show that the product $d_1\cdots d_n$ does not belong to any of them.
-Apply \ref{ex:inscribed-cover-base} and \ref{obs:inscribed-cover} to conclude that the space is noncompact.
-
-Finally, assume $V$ and $W$ separate $\NN$ with the described topology.
-Observe that $a_1+\NN\cdot d_1\subset V$ and $a_2\z+\NN\cdot d_2\subset W$ for some positive integers $a_1$, $d_1$, $a_2$ and $d_2$ such that $\gcd(a_1,d_1)=\gcd(a_2,d_2)=1$.
-Let $a_3=d_1\cdot d_2$;
-without loss of generality we can assume that $a_3\in  V$.
-Observe that $a_3+\NN\cdot  d_3\subset V$ for some $d_3$ such that $\gcd(a_3,d_3)=1$
-Show that $(a_3+\NN\cdot d_3)\cap (a_2+\NN\cdot d_2)\ne \emptyset$ and arrive at a contradiction.
-
-\parit{Comment.}
-This problem and solution with more details are discussed in the note by Solomon Colomb \cite{golomb}
-
 \parbf{\ref{ex:quasi-component}.}
 Denote by $Q_x$ the intersection of all clopen sets containing $x$.
 Observe that $Q_x$ is closed.
@@ -1018,6 +1012,14 @@ declare any subset in $\ZZ$ and any complement of a finite set to be open.
 The set $Q_x$ is called the \index{quasi-component}\emph{quasi-component} of $x$;
 note that $y\in Q_x$ if and only if $f(x)=f(y)$ for any continuous map $f$ from $\c{X}$ to the discrete two-point space.
 
+\parbf{\ref{ex:R-open}.}
+Show and use that each connected component of an open set in $\RR$ is an open interval.
+Note that any open interval contains a rational number, use that the set of rational numbers is countable.
+
+\parit{Comment.}
+Observe that the Cantor set (which is a closed set) does not contain isolated points and intervals;
+so, in some sense, closed sets are more complicated than open.
+
 \parbf{\ref{ex:R2neR}.}
 Show that $\RR^2$ has no cut points, but $\RR$ has.
 
@@ -1028,7 +1030,7 @@ Count points with given number of components in the complement for each space.
 Let $x$ be the cross point,
 let $c\ne x$ be a point on the circle,
 let $e$ be one of two endpoints of the segment,
-and let $i$ be a point on the segment that is disctinct from $x$ and not an endpoint.
+and let $i$ be a point on the segment that is distinct from $x$ and not an endpoint.
 Show that $Q/H$ has just 4 points $[x]$, $[c]$, $[e]$, and $[i]$ (argue as in \ref{ex:not-homeo}).
 List the open subsets of $\{[x], [c], [e], [i]\}$.
 
@@ -1070,7 +1072,7 @@ On the other hand, \ref{ex:colomb} provides an example of countable connected sp
 
 \parbf{\ref{ex:two-point-path-connected}.}
 Recall that connected two-point space has two point $a$ and $b$,
-and its open sets are $\emptyset$m $\{a\}$ and $\{a,b\}$.
+and its open sets are $\emptyset$, $\{a\}$, and $\{a,b\}$.
 Show and use that $f\:[0,1]\to\c{X}$ defined by
 \[f(t)=
 \begin{cases}
@@ -1133,11 +1135,15 @@ Show that the local path-connectedness holds at all points of comb, but does not
 \parit{Comment.}
 Try to construct a path-connected space that is not locally path-connected at any point; can you make it compact?
 
+\parbf{\ref{ex:open-path-connected-component}.}
+Apply \ref{obs:open-connected-component} and \ref{thm:open-connected=path-connected}.
+
 \parbf{\ref{ex:comp-hom}.}
 Let $f_\tau$ and $g_\tau$ be the homotopies from $f_0$ to $f_1$ and from $g_0$ to $g_1$, respectively.
 Show and use that $g_\tau \circ f_\tau$ is a homotopy from $g_0\circ f_0$ to $g_1\circ f_1$.
 
-\parbf{\ref{ex:homot-sphere}.} Consider linear homotopy in $\RR^3$:
+\parbf{\ref{ex:homot-sphere}.}
+Consider linear homotopy in $\RR^3$:
 \[f_t(x)=(1-t)\cdot f_0(x)+t\cdot f_1(x).\]
 Observe that $f_t(x)\ne 0$ for any $t$ and $x$.
 Compose $f_t$ with the radial projection $\RR^3\setminus\{0\}\to\SS^2$ defined by $y\mapsto \tfrac y{|y|}$.
@@ -1346,30 +1352,48 @@ Realize that each products $K_1\times [0,1]$ and $K_2\times [0,1]$ is a solid to
 To construct a homeomorphism, whist one solid torus.
 
 \parbf{\ref{ex:covering-clopen}.}
+Apply \ref{thm:covering-open} to show that the image and its complement are open.
 
 \parbf{\ref{ex:n-folded}.}
-
-\parbf{\ref{ex:ofverings(8)}.}
+Apply the definition of the coverign map to show that the set of points in $\c{X}$ with exactly $n$ points in their inverse image has to be open and close.
 
 \parbf{\ref{ex:induced-hom-covering}};
-\ref{SHORT.ex:induced-hom-covering:injective}.
+\ref{SHORT.ex:induced-hom-covering:injective}+\ref{SHORT.ex:induced-hom-covering:lift}+\ref{SHORT.ex:induced-hom-covering:action}.
+Reformulate each statement using homotopy of paths and apply \ref{lem:path-lifting}.
 
-\parit{\ref{SHORT.ex:induced-hom-covering:lift}.}
+\parbf{\ref{ex:2-folded}.}
+Let $w\:\tilde{\c{X}}\to \c{X}$ be a 2-fold cover.
+Consider the involution $i$ that swaps the points in each inverse image $w^{-1}\{x\}$ for $x\in \c{X}$.
+Prove that $i$ generated a $\ZZ_2$-action on $\tilde{\c{X}}$ and identify $\c{X}$ with the quotient space $\tilde{\c{X}}/\ZZ_2$.
 
-\parit{\ref{SHORT.ex:induced-hom-covering:sc}.}
+\parbf{\ref{ex:3-fold(8)}.}
+The solutions are not unique.
+Observe that both types of arrows must go into each crossing point, and both types of arrows must go out of each crossing point.
+Any labeling that meets this condition will do the job.
+Two of coverings are regular with group $\ZZ_3$, and one is not.
 
-\parit{\ref{SHORT.ex:induced-hom-covering:endpoint}.}
+\parbf{\ref{ex:4-fold(8)}.}
+The solutions are not unique.
+Choose spaces from the following picture (or draw your own).
+Label arcs by arrows, depending on the choice of labeling the same space might solve different parts of the exercise.
+
+\begin{Figure}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-1665}
+\end{Figure}
 
 \parbf{\ref{ex:Borsuk-Ulam}}; \ref{SHORT.ex:Borsuk-Ulam:Borsuk-Ulam}
-Assume the contrary and apply the Borsuk-Ulam theorem for the map
+Assume the contrary and apply the Borsuk--Ulam theorem for the map
 \[\tilde h(x)=\frac{f(x)- f(-x)}{|f(x)- f(-x)|}.\]
 
-\parit{\ref{SHORT.ex:ABC}.}
+\parit{\ref{SHORT.ex:ABC}.} Show and use that if $f(x)=f(-x)$, then $x$ and $-x$ lie in one of the sets $A$, $B$, or $C$.
 
 \parit{\ref{SHORT.ex:ABCD}.}
+Try to cover sphere by four spherical triangles.
 
 \parit{Comments.}
-Part \ref{SHORT.ex:Borsuk-Ulam:Borsuk-Ulam} of the exersise can be interpreted the following way:
+Part \ref{SHORT.ex:Borsuk-Ulam:Borsuk-Ulam} of the exercise can be interpreted the following way:
 \textit{at any moment of time there exists a pair of antipodal points on the surface of the earth that have the same temperature and pressure.}
 
 

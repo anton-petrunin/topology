@@ -76,9 +76,10 @@ Any locally Baire space is Baire; that is, if any point $p$ in a topological spa
 \section{G-delta sets}
 
 Let $G$ be a set in a topological space $\c{X}$.
-We say that $G$ is a \index{G-delta set}\emph{G-delta set}
+We say that $G$ is a \index{G-delta set}\emph{G-delta} set%
 if it can be written as a countable intersection of open sets;
-that is, $G=V_1\cap V_2\cap\ldots$ for a sequence of open sets $V_1,V_2,\ldots \subset \c{X}$.
+that is, $G=V_1\cap V_2\cap\ldots$ for a sequence of open sets $V_1,V_2,\ldots \subset \c{X}$.%
+\footnote{The complements of G-delta sets are called \index{F-sigma set}\emph{F-sigma} sets; they can be defined directly as intersections of countable families of closed sets.}
 In the definition we can assume that the sequence of open sets is nested;
 that is $V_1\supset V_2\supset\ldots$;
 if not, pass to the sequence
@@ -90,7 +91,9 @@ Show that any closed set in a metrizable space is G-delta.
 
 Observe that a countable intersection of G-delta sets is G-delta.
 The following identity implies that  union of two (and therefore finitely many) G-delta sets is G-delta:
-\[\biggl(\bigcap_i V_i\biggr)\cup \biggl(\bigcap_j W_j\biggr)=\bigcap_{i,j} (V_i\cup W_j).\]
+\[\biggl(\bigcap_i V_i\biggr)\cup \biggl(\bigcap_j W_j\biggr)
+=
+\bigcap_{i,j}\, (V_i\cup W_j).\]
 
 \begin{thm}{Observation}\label{obs:G-delta}
 Let $\c{X}$ be a Baire space.

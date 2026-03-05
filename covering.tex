@@ -4,7 +4,7 @@ In the previous chapter we introduced a map $w\:\RR\to \SS^1$,
 defined by $w(x)=\exp(2\cdot\pi\cdot i\cdot x)$,
 and the special properties of this map were used to calculate fundamental group of $\SS^1$.
 Now we will study covering maps --- the special type of maps that have the key properties of $w\:\RR\z\to \SS^1$.
-Covering maps will be used to caluclate fundamental gropus of other spaces,
+Covering maps will be used to calculate fundamental groups of other spaces,
 but more importantly, they will give another connection between algebra and geometry that has applications from both sides.
 
 \section{Definition}
@@ -15,19 +15,19 @@ Let $w\:\tilde{\c{X}}\to \c{X}$ be a continuous map.
 An open set $W\subset \c{X}$ is called \index{evenly covered open set}\emph{evenly covered} by $w$ if
 \[w^{-1}(W)=\bigcup_{\alpha\in \c{I}}V_\alpha,\]
 where $V_\alpha$ are pairwise disjoint open sets in $\tilde{\c{X}}$ such that restriction
-$w|_{V_\alpha}$ is a is a homeomorphism $V_\alpha\to W$ for each $\alpha\in \c{I}$.
+$w|_{V_\alpha}$ is a homeomorphism $V_\alpha\to W$ for each $\alpha\in \c{I}$.
 The sets $V_\alpha$ are called \index{sheet}\emph{sheets} over $W$.
 
-If for every point $x\in \c{X}$ there is an open neighborhood $W\ni x$ that is evenly by $w$, then $w$ is a \index{covering map}\emph{covering map}, $\tilde{\c{X}}$ is a \index{covering space}\emph{covering space} of $\c{X}$.
+If for every point $x\in \c{X}$ there is an open neighborhood $W\ni x$ that is evenly covered by $w$, then $w$ is a \index{covering map}\emph{covering map}, $\tilde{\c{X}}$ is a \index{covering space}\emph{covering space} of $\c{X}$.
 \end{thm}
 
 Note that $w\:\tilde{\c{X}}\to \c{X}$ is a covering if $\c{X}$ admits an open cover by evenly covered sets.
-In particular, from the proof of \ref{prop:lifting}, $w(x)=\exp(2\cdot\pi\cdot i\cdot x)$  defines a covering map $\RR\to\SS^1$ --- this maps and its properties will guide us to study general covering maps.
+In particular, from the proof of \ref{prop:lifting}, $w(x)=\exp(2\cdot\pi\cdot i\cdot x)$  defines a covering map $\RR\to\SS^1$ --- this map and its properties will guide us to study general covering maps.
 
 Most interesting examples of covering maps are surjective and have connected source $\tilde{\c{X}}$ and target $\c{X}$.
 Many authors add these conditions to the definition of covering.
 I might silently assume this, but formally speaking it is not required (in this text).
-For example, one may take several disjoint copies of space $\c{X}$ as $\tilde{\c{X}}$ and map a point in one copy to the corresponding point in $\c{X}$ --- this is the so called \index{trivial covering}\emph{trivial} covering map.
+For example, one may take several disjoint copies of space $\c{X}$ as $\tilde{\c{X}}$ and map a point in one copy to the corresponding point in $\c{X}$ --- this is the so-called \index{trivial covering}\emph{trivial} covering map.
 
 The following observation says that a covering map must be open.
 Note that restriction of the map $w\:\RR\to \SS^1$ to a bounded open interval provides an example of open map which is not covering; so the converse does not hold in general.
@@ -41,7 +41,7 @@ Any covering map is an open map.
 Let $w\:\tilde{\c{X}}\to \c{X}$ be a covering map.
 Choose an open set $V\subset \tilde{\c{X}}$ and a point $\tilde x\in V$.
 
-Choose an evenly covered open set $W\ni x=w(\tilde x)$; let $\{V_\alpha\}$ is a family of its sheets.
+Choose an evenly covered open set $W\ni x=w(\tilde x)$; let $\{V_\alpha\}$ be a family of its sheets.
 Since $\tilde x\in w^{-1}(W)$, we have $\tilde x\in V_\alpha$ for some $\alpha$.
 Let $V'_\alpha=V_\alpha\cap V$.
 Since $w|_{V_\alpha}$ is a homeomorphism, $W'=w(V_\alpha')$ is open in $W$, and (since $W$ is open) $W'$ is open in $\c{X}$.
@@ -56,12 +56,12 @@ Conclude that, if $\c{X}$ is connected, and $\tilde{\c{X}}\ne\emptyset$, then $w
 \end{thm}
 
 Let $n$ be an integer.
-A covering map $w\:\tilde{\c{X}}\to \c{X}$ is called \emph{$n$-folded} if inverse image of every point $x\in \c{X}$ has exactly $n$ points.
+A covering map $w\:\tilde{\c{X}}\to \c{X}$ is called \emph{$n$-fold} if inverse image of every point $x\in \c{X}$ has exactly $n$ points.
 
 \begin{thm}{Exercise}\label{ex:n-folded}
 Let $w\:\tilde{\c{X}}\to \c{X}$ is a covering map, and let $n$ be an integer.
 Assume that $\c{X}$ is connected, and an inverse image of some point $x\in \c{X}$ has exactly $n$ points.
-Show that $w$ is $n$-folded.
+Show that $w$ is $n$-fold.
 \end{thm}
 
 \section{Path liftings}
@@ -70,7 +70,7 @@ Recall that in Section~\ref{sec:lifting-s1}, we defined lifts with respect to th
 Now we repeat the same definition for general continuous map.
 
 Let $w\:\tilde{\c{X}}\to \c{X}$ and $f\:\c{Y}\to \c{X}$ be continuous maps.
-A continuous map $\tilde f\:\c{Y}\to \tilde{\c{X}}$ is called a \index{lift}\emph{lift} of $f$ (with respect to $f$) if $w\circ \tilde f=f$;
+A continuous map $\tilde f\:\c{Y}\to \tilde{\c{X}}$ is called a \index{lift}\emph{lift} of $f$ (with respect to $w$) if $w\circ \tilde f=f$;
 in other words, the following diagram commutes:
 \begin{figure}[h!]
 \centering
@@ -91,37 +91,38 @@ Let $w\:\tilde{\c{X}}\to \c{X}$ be a covering map, and let $a_0\:[0,1]\to \c{X}$
 Suppose that $\tilde x_0\in \tilde{\c{X}}$ and $x_0\in \c{X}$ be a points such that $w(\tilde x_0)=x_0=a_0(0)$.
 Then there is unique lift $\tilde a_0$ of $a$ such that $\tilde a_0(0)=\tilde x_0$.
 
-Moreover, given a homotopy of paths $a_\tau$ from $a_0$ to $a_1$ there is unique lifted homotpy $\tilde a_\tau$ such that $\tilde a_0(0)=\tilde x_0$.
+Moreover, given a homotopy of paths $a_\tau$ from $a_0$ to $a_1$ there is unique lifted homotopy $\tilde a_\tau$ such that $\tilde a_0(0)=\tilde x_0$.
 In particular, if $a_0\sim a_1$ then $\tilde a_0(1)= \tilde a_1(1)$.
 \end{thm}
 
 \begin{thm}{Theorem}\label{thm:bijection-fiber}
 Let $w\: \tilde{\c{X}}\to \c{X}$ be a covering.
 Assume that $\tilde{\c{X}}$ is simply connected.
-Suppose that $\tilde x_0\in \tilde{\c{X}}$ and $x_0\in \c{X}$ be a points such that $w(\tilde x_0)=x_0$.
-Then the following construction defines a bijection between the fundamental group $\pi_1(\c{X},x_0)$ and the inverse image $w^{-1}\{x_0\}\subset \tilde{\c{X}}$:
+Then, for any $x_0\in \c{X}$ there is a bijection $f$ between the fundamental group $\pi_1(\c{X},x_0)$ and the inverse image $w^{-1}\{x_0\}\subset \tilde{\c{X}}$.
+Moreover, $f$ can be constructed in the following way:
 
+Choose $\tilde x_0\in \tilde{\c{X}}$ such that $w(\tilde x_0)=x_0$.
 Given $\alpha\in \pi_1(\c{X},x_0)$, choose a loop $a$ based at $x_0\in \c{X}$ such that $\alpha=[a]$.
-Consider a lift $\tilde a$ of $a$ such $\tilde a(0)=\tilde x_0$ and define the map as $f\:\alpha\mapsto \tilde a(1)$.
+Consider a lift $\tilde a$ of $a$ such $\tilde a(0)=\tilde x_0$ and let $f(\alpha)= \tilde a(1)$.
 \end{thm}
 
 \parit{Proof.}
-Note that $w(\tilde a(1))=x_0$; therefore $f(\alpha)=\tilde a(1)\in w^{-1}\{x_0\}$ as required.
+Note that $w(\tilde a(1))=a(1)=x_0$; therefore $f(\alpha)\in w^{-1}\{x_0\}$ as required.
 
 Let us show that the map $f$ is well defined;
-that is, $\tilde a(1)$ is the same for any loop $a$ such that $\alpha=[a]$.
-Indeed, if $a_0\sim a_1$, then by the second statement in the lemma we get $\tilde a_0(1)=\tilde a_1$.
+that is, the point $\tilde a(1)$ is the same for any loop $a$ such that $\alpha=[a]$.
+Indeed, if $\alpha=[b]$ for some loop $b$, then $a\sim b$, and by the second statement in the lemma, we get $\tilde a(1)=\tilde b(1)$.
 
-Since $\tilde{\c{X}}$ is simply connected, there is a path $\tilde a$ from $x_0$ to any point in $w^{-1}\{x\}$.
+Since $\tilde{\c{X}}$ is simply connected, there is a path $\tilde a$ from $\tilde x_0$ to any point in $w^{-1}\{x_0\}$.
 Note that $a=w\circ\tilde a$ is a loop in $\c{X}$ with base point $x_0$, and $\tilde a$ is the lift of $a$ as in the construction.
 This implies that the map $f\:\pi_1(\c{X},x_0)\to w^{-1}\{x_0\}$ is onto.
 
 It remains to check that $f$ is injective.
-Suppose $\tilde a_0(1)=\tilde a_1(1)$.
-Since $\tilde a_0(0)=\tilde a_1(0)=\tilde x_0$ and $\tilde X$ is simply connected,
-we have that $\tilde a_0\sim \tilde a_1$; that is, there is a homotopy $\tilde a_\tau$ from $\tilde a_0$ to $\tilde a_1$.
-Observe that $a_\tau=w\circ  \tilde a_\tau$ is a homotopy from $a_0$ to $a_1$;
-that is $[a_0]=[a_1]\z\in \pi_1(\c{X},x_0)$.
+Suppose $\tilde a(1)=\tilde b(1)$ for two paths starting at $\tilde x_0$.
+Since $\tilde{\c{X}}$ is simply connected,
+we have that $\tilde a\sim \tilde b$ (see \ref{ex:sc=homot-paths}); that is, there is a homotopy $\tilde a_\tau$ from $\tilde a$ to $\tilde b$.
+Observe that $a_\tau=w\circ  \tilde a_\tau$ is a homotopy from $a=w\circ \tilde a$ to $b=w\circ \tilde b$;
+that is, $[a]=[b]\z\in \pi_1(\c{X},x_0)$.
 \qeds
 
 
@@ -130,27 +131,13 @@ Let $w\:\tilde{\c{X}}\to \c{X}$ be a covering map.
 Suppose that $\tilde x_0\in \tilde{\c{X}}$ and $x_0\in \c{X}$ be a points such that $w(\tilde x_0)=x_0$.
 
 \begin{subthm}{ex:induced-hom-covering:injective}
-Show that $w_*\:\pi_1(\tilde{\c{X}},\tilde x_0)\to \pi_1(\c{X}, x_0)$ is a \index{monomorphism}\emph{monomorphism} (which means injective homeomorphism).
+Show that $w_*\:\pi_1(\tilde{\c{X}},\tilde x_0)\to \pi_1(\c{X}, x_0)$ is a \index{monomorphism}\emph{monomorphism} (which means injective homomorphism).
 \end{subthm}
 
 \begin{subthm}{ex:induced-hom-covering:lift}
 Let $b$ be a loop in $\c{X}$ with base point $x_0$ and $\tilde b$ be its lift in $\tilde{\c{X}}$ such that $\tilde b(0)=\tilde x_0$.
 Show that $\tilde b(1)=\tilde x_0$ if and only if $[b]\in \Im w_*$.
 \end{subthm}
-
-
-\begin{subthm}{ex:induced-hom-covering:sc}
-Assume  $\tilde{\c{X}}$ is simply connected.
-Let $b$ be a loop in $\c{X}$ based at $x_0$ and $\tilde b$  be its lift in $\tilde{\c{X}}$ such that $\tilde b(0)=\tilde x_0$.
-Show that $[b]=1\in\pi_1(\c{X},x_0)$ if and only if $\tilde b$ is a loop.
-\end{subthm}
-
-\begin{subthm}{ex:induced-hom-covering:endpoint}
-Let $a_0$ and $a_1$ be two paths in $\c{X}$ such that $a_0(0)=a_1(0)=x_0$ and $a_0(1)=a_1(1)$.
-Suppose $\tilde a_0$ and $\tilde a_1$ be lifts of $a_0$ and $a_1$ such that $\tilde a_0(0)=\tilde a_1(0)=\tilde x_0$.
-Show that $\tilde a_0(1)=\tilde a_1(1)$ if and only if $[a_0*\bar a_1]\in w_*(\pi_1(\tilde{\c{X}})$.
-\end{subthm}
-
 
 \begin{subthm}{ex:induced-hom-covering:action}
 Show that the following construction defines an action $\pi_1(\c{X},x_0)$ on $w^{-1}\{x_0\}$.
@@ -161,25 +148,25 @@ Given a point $p\in w^{-1}\{x_0\}$ consider a lift $\tilde a$ of $a$ such $\tild
 
 \end{thm}
 
-\section{Regular coverings}
+\section{Freely discontinuous action}
 
-A continuous actin $G\acts \c{X}$ is called \index{freely discontinuous action}\emph{freely discontinuous} if for $x\in\c{X}$ there is an open neighbourhood $V \ni x$ such that
+A continuous action $G\acts \c{X}$ is called \index{freely discontinuous action}\emph{freely discontinuous} if for $x\in\c{X}$ there is an open neighborhood $V \ni x$ such that
 $V\cap g\cdot V=\emptyset$ for any $g\ne 1$.
 Since $g_1\cdot V\cap g_2\cdot V=g_1\cdot (V\cap g_1^{-1}\cdot g_2\cdot V)$ we also have that $g_1\cdot V\cap g_2\cdot V=\emptyset$ if $g_1\ne g_2$.
 
 \begin{thm}{Proposition}\label{prop:freely-discontinuous}
-If $G\acts \c{X}$ is a freely discontinuous action, then the quotient map $w\:\c{X}\to \c{X}/G$ is covering.
+If $G\acts \c{X}$ is a freely discontinuous action, then the quotient map $w\:\c{X}\to \c{X}/G$ is a covering.
 \end{thm}
 
-The covering maps that can be realized as quotient map for a freely discontinuous action of some grup $G$ are called \index{regular covering}\emph{regular},
+The covering maps that can be realized as quotient map for a freely discontinuous action of some group $G$ are called \index{regular covering}\emph{regular},
 or, if one needs to specify the group \index{$G$-covering}\emph{$G$-covering}.
 
 \parit{Proof.}
 By the definition of the quotient map, $w\:\c{X}\to \c{X}/G$ is continuous and surjective;
 moreover, by \ref{ex:quotient-map:open}, $w$ is open.
-Let $V$ be an open neighbourhood of $x\in \c{X}$ that meets the condition in the definition of freely discontinuous action.
+Let $V$ be an open neighborhood of $x\in \c{X}$ that meets the condition in the definition of freely discontinuous action.
 
-Since $w$ is open, $W=w(V)$ is an open neighbourhood of $w(x)\z=[x]=G\cdot x$.
+Since $w$ is open, $W=w(V)$ is an open neighborhood of $w(x)\z=[x]=G\cdot x$.
 Furthermore,
 \[w^{-1}(W)=G\cdot V=\bigcup_{g\in G} g\cdot V.\]
 and the restriction $w|_{g\cdot V}$ is a homeomorphism $g\cdot V\to W$ (since $w|_{g\cdot V}$ is open, continuous, and bijective), so $w$ meets the conditions in the definition of covering map.
@@ -194,7 +181,7 @@ for example, the action of the additive group $\RR$ by shifts on itself if free,
 \begin{thm}{Corollary}
 Let $G\acts \c{X}$ be a continuous free action of a finite group $G$.
 Assume that $\c{X}$ is Hausdorff.
-Then the quotient map $\c{X}\to \c{X}/G$ is covering.
+Then the quotient map $\c{X}\to \c{X}/G$ is a covering.
 \end{thm}
 
 \parit{Proof.}
@@ -216,15 +203,15 @@ It remains to apply \ref{prop:freely-discontinuous}.
 
 The equivalence class of an integer $m$ modulo $n$ will be denoted by $[m]_n$;
 that is
-\[[m]_n =\set{n+k\cdot n}{k\in\ZZ}.\]
+\[[m]_n =\set{m+k\cdot n}{k\in\ZZ}.\]
 The set of equivalence class of integers modulo $n$ will be denoted by $\ZZ_n$.
-The operation $[m_1]_n+[m_2]_n\df[m_1+m_2]_n$ defines on $\ZZ_n$ a group structure with netral element $[0]_n$;
+The operation $[m_1]_n+[m_2]_n\df[m_1+m_2]_n$ defines on $\ZZ_n$ a group structure with neutral element $[0]_n$;
 it is cyclic group of order $n$, generated by element $[1]_n$.
 Recall that all cyclic groups of order $n$ are isomorphic, so it is acceptable to denote a cyclic groups of order $n$ by $\ZZ_n$ (everyone does it, altho formally speaking $\ZZ_n$ is just an example of cyclic groups of order $n$).
 
 Consider the action $\ZZ_2\acts\SS^2$ generated by the involution $x\mapsto -x$.
-The quotient space is called \emph{real protective plane} and denoted by $\RP^2$.
-Observe that the action if free.
+The quotient space is called \emph{real projective plane} and denoted by $\RP^2$.
+Observe that the action is free.
 Since $\ZZ_2$ is finite, by the corollary, the quotient map $\SS^2\to \RP^2$ is a covering.
 By \ref{ex:van-kamp:s2}, $\SS^2$ is simply connected.
 By \ref{thm:bijection-fiber}, $\pi_1(\RP^2)$ has exactly two elements, and therefore it is isomorphic to $\ZZ_2$.
@@ -234,26 +221,67 @@ Thus we proved the following.
 The fundamental group of real projective plane is isomorphic to $\ZZ_2$.
 \end{thm}
 
-
+\begin{thm}{Exercise}\label{ex:2-folded}
+Show that any 2-fold covering is a regular $\ZZ_2$-covering.
+\end{thm}
 
 
 \section{Coverings of figure eight}
 
+\begin{wrapfigure}{r}{27 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-1655}
+\end{wrapfigure}
+
 Let us define the \emph{figure eight} $F_8$ as the quotient space of two copies of line segment $[0,1]$ by the subsets of 4 its ends;
 formally speaking,
 \[F_8=\{0,1\}\times [0,1]/\{(0,0),(0,1),(1,0),(1,1)\}.\]
+From \ref{obs:compact-to-hausdorff}, it follows that $F_8$ is homeomorphic to the subset shown in the picture.
 
-\begin{thm}{Exercise}\label{ex:ofverings(8)}
-The following picture shows figure eight and its covering spaces.
-Redraw them and mark the arcs of the covering by arrows that correspond to the image in the figure eight.
-(The solution is not unique.)
-\end{thm}
+The following picture shows three spaces of 2-fold coverings of $F_8$;
+\begin{figure}[h!]
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-1660}
+\end{figure}
+the paths identified in the covering map are marked by corresponding arrows.
+The first space is for the trivial covering;
+it has two connected components each homeomorphic to $F_8$.
+Note that all these coverings are regular;
+in fact by \ref{ex:2-folded} any 2-fold covering is a regular $\ZZ_2$-covering.
 
 
+
+
+\begin{thm}{Exercise}\label{ex:3-fold(8)}
+The following picture shows three spaces of 3-fold covering of the figure eight.
 \begin{figure}[!ht]
 \centering
 \includegraphics{mppics/pic-1620}
 \end{figure}
+Redraw them and mark identified paths by corresponding arrows.
+Which of these coverings are regular?
+Find the group for each regular covering.
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:4-fold(8)}
+Using the arrow notation as above, draw connected space of
+\begin{subthm}{ex:4-fold(8):Z4}
+a regular $\ZZ_4$-covering of $F_8$;
+\end{subthm}
+
+\begin{subthm}{ex:4-fold(8):Z2xZ2}
+a regular $\ZZ_2\times \ZZ_2$-covering of $F_8$;
+\end{subthm}
+
+\begin{subthm}{ex:4-fold(8):Z2xZ2}
+a nonregular 4-fold covering of $F_8$.
+\end{subthm}
+
+\end{thm}
+
+
 
 
 \section{Borsuk--Ulam theorem}
@@ -280,7 +308,7 @@ But then
 \qeds
 
 
-\parit{Proof or \ref{thm:Borsuk-Ulam}.}
+\parit{Proof of \ref{thm:Borsuk-Ulam}.}
 Assume that $\tilde h$ exists.
 Let us define and explaining the following commutative diagram --- this is the main part of the proof.
 
@@ -310,22 +338,22 @@ Let us define and explaining the following commutative diagram --- this is the m
 \parit{Path $\tilde a$, loop $a$, and covering map $v$.}
 Choose a path $\tilde a\:[0,1]\to \SS^2$ from $\tilde x_0$ to $-\tilde x_0$.
 Let $v\: \SS^2\to\RP^2$ be the quotient map for the equivalence relation $\tilde x\sim -\tilde x$.
-Note that $v$ which is a covering, and $a=v\circ \tilde a$ is a loop in $\RP^2$ based at $x_0=w(\tilde x_0)$, and $\tilde a$ is its lift to $\SS^2$.
+Note that $v$ which is a covering, and $a=v\circ \tilde a$ is a loop in $\RP^2$ based at $x_0=v(\tilde x_0)$, and $\tilde a$ is its lift to $\SS^2$.
 In particular, $\alpha=[a]\ne 0\in \ZZ_2=\pi_1(\RP^2)$.
 
 \parit{Path $\tilde b$ and loop $b$, and covering map $w$.}
-The loop $\tilde b=h\circ \tilde a$ runs from $\tilde y_0=f(\tilde x_0)$ to $-\tilde y_0=-f(\tilde x_0)$.
+The path $\tilde b=\tilde h\circ \tilde a$ runs from $\tilde y_0=\tilde h(\tilde x_0)$ to $-\tilde y_0=-f(\tilde x_0)$.
 Let $w\: \SS^1\to\SS^1$ be the quotient map for the equivalence relation $\tilde y\sim -\tilde y$, which is also a covering map;
-note that $b=w\circ \tilde b$ is a loop in $\SS^1$ based at $y_0=w(\tilde y_0)$ and $\tilde b$ is its lift to $\SS^2$.
+note that $b=w\circ \tilde b$ is a loop in $\SS^1$ based at $y_0=w(\tilde y_0)$ and $\tilde b$ is its lift to $\SS^1$.
 
 \parit{Map $h$.}
-Recall that $v\: \SS^2\to\RP^2$ and $w\: \SS^1\to\SS^1$ are quotient maps that idenitfy antipodal points.
+Recall that $v\: \SS^2\to\RP^2$ and $w\: \SS^1\to\SS^1$ are quotient maps that identify antipodal points.
 Since $\tilde h$ is odd, it maps the equivalence class in $\SS^2$ to an equivalence class in $\SS^1$.
 In other words, there is a map $h\:\RP^2\to\SS^1$ such that $h\circ v=w\circ \tilde h$.
 This finishes describing the commutative diagram.
 
 \parit{Proof assembling.}
-Consider the induced homeomorphism
+Consider the induced homomorphism
 \[h_*\:\pi_1(\RP^2,x_0)\to \pi_1(\SS^1,y_0).\]
 Since $\pi_1(\RP^2,x_0)\cong \ZZ_2$ and $\pi_1(\SS^1,y_0)\cong \ZZ$, the lemma implies that $h_*$ is trivial.
 On the other hand $h_*[a]=[b]$ and since $\tilde b$ is not a loop, $[b]\ne 1$ --- a contradiction.

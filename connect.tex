@@ -5,7 +5,7 @@
 A subset of a topological space is called \index{clopen subset}\emph{clopen} if it is closed and open at the same time.
 
 \begin{thm}{Definition}
-A topological space $\c{X}$ is called \index{connected space}\emph{connected} if it has exactly two clopen sets $\emptyset$ and the whole space $\c{X}$.
+A topological space $\c{X}$ is called \index{connected space}\emph{connected} if it has exactly two clopen sets $\emptyset$ and $\c{X}$.
 
 A subset of a topological space is called \index{connected set}\emph{connected} if the corresponding subspace is connected.
 \end{thm}
@@ -30,7 +30,7 @@ V\cap W=\emptyset.\]
 In this case, we say that $V$ and $W$ \index{separate}\emph{separate} $\c{X}$.
 
 Spelling out the notion of subspace leads to the following definition:
-an open {}\emph{separating pair} of a set $A\subset\c{X}$ is two open sets $V,W\subset \c{X}$ such that
+an open {}\emph{separating pair} of a set $A\subset\c{X}$ consists of two open sets $V,W\subset \c{X}$ such that
 \[V\cap A\ne\emptyset,\quad
 W\cap A\ne\emptyset,\quad
 V\cup W\supset A,\quad\text{and}\quad
@@ -46,10 +46,32 @@ Suppose that $f(x_1)>0$ and $f(x_2)<0$ for some $x_1,x_2\in \c{X}$.
 Show that there is $x_3\in \c{X}$ such that $f(x_3)=0$.
 \end{thm}
 
+\begin{thm}{Exercise}\label{ex:A<B<bar-A}
+Let $A$ be a connected set in a topological space $\c{X}$.
+Suppose that $A\subset B\subset \bar A$.
+Show that $B$ is connected.
+\end{thm}
+
 \begin{thm}{Advanced exercise}\label{ex:nested-in-compact}
 Let $Q_1\supset Q_2\supset\ldots $ be a nested sequence of closed connected sets in a compact space.
 Show that the intersection $Q_\infty=Q_1\cap Q_2\cap\ldots $ is connected.
 \end{thm}
+
+\begin{thm}{Advanced exercise}\label{ex:colomb}
+Consider the set of positive integers $\NN\z=\{1,2,\dots\}$.
+Denote by $\c{B}$ the set of all arithmetic progressions $\{a$, $a+d$, $a+2\cdot d,\dots\}$ in $\NN$ for all relatively prime positive integers $a$ and $d$ such that $a\le d$.
+
+\begin{subthm}{ex:colomb:base}
+Show that $\c{B}$ is a base of some topology on $\NN$.
+\end{subthm}
+
+\begin{subthm}{ex:colomb:connected}
+Show that $\NN$ equipped with this topology is connected, Hausdorff, and noncompact.
+\end{subthm}
+
+\end{thm}
+
+\section{Observations}
 
 \begin{thm}{Proposition}\label{prop:image-connected}
 Let $f\:\c{X}\to \c{Y}$ be a continuous map between topological spaces.
@@ -75,12 +97,6 @@ Therefore, $A$ is disconnected --- a contradiction.
 \begin{thm}{Exercise}\label{ex:quotient-connected}
 Let $\c{X}$ be a connected space.
 Show that the quotient space $\c{X}/{\sim}$ is connected for any equivalence relation $\sim$ on $\c{X}$.
-\end{thm}
-
-\begin{thm}{Exercise}\label{ex:A<B<bar-A}
-Let $A$ be a connected set in a topological space $\c{X}$.
-Suppose that $A\subset B\subset \bar A$.
-Show that $B$ is connected.
 \end{thm}
 
 \begin{thm}{Proposition}\label{prop:union-connect}
@@ -137,7 +153,7 @@ for any $n$.
 
 The construction is recursive.
 Assume $[a_{n-1},b_{n-1}]$ is already constructed.
-Set $c=\tfrac12\cdot(a_{n-1}+b_{n-1})$.
+Let $c=\tfrac12\cdot(a_{n-1}+b_{n-1})$; note that $c\in V$ or $c\in W$.
 If $c\in V$,
 then set $a_{n}=c$ and $b_{n}=b_{n-1}$;
 if $c\in W$, then set $a_{n}=a_{n-1}$ and $b_{n}=c$.
@@ -151,7 +167,8 @@ In particular, the sequence $a_n$ is nondecreasing and bounded above by $b_0$.
 Therefore, $a_n$ converges to some limit, say $x$.
 Since $b_n-a_n\z=\tfrac1{2^n}\cdot(b_0-a_0)$, the sequence $b_n$ also converges to $x$.
 The point $x$ has to belong to $V$ or $W$.
-Since both $V$ and $W$ are open, one of them contains $a_n$ and $b_n$ for all large $n$, which contradicts \ref{eq:ab-in-VW}.
+Since both $V$ and $W$ are open,
+whichever set contains $x$ contains all $a_n$ and $b_n$ for all large $n$, which contradicts \ref{eq:ab-in-VW}.
 \qeds
 
 \begin{thm}{Exercise}\label{ex:R-connected}
@@ -159,6 +176,13 @@ Show that the real line $\RR$ is a connected space.
 Conclude that any continuous map $\RR\to \ZZ$ is constant;
 here $\ZZ\subset \RR$ denotes the set of integers.
 \end{thm}
+
+Recall that a set $V\subset\RR^n$ is called \index{star-shaped set}\emph{star-shaped} if there exists a point $p\in V$ such that for all $x\in V$ the line segment from $p$ to $x$ lies in~$V$.
+
+\begin{thm}{Exercise}\label{ex:connected-star-shaped}
+Show that any star-shaped set in $\RR^n$ is connected.
+\end{thm}
+
 
 \section{Connected components}
 
@@ -186,33 +210,32 @@ Show that each connected component of $\c{X}$ is open.
 
 \end{thm}
 
+\begin{thm}{Advanced exercise}\label{ex:quasi-component}
+Let $\c{X}$ be a compact Hausdorff space.
+Show that the connected component of a point $x\in \c{X}$ is the intersection of all clopen sets containing $x$.
+Find examples showing that this is no longer true without assuming compactness or Hausdorffness.
+\end{thm}
+
+\section{Locally connected spaces}
+
+A topological space $\c{X}$ is called \emph{locally connected} if for any point $p\in \c{X}$, any neighborhood of $p$ contains a conneced neighborhood;
+that is, given an open set $W\ni p$ there is a conneced open set $V$ such that $p\in V\subset W$.
+By \ref{ex:connected-star-shaped}, $\RR^n$ is locally connected for any $n$.
+
+\begin{thm}{Observation}\label{obs:open-connected-component}
+Let $V$ be an open set in a locally connected space.
+Then any connected component of $V$ is open.
+\end{thm}
+
+\parit{Proof.}
+Let $V_0$ be a connected component in $V$.
+Given a point $x\in V_0$, we can choose its connected neighborhood $N_x\subset V$.
+By \ref{prop:union-connect}, $N_x\subset V_0$, and the observation follows.
+\qeds
 
 \begin{thm}{Exercise}\label{ex:R-open}
 Show that any open set in $\RR$ is a union of countably many disjoint open intervals.
 \end{thm}
-
-
-\begin{thm}{Advanced exercise}\label{ex:colomb}
-Consider the set of positive integers $\NN=\{1,2,\dots\}$.
-Denote by $\c{B}$ the set of all arithmetic progressions $a+\NN\cdot d=\{a,a+d,a+2\cdot d,\dots\}$ in $\NN$ for all relatively prime positive integers $a$ and $d$ such that $a\le d$.
-
-\begin{subthm}{ex:colomb:base}
-Show that $\c{B}$ is a base of some topology on $\NN$.
-\end{subthm}
-
-\begin{subthm}{ex:colomb:connected}
-Show that $\NN$ equipped with this topology is connected, Hausdorff, and noncompact.
-\end{subthm}
-
-\end{thm}
-
-\begin{thm}{Advanced exercise}\label{ex:quasi-component}
-Let $\c{X}$ be a compact Hausdorff space.
-Show that connected component of a point $x\in \c{X}$ is the intersection of all clopen sets containing $x$.
-Find an examples showing that this is no longer true without assuming compactness or Hausdorffness.
-\end{thm}
-
-
 
 \section{Cut points}
 
@@ -262,8 +285,8 @@ Show that no two of the following four closed connected sets in the plane are ho
 
 {
 
-\begin{wrapfigure}[2]{r}{12 mm}
-\vskip-10mm
+\begin{wrapfigure}{r}{12 mm}
+\vskip-4mm
 \centering
 \includegraphics{mppics/pic-980}
 \end{wrapfigure}
@@ -280,7 +303,7 @@ that is, list its points and the open sets.
 }
 
 
-\index{Sierpi\'nski gaske}\emph{Sierpi\'nski gasket} is constructed in the following way:
+\index{Sierpi\'nski triangle}\emph{Sierpi\'nski triangle} is constructed in the following way:
 start with a solid equilateral triangle, subdivide it into four smaller congruent equilateral triangles and remove the interior of the central one.
 Repeat this procedure recursively for each of the remaining solid triangles.
 
