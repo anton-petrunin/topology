@@ -1237,10 +1237,11 @@ path p[];
 u:=.5cm;
 v:=.3cm;
 
-z.shift1=(0,-1)*u;
+z.shift1=(1.4,0)*u;
 z.shift2=(-3,-2.5)*u;
-z.shift3=(3,-2.5)*u;
-z.shift4=(0,-2.5)*u;
+z.shift3=(2.8,-2.5)*u;
+z.shift4=(-.1,-2.5)*u;
+z.shift5=(6,-2.5)*u;
 
 p1=(-4,0)*u{up}..(-3,0)*u{(1,-1)}..(-1,0)*u{(1,1)}..(1,0)*u{(1,-1)}..(3,0)*u{(1,1)}..(4,0)*u{down}
 ..(3,0)*u{(-1,1)}..(1,0)*u{(-1,-1)}..(-1,0)*u{(-1,1)}..(-3,0)*u{(-1,-1)}..cycle;
@@ -1253,13 +1254,92 @@ p4=(-1,1)*v{0,1}..(-1,1)*2*v..(-1,1)*v{1,0}..(1,1)*v{(1,0)}..(1,1)*2*v..(1,1)*v{
 p5=(-1,1)*v{1,0}..tension 1.4..(-1,-1)*v{(-1,0)}..tension 1.4..cycle;
 p6=p5 shifted ((2,0)*v);
 
-draw p1;
+z.r=(10/6,0)*v;
+
+p7=
+(0,-1)*v{(-1,1)}..(0,1)*v{(1,1)}
+..z.r{(1,-1)}..tension 2..-z.r{(1,1)}
+..(0,1)*v{(1,-1)}..(0,-1)*v{(-1,-1)}
+..-z.r{(-1,1)}..tension 2..z.r{(-1,-1)}..cycle;
+
+draw p1 shifted z.shift1;
 draw p2 shifted z.shift2;
 draw p3 shifted z.shift2;
 draw p4 shifted z.shift3;
 draw p3 shifted z.shift4;
 draw p5 shifted z.shift4;
 draw p6 shifted z.shift4;
+draw p7 shifted z.shift5;
+
+endfig;
+
+beginfig(1705)
+save u,p;
+path p[];
+u:=2cm;
+
+for i=10 step -1 until 0:
+draw (0,0)*u..-(0,(.5)**i)*u..cycle withcolor i/10;
+endfor
+
+endfig;
+
+beginfig(1710)
+save u;
+u:=1cm;
+
+z.www=(1,-3)*u;
+z.q=(-1,-3)*u;
+save p,q;
+path p[];
+path q[];
+
+p[0]=circle((1/1,0)*u,u/1);
+q[0]=circle((-1/1,0)*u,u/1);
+draw p[0] yscaled .5;
+draw q[0] yscaled .5;
+draw ((support.lft(p[0],z.www)--z.www--support.rt(p[0],z.www))) yscaled .5;
+draw ((support.rt(q[0],z.q)--z.q--support.lft(q[0],z.q))) yscaled .5;
+
+for i=1 step 1 until 10:
+p[i]=circle((1/(2**i),0)*u,u/(2**i));
+q[i]=circle((-1/(2**i),0)*u,u/(2**i));
+draw p[i] yscaled .5;
+draw q[i] yscaled .5;
+draw ((z.www--support(p[i],z.www)) cutbefore p[i-1]) yscaled .5;
+draw ((z.q--support.lft(q[i],z.q)) cutbefore q[i-1]) yscaled .5;
+endfor
+
+endfig;
+
+beginfig(1715)
+save u,p;
+path p[];
+u:=.5cm;
+
+p1=
+(1,0)*u{(-1,0)}..
+(-1,0)*u{(-1,0)}..
+(-1,-4)*u{(1,0)}
+for i=0 step 1 until 10:
+..tension (2**i)..((-1)**i,-2*(.5**i))*u{up}
+endfor;
+
+p2=(-8,-4)*u{(1,0)}..
+(-7,-4)*u{(1,0)}..
+(-1,-4)*u{(1,0)}
+for i=0 step 1 until 10:
+..tension (2**i)..((-1)**i,-2*(.5**i))*u{up}
+endfor;
+
+p3= p2 zscaled (-1,0) shifted ((-7,-4)*u);
+
+for i=13 step -1 until 1:
+draw subpath (i-1,i) of p1 withcolor (i/13)**2;
+draw subpath (i-1,i) of p2 shifted ((-5,0)*u) withcolor (i/13)**2;
+draw subpath (i-1,i) of p3 shifted ((-5,0)*u) withcolor (i/13)**2;
+endfor
+
 
 endfig;
 
