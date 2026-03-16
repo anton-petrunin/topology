@@ -159,9 +159,11 @@ z.shift=(3,0)*u;
 draw z.a--z.b--z.c--z.d--cycle pensemibold;
 draw .5[z.a,z.d]--.5[z.b,z.c] pensemibold;
 
-draw (z.a--z.b--k[z.b,z.c]--k[z.a,z.d]--cycle) shifted z.shift pensemibold;
-draw (z.d--z.c--(1-k)[z.b,z.c]--(1-k)[z.a,z.d]--cycle) shifted z.shift pensemibold;
-draw (.5[k[z.b,z.c],k[z.a,z.d]]--.5[(1-k)[z.b,z.c],(1-k)[z.a,z.d]]) shifted z.shift pensemibold;
+draw (z.a--z.b--z.d--z.c--cycle) shifted z.shift pensemibold;
+
+draw (z.a--z.b--k[z.b,z.c]--k[z.a,z.d]--cycle) shifted (2*z.shift) pensemibold;
+draw (z.d--z.c--(1-k)[z.b,z.c]--(1-k)[z.a,z.d]--cycle) shifted (2*z.shift) pensemibold;
+draw (.5[k[z.b,z.c],k[z.a,z.d]]--.5[(1-k)[z.b,z.c],(1-k)[z.a,z.d]]) shifted (2*z.shift) pensemibold;
 endfig;
 
 beginfig(50)
@@ -1059,7 +1061,7 @@ label (btex $4$ etex, .5[(4,0)*u,(3,1)*u]+(1,0));
 label (btex $5$ etex, .5[(n-1,0)*u,(n,1)*u]);
 label (btex $6$ etex, .5[(0,2)*u,(1,1)*u]);
 label (btex $7$ etex, .5[(2,2)*u,(1,1)*u]);
-label (btex {\footnotesize $\dots$} etex, .5[(2,2)*u,(3,1)*u]);
+label (btex {\footnotesize $\dots$} etex, .5[(2,2)*u,(3,1)*u]+(1,0));
 
 endfig;
 
@@ -1120,6 +1122,28 @@ label (btex $\downarrow\! w$ etex, (.5,.7)*u+(3,-5));
 label.rt (btex $\RR$ etex, .5[point 7 of p2,point 9 of p2]);
 label.rt (btex $\SS^1$ etex, point 1 of p1);
 endfig;
+
+beginfig(1605)
+save u,p;
+path p[];
+u:=1cm;
+
+p1=circle(origin,1*u) rotated 90 yscaled .3;
+z.shift=(0,-1.5)*u;
+z.shag=(0,.3)*u;
+
+p2= p1 cutbefore (p1 shifted z.shag) cutafter (p1 shifted z.shag);
+%draw p1;
+draw p2;
+draw p2 shifted z.shag;
+draw p2 shifted (2*z.shag);
+draw p1 shifted (3*z.shag);
+draw p1 shifted z.shift;
+
+label (btex $V$ etex, z.shift);
+label.rt (btex $\downarrow\! w$ etex, .5*z.shift+(-5,0));
+endfig;
+
 
 beginfig(1620)
 save u,p;
@@ -1273,6 +1297,47 @@ draw p7 shifted z.shift5;
 
 endfig;
 
+beginfig(1695)
+save u,p;
+path p[];
+u:=.5cm;
+
+draw circle(origin,1*u);
+draw (-1,0)*u--(1,0)*u;
+endfig;
+
+beginfig(1696)
+save u,p;
+path p[];
+u:=.5cm;
+
+p1=circle(origin,1*u);
+
+draw p1;
+draw p1 shifted ((3,0)*u);
+draw (1,0)*u--(2,0)*u;
+p0=(0,-1)*u--(0,1)*u;
+draw p0;
+draw p0 shifted ((3,0)*u);
+
+z.shift2=(6,0)*u;
+p2=(0,-1)*u{left}..(0,1)*u{right}..(2,1)*u{right}..(2,-1)*u{left}..cycle;
+
+draw p2 shifted z.shift2;
+draw p0 shifted z.shift2;
+draw p0 shifted (z.shift2+(1,0)*u);
+draw p0 shifted (z.shift2+(2,0)*u);
+
+z.shift3=(12,1)*u;
+
+draw p0 rotated 45 shifted (z.shift3+(1,-2)*u);
+draw p0 rotated -45 shifted (z.shift3+(1,-2)*u) withpen pencircle scaled 4 withcolor 1;
+draw p0 rotated -45 shifted (z.shift3+(1,-2)*u);
+draw p1 shifted (z.shift3+(1,-2)*u);
+draw subpath (0,3) of p2 shifted (z.shift3+(0,-1)*u);
+
+endfig;
+
 beginfig(1705)
 save u,p;
 path p[];
@@ -1280,6 +1345,28 @@ u:=2cm;
 
 for i=10 step -1 until 0:
 draw (0,0)*u..-(0,(.5)**i)*u..cycle withcolor i/10;
+endfor
+
+endfig;
+
+beginfig(1708)
+save u;
+u:=1cm;
+
+z.www=(1,-3)*u;
+z.q=(-1,-3)*u;
+save p;
+path p[];
+
+
+p[0]=circle((1/1,0)*u,u/1);
+draw p[0] yscaled .5;
+draw ((support.lft(p[0],z.www)--z.www--support.rt(p[0],z.www))) yscaled .5;
+
+for i=1 step 1 until 10:
+p[i]=circle((1/(2**i),0)*u,u/(2**i));
+draw p[i] yscaled .5;
+draw ((z.www--support(p[i],z.www)) cutbefore p[i-1]) yscaled .5;
 endfor
 
 endfig;
@@ -1325,20 +1412,70 @@ for i=0 step 1 until 10:
 ..tension (2**i)..((-1)**i,-2*(.5**i))*u{up}
 endfor;
 
-p2=(-8,-4)*u{(1,0)}..
-(-7,-4)*u{(1,0)}..
-(-1,-4)*u{(1,0)}
+p2=(-6,-4)*u{(1,0)}..
+(-5.5,-4)*u{(1,0)}..
+(-5,-4)*u{(1,0)}
 for i=0 step 1 until 10:
 ..tension (2**i)..((-1)**i,-2*(.5**i))*u{up}
 endfor;
 
-p3= p2 zscaled (-1,0) shifted ((-7,-4)*u);
+p3= p2 zscaled (-1,0) shifted ((-5,-4)*u);
 
 for i=13 step -1 until 1:
 draw subpath (i-1,i) of p1 withcolor (i/13)**2;
-draw subpath (i-1,i) of p2 shifted ((-5,0)*u) withcolor (i/13)**2;
-draw subpath (i-1,i) of p3 shifted ((-5,0)*u) withcolor (i/13)**2;
+draw subpath (i-1,i) of p2 shifted ((-10,0)*u) withcolor (i/13)**2;
+draw subpath (i-1,i) of p3 shifted ((-10,0)*u) withcolor (i/13)**2;
 endfor
+
+z.arrow= (-6,-2)*u;
+drawarrow z.arrow-(1.5,0)*u--z.arrow+(1.5,0)*u;
+
+label.top (btex 2-fold etex, z.arrow);
+label.bot (btex covering etex, z.arrow);
+
+endfig;
+
+beginfig(1720)
+save u,p;
+path p[];
+u:=.5cm;
+
+p1=
+(5,0)*u{(-1,0)}..
+(4,0)*u{(-1,0)}..
+(3,0)*u{(-1,0)}..
+(1,-2)*u{(-1,0)}
+for i=1 step 1 until 10:
+..tension (2**i)..((-1)**i,-2*(.5**i))*u{up}
+endfor;
+
+for i=13 step -1 until 1:
+draw subpath (i-1,i) of p1 withcolor (i/13)**2;
+draw subpath (i-1,i) of p1 shifted ((4,0)*u) withcolor (i/13)**2;
+draw subpath (i-1,i) of p1 shifted ((8,0)*u) withcolor (i/13)**2;
+draw subpath (i-1,i) of p1 shifted ((12,0)*u) withcolor (i/13)**2;
+draw subpath (i-1,i) of p1 shifted ((16,0)*u) withcolor (i/13)**2;
+draw subpath (i-1,i) of p1 shifted ((20,0)*u) withcolor (i/13)**2;
+draw subpath (i-1,i) of p1 shifted ((24,0)*u) withcolor (i/13)**2;
+draw subpath (i-1,i) of p1 shifted ((28,0)*u) withcolor (i/13)**2;
+draw subpath (i-1,i) of p1 shifted ((32,0)*u) withcolor (i/13)**2;
+endfor
+
+endfig;
+
+
+beginfig(1920)
+save u,p,n;
+path p[];
+u:=1cm;
+n:=10;
+
+for i = n step -1 until 0:
+draw (-1,-1)*u--(-(1/2**i),1/2**i)*u withcolor (i/n);
+draw (1,-1)*u--((1/2**i),1/2**i)*u withcolor (i/n);
+endfor;
+
+draw (-1,-1)*u--(0,0)*u--(1,-1)*u;
 
 
 endfig;

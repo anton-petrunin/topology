@@ -1,4 +1,104 @@
-\chapter{Jordan curve theorem}
+\chapter{Jordan separation theorem}
+
+The Jordan separation theorem states that the complment of a closed simple curve in the plane is not connected.
+This theorem is known for formulation and annoyingly tricky proofs.
+We will present the proof of Patrick Doyle \cite{doyle};
+it is among the shortest proofs.
+This proof use several results in topology that, which worth knowing.
+
+\section{Tietze--Urysohn extension theorem}
+
+The following statement is a partial case of the so-called \index{Tietze--Urysohn extension theorem}\emph{Tietze--Urysohn extension theorem}.
+
+\begin{thm}{Proposition}\label{thm:tietze}
+Let $\Gamma$ be a closed subset in $\RR^2$ and let $\II$ be an open intevel.
+Then any continuous function $f\:\Gamma\to\II$ admits a continuous extension to $\RR^2$;
+that is, there is a continuous function $F\:\RR^2\to\II$ such that $F(p)=f(p)$ for any point $p\in\Gamma$.
+\end{thm}
+
+
+\parit{Proof.}
+Assume $\II=(1,2)$.
+Given $x\in\RR^2$, let
+\[
+a(x)=\inf\limits_{y\in\Gamma} \{\,|x-y|\,\}
+\quad\text{and}\quad
+b(x)=\inf\limits_{y\in\Gamma} \{\,f(y)\cdot |x-y|\,\}.
+\]
+Observe that
+\[F(x)=
+\begin{cases}
+f(x)& \text{if}\ x\in \Gamma,
+\\
+\frac{b(x)}{a(x)}& \text{if}\ x\notin \Gamma
+\end{cases}
+\]
+is the needed extension.
+
+In general case, choose a homeomorphism $h\:\II\to (1,2)$.
+Let $\hat f=h\circ h\:\Gamma\to (1,2)$ and let $\hat F\:\Gamma\to (1,2)$ be its extension.
+Then $F\z=h^{-1}\circ \hat F$ is the requred extension of $f$.
+\qeds
+
+\section{Van Kampen's lemma}
+
+\begin{thm}{Lemma}\label{prop:c/sc}
+Let us identify $\RR^2$ with the $(x,y)$-plane in $\RR^3$.
+
+Suppose $\Gamma\subset\RR^2$ is a closed set.
+Theh the complement $X=\RR^2\setminus \Gamma$ is connected if and only if the complement $Y=\RR^3\setminus \Gamma$ is simply-connected.
+\end{thm}
+
+
+This lemma frollows  \ref{ex:van-kamp:s2d} and \ref{ex:vankam-nonconnect}, but we will present a proof here.
+
+\parit{Proof.}
+
+\qeds
+
+
+\begin{thm}{Exercise}\label{ex:nonclosed-Gamma}
+Observe that \ref{prop:c/sc} above does not hold without assuming that $\Gamma$ is closed.
+Spot the place in the proof that breaks in this case.
+\end{thm}
+
+\section{Klee trick}
+
+\begin{thm}{Proposition}\label{prop:home-gamma-z-axis}
+Suppose $\Gamma\subset\RR^2$ is a closed subset homeomorphic to $\RR$.
+Then there is a homeomorphism $\RR^3\to \RR^3$ that maps $\Gamma$ to the $z$-axis.
+\end{thm}
+
+The following proof uses the so-called \index{Klee trick}\emph{Klee trick}, which is quite useful in many topological problems.
+
+One can extract more from the proof, namely there is a continous map $(x,t)\mapsto h_t(x)$ from $\RR^3\times[0,1]\to\RR^3$ such that $h_t\:\RR^3\to\RR^3$ is a homeomorphism for any $t\in [0,1]$; furthermore, $_0=\id_{\RR^3}$ and $h_1$ maps $\Gamma$ to the $z$-axis.
+
+\parit{Proof of \ref{prop:home-gamma-z-axis}.}
+Let $h\:t\mapsto (a(t),b(t))$ be a homeomorphism $\RR\to \Gamma$.
+Applying \ref{thm:tietze} to $f=h^{-1}$, we get a function $F\:\RR^2\z\to\RR$ such that
+\[F(a(t),b(t))=t\]
+for any $t\in \RR$.
+
+Note that the map
+\[A\:(x,y,z)\mapsto (x,y,z+f(x,y))\] is a homeomorphism.
+Indeed, this map is continuous and its inverse
+\[A^{-1}\:(x,y,z)\z\mapsto (x,y,z-f(x,y))\]
+is continuous as well.
+
+Similarly, the map
+\[B\:(x,y,z)\mapsto (x-a(z),y-b(z),z)\]
+is a homeomorphism as well.
+Indeed, $B$ is continuous and it has an inverse
+\[B^{-1}\:(x,y,z)\mapsto (x+a(z),y+b(z),z)\]
+that is continuous as well.
+
+It follows that the composition $B\circ A\:\RR^3\to\RR^3$ is a homeomorphism.
+Since $f(a(t),b(t))=t$,
+\[B\circ A(a(t),b(t),0)=B(a(t),b(t),t)=(0,0,t).\]
+It follows that $B\circ A$ sends $\Gamma$ to the $z$-axis as required.
+\qeds
+
+\section{Separation by a proper curve}
 
 \begin{thm}{Theorem}\label{thm:proper-jordan}
 Suppose $\Gamma\subset\RR^2$ is a closed set homeomorphic to~$\RR$.
@@ -9,23 +109,6 @@ Note that the assumption that $\Gamma$ is closed is necessary;
 indeed, a finite open interval $I$ of a line in $\RR^2$ is homeomorphic to $\RR$, but its complement $\RR^2\setminus I$ is connected.
 
 The theorem follows from \ref{prop:c/sc}, \ref{prop:home-gamma-z-axis}, and \ref{ex:z-axis}.
-
-
-\begin{thm}{Proposition}\label{prop:c/sc}
-Suppose $\Gamma\subset\RR^2$ is a closed set such that the complement $X=\RR^2\setminus \Gamma$ is connected.
-Let us identify $\RR^2$ with the $(x,y)$-plane in $\RR^3$.
-Then the complement $Y=\RR^3\setminus \Gamma$ is simply-connected.
-\end{thm}
-
-The proof is based on the following partial case of the Van Kampen theorem.
-
-\begin{thm}{Exercise}\label{ex:sc-VuW}
-Suppose that $V$ and $W$ are open simply-connected subsets of a topological space $\c{X}$ such that
-$\c{X}=V\cup W$, and the set $V\cap W$ is path-connected.
-Show that $\c{X}$ is simply-connected.
-
-Conclude that the sphere $\mathbb{S}^2$ is simply-connected.
-\end{thm}
 
 
 \parit{Proof of \ref{prop:c/sc}.}
@@ -55,69 +138,8 @@ Summarizing, $V$ and $W$ are open simply-connected sets, $Y=V\z\cup W$, and $V\z
 Applying \ref{ex:sc-VuW}, we get that $Y$ is simply-connected.
 \qeds
 
-\begin{thm}{Exercise}\label{ex:nonclosed-Gamma}
-Observe that \ref{prop:c/sc} above does not hold without assuming that $\Gamma$ is closed.
-Spot the place in the proof that breaks in this case.
-\end{thm}
 
 
-\begin{thm}{Proposition}\label{prop:home-gamma-z-axis}
-Suppose $\Gamma\subset\RR^2$ is a closed subset homeomorphic to $\RR$.
-Then there is a homeomorphism $\RR^3\to \RR^3$ that maps $\Gamma$ to the $z$-axis.
-\end{thm}
-
-
-The following exercise provides a partial case of the so-called \index{Tietze--Urysohn extension theorem}\emph{Tietze--Urysohn extension theorem}.
-
-\begin{thm}{Exercise}\label{ex:tietze}
-Let $\phi$ be a continuous map from a closed subset $\Gamma\subset\RR^2$ to the open interval $(1,2)$.
-Given $x\in\RR^2$, set
-\[
-a(x)=\inf\limits_{y\in\Gamma} \{\,|x-y|\,\}
-\quad\text{and}\quad
-b(x)=\inf\limits_{y\in\Gamma} \{\,\phi(y)\cdot |x-y|\,\}.
-\]
-Show that
-\[f(x)=
-\begin{cases}
-\phi(x)& \text{if}\ x\in \Gamma,
-\\
-\frac{b(x)}{a(x)}& \text{if}\ x\notin \Gamma
-\end{cases}
-\]
-defines a continuous function $f\:\RR^2\to (1,2)$.
-
-Conclude that if there is a homeomorphism $h\:\RR\to\Gamma$,
-then there is a function $f\:\RR^2\to\RR$ such that
-$f\circ h(t)=t$ for any $t\in \RR$.
-\end{thm}
-
-The following proof uses the so-called \index{Klee trick}\emph{Klee trick}, which is quite useful in many topological problems.
-
-\parit{Proof of \ref{prop:home-gamma-z-axis}.}
-Let $h\:t\mapsto (a(t),b(t))$ be a homeomorphism $\RR\to \Gamma$.
-By \ref{ex:tietze}, there is a function $f\:\RR^2\z\to\RR$ such that
-\[f(a(t),b(t))=f\circ h(t)=t\]
-for any $t\in \RR$.
-
-Note that the map 
-\[F\:(x,y,z)\mapsto (x,y,z+f(x,y))\] is a homeomorphism.
-Indeed, this map is continuous and its inverse 
-\[F^{-1}\:(x,y,z)\z\mapsto (x,y,z-f(x,y))\]
-is continuous as well.
-
-Similarly, the map 
-\[G\:(x,y,z)\mapsto (x-a(z),y-b(z),z)\]
-is a homeomorphism as well.
-Indeed, $G$ is continuous and it has an inverse
-\[G^{-1}\:(x,y,z)\mapsto (x+a(z),y+b(z),z)\]
-that is continuous as well.
-
-It follows that the composition $G\circ F\:\RR^3\to\RR^3$ is a homeomorphism.
-Since $f(a(t),b(t))=t$,
-\[G\circ F(a(t),b(t),0)=G(a(t),b(t),t)=(0,0,t).\]
-It follows that $G\circ F$ sends $\Gamma$ to the $z$-axis as required.
-\qeds
 
 \begin{thm}{Exercise}\label{ex:z-axis}
 Show that the complement of the $z$-axis in $\RR^3$ is not simply-connected.
@@ -128,18 +150,29 @@ Suppose $I\subset \RR^2$ is a subset homeomorphic to $[0,1]$.
 Show that $\RR^2\setminus I$ is connected.
 \end{thm}
 
+\section{Jordan's theorem}
 
 \begin{thm}{Theorem}
 If $J\subset\mathbb{S}^2$ be a subset homeomorphic to $\mathbb{S}^1$,
 then $\mathbb{S}^2\setminus J$ has at least two connected components.
 \end{thm}
 
-This theorem is a partial case of the famous Jordan theorem;
-it is known for its simple formulation and annoyingly tricky proofs.
-The presented proof is due to Patrick Doyle \cite{doyle};
-it is among the shortest proofs, but it uses quite a bit of topology.
 
 \parit{Proof.}
 Remove a point $p$ from $J$ to get a closed line $\Gamma=J\setminus\{p\}$ in $ \mathbb{S}^2\setminus\{p\}\simeq\RR^2$.
 It remains to apply \ref{thm:proper-jordan}.
 \qeds
+
+\begin{thm}{Exercise}\label{ex:connected-complement}
+Let $A$ and $B$ be disjoint closed subsets in $\RR^2$ such that both complements $\RR^2\setminus A$ and $\RR^2\setminus B$ are connected.
+Show that $\RR^2\setminus(A\cup B)$ is connected.
+\end{thm}
+
+\section{Comments}
+
+Jordan's theorem has more exact forms.
+Firsto of all $J\subset\mathbb{S}^2$ be a subset homeomorphic to $\mathbb{S}^1$,
+then $\mathbb{S}^2\setminus J$ has exactly two connected components.
+Moreover there is a homeomorphism $h\:\mathbb{S}^2\to \mathbb{S}^2$ that maps $J$ to the equator of $\SS^2$.
+The last statement is due to
+

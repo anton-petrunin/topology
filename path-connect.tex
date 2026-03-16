@@ -38,7 +38,7 @@ Assume $x\ne y$.
 Show that there is an injective path $b$ from $x$ to $y$ such that $b([0,1])\subset a([0,1])$.
 \end{thm}
 
-\section{Path-connected components}
+\section{Path-connected components}\label{sec:Path-connected components}
 
 Consider the following relation on the set of points of a topological space:
 \[x\sim y \quad\Leftrightarrow\quad\text{there is a path from $x$ to $y$.}\]
@@ -55,13 +55,11 @@ The equivalence class of a point $x$ for the equivalence relation $\sim$ is call
 this is the set of all points in $\c{X}$ that can be joined with $x$ by a path.
 
 
-\section{Path-connected spaces}
+\section{Path-connected spaces}\label{sec:flea and comb}
 
 A space $\c{X}$ is called \index{path-connected space}\emph{path-connected} if it is nonempty and any two points in $\c{X}$ can be connected by a path;
 that is, for any $x,y\in \c{X}$ there is a path $a$ from $x$ to $y$.
 One can say that $\c{X}$ is path-connected if $\c{X}$ is a path-connected component of one (and therefore every) point $x\in\c{X}$.
-
-%\begin{thm}{Exercise}\label{ex:convex-path-connected}Show that any convex set in a Euclidean space is path-connected.\end{thm}
 
 \begin{thm}{Exercise}\label{ex:two-point-path-connected}
 Show that the connected two-point space (defined in \ref{sec:ecamples(top)}) is path-connected.
@@ -107,7 +105,7 @@ Consider the union of all these segments
 and set 
 \[W'=W\cup\{y\},\]
 where $y=(0,1)$.
-The space $W'$ is called the {}\emph{flea and comb};
+The space $W'$ is called the {}\emph{flea and comb}; %??? W' >>> \dot W???
 the set $W$ is called the \index{comb}\emph{comb},
 and the point $y$ is called the \index{flea}\emph{flea}.
 
@@ -182,7 +180,7 @@ Show that a finite topological space is path-connected if it is connected.
 \end{thm}
 
 
-\section{Locally path-connected spaces}
+\section{Locally path-connected spaces}\label{sec:Locally path-connected spaces}
 
 A topological space $\c{X}$ is called \index{locally path-connected}\emph{locally path-connected} if for any point $p\in\c{X}$ and any open set $V\ni p$ there is a path-connected open set $W$ such that $V\supset W\ni p$.
 For instance, Euclidean space is locally path-connected;

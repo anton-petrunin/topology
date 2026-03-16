@@ -111,7 +111,7 @@ Before reading the proof, it is instructive to refresh in your memory of \ref{ex
 The proof of the proposition is based on the following theorem.
 
 \begin{thm}{Theorem}\label{thm:hausdorff-compact-t3}
-Let $\c{X}$ be a Hausdorff space and $K\subset X$ be a compact subset.
+Let $\c{X}$ be a Hausdorff space and $K\subset \c{X}$ be a compact subset.
 Then for any point $y\notin K$ there are open sets $V\supset K$ and $W\ni y$
 such that $V\cap W=\emptyset$
 \end{thm}
@@ -141,7 +141,7 @@ It remains to observe that $V$ and $W$ are open, $y\in W$, $K\subset V$, and
 \[V\cap W\subset \bigcup_i(V_{x_i}\cap W_{x_i})=\emptyset.\qedsin\]
 
 \begin{thm}{Exercise}\label{ex:normal-hausdorff}
-Let $\c{X}$ be a Hausdorff space and $K,L\subset X$ be two disjoint compact subsets.
+Let $\c{X}$ be a Hausdorff space and $K,L\subset \c{X}$ be two disjoint compact subsets.
 Show that there are disjoint open sets $V\supset K$ and $W\supset L$.
 \end{thm}
 
@@ -197,22 +197,31 @@ Since $[0,1]\times[0,1]$ is compact and $\RR^3$ is Hausdorff, we can conclude th
 Note that we did not have to check that inverse map $T\to[0,1]\times[0,1]/\sim$ is continuous.
 
 
-Recall that $\DD^2$ denotes the unit disc and $\mathbb{S}^1$ denotes the unit circle;
+Recall that $\DD^2$, $\mathbb{S}^1$, and $\mathbb{S}^1$ denote the unit disc the unit circle, and the unit sphere, respectively.
 that is,
 \begin{align*}
 \DD^2&=\set{(x,y)\in\RR^2}{x^2+y^2\le 1},
 \\
-\mathbb{S}^1&=\set{(x,y)\in\RR^2}{x^2+y^2=1}.
+\mathbb{S}^1&=\set{(x,y)\in\RR^2}{x^2+y^2=1},
+\\
+\mathbb{S}^2&=\set{(x,y,z)\in\RR^3}{x^2+y^2+z^2=1}.
 \end{align*}
 
-\begin{thm}{Exercise}\label{ex:[0,1]/0=1}
-Show that $\mathbb{S}^1$ is homeomorphic to the quotient space $[0,1]/\{0,1\}$.
-(In other words, $\mathbb{S}^1$ is homeomorphic to the unit interval with glued ends.)
-\end{thm}
+\begin{thm}{Exercise}\label{ex:X/A}
+Prove the following:
 
-\begin{thm}{Exercise}\label{ex:D/S}
-Show that the quotient space $\DD^2/\mathbb{S}^1$ is homeomorphic to the unit sphere
-\[\mathbb{S}^2=\set{(x,y,z)\in\RR^3}{x^2+y^2+z^2=1}.\]
+\begin{subthm}{ex:[0,1]/0=1}
+$\mathbb{S}^1\simeq[0,1]/\{0,1\}$.%
+\footnote{In other words, $\mathbb{S}^1$ is homeomorphic to the unit interval with glued ends.}
+\end{subthm}
+
+\begin{subthm}{ex:D/S}
+$\DD^2/\mathbb{S}^1\simeq\mathbb{S}^2$.
+\end{subthm}
+
+\begin{subthm}{ex:SxI/S}
+$(\mathbb{S}^1\times [0,1])/(\mathbb{S}^1\times\{0\})\simeq\DD^2$.
+\end{subthm}
 \end{thm}
 
 Recall that a \index{convex body}\emph{convex body} is a compact convex set with non-empty interior in $\RR^3$.

@@ -12,12 +12,12 @@ but the first general definition was given only in 1906 by Maurice Fr\'echet \ci
 The following definition grabs together the most important properties of the intuitive notion of \textit{distance}.
 
 \begin{thm}{Definition}\label{def:metric-space}
-Let $\c X$ be a set 
+Let $\c{X}$ be a set
 with a function 
 that returns a real number, denoted as $|x-y|$,
-for any pair $x,y\in\c X$.
+for any pair $x,y\in\c{X}$.
 Assume that the following conditions are satisfied for any
-$x,y,z\in \c X$:
+$x,y,z\in \c{X}$:
 
 \begin{subthm}{def:metric-space:a}
 $|x-y|\ge 0.$
@@ -35,12 +35,12 @@ $|x-y| = |y- x|.$
 $|x- y| + |y- z| \ge |x-z|$; this property is called the \index{triangle inequality}\emph{triangle inequality}.
 \end{subthm}
 
-In this case, we say that $\c X$ is a \index{metric space}\emph{metric space} 
+In this case, we say that $\c{X}$ is a \index{metric space}\emph{metric space}
 and the function 
 \[(x,y)\mapsto |x-y|\] 
 is called a \index{metric}\emph{metric}. 
-The elements of $\c X$ are called \index{point}\emph{points} of the metric space.
-Given two points $x,y\z\in \c X$, 
+The elements of $\c{X}$ are called \index{point}\emph{points} of the metric space.
+Given two points $x,y\z\in \c{X}$,
 the value $|x-y|$ is called the \index{distance}\emph{distance} from $x$ to~$y$.
 \end{thm}
 
@@ -49,7 +49,7 @@ but $|x-y|$ means the distance.
 
 Typically, we consider only one metric on a set,
 but if a few metrics are needed, we can distinguish them by an index, say  $|x-y|_{\bullet}$ or $|x-y|_{239}$.
-If we need to emphasize that the distance is taken in the metric space $\c{X}$ we write $|x-y|_{\c X}$ instead of $|x-y|$.
+If we need to emphasize that the distance is taken in the metric space $\c{X}$ we write $|x-y|_{\c{X}}$ instead of $|x-y|$.
 
 \begin{thm}{Exercise}\label{ex:not-a-metric}
 Show that 
@@ -68,10 +68,10 @@ Let us give a few examples of metric spaces.
 
 \begin{itemize}
 \item\index{discrete space}\emph{Discrete space.}\label{page:Discrete metric}
-Let $\c X$ be an arbitrary set. 
-For any $x,y\z\in\c X$, 
+Let $\c{X}$ be an arbitrary set.
+For any $x,y\z\in\c{X}$,
 set $|x-y|\z=0$ if $x=y$ and $|x-y|=1$ otherwise.
-This metric is called the \index{discrete metric}\emph{discrete metric} on $\c X$ and the obtained metric space is called {}\emph{discrete}.
+This metric is called the \index{discrete metric}\emph{discrete metric} on $\c{X}$ and the obtained metric space is called {}\emph{discrete}.
 \item\index{real line}\emph{Real line.} 
 The set $\mathbb{R}$ of all real numbers with the metric defined by $|x-y|$.
 (Unless it is stated otherwise, the real line $\mathbb{R}$ will be considered with this metric.)
@@ -152,7 +152,7 @@ Show that $h\:\c{X}\to\c{Z}$ is continuous at any point.
 \begin{thm}{Exercise}\label{ex:isom-cont}
 Let $f\:\c{X}\to\c{Y}$ be a distance-preserving map between metric spaces;
 that is,
-\[|x_0-x_1|_{\c X}=
+\[|x_0-x_1|_{\c{X}}=
 |f(x_0)-f(x_1)|_{\c Y}\]
 for any $x_0,x_1\in \c{X}$.
 

@@ -1,15 +1,15 @@
 \chapter{Meeting algebra}\label{chap:algebra}
 
-In this chapter we show that the fundamental-group construction respects\footnote{In a more fancy language, it is defined by a  \index{functor}\emph{functor}.} the maps between topological spaces and behaves predictably  when one changes the marked point of the space.
-Bit latter, we will calculate fundamental group of the circle --- this will be the first example of a space with nontrivial fundamntal group.
+In this chapter we show that the fundamental-group construction respects the maps between topological spaces\footnote{In a more fancy language, it is \index{functor}\emph{functorial}.} and behaves predictably when one changes the base point of the space.
+A bit later, we will calculate the fundamental group of the circle --- this will be the first example of a space with a nontrivial fundamental group.
 Once this group is calculated, the results of this chapter will lead to applications.
 
 
 \section{Induced homomorphism}
 
 \begin{thm}{Claim}\label{clm:ind-hom}
-Let $f\:\c{X}\to \c{Y}$ be a continuous map and $f(p)=q$.
-Suppose that $a_0$ and $a_1$ are loops bases at $p$ in $\c{X}$.
+Let $f\:\c{X}\to \c{Y}$ be a continuous map, and let $f(p)=q$.
+Suppose that $a_0$ and $a_1$ are loops based at $p$ in $\c{X}$.
 Then
 
 \begin{subthm}{clm:ind-hom-prod}
@@ -26,15 +26,15 @@ if $a_0\sim a_1$, then $f\circ a_0\sim f\circ a_1$.
 Applying the definition of the product of paths and composition of maps to $f\circ(a_0*a_1)$ and $(f\circ a_0)*(f\circ a_1)$ we get exactly the same expression:
 \begin{align*}
 \begin{cases}
-f\circ a_0(t)&\text{if}\ t\le \tfrac12,
+f\circ a_0(2\cdot t)&\text{if}\ t\le \tfrac12,
 \\
-f\circ a_1(t)&\text{if}\ t\ge \tfrac12.
+f\circ a_1(2\cdot t-1)&\text{if}\ t\ge \tfrac12.
 \end{cases}
 \end{align*}
 Hence \ref{SHORT.clm:ind-hom-prod} follows.
 
 \parit{\ref{SHORT.clm:ind-hom-homotopy}.}
-Observe that if $f_\tau$ is a homotopy from $a_0$ to $a_1$, then $f\circ a_\tau$ is a homotopy from $f\circ a_0$ to $f\circ a_1$.
+If $a_\tau$ is a homotopy from $a_0$ to $a_1$, then $f\circ a_\tau$ is a homotopy from $f\circ a_0$ to $f\circ a_1$.
 Hence \ref{SHORT.clm:ind-hom-homotopy} follows.
 \qeds
 
@@ -50,24 +50,24 @@ defines a homomorphism $f_*\:\pi_1(\c{X},p)\to \pi_1(\c{Y},q)$.
 
 
 \begin{thm}{Exercise}\label{ex:comp-induced}
-Consider continuous maps 
-$\c{X}\stackrel{f}{\to}\c{Y}\stackrel{g}{\to}\c{Z}$ between topological spaces.
+Let $\c{X}\stackrel{f}{\to}\c{Y}\stackrel{g}{\to}\c{Z}$ be continuous maps.
 Show that $g_*\circ f_*=(g\circ f)_*$.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:retract*}
 Let $A$ be a retract of $\c{X}$ with retraction $r\:\c{X}\to A$.
 Choose $x_0\in A$; let $i\:A\to\c{X}$ be the inclusion map.
+Show the following.
 \begin{subthm}{ex:retract*:r}
-Show that $r_*\:\pi_1(\c{X},x_0)\to \pi_1(A,x_0)$ is a surjective homomorphism.
+$r_*\:\pi_1(\c{X},x_0)\to \pi_1(A,x_0)$ is a surjective homomorphism.
 \end{subthm}
 
 \begin{subthm}{ex:retract*:i}
-Show that $i_*\:\pi_1(A,x_0)\to \pi_1(\c{X},x_0)$ is an injective homomorphism.
+$i_*\:\pi_1(A,x_0)\to \pi_1(\c{X},x_0)$ is an injective homomorphism.
 \end{subthm}
 
 \begin{subthm}{ex:retract*:ri}
-Show that is $A$ is weak deformation retract then $r_*$ and $i_*$ are isomorphisms.
+If $A$ is a weak deformation retract, then $r_*$ and $i_*$ are isomorphisms.
 \end{subthm}
 
 
@@ -76,17 +76,14 @@ Show that is $A$ is weak deformation retract then $r_*$ and $i_*$ are isomorphis
 
 \section{Base point}
 
-
-Recall that product of paths is not associative;
-in other words, we have to fully parenthesize the products of paths since $(a*b)*c\z\ne a*(b*c)$.
-But, if the product is not parenthesized, then it means that any parenthesization will do the job.
-Forally speaking,  we can assume that the product is taken in the usual order;
+Since $(a*b)*c\z\ne a*(b*c)$, one has to fully parenthesize products of paths. However, I will omit parentheses when any parenthesization does the job.
+Formally speaking, we can assume that the product is taken in the usual order;
 that is, \index{$a*b*c*d$}
 \[a*b*c*d\df((a*b)*c)*d.\]
 
 \begin{thm}{Theorem}
 Let $c$ be a path between points $p$ and $q$ in a topological space $\c{X}$.
-Then $a\mapsto \bar c * a* c$ defines a isomorphism of fundamental groups $\phi_c\:\pi_1(\c{X},p)\to \pi_1(\c{X},q)$.
+Then $[a]\mapsto [\bar c*a*c]$ defines an isomorphism of fundamental groups $\phi_c\:\pi_1(\c{X},p)\to \pi_1(\c{X},q)$.
 \end{thm}
 
 
@@ -98,11 +95,11 @@ It follows that the map
 \[\phi_c\:[a]\mapsto [\bar c*a*c]\eqlbl{eq:[f]->[hfh]}\]
 is defined.
 Indeed if $a_0\sim a_1$, then $\bar c*a_0*c\sim \bar c*a_1*c$,
-which means that $[\bar c*a_0*c]=[\bar c*a_1*c]$; so the right-hand side in \ref{eq:[f]->[hfh]} does not depend on the choice of loop $a$ in the homotopy class $[a]$.
+which means that $[\bar c*a_0*c]=[\bar c*a_1*c]$; so the right-hand side in \ref{eq:[f]->[hfh]} does not depend on the choice of loop in the homotopy class $[a]$.
 
 Further, if $a$ and $b$ are loops based at $p$, then \ref{clm:homot-claims} implies that
 \begin{align*}
-(\bar c*a*c)*(\bar c*a*c)&\sim \bar c*a*(c*\bar c)*b*c\sim
+(\bar c*a*c)*(\bar c*b*c)&\sim \bar c*a*(c*\bar c)*b*c\sim
 \\
 &\sim \bar c*(a*e_p)*b*c\sim
 \\
@@ -110,29 +107,31 @@ Further, if $a$ and $b$ are loops based at $p$, then \ref{clm:homot-claims} impl
 \end{align*}
 In other words,
 \[\phi_c([a]\cdot [b])=\phi_c[a]\cdot \phi_c[b]\quad\text{for any}\quad [a],[b]\in \pi_1(\c{X},p);\]
-that is, $\phi_c\:\pi_1(M,p)\to \pi_1(M,q)$ is a homomorphism.
+that is, $\phi_c\:\pi_1(\c{X},p)\to \pi_1(\c{X},q)$ is a homomorphism.
 
-
-The same argument shows that $\phi_{\bar c}\: \pi_1(M,q)\to \pi_1(M,p)$ defined by
-\[\phi_{\bar c}\:[d]\mapsto [c*(d*\bar c)]\]
+The same argument shows that $\phi_{\bar c}\: \pi_1(\c{X},q)\to \pi_1(\c{X},p)$ defined by
+\[\phi_{\bar c}\:[d]\mapsto [c*d*\bar c]\]
 is a homomorphism.
 
 Finally note that 
 \begin{align*}
-c*(\bar c*a*c)*\bar c&\sim (c*\bar c)*а*(c*\bar c)\sim
-\\
-&\sim e_p*a*e_p\sim
-\\
-&\sim а
+c*(\bar c*a*c)*\bar c
+&\sim
+(c*\bar c)*a*(c*\bar c)\sim
+e_p*a*e_p\sim
+a
 \end{align*}
 for any loop $a$ based at $p$.
-Therefore, $\phi_{\bar c}$ is a left inverse of $\phi_c$.
-(The same way we show that $\phi_{h}$ is a left inverse of $\phi_{\bar c}$.)
+Therefore, $\phi_{\bar c}$ is a left inverse of $\phi_c$.%
+\footnote{The same way we show that $\phi_c$ is a left inverse of $\phi_{\bar c}$.}
 It follows that $\phi_c$ is an isomorphism.
 \qeds
 
-According to the theorem, the fundamental group (more precisely its \textit{isomorphism class}) of path-connected space does not depend on its base point.
-Therefore, for a path-connected space $\c{X}$ we do not need to specify the base point of its fundamental group; so we could write $\pi_1\c{X}$ instead of $\pi_1(\c{X},p)$ (if we think about the group up to isomorphism).
+According to the theorem, the fundamental group%
+\footnote{more precisely, its \textit{isomorphism class}}
+of a path-connected space does not depend on its base point.
+Therefore, for a path-connected space $\c{X}$ we do not need to specify the base point of its fundamental group.
+So, if we think about the group up to isomorphism, then it is safe to write $\pi_1\c{X}$ instead of $\pi_1(\c{X},p)$.
 
 \begin{thm}{Exercise}\label{ex:uphi}
 
@@ -141,7 +140,7 @@ Therefore, for a path-connected space $\c{X}$ we do not need to specify the base
 Consider the path defined by $c(\tau)=f_\tau(p)$.
 Show that
 \[\phi_c\circ f_{0*}=f_{1*}.\]
-Here $f_{i*}$ is the induced homomorphism $\pi_1(\c{X},p)\to\pi_1(\c{Y},f_i(p))$.
+Here $f_{i*}\:\pi_1(\c{X},p)\to\pi_1(\c{Y},f_i(p))$ is the induced homomorphism of $f_{i}$.
 \end{subthm}
 
 \begin{subthm}{ex:uphi:hom-type}
@@ -170,20 +169,26 @@ g_*\:\pi_1(\c{X}\times\c{Y},(p,q))&\to \pi_1(\c{Y},q).
 Define $\phi\:\pi_1(\c{X}\times\c{Y},(p,q))\to \pi_1(\c{X},p)\times \pi_1(\c{Y},q)$ by
 \[\phi\:\alpha\mapsto (f_*(\alpha),g_*(\alpha))\]
 for any $\alpha\in \pi_1(\c{X}\times\c{Y},(p,q))$.
-Note that $\phi$ is a homomorphism.
+Prove the following.
+
+\begin{subthm}{ex:hom-product:hom}
+$\phi$ is a homomorphism.
+\end{subthm}
+
 
 \begin{subthm}{ex:hom-product:mono}
-Show that $\phi$ is a monomorphism;
+$\phi$ is a monomorphism;
 that is, if $\phi(\alpha)=\phi(\beta)$ for some $\alpha,\beta\in \pi_1(\c{X}\times\c{Y},(p,q))$, then
 $\alpha=\beta$.
 \end{subthm}
 
 \begin{subthm}{ex:hom-product:epi}
-Show that $\phi$ is an epimorphism;
+$\phi$ is an epimorphism;
 that is, for any $\gamma\in \pi_1(\c{X},p)\z\times\pi_1(\c{Y},q)$ there is $\alpha\in\pi_1(\c{X}\times\c{Y},(p,q))$ such that $\phi(\alpha)=\gamma$.
 \end{subthm}
 
 Conclude that $\pi_1(\c{X}\times\c{Y})$ is isomorphic to $\pi_1(\c{X})\times\pi_1(\c{Y})$.
+
 \end{thm}
 
 \begin{thm}{Advanced exercise}\label{ex:sim-product}

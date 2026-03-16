@@ -1,19 +1,19 @@
-\chapter{Fundamental group}
+\chapter{Fundamental group}\label{chap:pi1}
 
-Let $\c{X}$ be a topological space with a chosen basepoint $x_0 \in X$.
+Let $\c{X}$ be a topological space with a chosen basepoint $x_0 \in \c{X}$.
 Fix a point $s_0 \in \SS^1$, and  consider all continuous maps $\SS^1\to \c{X}$ that send $s_0$ to $x_0$.
 Denote by $\pi_1(X,x_0)$ the set of homotopy classes of such maps.
 
-In this chapter we will equip this set with multiplication and show that it makes $\pi_1(\c{X},x_0)$ into a group.
-This will justify calling $\pi_1(\c{X},x_0)$ the \textit{fundamental group} of $\c{X}$ with marked point $x_0$.
+In this chapter we will equip $\pi_1(\c{X},x_0)$ with multiplication and show that it makes this set into a group.
+This will justify calling $\pi_1(\c{X},x_0)$ the \textit{fundamental group} of $\c{X}$ with base point $x_0$.
 The fundamental group is the first meaningful construction in algebraic topology, and the rest of the course will be largely devoted to it.
 
-\section{Homotopy of paths}
+\section{Homotopy of paths}\label{sec:Homotopy of paths}
 
-Any path is a continuous map defined on the unit interval $[0,1]$.
-By \index{homotopy of paths}\emph{homotopy of paths} we will understand homotopy relative to the ends of $[0,1]$;
-in the notations of \ref{sec:rel-homotopy}, we have source space $[0,1]$ with subsets of two points  $\{0,1\}$.
-If we need to talk about general homotopy of paths (allowing moving its ends) we say \index{free homotopy}\emph{free homotopy}.
+Recall that a path is a continuous map defined on the unit interval $[0,1]$.
+The term \index{homotopy of paths}\emph{homotopy of paths} will be used as a shortcut for \textit{homotopy of paths relative to the ends};
+in the notations of \ref{sec:rel-homotopy}, we have source space $\c{X}=[0,1]$ with two-point subsets $A=\{0,1\}$.
+In the rear case, whet we need to talk about general homotopy of paths (allowing moving its ends) we say \index{free homotopy}\emph{free homotopy of paths}.
 
 \begin{wrapfigure}{r}{35 mm}
 \vskip-2mm
@@ -21,8 +21,8 @@ If we need to talk about general homotopy of paths (allowing moving its ends) we
 \includegraphics{mppics/pic-80}
 \end{wrapfigure}
 
-A homotopy of paths is defined by a continuous map $H\:[0,1]\times [0,1]\to \c{X}$ such that $H(0,\tau)=p$ and $H(1,\tau)=q$ for some points $p,q$ in the target space $\c{X}$.
-But as usual, it is convenient to think that homotopy is a one-parameter family of paths $a_\tau\:[0,1]\to \c{X}$ from $p$ to $q$.
+More formally, a homotopy of paths is defined by a continuous map $H\:[0,1]\times [0,1]\to \c{X}$ such that $H(0,\tau)=p$ and $H(1,\tau)=q$ for some points $p,q$ in the target space $\c{X}$.
+As usual, it is convenient to think that it is a one-parameter family of paths $a_\tau\:[0,1]\to \c{X}$ from $p$ to $q$.
 Two paths $b,c\:[0,1]\to \c{X}$ are called {}\emph{homotopic} (briefly $b\sim c$)
 if there is a homotopy $a_\tau\:[0,1]\to \c{X}$ such that $b=a_0$ and $c=a_1$.
 Recall that $\sim$ is an equivalence relation.
@@ -50,7 +50,7 @@ then
 
 \parit{Proof.}
 Choose homotopies $a_\tau$ from $a_0$ to $a_1$, and $b_\tau$ from $b_0$ to $b_1$.
-Observe that \ref{ex:u-continuous:closed} implies that
+By \ref{ex:u-continuous:closed},
 $a_\tau*b_\tau$ is a homotopy from $a_0*b_0$ to $a_1*b_1$.
 \qeds
 
@@ -71,33 +71,30 @@ To prove the last statement, observe that $a\circ s_\tau$ is a homotopy of paths
 \qeds
 
 \begin{thm}{Claims}\label{clm:homot-claims}
+Let $a,b,c\:[0,1]\to\c{X}$ be paths such that $a(0)=p$, $a(1)=b(0)=q$ and $b(1)=c(0)=r$.
+Then
 
 \begin{subthm}{clm:neutral}
-For any path $a$ from $p$ to $q$, we have
-\[e_p*a\sim a*e_q\sim  a.\]
+$e_p*a\sim a*e_q\sim  a$;
 \end{subthm}
 
 \begin{subthm}{clm:f-bar-f}
-For any path $a$ from $p$ to $q$, we have
-\[a*\bar a\sim e_p
-\quad\text{and}\quad
-\bar a*a\sim e_q.\]
+$a*\bar a\sim e_p$
+and
+$\bar a*a\sim e_q$;
 \end{subthm}
 
 \begin{subthm}{clm:assoc}
-For any paths $a$,
-$b$,
-and
-$c$ such that $a(1)=b(0)$ and $b(1)\z=c(0)$,
-we have
-\[(a*b)*c\sim a*(b*c).\]
+$(a*b)*c\sim a*(b*c)$.
 \end{subthm}
 
 \end{thm}
 
 \parit{Proof.}
 Each claim is proved by applying \ref{obs:homot-paths};
-each time we have to choose a path $f$ and rewrite the sides of equation as $a\circ s_0$ and  $a\circ s_1$ for appropriate paths $s_0,s_1\:[0,1]\to[0,1]$ that share the ends.
+each time we rewrite the sides of equation as $d\circ s_0$ and $d\circ s_1$ for appropriate paths $d\:[0,1]\to\c{X}$ and $s_0,s_1\:[0,1]\to[0,1]$ that share the ends.
+
+%???PIC
 
 \parit{\ref{SHORT.clm:neutral}.}
 Note that $e_p*a=a\circ s_0$ and $a*e_q=a\circ s_1$, where
@@ -122,6 +119,9 @@ furthermore,
 $s_0(0)\z=s_1(0)\z=s_2(0)=0$ and
 $s_0(1)\z=s_1(1)=s_2(1)=1$.
 It remains to apply \ref{obs:homot-paths}.
+
+
+%???PIC
 
 \parit{\ref{SHORT.clm:f-bar-f}.}
 Note that $a*\bar a=a\circ s_0$ and $e_p=a\circ s_1$, where
@@ -160,7 +160,7 @@ b(4\cdot t-2) &\text{if\ } \tfrac12\le t\le \tfrac34,
 \\
 c(4\cdot t-3) &\text{if\ } \tfrac34\le t\le 1.
 \end{cases}
-\intertext{Therefore, $((a*b)*c)(t)=(a*(b*c))\circ s_1(t)$, where}
+\intertext{Therefore, $((a*b)*c)(t)=(a*(b*c))\circ s_1(t)$, where}%???PIC
 s_1(t)&\df
 \begin{cases}
 2\cdot t&\text{if\ } 0\le t\le \tfrac14,
@@ -170,7 +170,10 @@ t+\tfrac14 &\text{if\ } \tfrac14\le t\le \tfrac12,
 \tfrac12\cdot t+\tfrac12 &\text{if\ } \tfrac12\le t\le 1.
 \end{cases}
 \end{align*}
-Observe that $((a*b)*c)(t)=((a*b)*c)\circ s_0(t)$ where $s_0(t)\df t$, both functions $s_0,s_1\:[0,1]\to[0,1]$ are continuous and  $s_0(0)\z=s_1(0)=0$ and
+Observe that $((a*b)*c)(t)=((a*b)*c)\circ s_0(t)$ where $s_0(t)\df t$, both functions $s_0,s_1\:[0,1]\to[0,1]$ are
+continuous,
+$s_0(0)\z=s_1(0)=0$,
+and
 $s_0(1)\z=s_1(1)=1$.
 It remains to apply \ref{obs:homot-paths}.
 \qeds
@@ -204,12 +207,11 @@ Show that $a=e_p$.
 Let $\c{X}$ be a topological space.
 A path $a\:[0,1]\to\c{X}$ is called a \index{loop}\emph{loop} with base at $p\in\c{X}$ if $a(0)=a(1)=p$;
 
-
-Note that if $a$ and $b$ are loops based at $p$, then their products $a*b$, $b*a$ are defined and they are loops based at $p$ as well; see Section~\ref{sec:homot-operations}.
-Moreover, the time-reversed paths $\bar a$, $\bar b$ are also loops based at $p$.
+Note that if $a$ and $b$ are loops based at $p$, then their products are defined; moreover, $a*b$, $b*a$, $\bar a$, $\bar b$ are also loops based at $p$ as well; see \ref{sec:Operations on paths}.
 
 
-Recall that $[a]$ denotes the homotopy class of $a$; recall that homotopy of paths and loops does not move their ends.
+Recall that homotopy of paths and loops does not move their ends;
+the homotopy class of a loop $a$ will be denoted by $[a]$.
 The multiplication of homotopy classes of loops based at $p$ is defined by
 \[[a]\cdot [b]=[a*b];\]
 that is, \textit{the product of homotopy classes of loops $a$ and $b$ is the homotopy class of the product $a*b$.}
@@ -233,20 +235,21 @@ that is, $e_p(t)=p$ for any $t$.
 We will show that the homotopy class $[e_p]$ is the neutral element of $\pi_1(\c{X},p)$
 and $[\bar a]=[a]^{-1}$, where $\bar a$ denotes the time-reversed $a$.
 
-Note that conditions in the definition of group follow from the next three conditions for any loops $a$, $b$, and $c$ based at $p$ in $\c{X}$.
-\begin{enumerate}[(i)]
-\item $a*e_p\sim e_p*a\sim a$;
-\item $a*\bar a\sim\bar a* a\sim e_p$;
-\item $(a*b)*c\sim a*(b*c)$.
+By \ref{clm:homot-claims},
+\begin{enumerate}[(a)]
+\item $a*e_p\sim e_p*a\sim a$,
+\item $a*\bar a\sim\bar a* a\sim e_p$,
+\item $(a*b)*c\sim a*(b*c)$,
 \end{enumerate}
-These statements are provided by \ref{clm:neutral}, \ref{clm:f-bar-f}, and \ref{clm:assoc}.
+for any loops $a$, $b$, and $c$ based at $p$ in $\c{X}$.
+And these equations imply the conditions in the definition of group.
 \qeds
 
 \begin{thm}{Exercise}\label{ex:group}
-Let $G$ be a \index{topological group}\emph{topological group}; that is a group equipped with topology such that the maps $G\times G\to G$ and $G\to G$ defined by $(g,h)\mapsto g\cdot h$ and $g\mapsto g^{-1}$ are continuous.
-Show that the fundamental group $\pi_1(G,1)$ is abelian;
+Let $\c{G}$ be a \index{topological group}\emph{topological group}; that is a group equipped with topology such that the maps $\c{G}\times \c{G}\to \c{G}$ and $\c{G}\to \c{G}$ defined by $(g,h)\mapsto g\cdot h$ and $g\mapsto g^{-1}$ are continuous.
+Show that the fundamental group $\pi_1(\c{G},1)$ is abelian;
 in other words, $a_1*a_2\sim a_2*a_1$
-for any two loops $a_1$ and $a_2$ with base point $1\in G$.
+for any two loops $a_1$ and $a_2$ with base point $1\in \c{G}$.
 \end{thm}
 
 
@@ -256,10 +259,11 @@ Recall that a group is called \index{trivial group}\emph{trivial} if it contains
 
 A path-connected topological space with trivial fundamental group is called \index{simply-connected space}\emph{simply-connected}.
 
-If the fundamental group $\pi_1(\c{X},p)$ is trivial, it is common to write $\pi_1(\c{X},p)=0$ despite that it does not makes no sense --- in general the group $\pi_1(\c{X},p)$ is not commutative and so it would be more reasonable to write $\pi_1(\c{X},p)\z=\{1\}$, meaning that $1$ is the only element of $\pi_1(\c{X},p)$.
+If the fundamental group $\pi_1(\c{X},p)$ is trivial, it is common to write $\pi_1(\c{X},p)=0$ despite that it makes no sense --- in general the group $\pi_1(\c{X},p)$ is not commutative and so it would be more reasonable to write $\pi_1(\c{X},p)\z=\{1\}$, meaning that $1$ is the only element of $\pi_1(\c{X},p)$.
 
 \begin{thm}{Exercise}\label{ex:contractible=>sc}
 Show that any contractible space is simply-connected.
+
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:sc=homot-paths}
@@ -276,11 +280,16 @@ Show that any loop in $\c{X}$ based at $x_0$ is homotopic to a product of loops 
 \end{subthm}
 
 \begin{subthm}{ex:van-kamp:sc}
-Conclude that if $V$ and $W$ are simply connected, then so is $\c{X}$.
+Conclude that if $V$ and $W$ are simply-connected, then so is $\c{X}$.
 \end{subthm}
 
 \begin{subthm}{ex:van-kamp:s2}
-Apply \ref{SHORT.ex:van-kamp:sc} to show that $\SS^2$ is simply connected.
+Apply \ref{SHORT.ex:van-kamp:sc} to show that $\SS^2$ is simply-connected.
+\end{subthm}
+
+\begin{subthm}{ex:van-kamp:s2d}
+Let $\c{X}$ be the union of a sphere and a disc bounded by the equator of the sphere.
+Show that $\c{X}$ is simply-connected.
 \end{subthm}
 
 

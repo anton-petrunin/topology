@@ -1,3 +1,68 @@
+{
+
+\begin{wrapfigure}{r}{23 mm}
+\vskip-10mm
+\centering
+\begin{tikzcd}
+& \c{Y} \arrow[d, "w"]\\
+\c{X} \arrow[r, "u"']\arrow[ru, "v"] & \c{Z}
+\end{tikzcd}
+\end{wrapfigure}
+
+\begin{thm}{Exercise}\label{ex:lift-of-covering-is-covering}
+Consider the commutative diagram.
+Assume that $u$ and $v$ are coverings, and $w$ is a continuous map.
+Show that $w$ is also a covering.
+
+\end{thm}
+
+}
+
+
+
+
+
+
+
+\parit{Proof.}
+Choose $y\in \c{Y}$ and a path $a_0$ in $\c{Y}$ from $y_0$ to $y$.
+Consider the paths $b_0=f\circ a_0$ in $\c{X}$; note that $b_0(0)=x_0$.
+Let $\tilde b_0$ be its unique lift of $b_0$ such that $\tilde b_0(0)=\tilde x_0$; see \ref{lem:path-lifting}.
+
+We want to define $\tilde f(y)$ as $\tilde b_0(1)$, but in order to do this we have to check that the point $\tilde b_0(1)\in \tilde{\c{X}}$ does not depend on the choice of path $a_0$ from $y_0$ to $y$.
+In other words, if we repeat the construction of paths $b_1$ and $\tilde b_1$ for another path $a_1$ from $y_0$ to $y$, then
+\[\tilde b_1(1)=\tilde b_0(1).
+\eqlbl{eq:b11=b01}\]
+Since $\c{Y}$ is simply-connected, $a_0\sim a_1$, and therefore $b_0\sim b_1$, and \ref{lem:path-lifting} implies \ref{eq:b11=b01}.
+
+Now we have rights to define $\tilde f(y)\df \tilde b_0(1)$.
+By construction $f\z=w\circ \tilde f$.
+It remains to check that $\tilde f$ is continuous.
+
+Coose $y\in \c{Y}$; let $x\df f(y)$ and $\tilde x=\tilde f(y)$.
+Choose an evenly covered open set $V\ni x$.
+Let $\tilde V_\alpha$ be the slice over $V$ that contains $\tilde x$.
+
+Since $f$ is continuous, we can choose an open neighborhood $W\ni y$ such that $f(W)\subset V$.
+Since $\c{Y}$ is locally path-connected, we can assume that $W$ is path-connected.
+Choose a path $a_0$ from $y_0$ to $y$.
+Choose a point $y'\in W$ and a path $a_1$ form $y$ to $y'$.
+Let $b_0=f\circ a_0$ and $b_1=f\circ a_1$.
+Let $\tilde b_0$ be a lift of $b_0$ such that $b_0(0)=\tilde x_0$.
+Note that $\tilde b_0(1)=\tilde f(y)$.
+Now,
+let $\tilde b_1$ be a lift of $b_1$ such that $\tilde b_1(0)=\tilde f(y)$.
+Note that $\tilde f(y')=\tilde b_1(1)$ and $\tilde b_0*\tilde b_1$ is a lift of $b_0*b_1$.
+It follows that $\tilde f(y)$ and $\tilde f(y')$ lie in one connected component of $w^{-1}(V)$.
+In other words, $\tilde f(y')\in \tilde V_\alpha$.
+\qeds
+
+
+
+
+
+
+
 
 \begin{subthm}{ex:induced-hom-covering:sc}
 Assume  $\tilde{\c{X}}$ is simply connected.

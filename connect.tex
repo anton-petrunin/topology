@@ -46,11 +46,25 @@ Suppose that $f(x_1)>0$ and $f(x_2)<0$ for some $x_1,x_2\in \c{X}$.
 Show that there is $x_3\in \c{X}$ such that $f(x_3)=0$.
 \end{thm}
 
-\begin{thm}{Exercise}\label{ex:A<B<bar-A}
-Let $A$ be a connected set in a topological space $\c{X}$.
-Suppose that $A\subset B\subset \bar A$.
+\begin{thm}{Observation}\label{ex:A<B<bar-A}
+Let $A$ be a connected set in a topological space.
+Suppose that
+\[A\subset B\subset \bar A.\]
 Show that $B$ is connected.
 \end{thm}
+
+\parit{Proof.}
+Since $A$ is connected, we have $A\ne\emptyset$ and $B\ne\emptyset$.
+
+Assume $V$ and $W$ form an open separating pair of $B$.
+Since $B\subset \bar A$,
+\begin{align*}
+V\cap B\ne \emptyset \ &\Rightarrow V\ \cap A\ne \emptyset,
+\intertext{and}
+W\cap B\ne \emptyset \ &\Rightarrow W\ \cap A\ne \emptyset.
+\end{align*}
+It follows that $V$ and $W$ form an open separating pair of $A$ --- a contradiction.
+\qeds
 
 \begin{thm}{Advanced exercise}\label{ex:nested-in-compact}
 Let $Q_1\supset Q_2\supset\ldots $ be a nested sequence of closed connected sets in a compact space.
@@ -71,7 +85,7 @@ Show that $\NN$ equipped with this topology is connected, Hausdorff, and noncomp
 
 \end{thm}
 
-\section{Observations}
+\section{Key statements}
 
 \begin{thm}{Proposition}\label{prop:image-connected}
 Let $f\:\c{X}\to \c{Y}$ be a continuous map between topological spaces.
@@ -216,7 +230,7 @@ Show that the connected component of a point $x\in \c{X}$ is the intersection of
 Find examples showing that this is no longer true without assuming compactness or Hausdorffness.
 \end{thm}
 
-\section{Locally connected spaces}
+\section{Locally connected spaces}\label{sec:Locally connected spaces}
 
 A topological space $\c{X}$ is called \emph{locally connected} if for any point $p\in \c{X}$, any neighborhood of $p$ contains a conneced neighborhood;
 that is, given an open set $W\ni p$ there is a conneced open set $V$ such that $p\in V\subset W$.

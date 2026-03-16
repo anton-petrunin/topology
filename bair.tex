@@ -79,7 +79,6 @@ Let $G$ be a set in a topological space $\c{X}$.
 We say that $G$ is a \index{G-delta set}\emph{G-delta} set%
 if it can be written as a countable intersection of open sets;
 that is, $G=V_1\cap V_2\cap\ldots$ for a sequence of open sets $V_1,V_2,\ldots \subset \c{X}$.%
-\footnote{The complements of G-delta sets are called \index{F-sigma set}\emph{F-sigma} sets; they can be defined directly as intersections of countable families of closed sets.}
 In the definition we can assume that the sequence of open sets is nested;
 that is $V_1\supset V_2\supset\ldots$;
 if not, pass to the sequence
@@ -148,6 +147,32 @@ Show that any G-delta set in a complete metric space is Baire.
 
 Give an example of a Baire space $\c{X}$ with a G-delta set that is not Baire.
 \end{thm}
+
+%??? ADD\section{Borel sets}
+
+%Any topological set comes with the so-called \index{Borel sigma-algebra}\emph{Borel sigma-algebra} that is the minimal family of sets that include all open sets and closed under complement, countable union.
+%Sets in Borel sigma-algebra are called \index{Borel set}\emph{Borel}.
+%Evidently Borel sets are closed under countable intersections.
+
+%Note that Borel sets include all closed sets and G-delta set.
+%The same holds for the complements of G-delta; they are called \index{F-sigma set}\emph{F-sigma} sets and can be defined directly as intersections of countable families of closed sets.
+
+%Borel sets play a key role in analysis.
+%Since it is a purely topological notion it worths to mention them, but we will not going discuss them further in the text.
+%The following two exercises might help you to get more familiar with the definition.
+
+%\begin{thm}{Exercise}
+%Construct a continuous map $f\:\c{X}\to \c{Y}$ and a Borel set $B\subset \c{X}$ such that $f(B)$ is not Borel.
+%\end{thm}
+
+%\begin{thm}{Advanced exercise}
+%Construct a bijection $f\:[0,1]\to[0,1]\times [0,1]$ such that $f$ and its inverse $f^{-1}$ map Borel sets to Borel sets.
+%\end{thm}
+
+%\begin{thm}{Advanced exercise}
+%Show that for any Borel set $B$ in a Baire space there is an dense G-delta set $G$ and an open set $V$ such that $B\cap G=V\cap G$.
+%\end{thm}
+
 
 \section{Large or small?}
 
@@ -224,8 +249,10 @@ Given a continuous function $f$ we can choose large $m$ so that if $|x_0-x_1|\le
 Now define a new function $h$ by setting $h(\tfrac im)=f(\tfrac im)+(-1)^i\cdot\eps$ for integer $i$ from $0$ to $m$ and extend $h$ linearly on each interval $[\tfrac {i-1}m,\tfrac im]$.
 Observe that $h\in \c{C}$ and $|h-f|_{\c{C}}<2\cdot \eps$; moreover given $\eps>0$ and a positive integer $n$, one can choose $m$ sufficiently large so that $h\in V_n$.}
 
-\begin{wrapfigure}[9]{r}{26 mm}
-\vskip-6mm
+{
+
+\begin{wrapfigure}{o}{26 mm}
+\vskip-0mm
 \centering
 \includegraphics{mppics/pic-940}
 \end{wrapfigure}
@@ -240,6 +267,8 @@ It follows that the limit
 \[\lim_{x\to x_0}\frac{f(x)-f(x_0)}{x-x_0}\]
 is undefined.
 Therefore $f$ is not differentiable at every $x_0\in [0,1]$.
+
+}
 
 It remains to apply \ref{thm:baire-category} to $G=V_1\cap V_2\cap\ldots$
 \qeds

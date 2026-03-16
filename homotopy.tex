@@ -50,8 +50,6 @@ Two maps $f,g\: \c{X}\to \c{Y}$ are called \index{homotopic relative to $A$}\emp
 Note also that if $f\sim g\rel A$, then $f$ agrees with $g$ on $A$;
 that is, $f(a)=g(a)$ for any $a\in A$.
 
-The properties of homotopies that we are about to describe admit straightforward generalizations to its relative version.
-
 \section{Operations on homotopies}\label{sec:homot-operations}
 
 The following operations on homotopies are analogous to the operations on paths discussed in \ref{sec:Operations on paths}.
@@ -77,6 +75,8 @@ is a homotopy from $f$ to $h$.
 (By \ref{ex:u-continuous:closed}, $F$ is continuous.)
 \end{itemize}
 
+All these constructions admit straightforward generalizations to relative homotopies.
+
 Recall that
 \[\SS^1\df\set{(x,y)\in\RR^2}{x^2+y^2=1}.\]
 
@@ -88,22 +88,25 @@ Show that $f$ is homotopic to the identity map.
 
 \section{Homotopy classes}
 
-The previous section implies that homotopy defines an equivalence relation $\sim$ on the set of continuous maps $\c{X}\to\c{Y}$; in other words, the following properties hold for any continuous maps $f,g,h\: \c{X}\to\c{Y}$:
+The constructions from the previous section imply that homotopy defines an equivalence relation $\sim$ on the set of continuous maps $\c{X}\to\c{Y}$; in other words, the following properties hold for any continuous maps $f,g,h\: \c{X}\to\c{Y}$:
 \begin{itemize}
  \item $f\sim f$;
  \item if $f\sim g$, then $g\sim f$;
  \item if $f\sim g$, and $g\sim h$, then $f\sim h$.
 \end{itemize}
 
+
 The equivalence classes for $\sim$ are called \index{homotopy class}\emph{homotopy classes};
 the equivalence class of a map $f\:\c{X}\to\c{Y}$ will be denoted by $[f]$.
 Given two spaces $\c{X}$ and $\c{Y}$, the set of all homotopy classes will be denoted by
 $\pi(\c{X},\c{Y})$.
 
+(The same holds for homotopies relative $A\subset \c{X}$; so $f\sim g \rel A$ is an equivalence relation.
+The set of all homotopy classes relative to $A$ can be denoted by $\pi_A(\c{X},\c{Y})$.)
+
 Often the set $\pi(\c{X},\c{Y})$ admits a direct description; this is precisely its advantage over the vast set of all continuous maps $\c{X}\to \c{Y}$.
 Note that any homeomorphism $\c{Y}\to \c{Y}'$ defines a bijection between homotopy classes $\pi(\c{X},\c{Y})\to \pi(\c{X},\c{Y}')$ for any given space $\c{X}$.
 So, studying the homotopy classes may help to distinguish topological spaces.
-
 
 This construction is meaningful even for very simple choices of source space $\c{X}$.
 If $\c{X}$ is the one-point space, then $\pi(\c{X},\c{Y})$ is also denoted by $\pi_0(\c{Y})$.
@@ -111,7 +114,7 @@ Note that $\pi_0(\c{Y})$ is the set of path-connected components in $\c{Y}$ --- 
 The set $\pi(\SS^1,\c{Y})$ is closely related to the fundamental group of $\c{Y}$, which will be soon introduced.
 
 The idea to use homotopy classes to distinguish topological spaces will guide us in the right direction.
-However, the true reason to consider homotopy classes is different; it will be described in Chapter~\ref{chap:algebra}.
+However, the true reason to consider homotopy classes is different; it will be discussed in Chapter~\ref{chap:algebra}.
 
 \section{Retracts}
 
@@ -138,7 +141,7 @@ Show that a retract of a Hausdorff space has to be a closed subset.
 
 \begin{thm}{Exercise}\label{ex:retract-strong-weak}
 Consider the \index{fan}\emph{fan} $F$ in $\RR^2$;
-it is defined as the union closed line segments $J_n$ from the origin to the point $(1,\tfrac1{2^n})$ for each positive integer $n$ and the line segment $J_\infty$ from the origin to the point $(1,0)$.
+it is defined as the union of closed line segments $J_n$ from the origin to the point $(1,\tfrac1{2^n})$ for each integer $n\ge 0$ and the line segment $J_\infty$ from the origin to the point $(1,0)$.
 
 \begin{subthm}{ex:retract-strong-weak:retract}
 Show that $J_0$ is a deformation retract of $F$.
@@ -159,13 +162,13 @@ Is it true that $F$ is a retract of the square $[0,1]\times[0,1]$?
 \section{Contractible spaces}
 
 A topological space $\c{X}$ is called \index{contractible space}\emph{contractible} if the identity map $\id_\c{X}\:\c{X}\z\to \c{X}$ is homotopic to a constant map;
-that is, there is a homotopy $h_t\:\c{X}\to\c{X}$ such that $h_0(x)=x$ and $h_1(x)=p$ for some fixed point $p\in\c{X}$ and any $t$.
+that is, there is a homotopy $h_t\:\c{X}\to\c{X}$ such that $h_0(x)=x$ and $h_1(x)=p$ for some fixed point $p\in\c{X}$ and any $t\in [0,1]$ and $x\in \c{X}$.
 
 Soon we will show that the circle $\mathbb{S}^1$ is an example of path-connected space that is not contractible;
 in particular, there are noncontractible path-connected spaces.
 
 Applying linear homotopy, one can see that any convex subset of the Euclidean space is contractible.
-This provides a good source of contractible spaces.
+This is a good source of contractible spaces.
 
 \begin{thm}{Exercise}\label{ex:retract-contractible}
 Show that a retract of a contractible space is contractible.
@@ -194,7 +197,7 @@ Show that any two continuous maps from $\c{X}$ to a path-connected space are hom
 
 Two topological spaces $\c{X}$ and $\c{Y}$ have the same \index{homotopy type}\emph{homotopy type} (briefly $\c{X}\sim\c{Y}$) if there are continuous maps
 $f\: \c{X}\to \c{Y}$ and $h\:\c{Y}\to \c{X}$ such that $h\circ f\sim \id_\c{X}$ and $f\circ h\sim \id_\c{Y}$.
-In this case $f$ (as well as $h$) is called a \index{homotopy equivalence}\emph{homotopy equivalence} and $h$ is called \index{homotopy inverse}\emph{homotopy inverse} of $f$.
+In this case $f$ (as well as $h$) is called a \index{homotopy equivalence}\emph{homotopy equivalence} and $h$ is called a \index{homotopy inverse}\emph{homotopy inverse} of $f$.
 
 \begin{thm}{Exercise}\label{ex:homotopy-type}
 Show that $\sim$ defines an equivalence relation on topological spaces.
@@ -203,7 +206,7 @@ Show that $\sim$ defines an equivalence relation on topological spaces.
 
 
 \begin{thm}{Exercise}\label{ex:homotopy-type-contractible}
-Show that a topological space $\c{X}$ is contractible if and only if it has the same homotopy type with the one-point space.
+Show that a topological space $\c{X}$ is contractible if and only if it has the homotopy type of the one-point space.
 \end{thm}
 
 
@@ -218,16 +221,16 @@ If $A$ is a weak deformation retract of $\c{X}$, then $\c{X}$ and $A$ have the s
 \end{thm}
 
 \parit{Proof.}
-Let $r\:\c{X}\to A$ be the retraction and $i\:A\hookrightarrow \c{X}$ the inclusion.
-By definition, we have a homotopy $H$ from $\id_{\c{X}}$ to $i\circ r$, hence $\id_{\c{X}}\sim i\circ r$.
-On the other hand, $r\circ i=\id_A$ since $r$ is a retraction.
-Therefore $i$ and $r$ define a homotopy equivalence between $A$ and $\c{X}$.
+Since $A$ is a weak deformation retract, there is a retraction $r\:\c{X}\to A$ and a homotopy from $\id_{\c{X}}$ to $r$.
+
+In other words, if $i\:A\hookrightarrow \c{X}$ is the inclusion map, then $\id_{\c{X}}\sim i\circ r$.
+Since $r$ is a retraction, $r\circ i=\id_A$, hence the result.
 \qeds
 
 This proposition can be used together with \ref{ex:homotopy-type} to prove that given spaces have the same homotopy type; here is one example:
 
 \begin{thm}{Exercise}\label{ex:8-theta}
-Show that the two closed connected sets in the picture have the same homotopy type.
+Show that the closed connected sets in the picture have the same homotopy type.
 (Each set is a union of several line segments and if it looks like they intersect, then they intersect.)
 
 \begin{figure}[!ht]
