@@ -448,7 +448,7 @@ Set
 and show that $\Phi$ defines the needed homeomorphism $V_0\leftrightarrow V$.
 
 \parit{Commnet.}
-Note that the boundary of $V$ might be not homeomorphic the the circle;
+Note that the boundary of $V$ might be not homeomorphic the circle;
 an example can be guessed from the picture.
 
 \begin{Figure}
@@ -1141,10 +1141,6 @@ Try to construct a path-connected space that is not locally path-connected at an
 \parbf{\ref{ex:open-path-connected-component}.}
 Apply \ref{obs:open-connected-component} and \ref{thm:open-connected=path-connected}.
 
-\parbf{\ref{ex:comp-hom}.}
-Let $f_\tau$ and $g_\tau$ be the homotopies from $f_0$ to $f_1$ and from $g_0$ to $g_1$, respectively.
-Show and use that $g_\tau \circ f_\tau$ is a homotopy from $g_0\circ f_0$ to $g_1\circ f_1$.
-
 \parbf{\ref{ex:homot-sphere}.}
 Consider linear homotopy in $\RR^3$:
 \[f_t(x)=(1-t)\cdot f_0(x)+t\cdot f_1(x).\]
@@ -1504,30 +1500,13 @@ The product $\tilde{\c{Z}}\times G$ admits a natural action of $\pi_1(\c{Z},z_0)
 this action is freely discontinuous.
 Pass to the quotient of $\tilde{\c{Z}}\times G$ by the image of homomorphism $\pi_1(\c{Z},z_0)\to\pi_1(\c{Z},z_0)\times G$ defined by $\gamma\mapsto (\gamma,m(\gamma))$.
 
-\parbf{\ref{ex:sc-VuW}.}
-Consider a loop $\gamma$ with the base point $p_0\in V\cap W$.
-Show that there is a partition $0=t_0<t_1<\ldots<t_n=1$ such that the arc $\gamma|_{[t_{i-1},t_i]}$ lies in $V$ or in $W$ for each $i$.
-Denote by $\gamma_i$ the arc $\gamma|_{[t_{i-1},t_i]}$ reparametrized by $[0,1]$.
-
-Show that we can choose a path $\beta_i$ in $V\cap W$ from $p_0$ to $p_i=\gamma(t_i)$ for each $i$.
-Set
-\begin{align*}
-\alpha_1&=\gamma_1*\bar\beta_1,
-\\
-\alpha_2&=\beta_1*\gamma_2*\beta_2,
-\\
-&\ \vdots
-\\
-\alpha_n&=\beta_{n-1}*\gamma_n.
-\end{align*}
-Observe that $\alpha_1*\dots*\alpha_n\sim \gamma$.
-Observe that each $\alpha_i$ lies entirely in $V$ or $W$.
-Conclude that each $\alpha_i$ is null homotopic.
-Finally, observe that $\alpha_1*\dots*\alpha_n\sim \gamma$, and conclude that $\gamma$ is null homotopic.
-
+\parbf{\ref{ex:tietze}.}
+Follow the proof and see that compactness of $\Gamma\cap \cBall[x,R]$ is the only place we use special properties of the Euclidean plane.
+This was used to prove the existence of points $q_n$ and $s_n$.
+Use instead their approximate versions $\tilde q_n$ and $\tilde s_n$, so the equalities in \ref{eq:abF} hold with an error that approaches zero as $n\to\infty$, and check that the remaining part of the proof works with these points.
 
 \parbf{\ref{ex:nonclosed-Gamma}.}
-One needs open complements to apply the exercise.
+One needs open complements to apply \ref{ex:van-kamp:s2d} and \ref{ex:vankam-nonconnect}.
 
 If $\Gamma$ is not closed, then its complement might be connected, but not path connected.
 For example, the complement of $\Gamma$ can be $W'$ --- the flea and comb discussed in \ref{sec:flea and comb}.
@@ -1544,46 +1523,23 @@ Try to bootstrap a  noncntractibel loop in it.
 \includegraphics{mppics/pic-1920}
 \end{Figure}
 
-\parbf{\ref{ex:tietze}.} Show that the functions $a$ and $b$ are continuous.
-Note that $0<a(x)<b(x)<2\cdot a(x)$ for any $x\ni \Gamma$.
-Conclude that $f$ is continuos in the complement of $\Gamma$.
-Further, show that for any $x\in\Gamma$ and $\eps>0$ there is a neighborhood $V\ni x$ such that
-$|f(y)-f(x)|<\eps$ for any $y\in V$.
-Conclude that $f$ is continuos on the entire plane.
+\parbf{\ref{ex:3-components-Gamma}.}
+Show and use that $Y$ can be retracted to figure eight; see \ref{sec:Figure eight}.
 
-For the second part, choose an increasing continuous  function $\sigma\:\RR\to (1,2)$ such that $\sigma(x)\to 1$ as $x\to -\infty$ and $\sigma(x)\to 2$ as $x\to +\infty$, say $\sigma(x)=1+\tfrac12\cdot\frac{e^x-e^{-x}}{e^x+e^{-x}}$.
-Consider function $\phi\:\Gamma\to (0,1)$ defined by $\sigma\circ h^{-1}$, apply the first part of the exercise and apply $\sigma^{-1}$ to the obtained function.
-
-\parbf{\ref{ex:z-axis}.}
-Show and use that the complement of $z$-axis has the circle
-\[\set{(x,y,0)\in\RR^3}{x^2+y^2=1}\]
-as a deformation retract.
-
-
-\parbf{\ref{ex:jordanI}.}
-Let us consider $\RR^2$ as a subset of $\RR^3$.
-Argue as in \ref{prop:home-gamma-z-axis} to show that $\RR^3\setminus I$ is simply-connected.
-
-If $\RR^2\setminus I$ is not connected, then we can choose a circle $C$ in a vertical plane of $\RR^3$ that crosses $\RR^2$ at two points that lie in different conncted components of $\RR^2\setminus I$.
-Construct a retraction $\RR^3\setminus I\to C$ and arrive at a contradiction.
-
-\parit{Comment.}
-In fact any compact contractible set in $\RR^2$ has connected complement;
-a way more general statemnt is provided by Alexander's duality theorem.
-
+\parbf{\ref{ex:klee[0,1]-1}.} Follow the proof of \ref{prop:home-gamma-z-axis}.
 
 \parbf{\ref{ex:connected-complement}.}
 Assume the contrary.
 Identify $\RR^2$ with the $(x,y)$-plane in $\RR^3$.
-Show that the the following:
+Show the following:
 \begin{itemize}
  \item $\RR^3\setminus(A\cup B)$ has nontrivial fundamental group, but
  \item $\RR^3\setminus A$ and $\RR^3\setminus B$ have trivial fundamental groups.
 \end{itemize}
 
 Construct a continuous function $f\:\RR^2\z\to[0,1]$ such that $A=f^{-1}\{0\}$ and $B=f^{-1}\{1\}$.
-Consider the homeomorpism $h\:\RR^3\times \RR^3$ defined by $(x,y,z)\mapsto (x,y,z+f(x,y))$.
-Observe that $h$ moves $A$ and $B$ to different horizonal planes.
+Consider the homeomorphism $h\:\RR^3\selfmap$ defined by $(x,y,z)\mapsto (x,y,z+f(x,y))$.
+Observe that $h$ moves $A$ and $B$ to different horizontal planes.
 Use that triviality of fundamental groups of $\RR^3\setminus A$ and $\RR^3\setminus B$ to show that
 $\RR^3\setminus h(A\cup B)$ has trivial fundamental group.
 Arrive at a contradiction.
@@ -1591,6 +1547,27 @@ Arrive at a contradiction.
 \parit{Comment.}
 A more standard solution is done by applying Alexander duality to Čech cohomology.
 
+\parbf{\ref{ex:jordanI+}.}
+Apply \ref{ex:klee[0,1]-1}.
+
+\parit{Comment.}
+In fact any compact contractible set in $\RR^2$ has connected complement;
+a way more general statement is provided by Alexander's duality theorem.
+
+\parbf{\ref{ex:proper-jordan3}.} Apply \ref{ex:3-components-Gamma}.
+
+\parbf{\ref{ex:klee[0,1]}}; \ref{SHORT.ex:klee[0,1]:[0,1]} Apply \ref{ex:jordanI+}.
+
+\parit{\ref{SHORT.ex:klee[0,1]:bry}.}
+Assume the contrary.
+Then there is a neighborhood $V$ of a point $p\in J$ that does not meet all components of $\SS^2\setminus J$.
+Choose a subset $I\subset J$ that is homeomorphic to $[0,1]$ and such that $I\supset J\setminus V$ and apply \ref{SHORT.ex:klee[0,1]:[0,1]}.
+
+\parit{Comment.} Recall that by \ref{ex:proper-jordan3}, $\SS^2\setminus J$ has exactly two connected components, but the solution above does not use this.
+
+%\parbf{\ref.}
+
+%\parbf{\ref.}
 
 %\parbf{\ref.}
 

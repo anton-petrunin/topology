@@ -1,24 +1,25 @@
-\chapter{Jordan separation theorem}
+\chapter{Separation theorem}
 
-The Jordan separation theorem states that the complment of a closed simple curve in the plane is not connected.
-This theorem is known for formulation and annoyingly tricky proofs.
-We will present the proof of Patrick Doyle \cite{doyle};
-it is among the shortest proofs.
-This proof use several results in topology that, which worth knowing.
+The Jordan separation theorem states that the complement of a closed simple curve in the plane is not connected.
+This theorem is known for its simple formulation and annoyingly tricky proofs.
+We will present the proof of Patrick Doyle \cite{doyle} that is based on Klee's trick.
+This proof is among the shortest; it also uses several results in topology, which worth knowing.
 
 \section{Tietze--Urysohn extension theorem}
 
-The following statement is a partial case of the so-called \index{Tietze--Urysohn extension theorem}\emph{Tietze--Urysohn extension theorem}.
+The following statement is a partial case of the so-called \index{Tietze--Urysohn extension theorem}\emph{Tietze--Urysohn extension theorem},
+which provides an analogous statement for all normal spaces, which means $T_1+T_4$; see \ref{sec:haudorff-comments}.
 
 \begin{thm}{Proposition}\label{thm:tietze}
-Let $\Gamma$ be a closed subset in $\RR^2$ and let $\II$ be an open intevel.
-Then any continuous function $f\:\Gamma\to\II$ admits a continuous extension to $\RR^2$;
-that is, there is a continuous function $F\:\RR^2\to\II$ such that $F(p)=f(p)$ for any point $p\in\Gamma$.
+Let $\Gamma$ be a closed subset in $\RR^2$.
+Then any continuous function $f\:\Gamma\to\RR$ admits a continuous extension to $\RR^2$;
+that is, there is a continuous function $F\:\RR^2\to\RR$ such that $F(p)=f(p)$ for any point $p\in\Gamma$.
 \end{thm}
 
-
 \parit{Proof.}
-Assume $\II=(1,2)$.
+We can assume that $\Gamma\ne\emptyset$, otherwise take $F(x)\equiv 0$.
+
+Assume $f(\Gamma)\subset(1,2)$.
 Given $x\in\RR^2$, let
 \[
 a(x)=\inf\limits_{y\in\Gamma} \{\,|x-y|\,\}
@@ -26,6 +27,9 @@ a(x)=\inf\limits_{y\in\Gamma} \{\,|x-y|\,\}
 b(x)=\inf\limits_{y\in\Gamma} \{\,f(y)\cdot |x-y|\,\}.
 \]
 Observe that
+\[a(x)<b(x)<2\cdot a(x)\]
+for any $x\notin \Gamma$.
+Therefore
 \[F(x)=
 \begin{cases}
 f(x)& \text{if}\ x\in \Gamma,
@@ -33,56 +37,123 @@ f(x)& \text{if}\ x\in \Gamma,
 \frac{b(x)}{a(x)}& \text{if}\ x\notin \Gamma
 \end{cases}
 \]
-is the needed extension.
+defines a function $F\:\RR^2\to(1,2)$.
 
-In general case, choose a homeomorphism $h\:\II\to (1,2)$.
-Let $\hat f=h\circ h\:\Gamma\to (1,2)$ and let $\hat F\:\Gamma\to (1,2)$ be its extension.
-Then $F\z=h^{-1}\circ \hat F$ is the requred extension of $f$.
+It remains to check that $F$ is continuous;
+that is, if a converging sequence of points $p_n\to p_\infty$, then $F(p_\infty)=\lim F(p_n)$.
+
+We can assume that $\lim F(p_n)$ is defined, otherwise pass to a subsequence.
+Furthermore, by the triangle inequality, $a$ and $b$ are continuous functions.
+Since $a(x)>0$ for any $x\notin\Gamma$, the function $F$ is continuous in the complement $\RR^2\setminus \Gamma$.
+
+It remains to check the case $p_\infty\in\Gamma$.
+Furthermore, if $p_n\in \Gamma$ for all large $n$, then the statement follows from the continuity of $f$.
+Therefore, passing to a subsequence, we can assume that $p_n\notin \Gamma$ for any $n$.
+
+Let $q_n,s_n\in\Gamma$ be points that minimize $|p_n-q_n|$ and $f(s_n)\cdot |p_n-s_n|$, respectively;
+so
+\[
+\begin{aligned}
+a(p_n)&=|p_n-q_n|,
+\\
+b(p_n)&=f(s_n)\cdot |p_n-s_n|,
+\\
+F(p_n)&=f(s_n)\cdot \frac{|p_n-q_n|}{|p_n-s_n|}.
+\end{aligned}
+\eqlbl{eq:abF}
+\]
+The existence of $q_n$ and $s_n$ follows since $\dist_x$ and $f$ are continuous on $\Gamma$ and $\Gamma\cap \cBall[x,R]$ is a nonempty compact set for large $R$.
+
+Note that
+\[\tfrac12\cdot|p_n-s_n| \le |p_n-q_n|\le |p_n-p_\infty|;\]
+in particular, $q_n\to p_\infty$, $s_n\to p_\infty$, and $f(s_n)\to f(p_\infty)$ as $n\to\infty$.
+Let
+\[\eps_n=\sup\set{|f(p_\infty)-f(p)|}{p\in \Gamma\cap \cBall(p_\infty,2\cdot |p_n-p_\infty|};\]
+note that $\eps_n\to 0$ as $n\to\infty$ and
+\[1-2\cdot \eps_n\le \frac{|p_n-q_n|}{|p_n-s_n|}\le 1\]
+It follows that $\tfrac{|p_n-q_n|}{|p_n-s_n|}\to1$ as $n\to \infty$, and by \ref{eq:abF}, continuity of $F$ follows.
+
+In general case, let $\hat f=h\circ f\:\Gamma\to (1,2)$ for a homeomorphism $h\:\RR\to (1,2)$.
+If $\hat F\:\RR^2\to (1,2)$ is extension of $\hat f$, then $F\z=h^{-1}\circ \hat F$ is the required extension of $f$.
 \qeds
 
-\section{Van Kampen's lemma}
+\begin{thm}{Exercise}\label{ex:tietze}
+Verify that the proof goes thru for any metric space in which every closed ball is compact.
+Try to modify the proof to make it work in arbitrary metric spaces.
+\end{thm}
+
+
+\section{Around Van Kampen}
 
 \begin{thm}{Lemma}\label{prop:c/sc}
 Let us identify $\RR^2$ with the $(x,y)$-plane in $\RR^3$.
 
 Suppose $\Gamma\subset\RR^2$ is a closed set.
-Theh the complement $X=\RR^2\setminus \Gamma$ is connected if and only if the complement $Y=\RR^3\setminus \Gamma$ is simply-connected.
+Then the complement $X=\RR^2\setminus \Gamma$ is connected if and only if the complement $Y=\RR^3\setminus \Gamma$ is simply-connected.
 \end{thm}
 
 
-This lemma frollows  \ref{ex:van-kamp:s2d} and \ref{ex:vankam-nonconnect}, but we will present a proof here.
+The proof is based on \ref{ex:van-kamp:s2d} and \ref{ex:vankam-nonconnect}.
 
-\parit{Proof.}
 
+\parit{Proof of \ref{prop:c/sc}.}
+Denote by $\Gamma_{-}$ (respectively $\Gamma_{+}$) the sets that include $\Gamma$ and the points below (respectively above) $\Gamma$;
+that is,
+\begin{align*}
+\Gamma_{-}&=\set{(x,y,z)}{(x,y)\in\Gamma\ \text{and}\ z\le 0},
+\\
+\Gamma_{+}&=\set{(x,y,z)}{(x,y)\in\Gamma\ \text{and}\ z\ge 0}.
+\end{align*}
+
+Consider the complements $V=\RR^3\setminus \Gamma_{-}$ and $W=\RR^3\setminus \Gamma_{+}$.
+Note that $X\times \RR= V\cap W$ and $Y=V\cup W$.
+
+The sets $V$ and $W$ are contractible; in particular, simply-connected.
+Indeed, the horizontal plane $z= 1$ is a deformation retract of $V$;
+a retraction can be defined by $(x,y,z)\mapsto (x,y,1)$ and the following homotopy shows that it is homotopic to the identity map:
+\[h_t(x,y,z)=(x,y,(1-t)\cdot z+t).\]
+The plane $z= 1$ is contractible, hence so is $V$.
+Similarly, $W$ is contractible since it has plane $z=-1$ as a deformation retract.
+
+If $X$ is not connected, then so is $X\times \RR= V\cap W$.
+In this case, by \ref{ex:vankam-nonconnect}, we have $\RR^3\setminus \Gamma=V\cup W$ is not simply-connected.
+
+On the other hand if $X$ is connected, then so is $X\times \RR= V\cap W$.
+In this case, by \ref{ex:van-kamp:s2d}, we have $\RR^3\setminus \Gamma=V\cup W$ is simply-connected.
 \qeds
 
-
 \begin{thm}{Exercise}\label{ex:nonclosed-Gamma}
-Observe that \ref{prop:c/sc} above does not hold without assuming that $\Gamma$ is closed.
+Provide an example showing that \ref{prop:c/sc} above does not hold without assuming that $\Gamma$ is closed.
 Spot the place in the proof that breaks in this case.
 \end{thm}
+
+\begin{thm}{Exercise}\label{ex:3-components-Gamma}
+Suppose $\Gamma\subset\RR^2$, $X=\RR^2\setminus \Gamma$, and $Y=\RR^3\setminus \Gamma$ are as in \ref{prop:c/sc}.
+Show that if $X$ has at least 3 connected components, then $\pi_1(Y)\not\cong\ZZ$.
+\end{thm}
+
 
 \section{Klee trick}
 
 \begin{thm}{Proposition}\label{prop:home-gamma-z-axis}
 Suppose $\Gamma\subset\RR^2$ is a closed subset homeomorphic to $\RR$.
-Then there is a homeomorphism $\RR^3\to \RR^3$ that maps $\Gamma$ to the $z$-axis.
+Then there is a homeomorphism $\RR^3\selfmap$ that maps $\Gamma$ to the $z$-axis.
 \end{thm}
 
 The following proof uses the so-called \index{Klee trick}\emph{Klee trick}, which is quite useful in many topological problems.
+The construction actually produces a one-parameter family of homeomorphisms $h_t\:\RR^3\selfmap$
+that starts from the identity map $\id_{\RR^3}$ and ends at the homeomorphism we need.
 
-One can extract more from the proof, namely there is a continous map $(x,t)\mapsto h_t(x)$ from $\RR^3\times[0,1]\to\RR^3$ such that $h_t\:\RR^3\to\RR^3$ is a homeomorphism for any $t\in [0,1]$; furthermore, $_0=\id_{\RR^3}$ and $h_1$ maps $\Gamma$ to the $z$-axis.
-
-\parit{Proof of \ref{prop:home-gamma-z-axis}.}
+\parit{Proof.}
 Let $h\:t\mapsto (a(t),b(t))$ be a homeomorphism $\RR\to \Gamma$.
 Applying \ref{thm:tietze} to $f=h^{-1}$, we get a function $F\:\RR^2\z\to\RR$ such that
 \[F(a(t),b(t))=t\]
 for any $t\in \RR$.
 
 Note that the map
-\[A\:(x,y,z)\mapsto (x,y,z+f(x,y))\] is a homeomorphism.
+\[A\:(x,y,z)\mapsto (x,y,z+F(x,y))\] is a homeomorphism.
 Indeed, this map is continuous and its inverse
-\[A^{-1}\:(x,y,z)\z\mapsto (x,y,z-f(x,y))\]
+\[A^{-1}\:(x,y,z)\z\mapsto (x,y,z-F(x,y))\]
 is continuous as well.
 
 Similarly, the map
@@ -93,10 +164,15 @@ Indeed, $B$ is continuous and it has an inverse
 that is continuous as well.
 
 It follows that the composition $B\circ A\:\RR^3\to\RR^3$ is a homeomorphism.
-Since $f(a(t),b(t))=t$,
+Since $F(a(t),b(t))=t$ for any $t$, we have
 \[B\circ A(a(t),b(t),0)=B(a(t),b(t),t)=(0,0,t).\]
 It follows that $B\circ A$ sends $\Gamma$ to the $z$-axis as required.
 \qeds
+
+\begin{thm}{Exercise}\label{ex:klee[0,1]-1}
+Let $I\subset \RR^2$ be a subset homeomorphic to $[0,1]$.
+Construct a homeomorphism $h\:\RR^3\to \RR^3$ that maps $I$ to a line segment.
+\end{thm}
 
 \section{Separation by a proper curve}
 
@@ -108,59 +184,12 @@ Then $\RR^2\setminus \Gamma$ has at least two connected components.
 Note that the assumption that $\Gamma$ is closed is necessary;
 indeed, a finite open interval $I$ of a line in $\RR^2$ is homeomorphic to $\RR$, but its complement $\RR^2\setminus I$ is connected.
 
-The theorem follows from \ref{prop:c/sc}, \ref{prop:home-gamma-z-axis}, and \ref{ex:z-axis}.
-
-
-\parit{Proof of \ref{prop:c/sc}.}
-Denote by $A$ (respectively $B$) the sets that include $\Gamma$ and the points below (respectively above) $\Gamma$;
-that is,
-\begin{align*}
-A&=\set{(x,y,z)}{(x,y)\in\Gamma\ \text{and}\ z\le 0},
-\\
-B&=\set{(x,y,z)}{(x,y)\in\Gamma\ \text{and}\ z\ge 0}.
-\end{align*}
-Consider their complements $V=\RR^3\setminus A$ and $W=\RR^3\setminus B$.
-Note that $Y=V\cup W$.
-
-The sets $V$ and $W$ are simply-connected.
-Indeed, the horizontal plane $z= 1$ is a deformation retract of $V$;
-a retraction can be defined by $(x,y,z)\mapsto (x,y,1)$ and the following homotopy shows that it is homotopic to the identity map: 
-\[h_t(x,y,z)=(x,y,(1-t)\cdot z+t).\]
-The plane is contractible, in particular simply-connected; therefore so is $V$.
-Similarly, one proves that $W$ is simply-connected.
-
-Since $X$ is an open and connected set in $\RR^2$,
-by \ref{thm:open-connected=path-connected}, $X$ is path-connected.
-Further, note that $V\cap W=X\times \RR$.
-Therefore $V\cap W$ is path-connected as well.
-
-Summarizing, $V$ and $W$ are open simply-connected sets, $Y=V\z\cup W$, and $V\z\cap W$ is path-connected.
-Applying \ref{ex:sc-VuW}, we get that $Y$ is simply-connected.
-\qeds
-
-
-
-
-\begin{thm}{Exercise}\label{ex:z-axis}
-Show that the complement of the $z$-axis in $\RR^3$ is not simply-connected.
-\end{thm}
-
-\begin{thm}{Exercise}\label{ex:jordanI}
-Suppose $I\subset \RR^2$ is a subset homeomorphic to $[0,1]$.
-Show that $\RR^2\setminus I$ is connected.
-\end{thm}
-
-\section{Jordan's theorem}
-
-\begin{thm}{Theorem}
-If $J\subset\mathbb{S}^2$ be a subset homeomorphic to $\mathbb{S}^1$,
-then $\mathbb{S}^2\setminus J$ has at least two connected components.
-\end{thm}
-
-
 \parit{Proof.}
-Remove a point $p$ from $J$ to get a closed line $\Gamma=J\setminus\{p\}$ in $ \mathbb{S}^2\setminus\{p\}\simeq\RR^2$.
-It remains to apply \ref{thm:proper-jordan}.
+Assume $\RR^2\setminus \Gamma$ is connected.
+Then by \ref{prop:c/sc}, $\RR^3\setminus \Gamma$ is simply connected.
+
+On the other hand by \ref{prop:home-gamma-z-axis}, $\RR^3\setminus \Gamma$ is homeomorphic to the complement of $z$-axis in $\RR^3$,
+which is not simply-connected by \ref{prop:c/sc} --- a contradiction.
 \qeds
 
 \begin{thm}{Exercise}\label{ex:connected-complement}
@@ -168,11 +197,47 @@ Let $A$ and $B$ be disjoint closed subsets in $\RR^2$ such that both complements
 Show that $\RR^2\setminus(A\cup B)$ is connected.
 \end{thm}
 
-\section{Comments}
+\begin{thm}{Exercise}\label{ex:jordanI+}
+Suppose $I\subset \RR^2$ is a subset homeomorphic to $[0,1]$.
+Show that $\RR^2\setminus I$ is connected.
+\end{thm}
 
-Jordan's theorem has more exact forms.
-Firsto of all $J\subset\mathbb{S}^2$ be a subset homeomorphic to $\mathbb{S}^1$,
-then $\mathbb{S}^2\setminus J$ has exactly two connected components.
-Moreover there is a homeomorphism $h\:\mathbb{S}^2\to \mathbb{S}^2$ that maps $J$ to the equator of $\SS^2$.
-The last statement is due to
+\begin{thm}{Exercise}\label{ex:proper-jordan3}
+In the assumptions of \ref{thm:proper-jordan}, show that $\RR^2\setminus \Gamma$ has exactly two connected components.
+\end{thm}
+
+\section{Jordan's theorem}
+
+\begin{thm}{Theorem}\label{thm:jourdan}
+If $J\subset\mathbb{S}^2$ is a subset homeomorphic to $\mathbb{S}^1$,
+then $\mathbb{S}^2\setminus J$ has at least two connected components.
+\end{thm}
+
+
+\parit{Proof.}
+Remove a point $p$ from $J$ to get a closed set $\Gamma=J\setminus\{p\}$ homeomorphic to $\RR$ in $\mathbb{S}^2\setminus\{p\}\simeq\RR^2$.
+It remains to apply \ref{thm:proper-jordan}.
+\qeds
+
+Note that applying \ref{ex:proper-jordan3} in the proof of \ref{thm:jourdan}, one gets that
+$\mathbb{S}^2\setminus J$ has exactly two connected components,
+this provides a more exact version of the theorem.
+Furthermore, there is a yet more exact version of the theorem that is due to Arthur Schoenflies;
+it states that there is a homeomorphism $h\:\SS^2\selfmap$ that maps $J$ to the equator;
+in particular, each connected component of $\mathbb{S}^2\setminus J$ is homeomorphic to an open disc.
+
+\begin{thm}{Exercise}\label{ex:klee[0,1]}
+
+\begin{subthm}{ex:klee[0,1]:[0,1]}
+Let $I\subset \SS^2$ be a subset homeomorphic to $[0,1]$.
+Show that $\SS^2\setminus I$ is connected.
+\end{subthm}
+
+\begin{subthm}{ex:klee[0,1]:bry}
+Use part \ref{SHORT.ex:klee[0,1]:[0,1]} to show that if $J\subset \SS^2$ is as in \ref{thm:jourdan}, then $J$ is the boundary of each connected component of $\SS^2\setminus J$.
+\end{subthm}
+\end{thm}
+
+
+
 
