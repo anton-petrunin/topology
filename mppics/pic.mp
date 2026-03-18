@@ -920,6 +920,8 @@ label.top (btex $J_0$ etex, .5[(0,0)*u,(1,1)*u]+(0,2));
 
 endfig;
 
+
+
 beginfig(1260)
 save u,p;
 path p[];
@@ -933,6 +935,45 @@ hatchfill reverse p2--p1-- reverse p3--cycle  withcolor (67, 1mm, -.5bp);
 draw p1;
 draw p2;
 draw p3;
+
+endfig;
+
+beginfig(1265)
+save u,p;
+path p[];
+u:=2.6cm;
+
+p1=(0,0)*u--(1,0)*u--(1,1)*u--(0,1)*u--cycle;
+
+vardef midarrow(expr A,B) =
+  save m,u;
+  pair m,u;
+  m := 0.5[A,B];
+  u := unitvector(B-A);           % direction A -> B
+  draw m-1*u +2*u rotated 90  -- (m + 1*u)--m-1*u +2*u rotated -90;
+enddef;
+
+vardef midarrowtwo(expr A,B) =
+  save m,u;
+  pair m,u;
+  m := 0.5[A,B];
+  u := unitvector(B-A);           % direction A -> B
+  draw m +2*u rotated 90-- (m + 2*u)--m +2*u rotated -90;
+  draw m +2*u rotated 90 -2*u-- (m)--m +2*u rotated -90-2*u;
+enddef;
+
+for i = 1 upto 24:
+draw (i/25,0)*u--(i/25,1)*u penhair withcolor .5;
+endfor;
+
+for i = 1 upto 4:
+draw (0,i/5)*u--(1,i/5)*u penhair withcolor .5;
+endfor;
+
+draw p1;
+midarrow((0,0)*u,(0,1)*u);
+midarrow((1,1)*u,(1,0)*u);
+drawarrow (1.25,.5)*u--(1.5,.5)*u;
 
 endfig;
 
