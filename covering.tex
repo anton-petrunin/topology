@@ -71,20 +71,22 @@ in other words, $w(\tilde V)$ is open.
 \begin{thm}{Exercise}\label{ex:covering-clopen}
 Let $w\:\tilde{\c{Z}}\to\c{Z}$ be a covering map.
 
-\begin{subthm}{ex:covering-clopen:image}
-Show that the image $w(\tilde{\c{Z}})$ is clopen set in $\c{Z}$.
+\begin{subthm}{ex:covering-clopen:point}
+Show that the invers image $w^{-1}\{p\}$ of any one point set $\{p\}$ is a descrete subset in $\tilde{\c{Z}}$.
 \end{subthm}
 
-\begin{subthm}{ex:covering-clopen:surjective}
+
+\begin{subthm}{ex:covering-clopen:image}
+Show that the image $w(\tilde{\c{Z}})$ is clopen set in $\c{Z}$.
 Conclude that, if $\c{Z}$ is connected, and $\tilde{\c{Z}}\ne\emptyset$, then $w$ is surjective.
 \end{subthm}
 
 \end{thm}
 
 Most interesting examples of coverings have connected total space $\tilde{\c{Z}}$ and base $\c{Z}$;
-we will call them \emph{connected coverings}.%
-\footnote{Sometimes coverings are defined to be connected.}
-By \ref{ex:covering-clopen:surjective}, any connected covering is surjective.
+we will call them \emph{connected coverings}.
+By \ref{ex:covering-clopen:image}, any connected covering is surjective.%
+\footnote{Sometimes coverings are defined to be connected or surjective.}
 
 \begin{thm}{Exercise}\label{ex:covering-product}
 Let $v\:\tilde{\c{X}}\to \c{X}$ and $w\:\tilde{\c{Y}}\to \c{Y}$ be two covering maps.
@@ -114,6 +116,62 @@ Assume that an inverse image of some point $z\in \c{Z}$ has exactly $n$ points.
 Show that $w$ is $n$-fold.
 \end{thm}
 
+\section{Figure eight}\label{sec:Figure eight}
+
+\begin{wrapfigure}{o}{27 mm}
+\vskip-1mm
+\centering
+\includegraphics{mppics/pic-1655}
+\end{wrapfigure}
+
+Let us denote by $\c{F}_8$ the \emph{figure eight};
+it is the quotient space of two line segments by the subsets of 4 its ends.
+Formally speaking,
+\[\c{F}_8\simeq([0,1]\cup [2,3])/\{0,1,2,3\}.\]
+From \ref{obs:compact-to-hausdorff}, it follows that $\c{F}_8$ is homeomorphic to the subset shown in the picture.
+
+The following picture shows total spaces of three 2-fold coverings of $\c{F}_8$;
+the paths identified by the covering map are marked by corresponding arrows.
+The first example is the total space of the trivial covering;
+it has two connected components each homeomorphic to $\c{F}_8$.
+\begin{figure}[h!]
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-1660}
+\end{figure}
+
+
+\begin{thm}{Exercise}\label{ex:3-fold(8)}
+The picture shows
+\begin{figure}[h!]
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-1620}
+\end{figure}
+three total spaces of 3-fold covering of $\c{F}_8$.
+Redraw them and mark identified paths by corresponding arrows.
+\end{thm}
+
+
+\begin{wrapfigure}[4]{r}{14 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-1695}
+\end{wrapfigure}
+
+\begin{thm}{Exercise}\label{ex:Theta}
+Let $\Theta$ be the space homeomorphic to the set in the picture;
+it is the union of circle and its diameter with induced topology form the plane.
+Which of the following spaces cover $\Theta$;
+if yes, then label paths identified by the covering map by three types arrows,
+if not, then explain why.
+\begin{figure}[!ht]
+\vskip -0mm
+\centering
+\includegraphics{mppics/pic-1696}
+\vskip -6mm
+\end{figure}
+\end{thm}
 
 \section{Fibered product}\label{sec:Fibered product}
 
@@ -121,7 +179,7 @@ Given two continuous maps $v\:\c{X}\to \c{Z}$ and $w\:\c{Y}\to \c{Z}$, consider 
 \[\c{P}=\set{(a,b)\in \c{X}\times \c{Y}}{v(a)=w(b)}\]
 equipped with the induced topology from $\c{X}\times \c{Y}$.
 Let us define $\tilde v\:\c{P}\z\to\c{Y}$ and $\tilde w\:\c{P}\to\c{X}$ as the restrictions to $\c{P}$ of
-the projections $\c{X}\times \c{Y}\to \c{Y}$ and $\c{X}\times \c{Y}\to \c{X}$.
+the projections $\c{X}\times \c{Y}\z\to \c{Y}$ and $\c{X}\times \c{Y}\to \c{X}$.
 
 {
 
@@ -157,15 +215,49 @@ In this case, $\c{P}=\c{X}\times \c{Y}$ and the maps $\tilde v$ and $\tilde w$ a
 
 }
 
-\begin{thm}{Exercise}\label{ex:pull-back}
-Show that pullback $\tilde v$ of a covering $v$ is a covering; moreover, if $v$ is (a) trivial ob (b) $m$-fold, then so is~$\tilde v$.
-\end{thm}
-
 \begin{thm}{Exercise}
 Let $w\:\c{X}\to \c{Z}$ be a continuous map.
 Assume $V\subset \c{Z}$ is an open set and $\tilde w$ is pullback of $w$ along the inclusion map $V\hookrightarrow\c{Z}$.
 Show that $V$ is evenly covered by $w$ if and only it $\tilde w$ is a trivial covering.
 \end{thm}
+
+\begin{thm}{Exercise}\label{ex:pull-back}
+Show that pullback $\tilde v$ of a covering $v$ is a covering; moreover, if $v$ is (a) trivial ob (b) $m$-fold, then so is~$\tilde v$.
+\end{thm}
+
+{
+
+\begin{wrapfigure}[4]{r}{23 mm}
+\vskip-8mm
+\centering
+\begin{tikzcd}
+\c{P}\arrow[d, "\tilde w"']\arrow[dr, "f"] \arrow[r, "\tilde v"] & \c{Y} \arrow[d, "w"]\\
+\c{X} \arrow[r, "v"'] & \c{Z}
+\end{tikzcd}
+\end{wrapfigure}
+
+\begin{thm}{Exercise}\label{ex:fibered-product(covering)}
+
+\begin{subthm}{ex:fibered-product(covering):general}
+Suppose that in the fibered-product diagram $v$ and $w$ are coveings.
+Show that $f$ is a covering.
+\end{subthm}
+
+
+\begin{subthm}{ex:fibered-product(covering):8}
+The picture shows
+\begin{figure}[h!]
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-1662}
+\end{figure}
+2-fold coverings $v$ and $w$ of figure eight encoded by arrows as in \ref{sec:Figure eight}.
+Draw the space of their firbered product and encode by arrows the covering $f$.
+\end{subthm}
+
+\end{thm}
+
+}
 
 \section{Lifts}
 
@@ -331,6 +423,30 @@ that is, the action $G\acts \c{X}$ is freely discontinuous.
 It remains to apply \ref{prop:freely-discontinuous}.
 \qeds
 
+\begin{wrapfigure}{r}{27 mm}
+\vskip-1mm
+\centering
+\includegraphics{mppics/pic-1655}
+\end{wrapfigure}
+
+\begin{thm}{Exercise}\label{ex:4-fold(8)}
+Recall that $\c{F}_8$ denotes the figure eight shown in the picture.
+Using the arrow notation as in \ref{sec:Figure eight}, draw connected total space of
+
+\begin{subthm}{ex:4-fold(8):Z4}
+a normal $\ZZ_4$-covering of $\c{F}_8$;
+\end{subthm}
+
+\begin{subthm}{ex:4-fold(8):Z2xZ2}
+a normal $\ZZ_2\times \ZZ_2$-covering of $\c{F}_8$;
+\end{subthm}
+
+\begin{subthm}{ex:4-fold(8):nonreg}
+a non-normal 4-fold covering of $\c{F}_8$.
+\end{subthm}
+
+\end{thm}
+
 \section{Monodromy}
 
 Let $w\:\tilde{\c{Z}}\to\c{Z}$ be a normal $G$-covering.
@@ -354,19 +470,19 @@ Therefore $\tilde a*(g_\alpha\circ \tilde b)$ is a lift of $a*b$ that start at $
 It follows that
 \[g_{\alpha\cdot \beta}(p)=\tilde a*(g_\alpha\circ \tilde b)(1)=g_\alpha\circ\tilde b(1)=g_\alpha\circ g_\beta(p).\]
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:monodromy}
 Let $m\:\pi_1(\c{Z},z_0)\to G$ be a monodromy homomorphism of a normal $G$-covering $w\:\tilde{\c{Z}}\to\c{Z}$.
-\begin{subthm}{}
+\begin{subthm}{ex:monodromy:surjective}
 Assume $\tilde{\c{Z}}$ is path-connected.
 Show that $m$ is surjective.
 \end{subthm}
 
-\begin{subthm}{}
+\begin{subthm}{ex:monodromy:isomorphism}
 Assume $\tilde{\c{Z}}$ is simply-connected.
 Show that $m$ is an isomorphism.
 \end{subthm}
 
-\begin{subthm}{}
+\begin{subthm}{ex:monodromy:trivial}
 Assume $w$ is a trivial covering. Show that $m$ is \index{trivial homomorphism}\emph{trivial}; that is it sends the whole fundamental group to the nutral element of $G$.
 \end{subthm}
 
@@ -377,78 +493,49 @@ Construct a finite topological space with fundamental group isomorphic to $\ZZ_2
 \end{thm}
 
 
-\section{Figure eight}\label{sec:Figure eight}
+\section{Klein bottle}
 
-\begin{wrapfigure}{o}{27 mm}
-\vskip-1mm
-\centering
-\includegraphics{mppics/pic-1655}
-\end{wrapfigure}
-
-Let us denote by $\c{F}_8$ the \emph{figure eight};
-it is the quotient space of two line segments by the subsets of 4 its ends.
-Formally speaking,
-\[\c{F}_8\simeq([0,1]\cup [2,3])/\{0,1,2,3\}.\]
-From \ref{obs:compact-to-hausdorff}, it follows that $\c{F}_8$ is homeomorphic to the subset shown in the picture.
-
-The following picture shows total spaces of three 2-fold coverings of $\c{F}_8$;
-the paths identified by the covering map are marked by corresponding arrows.
-The first example is the total space of the trivial covering;
-it has two connected components each homeomorphic to $\c{F}_8$.
-\begin{figure}[h!]
-\vskip-0mm
-\centering
-\includegraphics{mppics/pic-1660}
-\end{figure}
-All these coverings are normal.
-In fact by \ref{ex:2-folded} any 2-fold covering is a normal $\ZZ_2$-covering,
-but one can explicitly construct the corresponding $\ZZ_2$-action on each space.
-
-\begin{thm}{Exercise}\label{ex:3-fold(8)}
-The following picture shows three total spaces of 3-fold covering of $\c{F}_8$.
-\begin{figure}[!ht]
-\centering
-\includegraphics{mppics/pic-1620}
-\end{figure}
-Redraw them and mark identified paths by corresponding arrows.
-Which of these coverings are normal?
-Find the group for each normal covering.
-\end{thm}
-
-\begin{thm}{Exercise}\label{ex:4-fold(8)}
-Using the arrow notation as above, draw connected total space of
-\begin{subthm}{ex:4-fold(8):Z4}
-a normal $\ZZ_4$-covering of $\c{F}_8$;
-\end{subthm}
-
-\begin{subthm}{ex:4-fold(8):Z2xZ2}
-a normal $\ZZ_2\times \ZZ_2$-covering of $\c{F}_8$;
-\end{subthm}
-
-\begin{subthm}{ex:4-fold(8):nonreg}
-a non-normal 4-fold covering of $\c{F}_8$.
-\end{subthm}
-
-\end{thm}
-
-\begin{wrapfigure}[4]{r}{14 mm}
-\vskip-2mm
-\centering
-\includegraphics{mppics/pic-1695}
-\end{wrapfigure}
-
-\begin{thm}{Exercise}\label{ex:Theta}
-Let $\Theta$ be the space homeomorphic to the set in the picture;
-it is the union of circle and its diameter with induced topology form the plane.
-Which of the following spaces cover $\Theta$;
-if yes, then label paths identified by the covering map by three types arrows,
-if not, then explain why.
+Consider the following tesselation of $\RR^2$ into unit squares.
 \begin{figure}[!ht]
 \vskip -0mm
 \centering
-\includegraphics{mppics/pic-1696}
+\includegraphics{mppics/pic-1740}
 \vskip -6mm
 \end{figure}
+Let $G\acts\RR^2$ be the group action that preserves this tesselation and the arrows on the sides of squares.
+Formally speaking, the action includes the motions
+\[(x,y)\mapsto (m+x, n+(-1)^m\cdot y)\]
+for all integers $m$ and $n$.
+
+The quotient space $\RR^2/G$ is called \emph{Klein bottle}.
+\begin{figure}[h!]
+\centering
+\includegraphics{mppics/pic-1743}
+\hskip 4mm
+\includegraphics[angle=90]{asy/klein-bottle}
+\end{figure}
+This space can be also glues from a square $[-1,1]\times[-1,1]$ by the minimal equivalence relation suhc that $(x,-1)\sim (-x,1)$ and $(-1,y)\sim (1,y)$.
+The picture on the right might help to visualize this space, but this is not an embedding of $\c{K}$, and in fact there is embedding of $\c{K}$ in $\RR^3$.
+
+%\begin{figure}[h!]\centering\includegraphics{asy/klein-bottle+}\end{figure}
+
+\begin{thm}{Exercise}
+Let $G\acts \RR^2$ be the described action,
+and let $\c{K}\z=\RR^2/G$ be the Klein bottle.
+
+\begin{subthm}{}
+Apply \ref{ex:monodromy:isomorphism} to show that $\pi_1(\c{K})\cong G$.
+\end{subthm}
+
+\begin{subthm}{}
+Show that $G$ and therefore $\pi_1(\c{K})$ are noncommutative.
+\end{subthm}
+
+
+\begin{subthm}{}
+Construct a 2-fold covering of $\c{K}$ by the torus $\SS^1\times\SS^1$.
+\end{subthm}
+
 \end{thm}
 
 \section{Real projective plane}

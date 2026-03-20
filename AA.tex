@@ -1,3 +1,141 @@
+All these coverings are normal.
+In fact by \ref{ex:2-folded} any 2-fold covering is a normal $\ZZ_2$-covering,
+but one can explicitly construct the corresponding $\ZZ_2$-action on each space.
+
+
+
+\section{Cantor set}\label{sec:cantor-set}
+
+The following example plays an important role topology and analysis.
+
+Consider a sequence of closed sets $C_0\supset C_1\supset\ldots$ in $\RR$ that s defined recucevely: set $C_0=[0,1]$.
+Assume $C_i$ is already defined as a finite union of closed intervals.
+Then $C_{i+1}$ is obtained from $C_i$ by removing from each of its intervals the open middle third.
+The set
+\[
+C=\bigcap_{i=0}^\infty C_i
+\]
+is called the \index{Cantor set}\emph{Cantor set}.
+
+For example,
+\[
+C_1=\left[0,\tfrac13\right]\cup\left[\tfrac23,1\right],
+\]
+and
+\[
+C_2=
+\left[0,\tfrac19\right]\cup
+\left[\tfrac29,\tfrac13\right]\cup
+\left[\tfrac23,\tfrac79\right]\cup
+\left[\tfrac89,1\right].
+\]
+
+Recall that every real number $x\in[0,1]$ can be written in base~$3$ in the form
+\[
+x=(0.a_1a_2a_3\dots)_3
+\df
+\sum_{n=1}^\infty \frac{a_n}{3^n},
+\qquad
+a_n\in\{0,1,2\}.
+\]
+It is easy to see that $C_i$ is the closure of the set of all numbers $x\in[0,1]$ whose first $i$ digits in the ternary expansion contain no~$1$.
+Consequently, $C$ can be described as the set of all numbers in $[0,1]$ that admit a ternary expansion with no~$1$'s at all:
+\[
+C=
+\set{x\in[0,1]}{\text{$x$ admits a ternary expansion with digits only $0$ and $2$}}.
+\]
+The endpoints of the removed intervals may have two ternary expansions, but this causes no problem in the description above.
+
+\begin{thm}{Definition}\label{def:isolated-point}
+Let $A\subset \RR$.
+A point $x\in A$ is called an \index{isolated point}\emph{isolated point} of $A$ if there is an open interval $I\subset \RR$ such that
+\[
+x\in I
+\qquad\text{and}\qquad
+I\cap A=\set{x}.
+\]
+\end{thm}
+
+\begin{thm}{Proposition}\label{prop:cantor-set-basic}
+The Cantor set $C$ has the following properties.
+
+\begin{subthm}{prop:cantor-set-basic:closed}
+The set $C$ is closed.
+\end{subthm}
+
+\begin{subthm}{prop:cantor-set-basic:no-isolated}
+The set $C$ has no isolated points.
+\end{subthm}
+
+\begin{subthm}{prop:cantor-set-basic:nowhere-dense}
+The set $C$ is nowhere dense in $\RR$;
+that is, every nonempty open interval in $\RR$ contains a nonempty open subinterval disjoint from~$C$.
+\end{subthm}
+
+\end{thm}
+
+\parit{Proof.}
+Each $C_i$ is a finite union of closed intervals; therefore $C_i$ is closed.
+Since $C=\cap_i C_i$, the set $C$ is closed as an intersection of closed sets.
+
+Fix a point $x\in C$ and let $\eps>0$.
+Choose $i$ so large that $3^{-i}<\eps$.
+The point $x$ lies in one of the closed intervals forming $C_i$, and the other endpoint of this interval belongs to $C$ and lies at distance at most $3^{-i}<\eps$ from~$x$.
+Hence $x$ is not isolated.
+
+It remains to prove \ref{SHORT.prop:cantor-set-basic:nowhere-dense}.
+Let $(a,b)$ be a nonempty open interval.
+Choose $i$ so large that $3^{-i}<b-a$.
+Then one can find an integer $k$ such that
+\[
+\left[\frac{k}{3^i},\frac{k+1}{3^i}\right]\subset (a,b).
+\]
+The middle third
+\[
+\left(\frac{3k+1}{3^{i+1}},\frac{3k+2}{3^{i+1}}\right)
+\]
+of this interval is disjoint from $C$ by construction.
+Therefore $(a,b)$ contains a nonempty open interval disjoint from~$C$.
+\qeds
+
+\begin{thm}{Remark}\label{rem:open-vs-closed-in-R}
+Open subsets of\/ $\RR$ are comparatively simple:
+every open set in\/ $\RR$ can be written as a union of pairwise disjoint open intervals.
+The Cantor set shows that closed subsets of\/ $\RR$ can be substantially more complicated.
+Indeed, $C$ is closed, but it is not a union of intervals; moreover, it has no isolated points and still contains no nonempty open interval.
+\end{thm}
+
+Historically, Georg Cantor introduced this set in 1883.
+It arose in connection with his work on uniqueness questions for trigonometric series, and it quickly became a basic example of a closed set with no isolated points and yet containing no interval.
+In modern language, the Cantor set is a closed nowhere dense subset of~$\RR$ with no isolated points.
+
+\begin{thm}{Exercise}\label{ex:cantor-uncountable}
+Show that the Cantor set is uncountable.
+
+\textit{Hint:}
+given a sequence $(b_n)$ with $b_n\in\{0,2\}$, consider the real number
+\[
+x=\sum_{n=1}^\infty \frac{b_n}{3^n}.
+\]
+\end{thm}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \parbf{\ref{ex:sc-VuW}.}
 Consider a loop $\gamma$ with the base point $p_0\in V\cap W$.
 Show that there is a partition $0=t_0<t_1<\ldots<t_n=1$ such that the arc $\gamma|_{[t_{i-1},t_i]}$ lies in $V$ or in $W$ for each $i$.

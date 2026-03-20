@@ -174,9 +174,15 @@ in particular, there are noncontractible path-connected spaces.
 Applying linear homotopy, one can see that any convex subset of the Euclidean space is contractible.
 This is a good source of contractible spaces.
 
-\begin{thm}{Exercise}\label{ex:retract-contractible}
-Show that a retract of a contractible space is contractible.
+\begin{thm}{Proposition}\label{ex:retract-contractible}
+A retract of a contractible space is contractible.
 \end{thm}
+
+\parit{Proof.}
+Let $r\:\c{X}\to A\subset \c{X}$ be a retraction
+and let $h_t\:\c{X}\to \c{X}$ be a homotopy from the identity map to a constant map.
+Observe that $r\circ h_t$ is a homotopy from the identity map $A\to A$ to a constant map.
+\qeds
 
 \begin{thm}{Exercise}\label{ex:contractible}
 Let $\c{X}$ be a contractible space.
@@ -257,8 +263,6 @@ where $\sim$ is the minimal equivalence relation
 \end{figure}
 such that $(-1,t)\sim(1,-t)$.
 Applying \ref{obs:compact-to-hausdorff}, one can show that $\c{M}$ is homeomorphic to the band shown in the picture.
-
-
 
 \begin{thm}{Exercise}\label{ex:mobius-cylinder}
 Show that the Möbius is homotopy equivalent to the cylinder $\SS^1\times[0,1]$.

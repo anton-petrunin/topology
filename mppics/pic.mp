@@ -494,6 +494,35 @@ draw p0 shifted (2*z1) penhair;
 
 endfig;
 
+beginfig(365)
+save u,p,k,a,n;
+path p[];
+picture k[];
+u:=.2cm;
+a:=10cm;
+n:=7;
+
+p0=(0,0)--(a,0)--(a,u)--(0,u)--cycle;
+
+k0=image(fill p0);
+k1=image(draw k0 xscaled 1/3 shifted ((0,-2*u)); draw k0 xscaled 1/3 shifted ((2/3)*(a,0)+ (0,-2*u)));
+k2=image(draw k1 xscaled 1/3 shifted ((0,-2*u)); draw k1 xscaled 1/3 shifted ((2/3)*(a,0)+ (0,-2*u)));
+k3=image(draw k2 xscaled 1/3 shifted ((0,-2*u)); draw k2 xscaled 1/3 shifted ((2/3)*(a,0)+ (0,-2*u)));
+k4=image(draw k3 xscaled 1/3 shifted ((0,-2*u)); draw k3 xscaled 1/3 shifted ((2/3)*(a,0)+ (0,-2*u)));
+k5=image(draw k4 xscaled 1/3 shifted ((0,-2*u)); draw k4 xscaled 1/3 shifted ((2/3)*(a,0)+ (0,-2*u)));
+k6=image(draw k5 xscaled 1/3 shifted ((0,-2*u)); draw k5 xscaled 1/3 shifted ((2/3)*(a,0)+ (0,-2*u)));
+k7=image(draw k6 xscaled 1/3 shifted ((0,-2*u)); draw k6 xscaled 1/3 shifted ((2/3)*(a,0)+ (0,-2*u)));
+
+draw k0;
+draw k1;
+draw k2;
+draw k3;
+draw k4;
+draw k5;
+
+
+endfig;
+
 beginfig(405)
 save u,p,a;
 path p[];
@@ -1189,7 +1218,7 @@ endfig;
 beginfig(1620)
 save u,p;
 path p[];
-u:=1cm;
+u:=.7cm;
 
 z.a0=(0,1)*u;
 z.b0=(0,2)*u;
@@ -1222,6 +1251,8 @@ p1=(1,0)*u..{up}(2,0)*u..(1,0)*u..(0,0)*u{up}..cycle;
 draw p1;
 
 endfig;
+
+
 
 beginfig(1660)
 save u,p;
@@ -1294,6 +1325,57 @@ midarrowtwopath(subpath (4,6) of p4 shifted z.shift3);
 label (btex $1$ etex, z.shift0);
 label (btex $2$ etex, z.shift2);
 label (btex $3$ etex, z.shift3);
+endfig;
+
+beginfig(1662)
+save u,p;
+path p[];
+u:=1cm;
+
+z.shift3=(5,0)*u;
+
+p4=(-1,0)*u{(1,-1)}..(1,0)*u{(1,1)}..(2,0)*u{down}..(1,0)*u{(-1,1)}..(-1,0)*u{(-1,-1)}..(-2,0)*u{up}..cycle;
+
+
+vardef midarrowpath(expr p) =
+  save t, m, v;
+  numeric t;
+  pair m, v;
+
+  t := arctime ((arclength p)/2) of p;  % <-- FIXED
+  m := point t of p;
+  v := unitvector(direction t of p);
+
+  draw (m - 1*v + 2*v rotated  90) -- (m + 1*v) -- (m - 1*v + 2*v rotated -90);
+enddef;
+
+vardef midarrowtwopath(expr p) =
+  save t, m, v;
+  numeric t;
+  pair m, v;
+
+  t := arctime ((arclength p)/2) of p;  % <-- FIXED
+  m := point t of p;
+  v := unitvector(direction t of p);
+
+  draw (m + 2*v rotated  90) -- (m + 2*v) -- (m + 2*v rotated -90);
+  draw (m + 2*v rotated  90 - 2*v) -- m -- (m + 2*v rotated -90 - 2*v);
+enddef;
+
+draw p4;
+
+midarrowtwopath(subpath (0,1) of p4 );
+midarrowpath(subpath (1,3) of p4 );
+midarrowtwopath(subpath (3,4) of p4 );
+midarrowpath(subpath (4,6) of p4);
+
+draw p4 shifted z.shift3;
+
+midarrowpath(subpath (0,1) of p4 shifted z.shift3);
+midarrowtwopath(subpath (1,3) of p4 shifted z.shift3);
+midarrowpath(subpath (3,4) of p4 shifted z.shift3);
+midarrowtwopath(subpath (4,6) of p4 shifted z.shift3);
+
 endfig;
 
 beginfig(1665)
@@ -1504,6 +1586,106 @@ endfor
 
 endfig;
 
+beginfig(1740)
+save u,p,m,n;
+path p[];
+u:=1cm;
+m:=4;
+n:=3;
+
+for i=0 step 1 until m:
+draw (i,-.3)*u--(i,n+.3)*u;
+endfor
+
+for j=0 step 1 until n:
+draw (-.3,j)*u--(m+.3,j)*u;
+endfor
+
+vardef midarrowpath(expr p) =
+  save t, m, v;
+  numeric t;
+  pair m, v;
+
+  t := arctime ((arclength p)/2) of p;  % <-- FIXED
+  m := point t of p;
+  v := unitvector(direction t of p);
+
+  draw (m - 1*v + 2*v rotated  90) -- (m + 1*v) -- (m - 1*v + 2*v rotated -90);
+enddef;
+
+vardef midarrowtwopath(expr p) =
+  save t, m, v;
+  numeric t;
+  pair m, v;
+
+  t := arctime ((arclength p)/2) of p;  % <-- FIXED
+  m := point t of p;
+  v := unitvector(direction t of p);
+
+  draw (m + 2*v rotated  90) -- (m + 2*v) -- (m + 2*v rotated -90);
+  draw (m + 2*v rotated  90 - 2*v) -- m -- (m + 2*v rotated -90 - 2*v);
+enddef;
+
+for i=0 step 1 until m-1:
+for j=0 step 1 until n:
+midarrowpath((i,j)*u--(i+1,j)*u);
+endfor
+endfor
+
+for i=0 step 2 until m:
+for j=0 step 1 until n-1:
+midarrowtwopath((i,j)*u--(i,j+1)*u);
+endfor
+endfor
+
+for i=1 step 2 until m:
+for j=0 step 1 until n-1:
+midarrowtwopath((i,j+1)*u--(i,j)*u);
+endfor
+endfor
+
+endfig;
+
+beginfig(1743)
+save u,p;
+path p[];
+u:=3cm;
+
+p1=(0,0)*u--(1,0)*u--(1,1)*u--(0,1)*u--cycle;
+
+vardef midarrow(expr A,B) =
+  save m,u;
+  pair m,u;
+  m := 0.5[A,B];
+  u := unitvector(B-A);           % direction A -> B
+  draw m-1*u +2*u rotated 90  -- (m + 1*u)--m-1*u +2*u rotated -90;
+enddef;
+
+vardef midarrowtwo(expr A,B) =
+  save m,u;
+  pair m,u;
+  m := 0.5[A,B];
+  u := unitvector(B-A);           % direction A -> B
+  draw m +2*u rotated 90-- (m + 2*u)--m +2*u rotated -90;
+  draw m +2*u rotated 90 -2*u-- (m)--m +2*u rotated -90-2*u;
+enddef;
+
+for i = 1 upto 39:
+draw (i/40,0)*u--(i/40,1)*u penhair withcolor .5;
+endfor;
+
+for i = 1 upto 39:
+draw (0,i/40)*u--(1,i/40)*u penhair withcolor .5;
+endfor;
+
+draw p1;
+midarrowtwo((0,0)*u,(0,1)*u);
+midarrowtwo((1,1)*u,(1,0)*u);
+midarrow((0,0)*u,(1,0)*u);
+midarrow((0,1)*u,(1,1)*u);
+drawarrow (1.25,.5)*u--(1.5,.5)*u;
+
+endfig;
 
 beginfig(1920)
 save u,p,n;

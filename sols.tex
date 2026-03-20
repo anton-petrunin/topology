@@ -358,7 +358,7 @@ For the second part, try to choose a subset $A$ in $\RR$ so that it meets the fo
 Apply the definitions of boundary and closed set.
 
 \parbf{\ref{ex:3=bry}.}
-Read about the Cantor set and think.
+Read about the Cantor set (\ref{sec:Cantor set}) and think.
 
 \parbf{\ref{ex:rel-int/cl}.}
 Spell the definitions.
@@ -388,6 +388,14 @@ Apply \ref{prop:cont-closed} again.
 
 \parit{\ref{SHORT.ex:u-continuous:none}.}
 Consider function $f$ that is constant on disjint sets $A$ and $B$ such that $\bar A\cap B\ne\emptyset$.
+
+\parbf{\ref{ex:Cantor}.}
+Use induction to show that $\c{C}_n$ is the set of reals $x\in [0,1]$ that can be written in base~$3$ without $1$ in the first $n$ digits.
+
+For the second part, show that every $x\in \c{C}$ can be uniquely written in base~$3$ without using digit 1.
+(Note that $(0.0222\ldots)_3=(0.1)_3$, so in general there is no uniqueness.)
+Use the last statement to construct a bijection from $\c{C}$ to $\Power(\NN)$, which is the set of all subsets of the set of positive integers $\NN$.
+By Cantor's theorem, $\Power(\NN)$ has greater cardinality than $\NN$.
 
 \parbf{\ref{ex:bry-nbhd}.}
 Let $A$ be a subset of a topological space $\c{X}$.
@@ -996,8 +1004,8 @@ Show that the one-point set $\{0\}$ is a connected component in $A$ and it is no
 Apply  \ref{SHORT.ex:nonopen-connected-component:closed}.
 
 \parit{Comment.}
-The Cantor set $K$ gives a more interesting example in \ref{SHORT.ex:nonopen-connected-component:finite}.
-Each connected component of $K$ is a one-point set, and such sets are not open in $K$.
+The Cantor set $\c{C}$ (see \ref{sec:Cantor set}) gives a more interesting example in \ref{SHORT.ex:nonopen-connected-component:finite}.
+Each connected component of $\c{C}$ is a one-point set, but $\c{C}$ does not have isolated points.
 
 \parbf{\ref{ex:quasi-component}.}
 Denote by $Q_x$ the intersection of all clopen sets containing $x$.
@@ -1014,14 +1022,6 @@ declare any subset in $\ZZ$ and any complement of a finite set to be open.
 \parit{Comment.}
 The set $Q_x$ is called the \index{quasi-component}\emph{quasi-component} of $x$;
 note that $y\in Q_x$ if and only if $f(x)=f(y)$ for any continuous map $f$ from $\c{X}$ to the discrete two-point space.
-
-\parbf{\ref{ex:R-open}.}
-Show and use that each connected component of an open set in $\RR$ is an open interval.
-Note that any open interval contains a rational number, use that the set of rational numbers is countable.
-
-\parit{Comment.}
-Observe that the Cantor set (which is a closed set) does not contain isolated points and intervals;
-so, in some sense, closed sets are more complicated than open.
 
 \parbf{\ref{ex:R2neR}.}
 Show that $\RR^2$ has no cut points, but $\RR$ has.
@@ -1182,10 +1182,6 @@ Assume that $F$ is a retract of the square.
 Show that in this case $J_\infty$ is a deformation retract of $F$;
 the latter contradicts \ref{SHORT.ex:retract-strong-weak:weak}.
 
-\parbf{\ref{ex:retract-contractible}.}
-Let $r\:\c{X}\to A\subset \c{X}$ be a retraction
-and $h_t\:\c{X}\to \c{X}$ be a homotopy from the identity map to a constant map.
-Show and use that $r\circ h_t$ is a homotopy from the identity map $A\to A$ to a constant map.
 
 \parbf{\ref{ex:contractible}}.
 Let $h_t\:\c{X}\to \c{X}$ be a homotopy from the identity map to a constant map,
