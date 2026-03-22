@@ -13,7 +13,44 @@ The fundamental group of the circle $\mathbb{S}^1$ is isomorphic to the additive
 
 The proof is done in several steps.
 Given a loop $a\:[0,1]\to \mathbb{S}^1$, denote by $\deg a$ the number of times it goes around $\mathbb{S}^1$ counterclockwise (each clockwise turn is counted with minus).
-In the following sections we will define degree formally, prove that it depends only on the homotopy class of the loop and then show that $\deg\:\pi_1(\SS^1)\to\ZZ$ is an isomorphism.
+In the following sections we will define degree formally, prove that it depends only on the homotopy class of the loop and then show that $\deg\:\pi_1 \SS^1 \to\ZZ$ is an isomorphism.
+
+Let us give one application of the theorem before proving it.
+
+\begin{thm}{Brouwer fixed point theorem in the plane}
+\label{cor:brouwer-D2}
+Any continuous map $f\:\DD^2\to\DD^2$ has a fixed point.
+\end{thm}
+
+
+
+\parit{Proof.}
+Arguing by contradiction, assume $x\z\neq f(x)$ for all $x\in\DD^2$.
+Given $x\in\DD^2$ consider the half-line $H$ from $f(x)$ to $x$.%
+\footnote{Remember that $H$ goes backwards, from $f(x)$ to $x$, not the other way around.}
+
+{
+
+\begin{wrapfigure}{o}{35 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-1515}
+\end{wrapfigure}
+
+The half-line $H$ intersects $\SS^1=\partial \DD^2$ at a single point; denote it by $h(x)$.
+Note that the map $h\:\DD^2\to\SS^1$ is continuous and $h(x)=x$ if $x\in\SS^1$;
+that is, $h$ defines a retraction $\DD^2\z\to \SS^1$.
+
+Note that both spaces $\SS^1$ and $\DD^2$ are path-connected.
+By \ref{thm:pi1(S1)}, $\SS^1$ is not simply-connected.
+By \ref{ex:retract*:r}, the same holds for $\DD^2$.
+The latter contradicts \ref{ex:contractible=>sc}
+\qeds
+
+}
+
+
+
 
 \begin{thm}{Exercise}\label{ex:S1}
 Apply the theorem to show the following.
@@ -22,9 +59,6 @@ Apply the theorem to show the following.
 The space $\RR^3$ is not homeomorphic to the plane $\RR^2$.
 \end{subthm}
 
-\begin{subthm}{ex:D-->S}
-The circle $\SS^1=\partial \DD^2$ is not a retract of the disc $\DD^2$.
-\end{subthm}
 
 \begin{subthm}{ex:bry->bry}
 Given $x\in\DD^2$ the complement $\DD^2\setminus\{x\}$ is simply-connected if and only if $x\in \SS^1=\partial \DD^2$.
@@ -37,43 +71,17 @@ The complement of any finite nonempty set $F\subset\RR^2$ is not contractible.
 
 \end{thm}
 
-Part \ref{SHORT.ex:D-->S} in the last exercise has the following application.
 
-\begin{thm}{Brouwer fixed point theorem in the plane}
-\label{cor:brouwer-D2}
-Any continuous map $f\:\DD^2\to\DD^2$ has a fixed point.
-\end{thm}
-
-{
-
-\begin{wrapfigure}{r}{35 mm}
-\vskip-6mm
-\centering
-\includegraphics{mppics/pic-1515}
-\end{wrapfigure}
-
-\parit{Proof.}
-Arguing by contradiction, assume $x\z\neq f(x)$ for all $x\in\DD^2$.
-Given $x\in\DD^2$ consider the half-line $H$ from $f(x)$ to $x$.%
-\footnote{Remember that $H$ goes backwards, from $f(x)$ to $x$, not the other way around.}
-
-The half-line $H$ intersects $\SS^1=\partial \DD^2$ at a single point; denote it by $h(x)$.
-Note that the map $h\:\DD^2\to\SS^1$ is continuous and $h(x)=x$ if $x\in\SS^1$;
-that is, $h$ defines a retraction $\DD^2\z\to \SS^1$.
-The latter contradicts \ref{ex:D-->S}.
-\qeds
-
-}
+\begin{thm}{Advanced exercise}\label{ex:KK}
+Consider two plane sets $K_1$ and $K_2$, shown in the picture.
 
 \begin{wrapfigure}{r}{50 mm}
-\vskip-0mm
+\vskip-3mm
 \centering
 \includegraphics{mppics/pic-1405}
 \end{wrapfigure}
 
-\begin{thm}{Advanced exercise}\label{ex:KK}
-Consider two sets $K_1$ and $K_2$ in the plane, shown in the picture.
-Each one is a closed annulus with two attached line segments.
+Each set is a closed annulus with two attached line segments.
 In $K_1$ one segment is attached from the inside and another from the outside;
 in $K_2$ both segments are attached from the outside.
 
@@ -99,7 +107,7 @@ Show that $K_1 \times[0,1]\simeq K_2 \times[0,1]$.
 Let us identify $\RR^2$ with the complex plane $\CC$;
 namely, we will encode a point $(x,y)\in\RR^2$ by the complex number $z=x+i\cdot y$; here $i$ denotes the imaginary unit.
 In particular,
-\[\SS^1=\set{z=x+i\cdot y\in \CC}{|z|^2=x^2+y^2=1}.\]
+\[\SS^1=\set{z=x+i\cdot y\in \CC}{|z|\df\sqrt{x^2+y^2}=1}.\]
 
 Consider the wrapping map $w\:\RR\to \mathbb{S}^1\subset \CC$ defined by
 \[w\:x\mapsto \exp(2\cdot\pi\cdot i\cdot x)=\cos(2\cdot\pi\cdot x)+i\cdot\sin(2\cdot\pi\cdot x).\]
@@ -117,7 +125,7 @@ Consider the wrapping map $w\:\RR\to \mathbb{S}^1\subset \CC$ defined by
 Let $a\:\c{X}\to \SS^1$ be a continuous map.
 A continuous map $\tilde a\:\c{X}\to \RR$ will be called a \index{lift}\emph{lift} of $a$ if $a=w\circ \tilde a$.
 In other words if the diagram \index{commutative diagram}\emph{commutes}, which means that following directed paths in the diagram with the same start and endpoints lead to the same result.
-(Even in this simple case, using a commutative diagram is helpful, and later on you simply can't do without them.)
+%(Even in this simple case, using a commutative diagram is helpful, and later on you simply can't do without them.)
 
 
 
@@ -156,14 +164,15 @@ Note that $\SS^1=W_1\cup W_2$.
 Therefore,
 \[[0,1]=a_0^{-1}(W_1)\z\cup a_0^{-1}(W_2).\]
 
-Let $\eps>0$ be the Lebesgue number of this covering; see \ref{prop:lebesgue-number}.
+The open sets $a_0^{-1}(W_1)$ and $a_0^{-1}(W_2)$ cover $[0,1]$;
+let $\eps>0$ be the Lebesgue number (see \ref{prop:lebesgue-number}).
 Consider a partition $0=t_0<t_1<\dots<t_n=1$ of $[0,1]$ into equal intervals shorter than $\eps$.
 Note that $a_0([t_i,t_{i+1}])\subset W_1$ or  $a_0([t_i,t_{i+1}])\subset W_2$ for each $i$.
 
-By \ref{lem:covering}, we can lift $a_0|_{[t_0,t_1]}$ to $\tilde a_0 \:[t_0,t_1]\to \RR$ such that $\tilde a_0(0)=x_0$; let $x_1=\tilde a_0(t_1)$.
+By \ref{lem:covering}, we can lift $a_0|_{[t_0,t_1]}$ to $\tilde a_0 \:[t_0,t_1]\to \RR$ such that $\tilde a_0(0)\z=x_0$; let $x_1=\tilde a_0(t_1)$.
 By the same argument, we can extend $\tilde a_0$ to $[t_0,t_2]$ via lift of $a_0|_{[t_1,t_2]}$ such that $\tilde a_0(t_1)=x_1$.
 The continuity of $\tilde a_0$ follows from \ref{ex:u-continuous:closed}.
-Repeating this argument finitely many times produces a lift of $a_0$, and it is unique by construction.
+Repeating this argument $n$ times gives us a lift of $a_0$, and it is unique by construction.
 
 
 \begin{wrapfigure}{r}{30 mm}
@@ -173,19 +182,20 @@ Repeating this argument finitely many times produces a lift of $a_0$, and it is 
 \end{wrapfigure}
 
 The proof of the last statement is similar.
-Choose a homotopy $F\:[0,1]\times [0,1]\to\SS^1$ from $a_0$ to $a_1$.
-Applying \ref{prop:lebesgue-number} again, we can subdivide $[0,1]\times [0,1]$ into small squares by horizontal and vertical lines so that $F$ maps each small square in $W_1$ or in $W_2$.
-Then we can build the lift $\tilde F$ square by square, from bottom up in the order shown in the picture.
+Choose a homotopy $H\:[0,1]\times [0,1]\to\SS^1$ from $a_0$ to $a_1$.
+Applying \ref{prop:lebesgue-number} again, we can subdivide $[0,1]\times [0,1]$ into small squares by horizontal and vertical lines so that $H$ maps each small square in $W_1$ or in $W_2$.
+Then we can build the lift $\tilde H$ square by square, from bottom up in the order shown in the picture.
 
-When we extend $\tilde F$ over a small square $\square$ the value of $\tilde F$ is already defined at its lower left corner, say $v$.
+When we extend $\tilde H$ over a small square $\square$ the value of $\tilde H$ is already defined at its lower left corner, say $v$.
 So we can apply \ref{lem:covering}.
-The part of $\square$ on which $\tilde F$ was already defined is one or two sides adjacent to $v$.
+The part of $\square$ on which $\tilde H$ was already defined is one or two sides adjacent to $v$.
 In both cases this set is connected and by \ref{lem:covering} the extension agrees with the already constructed part.
-Again, the continuity of $\tilde F$ follows from \ref{ex:u-continuous:closed}.
+Again, the continuity of $\tilde H$ follows from \ref{ex:u-continuous:closed}.
 
-It remains to show that for the constructed lift $\tilde a_\tau(t)\df \tilde F(\tau,t)$ the point $\tilde a_\tau(1)$ is constant, so $\tilde a_\tau$ is a true homotopy of paths (not just a free homotopy).
+It remains to show that for the constructed lift $\tilde a_\tau(t)\df \tilde H(t,\tau)$ the point $\tilde a_\tau(1)$ is constant, so $\tilde a_\tau$ is a true homotopy of paths (not just a free homotopy).
 Observe that $w\circ \tilde a_\tau(1)=a_\tau(1)$ which is a constant point.
-Therefore the continuous function $\tau\mapsto \tilde a_\tau(1)-\tilde a_0(1)$ takes integer values, and hence a constant function; since $0\mapsto 0$, we have $\tau\mapsto 0$ for any $\tau$, hence the last statement follows.
+Therefore the continuous function $\tau\mapsto \tilde a_\tau(1)-\tilde a_0(1)$ takes integer values, and hence it must be a constant function.
+Since $0\mapsto 0$, we have $\tau\mapsto 0$ for any $\tau$; hence the last statement follows.
 \qeds
 
 \begin{thm}{Exercise}\label{ex:missed-point}
@@ -218,7 +228,7 @@ and let $\tilde a_0$ and $\tilde a_1$ be their lifts to $\RR$ based at $0$.
 By \ref{prop:lifting},
 \[\deg a_0=\tilde a_0(1)=\tilde a_1(1)=\deg a_1.\]
 It follows that the degree depends only on the homotopy class of a loop.
-In other words, we have a well-defined map $[a]\mapsto \deg a$ from $\pi_1(\SS^1,1)\to \ZZ$.
+In other words, $[a]\mapsto \deg a$ is a well defined map $\pi_1(\SS^1,1)\to \ZZ$.
 
 Choose a pair of loops $a$ and $b$ based at $1$ in $\SS^1$.
 Let $\tilde a$ and $\tilde b$ be their lifts such that $\tilde a(0)=\tilde b(0)=0$.
@@ -227,16 +237,16 @@ Therefore $\tilde a*\tilde b_a$ is a lift of $a*b$ that starts at $0$.
 Hence
 \[\deg (a*b)=(\tilde a*\tilde b_a)(1)=\tilde b_a(1)=\deg a+\deg b\]
 for any two loops $a$ and $b$.
-Since $[a]\cdot [b]=[a*b]$, we proved that degree defines a homomorphism $\deg\:\pi_1(\SS^1,1)\cong\ZZ$.
+Since $[a]\cdot [b]=[a*b]$, we proved that $\deg\:\pi_1(\SS^1,1)\to\ZZ$ is a homomorphism.
 
-Surjectivity of $\deg\:\pi_1(\SS^1,1)\cong\ZZ$ follows since the loop $a_n\:t\z\mapsto w(n\cdot t)$ has degree $n$ for any $n\in\ZZ$.
+Surjectivity of $\deg\:\pi_1(\SS^1,1)\to\ZZ$ follows since the loop $a_n\:t\z\mapsto w(n\cdot t)$ has degree $n$ for any $n\in\ZZ$.
 
 Let $a$ and $b$ be two loops in $\SS^1$ with base point $1$, and let $\tilde a$ and $\tilde b$ be their lifts such that $\tilde a(0)=\tilde b(0)=0$.
 If $\deg a=\deg b$, then $\tilde a(1)=\tilde b(1)$.
 Therefore there is linear homotopy of paths $\tilde a_\tau$ from $\tilde a$ to $\tilde b$.
 Note that $a_\tau=w\circ \tilde a_\tau$ is a homotopy from $a$ to $b$;
-therefore, $a\sim b$;
-It follows that the homomorphism $\deg\:\pi_1(\SS^1,1)\cong\ZZ$ is injective.
+therefore, $a\sim b$.
+It follows that the homomorphism $\deg\:\pi_1(\SS^1,1)\to\ZZ$ is injective.
 \qeds
 
 \begin{thm}{Exercise}\label{ex:lift(S1)}
@@ -262,7 +272,7 @@ Choose $r\ge 0$, and let
 here $w\:t\mapsto\exp(2\cdot\pi\cdot i\cdot t)$ is the wrapping map.
 If $p$ has no roots, then denominator in \ref{eq:ar} does not vanish;
 therefore the map $(t,r)\mapsto a_r(t)$ is continuous.
-Furthermore, $a_r(0)=a_r(1)=1$, and $|a_r(t)|\equiv 1$, so $a_r$ is a loop in $\SS^1$ based at $1$.
+Furthermore, by \ref{eq:ar} we have $a_r(0)=a_r(1)=1$ and $|a_r(t)|\equiv 1$; so $a_r$ is a loop in $\SS^1$ based at $1$.
 
 Observe that $a_0$ is a constant loop and $a_r\sim a_0$ for any $r$.
 In particular, $\deg a_r=0$ for any $r$.
@@ -279,7 +289,7 @@ In particular $a_r\sim a_\infty$ and $\deg a_r=n$ for any large $r$ --- a contra
 
 \begin{thm}{Exercise}\label{ex:wind}
 Consider a loop $a\:[0,1]\to \CC$ and a point $z\z\notin a([0,1])$.
-Let \index{wind@$\wind_a(z)$}$\wind_a(z)\df\deg b_z$,
+The winding number of $a$ around $z$ is defined as \index{wind@$\wind_a(z)$}$\wind_a(z)\df\deg b_z$,
 where $b_z(t)\df\frac{(a(t)-z)\cdot|a(0)-z|}{|a(t)-z|\cdot(a(0)-z)}$.
 
 \begin{subthm}{ex:wind:constant}
@@ -287,9 +297,13 @@ Show the function $\wind_a$ is constant in every connected component of $\CC\z\s
 \end{subthm}
 
 \begin{subthm}{ex:wind:7}
-Draw a path $a$ and mark a point $z$ such that $\wind_a(z)\z=7$.
-\end{subthm}
+Redraw the following path and write its winding number in each connected component of the complement.
+\begin{figure}[!ht]
+\centering
+\includegraphics{mppics/pic-1555}
+\end{figure}
 
+\end{subthm}
 
 \end{thm}
 

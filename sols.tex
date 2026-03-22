@@ -1281,7 +1281,7 @@ Subdivide $\SS^2$ into subsets $V$ and $W$ defined by $z>-\tfrac12$ and $z<\tfra
 Observe that $V$ and $W$ are homeomorphic to an open disc and the intersection $V\cap W$ is homeomorphic to the product $\SS^1\times (0,1)$ and apply \ref{SHORT.ex:van-kamp:sc}.
 
 \parit{\ref{SHORT.ex:van-kamp:s2d}.}
-Take a neighborhood of $\SS^2$ as $V$ and a neighborhood $\DD^2$ of $W$ and argue as in \ref{SHORT.ex:van-kamp:s2}.
+Choose a neighborhood $V$ of $\SS^2$ and a neighborhood $W$ of $\DD^2$ and argue as in \ref{SHORT.ex:van-kamp:s2}.
 
 \parit{Comment.}
 Part \ref{SHORT.ex:van-kamp:sc} is a special case of Van Kampen's theorem, which makes possible to calculate the fundamental group of $\c{X}$ in terms of fundamental groups of $V$, $W$, $V\cap W$ and the homomorphisms
@@ -1307,7 +1307,7 @@ The same homotopy $r_\tau\circ a_i$ can be used to show that $i_*$ is an epimorp
 
 
 \parbf{\ref{ex:uphi}}; \ref{SHORT.ex:uphi:uphi} Show and use that
-$f_1\circ a\sim \bar c*(f_0\circ a)*c$ for any loop in $\c{X}$ based at $p$.
+$f_1\circ a\sim \bar c*(f_0\circ a)*c$ for any loop $a$ in $\c{X}$ based at $x_0$.
 
 \parit{\ref{SHORT.ex:uphi:hom-type}.}
 Apply \ref{SHORT.ex:uphi:uphi} for homotopy equivalence $\c{X}\z\to\c{Y}$ and its homotopy inverse.
@@ -1328,9 +1328,6 @@ Suppose there is a homeomorphism $h\:\RR^3\to\RR^2$.
 Choose a point $p\in \RR^3$ and let $q=h(p)$.
 Observe that $\RR^3\setminus\{p\}$ is homeomorphic to $\RR^2\setminus\{q\}$.
 Show that $\pi_1(\RR^3\setminus\{p\})$ is trivial, but $\pi_1(\RR^2\setminus\{q\})$ is not and arrive at a contradiction.
-
-\parit{\ref{SHORT.ex:D-->S}.}
-Apply linear homotopy, \ref{ex:contractible=>sc}, \ref{ex:retract*}, \ref{thm:pi1(S1)}.
 
 \parit{\ref{SHORT.ex:bry->bry}.}
 Apply linear homotopy, \ref{ex:contractible=>sc}, and \ref{thm:pi1(S1)}.
@@ -1361,8 +1358,14 @@ Then $\tilde a\df f\circ a$ is its lift.
 Applying a shift to $f$ we can assume that $\tilde a(0)=0$,
 but then $\deg a=\tilde a(1)=f\circ a(1)=f\circ a(0)=0$ --- a contradiction.
 
-\parbf{\ref{ex:wind}.}
+\parbf{\ref{ex:wind}}; \ref{SHORT.ex:wind:constant}.
 Apply \ref{thm:open-connected=path-connected} and \ref{thm:pi1S1Z}.
+
+\parit{\ref{SHORT.ex:wind:7}.} Observe that the winding number vanish in the unbounded component,
+and when one crosses the curve the winding number increase or decrease by $1$, depending on the direction of the curve at the point of crossing.
+
+\parit{Comment.}
+Observe that if the winding around the point is not zero, then it lies in the image of any continuous map $\DD^2\to\CC$, assuming that the boundary $\SS^1=\partial\DD^2$ maps along the given curve.
 
 \parbf{\ref{ex:covering-clopen}.}
 Apply \ref{thm:covering-open} to show that the image and its complement are open.

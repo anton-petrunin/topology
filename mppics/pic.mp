@@ -1154,7 +1154,7 @@ dOt z.r,z.f,z.x;
 label.lrt (btex $x$ etex, z.x);
 label.rt (btex $f(x)$ etex, z.f);
 label.rt (btex $h(x)$ etex, z.r+(1,0));
-label.bot (btex $H$ etex, 1.4[z.f,z.r]);
+label.top (btex $H$ etex, 1.4[z.f,z.r]+(-2,0));
 
 endfig;
 
@@ -1191,6 +1191,29 @@ draw subpath (2*(n-m),2*(n-m)+.7) of p2  dashed evenly;
 label (btex $\downarrow\! w$ etex, (.5,.7)*u+(3,-5));
 label.rt (btex $\RR$ etex, .5[point 7 of p2,point 9 of p2]);
 label.rt (btex $\SS^1$ etex, point 1 of p1);
+endfig;
+
+beginfig(1555)
+save u,p;
+path p[];
+u:=1.4cm;
+
+
+p0=(4,0)*u{up}..(1,0)*u{down}..(3,0)*u{up}..(0,0)*u{up}..cycle;
+
+draw p0;
+
+drawarrow subpath (0,.3) of p0;
+drawarrow subpath (.3,1) of p0;
+drawarrow subpath (1,1.5) of p0;
+drawarrow subpath (1.5,2.2) of p0;
+drawarrow subpath (2.2,2.5) of p0;
+drawarrow subpath (2.5,3) of p0;
+drawarrow subpath (3,3.4) of p0;
+drawarrow subpath (3.4,3.6) of p0;
+draw subpath (3.5,4) of p0;
+
+
 endfig;
 
 beginfig(1605)

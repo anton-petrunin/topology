@@ -2,7 +2,7 @@
 
 Let $\c{X}$ be a topological space with a chosen basepoint $x_0 \in \c{X}$.
 Fix a point $s_0 \in \SS^1$, and  consider all continuous maps $\SS^1\to \c{X}$ that send $s_0$ to $x_0$.
-Denote by $\pi_1(X,x_0)$ the set of homotopy classes of such maps.
+Denote by $\pi_1(X,x_0)$ the set of homotopy classes$\rel{\{s_0\}}$ of such maps.
 
 In this chapter we will equip $\pi_1(\c{X},x_0)$ with multiplication and show that it makes this set into a group.
 This will justify calling $\pi_1(\c{X},x_0)$ the \textit{fundamental group} of $\c{X}$ with base point $x_0$.
@@ -12,8 +12,8 @@ The fundamental group is the first meaningful construction in algebraic topology
 
 Recall that a path is a continuous map defined on the unit interval $[0,1]$.
 The term \index{homotopy of paths}\emph{homotopy of paths} will be used as a shortcut for \textit{homotopy of paths relative to the ends};
-in the notations of \ref{sec:rel-homotopy}, we have source space $\c{X}=[0,1]$ with two-point subsets $A=\{0,1\}$.
-In the rear case, whet we need to talk about general homotopy of paths (allowing moving its ends) we say \index{free homotopy}\emph{free homotopy of paths}.
+in the notations of \ref{sec:rel-homotopy}, we have the source space $[0,1]$ with a two-point subset $A=\{0,1\}$.
+In the rare case, when we need to talk about general homotopy of paths (allowing the endpoints to move), we say \index{free homotopy}\emph{free homotopy of paths}.
 
 \begin{wrapfigure}{r}{35 mm}
 \vskip-2mm
@@ -22,12 +22,12 @@ In the rear case, whet we need to talk about general homotopy of paths (allowing
 \end{wrapfigure}
 
 More formally, a homotopy of paths is defined by a continuous map $H\:[0,1]\times [0,1]\z\to \c{X}$ such that $H(0,\tau)=p$ and $H(1,\tau)=q$ for some points $p,q$ in the target space $\c{X}$.
-As usual, it is convenient to think that it is a one-parameter family of paths $a_\tau\:[0,1]\to \c{X}$ from $p$ to $q$.
+
+As usual, it is convenient to think that homotopy is a one-parameter family of paths from $p$ to $q$; say $a_\tau\:[0,1]\to \c{X}$, where $a_\tau(t)\df H(t,\tau)$.
 Two paths $b,c\:[0,1]\to \c{X}$ are called {}\emph{homotopic} (briefly $b\sim c$)
 if there is a homotopy $a_\tau\:[0,1]\to \c{X}$ such that $b=a_0$ and $c=a_1$.
 Recall that $\sim$ is an equivalence relation.
-Therefore, we can talk about the equivalence class of a path $a$ that will be called its \index{homotopy class of paths}\emph{homotopy class};
-it will be denoted by~$[a]$.
+Therefore, we can talk about the equivalence class of a path $a$ that will be called its \index{homotopy class of paths}\emph{homotopy class} and denoted by~$[a]$.
 
 
 \section{Technical claims}\label{sec:homotopy-claim}
@@ -92,7 +92,7 @@ $(a*b)*c\sim a*(b*c)$.
 
 \parit{Proof.}
 Each claim is proved by applying \ref{obs:homot-paths};
-each time we rewrite the sides of equation as $d\circ s_0$ and $d\circ s_1$ for appropriate paths $d\:[0,1]\to\c{X}$ and $s_0,s_1\:[0,1]\to[0,1]$ that share the ends.
+each time we rewrite the sides of equation as $d\circ s_0$ and $d\circ s_1$ for appropriate path $d\:[0,1]\to\c{X}$ and a pair of paths $s_0,s_1\:[0,1]\to[0,1]$ that share the ends.
 
 %???PIC
 
@@ -205,14 +205,14 @@ Show that $a=e_p$.
 \section{Fundamental group}
 
 Let $\c{X}$ be a topological space.
-A path $a\:[0,1]\to\c{X}$ is called a \index{loop}\emph{loop} with base at $p\in\c{X}$ if $a(0)=a(1)=p$;
+A path $a\:[0,1]\to\c{X}$ is called a \index{loop}\emph{loop} with base at $x_0\in\c{X}$ if $a(0)=a(1)=x_0$;
 
-Note that if $a$ and $b$ are loops based at $p$, then their products are defined; moreover, $a*b$, $b*a$, $\bar a$, $\bar b$ are also loops based at $p$ as well; see \ref{sec:Operations on paths}.
+Note that if $a$ and $b$ are loops based at $x_0$, then their products are defined; moreover, $a*b$, $b*a$, $\bar a$, $\bar b$ are also loops based at $x_0$ as well; see \ref{sec:Operations on paths}.
 
 
 Recall that homotopy of paths and loops does not move their ends;
 the homotopy class of a loop $a$ will be denoted by $[a]$.
-The multiplication of homotopy classes of loops based at $p$ is defined by
+The multiplication of homotopy classes of loops based at $x_0$ is defined by
 \[[a]\cdot [b]=[a*b];\]
 that is, \textit{the product of homotopy classes of loops $a$ and $b$ is the homotopy class of the product $a*b$.}
 
@@ -221,27 +221,27 @@ that is, if $[a_0]= [a_1]$ and $[b_0]=[b_1]$, then  $[a_0*b_0]=[a_1*b_1]$.
 In other words, if $a_0\sim a_1$ and $b_0\sim b_1$, then $a_0*b_0\sim a_1*b_1$.
 The latter is stated in Claim \ref{clm:product}.
 
-Denote by $\pi_1(\c{X},p)$ the set of all homotopy classes of loops at $p$.
+Denote by $\pi_1(\c{X},x_0)$ the set of all homotopy classes of loops with base at $x_0$.
 
 \begin{thm}{Theorem}
-The set $\pi_1(\c{X},p)$ with the introduced multiplication is a group.
+The set $\pi_1(\c{X},x_0)$ with the introduced multiplication is a group.
 \end{thm}
 
-The group $\pi_1(\c{X},p)$ is called the \index{fundamental group}\emph{fundamental group} of $\c{X}$ with base point $p$.
+The group $\pi_1(\c{X},x_0)$ is called the \index{fundamental group}\emph{fundamental group} of $\c{X}$ with base point $x_0$.
 
 \parit{Proof.}
-Recall that $e_p$ denotes the constant loop at $p$ in $\c{X}$;
-that is, $e_p(t)=p$ for any $t$.
-We will show that the homotopy class $[e_p]$ is the neutral element of $\pi_1(\c{X},p)$
-and $[\bar a]=[a]^{-1}$, where $\bar a$ denotes the time-reversed $a$.
+Recall that $e_{x_0}$ denotes the constant loop at $x_0$ in $\c{X}$;
+that is, $e_{x_0}(t)=x_0$ for any $t$.
+We will show that the homotopy class $[e_{x_0}]$ is the neutral element of $\pi_1(\c{X},x_0)$
+and $[\bar a]=[a]^{-1}$, where $\bar a$ denotes the time-reversed path of $a$.
 
 By \ref{clm:homot-claims},
 \begin{enumerate}[(a)]
-\item $a*e_p\sim e_p*a\sim a$,
-\item $a*\bar a\sim\bar a* a\sim e_p$,
+\item $a*e_{x_0}\sim e_{x_0}*a\sim a$,
+\item $a*\bar a\sim\bar a* a\sim e_{x_0}$,
 \item $(a*b)*c\sim a*(b*c)$,
 \end{enumerate}
-for any loops $a$, $b$, and $c$ based at $p$ in $\c{X}$.
+for any loops $a$, $b$, and $c$ based at $x_0$ in $\c{X}$.
 And these equations imply the conditions in the definition of group.
 \qeds
 
@@ -259,7 +259,7 @@ Recall that a group is called \index{trivial group}\emph{trivial} if it contains
 
 A path-connected topological space with trivial fundamental group is called \index{simply-connected space}\emph{simply-connected}.
 
-If the fundamental group $\pi_1(\c{X},p)$ is trivial, it is common to write $\pi_1(\c{X},p)=0$ despite that it makes no sense --- in general the group $\pi_1(\c{X},p)$ is not commutative and so it would be more reasonable to write $\pi_1(\c{X},p)\z=\{1\}$, meaning that $1$ is the only element of $\pi_1(\c{X},p)$.
+If the fundamental group $\pi_1(\c{X},x_0)$ is trivial, it is common to write $\pi_1(\c{X},x_0)=0$ despite that it makes no sense --- in general the group $\pi_1(\c{X},x_0)$ is not commutative and so it would be more reasonable to write $\pi_1(\c{X},x_0)\z=\{1\}$, meaning that $1$ is the only element of $\pi_1(\c{X},x_0)$.
 
 \begin{thm}{Exercise}\label{ex:contractible=>sc}
 Show that any contractible space is simply-connected.
@@ -271,7 +271,7 @@ Show that a topological space $\c{X}$ is simply-connected if and only if there i
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:van-kamp}
-Suppose that $V$ and $W$ are open subsets of topological space $\c{X}$ such that
+Suppose that $V$ and $W$ are open subsets of a topological space $\c{X}$ such that
 $\c{X}=V\cup W$, and the set $V\cap W$ is path-connected.
 Let $x_0\in V\cap W$.
 

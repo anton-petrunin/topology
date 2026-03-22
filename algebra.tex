@@ -8,8 +8,8 @@ Once this group is calculated, the results of this chapter will lead to applicat
 \section{Induced homomorphism}
 
 \begin{thm}{Claim}\label{clm:ind-hom}
-Let $f\:\c{X}\to \c{Y}$ be a continuous map, and let $f(p)=q$.
-Suppose that $a_0$ and $a_1$ are loops based at $p$ in $\c{X}$.
+Let $f\:\c{X}\to \c{Y}$ be a continuous map, and let $f(x_0)=y_0$.
+Suppose that $a_0$ and $a_1$ are loops based at $x_0$ in $\c{X}$.
 Then
 
 \begin{subthm}{clm:ind-hom-prod}
@@ -40,14 +40,19 @@ Hence \ref{SHORT.clm:ind-hom-homotopy} follows.
 
 \begin{thm}{Corollary}
 Let $f\:\c{X}\to \c{Y}$ be a continuous map between topological spaces;
-suppose $f(p)=q$.
-Given a loop $a$ with base at $p$ in $\c{X}$, the composition $f\circ a$ is a loop with base at $q$ in $\c{Y}$.
+suppose $f(x_0)=y_0$.
+Given a loop $a$ with base at $x_0$ in $\c{X}$, the composition $f\circ a$ is a loop with base at $y_0$ in $\c{Y}$.
 Moreover, 
 $f_*\:[a]\mapsto [f\circ a]$
-defines a homomorphism $f_*\:\pi_1(\c{X},p)\to \pi_1(\c{Y},q)$.
+defines a homomorphism $f_*\:\pi_1(\c{X},x_0)\to \pi_1(\c{Y},y_0)$.
 \end{thm}
 
-
+\parit{Remark.}
+The induced homomorphism \index{$f_*$}$f_*\:\pi_1(\c{X},x_0)\to \pi_1(\c{Y},y_0)$ has the same direction as the original map $f\:\c{X}\to \c{Y}$.
+Notation $f_*$ can be used for \textit{any} induced map of this type; for example,
+one can write $f_*$ for the induced map from the set of path-connected components of $\c{X}$ to the set of path-connected components of $\c{Y}$.
+Such induced maps are called \index{covariant}\emph{covariant}.
+If the induced map goes in the opposite direction, then it is denoted by $f^*$; such induced maps are called \index{contravariant}\emph{contravariant}.
 
 \begin{thm}{Exercise}\label{ex:comp-induced}
 Let $\c{X}\stackrel{f}{\to}\c{Y}\stackrel{g}{\to}\c{Z}$ be continuous maps.
@@ -55,7 +60,7 @@ Show that $g_*\circ f_*=(g\circ f)_*$.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:retract*}
-Let $A$ be a retract of $\c{X}$ with retraction $r\:\c{X}\to A$.
+Let $A$ be a retract of $\c{X}$ with retraction $r\:\c{X}\z\to A$.
 Choose $x_0\in A$; let $i\:A\to\c{X}$ be the inclusion map.
 Show the following.
 \begin{subthm}{ex:retract*:r}
@@ -76,40 +81,41 @@ If $A$ is a weak deformation retract, then $r_*$ and $i_*$ are isomorphisms.
 
 \section{Base point}
 
-Since $(a*b)*c\z\ne a*(b*c)$, one has to fully parenthesize products of paths. However, I will omit parentheses when any parenthesization does the job.
-Formally speaking, we can assume that the product is taken in the usual order;
+Since $(a*b)*c\z\ne a*(b*c)$, one has to fully parenthesize products of paths.
+However, I will omit parentheses when any parenthesization does the job (since $(a*b)*c\sim a*(b*c)$).
+On a more formal basis, one can assume that the product is taken in the usual order;
 that is, \index{$a*b*c*d$}
 \[a*b*c*d\df((a*b)*c)*d.\]
 
 \begin{thm}{Theorem}
-Let $c$ be a path between points $p$ and $q$ in a topological space $\c{X}$.
-Then $[a]\mapsto [\bar c*a*c]$ defines an isomorphism of fundamental groups $\phi_c\:\pi_1(\c{X},p)\to \pi_1(\c{X},q)$.
+Let $c$ be a path from $x_0$ to $x_1$ in a topological space $\c{X}$.
+Then $[a]\mapsto [\bar c*a*c]$ defines an isomorphism of fundamental groups $\phi_c\:\pi_1(\c{X},x_0)\to \pi_1(\c{X},x_1)$.
 \end{thm}
 
 
 
 \parit{Proof.}
-Suppose $a_\tau$ is a homotopy of loops at $p$.
-Then $\bar c*a_\tau*c$ is a homotopy of loops at $q$.
+Suppose $a_\tau$ is a homotopy of loops at $x_0$.
+Then $\bar c*a_\tau*c$ is a homotopy of loops at $x_1$.
 It follows that the map 
 \[\phi_c\:[a]\mapsto [\bar c*a*c]\eqlbl{eq:[f]->[hfh]}\]
 is defined.
 Indeed if $a_0\sim a_1$, then $\bar c*a_0*c\sim \bar c*a_1*c$,
 which means that $[\bar c*a_0*c]=[\bar c*a_1*c]$; so the right-hand side in \ref{eq:[f]->[hfh]} does not depend on the choice of loop in the homotopy class $[a]$.
 
-Further, if $a$ and $b$ are loops based at $p$, then \ref{clm:homot-claims} implies that
+Further, if $a$ and $b$ are loops based at $x_0$, then \ref{clm:homot-claims} implies that
 \begin{align*}
 (\bar c*a*c)*(\bar c*b*c)&\sim \bar c*a*(c*\bar c)*b*c\sim
 \\
-&\sim \bar c*(a*e_p)*b*c\sim
+&\sim \bar c*(a*e_{x_0})*b*c\sim
 \\
 &\sim \bar c*(a*b)*c.
 \end{align*}
 In other words,
-\[\phi_c([a]\cdot [b])=\phi_c[a]\cdot \phi_c[b]\quad\text{for any}\quad [a],[b]\in \pi_1(\c{X},p);\]
-that is, $\phi_c\:\pi_1(\c{X},p)\to \pi_1(\c{X},q)$ is a homomorphism.
+\[\phi_c([a]\cdot [b])=\phi_c[a]\cdot \phi_c[b]\quad\text{for any}\quad [a],[b]\in \pi_1(\c{X},x_0);\]
+that is, $\phi_c\:\pi_1(\c{X},x_0)\to \pi_1(\c{X},x_1)$ is a homomorphism.
 
-The same argument shows that $\phi_{\bar c}\: \pi_1(\c{X},q)\to \pi_1(\c{X},p)$ defined by
+The same argument shows that $\phi_{\bar c}\: \pi_1(\c{X},x_1)\to \pi_1(\c{X},x_0)$ defined by
 \[\phi_{\bar c}\:[d]\mapsto [c*d*\bar c]\]
 is a homomorphism.
 
@@ -118,12 +124,12 @@ Finally note that
 c*(\bar c*a*c)*\bar c
 &\sim
 (c*\bar c)*a*(c*\bar c)\sim
-e_p*a*e_p\sim
+e_{x_0}*a*e_{x_0}\sim
 a
 \end{align*}
-for any loop $a$ based at $p$.
-Therefore, $\phi_{\bar c}$ is a left inverse of $\phi_c$.%
-\footnote{The same way we show that $\phi_c$ is a left inverse of $\phi_{\bar c}$.}
+for any loop $a$ based at $x_0$.
+Therefore, $\phi_{\bar c}$ is a left inverse of $\phi_c$.
+The same way we show that $\phi_c$ is a left inverse of $\phi_{\bar c}$.
 It follows that $\phi_c$ is an isomorphism.
 \qeds
 
@@ -131,16 +137,16 @@ According to the theorem, the fundamental group%
 \footnote{more precisely, its \textit{isomorphism class}}
 of a path-connected space does not depend on its base point.
 Therefore, for a path-connected space $\c{X}$ we do not need to specify the base point of its fundamental group.
-So, if we think about the group up to isomorphism, then it is safe to write $\pi_1\c{X}$ instead of $\pi_1(\c{X},p)$.
+So, if we think about the group up to isomorphism, then it is safe to write $\pi_1\c{X}$ instead of $\pi_1(\c{X},x_0)$.
 
 \begin{thm}{Exercise}\label{ex:uphi}
 
 \begin{subthm}{ex:uphi:uphi}
  Let $f_\tau\:\c{X}\to\c{Y}$ be a homotopy.
-Consider the path defined by $c(\tau)=f_\tau(p)$.
+Consider the path defined by $c(\tau)=f_\tau(x_0)$.
 Show that
-\[\phi_c\circ f_{0*}=f_{1*}.\]
-Here $f_{i*}\:\pi_1(\c{X},p)\to\pi_1(\c{Y},f_i(p))$ is the induced homomorphism of $f_{i}$.
+\[\phi_c\circ f_{0*}=f_{1*};\]
+here $f_{i*}\:\pi_1(\c{X},x_0)\to\pi_1(\c{Y},f_i(x_0))$ denotes the induced homomorphism of $f_{i}$.
 \end{subthm}
 
 \begin{subthm}{ex:uphi:hom-type}
@@ -155,20 +161,20 @@ Conclude that if path-connected topological spaces $\c{X}$ and $\c{Y}$ have the 
 
 \begin{thm}{Exercise}\label{ex:hom-product}
 Let $\c{X}$ and $\c{Y}$ be two path-connected topological spaces.
-Choose points $p\in \c{X}$ and $q\in \c{Y}$.
+Choose points $x_0\in \c{X}$ and $y_0\in \c{Y}$.
 Consider the projections and their induced homomorphisms:
 \begin{align*}
 f\:\c{X}\times\c{Y}&\to \c{X},
 &
-f_*\:\pi_1(\c{X}\times\c{Y},(p,q))&\to \pi_1(\c{X},p),
+f_*\:\pi_1(\c{X}\times\c{Y},(x_0,y_0))&\to \pi_1(\c{X},x_0),
 \\
 g\:\c{X}\times\c{Y}&\to \c{Y},
 &
-g_*\:\pi_1(\c{X}\times\c{Y},(p,q))&\to \pi_1(\c{Y},q).
+g_*\:\pi_1(\c{X}\times\c{Y},(x_0,y_0))&\to \pi_1(\c{Y},y_0).
 \end{align*}
-Define $\phi\:\pi_1(\c{X}\times\c{Y},(p,q))\to \pi_1(\c{X},p)\times \pi_1(\c{Y},q)$ by
+Define $\phi\:\pi_1(\c{X}\times\c{Y},(x_0,y_0))\to \pi_1(\c{X},x_0)\times \pi_1(\c{Y},y_0)$ by
 \[\phi\:\alpha\mapsto (f_*(\alpha),g_*(\alpha))\]
-for any $\alpha\in \pi_1(\c{X}\times\c{Y},(p,q))$.
+for any $\alpha\in \pi_1(\c{X}\times\c{Y},(x_0,y_0))$.
 Prove the following.
 
 \begin{subthm}{ex:hom-product:hom}
@@ -178,13 +184,13 @@ $\phi$ is a homomorphism.
 
 \begin{subthm}{ex:hom-product:mono}
 $\phi$ is a monomorphism;
-that is, if $\phi(\alpha)=\phi(\beta)$ for some $\alpha,\beta\in \pi_1(\c{X}\times\c{Y},(p,q))$, then
+that is, if $\phi(\alpha)=\phi(\beta)$ for some $\alpha,\beta\z\in \pi_1(\c{X}\times\c{Y},(x_0,y_0))$, then
 $\alpha=\beta$.
 \end{subthm}
 
 \begin{subthm}{ex:hom-product:epi}
 $\phi$ is an epimorphism;
-that is, for any $\gamma\in \pi_1(\c{X},p)\z\times\pi_1(\c{Y},q)$ there is $\alpha\in\pi_1(\c{X}\times\c{Y},(p,q))$ such that $\phi(\alpha)=\gamma$.
+that is, for any $\gamma\in \pi_1(\c{X},x_0)\z\times\pi_1(\c{Y},y_0)$ there is $\alpha\in\pi_1(\c{X}\times\c{Y},(x_0,y_0))$ such that $\phi(\alpha)=\gamma$.
 \end{subthm}
 
 Conclude that $\pi_1(\c{X}\times\c{Y})$ is isomorphic to $\pi_1(\c{X})\times\pi_1(\c{Y})$.

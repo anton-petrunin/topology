@@ -276,22 +276,23 @@ Note that a space is discrete if every point in it is isolated.
 
 Further, a point $p$ in a subset $A\subset \c{X}$ is called \index{isolated point}\emph{isolated} if it is an isolated point of the subspace $A$,
 which means that there is an open set $V\ni p$ that intersects $A$ only at $p$.
-For example, in the set $\{0,1,\tfrac12,\tfrac13,\dots\}\subset\RR$ all points except $0$ are isolated.
+For example, in the set $A=\{0,1,\tfrac12,\tfrac13,\dots\}\subset\RR$ all points except $0$ are isolated.
 
 In 1882, Magnus Mittag-Leffler posed a question, which could be restated as follows:
-\textit{Does there exist a nowhere dense closed set $P\subset\RR$ without isolated points?}
+\textit{Does there exist a nowhere dense closed set $\c{C}\subset\RR$ without isolated points?}
 This might be the first question in point-set topology.
 The question was answered by Georg Cantor in 1883; he constructed the following example.
 
-Let us start with the unit interval $\c{C}_0=[0,1]$, and remove its middle third $(\tfrac13,\tfrac23)$;
+Let us start with the unit interval $\c{C}_0=[0,1]$, and remove its open middle third $(\tfrac13,\tfrac23)$;
 we get a new set $\c{C}_1=[0,\tfrac13]\cup[\tfrac23,1]$ which is a union of two disjoint closed intervals.
-Let us pass to a new subset $\c{C}_2$ by removing the middle third of each closed interval in $\c{C}_1$,
-and repeat the procedure
+Let us pass to a new subset $\c{C}_2$ by removing the open middle third of each closed interval in $\c{C}_1$,
 \begin{figure}[!ht]
 \centering
 \includegraphics{mppics/pic-365}
 \end{figure}
-obtaining a nested sequence of closed sets $[0,1]=\c{C}_0\supset \c{C}_1\supset \ldots$
+and repeat the procedure
+obtaining a nested sequence of closed sets
+\[[0,1]=\c{C}_0\supset \c{C}_1\supset \ldots\]
 each of which is a union of finitely many disjoint closed intervals.
 Note that $\c{C}_n$ consists of $2^n$ closed intervals of length $\tfrac1{3^n}$.
 The intersection
@@ -302,28 +303,29 @@ By construction, $\c{C}$ is a closed nowhere dense set; in particular, it contai
 On the other hand, $\c{C}$ has no isolated points.
 Indeed, a neighborhood $V$ of any point $x\in \c{C}$ must contain one of the $2^n$ intervals in $\c{C}_n$ for a sufficiently large integer $n$; denote it by $[a,b]$.
 Note that $a$ and $b$ remain to be ends of intervals of $\c{C}_{n+1}$, $\c{C}_{n+2}$, and so on.
-Therefore $a,b\in \c{C}$; since $x\ne a$ or $x\ne b$, we get that $x$ is not isolated.
+Therefore $a,b\in \c{C}$, and since $x\ne a$ or $x\ne b$, we get that $x$ is not isolated.
 
 
-Alternatively, one can describe $\c{C}$ as all reals $x\in [0,1]$ that can be written in base~$3$ without using digit $1$;
+Alternatively, one can describe $\c{C}$ as all reals $x\in [0,1]$ that can be written in base~$3$ only using two disgits $0$ and $2$ (without using $1$);
 that is,
-$x\in \c{C}$ if there is a sequence $a_1,a_2,\dots$ such that
-\[x=(0.a_1a_2\ldots)_3\df\frac{a_1}{3^1}+\frac{a_2}{3^2}+\ldots\]
-and each $a_i$ is either $0$ or $2$.
+$x\in \c{C}$ if there is a sequence $d_1,d_2,\dots$ such that
+\[x=(0.d_1d_2\ldots)_3\df\frac{d_1}{3^1}+\frac{d_2}{3^2}+\ldots\]
+and each $d_i$ is either $0$ or $2$.
 
 \begin{thm}{Exercise}\label{ex:Cantor}
 Prove the equivalence of the two definitions and use it to show that $\c{C}$ is uncountable.%
-\footnote{This exercise requires a bit more set theory than usual; in particular, it uses Cantor's theorem that the power set of an infinite set is uncountable.}
+\footnote{This exercise requires a bit more set theory than usual; it uses that the set of all subsets an infinite set is uncountable, which follows from Cantor's theorem.}
 \end{thm}
 
 
 Observe that any open set $V\subset\RR$ is a union of open intervals.
-Indeed, given a point $x\in V$ there is a maximal open interval $(a,b)$ (finite or infinite) such that
+Indeed, given a point $x\in V$ there is a unique maximal open interval $(a,b)$ (finite or infinite) such that
 $x\in (a,b)\subset V$.
 Note that if two maximal intervals intersect, then they have to coincide (otherwise they were not maximal).
 Furthermore, every open interval contains a rational number, and since the set of rational numbers is countable, we have that the set of the maximal intervals is countable as well.
 
-The Cantor set shows that in this sense closed sets are more complicated --- it is not a countable union of closed intervals (including one-point sets).
+One might naively think that closed sets have a similar feuture, but
+the Cantor set shows that this is not the case --- it is not a countable union of closed intervals (including one-point sets).
 
 \section{Neighborhoods}
 
