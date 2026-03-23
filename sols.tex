@@ -943,6 +943,20 @@ Show and use that $G$ admits another metric that induces the same topology and m
 For the second part, check the complement of $(\RR\setminus \QQ)\times \{0\}$ in $\RR^2$,
 here $\QQ\subset\RR$ denotes the subset or rational numbers.
 
+\parbf{\ref{ex:nonborel-image}.}
+Let $\c{X}=\RR_d\times \RR$ where $\RR_d$ denotes the set $\RR$ equipped with the discrete topology.
+Note that graph $\Gamma$ of any (not necessarily continuous) function $f\:\RR_d\to \RR$ is a closed set in $\c{X}$.
+Show and use that one can choose $f$ so that the projection of $\Gamma$ to $\RR$ is any given set, say a Vitali set.
+
+\parit{Comment.}
+In fact there are Borel sets in $\RR\times \RR$, which projections to $\RR$ are not Borel, but this is out of scope of my notes.
+
+\parbf{\ref{ex:borel-square}.}
+Try to fix the following not very-well-defined map:
+\[(0.d_1d_2\ldots)_2\to ((0.d_1d_3\ldots)_2,(0.d_2d_4\ldots)_2),\]
+where $(0.d_1d_2\ldots)_2$ denotes a number in base 2.
+
+
 \parbf{\ref{ex:connected->R}.}
 Assume contrary.
 Show and use that the sets $V=f^{-1}((0,\infty))$ and $W=f^{-1}((-\infty,0))$ form an open separating pair of $\c{X}$.
@@ -1017,7 +1031,7 @@ The closure of the following set in $\RR^2$ gives a noncompact Hausdorff example
 \[\set{(x,n+\tfrac1{1-x^2})}{n\in \ZZ\ \text{and}\  x\in (-1,1)},\]
 here $\ZZ$ denotes the set of integers.
 For a compact, but not Hausdorff example, consider the set $\c{X}=\ZZ\cup\{+\infty,-\infty\}$;
-declare any subset in $\ZZ$ and any complement of a finite set to be open.
+declare any subset of $\ZZ$ and any complement of a finite set to be open.
 
 \parit{Comment.}
 The set $Q_x$ is called the \index{quasi-component}\emph{quasi-component} of $x$;
@@ -1174,7 +1188,7 @@ t\cdot x&\text{if\ }x\notin J_0
 Assume $J_\infty$ is deformation retract;
 let $h_t$ be the corresponding homotopy relative to $J_\infty$.
 Show that for any large $n$ we have
-\[|h_t((1,\tfrac1{2^n}))-(1,0)|_{\RR^2}<\tfrac1{10}\] for any $t$
+\[|h_t(1,\tfrac1{2^n})-(1,0)|_{\RR^2}<\tfrac1{10}\] for any $t$
 and arrive at a contradiction.
 
 \parit{\ref{SHORT.ex:retract-strong-weak:triangle}.}
@@ -1251,10 +1265,19 @@ Write both $a*b$ and $b*a$ as a composition of $f$ with a path from $(0,0)$ to $
 
 \parbf{\ref{ex:contractible=>sc}.} Spell both definitions.
 
-\parbf{\ref{ex:sc=homot-paths}.} Apply \ref{ex:ab=e}.
+\parbf{\ref{ex:S1=>sc}.} The only-if part follows directly from \ref{prop:sc=1hclass}.
+It remains to prove the if part.
+
+Let us identify $\SS^1$ with $[0,1]/\{0,1\}$ (see \mbox{\ref{ex:[0,1]/0=1}});
+so any a loop is also a map $\SS^1\to \c{X}$; let us use the same notation for both.
+
+Let $h_t\:\SS^1\to \c{X}$ be a (free) homotopy from $a\:\SS^1\to \c{X}$ to a constant map $e_p$.
+Consider the path $b(t)\df h_t(0)$.
+Show and use that
+$a\sim b*e_p*\bar b\sim e_{x_0}$.
 
 \parbf{\ref{ex:van-kamp}.}
-Let us agree that if the product of paths is not parenthesized, then it is taken in the usual order;
+Recall that if the product of paths is not parenthesized, then it is taken in the usual order;
 that is, \index{$a*b*c*d$} $a*b*c*d\df((a*b)*c)*d$.
 
 \begin{Figure}
@@ -1281,30 +1304,29 @@ Subdivide $\SS^2$ into subsets $V$ and $W$ defined by $z>-\tfrac12$ and $z<\tfra
 Observe that $V$ and $W$ are homeomorphic to an open disc and the intersection $V\cap W$ is homeomorphic to the product $\SS^1\times (0,1)$ and apply \ref{SHORT.ex:van-kamp:sc}.
 
 \parit{\ref{SHORT.ex:van-kamp:s2d}.}
-Choose a neighborhood $V$ of $\SS^2$ and a neighborhood $W$ of $\DD^2$ and argue as in \ref{SHORT.ex:van-kamp:s2}.
+Choose a simply-connected open sets $V\supset \SS^2$ and  $W\supset \DD^2$ and argue as in \ref{SHORT.ex:van-kamp:s2}.
 
 \parit{Comment.}
-Part \ref{SHORT.ex:van-kamp:sc} is a special case of Van Kampen's theorem, which makes possible to calculate the fundamental group of $\c{X}$ in terms of fundamental groups of $V$, $W$, $V\cap W$ and the homomorphisms
+Part \ref{SHORT.ex:van-kamp:sc} is a special case of Van Kampen's theorem; it calculates the fundamental group of $\c{X}$ in terms of fundamental groups of $V$, $W$, $V\cap W$ and the homomorphisms
 $\pi_1(V\cap W,x_0)\to\pi_1(V,x_0)$, $\pi_1(V\cap W,x_0)\to\pi_1(W,x_0)$ induced by the inclusions $V\cap W\hookrightarrow V$ and $V\cap W\hookrightarrow W$.
 See also \ref{ex:vankam-nonconnect}.
 
 \parbf{\ref{ex:comp-induced}.} Spell the definitions.
 
-\parbf{\ref{ex:retract*}}; \ref{SHORT.ex:retract*:r}. Show and use that $r\circ a=a$ for any loop $a$ in $A$.
+\parbf{\ref{ex:retract*}}; \ref{SHORT.ex:retract*:0}. Show and use that $r\circ a=a$ for any loop $a$ in $A$.
 
 \parit{\ref{SHORT.ex:retract*:i}.} Let $a_\tau$ be a homotopy in $\c{X}$ between two loops $a_0$ and $a_1$ in $A$.
 Show and use that $r\circ a_\tau$ is a homotopy in $A$ between the same loops.
 
 \parit{\ref{SHORT.ex:retract*:ri}.}
-By \ref{SHORT.ex:retract*:r} and \ref{SHORT.ex:retract*:i}, it is sufficient to show that $r_*$ is a monomorphism and $i_*$ is an epimorphism.
+By \ref{SHORT.ex:retract*:0} and \ref{SHORT.ex:retract*:i}, it is sufficient to show that $r_*$ is a monomorphism and $i_*$ is an epimorphism.
 
 The first statement means that if $r\circ a_0\sim r\circ a_1$ in $A$ for some loops $a_0$ and $a_1$ in $\c{X}$, then $a_0\sim a_1$ in $\c{X}$.
 Let $r_\tau$ be the homotopy from $r_0=\id_{\c{X}}$ to $r_1=r$.
 Show and use that $r_\tau\circ a_i$ is a homotopy from
 $a_i$ to $r\circ a_i$.
 
-The same homotopy $r_\tau\circ a_i$ can be used to show that $i_*$ is an epimorphism.
-
+The same homotopies $r_\tau\circ a_i$ can be used to show that $i_*$ is an epimorphism.
 
 \parbf{\ref{ex:uphi}}; \ref{SHORT.ex:uphi:uphi} Show and use that
 $f_1\circ a\sim \bar c*(f_0\circ a)*c$ for any loop $a$ in $\c{X}$ based at $x_0$.

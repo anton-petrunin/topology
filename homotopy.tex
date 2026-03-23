@@ -22,7 +22,7 @@ $h_t=g_t\circ f_t$, and this implies the following.
 Let $f_0, f_1\:\c{X}\to\c{Y}$ and $g_0,g_1\:\c{Y}\to \c{Z}$ be
 four maps between topological spaces.
 Assume that $f_0\sim f_1$ and $g_0\sim g_1$.
-Show that $g_0\circ f_0\sim g_1\circ f_1$.
+Then $g_0\circ f_0\sim g_1\circ f_1$.
 \end{thm}
 
 \section{Linear homotopy}
@@ -57,7 +57,7 @@ that is, $f(a)=g(a)$ for any $a\in A$.
 \section{Operations on homotopies}\label{sec:homot-operations}
 
 The following operations on homotopies are analogous to the operations on paths discussed in \ref{sec:Operations on paths}.
-In fact, a path is a special case of homotopy --- it is a homotopy with one-point source space.
+In fact, a path is a special case of homotopy --- it is a homotopy with a one-point source space.
 \begin{itemize}
 \item the \index{constant homotopy}\emph{constant homotopy} $H(x,t)=f(x)$ joins $f$ with itself;
 \item if $H$ is a homotopy from $f$ to $g$, then the
@@ -105,7 +105,7 @@ the equivalence class of a map $f\:\c{X}\to\c{Y}$ will be denoted by $[f]$.
 Given two spaces $\c{X}$ and $\c{Y}$, the set of all homotopy classes will be denoted by
 $\pi(\c{X},\c{Y})$.
 
-(The same holds for homotopies relative $A\subset \c{X}$; so $f\sim g \rel A$ is an equivalence relation.
+(The same holds for homotopies relative to $A\subset \c{X}$; so $f\sim g \rel A$ is an equivalence relation.
 The set of all homotopy classes relative to $A$ can be denoted by $\pi_A(\c{X},\c{Y})$.)
 
 Often the set $\pi(\c{X},\c{Y})$ admits a direct description; this is precisely its advantage over the vast set of all continuous maps $\c{X}\to \c{Y}$.
@@ -115,22 +115,22 @@ So, studying the homotopy classes may help to distinguish topological spaces.
 This construction is meaningful even for very simple choices of source space $\c{X}$.
 If $\c{X}$ is the one-point space, then $\pi(\c{X},\c{Y})$ is also denoted by $\pi_0(\c{Y})$.
 Note that $\pi_0(\c{Y})$ is the set of path-connected components in $\c{Y}$ --- this was the main subject of the previous chapter.
-The set $\pi(\SS^1,\c{Y})$ is closely related to the fundamental group of $\c{Y}$, which will be soon introduced.
+The set $\pi(\SS^1,\c{Y})$ is closely related to the fundamental group of $\c{Y}$, which will soon be introduced.
 
 The idea to use homotopy classes to distinguish topological spaces will guide us in the right direction.
 However, the true reason to consider homotopy classes is different; it will be discussed in Chapter~\ref{chap:algebra}.
 
 \section{Retracts}
 
-Let $A$ be a subset in a topological space $\c{X}$.
-A continuous map $r\:\c{X}\z\to A$ is called a \index{retraction}\emph{retraction} to $A$ if $r(a)=a$ for any $a\in A$.%
-\footnote{The notion of retraction is closely related to projection in linear algebra; say, a continuous map $r\:\c{X}\to \c{X}$ defines a retraction to $r(\c{X})$ if and only if $r\circ r=r$.}
+Let $A$ be a subset of a topological space $\c{X}$.
+A continuous map $r\:\c{X}\z\to A$ is called a \index{retraction}\emph{retraction} onto $A$ if $r(a)=a$ for any $a\in A$.%
+\footnote{The notion of retraction is closely related to projection in linear algebra; say, a continuous map $r\:\c{X}\to \c{X}$ defines a retraction onto $r(\c{X})$ if and only if $r\circ r=r$.}
 In this case $A$ is called a \index{retract}\emph{retract} of $\c{X}$.
 If in addition, $r\:\c{X}\to A$ is homotopic to the identity map $\id_{\c{X}}$, then $A$ is called a \index{weak deformation retract}\emph{weak deformation retract} of $\c{X}$.
 If $r\sim \id_{\c{X}}\rel A$, then $A$ is called a \index{deformation retract}\emph{deformation retract} of $\c{X}$.
 
 Note that a one-point subset is a retract of any space --- the retraction maps the whole space to this single point.
-On the other hand, if a one-point set $\{p\}$ is a deformation retract of space $\c{X}$, then any point can be connected to $p$ by a path; in particular, $\c{X}$ has to be path-connected.
+On the other hand, if a one-point set $\{p\}$ is a deformation retract of the space $\c{X}$, then any point can be connected to $p$ by a path; in particular, $\c{X}$ has to be path-connected.
 
 \begin{thm}{Exercise}\label{ex:retract-closed}
 Show that a retract of a Hausdorff space has to be a closed subset.
@@ -168,7 +168,7 @@ Is it true that $F$ is a retract of the square $[0,1]\times[0,1]$?
 A topological space $\c{X}$ is called \index{contractible space}\emph{contractible} if the identity map $\id_\c{X}\:\c{X}\z\to \c{X}$ is homotopic to a constant map;
 that is, there is a homotopy $h_t\:\c{X}\to\c{X}$ such that $h_0(x)=x$ and $h_1(x)=p$ for some fixed point $p\in\c{X}$ and any $t\in [0,1]$ and $x\in \c{X}$.
 
-Soon we will show that the circle $\mathbb{S}^1$ is an example of path-connected space that is not contractible;
+Soon we will show that the circle $\mathbb{S}^1$ is an example of a path-connected space that is not contractible;
 in particular, there are noncontractible path-connected spaces.
 
 Applying linear homotopy, one can see that any convex subset of the Euclidean space is contractible.
@@ -181,7 +181,7 @@ A retract of a contractible space is contractible.
 \parit{Proof.}
 Let $r\:\c{X}\to A\subset \c{X}$ be a retraction
 and let $h_t\:\c{X}\to \c{X}$ be a homotopy from the identity map to a constant map.
-Observe that $r\circ h_t$ is a homotopy from the identity map $A\to A$ to a constant map.
+Observe that $r\circ h_t$ defines a homotopy from the identity map $A\to A$ to a constant map.
 \qeds
 
 \begin{thm}{Exercise}\label{ex:contractible}
@@ -237,7 +237,7 @@ In other words, if $i\:A\hookrightarrow \c{X}$ is the inclusion map, then $\id_{
 Since $r$ is a retraction, $r\circ i=\id_A$, hence the result.
 \qeds
 
-This proposition can be used together with \ref{ex:homotopy-type} to prove that given spaces have the same homotopy type; here is one example:
+This proposition can be used together with \ref{ex:homotopy-type} to prove that the given spaces have the same homotopy type; here is one example:
 
 \begin{thm}{Exercise}\label{ex:8-theta}
 Show that the closed connected sets in the picture have the same homotopy type.
@@ -265,14 +265,14 @@ such that $(-1,t)\sim(1,-t)$.
 Applying \ref{obs:compact-to-hausdorff}, one can show that $\c{M}$ is homeomorphic to the band shown in the picture.
 
 \begin{thm}{Exercise}\label{ex:mobius-cylinder}
-Show that the Möbius is homotopy equivalent to the cylinder $\SS^1\times[0,1]$.
+Show that the cylinder $\SS^1\times[0,1]$ and the Möbius band have the same homotopy type.
 \end{thm}
 
 \begin{thm}{Advanced exercise}\label{ex:mapping-cylinder}
-Show that two topological spaces have the same homotopy type if and only if they are homeomorphic to deformation retracts of one topological space.
+Show that two topological spaces have the same homotopy type if and only if they are homeomorphic to deformation retracts of a common space.
 \end{thm}
 
 To gain better intuition for deformation retracts,
-look at the pictures on Ken Baker's webpage about \index{Bing's house}\emph{Bing's house} \cite{baker2010bingshouse}.
+check the pictures on Ken Baker's webpage about \index{Bing's house}\emph{Bing's house} \cite{baker2010bingshouse}.
 It is a deformation retract of the cube and therefore a contractible space, although it is not easy to construct.
 The \index{dunce hat}\emph{dunce hat} is another example of this kind.

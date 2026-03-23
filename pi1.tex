@@ -13,7 +13,7 @@ The fundamental group is the first meaningful construction in algebraic topology
 Recall that a path is a continuous map defined on the unit interval $[0,1]$.
 The term \index{homotopy of paths}\emph{homotopy of paths} will be used as a shortcut for \textit{homotopy of paths relative to the ends};
 in the notations of \ref{sec:rel-homotopy}, we have the source space $[0,1]$ with a two-point subset $A=\{0,1\}$.
-In the rare case, when we need to talk about general homotopy of paths (allowing the endpoints to move), we say \index{free homotopy}\emph{free homotopy of paths}.
+In the rare case when we need to talk about general homotopy of paths (allowing the endpoints to move), we say \index{free homotopy}\emph{free homotopy of paths}.
 
 \begin{wrapfigure}{r}{35 mm}
 \vskip-2mm
@@ -36,7 +36,7 @@ Therefore, we can talk about the equivalence class of a path $a$ that will be ca
 Suppose $a_0$ is a path from $p$ to $q$,
 and
 $b_0$ is a path from $q$ to $r$.
-Suppose $a_0\sim a_1$ and $b_0\sim b_1$,
+Suppose $a_0\sim a_1$ and $b_0\sim b_1$
 then
 \[a_0*b_0\sim a_1*b_1.\]
 
@@ -92,7 +92,7 @@ $(a*b)*c\sim a*(b*c)$.
 
 \parit{Proof.}
 Each claim is proved by applying \ref{obs:homot-paths};
-each time we rewrite the sides of equation as $d\circ s_0$ and $d\circ s_1$ for appropriate path $d\:[0,1]\to\c{X}$ and a pair of paths $s_0,s_1\:[0,1]\to[0,1]$ that share the ends.
+each time we rewrite the sides of the equation as $d\circ s_0$ and $d\circ s_1$ for appropriate path $d\:[0,1]\to\c{X}$ and a pair of paths $s_0,s_1\:[0,1]\to[0,1]$ that share the ends.
 
 %???PIC
 
@@ -138,7 +138,7 @@ s_1(t)&\df0
 \end{align*}
 Since $s_0(0)\z=s_1(0)\z=s_0(1)\z=s_1(1)\z=0$, \ref{obs:homot-paths} implies $a*\bar a\sim e_p$.
 
-Applying the same argument to $b=\bar a$, we get $\bar a*a\sim e_q$.
+By the same argument, we get $\bar a*a\sim e_q$.
 
 \parit{\ref{SHORT.clm:assoc}.}
 Spelling the definition of product of paths, we get
@@ -170,7 +170,8 @@ t+\tfrac14 &\text{if\ } \tfrac14\le t\le \tfrac12,
 \tfrac12\cdot t+\tfrac12 &\text{if\ } \tfrac12\le t\le 1.
 \end{cases}
 \end{align*}
-Observe that $((a*b)*c)(t)=((a*b)*c)\circ s_0(t)$ where $s_0(t)\df t$, both functions $s_0,s_1\:[0,1]\to[0,1]$ are
+The path $((a*b)*c)(t)$ can be written as $((a*b)*c)\circ s_0(t)$ where $s_0(t)\df t$.
+Furthermore, both functions $s_0,s_1\:[0,1]\to[0,1]$ are
 continuous,
 $s_0(0)\z=s_1(0)=0$,
 and
@@ -178,7 +179,7 @@ $s_0(1)\z=s_1(1)=1$.
 It remains to apply \ref{obs:homot-paths}.
 \qeds
 
-
+%??? make a corollary
 \begin{thm}{Exercise}\label{ex:ab=e}
 Let $a$ and $b$ be paths from $p$ to $q$.
 Show that $a\sim b$ if and only if $a*\bar b\sim e_p$.
@@ -205,13 +206,13 @@ Show that $a=e_p$.
 \section{Fundamental group}
 
 Let $\c{X}$ be a topological space.
-A path $a\:[0,1]\to\c{X}$ is called a \index{loop}\emph{loop} with base at $x_0\in\c{X}$ if $a(0)=a(1)=x_0$;
+A path $a\:[0,1]\to\c{X}$ is called a \index{loop}\emph{loop} with base point $x_0\in\c{X}$ if $a(0)=a(1)=x_0$;
 
-Note that if $a$ and $b$ are loops based at $x_0$, then their products are defined; moreover, $a*b$, $b*a$, $\bar a$, $\bar b$ are also loops based at $x_0$ as well; see \ref{sec:Operations on paths}.
+Note that if $a$ and $b$ are loops based at $x_0$, then their products are defined; moreover, $a*b$, $b*a$, $\bar a$, $\bar b$ are also loops based at $x_0$; see \ref{sec:Operations on paths}.
 
 
-Recall that homotopy of paths and loops does not move their ends;
-the homotopy class of a loop $a$ will be denoted by $[a]$.
+Recall that homotopy of paths and loops does not move their ends
+and $[a]$ stands for the homotopy class of a loop (or path) $a$.
 The multiplication of homotopy classes of loops based at $x_0$ is defined by
 \[[a]\cdot [b]=[a*b];\]
 that is, \textit{the product of homotopy classes of loops $a$ and $b$ is the homotopy class of the product $a*b$.}
@@ -241,12 +242,12 @@ By \ref{clm:homot-claims},
 \item $a*\bar a\sim\bar a* a\sim e_{x_0}$,
 \item $(a*b)*c\sim a*(b*c)$,
 \end{enumerate}
-for any loops $a$, $b$, and $c$ based at $x_0$ in $\c{X}$.
+for any loops $a$, $b$, and $c$ based at $x_0$.
 And these equations imply the conditions in the definition of group.
 \qeds
 
 \begin{thm}{Exercise}\label{ex:group}
-Let $\c{G}$ be a \index{topological group}\emph{topological group}; that is a group equipped with topology such that the maps $\c{G}\times \c{G}\to \c{G}$ and $\c{G}\to \c{G}$ defined by $(g,h)\mapsto g\cdot h$ and $g\mapsto g^{-1}$ are continuous.
+Let $\c{G}$ be a \index{topological group}\emph{topological group}; that is a group equipped with a topology such that the maps $\c{G}\times \c{G}\to \c{G}$ and $\c{G}\to \c{G}$ defined by $(g,h)\mapsto g\cdot h$ and $g\mapsto g^{-1}$ are continuous.
 Show that the fundamental group $\pi_1(\c{G},1)$ is abelian;
 in other words, $a_1*a_2\sim a_2*a_1$
 for any two loops $a_1$ and $a_2$ with base point $1\in \c{G}$.
@@ -255,19 +256,61 @@ for any two loops $a_1$ and $a_2$ with base point $1\in \c{G}$.
 
 \section{Simply-connected spaces}
 
+A topological space $\c{X}$ is called \index{simply-connected space}\emph{simply-connected} if for any pair of points $p,q\in\c{X}$  there is a unique homotopy class of paths from $p$ to $q$.
+In other words, there is a path $a$ from $p$ to $q$ and any other path $b$ from $p$ to $q$ is homotopic to $a$.
+
+Note that any simply-connected space is path-connected.
+
 Recall that a group is called \index{trivial group}\emph{trivial} if it contains only one element, which is necessarily the neutral element.
-
-A path-connected topological space with trivial fundamental group is called \index{simply-connected space}\emph{simply-connected}.
-
 If the fundamental group $\pi_1(\c{X},x_0)$ is trivial, it is common to write $\pi_1(\c{X},x_0)=0$ despite that it makes no sense --- in general the group $\pi_1(\c{X},x_0)$ is not commutative and so it would be more reasonable to write $\pi_1(\c{X},x_0)\z=\{1\}$, meaning that $1$ is the only element of $\pi_1(\c{X},x_0)$.
+
+\begin{thm}{Proposition}\label{prop:sc=1hclass}
+A path-connected space $\c{X}$ is simply-connected if and only if $\pi_1(\c{X},x_0)=0$ for some (and therefore any) base point $x_0\in \c{X}$.
+\end{thm}
+
+Since $(a*b)*c\z\ne a*(b*c)$, one has to fully parenthesize products of paths.
+However, I will omit parentheses when any parenthesization does the job (since $(a*b)*c\sim a*(b*c)$).
+On a more formal basis, one can assume that the product is taken in the usual order;
+that is, \index{$a*b*c*d$}
+\[a*b*c*d\df((a*b)*c)*d.\]
+
+\parit{Proof.}
+Choose a base point $x_0\in \c{X}$.
+If $\c{X}$ is simply connected, then any loop based at $x_0$ is homotopic to $e_{x_0}$.
+Hence the only-if part follows.
+
+Now suppose $\pi_1(\c{X},x_0)=0$.
+Choose points $p,q\in \c{X}$.
+Let $a$ and $b$ be paths from $p$ to $q$ and let $c$ and $d$ be paths from $x_0$ to $p$ and to $q$, respectively;
+all these paths exist since $\c{X}$ is path-connected.
+
+\begin{wrapfigure}{r}{40 mm}
+\vskip2mm
+\centering
+\includegraphics{mppics/pic-1340}
+\end{wrapfigure}
+
+Since $\pi_1(\c{X},x_0)=0$, the loops $c*a*\bar d$, $e_{x_0}$, and $c*b*\bar d$ are homotopic;
+that is,
+\[c*a*\bar d\sim e_{x_0} \sim c*b*\bar d.\]
+Applying \ref{clm:homot-claims}, we get
+\begin{align*}
+a&\sim \bar c* c *a*\bar d*d\sim
+\\
+&\sim\bar c* c *b*\bar d*d\sim
+\\
+&\sim b
+\end{align*}
+--- hence the result.
+\qeds
 
 \begin{thm}{Exercise}\label{ex:contractible=>sc}
 Show that any contractible space is simply-connected.
 
 \end{thm}
 
-\begin{thm}{Exercise}\label{ex:sc=homot-paths}
-Show that a topological space $\c{X}$ is simply-connected if and only if there is a unique homotopy class of paths connecting any two points in $\c{X}$.
+\begin{thm}{Exercise}\label{ex:S1=>sc}
+Show that a path-connected space $\c{X}$ is simply-connected if and only if every continuous map $f\:\SS^1\to \c{X}$ is null-homotopic.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:van-kamp}

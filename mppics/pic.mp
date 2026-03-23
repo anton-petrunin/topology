@@ -1038,6 +1038,40 @@ label.top (btex $b_1$ etex, point .5 of (z.q{dir (-20+8*9)}..{dir (20-12*9)}z.r)
 
 endfig;
 
+beginfig(1340)
+save u,p;
+path p[];
+u:=1.4cm;
+
+z.x0=origin;
+z.p=(.5,1)*u;
+z.q=(2,.3)*u;
+
+p1=z.p{(1,.9)}..{(1,-1)}z.q;
+p2=z.p{(1,-1)}..{(1,0)}z.q;
+p3=z.x0{(-.1,1)}..{(1,1)}z.p;
+p4=z.x0{(1,-.1)}..{(1,.5)}z.q;
+
+drawarrow subpath(0,.5) of p1;
+draw subpath(.5,1) of p1;
+drawarrow subpath(0,.5) of p2;
+draw subpath(.5,1) of p2;
+drawarrow subpath(0,.5) of p3;
+draw subpath(.5,1) of p3;
+drawarrow subpath(0,.5) of p4;
+draw subpath(.5,1) of p4;
+
+dOt z.x0,z.p,z.q;
+
+label.bot (btex $x_0$ etex, z.x0);
+label.ulft (btex $p$ etex, z.p);
+label.lrt (btex $q$ etex, z.q);
+label.urt (btex $a$ etex, point .5 of p1);
+label.urt (btex $b$ etex, point .5 of p2);
+label.ulft (btex $c$ etex, point .5 of p3);
+label.bot (btex $d$ etex, point .5 of p4);
+endfig;
+
 beginfig(1350)
 save u,p;
 path p[];
