@@ -51,7 +51,7 @@ then
 \parit{Proof.}
 Choose homotopies $a_\tau$ from $a_0$ to $a_1$, and $b_\tau$ from $b_0$ to $b_1$.
 By \ref{ex:u-continuous:closed},
-$a_\tau*b_\tau$ is a homotopy from $a_0*b_0$ to $a_1*b_1$.
+$c_\tau\df a_\tau*b_\tau$ is a homotopy from $c_0\z=a_0\z*b_0$ to $c_1=a_1*b_1$.
 \qeds
 
 \begin{thm}{Observation}\label{obs:homot-paths}
@@ -206,7 +206,9 @@ Show that $a=e_p$.
 \section{Fundamental group}
 
 Let $\c{X}$ be a topological space.
-A path $a\:[0,1]\to\c{X}$ is called a \index{loop}\emph{loop} with base point $x_0\in\c{X}$ if $a(0)=a(1)=x_0$;
+A path $a\:[0,1]\to\c{X}$ is called a \index{loop}\emph{loop} with base point $x_0\in\c{X}$ if $a(0)=a(1)=x_0$.
+Since $\SS^1\cong[0,1]/\{0,1\}$ (see \mbox{\ref{ex:[0,1]/0=1}}),
+any loop defines a map $\SS^1\to \c{X}$.
 
 Note that if $a$ and $b$ are loops based at $x_0$, then their products are defined; moreover, $a*b$, $b*a$, $\bar a$, $\bar b$ are also loops based at $x_0$; see \ref{sec:Operations on paths}.
 
@@ -253,10 +255,17 @@ in other words, $a_1*a_2\sim a_2*a_1$
 for any two loops $a_1$ and $a_2$ with base point $1\in \c{G}$.
 \end{thm}
 
+\pagebreak
 
 \section{Simply-connected spaces}
 
-A topological space $\c{X}$ is called \index{simply-connected space}\emph{simply-connected} if for any pair of points $p,q\in\c{X}$  there is a unique homotopy class of paths from $p$ to $q$.
+\begin{wrapfigure}{r}{40 mm}
+\vskip-5mm
+\centering
+\includegraphics{mppics/pic-1335}
+\end{wrapfigure}
+
+A topological space $\c{X}$ is called \index{simply-connected space}\emph{simply-connected} if for any pair of points $p,q\z\in\c{X}$  there is a unique homotopy class of paths from $p$ to $q$.
 In other words, there is a path $a$ from $p$ to $q$ and any other path $b$ from $p$ to $q$ is homotopic to $a$.
 
 Note that any simply-connected space is path-connected.
@@ -284,15 +293,19 @@ Choose points $p,q\in \c{X}$.
 Let $a$ and $b$ be paths from $p$ to $q$ and let $c$ and $d$ be paths from $x_0$ to $p$ and to $q$, respectively;
 all these paths exist since $\c{X}$ is path-connected.
 
-\begin{wrapfigure}{r}{40 mm}
-\vskip2mm
+Since $\pi_1(\c{X},x_0)=0$, the loops $c*a*\bar d$, $e_{x_0}$, and $c*b*\bar d$ are homotopic;
+that is,
+
+{
+
+\begin{wrapfigure}[3]{r}{40 mm}
+\vskip-0mm
 \centering
 \includegraphics{mppics/pic-1340}
 \end{wrapfigure}
 
-Since $\pi_1(\c{X},x_0)=0$, the loops $c*a*\bar d$, $e_{x_0}$, and $c*b*\bar d$ are homotopic;
-that is,
 \[c*a*\bar d\sim e_{x_0} \sim c*b*\bar d.\]
+
 Applying \ref{clm:homot-claims}, we get
 \begin{align*}
 a&\sim \bar c* c *a*\bar d*d\sim
@@ -303,6 +316,8 @@ a&\sim \bar c* c *a*\bar d*d\sim
 \end{align*}
 --- hence the result.
 \qeds
+
+}
 
 \begin{thm}{Exercise}\label{ex:contractible=>sc}
 Show that any contractible space is simply-connected.

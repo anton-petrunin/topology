@@ -1038,6 +1038,30 @@ label.top (btex $b_1$ etex, point .5 of (z.q{dir (-20+8*9)}..{dir (20-12*9)}z.r)
 
 endfig;
 
+beginfig(1335)
+save u,p;
+path p[];
+u:=1.4cm;
+
+z.p=(0,0)*u;
+z.q=(2,0)*u;
+
+for i=1 upto 8:
+draw z.p{dir (45+6*i)}..{dir (-10*i)}z.q;
+endfor
+p0=z.p{dir (45+6*0)}..{dir (-10*0)}z.q;
+p1=z.p{dir (45+6*9)}..{dir (-10*9)}z.q;
+draw p0 pensemibold;
+draw p1 pensemibold;
+
+dOt z.p,z.q;
+
+label.lft(btex $p$ etex, z.p);
+label.rt(btex $q$ etex, z.q);
+label.bot(btex $a$ etex, point .5 of p0);
+label.top(btex $b$ etex, point .5 of p1);
+endfig;
+
 beginfig(1340)
 save u,p;
 path p[];
@@ -1047,9 +1071,9 @@ z.x0=origin;
 z.p=(.5,1)*u;
 z.q=(2,.3)*u;
 
-p1=z.p{(1,.9)}..{(1,-1)}z.q;
+p1=z.p{(1,1.4)}..{(1,-1)}z.q;
 p2=z.p{(1,-1)}..{(1,0)}z.q;
-p3=z.x0{(-.1,1)}..{(1,1)}z.p;
+p3=z.x0{(-.1,1)}..{(1,.3)}z.p;
 p4=z.x0{(1,-.1)}..{(1,.5)}z.q;
 
 drawarrow subpath(0,.5) of p1;
@@ -1070,6 +1094,40 @@ label.urt (btex $a$ etex, point .5 of p1);
 label.urt (btex $b$ etex, point .5 of p2);
 label.ulft (btex $c$ etex, point .5 of p3);
 label.bot (btex $d$ etex, point .5 of p4);
+endfig;
+
+
+beginfig(1345)
+save u,p,n;
+path p[];
+u:=2cm;
+n:=10;
+
+z.p=(-1,.5)*u;
+z.q=(1,.4)*u;
+z.c=(1,1);
+
+p1=z.p{(.1,-1)}..z.q{(.7,1)}..{(-1,.2)}z.p--cycle;
+
+drawarrow subpath (0,1) of p1 pensemibold;
+draw subpath (1,2) of p1 pensemibold;
+
+for i = 1 upto n-1:
+draw ((subpath (.5*i/n,2-.4*i/n) of p1).. cycle) scaled (1-i/n) withcolor .5;
+endfor
+
+p2= z.p{(1,-.9)}..z.c;
+
+drawarrow subpath (0,.5) of p2  pensemibold;
+draw subpath (.5,1) of p2  pensemibold;
+
+dOt z.p, z.c;
+
+label.lrt (btex $a$ etex, point 1 of p1);
+whitelabel.top (btex $b$ etex, point .5 of p2);
+
+label.lft (btex $p$ etex, z.p);
+whitelabel.rt (btex $q$ etex, z.c);
 endfig;
 
 beginfig(1350)
