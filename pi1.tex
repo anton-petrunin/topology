@@ -207,7 +207,7 @@ Show that $a=e_p$.
 
 Let $\c{X}$ be a topological space.
 A path $a\:[0,1]\to\c{X}$ is called a \index{loop}\emph{loop} with base point $x_0\in\c{X}$ if $a(0)=a(1)=x_0$.
-Since $\SS^1\cong[0,1]/\{0,1\}$ (see \mbox{\ref{ex:[0,1]/0=1}}),
+Since $\SS^1\cong[0,1]/\{0,1\}$ (see \ref{ex:[0,1]/0=1}),
 any loop defines a map $\SS^1\to \c{X}$.
 
 Note that if $a$ and $b$ are loops based at $x_0$, then their products are defined; moreover, $a*b$, $b*a$, $\bar a$, $\bar b$ are also loops based at $x_0$; see \ref{sec:Operations on paths}.
@@ -219,7 +219,7 @@ The multiplication of homotopy classes of loops based at $x_0$ is defined by
 \[[a]\cdot [b]=[a*b];\]
 that is, \textit{the product of homotopy classes of loops $a$ and $b$ is the homotopy class of the product $a*b$.}
 
-Observe that the product is well defined;
+Observe that the product is well-defined;
 that is, if $[a_0]= [a_1]$ and $[b_0]=[b_1]$, then  $[a_0*b_0]=[a_1*b_1]$.
 In other words, if $a_0\sim a_1$ and $b_0\sim b_1$, then $a_0*b_0\sim a_1*b_1$.
 The latter is stated in Claim \ref{clm:product}.
@@ -285,7 +285,7 @@ that is, \index{$a*b*c*d$}
 
 \parit{Proof.}
 Choose a base point $x_0\in \c{X}$.
-If $\c{X}$ is simply connected, then any loop based at $x_0$ is homotopic to $e_{x_0}$.
+If $\c{X}$ is simply-connected, then any loop based at $x_0$ is homotopic to $e_{x_0}$.
 Hence the only-if part follows.
 
 Now suppose $\pi_1(\c{X},x_0)=0$.
@@ -319,36 +319,63 @@ a&\sim \bar c* c *a*\bar d*d\sim
 
 }
 
-\begin{thm}{Exercise}\label{ex:contractible=>sc}
-Show that any contractible space is simply-connected.
-
-\end{thm}
 
 \begin{thm}{Exercise}\label{ex:S1=>sc}
 Show that a path-connected space $\c{X}$ is simply-connected if and only if every continuous map $f\:\SS^1\to \c{X}$ is null-homotopic.
 \end{thm}
 
-\begin{thm}{Exercise}\label{ex:van-kamp}
-Suppose that $V$ and $W$ are open subsets of a topological space $\c{X}$ such that
+\begin{thm}{Exercise}\label{ex:contractible=>sc}
+Show that any contractible space is simply-connected.
+
+\end{thm}
+
+\begin{thm}{Proposition}\label{ex:van-kamp:sc}
+Suppose that $V$ and $W$ are open simply-connected subsets of a topological space $\c{X}$ such that
 $\c{X}=V\cup W$, and the set $V\cap W$ is path-connected.
-Let $x_0\in V\cap W$.
+Then $\c{X}$ is simply-connected.
 
-\begin{subthm}{ex:van-kamp:loops}
-Show that any loop in $\c{X}$ based at $x_0$ is homotopic to a product of loops in $V$ or $W$ with the same base.
-\end{subthm}
+\end{thm}
 
-\begin{subthm}{ex:van-kamp:sc}
-Conclude that if $V$ and $W$ are simply-connected, then so is $\c{X}$.
-\end{subthm}
+This statement is a special case of Van Kampen's theorem; the general version of this theorem provides a way to calculate the fundamental group of $\c{X}$ in terms of fundamental groups of $V$, $W$, $V\cap W$ and the homomorphisms
+$\pi_1(V\z\cap W,x_0)\to\pi_1(V,x_0)$, $\pi_1(V\cap W,x_0)\z\to\pi_1(W,x_0)$ induced by the inclusions $V\cap W\z\hookrightarrow V$ and $V\cap W\hookrightarrow W$.
+See also \ref{ex:vankam-nonconnect}.
 
-\begin{subthm}{ex:van-kamp:s2}
-Apply \ref{SHORT.ex:van-kamp:sc} to show that $\SS^2$ is simply-connected.
-\end{subthm}
+Recall that if the product of paths is not parenthesized, then it is taken in the usual order;
+that is, \index{$a*b*c*d$} $a*b*c*d\df((a*b)*c)*d$.
 
-\begin{subthm}{ex:van-kamp:s2d}
-Let $\c{X}$ be the union of a sphere and a disc bounded by the equator of the sphere.
-Show that $\c{X}$ is simply-connected.
-\end{subthm}
+\parit{Proof.}
+Let $a$ be a loop in $\c{X}$ based at $x_0\in V\cap W$.
+Note that we can choose a sequence $0=t_0<t_1<\dots<t_n=1$ such that
+$a([t_{i-1},t_i])\z\subset V$, or $a([t_{i-1},t_i])\subset W$ and $a(t_i)\in V\cap W$ for each $i$.
 
+\begin{wrapfigure}{r}{45 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-1350}
+\end{wrapfigure}
+
+Indeed, two open sets $a^{-1}(V)$ and $a^{-1}(W)$ cover $[0,1]$; let $\eps>0$ be a Lebesgue number of this cover.
+So if $|t_i-t_{i-1}|<\eps$, then $a([t_{i-1},t_i])\subset V$ or $a([t_{i-1},t_i])\subset W$ for each $i$.
+If $a(t_i)\notin V\cap W$ for some $i$, then it can be removed from the sequence keeping the property;
+after several such removals we get the needed subdivision.
+
+Reparametrizing $[t_{i-1},t_i]$ by $[0,1]$ we get paths $a_1,\dots,a_n$ such that
+\[a\sim a_1*\dots*a_n\]
+and each $a_i$ lies completely in $V$ or $W$ and has ends in $V\cap W$.
+Let us connect $x_0$ to every point $x_i=a_i(1)$ for $i<n$ by a path $b_i$ in $V\cap W$.
+By \ref{clm:homot-claims},
+\[a_1*\ldots*a_n{\sim}(a_1*\bar b_1)*(b_1*a_2*\bar b_2)*\ldots*(b_{n-1}*a_n).\]
+
+Observe that each loop $a_1*\bar b_1$, $b_1*a_2*\bar b_2, \z\dots, b_{n-1}*a_n$ lies entirely in $V$ or $W$.
+Since $V$ and $W$ are simply-connected,
+\[a_1*\bar b_1\sim e_{x_0},\quad
+ b_1*a_2*\bar b_2\sim e_{x_0},\quad \dots\ ,\quad b_{n-1}*a_n\sim e_{x_0}.
+\]
+Hence $a_1*\ldots*a_n\sim e_{x_0}$, and the statement follows.
+\qeds
+
+\begin{thm}{Exercise}\label{ex:van-kamp}
+Show that (a) $\SS^2$ and (b) the union of a sphere and a disc bounded by the equator of the sphere
+are simply-connected.
 
 \end{thm}

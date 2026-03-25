@@ -28,8 +28,8 @@ $\tilde{\c{Z}}$ and \index{base space}\emph{base} $\c{Z}$.
 \end{thm}
 
 Note that the map $w\:\tilde{\c{Z}}\to \c{Z}$ is a covering, if $\c{Z}$ admits an open cover by evenly covered sets.%
-\footnote{This phrase uses ``cover'' three times with meanings from \ref{def:evenly-covered} and \ref{def:cover}.}
-Following the proof of \ref{prop:lifting}, one sees that the map $w(x)\z=\exp(2\cdot\pi\cdot i\cdot x)$  defines a covering map $\RR\to\SS^1$.
+\footnote{This phrase uses ``cover'' with two different meanings from \ref{def:evenly-covered} and \ref{def:cover}.}
+Following the proof of \ref{prop:lifting}, one sees that the warping map $w(x)\z=\exp(2\cdot\pi\cdot i\cdot x)$  defines a covering map $\RR\to\SS^1$.
 Keep this example in your head while reading further.
 
 The following observation will be used without mentioning.
@@ -60,19 +60,19 @@ Let $w\:\tilde{\c{Z}}\to \c{Z}$ be a covering map.
 Choose an open set $\tilde V\subset \tilde{\c{Z}}$ and a point $\tilde z\in \tilde V$.
 
 Choose an evenly covered open set $W\ni z=w(\tilde z)$.
-The point $\tilde z$ lies in one of its slices, say $\tilde W_\alpha$.
+The point $\tilde z$ must lie in one of its slices, say $\tilde W_\alpha$.
 Let $\tilde W'_\alpha=\tilde W_\alpha\cap \tilde V$.
 Since $w|_{\tilde W_\alpha}$ is a homeomorphism, $W'=w(\tilde W_\alpha')$ is open in $W$;
 since $W$ is open,  we also have that $W'$ is open in $\c{Z}$.
 That is, any $z\in w(\tilde V)$ admits an open neighborhood $W'\subset w(\tilde V)$;
-in other words, $w(\tilde V)$ is open.
+hence $w(\tilde V)$ is open.
 \qeds
 
 \begin{thm}{Exercise}\label{ex:covering-clopen}
 Let $w\:\tilde{\c{Z}}\to\c{Z}$ be a covering map.
 
 \begin{subthm}{ex:covering-clopen:point}
-Show that the invers image $w^{-1}\{p\}$ of any one point set $\{p\}$ is a descrete subset of $\tilde{\c{Z}}$.
+Show that the inverse image $w^{-1}\{p\}$ of any one point set $\{p\}$ is a discrete subset of $\tilde{\c{Z}}$.
 \end{subthm}
 
 
@@ -95,14 +95,18 @@ Show that the map $\tilde{\c{X}}\times\tilde{\c{Y}} \to \c{X}\times\c{Y}$ define
 
 \section{Trivial coverings}
 
-Any homeomorphism is a covering.
-Note also that if $\c{I}$ is a discrete space, then for any topolgical space $\c{Z}$ the projection $\c{Z}\times{\c{I}}\to \c{Z}$ defined by $(z,i)\mapsto z$ is a covering.
-(Essentially we took several disjoint copies of space $\c{Z}$ and map a point in each copy to the corresponding point in $\c{Z}$.)
+Observe that any homeomorphism is a covering.
+Further, suppose $\c{Z}$ is an arbitrary topological space and $\c{I}$ is a discrete space, then the projection $\c{Z}\times{\c{I}}\to \c{Z}$ defined by $(z,i)\mapsto z$ is a covering.
+(Informally speaking, we took several disjoint copies of space $\c{Z}$ and map a point in each copy to the corresponding point in $\c{Z}$.)
 
 A covering $w\:\tilde{\c{Z}}\to \c{Z}$ is called \index{trivial covering}\emph{trivial} if there is a discrete space $\c{I}$ and a homeomorphism $h\:\c{Z}\times{\c{I}}\to \tilde{\c{Z}}$ such that $w\circ h$ is the projection $\c{Z}\times{\c{I}}\to \c{Z}$.
 
 Note that any trivial connected covering must be a homeomorphism.
-The map $w(x)\z=\exp(2\cdot\pi\cdot i\cdot x)$ provides an example of a nontrivial covering map $\RR\to\SS^1$.
+Since $\RR$ and $\SS^1$ are connected, the warping map $w(x)\z=\exp(2\cdot\pi\cdot i\cdot x)$ provides an example of a nontrivial covering map $\RR\to\SS^1$.
+The map $z\mapsto z^n$ gives another example of nontrivial $n$-fold covering $\SS^1\to\SS^1$;
+the total space and base are homeomorphic, but the map is not a homeomorphism.
+
+%???PIC
 
 \section[$n$-fold coverings]{$\bm{n}$-fold coverings}
 
@@ -125,7 +129,7 @@ Show that $w$ is $n$-fold.
 \end{wrapfigure}
 
 Let us denote by $\c{F}_8$ the \emph{figure eight};
-it is the quotient space of two line segments by the subsets of 4 its ends.
+it is the quotient space of two line segments by the subsets of their all 4 ends.
 Formally speaking,
 \[\c{F}_8\simeq([0,1]\cup [2,3])/\{0,1,2,3\}.\]
 From \ref{obs:compact-to-hausdorff}, it follows that $\c{F}_8$ is homeomorphic to the subset shown in the picture.
@@ -142,7 +146,7 @@ it has two connected components each homeomorphic to $\c{F}_8$.
 
 
 \begin{thm}{Exercise}\label{ex:3-fold(8)}
-The picture shows
+The following picture shows
 \begin{figure}[h!]
 \vskip-0mm
 \centering
@@ -161,7 +165,7 @@ Redraw them and mark identified paths by corresponding arrows.
 
 \begin{thm}{Exercise}\label{ex:Theta}
 Let $\Theta$ be the space homeomorphic to the set in the picture;
-it is the union of circle and its diameter with induced topology form the plane.
+it is the union of circle and its diameter with induced topology from the plane.
 Which of the following spaces cover $\Theta$;
 if yes, then label paths identified by the covering map by three types arrows,
 if not, then explain why.
@@ -178,7 +182,7 @@ if not, then explain why.
 Given two continuous maps $v\:\c{X}\to \c{Z}$ and $w\:\c{Y}\to \c{Z}$, consider the set
 \[\c{P}=\set{(a,b)\in \c{X}\times \c{Y}}{v(a)=w(b)}\]
 equipped with the induced topology from $\c{X}\times \c{Y}$.
-Let us define $\tilde v\:\c{P}\z\to\c{Y}$ and $\tilde w\:\c{P}\to\c{X}$ as the restrictions to $\c{P}$ of
+Define $\tilde v\:\c{P}\z\to\c{Y}$ and $\tilde w\:\c{P}\to\c{X}$ as the restrictions to $\c{P}$ of
 the projections $\c{X}\times \c{Y}\z\to \c{Y}$ and $\c{X}\times \c{Y}\to \c{X}$.
 
 {
@@ -210,7 +214,7 @@ This is a natural choice of space and maps that makes the diagram commute. % \in
 \end{tikzcd}
 \end{wrapfigure}
 
-If $\c{Z}$ is a one-point space (denoted by $*$ on the diagram), then the maps$v$ and $w$ are uniquely defined.
+If $\c{Z}$ is a one-point space (denoted by $*$ on the diagram), then the maps $v$ and $w$ are uniquely defined.
 In this case, $\c{P}=\c{X}\times \c{Y}$ and the maps $\tilde v$ and $\tilde w$ are projections, so fibered product generalize the usual product.
 
 }
@@ -239,8 +243,8 @@ Show that pullback $\tilde v$ of a covering $v$ is a covering; moreover, if $v$ 
 \begin{thm}{Exercise}\label{ex:fibered-product(covering)}
 
 \begin{subthm}{ex:fibered-product(covering):general}
-Suppose that in the fibered-product diagram $v$ and $w$ are coveings.
-Show that $f$ is a covering.
+Suppose that the maps $v$ and $w$ in the fibered-product diagram are coverings.
+Show that $f\z=v\circ \tilde w=w\circ \tilde v$ is a covering.
 \end{subthm}
 
 
@@ -251,8 +255,8 @@ The picture shows
 \centering
 \includegraphics{mppics/pic-1662}
 \end{figure}
-2-fold coverings $v$ and $w$ of figure eight encoded by arrows as in \ref{sec:Figure eight}.
-Draw the space of their firbered product and encode by arrows the covering $f$.
+2-fold coverings $v$ and $w$ of figure eight encoded with arrow notation as in \ref{sec:Figure eight}.
+Draw the space of their fibered product and draw the corresponding arrows for the covering $f=v\circ \tilde w=w\circ \tilde v$.
 \end{subthm}
 
 \end{thm}
@@ -261,7 +265,7 @@ Draw the space of their firbered product and encode by arrows the covering $f$.
 
 \section{Lifts}
 
-In Section~\ref{sec:lifting-s1}, we defined lifts along the warping map $\RR\to\SS^1$.
+Earlier in \ref{sec:lifting-s1}, we defined lifts along the warping map $\RR\to\SS^1$.
 Now we repeat the same definition for coverings.
 
 \begin{wrapfigure}{r}{23 mm}
@@ -289,7 +293,8 @@ Moreover, given any homotopy of paths $a_\tau$ from $a_0$ to $a_1$ admits a uniq
 In particular, if $a_0\sim a_1$, then $\tilde a_0(1)= \tilde a_1(1)$.
 \end{thm}
 
-This lemma is a direct generalization of \ref{prop:lifting}, and it can be proved along the same lines.
+This lemma is a direct generalization of \ref{prop:lifting}.
+We omit the proof since it goes along the same lines.
 In fact, the definition of covering map was made just to make this lemma hold.
 
 \begin{thm}{Exercise}\label{ex:unique-lift}
@@ -313,7 +318,7 @@ Consider a lift $\tilde a$ such $\tilde a(0)=\tilde z_1$ and let $\tilde z_\alph
 \parit{Proof.}
 Note that $w(\tilde a(1))=a(1)=z_0$; therefore $\tilde z_\alpha\in w^{-1}\{z_0\}$ as required.
 
-Let us show that the map $\tilde z_\alpha$ is well defined;
+Let us show that $\alpha\mapsto\tilde z_\alpha$ is well-defined;
 that is, the point $\tilde a(1)$ does not depend on choice of the loop $a$, assuming that $\alpha=[a]$.
 Indeed, if $\alpha=[b]$ for some loop $b$, then $a\sim b$, and by the second statement in the lemma, we get $\tilde a(1)=\tilde b(1)$.
 
@@ -324,9 +329,9 @@ This implies that the map $\alpha\mapsto\tilde z_\alpha$ is onto $w^{-1}\{z_0\}$
 It remains to check that the map $\alpha\mapsto \tilde z_\alpha$ is injective.
 Suppose $\tilde a(1)=\tilde b(1)$ for two paths starting at $\tilde z_1$.
 Since $\tilde{\c{Z}}$ is simply-connected,
-we have that $\tilde a\sim \tilde b$ (see \ref{ex:sc=homot-paths}); that is, there is a homotopy $\tilde a_\tau$ from $\tilde a$ to $\tilde b$.
+we have that $\tilde a\sim \tilde b$; that is, there is a homotopy $\tilde a_\tau$ from $\tilde a$ to~$\tilde b$.
 Observe that $a_\tau=w\circ  \tilde a_\tau$ is a homotopy from $a=w\circ \tilde a$ to $b=w\circ \tilde b$;
-that is, $[a]=[b]\z\in \pi_1(\c{Z},z_0)$.
+that is, $a\sim b$ which is equivalent to $[a]=[b]\z\in \pi_1(\c{Z},z_0)$.
 \qeds
 
 
@@ -364,7 +369,7 @@ In this case, we also have
 \[
 g_1\cdot V\cap g_2\cdot V=g_1\cdot (V\cap g_1^{-1}\cdot g_2\cdot V)=\emptyset
 \]
-for distinct elements $g_1,g_2\in G$.
+for any tow distinct elements $g_1,g_2\in G$.
 
 \begin{thm}{Proposition}\label{prop:freely-discontinuous}
 Let $G\acts \c{X}$ be a continuous action.
@@ -376,8 +381,8 @@ If a covering $w$ can be realized as a quotient map by an action of some group $
 Normal coverings are also called \index{regular covering}\emph{regular} and \index{Galois covering}\emph{Galois}.} or \index{$G$-covering}\emph{$G$-covering};
 the latter term is used if one needs to specify the group.
 
-Note that the map $w\:\RR\to \SS^1$ constructed in \ref{sec:lifting-s1} is a normal covering;
-it is the quotient map for a freely discontinuous action $\ZZ\acts\RR$ by integer shifts.
+Note that the map $w\:\RR\to \SS^1$ constructed in \ref{sec:lifting-s1} is a normal $\ZZ$-covering, where $\ZZ$ denotes the set of integers;
+it is the quotient map for a freely discontinuous action $\ZZ\acts\RR$ by integer shifts $x\mapsto x+n$, where $n\in\ZZ$.
 
 \parit{Proof.}
 By the definition of the quotient map, $w\:\c{X}\to \c{X}/G$ is continuous and surjective;
@@ -387,11 +392,12 @@ Let $V$ be an open neighborhood of $x\in \c{X}$ that meets the condition in the 
 Since $w$ is open, $W=w(V)$ is an open neighborhood of $w(x)\z=[x]=G\cdot x$.
 Furthermore,
 \[w^{-1}(W)=G\cdot V=\bigcup_{g\in G} g\cdot V.\]
-and the restriction $w|_{g\cdot V}$ is a homeomorphism $g\cdot V\to W$ (since $w|_{g\cdot V}$ is open, continuous, and bijective).
+and the restriction $w|_{g\cdot V}$ is a homeomorphism $g\cdot V\to W$;
+indeed, $w|_{g\cdot V}$ is open, continuous, and bijective map $g\cdot V\to W$.
 Therefore, $w$ meets the conditions in the definition of covering.
 
 On the other hand, if the quotient map $w\:\c{X}\to \c{X}/G$ is a covering,
-then every point $w(x)\in \c{X}/G$ admits a evenly covered neighborhood $W$;
+then every point $w(x)\in \c{X}/G$ admits an evenly covered neighborhood $W$;
 its slice $V\ni x$ meets the condition in the definition of freely discontinuous action.
 \qeds
 
@@ -410,7 +416,7 @@ Then the quotient map $\c{X}\z\to \c{X}/G$ is a covering.
 \parit{Proof.}
 Choose $x\in \c{X}$ and $g\ne 1$ in $G$.
 Since $G\acts \c{X}$ is free, $g\cdot x\ne x$.
-Since $\c{X}$ is Hausdorff we can choose open disjoint open sets $U_g\ni x$ and $V_g\z\ni g\cdot x$.
+Since $\c{X}$ is Hausdorff we can choose disjoint open sets $U_g\ni x$ and $V_g\z\ni g\cdot x$.
 Let $W_g=U_g\cap g^{-1}\cdot V_g$.
 Note that $W_g\ni x$ and $g\cdot W_g\ni g\cdot x$ are disjoint open sets.
 Indeed, $W_g\cap g\cdot W_g\subset U_g\cap V_g=\emptyset$.
@@ -426,7 +432,7 @@ It remains to apply \ref{prop:freely-discontinuous}.
 \begin{wrapfigure}{r}{27 mm}
 \vskip-1mm
 \centering
-\includegraphics{mppics/pic-1655}
+\includegraphics{mppics/pic-1656}
 \end{wrapfigure}
 
 \begin{thm}{Exercise}\label{ex:4-fold(8)}
@@ -447,102 +453,6 @@ a non-normal 4-fold covering of $\c{F}_8$.
 
 \end{thm}
 
-\section{Monodromy}
-
-Let $w\:\tilde{\c{Z}}\to\c{Z}$ be a normal $G$-covering.
-Choose a point $z_0\in \c{Z}$; its inverse image $w^{-1}\{z_0\}$ is a $G$-orbit of the action $G\acts \tilde{\c{Z}}$.
-
-Choose a point $p\in w^{-1}\{z_0\}$, so $w^{-1}\{z_0\}=G\cdot p$.
-Given $\alpha=[a]\in \pi_1(\c{Z},z_0)$, consider a lift $\tilde a$ of $a$ such $\tilde a(0)=p$.
-Note that $w\circ \tilde a(1)=a(1)=z_0$, so $\tilde a(1)=g_\alpha\cdot p$ for some $g_\alpha\in G$.
-
-By \ref{lem:path-lifting}, $\tilde a(1)$ and therefore $g_\alpha$ depends only on the homotopy class $\alpha=[a]$.
-Thus we get a map $\pi_1(\c{Z},z_0)\to G$ defined by $\alpha\mapsto g_\alpha$.
-
-Let us show that this map is a homomorphism $\pi_1(\c{Z},z_0)\to G$; it will be called the \index{monodromy homomorphism}\emph{monodromy homomorphism} of the normal $G$-covering $w\:\tilde{\c{Z}}\to\c{Z}$.
-In other words, we need to show that
-$g_{\alpha\cdot\beta}\z=g_\alpha\cdot g_\beta$.
-
-Choose loops $a$ and $b$ based at $z_0\in\c{Z}$ such that $\alpha=[a]$ and $\beta=[b]$.
-Let $\tilde a$ and $\tilde b$ be the lifts of $a$ and $b$ that start at $\tilde p$.
-Note that $g_\alpha\circ \tilde b$ is a lift of $b$ that starts at $\tilde a(1)=g_\alpha\cdot p$.
-Therefore $\tilde a*(g_\alpha\circ \tilde b)$ is a lift of $a*b$ that start at $p$.
-It follows that
-\[g_{\alpha\cdot \beta}(p)=\tilde a*(g_\alpha\circ \tilde b)(1)=g_\alpha\circ\tilde b(1)=g_\alpha\circ g_\beta(p).\]
-
-\begin{thm}{Exercise}\label{ex:monodromy}
-Let $m\:\pi_1(\c{Z},z_0)\to G$ be a monodromy homomorphism of a normal $G$-covering $w\:\tilde{\c{Z}}\to\c{Z}$.
-\begin{subthm}{ex:monodromy:surjective}
-Assume $\tilde{\c{Z}}$ is path-connected.
-Show that $m$ is surjective.
-\end{subthm}
-
-\begin{subthm}{ex:monodromy:isomorphism}
-Assume $\tilde{\c{Z}}$ is simply-connected.
-Show that $m$ is an isomorphism.
-\end{subthm}
-
-\begin{subthm}{ex:monodromy:trivial}
-Assume $w$ is a trivial covering. Show that $m$ is \index{trivial homomorphism}\emph{trivial}; that is it sends the whole fundamental group to the nutral element of $G$.
-\end{subthm}
-
-\end{thm}
-
-\begin{thm}{Advanced exercise}
-Construct a finite topological space with fundamental group isomorphic to $\ZZ_2$.
-\end{thm}
-
-
-\section{Klein bottle}
-
-Consider the following tesselation of $\RR^2$ into unit squares.
-\begin{figure}[!ht]
-\vskip -0mm
-\centering
-\includegraphics{mppics/pic-1740}
-\vskip -6mm
-\end{figure}
-Let $G\acts\RR^2$ be the group action that preserves this tesselation and the arrows on the sides of squares.
-Formally speaking, the action includes the motions
-\[(x,y)\mapsto (m+x, n+(-1)^m\cdot y)\]
-for all integers $m$ and $n$.
-
-The quotient space $\RR^2/G$ is called \emph{Klein bottle}.
-\begin{figure}[h!]
-\centering
-\includegraphics{mppics/pic-1743}
-\hskip 4mm
-\includegraphics[angle=90]{asy/klein-bottle}
-\end{figure}
-This space can be also glued from the square $[-1,1]\times[-1,1]$ by the minimal equivalence relation such that $(x,-1)\sim (-x,1)$ and $(-1,y)\sim (1,y)$.
-The picture on the right might help to visualize this space, but this is not an embedding of $\c{K}$, and in fact there is embedding of $\c{K}$ in $\RR^3$.
-
-%\begin{figure}[h!]\centering\includegraphics{asy/klein-bottle+++}\end{figure}
-
-\begin{thm}{Exercise}
-Let $G\acts \RR^2$ be the described action,
-and let $\c{K}\z=\RR^2/G$ be the Klein bottle.
-
-\begin{subthm}{}
-Show that $G\acts \RR^2$ is a freely discontinuous action.
-\end{subthm}
-
-
-\begin{subthm}{}
-Apply \ref{ex:monodromy:isomorphism} to show that $\pi_1(\c{K})\cong G$.
-\end{subthm}
-
-\begin{subthm}{}
-Show that $G$ and therefore $\pi_1(\c{K})$ are noncommutative.
-\end{subthm}
-
-
-\begin{subthm}{}
-Construct a 2-fold covering of $\c{K}$ by the torus $\SS^1\times\SS^1$.
-\end{subthm}
-
-\end{thm}
-
 \section{Real projective plane}
 
 The equivalence class of an integer $m$ modulo $n$ will be denoted by $[m]_n$;
@@ -550,7 +460,9 @@ that is,
 \[[m]_n =\set{m+k\cdot n}{k\in\ZZ};\]
 here $\ZZ$ denotes the set of integers.
 The set of equivalence classes of integers modulo $n$ will be denoted by $\ZZ_n$.
-The operation $[m_1]_n\z+[m_2]_n\df[m_1+m_2]_n$ defines on $\ZZ_n$ a group structure with neutral element $[0]_n$;
+The operation
+\[[m_1]_n\z+[m_2]_n\df[m_1+m_2]_n\]
+defines on $\ZZ_n$ a group structure with neutral element $[0]_n$;
 it is \index{cyclic group}\emph{cyclic group} of order $n$, generated by element $[1]_n$.
 
 Recall that all cyclic groups of order $n$ are isomorphic, so it is acceptable to denote a cyclic groups of order $n$ by $\ZZ_n$.
@@ -562,7 +474,8 @@ Since $\ZZ_2$ is finite, by \ref{cor:covering-finite-action}, the quotient map $
 By \ref{ex:van-kamp:s2}, $\SS^2$ is simply-connected.
 By \ref{thm:bijection-fiber}, $\pi_1(\RP^2)$ has exactly two elements, and therefore it is isomorphic to $\ZZ_2$.
 (This is the only group with two elements up to isomorphism.)
-Thus we proved the following.
+One could also deduce that $\pi_1(\RP^2)\cong\ZZ_2$ from \ref{ex:monodromy:isomorphism}.
+One way or another, we proved the following.
 
 \begin{thm}{Claim}
 $\pi_1(\RP^2)\cong \ZZ_2$.
@@ -572,9 +485,8 @@ $\pi_1(\RP^2)\cong \ZZ_2$.
 Show that any 2-fold covering is a normal $\ZZ_2$-covering.
 \end{thm}
 
-\begin{thm}{Exercise}\label{ex:2-folded-s1}
-Let $\ZZ_2\acts \SS^1$ be the action generated by involution $x\mapsto -x$.
-Show that $\SS^1/\ZZ_2\simeq\SS^1$ and therefore the quotient map defines a 2-fold cover $\SS^1\to \SS^1$.
+\begin{thm}{Advanced exercise}
+Construct a finite topological space with fundamental group isomorphic to $\ZZ_2$.
 \end{thm}
 
 \section{Borsuk--Ulam theorem}
@@ -583,12 +495,18 @@ Show that $\SS^1/\ZZ_2\simeq\SS^1$ and therefore the quotient map defines a 2-fo
 There is no continuous map $\tilde h\:\SS^2\to \SS^1$ such that $\tilde h(-\tilde x)=-\tilde h(\tilde x)$ for any $\tilde x\in\SS^2$.
 \end{thm}
 
-The proof relies on the following algebraic lemma.
+The proof relies on the following exercise and lemma.
+
+\begin{thm}{Exercise}\label{ex:2-folded-s1}
+Let $\ZZ_2\acts \SS^1$ be the action generated by involution $x\mapsto -x$.
+Show that $\SS^1/\ZZ_2\simeq\SS^1$ and therefore the quotient map defines a 2-fold cover $\SS^1\to \SS^1$.
+\end{thm}
 
 \begin{thm}{Lemma}
-Any homomorphism $\ZZ_2\to\ZZ$ is \index{trivial homomorphism}\emph{trivial};
-In this case it means that  $[1]_2\mapsto 0$.
+Any homomorphism $\ZZ_2\to\ZZ$ is \index{trivial homomorphism}\emph{trivial}.
 \end{thm}
+
+Note that the homomorphism in the lemma is trivial if and only if $[1]_2\mapsto 0$.
 
 \parit{Proof.}
 Assume $\phi\:\ZZ_2\to\ZZ$ is a nontrivial homomorphism,
@@ -632,7 +550,8 @@ Assume that $\tilde h$ exists.
 
 Choose $\tilde x_0\in \SS^2$ and a path $\tilde a\:[0,1]\to \SS^2$ from $\tilde x_0$ to $-\tilde x_0$.
 Let $v\: \SS^2\to\RP^2$ be the quotient map for the equivalence relation $\tilde x\sim -\tilde x$.
-Note that $v$ is a 2-fold covering, and $a=v\circ \tilde a$ is a loop in $\RP^2$ based at $x_0=v(\tilde x_0)$, and $\tilde a$ is its lift.%
+Recall that $v$ is a 2-fold covering.
+Note that $a=v\circ \tilde a$ is a loop in $\RP^2$ based at $x_0=v(\tilde x_0)$, and $\tilde a$ is its lift.%
 \footnote{By \ref{thm:bijection-fiber}, we have $\alpha=[a]=[1]_2\in \ZZ_2=\pi_1(\RP^2)$, but it will not be used in the proof directly.}
 
 The path $\tilde b=\tilde h\circ \tilde a$ runs from $\tilde y_0=\tilde h(\tilde x_0)$ to $-\tilde y_0=-\tilde h(\tilde x_0)$.
@@ -662,19 +581,122 @@ points in $\SS^2$ that map to a single point.
 
 \begin{subthm}{ex:sandwich}
 Suppose that a sandwich is made from three ingredients, say, cheese, ham, and bread.
-Show that one cut sandwich by a plane so that each ingredient is evenly divided.%
+Show that one can cut the sandwich by a plane so that each ingredient is evenly divided.%
 \footnote{А picky reader can assume that each ingredient occupies a convex polyhedron in the space and has constant density.}
 \end{subthm}
 
 
 \begin{subthm}{ex:ABC}
-Let $A$, $B$, and $C$ be closed subsets $\SS^2$ such that $A\cup B\cup C=\SS^2$.
+Let $A$, $B$, and $C$ be closed subsets of $\SS^2$ such that $A\cup B\cup C=\SS^2$.
 Apply \ref{SHORT.ex:Borsuk-Ulam:Borsuk-Ulam} to the map $f\: \SS^2\z\to \RR^2$ defined by
 \[f\:x\mapsto (\dist_Ax,\dist_Bx)\]
 to conclude that one of the sets $A$, $B$, or $C$
 contains a pair of antipodal
 points in $\SS^2$.
 Give an example showing that analogous statement does not hold for four closed set $A$, $B$, $C$, and $D$.
+\end{subthm}
+
+\end{thm}
+
+
+\section{Monodromy}\label{sec:monodromy}
+
+\begin{thm}{Proposition}
+Let $w\:\tilde{\c{Z}}\to\c{Z}$ be a normal $G$-covering.
+Suppose that $w(\tilde z_1)=z_0$ for some points $\tilde z_1\in \tilde{\c{Z}}$ and $z_0\in \c{Z}$.
+Then there is a unique homomorphism $m\:\pi_1(\c{Z},z_0)\to G$ such that
+$m[a]\cdot \tilde z_1=\tilde a(1)$ for any loop $a\:[0,1]\to \c{Z}$ based at $z_0$ and its lift $\tilde a\:[0,1]\to \tilde{\c{Z}}$ such that $\tilde a(0)=\tilde z_1$.
+
+\end{thm}
+
+The homomorphism $m\:\pi_1(\c{Z},z_0)\to G$ is called \index{monodromy homomorphism}\emph{monodromy homomorphism} of the normal $G$-covering $w\:\tilde{\c{Z}}\to\c{Z}$.
+
+\parit{Proof.}
+Note that $w^{-1}\{z_0\}=G\cdot\tilde z_1$.
+
+Choose $\alpha=[a]\in \pi_1(\c{Z},z_0)$, let $\tilde a$ be  a liftof $a$ such $\tilde a(0)=\tilde z_1$.
+Note that $w\circ \tilde a(1)=a(1)=z_0$, so $\tilde a(1)=g_\alpha\cdot \tilde z_1$ for some $g_\alpha\in G$.
+
+By \ref{lem:path-lifting}, $\tilde a(1)$ and therefore $g_\alpha$ depends only on the homotopy class $\alpha=[a]$.
+Thus we get a well-defined map $\alpha\mapsto g_\alpha$ from $\pi_1(\c{Z},z_0)$ to $G$.
+
+Let us show that this map is a homomorphism $\pi_1(\c{Z},z_0)\to G$.
+In other words, we need to show that
+\[g_{\alpha\cdot\beta}\z=g_\alpha\cdot g_\beta.\]
+
+Choose loops $a$ and $b$ based at $z_0\in\c{Z}$ such that $\alpha=[a]$ and $\beta=[b]$.
+Let $\tilde a$ and $\tilde b$ be the lifts of $a$ and $b$ that start at $\tilde z_1$.
+Note that $g_\alpha\circ \tilde b$ is a lift of $b$ that starts at $\tilde a(1)=g_\alpha\cdot \tilde z_1$.
+Therefore $\tilde a*(g_\alpha\circ \tilde b)$ is a lift of $a*b$ that start at $\tilde z_1$.
+It follows that
+\[g_{\alpha\cdot \beta}(\tilde z_1)=\tilde a*(g_\alpha\circ \tilde b)(1)=g_\alpha\circ\tilde b(1)=g_\alpha\circ g_\beta(\tilde z_1).\]
+It remains to set $m(\alpha)\df g_\alpha$.
+\qeds
+
+\begin{thm}{Exercise}\label{ex:monodromy}
+Let $m\:\pi_1(\c{Z},z_0)\to G$ be a monodromy homomorphism of a normal $G$-covering $w\:\tilde{\c{Z}}\to\c{Z}$.
+\begin{subthm}{ex:monodromy:surjective}
+Assume $\tilde{\c{Z}}$ is path-connected.
+Show that $m$ is surjective.
+\end{subthm}
+
+\begin{subthm}{ex:monodromy:isomorphism}
+Assume $\tilde{\c{Z}}$ is simply-connected.
+Show that $m$ is an isomorphism.
+\end{subthm}
+
+\begin{subthm}{ex:monodromy:trivial}
+Assume $w$ is a trivial covering. Show that $m$ is \index{trivial homomorphism}\emph{trivial}; that is it sends the whole fundamental group to the nutral element of $G$.
+\end{subthm}
+
+\end{thm}
+
+\section{Klein bottle}
+
+Consider the following tesselation of $\RR^2$ into unit squares.
+\begin{figure}[!ht]
+\vskip -0mm
+\centering
+\includegraphics{mppics/pic-1740}
+\vskip -6mm
+\end{figure}
+Let $G\acts\RR^2$ be the group action that preserves this tesselation and the arrows on the sides of squares.
+Formally speaking, the action includes the motions
+\[(x,y)\mapsto (m+x, n+(-1)^m\cdot y)\]
+for all integers $m$ and $n$.
+
+The quotient space $\RR^2/G$ is called \emph{Klein bottle}.
+\begin{figure}[h!]
+\centering
+\includegraphics{mppics/pic-1743}
+\hskip 4mm
+\includegraphics[angle=90]{asy/klein-bottle}
+\end{figure}
+This space can be also glued from the square $[-1,1]\times[-1,1]$ by the minimal equivalence relation such that $(x,-1)\sim (x,1)$ and $(-1,y)\sim (1,-y)$.
+The picture on the right might help to visualize this space, but this is not an embedding of $\c{K}$, and in fact there is embedding of $\c{K}$ in $\RR^3$.
+
+%\begin{figure}[h!]\centering\includegraphics{asy/klein-bottle+++}\end{figure}
+
+\begin{thm}{Exercise}
+Let $G\acts \RR^2$ be the described action,
+and let $\c{K}\z=\RR^2/G$ be the Klein bottle.
+
+\begin{subthm}{}
+Show that the action $G\acts \RR^2$ is freely discontinuous.
+\end{subthm}
+
+
+\begin{subthm}{}
+Apply \ref{ex:monodromy:isomorphism} to show that $\pi_1(\c{K})\cong G$.
+\end{subthm}
+
+\begin{subthm}{}
+Show that $G$ and therefore $\pi_1(\c{K})$ are noncommutative.
+\end{subthm}
+
+
+\begin{subthm}{}
+Construct a 2-fold covering of $\c{K}$ by the torus $\SS^1\times\SS^1$.
 \end{subthm}
 
 \end{thm}

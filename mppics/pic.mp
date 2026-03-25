@@ -1076,14 +1076,14 @@ p2=z.p{(1,-1)}..{(1,0)}z.q;
 p3=z.x0{(-.1,1)}..{(1,.3)}z.p;
 p4=z.x0{(1,-.1)}..{(1,.5)}z.q;
 
-drawarrow subpath(0,.5) of p1;
-draw subpath(.5,1) of p1;
-drawarrow subpath(0,.5) of p2;
-draw subpath(.5,1) of p2;
-drawarrow subpath(0,.5) of p3;
-draw subpath(.5,1) of p3;
-drawarrow subpath(0,.5) of p4;
-draw subpath(.5,1) of p4;
+drawarrow subpath(0,.5) of p1 pensemibold;
+draw subpath(.5,1) of p1 pensemibold;
+drawarrow subpath(0,.5) of p2 pensemibold;
+draw subpath(.5,1) of p2 pensemibold;
+drawarrow subpath(0,.5) of p3 pensemibold;
+draw subpath(.5,1) of p3 pensemibold;
+drawarrow subpath(0,.5) of p4 pensemibold;
+draw subpath(.5,1) of p4 pensemibold;
 
 dOt z.x0,z.p,z.q;
 
@@ -1364,6 +1364,45 @@ u:=1cm;
 p1=(1,0)*u..{up}(2,0)*u..(1,0)*u..(0,0)*u{up}..cycle;
 
 draw p1;
+
+endfig;
+
+beginfig(1656)
+save u,p;
+path p[];
+u:=1cm;
+
+vardef midarrowpath(expr p) =
+  save t, m, v;
+  numeric t;
+  pair m, v;
+
+  t := arctime ((arclength p)/2) of p;  % <-- FIXED
+  m := point t of p;
+  v := unitvector(direction t of p);
+
+  draw (m - 1*v + 2*v rotated  90) -- (m + 1*v) -- (m - 1*v + 2*v rotated -90);
+enddef;
+
+vardef midarrowtwopath(expr p) =
+  save t, m, v;
+  numeric t;
+  pair m, v;
+
+  t := arctime ((arclength p)/2) of p;  % <-- FIXED
+  m := point t of p;
+  v := unitvector(direction t of p);
+
+  draw (m + 2*v rotated  90) -- (m + 2*v) -- (m + 2*v rotated -90);
+  draw (m + 2*v rotated  90 - 2*v) -- m -- (m + 2*v rotated -90 - 2*v);
+enddef;
+
+p1=(1,0)*u..{up}(2,0)*u..(1,0)*u..(0,0)*u{up}..cycle;
+
+draw p1;
+
+midarrowpath(subpath (0,2) of p1);
+midarrowtwopath(subpath (2,4) of p1);
 
 endfig;
 

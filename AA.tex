@@ -1,3 +1,116 @@
+
+Let $w\:\c{Y}\to\c{Z}$ be a covering with a connected total space $\c{Y}$ and a reasonable connected base $\c{Z}$.
+Chose points $y_0\in \c{Y}$ and $z_0\in \c{Z}$ such that $z_0=w(y_0)$.
+In this case we call it \index{pointed covering}\emph{pointed covering} and write $w\:(\c{Y},y_0)\to(\c{Z},z_0)$.
+
+\begin{wrapfigure}[4]{r}{23 mm}
+\vskip-6mm
+\centering
+\begin{tikzcd}[column sep={1em}, row sep={2em}]
+\c{X}\arrow[dr, "v"']\arrow[rr,  dashed,leftrightarrow]& &\c{Y}\arrow[dl, "w"]\\
+&\c{Z}&
+\end{tikzcd}
+\end{wrapfigure}
+
+Let $v\:\c{X}\to \c{Z}$ and $w\:\c{Y}\to \c{Z}$ be two pointed coverings with the same base, so we have a choice of points
+$x_0\in \c{X}$, $y_0\in \c{Y}$, and $z_0\in \c{Z}$ such that $v(x_0)=w(y_0)=z_0$.
+If $\Im v_*=\Im w_*$, then there is a homeomorphism $h\:\c{X}\to\c{Y}$ such that $f(x_0)=y_0$ and the diagram commutes.
+
+Let $G=\pi_1(\c{Z},z_0)$, and let $H=\Im w_*=w_*(\pi_1(\c{Y},z_0))$.
+Note that $H$ is a subgroup of $G$ (this will be denoted as $H<G$).
+
+Thus, every pointed covering over $(\c{Z},z_0)$ is associated to a to a subgroup $H<G$.
+
+Next we will show that this subgroup essentially defines the pointed covering .
+Namely, l
+
+Let $u\:\tilde{\c{Z}}\to\c{Z}$ be the universal covering.
+By ??? any covering $w\:\c{Y}\to\c{Z}$ can be included in to commutative diagram of coverings.
+By ??? we have an action of $\pi_1(\c{Z})$ on $\tilde{\c{Z}}$ such that
+$u\:\tilde{\c{Z}}\to\c{Z}$ is its quotient map.
+Similarly,
+$v\:\tilde{\c{Z}}\to \c{Y}$ is a quotient map for an action of $\pi_1(\c{Y})$ on $\tilde{\c{Z}}$.
+This must be subaction of $\pi_1(\c{Z})\acts \tilde{\c{Z}}$, that is.
+
+Further
+
+\section[Covering = subgroup]{Covering $\bm{=}$ subgroup}
+
+The following theorem proves classification of coverings over resonable connected space via image of induced homomorphism of fundamental groups.
+
+\begin{wrapfigure}[4]{r}{23 mm}
+\vskip-8mm
+\centering
+\begin{tikzcd}[column sep={1em}, row sep={2em}]
+\c{X}\arrow[dr, "v"']\arrow[rr,  dashed,leftrightarrow]& &\c{Y}\arrow[dl, "w"]\\
+&\c{Z}&
+\end{tikzcd}
+\end{wrapfigure}
+
+\begin{thm}{Theorem}\label{thm:classification-coverings}
+Consider two coverings with the same base $v\:\c{X}\to \c{Z}$ and $w\:\c{Y}\to \c{Z}$.
+Let $a_0\in \c{X}$, $b_0\in \c{Y}$, and $x_0\in \c{Z}$ be a choice of three  points such that $v(a_0)=w(b_0)=x_0$.
+Assume $\c{Z}$ is reasonable and connected;
+furthermore $\c{X}$ and $\c{Y}$ are connected.
+Then $v_*(\pi_1(\c{X},a_0)=w_*(\pi_1(\c{Y},b_0)$ if and only if there is homeomorphism $h\:\c{X}\leftrightarrow \c{Y}$ that makes diagram commute and such that $h(a_0)=b_0$.
+\end{thm}
+
+\parit{Proof.}
+Consider the universal covering $u_{\c{X}}\:\tilde{\c{Z}}\to \c{X}$.
+Note that composition $v\circ u_{\c{X}}\:\tilde{\c{Z}}\to \c{Z}$ is the universal covering of $\c{Z}$.
+Repeating the construction for $\c{Y}$, we get the commutative diagram of covering maps;
+where $u_{\c{X}}$, $u_{\c{Y}}$, and $u$ are universal.
+
+Let $G=\pi_1(\c{Z},x_0)$, $K=\Im v_*$ and $L=\Im w_*$;
+by ???, $K\cong \pi_1(\c{X},a_0)$ and $L\cong \pi_1(\c{Y},b_0)$.
+
+By \ref{thm:action-on-ucovering}, we can identify
+$\c{Z}$ with $\tilde{\c{Z}}/G$,
+$\c{X}$ with $\tilde{\c{Z}}/K$,
+$\c{Y}$ with $\tilde{\c{Z}}/L$.
+
+Note that...
+\qeds
+
+\begin{thm}{Exercise}
+Consider two coverings with the same base $v\:\c{X}\z\to \c{Z}$ and $w\:\c{Y}\to \c{Z}$.
+Let $a_0\in \c{X}$, $b_0\in \c{Y}$, and $x_0\in \c{Z}$ be a choice of three  points such that $v(a_0)=w(b_0)=x_0$.
+Assume $\c{Z}$ is reasonable and connected;
+furthermore $\c{X}$ and $\c{Y}$ are connected.
+Show that two subgroups $v_*(\pi_1(\c{X},a_0)$ and $w_*(\pi_1(\c{Y},b_0)$ are conjugate in $\pi_1(\c{Z},x_0)$
+if and only if there is homeomorphism $h\:\c{X}\leftrightarrow \c{Y}$ that makes diagram commute.
+\end{thm}
+
+
+
+
+\parit{Sketch of proof.}
+Since the action $G\acts\tilde{\c{Z}}$ is freely discontinuous,
+the same holds fro the action of any subgroup $H<G$.
+So the quotient map $\tilde{\c{Z}}\to \tilde{\c{Z}}/H$ is a covering...
+
+Conversely, let $w\:\c{Y}\to \c{Z}$ be a connected covering and let $z_0\z\in w^{-1}(x_0)$.
+By \ref{cor:universal:lift}, there is a covering $v\:\tilde{\c{Z}}\to \c{Y}$ such that $u=w\circ v$ and $v(\tilde x_0)=z_0$.
+If $H=\Im w_*$, then the fibers of $v$ are exactly the $H$-orbits in $\tilde{\c{Z}}$.
+Therefore $v$ factors through a homeomorphism $\tilde{\c{Z}}/H\z\to \c{Y}$.
+\qeds
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 All these coverings are normal.
 In fact by \ref{ex:2-folded} any 2-fold covering is a normal $\ZZ_2$-covering,
 but one can explicitly construct the corresponding $\ZZ_2$-action on each space.

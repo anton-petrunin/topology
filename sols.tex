@@ -383,7 +383,7 @@ Conclude that $f^{-1}(W)$ is open.
 \parit{\ref{SHORT.ex:u-continuous:closed}.}
 Choose a closed set $Q\subset \c{Y}$.
 Use \ref{prop:cont-closed} to show that $a^{-1}(Q)$ and $b^{-1}(Q)$ are closed.
-Apply \mbox{\ref{def:closed-properties:u}} to show that $f^{-1}(Q)$ is closed.
+Apply \ref{def:closed-properties:u} to show that $f^{-1}(Q)$ is closed.
 Apply \ref{prop:cont-closed} again.
 
 \parit{\ref{SHORT.ex:u-continuous:none}.}
@@ -1263,13 +1263,11 @@ $f\:(s,t)\mapsto a(t)\cdot b(s)$.
 Show that $f$ is continuous.
 Write both $a*b$ and $b*a$ as a composition of $f$ with a path from $(0,0)$ to $(1,1)$ in $[0,1]\times [0,1]$ and apply linear homotopy.
 
-\parbf{\ref{ex:contractible=>sc}.} Spell both definitions.
-
 \parbf{\ref{ex:S1=>sc}.} The only-if part follows directly from \ref{prop:sc=1hclass}.
 It remains to prove the if part.
 
 Choose a loop $a$ based at $p$.
-Let us identify $\SS^1$ with $[0,1]/\{0,1\}$ (see \mbox{\ref{ex:[0,1]/0=1}});
+Let us identify $\SS^1$ with $[0,1]/\{0,1\}$ (see \ref{ex:[0,1]/0=1});
 so the loop $a$ also defines a map $\SS^1\to \c{X}$; we will use the same notation for both.
 
 \begin{Figure}
@@ -1284,40 +1282,14 @@ Consider the path $b(t)\df h_t(0)$.
 Show and use that
 $a\sim b*e_q*\bar b\sim e_{p}$.
 
-\parbf{\ref{ex:van-kamp}.}
-Recall that if the product of paths is not parenthesized, then it is taken in the usual order;
-that is, \index{$a*b*c*d$} $a*b*c*d\df((a*b)*c)*d$.
+\parbf{\ref{ex:contractible=>sc}.} Apply \ref{ex:S1=>sc}.
 
-\parit{\ref{SHORT.ex:van-kamp:loops}.}
-Show that any loop can be subdivided into small arcs $a_1,\dots,a_n$ such that each $a_i$ lies completely in $V$ or $W$ and has ends in $V\cap W$ (use here \ref{prop:lebesgue-number} if needed).
-We may assume that each $a_i$ is parametrized by $[0,1]$, thus our loop is homotopic to $a_1*\ldots*a_n$.
-Connect $x_0$ to every point $x_i=a_i(1)$ for $i<n$ by a path $b_i$ in $V\cap W$.
-Apply the claims in \ref{sec:homotopy-claim} to show that
-\[a_1*\ldots*a_n{\sim}(a_1*\bar b_1)*(b_1*a_2*\bar b_2)*\ldots*(b_{n-1}*a_n).\]
-Observe that each loop $a_1*\bar b_1$, $b_1*a_2*\bar b_2, \z\dots, b_{n-1}*a_n$ lies entirely in $V$ or $W$.
+\parbf{\ref{ex:van-kamp}}; \textit{(a).}
+Cover $\SS^2$ by subsets $V$ and $W$ defined by $z>-\tfrac12$ and $z<\tfrac12$, respectively.
+Observe that $V$ and $W$ are homeomorphic to an open disc and the intersection $V\cap W$ is homeomorphic to the product $\SS^1\times (0,1)$ and apply \ref{ex:van-kamp:sc}.
 
-\begin{Figure}
-\vskip-0mm
-\centering
-\includegraphics{mppics/pic-1350}
-\end{Figure}
-
-\parit{\ref{SHORT.ex:van-kamp:sc}.}
-Let $a_i$ and $b_i$ be as above.
-Since $V$ and $W$ are simply-connected, $a_1*\bar b_1\sim e_{x_0}$, $b_1*a_2*\bar b_2\sim e_{x_0}, \z\dots, b_{n-1}*a_n\sim e_{x_0}$.
-Hence $a_1*\ldots*a_n\sim e_{x_0}$.
-
-\parit{\ref{SHORT.ex:van-kamp:s2}.}
-Subdivide $\SS^2$ into subsets $V$ and $W$ defined by $z>-\tfrac12$ and $z<\tfrac12$, respectively.
-Observe that $V$ and $W$ are homeomorphic to an open disc and the intersection $V\cap W$ is homeomorphic to the product $\SS^1\times (0,1)$ and apply \ref{SHORT.ex:van-kamp:sc}.
-
-\parit{\ref{SHORT.ex:van-kamp:s2d}.}
-Choose a simply-connected open sets $V\z\supset \SS^2$ and  $W\supset \DD^2$ and argue as in \ref{SHORT.ex:van-kamp:s2}.
-
-\parit{Comment.}
-Part \ref{SHORT.ex:van-kamp:sc} is a special case of Van Kampen's theorem; it calculates the fundamental group of $\c{X}$ in terms of fundamental groups of $V$, $W$, $V\cap W$ and the homomorphisms
-$\pi_1(V\z\cap W,x_0)\to\pi_1(V,x_0)$, $\pi_1(V\cap W,x_0)\z\to\pi_1(W,x_0)$ induced by the inclusions $V\cap W\z\hookrightarrow V$ and $V\cap W\hookrightarrow W$.
-See also \ref{ex:vankam-nonconnect}.
+\parit{(b).}
+Construct contractable (and therefore simply-connected) open sets $V\z\supset \SS^2$ and $W\z\supset \DD^2$ and apply \ref{ex:van-kamp:sc}.
 
 \parbf{\ref{ex:comp-induced}.} Spell the definitions.
 
