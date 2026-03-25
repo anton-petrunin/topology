@@ -1268,7 +1268,7 @@ It remains to prove the if part.
 
 Choose a loop $a$ based at $p$.
 Let us identify $\SS^1$ with $[0,1]/\{0,1\}$ (see \ref{ex:[0,1]/0=1});
-so the loop $a$ also defines a map $\SS^1\to \c{X}$; we will use the same notation for both.
+so the loop $a$ also defines a map $\SS^1\to \c{X}$.
 
 \begin{Figure}
 \vskip-0mm
@@ -1277,12 +1277,13 @@ so the loop $a$ also defines a map $\SS^1\to \c{X}$; we will use the same notati
 \vskip-0mm
 \end{Figure}
 
-Let $h_t\:\SS^1\to \c{X}$ be a (free) homotopy from $a\:\SS^1\to \c{X}$ to a constant map $e_q$.
-Consider the path $b(t)\df h_t(0)$.
+Since any map $\SS^1\to \c{X}$ is null-homotopic, there is a free homotopy $a_\tau\:[0,1]\to\c{X}$
+such that $a_0=a$, $a_1=e_q$ for some $q\in \c{X}$ and for any $t$, and $a_\tau(0)=a_\tau(1)$ for any $\tau$.
+Consider the path $b(t)\df a_t(0)$.
 Show and use that
 $a\sim b*e_q*\bar b\sim e_{p}$.
 
-\parbf{\ref{ex:contractible=>sc}.} Apply \ref{ex:S1=>sc}.
+For the last part, show and use that if $\c{X}$ is a contractable space, it is path-connected and any map $\SS^1\to \c{X}$ is null-homotopic.
 
 \parbf{\ref{ex:van-kamp}}; \textit{(a).}
 Cover $\SS^2$ by subsets $V$ and $W$ defined by $z>-\tfrac12$ and $z<\tfrac12$, respectively.
