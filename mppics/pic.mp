@@ -1227,6 +1227,31 @@ label (btex {\footnotesize $\dots$} etex, .5[(2,2)*u,(3,1)*u]+(1,0));
 
 endfig;
 
+beginfig(1415)
+save u,p;
+path p[];
+u:=1.4cm;
+
+z.x0=(0,0)*u;
+z.x1=(1,.3)*u;
+
+p1=z.x0{(1,2)}..z.x0+(0,1)*u..{(1,-1)}z.x0;
+p0=z.x0{(1,-.2)}..{(-1,2)}z.x1;
+
+drawarrow subpath (0,.5) of p0 pensemibold;
+draw subpath (.5,1) of p0 pensemibold;
+drawarrow subpath (0,1) of p1 pensemibold;
+draw subpath (1,2) of p1 pensemibold;
+
+dOt z.x0,z.x1;
+
+label.bot (btex $x_0$ etex, z.x0);
+label.top (btex $x_1$ etex, z.x1);
+label.top (btex $a$ etex, point 1 of p1);
+label.top (btex $c$ etex, point .5 of p0);
+
+endfig;
+
 beginfig(1515)
 save u,p;
 path p[];
@@ -1354,6 +1379,42 @@ draw p3 shifted ((5,-1)*u);
 draw p4 shifted ((0,.5)*u);
 
 
+endfig;
+
+beginfig(1625)
+save u,p,n,m,t;
+path p[];
+u:=1cm;
+m:=2;
+n:=7;
+t:=2;
+
+
+z.a=(0,0)*u;
+z.b=(1,0)*u;
+z.s=(0,.4)*u;
+
+p1=(z.a{up}..tension t..z.b{down}..tension t..cycle) shifted ((0,-.2)*u);
+
+p2=
+for i=m step 1 until n:
+z.a+i*z.s {up}..tension t..z.b+(i+.5)*z.s {down}..tension t..
+endfor
+z.a+(n+1)*z.s {up};
+
+p3= (subpath (1.6,2*(n-m)-.8) of p2)..tension 2..cycle;
+
+draw p1;
+
+for i=1 step 1 until 2*(n-m)-2:
+draw subpath (i+.1,i+.9) of p3 withpen pencircle scaled 4 withcolor 1;
+draw subpath (i,i+1) of p3;
+endfor
+
+draw subpath (2*(n-m)-2+.1,2*(n-m)+.9) of p3 withpen pencircle scaled 4 withcolor 1;
+draw subpath (2*(n-m)-2,2*(n-m)+1) of p3;
+
+label (btex $\downarrow$ etex, (.5,.4)*u);
 endfig;
 
 beginfig(1655)

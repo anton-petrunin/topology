@@ -1287,14 +1287,13 @@ For the last part, show and use that if $\c{X}$ is a contractable space, it is p
 
 \parbf{\ref{ex:van-kamp}}; \textit{(a).}
 Cover $\SS^2$ by subsets $V$ and $W$ defined by $z>-\tfrac12$ and $z<\tfrac12$, respectively.
-Observe that $V$ and $W$ are homeomorphic to an open disc and the intersection $V\cap W$ is homeomorphic to the product $\SS^1\times (0,1)$ and apply \ref{ex:van-kamp:sc}.
+Observe that $V$ and $W$ are homeomorphic to an open disc and the intersection $V\cap W$ is homeomorphic to the product $\SS^1\times (0,1)$ and apply \ref{prop:van-kamp:sc}.
 
 \parit{(b).}
-Construct contractable (and therefore simply-connected) open sets $V\z\supset \SS^2$ and $W\z\supset \DD^2$ and apply \ref{ex:van-kamp:sc}.
+Construct contractable (and therefore simply-connected) open sets $V\z\supset \SS^2$ and $W\z\supset \DD^2$ and apply \ref{prop:van-kamp:sc}.
 
-\parbf{\ref{ex:comp-induced}.} Spell the definitions.
-
-\parbf{\ref{ex:retract*}}; \ref{SHORT.ex:retract*:0}. Show and use that $r\circ a=a$ for any loop $a$ in $A$.
+\parbf{\ref{ex:retract*}}; \ref{SHORT.ex:retract*:0}.
+Show and use that $r\circ a=a$ for any loop $a$ in $A$.
 
 \parit{\ref{SHORT.ex:retract*:i}.} Let $a_\tau$ be a homotopy in $\c{X}$ between two loops $a_0$ and $a_1$ in $A$.
 Show and use that $r\circ a_\tau$ is a homotopy in $A$ between the same loops.
@@ -1319,11 +1318,11 @@ Apply \ref{SHORT.ex:uphi:uphi} for homotopy equivalence $\c{X}\z\to\c{Y}$ and it
 
 \parbf{\ref{ex:sim-product}.}
 Let $f\:\c{X}\times\c{X}\to \c{Y}$ be the quotient map.
-Choose a base point $f(x,x)\in \c{Y}$.
-Given two loops $a$ and $b$ based at $x$ in $\c{X}$ denote by $(a,b)$ the loop in $\c{X}\times \c{X}$ defined by $t\mapsto (a(t),b(t))$.
-Observe that $f\circ (a,e_x)= f\circ (e_x,a)$ for any loop $a$.
+Choose a base point $x_0\in\c{X}$ and let $y_0\z= f(x_0,x_0)$ be the base point in $\c{Y}$.
+Given two loops $a$ and $b$ based at $x_0$ in $\c{X}$, denote by $a\times b$ the loop in $\c{X}\times \c{X}$ defined by $t\mapsto (a(t),b(t))$.
+Observe that $f\circ (a\times e_{x_0})= f\circ (e_{x_0}\times a)$ for any loop $a$.
 Use it to show that
-\[f\circ(a*b,e_x)\sim f\circ(a,b)\sim f\circ(b*a,e_x)\]
+\[f\circ((a*b)\times e_{x_0})\sim f\circ(a\times b)\sim f\circ((b*a)\times e_{x_0})\]
 and make a conclusion.
 
 \parbf{\ref{ex:S1}}; \ref{SHORT.ex:S1:R3>R^2}.
@@ -1333,7 +1332,13 @@ Observe that $\RR^3\setminus\{p\}$ is homeomorphic to $\RR^2\setminus\{q\}$.
 Show that $\pi_1(\RR^3\setminus\{p\})$ is trivial, but $\pi_1(\RR^2\setminus\{q\})$ is not and arrive at a contradiction.
 
 \parit{\ref{SHORT.ex:bry->bry}.}
-Apply linear homotopy, \ref{ex:contractible=>sc}, and \ref{thm:pi1(S1)}.
+Construct a retract of $\RR^2\setminus F$ that is homeomorphic to the circle.
+Apply \ref{ex:contractible=>sc} and \ref{thm:pi1(S1)}.
+
+\parit{\ref{SHORT.ex:moebius}.}
+Look at the set of points $p$ in each space that admits a neighborhood $V$ such that $V\setminus \{p\}$ is simply-connected.
+Show and use that in the cylinder this set has two connected components and in the Möbius band just one.
+
 
 \parit{\ref{SHORT.ex:S1:finite-complement}.}
 Apply linear homotopy and \ref{thm:pi1(S1)}.
@@ -1481,7 +1486,7 @@ B_2\arrow[u, hook] \arrow[r, hook] & V_2 & A_2\arrow[l, hook'] \arrow[u, hook']
 \]
 
 \parit{Comment.}
-This is another partial case of Van Kampen theorem, see also \ref{ex:van-kamp:s2d}.
+This is another partial case of Van Kampen theorem, see also \ref{prop:van-kamp:sc}.
 
 One can also construct a normal $\ZZ$-covering, preparing $\ZZ$ copies of each set and glue them along the following maps:
 \begin{align*}
@@ -1508,7 +1513,7 @@ This was used to prove the existence of points $q_n$ and $s_n$.
 Use instead their approximate versions $\tilde q_n$ and $\tilde s_n$, so the equalities in \ref{eq:abF} hold with an error that approaches zero as $n\to\infty$, and check that the remaining part of the proof works with these points.
 
 \parbf{\ref{ex:nonclosed-Gamma}.}
-One needs open complements to apply \ref{ex:van-kamp:s2d} and \ref{ex:vankam-nonconnect}.
+One needs open complements to apply \ref{prop:van-kamp:sc} and \ref{ex:vankam-nonconnect}.
 
 If $\Gamma$ is not closed, then its complement might be connected, but not path connected.
 For example, the complement of $\Gamma$ can be $W'$ --- the flea and comb discussed in \ref{sec:flea and comb}.

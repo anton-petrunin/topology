@@ -4,26 +4,19 @@ In this chapter we show that the fundamental group construction respects the map
 A bit later, we will calculate the fundamental group of the circle --- this will be the first example of a space with a nontrivial fundamental group.
 Once this group is calculated, the results of this chapter will lead to applications.
 
+\section{Induced homomorphism}\label{sec:Induced homomorphism}
 
-\section{Induced homomorphism}
+A \index{pointed space}\emph{pointed space} (briefly $(\c{X},x_0)$) is a topological space $\c{X}$ with a choice of base point $x_0\in \c{X}$;
+so fundamental group is a construction that produces a group $\pi_1(\c{X},x_0)$ from a pointed space $(\c{X},x_0)$.
 
-\begin{thm}{Claim}\label{clm:ind-hom}
-Let $f\:\c{X}\to \c{Y}$ be a continuous map, and let $f(x_0)\z=y_0$.
+A \index{pointed map}\emph{pointed map} (briefly $f\:(\c{X},x_0)\to (\c{Y},y_0)$) is a map $f\:\c{X}\z\to \c{Y}$ with a choice of base points $x_0\in \c{X}$ and $y_0\in \c{Y}$ such that $y_0=f(x_0)$.
+
+Let $f\:(\c{X},x_0)\to (\c{Y},y_0)$ be a continuous pointed map.
 Suppose that $a_0$ and $a_1$ are loops based at $x_0$ in $\c{X}$.
-Then
-
-\begin{subthm}{clm:ind-hom-prod}
-$f\circ(a_0*a_1)=(f\circ a_0)*(f\circ a_1)$,
-\end{subthm}
-
-\begin{subthm}{clm:ind-hom-homotopy}
-if $a_0\sim a_1$, then $f\circ a_0\sim f\circ a_1$.
-\end{subthm}
-
-\end{thm}
-
-\parit{Proof; \ref{SHORT.clm:ind-hom-prod}.}
-Applying the definition of the product of paths and composition of maps to $f\circ(a_0*a_1)(t)$ and $(f\circ a_0)*(f\circ a_1)(t)$ we get exactly the same expression:
+Then $(f\circ a_0)$ and $(f\circ a_1)$ are loops based at $y_0$ in $\c{Y}$.
+Moreover,
+\[f\circ(a_0*a_1)=(f\circ a_0)*(f\circ a_1)\]
+Indeed, applying the definition of the product of paths and composition of maps to $f\circ(a_0*a_1)(t)$ and $(f\circ a_0)*(f\circ a_1)(t)$ we get exactly the same expression:
 \begin{align*}
 \begin{cases}
 f\circ a_0(2\cdot t)&\text{if}\ t\le \tfrac12,
@@ -31,26 +24,21 @@ f\circ a_0(2\cdot t)&\text{if}\ t\le \tfrac12,
 f\circ a_1(2\cdot t-1)&\text{if}\ t\ge \tfrac12.
 \end{cases}
 \end{align*}
-Hence \ref{SHORT.clm:ind-hom-prod} follows.
 
-\parit{\ref{SHORT.clm:ind-hom-homotopy}.}
-If $a_\tau$ is a homotopy from $a_0$ to $a_1$, then $f\circ a_\tau$ is a homotopy from $f\circ a_0$ to $f\circ a_1$.
-Hence \ref{SHORT.clm:ind-hom-homotopy} follows.
-\qeds
+Further, note that
+\[a_0\sim a_1 \quad\Rightarrow\quad f\circ a_0\sim f\circ a_1.\]
+Indeed, if $a_\tau$ is a homotopy from $a_0$ to $a_1$, then $f\circ a_\tau$ is a homotopy from $f\circ a_0$ to $f\circ a_1$.
 
-\begin{thm}{Corollary}
-Let $f\:\c{X}\to \c{Y}$ be a continuous map between topological spaces;
-suppose $f(x_0)=y_0$.
-For any loop $a$ based at $x_0$ in $\c{X}$, the composition $f\circ a$ is a loop based at $y_0$ in $\c{Y}$.
-Moreover, 
-$f_*\:[a]\mapsto [f\circ a]$
-defines a homomorphism $f_*\:\pi_1(\c{X},x_0)\to \pi_1(\c{Y},y_0)$.
-\end{thm}
+It follows that the map $f\:(\c{X},x_0)\to (\c{Y},y_0)$ \index{induced homomorphism}\emph{induces} a homomorphism
+\[f_*\:\pi_1(\c{X},x_0)\to \pi_1(\c{Y},y_0)\]
+that is defined by $f_*\:[a]\mapsto [f\circ a]$.
+(The homomorphism $f_*$ maps the homotopy class of loop $a$ to the homotopy class of loop $f\circ a$.)
 
-\begin{thm}{Exercise}\label{ex:comp-induced}
-Let $\c{X}\stackrel{f}{\to}\c{Y}\stackrel{g}{\to}\c{Z}$ be continuous maps.
-Show that $g_*\circ f_*=(g\circ f)_*$.
-\end{thm}
+Evidently, the identity map of $(\c{X},x_0)$ induces the identity homomorphism on $\pi_1(\c{X},x_0)$.
+Furthermore, for any continuous pointed maps
+\[(\c{X},x_0)\stackrel{f}{\to}(\c{Y},y_0)\stackrel{g}{\to}(\c{Z},z_0),\]
+we have $g_*\circ f_*=(g\circ f)_*$.
+These two observations will be extremely useful.
 
 \begin{thm}{Exercise}\label{ex:retract*}
 Let $A$ be a retract of $\c{X}$ with retraction $r\:\c{X}\z\to A$.
@@ -71,30 +59,37 @@ If $A$ is a weak deformation retract, then $r_*$ and $i_*$ are isomorphisms.
 
 \end{thm}
 
-\section[About f⁎]{About $\bm{f_*}$}
+\section[About notation f⁎]{About notation $\bm{f_*}$}
 
-The induced  homomorphism \index{$f_*$}$f_*\:\pi_1(\c{X},x_0)\to \pi_1(\c{Y},y_0)$ has the same direction as the original map $f\:\c{X}\to \c{Y}$, by that reason it is also called \index{pushforward}\emph{pushforward}.
-Notation $f_*$ can be used for \textit{any} induced map of this type; for example,
+The induced  homomorphism \index{$f_*$}$f_*\:\pi_1(\c{X},x_0)\to \pi_1(\c{Y},y_0)$ has the same direction as the original map $f\:(\c{X},x_0)\to (\c{Y},y_0)$, by that reason it is also called \index{pushforward}\emph{pushforward}.
+The symbol $f_*$ (read ``$f$-star'') can be used for \textit{any} induced map of this type; for example,
 one can write $f_*$ for the induced map from the set of path-connected components of $\c{X}$ to the set of path-connected components of $\c{Y}$.
 The associated constructions (fundamental group or set of path-connected components) are called \index{covariant}\emph{covariant}.
 
 If you see $f_*$, then it means it is induced by $f$, goes in the same direction and you have to guess from the context the source and target of $f_*$.
 
 For some other constructions, the induced map might go in the opposite direction.
-In this case, the induced map of $f$ is denoted by $f^*$, and called \index{pullback}\emph{pullback};
+In this case, the induced map of $f$ is denoted by $f^*$, and called \index{pullback}\emph{pullback}.
 The associated constructions are called \index{contravariant}\emph{contravariant}.
 
-Apart from fundamental group, we will not discuss covariant and contravariant constructions further.
-But as an example of contravariant construction, consider the so-called \emph{first cohomotopy group} $\pi^1(\c{X},x_0)$ that is made of homotopy classes of pointed continuous maps $(\c{X},x_0)\to (\SS^1,s_0)$; that is continuous maps $\c{X}\to\SS^1$ that send $x_0$ to $s_0$.
-The set $\pi^1(\c{X},x_0)$ has a natural structure of abelian group, but this is not important for us.
+As an example of contravariant construction, consider the so-called \emph{first cohomotopy group} $\pi^1(\c{X},x_0)$, which is the set of homotopy classes of pointed continuous maps $(\c{X},x_0)\to (\SS^1,s_0)$.
+(The set $\pi^1(\c{X},x_0)$ has a natural structure of abelian group, but this is not important for us.)
 Then any pointed continuous map $f\:(\c{X},x_0)\to (\c{Y},y_0)$ has a pullback $f^*\:\pi^1(\c{Y},y_0)\to\pi^1(\c{X},x_0)$.
 Indeed, for a map $h\:(\c{Y},y_0)\to (\SS^1,s_0)$, the composition $h\circ f$ provides a good choice of map $(\c{X},x_0)\to (\SS^1,s_0)$, so we can define $f^*[h]\df [h\circ f]$.
 On the other hand, there is no good choice of map $(\c{Y},y_0)\to (\SS^1,s_0)$ for a given map $(\c{X},x_0)\to (\SS^1,s_0)$.
 
 
-\section{Base point}
+\section{Transport of base point}
 
 The following theorem provides a more exact version of \ref{prop:sc=1hclass}
+
+{
+
+\begin{wrapfigure}[5]{r}{27 mm}
+\vskip-5mm
+\centering
+\includegraphics{mppics/pic-1415}
+\end{wrapfigure}
 
 \begin{thm}{Theorem}
 Let $c$ be a path from $x_0$ to $x_1$ in a topological space $\c{X}$.
@@ -104,13 +99,15 @@ Then $[a]\mapsto [\bar c*a*c]$ defines an isomorphism of fundamental groups $\ph
 Recall that we assume that the product of paths is taken in the usual order;
 that is, \index{$a*b*c*d$} $a*b*c*d\df((a*b)*c)*d$.
 
+}
+
 \parit{Proof.}
 Suppose $a_\tau$ is a homotopy of loops at $x_0$.
 Then $\bar c*a_\tau*c$ is a homotopy of loops at $x_1$.
 It follows that the map 
 \[\phi_c\:[a]\mapsto [\bar c*a*c]\eqlbl{eq:[f]->[hfh]}\]
 is defined.
-Indeed if $a_0\sim a_1$, then $\bar c*a_0*c\sim \bar c*a_1*c$,
+Indeed, if $a_0\sim a_1$, then $\bar c*a_0*c\sim \bar c*a_1*c$,
 which means that $[\bar c*a_0*c]=[\bar c*a_1*c]$; so the right-hand side in \ref{eq:[f]->[hfh]} does not depend on the choice of loop in the homotopy class $[a]$.
 
 Further, if $a$ and $b$ are loops based at $x_0$, then \ref{clm:homot-claims} implies that
@@ -139,7 +136,7 @@ a
 \end{align*}
 for any loop $a$ based at $x_0$.
 Therefore, $\phi_{\bar c}$ is a left inverse of $\phi_c$.
-The same way we show that $\phi_{\bar c}$ is also a right inverse of $\phi_c$.
+The same argument shows that $\phi_{\bar c}$ is also a right inverse of $\phi_c$.
 It follows that $\phi_c$ is an isomorphism.
 \qeds
 
