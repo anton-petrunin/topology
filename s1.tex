@@ -26,7 +26,7 @@ Any continuous map $f\:\DD^2\to\DD^2$ has a fixed point.
 
 \parit{Proof.}
 Arguing by contradiction, assume $x\z\neq f(x)$ for all $x\in\DD^2$.
-Given $x\in\DD^2$ consider the half-line $H$ from $f(x)$ to $x$.%
+Given $x\in\DD^2$, consider the half-line $H$ from $f(x)$ to $x$.%
 \footnote{Remember that $H$ goes backwards, from $f(x)$ to $x$, not the other way around.}
 
 {
@@ -43,7 +43,7 @@ that is, $h$ defines a retraction $\DD^2\z\to \SS^1$.
 
 Note that both spaces $\SS^1$ and $\DD^2$ are path-connected.
 By \ref{thm:pi1(S1)}, $\SS^1$ is not simply-connected.
-By {ex:retract*:0}, the same holds for $\DD^2$.
+By \ref{ex:retract*:0}, the same holds for $\DD^2$.
 The latter contradicts \ref{ex:contractible=>sc}
 \qeds
 
@@ -67,7 +67,7 @@ Conclude that any homeomorphism $\DD^2\to\DD^2$ maps $\partial \DD^2$ to itself.
 
 
 \begin{subthm}{ex:moebius}
-Show that the cylinder $\SS^1\times[0,1]$ is not homeomorphic to the the Möbius band; see \ref{sec:Homotopy type}.
+Show that the cylinder $\SS^1\times[0,1]$ is not homeomorphic to the Möbius band; see \ref{sec:Homotopy type}.
 \end{subthm}
 
 
@@ -130,7 +130,7 @@ Consider the wrapping map $w\:\RR\to \mathbb{S}^1\subset \CC$ defined by
 
 Let $a\:\c{X}\to \SS^1$ be a continuous map.
 A continuous map $\tilde a\:\c{X}\to \RR$ will be called a \index{lift}\emph{lift} of $a$ if $a=w\circ \tilde a$.
-In other words if the diagram \index{commutative diagram}\emph{commutes}, which means that following directed paths in the diagram with the same start and endpoints lead to the same result.
+In other words, if the diagram \index{commutative diagram}\emph{commutes}, which means that following directed paths in the diagram with the same start and endpoints lead to the same result.
 %(Even in this simple case, using a commutative diagram is helpful, and later on you simply can't do without them.)
 
 
@@ -148,12 +148,12 @@ Let $W=\SS^1\setminus \{u_0\}$ for some $u_0=w(x_0)\in\SS^1$.
 Then $w^{-1}(W)$ is a disjoint union of open intervals $V_n=(x_0+n,x_0+n+1)$ for $n\in \ZZ$
 and $w$ defines a homeomorphism $V_n\to W$ for each $n$.
 
-In particular, given a connected space $\c{X}$, continuous map $a\:\c{X}\z\to W$, and a point $q\in \RR$ such that $w(q)=a(p)$ for some $p\in \c{X}$ there is a unique lift $\tilde a\:\c{X}\to \RR$ of $a$ such that $\tilde a(p)=q$.
+In particular, given a connected space $\c{X}$, continuous map $a\:\c{X}\z\to W$, and a point $q\in \RR$ such that $w(q)=a(p)$ for some $p\in \c{X}$, there is a unique lift $\tilde a\:\c{X}\to \RR$ of $a$ such that $\tilde a(p)=q$.
 \end{thm}
 
 
 \parit{Proof.}
-Observe that the restriction $w_n=w|_{V_n}$ is homeomorphism $V_n\to W$.
+Observe that the restriction $w_n=w|_{V_n}$ is a homeomorphism $V_n\to W$.
 Indeed, $w_n$ is a continuous bijection.
 Furthermore, by \ref{obs:compact-to-hausdorff} $w|_{\bar V_n}$ is a closed map.
 Therefore, $w_n$ is a continuous bijection $V_n\to W$ that sends closed sets in the induced topology of $V_n$ to closed sets in the induced topology of $W$; hence $w_n$ is a homeomorphism.
@@ -161,7 +161,7 @@ Therefore, $w_n$ is a continuous bijection $V_n\to W$ that sends closed sets in 
 Note that the intervals $V_n$ are connected components of $w^{-1}(W)$.
 In particular, $q\in V_n$ for some $n$.
 Since $\c{X}$ is connected, $\tilde a(\c{X})\z\subset V_n$ for any lift $\tilde a$ of $a$ such that $\tilde a(p)=q$.
-Since $w_n=w|_{V_n}$ is a homeomorphism, we have $\tilde a=w_n^{-1}\circ a$, which proves both, existence and uniqueness.
+Since $w_n=w|_{V_n}$ is a homeomorphism, we have $\tilde a=w_n^{-1}\circ a$, which proves both existence and uniqueness.
 \qeds
 
 \parit{Proof of \ref{prop:lifting}.}
@@ -214,13 +214,13 @@ Construct a loop $b\:[0,1]\to \SS^1$ such that $b([0,1])\supset \SS^1$, but its 
 
 \section{Degree}
 
-Recall that we consider $\SS^1$ as a subset of complex plane $\CC$.
+Recall that we consider $\SS^1$ as a subset of the complex plane $\CC$.
 
 A loop in $\SS^1$ based at $1$ is a continuous map $a\:[0,1]\to\SS^1$
 such that $a(0)=a(1)=1$.
 Let $\tilde a\:[0,1]\to\RR$ be the unique lift with $\tilde a(0)=0$ provided by \ref{prop:lifting}.
 Since $w^{-1}(1)=\ZZ$, we have $\tilde a(1)\in\ZZ$.
-The integer $\tilde a(1)$ will be called \index{degree of loop}\emph{degree} of the loop $a$, it will be denoted by $\deg a$.
+The integer $\tilde a(1)$ will be called the \index{degree of loop}\emph{degree} of the loop $a$, it will be denoted by $\deg a$.
 
 
 \begin{thm}{Theorem}\label{thm:pi1S1Z}
@@ -249,7 +249,7 @@ Surjectivity of $\deg\:\pi_1(\SS^1,1)\to\ZZ$ follows since the loop $a_n\:t\z\ma
 
 Let $a$ and $b$ be two loops in $\SS^1$ with base point $1$, and let $\tilde a$ and $\tilde b$ be their lifts such that $\tilde a(0)=\tilde b(0)=0$.
 If $\deg a=\deg b$, then $\tilde a(1)=\tilde b(1)$.
-Therefore there is linear homotopy of paths $\tilde a_\tau$ from $\tilde a$ to $\tilde b$.
+Therefore there is a linear homotopy of paths $\tilde a_\tau$ from $\tilde a$ to $\tilde b$.
 Note that $a_\tau=w\circ \tilde a_\tau$ is a homotopy from $a$ to $b$;
 therefore, $a\sim b$.
 It follows that the homomorphism $\deg\:\pi_1(\SS^1,1)\to\ZZ$ is injective.
@@ -276,7 +276,7 @@ Choose $r\ge 0$, and let
 \[a_r(t)\df\frac{p(r\cdot w(t))\,\cdot\, |p(r\cdot w(0))|}{|p(r\cdot w(t))|\,\cdot\, p(r\cdot w(0))};
 \eqlbl{eq:ar}\]
 here $w\:t\mapsto\exp(2\cdot\pi\cdot i\cdot t)$ is the wrapping map.
-If $p$ has no roots, then denominator in \ref{eq:ar} does not vanish;
+If $p$ has no roots, then the denominator in \ref{eq:ar} does not vanish;
 therefore the map $(t,r)\mapsto a_r(t)$ is continuous.
 Furthermore, by \ref{eq:ar} we have $a_r(0)=a_r(1)=1$ and $|a_r(t)|\equiv 1$; so $a_r$ is a loop in $\SS^1$ based at $1$.
 

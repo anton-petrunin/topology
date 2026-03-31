@@ -1,6 +1,6 @@
 \chapter{Coverings}\label{chap:coverings}
 
-Now we will study covering maps --- a class of maps that mimic properties of the warping map $w\:\RR\to \SS^1$ from \ref{sec:lifting-s1}.
+Now we will study covering maps --- a class of maps that mimic properties of the wrapping map $w\:\RR\to \SS^1$ from \ref{sec:lifting-s1}.
 We used $w$ to calculate fundamental group of~$\SS^1$.
 The covering maps will be used to calculate fundamental groups of other spaces.
 But more importantly, these maps give another connection between algebra and geometry that has applications from both sides.
@@ -29,7 +29,7 @@ $\tilde{\c{Z}}$ and \index{base space}\emph{base} $\c{Z}$.
 
 Note that the map $w\:\tilde{\c{Z}}\to \c{Z}$ is a covering, if $\c{Z}$ admits an open cover by evenly covered sets.%
 \footnote{This phrase uses ``cover'' with two different meanings from \ref{def:evenly-covered} and \ref{def:cover}.}
-Following the proof of \ref{prop:lifting}, one sees that the warping map $w(x)\z=\exp(2\cdot\pi\cdot i\cdot x)$  defines a covering map $\RR\to\SS^1$.
+Following the proof of \ref{prop:lifting}, one sees that the wrapping map $w(x)\z=\exp(2\cdot\pi\cdot i\cdot x)$  defines a covering map $\RR\to\SS^1$.
 Keep this example in your head while reading further.
 
 The following observation will be used without mentioning.
@@ -77,7 +77,7 @@ Show that the inverse image $w^{-1}\{p\}$ of any one point set $\{p\}$ is a disc
 
 
 \begin{subthm}{ex:covering-clopen:image}
-Show that the image $w(\tilde{\c{Z}})$ is clopen set in $\c{Z}$.
+Show that the image $w(\tilde{\c{Z}})$ is a clopen set in $\c{Z}$.
 Conclude that, if $\c{Z}$ is connected, and $\tilde{\c{Z}}\ne\emptyset$, then $w$ is surjective.
 \end{subthm}
 
@@ -110,7 +110,7 @@ A covering $w\:\tilde{\c{Z}}\to \c{Z}$ is called \index{trivial covering}\emph{t
 \end{wrapfigure}
 
 Note that any trivial connected covering must be a homeomorphism.
-Since $\RR$ and $\SS^1$ are connected, the warping map $w(x)\z=\exp(2\cdot\pi\cdot i\cdot x)$ provides an example of a nontrivial covering map $\RR\to\SS^1$.
+Since $\RR$ and $\SS^1$ are connected, the wrapping map $w(x)\z=\exp(2\cdot\pi\cdot i\cdot x)$ provides an example of a nontrivial covering map $\RR\to\SS^1$.
 The map $z\mapsto z^n$ for an integer $n>1$ gives another example of nontrivial $n$-fold covering $\SS^1\to\SS^1$;
 the total space and base are homeomorphic, but the map is not a homeomorphism.
 The case $n=4$ is in the picture.
@@ -138,7 +138,7 @@ Show that $w$ is $n$-fold.
 \end{wrapfigure}
 
 Let us denote by $\c{F}_8$ the \emph{figure eight};
-it is the quotient space of two line segments by the subsets of their all 4 ends.
+it is the space obtained from two line segments by identifying all four endpoints.
 Formally speaking,
 \[\c{F}_8\simeq([0,1]\cup [2,3])/\{0,1,2,3\}.\]
 From \ref{obs:compact-to-hausdorff}, it follows that $\c{F}_8$ is homeomorphic to the subset shown in the picture.
@@ -162,7 +162,7 @@ The following picture shows
 \centering
 \includegraphics{mppics/pic-1620}
 \end{figure}
-three total spaces of 3-fold covering of $\c{F}_8$.
+total spaces of some 3-fold covering of $\c{F}_8$.
 Redraw them and mark identified paths by corresponding arrows.
 \end{thm}
 
@@ -176,9 +176,9 @@ Redraw them and mark identified paths by corresponding arrows.
 
 \begin{thm}{Exercise}\label{ex:Theta}
 Let $\Theta$ be the space homeomorphic to the set in the picture;
-it is the union of circle and its diameter with induced topology from the plane.
+it is the union of a circle and its diameter with induced topology from the plane.
 Which of the following spaces cover $\Theta$;
-if yes, then label paths identified by the covering map by three types arrows,
+if yes, then label paths identified by the covering map by three types of arrows,
 if not, then explain why.
 \begin{figure}[!ht]
 \vskip -0mm
@@ -226,18 +226,18 @@ This is a natural choice of space and maps that makes the diagram commute. % \in
 \end{wrapfigure}
 
 If $\c{Z}$ is a one-point space (denoted by $*$ on the diagram), then the maps $v$ and $w$ are uniquely defined.
-In this case, $\c{P}=\c{X}\times \c{Y}$ and the maps $\tilde v$ and $\tilde w$ are projections, so fibered product generalize the usual product.
+In this case, $\c{P}=\c{X}\times \c{Y}$ and the maps $\tilde v$ and $\tilde w$ are projections, so fibered product generalizes the usual product.
 
 }
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:evenly-trivial}
 Let $w\:\c{X}\to \c{Z}$ be a continuous map.
-Assume $V\subset \c{Z}$ is an open set and $\tilde w$ is pullback of $w$ along the inclusion map $V\hookrightarrow\c{Z}$.
-Show that $V$ is evenly covered by $w$ if and only it $\tilde w$ is a trivial covering.
+Assume $V\z\subset \c{Z}$ is an open set and $\tilde w$ is pullback of $w$ along the inclusion map $V\z\hookrightarrow\c{Z}$.
+Show that $V$ is evenly covered by $w$ if and only if $\tilde w$ is a trivial covering.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:pull-back}
-Show that pullback $\tilde v$ of a covering $v$ is a covering; moreover, if $v$ is (a) trivial ob (b) $m$-fold, then so is~$\tilde v$.
+Show that pullback $\tilde v$ of a covering $v$ is a covering; moreover, if $v$ is (a) trivial or (b) $m$-fold, then so is~$\tilde v$.
 \end{thm}
 
 {
@@ -276,7 +276,7 @@ Draw the space of their fibered product and draw the corresponding arrows for th
 
 \section{Lifts}
 
-Earlier in \ref{sec:lifting-s1}, we defined lifts along the warping map $\RR\to\SS^1$.
+Earlier in \ref{sec:lifting-s1}, we defined lifts along the wrapping map $\RR\to\SS^1$.
 Now we repeat the same definition for coverings.
 
 \begin{wrapfigure}{r}{23 mm}
@@ -288,7 +288,7 @@ Now we repeat the same definition for coverings.
 \end{tikzcd}
 \end{wrapfigure}
 
-Let $w\:\tilde{\c{Z}}\to \c{Z}$ be a covering, and let $f\:\c{Y}\to \c{Z}$ be continuous maps.
+Let $w\:\tilde{\c{Z}}\to \c{Z}$ be a covering, and let $f\:\c{Y}\to \c{Z}$ be a continuous map.
 A continuous map $\tilde f\:\c{Y}\to \tilde{\c{Z}}$ is called a \index{lift}\emph{lift} of $f$ (along $w$) if $w\circ \tilde f=f$,
 which means that the diagram commutes.
 
@@ -297,10 +297,10 @@ Furthermore, taking $\c{Y}=[0,1]\times [0,1]$, we can talk about lifts of homoto
 
 \begin{thm}{Lemma}\label{lem:path-lifting}
 Let $w\:\tilde{\c{Z}}\to \c{Z}$ be a covering map, and let $a_0\:[0,1]\z\to \c{Z}$ be a path.
-Suppose that $\tilde z_0\in \tilde{\c{Z}}$ and $z_0\in \c{Z}$ be a points such that $w(\tilde z_0)=z_0=a_0(0)$.
-Then there is unique lift $\tilde a_0$ of $a$ such that $\tilde a_0(0)=\tilde z_0$.
+Suppose that $\tilde z_0\in \tilde{\c{Z}}$ and $z_0\in \c{Z}$ be points such that $w(\tilde z_0)=z_0=a_0(0)$.
+Then there is a unique lift $\tilde a_0$ of $a$ such that $\tilde a_0(0)=\tilde z_0$.
 
-Moreover, given any homotopy of paths $a_\tau$ from $a_0$ to $a_1$ admits a unique lift $\tilde a_\tau$ such that $\tilde a_0(0)=\tilde z_0$ (and therefore $\tilde a_\tau(0)=\tilde z_0$ for any $\tau$).
+Moreover, for any homotopy of paths $a_\tau$ from $a_0$ to $a_1$ there is a unique lifted homotopy of paths $\tilde a_\tau$ such that $\tilde a_0(0)=\tilde z_0$ (and therefore $\tilde a_\tau(0)=\tilde z_0$ for any $\tau$).
 In particular, if $a_0\sim a_1$, then $\tilde a_0(1)= \tilde a_1(1)$.
 \end{thm}
 
@@ -362,10 +362,12 @@ Show that $\tilde b$ is a loop if and only if $[b]\in \Im w_*$.
 \begin{subthm}{ex:induced-hom-covering:action}
 Show that the following construction defines a right action of $\pi_1(\c{Z},z_0)$ on $w^{-1}\{z_0\}$.%
 \footnote{This is the so-called \index{monodromy action}\emph{monodromy action}.}
-Given $\alpha=[a]\in \pi_1(\c{Z},z_0)$ and a point $p\in w^{-1}\{z_0\}$, consider a lift $\tilde a$ of $a$ such $\tilde a(0)=p$ and define $p\cdot\alpha \df\tilde a(1)$.
+Given $\alpha=[a]\in \pi_1(\c{Z},z_0)$ and a point $p\in w^{-1}\{z_0\}$, consider a lift $\tilde a$ of $a$ such that $\tilde a(0)=p$ and define $p\cdot\alpha \df\tilde a(1)$.
 \end{subthm}
 
 \end{thm}
+
+\part{Under construction}
 
 \chapter{Normal coverings}
 
