@@ -270,10 +270,10 @@ In other words, there is a path from $p$ to $q$ and any two such paths are homot
 
 Note that any simply-connected space is path-connected.
 
-%\begin{thm}{Exercise}\label{ex:sc-retract}
-%Show that a retract of a simply-connected space is simply-connected.
-%
-%\end{thm}
+\begin{thm}{Exercise}\label{ex:sc-retract}
+Show that a retract of a simply-connected space is simply-connected.
+
+\end{thm}
 
 Recall that a group is called \index{trivial group}\emph{trivial} if it contains only one element, which is necessarily the neutral element.
 If the fundamental group $\pi_1(\c{X},x_0)$ is trivial, it is common to write $\pi_1(\c{X},x_0)=0$ despite that it makes no sense --- in general the group $\pi_1(\c{X},x_0)$ is not commutative and so it would be more reasonable to write $\pi_1(\c{X},x_0)\z=\{1\}$, meaning that $1$ is the only element of $\pi_1(\c{X},x_0)$.
@@ -339,8 +339,11 @@ Then $\c{X}$ is simply-connected.
 
 \end{thm}
 
-This statement is a special case of Van Kampen's theorem; the general version of this theorem provides a way to calculate the fundamental group of $\c{X}$ in terms of fundamental groups of $V$, $W$, $V\cap W$ and the homomorphisms
-$\pi_1(V\z\cap W,x_0)\to\pi_1(V,x_0)$, $\pi_1(V\cap W,x_0)\z\to\pi_1(W,x_0)$ induced by the inclusions $V\cap W\z\hookrightarrow V$ and $V\cap W\hookrightarrow W$.
+
+This statement is a special case of Van Kampen's theorem.
+Roughly speaking, the general theorem allows one to recover the fundamental
+group of $\c{X}=V\cup W$ from the fundamental groups of the open sets $V$, $W$, and $V\cap W$,
+together with the way $V\cap W$ sits inside $V$ and $W$.
 See also \ref{ex:vankam-nonconnect}.
 
 Recall that if the product of paths is not parenthesized, then it is taken in the usual order;

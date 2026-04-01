@@ -4,10 +4,142 @@ In this chapter we show that the fundamental group construction respects the map
 A bit later, we will calculate the fundamental group of the circle --- this will be the first example of a space with a nontrivial fundamental group.
 Once this group is calculated, the results of this chapter will lead to applications.
 
+\section{A group theory recap}\label{sec:a bit of group theory}
+
+Recall that groups were defined in \ref{sec:Actions}.
+
+We will denote by $\cdot$ the group operation and by $1$ the neutral element of the group; we also may use $1_G$ to emphasize that this is the neutral element of the group $G$.
+
+\paragraph{Homomorphisms.}
+Let $G$ and $H$ be groups.
+A map $\phi\colon G\to H$ is called a
+\index{homomorphism}\emph{homomorphism} if
+\[
+\phi(g\cdot h)=\phi(g)\cdot \phi(h)
+\]
+for any $g,h\in G$.
+
+\begin{thm}{Exercise}\label{ex:homomorphism}
+Show that any homomorphism maps the neutral element to the neutral element.
+\end{thm}
+
+A bijective homomorphism is called an
+\index{isomorphism}\emph{isomorphism};
+an isomorphism from a group $G$ to itself is called an
+\index{automorphism}\emph{automorphism} of $G$.
+
+\begin{thm}{Exercise}\label{ex:inner}
+Let $h$ be an element of a group $G$.
+Show that the map $g\z\mapsto h^{-1}\cdot g\cdot h$ is an automorphism.
+
+Give an example of a group $G$ and its automorphism that cannot be written this way.
+\end{thm}
+
+The automorphisms $g\mapsto h^{-1}\cdot g\cdot h$ as in the exercise are called \index{inner automorphism}\emph{inner}.
+
+\paragraph{Subgroups, cosets, and index.}
+A subset $H$ of a group $G$ is called a
+\index{subgroup}\emph{subgroup} (briefly $H<G$)
+if $H$ is a group with the product induced from $G$;
+equivalently, if the following conditions hold: $1\in H$, and if $g,h\in H$, then $g^{-1}$ and $g\cdot h$ are in $H$.
+For example, the neutral element forms a one-element subgroup, which is called \index{trivial subgroup}\emph{trivial}.
+
+The sets
+\[g\cdot H=\set{g\cdot h}{h\in H}\quad\text{and}\quad H\cdot g=\set{h\cdot g}{h\in H}\]
+for a fixed $g\in G$ are called \emph{left} and \emph{right cosets} of $H$.
+The number of left cosets is called the \emph{index} of $H$ in $G$;
+the map $g\mapsto g^{-1}$ (which is not a homomorphism in general) sends left cosets to right cosets,
+so if you count right cosets you will also get the index of $H$ in $G$.
+
+\begin{thm}{Exercise}\label{ex:invG}
+Let $G$ be a group. Show that $g\mapsto g^{-1}$ is a homomorphism if and only if $G$ is commutative.
+\end{thm}
+
+\paragraph{Kernels, images and normal subgroups.}
+Given a group homomorphism $\phi\colon G\to H$, its
+\index{kernel}\emph{kernel} and
+\index{image}\emph{image} are defined by
+\begin{align*}
+\Ker\phi&\df \phi^{-1}(\{1_H\})=\{g\in G\mid \phi(g)=1_H\},
+\\
+\Im\phi&\df \phi(G)= \{\phi(g)\in H\mid g\in G\}.
+\end{align*}
+It is easy to see that the kernel of $\phi$ is a subgroup of $G$ and the image of $\phi$ is a subgroup of $H$.
+
+\begin{thm}{Exercise}\label{ex:inj-homo}
+Show that a group homomorphism is injective if and only if it has trivial kernel.
+\end{thm}
+
+
+
+Any subgroup $K<H$ is an image of some homomorphism to $H$; in fact the inclusion map $K\hookrightarrow H$ is a homomorphism with image $K$.
+
+On the other hand, not every subgroup $N$ of $G$ can appear as a kernel of some homomorphism from $G$;
+if it can, then the subgroup is called \index{normal subgroup}\emph{normal}, written as $N\vartriangleleft G$.
+
+If $N=\Ker \phi$ is a normal subgroup of $G$, then
+\[\phi(g\cdot n)=\phi(g)\cdot \phi(n)=\phi(g)=\phi(n)\cdot\phi(g)=\phi(n\cdot g)\]
+for any $g\in G$ and $n\in N$.
+It follows that the left cosets of $N$ coincide with its right cosets; that is,
+\[
+g\cdot N=N\cdot g
+\eqlbl{gN=Ng}
+\]
+for any $g\in G$.
+On the other hand, if $N<G$ satisfies \ref{gN=Ng}, then $N$ defines on $G$ an equivalence relation such that $g\sim h$ if there is $n\in N$ such that $g=n\cdot h$.
+The equivalence class of an element $g\in G$ is $[g]=g\cdot N=N\cdot g$.
+The quotient set $H=G/N\df G/\sim$, equipped with the product
+$[g]\cdot [h]\df [g\cdot h]$, becomes a group;
+moreover, the quotient map $G\to H$ defined by $g\mapsto [g]$ is a homomorphism with kernel $N$.
+Thus \ref{gN=Ng} provides an equivalent definition of normal subgroups.
+
+\begin{thm}{Exercise}\label{ex:S3}
+Consider the group $S_3$ of all permutations of the set $\{1,2,3\}$ (that is, the set of all bijections from $\{1,2,3\}$ to itself).
+Let us use long notation for its 6 elements:
+\begin{align*}
+1_{S_3}=&[123], &&[231], &&[312],
+&[132], &&[321], &&[213].
+\end{align*}
+For example, $[132]$ stands for the permutation that maps $1\mapsto 1$, $2\mapsto 3$ and $3\mapsto 2$.
+
+\begin{subthm}{ex:S3:subgroups}
+List all subgroups of $S_3$ and find the index of each; which of them are normal.
+\end{subthm}
+
+\begin{subthm}{ex:S3:homomorphism}
+List all homomorphisms $S_3\to S_3$ and find the kernel and the image of each; which of them are (inner) automorphisms?
+\end{subthm}
+
+\end{thm}
+
+\section{Additive versus multiplicative}\label{sec:additive}
+
+We will mostly need two groups;
+\begin{itemize}
+\item $\ZZ$ the additive group of integers and
+\item $\ZZ_2$ the integers modulo two.
+\end{itemize}
+Both of these groups are commutative.
+Moreover, they are \emph{cyclic}; that is, any element of the group can be written as a power of a certain fixed element.
+
+For commutative groups, one often uses \emph{additive notation};
+so the group operation is denoted by $+$ and the neutral element is denoted by $0$.
+It works perfectly in $\ZZ$.
+
+Any group can appear as a fundamental group of a topological space (we will not prove it, but it is not hard to prove).
+For noncommutative groups additive notation should not be used.
+So we will use multiplicative notation (as in the previous section) for general groups, but once we know that the group is commutative, we will mostly switch to the additive notation --- once we switch, the following changes occur:
+\[1\rightsquigarrow0,\quad \alpha\cdot\beta\rightsquigarrow\alpha+\beta,\quad\text{and}\quad \alpha^n\rightsquigarrow n\cdot\alpha\] --- do not be confused by that.
+
+\begin{thm}{Exercise}\label{ex:Z->S3}
+Describe all homomorphisms $\ZZ\to S_3$ and find the image group for each.
+\end{thm}
+
+
 \section{Induced homomorphism}\label{sec:Induced homomorphism}
 
 A \index{pointed space}\emph{pointed space} (briefly $(\c{X},x_0)$) is a topological space $\c{X}$ with a choice of base point $x_0\in \c{X}$;
-so fundamental group is a construction that produces a group $\pi_1(\c{X},x_0)$ from a pointed space $(\c{X},x_0)$.
+so the fundamental group is a construction that produces a group $\pi_1(\c{X},x_0)$ from a pointed space $(\c{X},x_0)$.
 
 A \index{pointed map}\emph{pointed map} (briefly $f\:(\c{X},x_0)\to (\c{Y},y_0)$) is a map $f\:\c{X}\z\to \c{Y}$ with a choice of base points $x_0\in \c{X}$ and $y_0\in \c{Y}$ such that $y_0=f(x_0)$.
 
@@ -61,19 +193,19 @@ If $A$ is a weak deformation retract, then $r_*$ and $i_*$ are isomorphisms.
 
 \section[About notation f⁎]{About notation $\bm{f_*}$}
 
-The induced  homomorphism \index{$f_*$}$f_*\:\pi_1(\c{X},x_0)\to \pi_1(\c{Y},y_0)$ has the same direction as the original map $f\:(\c{X},x_0)\to (\c{Y},y_0)$, by that reason it is also called \index{pushforward}\emph{pushforward}.
+The induced  homomorphism \index{$f_*$}$f_*\:\pi_1(\c{X},x_0)\to \pi_1(\c{Y},y_0)$ has the same direction as the original map $f\:(\c{X},x_0)\to (\c{Y},y_0)$, for that reason it is also called \index{pushforward}\emph{pushforward}.
 The symbol $f_*$ (read ``$f$-star'') can be used for \textit{any} induced map of this type; for example,
 one can write $f_*$ for the induced map from the set of path-connected components of $\c{X}$ to the set of path-connected components of $\c{Y}$.
 The associated constructions (fundamental group or set of path-connected components) are called \index{covariant}\emph{covariant}.
 
-If you see $f_*$, then it means it is induced by $f$, goes in the same direction and you have to guess from the context the source and target of $f_*$.
+If you see $f_*$, then it is induced by $f$ and goes in the same direction; you have to guess from the context the source and target of $f_*$.
 
 For some other constructions, the induced map might go in the opposite direction.
-In this case, the induced map of $f$ is denoted by $f^*$, and called \index{pullback}\emph{pullback}.
+In this case, the induced map denoted by $f^*$, and is called \index{pullback}\emph{pullback}.
 The associated constructions are called \index{contravariant}\emph{contravariant}.
 
 As an example of contravariant construction, consider the so-called \emph{first cohomotopy group} $\pi^1(\c{X},x_0)$, which is the set of homotopy classes of pointed continuous maps $(\c{X},x_0)\to (\SS^1,s_0)$.
-(The set $\pi^1(\c{X},x_0)$ has a natural structure of abelian group, but this is not important for us.)
+(The set $\pi^1(\c{X},x_0)$ has a natural structure of a commutative group, but this is not important for us.)
 Then any pointed continuous map $f\:(\c{X},x_0)\to (\c{Y},y_0)$ has a pullback $f^*\:\pi^1(\c{Y},y_0)\to\pi^1(\c{X},x_0)$.
 Indeed, for a map $h\:(\c{Y},y_0)\to (\SS^1,s_0)$, the composition $h\circ f$ provides a good choice of map $(\c{X},x_0)\to (\SS^1,s_0)$, so we can define $f^*[h]\df [h\circ f]$.
 On the other hand, there is no good choice of map $(\c{Y},y_0)\to (\SS^1,s_0)$ for a given map $(\c{X},x_0)\to (\SS^1,s_0)$.
@@ -165,6 +297,13 @@ Conclude that if two path-connected topological spaces $\c{X}$ and $\c{Y}$ have 
 
 
 \section{Product space}
+
+Let $G$ and $H$ be two groups.
+Consider the set of all pairs $(g,h)$ with $g\in G$ and $h\in H$;
+it is straightforward to check that the operation
+\[(g_1,h_1)\cdot (g_2,h_2)\df(g_1\cdot g_2,h_1\cdot h_2)\]
+defines a group structure on the set of such pairs.
+The obtained group is called the \index{product of groups}\emph{product} of $G$ and $H$ and denoted by $G\times H$.
 
 \begin{thm}{Exercise}\label{ex:hom-product}
 Let $\c{X}$ and $\c{Y}$ be two path-connected topological spaces.

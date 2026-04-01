@@ -124,7 +124,7 @@ Show that the triangle inequality implies that
 $|f(x)-f(y)|<\eps$
 if
 $|x-y|_{\c{X}}<\eps$;
-make a conclusion.
+draw a conclusion.
 
 \parbf{\ref{ex:comp+cont}.}
 Fix $x\in \c{X}$ and $y\in\c{Y}$
@@ -158,7 +158,7 @@ Show that the triangle inequality implies that
 $|f(x)-f(y)|_{\c{Y}}<\eps$
 if
 $|x-y|_{\c{X}}<\eps$;
-make a conclusion.
+draw a conclusion.
 
 \parit{\ref{SHORT.ex:isom-cont:injective}.}
 Apply \ref{def:metric-space:b}.
@@ -201,7 +201,7 @@ Spell the definitions.
 \parbf{\ref{ex:ball-is-open}.}
 If $y\in \Ball(x,R)$, then $r=R-|x-y|\z>0$.
 Use the triangle inequality to show that $\Ball(y,r)\z\subset \Ball(x,R)$.
-Make a conclusion.
+Draw a conclusion.
 
 \parbf{\ref{ex:open-union}.}
 Apply \ref{def:open}.
@@ -255,12 +255,12 @@ Choose a point $z\in \bar{\bar A}$.
 It means that there is a sequence $y_1,y_2,\dots\in\bar A$ such that $y_n\to z$ as $n\to\infty$.
 The latter means that for each $y_i$ there is a sequence $x_{i,1}, x_{i,2},\dots\in A$ such that $x_{i,n}\to y_i$ as $n\to\infty$.
 Try to choose a sequence of integers $m_n$ such that $x_{n,m_n}\to z$ as $n\to\infty$.
-Make a conclusion.
+Draw a conclusion.
 
 \parbf{\ref{ex:closed-open-complement}.}
 Show that $Q$ is closed if $x\in Q$ if and only if $\Ball(x,\eps)\cap Q\ne\emptyset$ for any $\eps>0$.
 Show that the latter is equivalent to $y\in V$ if and only if $\Ball(y,\eps)\subset V$ for some $\eps>0$.
-Make a conclusion.
+Draw a conclusion.
 
 \parbf{\ref{ex:cofinite-metrizable}.}
 Let $\c{X}$ be an infinite set with cofinite topology.
@@ -311,7 +311,7 @@ Check the conditions in \ref{def:top-space} using the property above.
 \parit{\ref{SHORT.ex:Rge:nonmetr}.}
 Show that every two nonempty open sets in $(\RR,\s{T})$ intersect.
 Show that the latter statement does not hold in a metric space with at least two points.
-Make a conclusion.
+Draw a conclusion.
 
 \parit{\ref{SHORT.ex:Rge:mono}.}
 To do the only-if part check the condition in \ref{def:cont-top}.
@@ -698,7 +698,7 @@ It shows that compactness of $\c{K}$ is a necessary assumption.
 If there is a converging subsequence $\mathfrak{p}_{i_1}$, $\mathfrak{p}_{i_2},\dots$,
 then we can choose a set $S\subset \NN$ (so $S\in \c{A}$) such that $i_n\in S$ if $n$ is even and otherwise $i_n\notin S$.
 Observe that $\mathfrak{p}_{i_n}\in \mathfrak{V}_{S}$ if $n$ is even and otherwise $\mathfrak{p}_{i_n}\in \mathfrak{W}_{S}=\c{B}\setminus \mathfrak{V}_{S}$.
-Make a conclusion.
+Draw a conclusion.
 
 \parbf{\ref{ex:lebesgue=1}.}
 Consider an infinite set of points with discrete metric.
@@ -819,7 +819,7 @@ Choose a point $(x,y_1)\notin \Gamma$.
 Let $y_0=f(x)$.
 Let $V\ni y_0$ and $W\ni y_1$ be as in the neighborhoods provided by Hausdorffness of $\c{Y}$.
 Show that $f^{-1}(V)\times W$ is a neighborhood of $(x,y_1)$ that does not intersect $\Gamma$;
-make a conclusion.
+draw a conclusion.
 
 \parit{Remark.}
 This is another part of the \index{closed graph theorem}\emph{closed graph theorem}; compare to \ref{ex:closed-graph} and \ref{ex:graph:graph}.
@@ -1263,14 +1263,14 @@ $f\:(s,t)\mapsto a(t)\cdot b(s)$.
 Show that $f$ is continuous.
 Write both $a*b$ and $b*a$ as a composition of $f$ with a path from $(0,0)$ to $(1,1)$ in $[0,1]\times [0,1]$ and apply linear homotopy.
 
-%\parbf{\ref{ex:sc-retract}.}
-%Let $r\:\c{X}\to A$ be a retraction.
-%Choose points $p,q\in A$.
-%Since $\c{X}$ is path-connected, there is a path $a$ in $\c{X}$ from $p$ to $q$.
-%Obsereve that $r\circ a$ is a path in $A$ from $p$ to $q$.
-%Further, let $b_0$ and $b_1$ be two paths  in $A$ from $p$ to $q$.
-%Since $\c{X}$ is simply-connected, there is a homotopy of paths $b_\tau$ in $\c{X}$ from $b_0$ to $b_1$.
-%Show and use that $r\circ b_\tau$ is a homotopy of paths in $A$ from $b_0$ to $b_1$.
+\parbf{\ref{ex:sc-retract}.}
+Let $r\:\c{X}\to A$ be a retraction.
+Choose points $p,q\in A$.
+Since $\c{X}$ is path-connected, there is a path $a$ in $\c{X}$ from $p$ to $q$.
+Observe that $r\circ a$ is a path in $A$ from $p$ to $q$.
+Further, let $b_0$ and $b_1$ be two paths in $A$ from $p$ to $q$.
+Since $\c{X}$ is simply-connected, there is a homotopy of paths $b_\tau$ in $\c{X}$ from $b_0$ to $b_1$.
+Show and use that $r\circ b_\tau$ is a homotopy of paths in $A$ from $b_0$ to $b_1$.
 
 \parbf{\ref{ex:S1=>sc}.} The only-if part follows directly from \ref{prop:sc=1hclass}.
 It remains to prove the if part.
@@ -1301,6 +1301,30 @@ Observe that $V$ and $W$ are homeomorphic to an open disc and the intersection $
 \parit{(b).}
 Construct contractable (and therefore simply-connected) open sets $V\z\supset \SS^2$ and $W\z\supset \DD^2$ and apply \ref{prop:van-kamp:sc}.
 
+\parbf{\ref{ex:homomorphism}.}
+Show that the neutral element is unique and apply definition of homomorphism and neutral element.
+
+\parbf{\ref{ex:inner}.}
+Check the condition in the definition of homomorphism.
+
+For the second part observe that any inner homomorphism of a commutative group is trivial and find a commutative group with a nontrivial homomorphism.
+
+\parbf{\ref{ex:invG}.} Show and use that $(g\cdot h)^{-1}=h^{-1}\cdot g^{-1}$.
+
+\parbf{\ref{ex:inj-homo}.}
+Let $\phi$ be a homomorphism.
+Show and use that $\phi(g)=\phi(h)$ if and only if $\phi(g\cdot h^{-1})=1$.
+
+\parbf{\ref{ex:S3}}; \ref{SHORT.ex:S3:subgroups}.
+Do it by hand.
+
+\parit{\ref{SHORT.ex:S3:homomorphism}.}
+Observe that $[213]$ and $[123]$ generate $S_3$; that is, any element in $S_3$ can be written as a finite product of these two elements.
+Check all variants for $\phi[213]$ and $\phi[123]$, not all of them lead to a homomorphism.
+
+\parbf{\ref{ex:Z->S3}.}
+Note that a homomorphism $\phi\:\ZZ\to S_3$ is determined by the element $s=\phi(1)\in S_3$; check all the cases.
+
 \parbf{\ref{ex:retract*}}; \ref{SHORT.ex:retract*:0}.
 Show and use that $r\circ a=a$ for any loop $a$ in $A$.
 
@@ -1321,7 +1345,7 @@ The same homotopies $r_\tau\circ a_i$ can be used to show that $i_*$ is an epimo
 $f_1\circ a\sim \bar c*(f_0\circ a)*c$ for any loop $a$ in $\c{X}$ based at $x_0$.
 
 \parit{\ref{SHORT.ex:uphi:hom-type}.}
-Suppose $f\:\c{X}\z\to\c{Y}$ and $h\:\c{Y}\z\to\c{X}$ be a homotopy equivalence and its homotopy inverse.
+Let $f\:\c{X}\z\to\c{Y}$ and $h\:\c{Y}\z\to\c{X}$ be a homotopy equivalence and its homotopy inverse.
 Apply \ref{SHORT.ex:uphi:uphi} to show that $(f\circ h)_*=f_*\circ h_*$ and $(h\circ f)_*=h_*\circ f_*$ are isomorphisms.
 Conclude that $f_*$ is an isomorphism.
 
@@ -1334,13 +1358,15 @@ Given two loops $a$ and $b$ based at $x_0$ in $\c{X}$, denote by $a\times b$ the
 Observe that $f\circ (a\times e_{x_0})= f\circ (e_{x_0}\times a)$ for any loop $a$.
 Use it to show that
 \[f\circ((a*b)\times e_{x_0})\sim f\circ(a\times b)\sim f\circ((b*a)\times e_{x_0})\]
-and make a conclusion.
+and draw a conclusion.
 
 \parbf{\ref{ex:S1}}; \ref{SHORT.ex:S1:R3>R^2}.
 Suppose there is a homeomorphism $h\:\RR^3\to\RR^2$.
 Choose a point $p\in \RR^3$ and let $q=h(p)$.
 Observe that $\RR^3\setminus\{p\}$ is homeomorphic to $\RR^2\setminus\{q\}$.
 Show that $\pi_1(\RR^3\setminus\{p\})$ is trivial, but $\pi_1(\RR^2\setminus\{q\})$ is not and arrive at a contradiction.
+
+\parit{\ref{SHORT.ex:S2-D2}.} Show and use that after removing one point the sphere $\SS^2$ remains simly-connected, but $\DD^2$ may become not simply-connected.
 
 \parit{\ref{SHORT.ex:bry->bry}.} Apply \ref{thm:pi1(S1)}, \ref{ex:retract*:0}, and the linear homotopy; see \ref{sec:Linear homotopy}.
 
@@ -1606,7 +1632,18 @@ Choose a subset $I\subset J$ that is homeomorphic to $[0,1]$ and such that $I\su
 
 \parit{Comment.} Recall that by \ref{ex:proper-jordan3}, $\SS^2\setminus J$ has exactly two connected components, but the solution above does not use this.
 
-%\parbf{\ref.}
+\parbf{\ref{ex:AnB}.}
+Removing a point $p\in A\cap B$ from $\SS^2$ we get $\RR^2\simeq\SS^2\setminus \{p\}$; let us keep the notations $A$ and $B$ for these sets without $p$.
+Note that $\RR^2\setminus A$ and $\RR^2\setminus B$ are connected and $\RR^2\setminus (A\cap B)$ is simply-connected.
+
+As before, let us think that $\RR^2$ is the $(x,y)$-plane in $\RR^3$.
+Consider the set
+\[C=A\times\{0\}\cup B\times\{1\}\cup (A\cap B)\times [0,1]\subset \RR^3.\]
+Show that $\RR^2\setminus(A\cup B)$ is connected if and only if $\RR^3\setminus C$ is simply-connected.
+Argue as above to prove the latter statement.
+
+\parit{Comment.}
+This statement also follows from Alexander's duality theorem.
 
 %\parbf{\ref.}
 
