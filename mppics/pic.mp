@@ -1147,9 +1147,11 @@ p3=z.x0{-.3,-1}..(.5)[z.x0,z.x1]+(-.2,-1)*u{(-1,-.3)}..z.x1{up}..(.5)[z.x1,z.x1]
 p4=z.x0{(-1,.3)}..{(-1,-.3)}z.x1;
 p5=z.x0{(1,.3)}..{(1,-.3)}z.x2;
 
-draw p1;
-draw p2;
-draw p3;
+fill (subpath (1,2) of p1)--(subpath (2,1) of p2)--cycle withcolor .8;
+draw subpath (0,1) of p1 dashed evenly;
+draw subpath (1,2) of p1;
+draw subpath (0,1) of p2 dashed evenly;
+draw subpath (1,2) of p2;
 drawarrow subpath (0,1) of p3 pensemibold;
 drawarrow subpath (1,3.3) of p3 pensemibold;
 drawarrow subpath (3.3,5) of p3 pensemibold;
@@ -1666,7 +1668,7 @@ draw p0 shifted z.shift2;
 draw p0 shifted (z.shift2+(1,0)*u);
 draw p0 shifted (z.shift2+(2,0)*u);
 
-z.shift3=(12,1)*u;
+z.shift3=(11,1)*u;
 
 draw p0 rotated 45 shifted (z.shift3+(1,-2)*u);
 draw p0 rotated -45 shifted (z.shift3+(1,-2)*u) withpen pencircle scaled 4 withcolor 1;
@@ -1900,6 +1902,78 @@ midarrow((0,0)*u,(1,0)*u);
 midarrow((0,1)*u,(1,1)*u);
 drawarrow (1.25,.5)*u--(1.5,.5)*u;
 
+endfig;
+
+beginfig(1915)
+save u,p;
+path p[];
+u:=.45cm;
+
+z.a=(1,0)*u;
+z.b=(3,0)*u;
+
+z.shift =(7,0)*u;
+
+p1=z.a{(1,-2)}..z.b{(1,2)}..tension 1.5..-z.b{(1,-2)}..-z.a{(1,2)}..cycle;
+p2=p1 zscaled (-1,0);
+
+p3=z.a{(1,-2)}..z.b{(1,2)}..tension 1.4..z.b zscaled (0,1) {(-2,-1)}..z.a zscaled (0,1) {(2,-1)}..cycle;
+
+p11= p3 zscaled (1,0) shifted z.shift;
+p12=p3 zscaled (0,1) shifted z.shift;
+p13=p3 zscaled (-1,0) shifted z.shift;
+p14=p3 zscaled (0,-1) shifted z.shift;
+
+fill subpath (1,2) of p1--subpath (1,2) of p2--subpath (3,4) of p2--subpath (3,4) of p1--cycle withcolor .8;
+fill
+subpath (1,2) of p11--subpath (1,2) of p12--subpath (1,2) of p13--subpath (1,2) of p14
+--
+subpath (3,4) of p14--subpath (3,4) of p13--subpath (3,4) of p12--subpath (3,4) of p11
+--cycle withcolor .8;
+
+draw subpath (0,1) of p1 dashed evenly;
+draw subpath (1,2) of p1;
+draw subpath (2,3) of p1 dashed evenly;
+draw subpath (3,4) of p1;
+draw subpath (0,1) of p2 dashed evenly;
+draw subpath (1,2) of p2;
+draw subpath (2,3) of p2 dashed evenly;
+draw subpath (3,4) of p2;
+
+draw subpath (0,1) of p11 dashed evenly;
+draw subpath (1,2) of p11;
+draw subpath (2,3) of p11 dashed evenly;
+draw subpath (3,4) of p11;
+draw subpath (0,1) of p12 dashed evenly;
+draw subpath (1,2) of p12;
+draw subpath (2,3) of p12 dashed evenly;
+draw subpath (3,4) of p12;
+draw subpath (0,1) of p13 dashed evenly;
+draw subpath (1,2) of p13;
+draw subpath (2,3) of p13 dashed evenly;
+draw subpath (3,4) of p13;
+draw subpath (0,1) of p14 dashed evenly;
+draw subpath (1,2) of p14;
+draw subpath (2,3) of p14 dashed evenly;
+draw subpath (3,4) of p14;
+
+z.c=.5[z.a,z.b];
+
+label (btex $A$ etex, z.c);
+label (btex $B$ etex, -z.c);
+label (btex $V$ etex, z.c rotated 90);
+label (btex $W$ etex, z.c rotated -90);
+label (btex $\c{Z}$ etex, origin);
+
+label (btex $A_1$ etex, z.c+z.shift);
+label (btex $B_1$ etex, z.c rotated 90+z.shift);
+label (btex $V_1$ etex, z.c rotated 45+z.shift);
+label (btex $W_1$ etex, z.c rotated -45+z.shift);
+label (btex $A_2$ etex, -z.c+z.shift);
+label (btex $B_2$ etex, z.c rotated -90+z.shift);
+label (btex $V_2$ etex, z.c rotated -135+z.shift);
+label (btex $W_2$ etex, z.c rotated 135+z.shift);
+label (btex $\tilde{\c{Z}}$ etex, z.shift);
 endfig;
 
 beginfig(1920)
