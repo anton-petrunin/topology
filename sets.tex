@@ -276,7 +276,7 @@ Note that a space is discrete if every point in it is isolated.
 
 Further, a point $p$ in a subset $A\subset \c{X}$ is called \index{isolated point}\emph{isolated} if it is an isolated point of the subspace $A$,
 which means that there is an open set $V\ni p$ that intersects $A$ only at $p$.
-For example, in the set $A=\{0,1,\tfrac12,\tfrac13,\dots\}\subset\RR$ all points except $0$ are isolated.
+For example, in the set $A=\{0,1,\tfrac12,\tfrac13,\ldots\}\subset\RR$ all points except $0$ are isolated.
 
 In 1882, Magnus Mittag-Leffler posed a question, which could be restated as follows:
 \textit{Does there exist a nowhere dense closed set $\c{C}\subset\RR$ without isolated points?}
@@ -308,13 +308,13 @@ Therefore $a,b\in \c{C}$, and since $x\ne a$ or $x\ne b$, we get that $x$ is not
 
 Alternatively, one can describe $\c{C}$ as all reals $x\in [0,1]$ that can be written in base~$3$ only using two disgits $0$ and $2$ (without using $1$);
 that is,
-$x\in \c{C}$ if there is a sequence $d_1,d_2,\dots$ such that
+$x\in \c{C}$ if there is a sequence $d_1,d_2,\ldots$ such that
 \[x=(0.d_1d_2\ldots)_3\df\frac{d_1}{3^1}+\frac{d_2}{3^2}+\ldots\]
 and each $d_i$ is either $0$ or $2$.
 
 \begin{thm}{Exercise}\label{ex:Cantor}
 Prove the equivalence of the two definitions and use it to show that $\c{C}$ is uncountable.%
-\footnote{This exercise requires a bit more set theory than usual; it uses that the set of all subsets an infinite set is uncountable, which follows from Cantor's theorem.}
+\footnote{This exercise requires a bit more set theory than usual; it uses that the set of all subsets an infinite set is uncountable, which follows from Cantor's power set theorem.}
 \end{thm}
 
 
@@ -359,7 +359,7 @@ $x_n\in N$ for all sufficiently large $n$.
 \end{thm}
 
 Observe that the above definition agrees with \ref{def:limit-metric}.
-In other words, a sequence of points $x_1,x_2,\dots$ in a metric space converges to a point $x_\infty$ in the sense of the definition \ref{def:limit-metric} if and only if it converges in the sense of the definition \ref{def:limit-top}.
+In other words, a sequence of points $x_1,x_2,\ldots$ in a metric space converges to a point $x_\infty$ in the sense of the definition \ref{def:limit-metric} if and only if it converges in the sense of the definition \ref{def:limit-top}.
 
 \begin{thm}{Exercise}\label{ex:lim-weaker}
 Show that a convergent sequence of points in a topological space is also convergent for every weaker topology.
@@ -380,18 +380,18 @@ Let $\c{X}$ be the set of real numbers with the so-called \index{cocountable top
 its closed sets are either countable or the whole $\RR$.
 
 \begin{subthm}{}
-Show that a sequence $x_1,x_2,\dots \in \c{X}$ converges to $x_\infty$ if and only if $x_n=x_\infty$ for all sufficiently large $n$.
+Show that a sequence $x_1,x_2,\ldots \in \c{X}$ converges to $x_\infty$ if and only if $x_n=x_\infty$ for all sufficiently large $n$.
 \end{subthm}
 
 \begin{subthm}{ex:cocountable-top:closed}
 Show that any set $A\subset \c{X}$ is \index{sequentially closed set}\emph{sequentially closed};
-that is, if $a_1,a_2,\dots \in A$ is a converging sequence, then its limit lies in $A$.
+that is, if $a_1,a_2,\ldots \in A$ is a converging sequence, then its limit lies in $A$.
 Observe that not all subsets of $\c{X}$ are closed.
 \end{subthm}
 
 \begin{subthm}{}
 Show that any map $f\:\c{X}\to \c{X}$ is \index{sequentially continuous map}\emph{sequentially continuous};
-that is, if a sequence $x_1,x_2,\dots \in \c{X}$ converges to $x_\infty$ in $\c{X}$, then  $y_n=f(x_n)$ converges to $y_\infty\z=f(x_\infty)$.
+that is, if a sequence $x_1,x_2,\ldots \in \c{X}$ converges to $x_\infty$ in $\c{X}$, then  $y_n=f(x_n)$ converges to $y_\infty\z=f(x_\infty)$.
 Observe that not all maps $f\:\c{X}\to \c{X}$ are continuous.
 \end{subthm}
 

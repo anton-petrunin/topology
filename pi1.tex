@@ -351,7 +351,7 @@ that is, \index{$a*b*c*d$} $a*b*c*d\df((a*b)*c)*d$.
 
 \parit{Proof.}
 Let $a$ be a loop in $\c{X}$ based at $x_0\in V\cap W$.
-Note that we can choose a sequence $0=t_0<t_1<\dots<t_n=1$ such that
+Note that we can choose a sequence $0=t_0<t_1<\ldots<t_n=1$ such that
 $a([t_{i-1},t_i])\z\subset V$, or $a([t_{i-1},t_i])\subset W$ and $a(t_i)\in V\cap W$ for each $i$.
 
 \begin{wrapfigure}{r}{45 mm}
@@ -365,17 +365,17 @@ So if $|t_i-t_{i-1}|<\eps$, then $a([t_{i-1},t_i])\subset V$ or $a([t_{i-1},t_i]
 If $a(t_i)\notin V\cap W$ for some $i$, then it can be removed from the sequence keeping the property;
 after several such removals we get the needed subdivision.
 
-Reparametrizing $[t_{i-1},t_i]$ by $[0,1]$ we get paths $a_1,\dots,a_n$ such that
+Reparametrizing $[t_{i-1},t_i]$ by $[0,1]$ we get paths $a_1,\ldots,a_n$ such that
 \[a\sim a_1*\dots*a_n\]
 and each $a_i$ lies completely in $V$ or $W$ and has ends in $V\cap W$.
 Let us connect $x_0$ to every point $x_i=a_i(1)$ for $i<n$ by a path $b_i$ in $V\cap W$.
 By \ref{clm:homot-claims},
 \[a_1*\ldots*a_n{\sim}(a_1*\bar b_1)*(b_1*a_2*\bar b_2)*\ldots*(b_{n-1}*a_n).\]
 
-Observe that each loop $a_1*\bar b_1$, $b_1*a_2*\bar b_2, \z\dots, b_{n-1}*a_n$ lies entirely in $V$ or $W$.
+Observe that each loop $a_1*\bar b_1$, $b_1*a_2*\bar b_2, \z\ldots, b_{n-1}*a_n$ lies entirely in $V$ or $W$.
 Since $V$ and $W$ are simply-connected,
 \[a_1*\bar b_1\sim e_{x_0},\quad
- b_1*a_2*\bar b_2\sim e_{x_0},\quad \dots\ ,\quad b_{n-1}*a_n\sim e_{x_0}.
+ b_1*a_2*\bar b_2\sim e_{x_0},\quad \ldots\ ,\quad b_{n-1}*a_n\sim e_{x_0}.
 \]
 Hence $a_1*\ldots*a_n\sim e_{x_0}$, and the statement follows.
 \qeds

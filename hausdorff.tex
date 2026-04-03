@@ -36,7 +36,7 @@ Show that a topological space $\c{X}$ is Hausdorff
 if and only if for any two distinct points $x,y\in \c{X}$ there is an open set $V\ni x$ such that $\bar V\not\ni y$.
 \end{thm}
 
-%\begin{thm}{Exercise}\label{ex:hausdorff-n-points} Show that for distinct $n$ points $x_1,\dots,x_n$ in a Hausdorff space one can choose $n$ disjoint open setss $V_1,\dots,V_n$ such that $V_i\ni x_i$ for each $i$. Provide an example showing that analogoes statement does not hold for an infinite sequence of points. \end{thm}???
+%\begin{thm}{Exercise}\label{ex:hausdorff-n-points} Show that for distinct $n$ points $x_1,\ldots,x_n$ in a Hausdorff space one can choose $n$ disjoint open setss $V_1,\dots,V_n$ such that $V_i\ni x_i$ for each $i$. Provide an example showing that analogoes statement does not hold for an infinite sequence of points. \end{thm}???
 
 
 \begin{thm}{Exercise}\label{ex:hausdorff-diagonal}
@@ -129,13 +129,13 @@ It follows that $\c{X}\setminus K$ is open; therefore, $K$ is closed.
 By definition of Hausdorff space,
 for any point $x\in K$ there is a pair of disjoint open sets $V_x\ni x$ and $W_x\ni y$.
 Note that $\{V_x\}_{x\in K}$ is a cover of $K$.
-Since $K$ is compact we can choose a finite subcover $\{V_{x_1},\dots , V_{x_n}\}$.
+Since $K$ is compact we can choose a finite subcover $\{V_{x_1},\ldots , V_{x_n}\}$.
 Set 
 \begin{align*}
-V&=V_{x_1}\cup\dots \cup V_{x_n}
+V&=V_{x_1}\cup\ldots \cup V_{x_n}
 &&\text{and}
 &
-W&=W_{x_1}\cap\dots \cap W_{x_n}.
+W&=W_{x_1}\cap\ldots \cap W_{x_n}.
 \end{align*}
 It remains to observe that $V$ and $W$ are open, $y\in W$, $K\subset V$, and 
 \[V\cap W\subset \bigcup_i(V_{x_i}\cap W_{x_i})=\emptyset.\qedsin\]
@@ -260,12 +260,12 @@ Both theorems are discussed in the book by James Munkres \cite{munkres}.
 
 Let us mention several other conditions that (like Hausdorffness) make a topological space behave more like metrizable.
 
-Recall that a topological space $\c{X}$ is called \index{first-countable space}\emph{first-countable} if for each point $x\in\c{X}$ there exists a sequence of neighborhoods $N_1$, $N_2,\dots$ such that for any open set $V\ni x$ we can choose $n$ such that $V\supset N_n\ni x$.
+Recall that a topological space $\c{X}$ is called \index{first-countable space}\emph{first-countable} if for each point $x\in\c{X}$ there exists a sequence of neighborhoods $N_1$, $N_2,\ldots$ such that for any open set $V\ni x$ we can choose $n$ such that $V\supset N_n\ni x$.
 Observe that any metric space is first-countable; indeed, one can take $N_n=\Ball(x,\tfrac1n)$.
 
 \begin{thm}{Exercise}\label{ex:first-countable-seq}
 Let $A$ be a subset of a first-countable space $\c{X}$.
-Show that $x\in \bar A$ if and only if $x$ is a limit of some sequence $x_1,x_2,\dots \in A$.
+Show that $x\in \bar A$ if and only if $x$ is a limit of some sequence $x_1,x_2,\ldots \in A$.
 
 Observe that \ref{ex:cocountable-top:closed} implies that this is no longer true without assuming that $\c{X}$ is first-countable.
 

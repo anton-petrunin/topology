@@ -1,7 +1,7 @@
 \chapter{Fundamental group of a circle}\label{chap:S1}
 
-In this chapter we will calculate the fundamental group of a circle;
-it will give a first example of a space with a nontrivial fundamental group.
+In this chapter calculates the fundamental group of a circle
+and gives a first example of a space with a nontrivial fundamental group.
 In the proof one has to show nonexistence of homotopies between certain loops;
 this part requires new ideas.
 
@@ -26,8 +26,8 @@ Any continuous map $f\:\DD^2\to\DD^2$ has a fixed point.
 
 \parit{Proof.}
 Arguing by contradiction, assume $x\z\neq f(x)$ for all $x\in\DD^2$.
-Given $x\in\DD^2$, consider the half-line $H$ from $f(x)$ to $x$.%
-\footnote{Remember that $H$ goes backwards, from $f(x)$ to $x$, not the other way around.}
+Given $x\in\DD^2$, consider the half-line $\ell$ from $f(x)$ to $x$.%
+\footnote{Remember that $\ell$ goes backwards, from $f(x)$ to $x$, not the other way around.}
 
 {
 
@@ -37,7 +37,7 @@ Given $x\in\DD^2$, consider the half-line $H$ from $f(x)$ to $x$.%
 \includegraphics{mppics/pic-1515}
 \end{wrapfigure}
 
-The half-line $H$ intersects $\SS^1=\partial \DD^2$ at a single point; denote it by $h(x)$.
+The half-line $\ell$ intersects $\SS^1=\partial \DD^2$ at a single point; denote it by $h(x)$.
 Note that the map $h\:\DD^2\to\SS^1$ is continuous and $h(x)=x$ if $x\in\SS^1$;
 that is, $h$ defines a retraction $\DD^2\z\to \SS^1$.
 
@@ -71,7 +71,7 @@ Conclude that any homeomorphism $\DD^2\to\DD^2$ maps $\partial \DD^2$ to itself.
 
 
 \begin{subthm}{ex:moebius}
-Show that the cylinder $\SS^1\times[0,1]$ is not homeomorphic to the Möbius band; see \ref{sec:Homotopy type}.
+Show that the cylinder $\SS^1\times[0,1]$ is not homeomorphic to the Möbius band (defined in \ref{sec:Homotopy type}).
 \end{subthm}
 
 
@@ -124,7 +124,7 @@ Consider the wrapping map $w\:\RR\to \mathbb{S}^1\subset \CC$ defined by
 (The last equality follows from Euler's formula $\exp(i\cdot x)=\cos x \z+i\cdot \sin x$, which can be taken as a definition of $\exp(i\cdot x)$.)
 
 \begin{wrapfigure}[5]{r}{23 mm}
-\vskip-0mm
+\vskip-2mm
 \centering
 \begin{tikzcd}
 & \RR \arrow[d, "w"]\\
@@ -148,7 +148,7 @@ In particular, if $a_0\sim a_1$ then $\tilde a_0(1)= \tilde a_1(1)$.
 \end{thm}
 
 \begin{thm}{Lemma}\label{lem:covering}
-Let $W=\SS^1\setminus \{u_0\}$ for some $u_0=w(x_0)\in\SS^1$.
+Let $W=\SS^1\setminus \{s_0\}$ for some $s_0=w(x_0)\in\SS^1$.
 Then $w^{-1}(W)$ is a disjoint union of open intervals $V_n=(x_0+n,x_0+n+1)$ for $n\in \ZZ$
 and $w$ defines a homeomorphism $V_n\to W$ for each $n$.
 
@@ -184,9 +184,10 @@ By the same argument, we can extend $\tilde a_0$ to $[t_0,t_2]$ via lift of $a_0
 The continuity of $\tilde a_0$ follows from \ref{ex:u-continuous:closed}.
 Repeating this argument $n$ times gives us a lift of $a_0$, and it is unique by construction.
 
+{
 
 \begin{wrapfigure}{r}{30 mm}
-\vskip-0mm
+\vskip-4mm
 \centering
 \includegraphics{mppics/pic-1410}
 \end{wrapfigure}
@@ -195,6 +196,8 @@ The proof of the last statement is similar.
 Choose a homotopy $H\:[0,1]\times [0,1]\to\SS^1$ from $a_0$ to $a_1$.
 Applying \ref{prop:lebesgue-number} again, we can subdivide $[0,1]\times [0,1]$ into small squares by horizontal and vertical lines so that $H$ maps each small square in $W_1$ or in $W_2$.
 Then we can build the lift $\tilde H$ square by square, from bottom up in the order shown in the picture.
+
+}
 
 When we extend $\tilde H$ over a small square $\square$ the value of $\tilde H$ is already defined at its lower left corner, say $v$.
 So we can apply \ref{lem:covering}.
@@ -220,11 +223,9 @@ Construct a loop $b\:[0,1]\to \SS^1$ such that $b([0,1])\supset \SS^1$, but its 
 
 Recall that we consider $\SS^1$ as a subset of the complex plane $\CC$.
 
-A loop in $\SS^1$ based at $1$ is a continuous map $a\:[0,1]\to\SS^1$
-such that $a(0)=a(1)=1$.
-Let $\tilde a\:[0,1]\to\RR$ be the unique lift with $\tilde a(0)=0$ provided by \ref{prop:lifting}.
+Let $a\:[0,1]\to\SS^1$ be a loop loop based at $1$, and let $\tilde a\:[0,1]\to\RR$ be its unique lift with $\tilde a(0)=0$ provided by \ref{prop:lifting}.
 Since $w^{-1}(1)=\ZZ$, we have $\tilde a(1)\in\ZZ$.
-The integer $\tilde a(1)$ will be called the \index{degree of loop}\emph{degree} of the loop $a$, it will be denoted by $\deg a$.
+The integer $\tilde a(1)$ will be called the \index{degree of loop}\emph{degree} of the loop $a$; it will be denoted by $\deg a$.
 
 
 \begin{thm}{Theorem}\label{thm:pi1S1Z}
@@ -242,7 +243,7 @@ In other words, $[a]\mapsto \deg a$ is a well-defined map $\pi_1(\SS^1,1)\to \ZZ
 
 Choose a pair of loops $a$ and $b$ based at $1$ in $\SS^1$.
 Let $\tilde a$ and $\tilde b$ be their lifts such that $\tilde a(0)=\tilde b(0)=0$.
-Observe that the path $\tilde b_a\:t\mapsto \deg a+\tilde b(t)$ is a lift of $b$ that starts at $\deg a=\tilde a(1)$.
+Observe that the path $\tilde b_a\:t\z\mapsto \deg a+\tilde b(t)$ is a lift of $b$ that starts at $\deg a=\tilde a(1)$.
 Therefore $\tilde a*\tilde b_a$ is a lift of $a*b$ that starts at $0$.
 Hence
 \[\deg (a*b)=(\tilde a*\tilde b_a)(1)=\tilde b_a(1)=\deg a+\deg b\]
@@ -299,7 +300,7 @@ In particular $a_r\sim a_\infty$ and $\deg a_r=n$ for any large $r$ --- a contra
 
 \begin{thm}{Exercise}\label{ex:wind}
 Consider a loop $a\:[0,1]\to \CC$ and a point $z\z\notin a([0,1])$.
-The winding number of $a$ around $z$ is defined as \index{wind@$\wind_a(z)$}
+The winding number of loop $a$ around point $z$ is defined as \index{wind@$\wind_a(z)$}
 \[\wind_a(z)\z\df\deg b_z,\]
 where $b_z(t)\z\df\frac{(a(t)-z)\cdot|a(0)-z|}{|a(t)-z|\cdot(a(0)-z)}$.
 
@@ -308,7 +309,7 @@ Show the function $\wind_a$ is constant in every connected component of $\CC\z\s
 \end{subthm}
 
 \begin{subthm}{ex:wind:7}
-Redraw the following path and write its winding number in each connected component of the complement.
+Redraw the following loop and write its winding number in each connected component of the complement.
 \begin{figure}[!ht]
 \centering
 \includegraphics{mppics/pic-1555}

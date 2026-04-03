@@ -505,13 +505,13 @@ n:=7;
 p0=(0,0)--(a,0)--(a,u)--(0,u)--cycle;
 
 k0=image(fill p0);
-k1=image(draw k0 xscaled 1/3 shifted ((0,-2*u)); draw k0 xscaled 1/3 shifted ((2/3)*(a,0)+ (0,-2*u)));
-k2=image(draw k1 xscaled 1/3 shifted ((0,-2*u)); draw k1 xscaled 1/3 shifted ((2/3)*(a,0)+ (0,-2*u)));
-k3=image(draw k2 xscaled 1/3 shifted ((0,-2*u)); draw k2 xscaled 1/3 shifted ((2/3)*(a,0)+ (0,-2*u)));
-k4=image(draw k3 xscaled 1/3 shifted ((0,-2*u)); draw k3 xscaled 1/3 shifted ((2/3)*(a,0)+ (0,-2*u)));
-k5=image(draw k4 xscaled 1/3 shifted ((0,-2*u)); draw k4 xscaled 1/3 shifted ((2/3)*(a,0)+ (0,-2*u)));
-k6=image(draw k5 xscaled 1/3 shifted ((0,-2*u)); draw k5 xscaled 1/3 shifted ((2/3)*(a,0)+ (0,-2*u)));
-k7=image(draw k6 xscaled 1/3 shifted ((0,-2*u)); draw k6 xscaled 1/3 shifted ((2/3)*(a,0)+ (0,-2*u)));
+k1=image(draw k0 xscaled 1/3 shifted ((0,-2.5*u)); draw k0 xscaled 1/3 shifted ((2/3)*(a,0)+ (0,-2.5*u)));
+k2=image(draw k1 xscaled 1/3 shifted ((0,-2.5*u)); draw k1 xscaled 1/3 shifted ((2/3)*(a,0)+ (0,-2.5*u)));
+k3=image(draw k2 xscaled 1/3 shifted ((0,-2.5*u)); draw k2 xscaled 1/3 shifted ((2/3)*(a,0)+ (0,-2.5*u)));
+k4=image(draw k3 xscaled 1/3 shifted ((0,-2.5*u)); draw k3 xscaled 1/3 shifted ((2/3)*(a,0)+ (0,-2.5*u)));
+k5=image(draw k4 xscaled 1/3 shifted ((0,-2.5*u)); draw k4 xscaled 1/3 shifted ((2/3)*(a,0)+ (0,-2.5*u)));
+k6=image(draw k5 xscaled 1/3 shifted ((0,-2.5*u)); draw k5 xscaled 1/3 shifted ((2/3)*(a,0)+ (0,-2.5*u)));
+k7=image(draw k6 xscaled 1/3 shifted ((0,-2.5*u)); draw k6 xscaled 1/3 shifted ((2/3)*(a,0)+ (0,-2.5*u)));
 
 draw k0;
 draw k1;
@@ -520,7 +520,12 @@ draw k3;
 draw k4;
 draw k5;
 
-
+label.lft(btex $\c{C}_0$ etex, (0,u/2));
+label.lft(btex $\c{C}_1$ etex, (0,u/2)+ (0,-2.5*u));
+label.lft(btex $\c{C}_2$ etex, (0,u/2)+ 2*(0,-2.5*u));
+label.lft(btex $\c{C}_3$ etex, (0,u/2)+ 3*(0,-2.5*u));
+label.lft(btex $\c{C}_4$ etex, (0,u/2)+ 4*(0,-2.5*u));
+label.lft(btex $\c{C}_5$ etex, (0,u/2)+ 5*(0,-2.5*u));
 endfig;
 
 beginfig(405)
@@ -1273,7 +1278,7 @@ dOt z.r,z.f,z.x;
 label.lrt (btex $x$ etex, z.x);
 label.rt (btex $f(x)$ etex, z.f);
 label.rt (btex $h(x)$ etex, z.r+(1,0));
-label.top (btex $H$ etex, 1.4[z.f,z.r]+(-2,0));
+label.top (btex $\ell$ etex, 1.4[z.f,z.r]+(-2,0));
 
 endfig;
 
