@@ -96,10 +96,12 @@ Show that the map $\tilde{\c{X}}\times\tilde{\c{Y}} \to \c{X}\times\c{Y}$ define
 \section{Trivial coverings}
 
 Observe that any homeomorphism is a covering.
-Further, suppose $\c{Z}$ is an arbitrary topological space and $\c{I}$ is a discrete space, then the projection $\c{Z}\times{\c{I}}\to \c{Z}$ defined by $(z,i)\mapsto z$ is a covering.
+Further, suppose $\c{Z}$ is an arbitrary topological space and $\c{I}$ is a discrete space.
+Then the projection $\c{Z}\times{\c{I}}\to \c{Z}$ defined by $(z,i)\mapsto z$ is a covering.
 (Informally speaking, we took several disjoint copies of space $\c{Z}$ and map a point in each copy to the corresponding point in $\c{Z}$.)
 
 A covering $w\:\tilde{\c{Z}}\to \c{Z}$ is called \index{trivial covering}\emph{trivial} if there is a discrete space $\c{I}$ and a homeomorphism $h\:\c{Z}\times{\c{I}}\to \tilde{\c{Z}}$ such that $w\circ h$ is the projection $\c{Z}\times{\c{I}}\to \c{Z}$.
+In other words, a covering $w\:\tilde{\c{Z}}\to \c{Z}$ is trivial if and only if the whole base $\c{Z}$ is evenly covered by $w$.
 
 {
 
@@ -111,8 +113,8 @@ A covering $w\:\tilde{\c{Z}}\to \c{Z}$ is called \index{trivial covering}\emph{t
 
 Note that any trivial connected covering must be a homeomorphism.
 Since $\RR$ and $\SS^1$ are connected, the wrapping map $w(x)\z=\exp(2\cdot\pi\cdot i\cdot x)$ provides an example of a nontrivial covering map $\RR\to\SS^1$.
-The map $z\mapsto z^n$ for an integer $n>1$ gives another example of nontrivial covering $\SS^1\to\SS^1$ (which is an example of $n$-fold; see next section);
-the total space and base are homeomorphic, but the map is not a homeomorphism.
+The map $\SS^1\to\SS^1$ defined by $z\mapsto z^n$ for an integer $n>1$ gives another example of a nontrivial covering  (which is an example of an $n$-fold covering; see next section).
+In this case, the total space and base are homeomorphic, but the map is not a homeomorphism.
 The case $n=4$ is in the picture.
 
 }
@@ -120,7 +122,7 @@ The case $n=4$ is in the picture.
 \section[$n$-fold coverings]{$\bm{n}$-fold coverings}
 
 Let $w\:\tilde{\c{Z}}\to \c{Z}$ be a covering.
-If for some integer $n$ the inverse image of every point $z\in \c{Z}$ has exactly $n$ points, then we say that
+If for some integer $n\ge 0$ the inverse image of every point $z\in \c{Z}$ has exactly $n$ points, then we say that
 $w$ is an \emph{$n$-fold} covering.
 
 \begin{thm}{Exercise}\label{ex:n-folded}
@@ -208,16 +210,20 @@ the projections $\c{X}\times \c{Y}\z\to \c{Y}$ and $\c{X}\times \c{Y}\to \c{X}$.
 \end{wrapfigure}
 
 The space $\c{P}$ equipped with the maps $\tilde v\:\c{P}\z\to\c{Y}$ and $\tilde w\:\c{P}\to\c{X}$ is called \index{fibered product}\emph{fibered product} of maps $v\:\c{X}\to \c{Z}$ and $w\:\c{Y}\to \c{Z}$.
-The map $\tilde v$ is called \index{pullback}\emph{pullback} of $v$ along $w$;
+The map $\tilde v$ is called the \index{pullback}\emph{pullback} of $v$ along $w$;
 similarly $\tilde w$ is a pullback of $w$ along $v$.
 This is a natural choice of space and maps that makes the diagram commute. % \index{pullback}\emph{pullback diagram}.
 
 }
 
+For pointed maps $v\:(\c{X},x_0)\to (\c{Z},z_0)$ and $w\:(\c{Y}, y_0)\to (\c{Z},z_0)$,
+we can take $p_0=(x_0,y_0)\in  \c{P}$, so
+the pullbacks $\tilde v\:(\c{P},p_0)\z\to(\c{Y},y_0)$ and $\tilde w\:(\c{P},p_0)\to(\c{X},x_0)$ are also pointed maps.
+
 {
 
 \begin{wrapfigure}{r}{30 mm}
-\vskip-4mm
+\vskip-1mm
 \centering
 \begin{tikzcd}
 \c{X}\times \c{Y}\arrow[d] \arrow[r] & \c{Y} \arrow[d]\\
@@ -237,7 +243,7 @@ Show that $V$ is evenly covered by $w$ if and only if $\tilde w$ is a trivial co
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:pull-back}
-Show that pullback $\tilde v$ of a covering $v$ is a covering; moreover, if $v$ is (a) trivial or (b) $m$-fold, then so is~$\tilde v$.
+Show that the pullback $\tilde v$ of a covering $v$ is a covering; moreover, if $v$ is (a) trivial or (b) $m$-fold, then so is~$\tilde v$.
 \end{thm}
 
 {
@@ -296,12 +302,11 @@ which means that the diagram commutes.
 
 }
 
-In particular, if $\c{Y}=[0,1]$, then $f$ is a path, and the path $\tilde f\:[0,1]\to \tilde{\c{Z}}$ is its \emph{lift}.
+In particular, if $\c{Y}=[0,1]$, then $f$ is a path, and the path $\tilde f\:[0,1]\z\to \tilde{\c{Z}}$ is its \emph{lift}.
 Furthermore, taking $\c{Y}=[0,1]\times [0,1]$, we can talk about lifts of homotopies of paths.
 
 \begin{thm}{Lemma}\label{lem:path-lifting}
-Let $w\:\tilde{\c{Z}}\to \c{Z}$ be a covering map, and let $a_0\:[0,1]\z\to \c{Z}$ be a path.
-Suppose that $\tilde z_0\in \tilde{\c{Z}}$ and $z_0\in \c{Z}$ be points such that $w(\tilde z_0)=z_0=a_0(0)$.
+Let $w\:(\tilde{\c{Z}},\tilde z_0)\to (\c{Z},z_0)$ be a pointed covering map, and let $a_0\:[0,1]\z\to \c{Z}$ be a path such that $a_0(0)=z_0$.
 Then there is a unique lift $\tilde a_0$ of $a_0$ such that $\tilde a_0(0)=\tilde z_0$.
 
 Moreover, for any homotopy of paths $a_\tau$ from $a_0$ to $a_1$ there is a unique lifted homotopy of paths $\tilde a_\tau$ such that $\tilde a_0(0)=\tilde z_0$ (and therefore $\tilde a_\tau(0)=\tilde z_0$ for any $\tau$).
@@ -320,12 +325,12 @@ Show that if $\tilde f_1(y_0)=\tilde f_2(y_0)$ for some $y_0\in \c{Y}$, then $\t
 
 
 \begin{thm}{Theorem}\label{thm:bijection-fiber}
-Let $w\: \tilde{\c{Z}}\to \c{Z}$ be a covering.
+Let $w\: (\tilde{\c{Z}},\tilde z_1)\to (\c{Z}, z_0)$ be a covering.
 Assume that $\tilde{\c{Z}}$ is simply-connected.
 Then, for any $z_0\in \c{Z}$ there is a bijection $\alpha\z\leftrightarrow \tilde z_\alpha$ between elements of the fundamental group $\pi_1(\c{Z},z_0)$ and points in the inverse image $w^{-1}\{z_0\}\subset \tilde{\c{Z}}$.
 
 Moreover, the bijection can be constructed in the following way:
-Fix $\tilde z_1\in w^{-1}\{z_0\}$ and choose a loop $a\:[0,1]\z\to\c{Z}$ based at $z_0$;
+Choose a loop $a\:[0,1]\z\to\c{Z}$ based at $z_0$;
 let $\alpha\z=[a]\in \pi_1(\c{Z},z_0)$.
 Consider a lift $\tilde a$ such that $\tilde a(0)=\tilde z_1$ and let $\tilde z_\alpha= \tilde a(1)$.
 \end{thm}
@@ -371,7 +376,25 @@ Given $\alpha=[a]\in \pi_1(\c{Z},z_0)$ and a point $p\in w^{-1}\{z_0\}$, conside
 
 \end{thm}
 
-\chapter{Normal coverings}
+{
+
+\begin{wrapfigure}[5]{r}{39 mm}
+\vskip-4mm
+\centering
+\begin{tikzcd}
+(\c{P},p_0)\arrow[d, "\tilde w"']\arrow[dr, "f"] \arrow[r, "\tilde v"] & (\c{Y},y_0) \arrow[d, "w"]\\
+(\c{X},x_0) \arrow[r, "v"'] & (\c{Z},z_0)
+\end{tikzcd}
+\end{wrapfigure}
+
+\begin{thm}{Exercise}\label{ex:fibered-product-pi1}
+Suppose that the maps $v$ and $w$ in the pointed fibered-product diagram are coverings.
+Show that
+\[\Im f_*=\Im v_*\cap \Im w_*.\]
+\end{thm}
+
+
+\chapter{Normal coverings}\label{chap:Normal coverings}
 
 A normal covering is a covering that can be realized as a quotient map by a group action.
 This class of coverings is particularly important in many applications.
@@ -415,6 +438,17 @@ On the other hand, if the quotient map $w\:\c{X}\to \c{X}/G$ is a covering,
 then every point $w(x)\in \c{X}/G$ admits an evenly covered neighborhood $W$;
 its slice $V\ni x$ meets the condition in the definition of freely discontinuous action.
 \qeds
+
+\begin{thm}{Еxercise}\label{ex:freely-discontinuous+compact}
+$G\acts \c{X}$ be a freely discontinuous action.
+Assume $\c{X}$ is compact.
+Show that $G$ is finite.
+\end{thm}
+
+
+\begin{thm}{Advanced exercise}\label{ex:freely-discontinuous+hausdorff}
+Give an example of a freely discontinuous action $G\acts \c{X}$ on a Hausdorff space $\c{X}$ such that the quotient space $\c{X}/G$ is not Hausdorff.
+\end{thm}
 
 \section{Finite group}
 
@@ -504,7 +538,7 @@ Show that any 2-fold covering is normal.
 
 \end{thm}
 
-\begin{thm}{Advanced exercise}
+\begin{thm}{Advanced exercise}\label{ex:finiteZ2}
 Construct a finite topological space with fundamental group isomorphic to $\ZZ_2$.
 \end{thm}
 
@@ -622,8 +656,8 @@ Give an example showing that analogous statement does not hold for four closed s
 
 \section{Monodromy}\label{sec:monodromy}
 
-\begin{thm}{Proposition}
-Let $w\:(\tilde{\c{Z}}\tilde z_1,\to(\c{Z},z_0)$ be a pointed $G$-covering.
+\begin{thm}{Proposition}\label{prop:monodromy-homo}
+Let $w\:(\tilde{\c{Z}},\tilde z_1)\to(\c{Z},z_0)$ be a pointed $G$-covering.
 Then there is a unique homomorphism $\pi_1(\c{Z},z_0)\to G$ that will be written as $\alpha\mapsto m_\alpha$ such that
 $m_{[a]}\cdot \tilde z_1=\tilde a(1)$ for any loop $a\:[0,1]\to \c{Z}$ based at $z_0$ and its lift $\tilde a\:[0,1]\to \tilde{\c{Z}}$ such that $\tilde a(0)=\tilde z_1$.
 
@@ -655,7 +689,8 @@ It follows that
 \qeds
 
 \begin{thm}{Exercise}\label{ex:monodromy}
-Let $\alpha\mapsto m_\alpha$ be a monodromy homomorphism of a pointed $G$-covering $w\:\tilde{\c{Z}}\to\c{Z}$.
+Let $\alpha\mapsto m_\alpha$ be a monodromy homomorphism of a pointed $G$-covering $w\:(\tilde{\c{Z}},\tilde z_1)\to(\c{Z},z_0)$.
+
 \begin{subthm}{ex:monodromy:surjective}
 Assume $\tilde{\c{Z}}$ is path-connected.
 Show that $m$ is surjective.
@@ -698,25 +733,25 @@ The picture on the right might help to visualize this space, but this is not an 
 
 %\begin{figure}[h!]\centering\includegraphics{asy/klein-bottle+++}\end{figure}
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:klein}
 Let $G\acts \RR^2$ be the described action,
 and let $\c{K}\z=\RR^2/G$ be the Klein bottle.
 
-\begin{subthm}{}
+\begin{subthm}{ex:klein:freely discontinuous}
 Show that the action $G\acts \RR^2$ is freely discontinuous.
 \end{subthm}
 
 
-\begin{subthm}{}
+\begin{subthm}{ex:klein:isomorphism}
 Apply \ref{ex:monodromy:isomorphism} to show that $\pi_1(\c{K})\cong G$.
 \end{subthm}
 
-\begin{subthm}{}
+\begin{subthm}{ex:klein:noncommutative}
 Show that $G$ and therefore $\pi_1(\c{K})$ are noncommutative.
 \end{subthm}
 
 
-\begin{subthm}{}
+\begin{subthm}{ex:klein:covering}
 Construct a 2-fold covering of $\c{K}$ by the torus $\SS^1\times\SS^1$.
 \end{subthm}
 

@@ -1744,6 +1744,38 @@ endfor
 
 endfig;
 
+beginfig(1712)
+save u,p,k;
+path p[];
+u:=.5cm;
+picture k[];
+
+p1=
+(0,0)*u{up}
+for i=1 step 1 until 7:
+..(i,sqrt(1-.5**i))*u
+endfor
+;
+
+k1= image(
+for i=1 step 1 until 28:
+draw subpath ((i-1)/4,i/4) of p1 withcolor ((i-1)/28)**.8;
+endfor
+);
+
+for j=-12 step 1 until 12:
+draw k1 shifted ((j,0)*u);
+draw k1 yscaled -1 shifted ((j,0)*u);
+endfor
+
+draw (-10,1)*u--(10,1)*u;
+draw (-10,-1)*u--(10,-1)*u;
+
+p0=(-6.1,1.1)*u--(5.9,1.1)*u--(5.9,-1.1)*u--(-6.1,-1.1)*u--cycle;
+
+clip currentpicture to p0;
+endfig;
+
 beginfig(1715)
 save u,p;
 path p[];

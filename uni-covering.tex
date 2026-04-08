@@ -227,55 +227,51 @@ Glue a nontrivial 2-fold cover $\tilde{\c{Z}}$ of $\c{Z}$ from two copies of $V$
 Conclude that $\c{Z}$ is not simply-connected.
 \end{thm}
 
-\chapter{Universal covering}\label{chap:unii-covering}
-
 \section{Lifts again}
 
-
 \begin{thm}{Theorem}\label{thm:lifting-criterion}
-Let $w\:\tilde{\c{Z}}\z\to \c{Z}$ be a covering, and let $f\:\c{Y}\z\to \c{Z}$ be continuous.
-
-\begin{wrapfigure}{r}{23 mm}
-\vskip-6mm
-\centering
-\begin{tikzcd}
-& \tilde{\c{Z}}\arrow[d, "w"]\\
-{\c{Y}} \arrow[r, "f"']\arrow[ur, "g", dashed] & \c{Z}
-\end{tikzcd}
-\end{wrapfigure}
-
-Suppose $\c{Y}$ is a reasonable simply-connected space, $y_0\in \c{Y}$, $z_0\in \c{Z}$ and $\tilde z_0\in \tilde{\c{Z}}$ be points
-such that $w(\tilde z_0)=z_0\z=f(y_0)$.
-Then there exists a unique lift $g\:\c{Y}\to \tilde{\c{Z}}$ such that
-$g(y_0)\z=\tilde z_0$.
+Let $w\:(\tilde{\c{Z}},\tilde z_0)\z\to (\c{Z},z_0)$ be a pointed covering, and let $f\:(\c{Y},y_0)\z\to (\c{Z},z_0)$ be continuous pointed map.
+Then there exists a unique pointed lift $g\:(\c{Y},y_0)\to (\tilde{\c{Z}},\tilde z_0)$.
 \end{thm}
-
-
-Before reading the proof, refresh the definition of fibered product from \ref{sec:Fibered product}.
 
 {
 
-\begin{wrapfigure}[5]{r}{23 mm}
-\vskip-7mm
+\begin{wrapfigure}{r}{33 mm}
+\vskip-9mm
 \centering
 \begin{tikzcd}
-\tilde{\c{Y}}\arrow[d, "\tilde w"'] \arrow[r, "\tilde f"] & \tilde{\c{Z}} \arrow[d, "w"]\\
-\c{Y} \arrow[r, "f"'] \arrow[u, bend right=50, "u"', dotted]
- & \c{Z}
+& (\tilde{\c{Z}},\tilde z_0)\arrow[d, "w"]\\
+{(\c{Y},y_0)} \arrow[r, "f"']\arrow[ur, "g", dashed] & (\c{Z},z_0)
 \end{tikzcd}
 \end{wrapfigure}
 
-\parit{Proof.} The uniqueness follows from \ref{ex:unique-lift}.
+Before reading the proof, refresh the definition of fibered product from \ref{sec:Fibered product}.
 
-Consider the fibered product of $f$ and $w$, described in the diagram.
-By \ref{ex:pull-back}, $\tilde w\:\tilde{\c{Y}}\to \c{Y}$ is a covering.
-Sicne $\c{Y}$ is reasonable and simply-connected, \ref{clm:sc-base} implies that $\tilde w$ is tivial.
-In particular, for any $\tilde y_0\in\tilde{\c{Y}}$ such that $\tilde w(\tilde y_0)=y_0$ there is $u\:\c{Y}\to \tilde{\c{Y}}$ such that $u(y_0)=\tilde y_0$ and the diagram mostly commutes except $u\circ \tilde w\ne \id_{\tilde{\c{Y}}}$.
+
+\parit{Proof.} The uniqueness follows from \ref{ex:unique-lift}.
 
 }
 
-By the construction of the fibered product, we can choose $\tilde y_0\in\tilde{\c{Y}}$ such that $\tilde w(\tilde y_0)=y_0$ and $\tilde f(\tilde y_0)=\tilde z_0$.
-It remains to observe that $g=\tilde f\circ u$ is a lift of $f$.
+{
+
+\begin{wrapfigure}{l}{33 mm}
+\vskip-3mm
+\centering
+\begin{tikzcd}
+(\tilde{\c{Y}},\tilde y_0)\arrow[d, "\tilde w"'] \arrow[r, "\tilde f"] & (\tilde{\c{Z}},\tilde z_0) \arrow[d, "w"]\\
+(\c{Y},y_0) \arrow[r, "f"'] \arrow[u, bend right=50, "u"', dotted]
+ & (\c{Z},z_0)
+\end{tikzcd}
+\end{wrapfigure}
+
+Consider the fibered product of $f$ and $w$, described by the diagram.
+By \ref{ex:pull-back}, $\tilde w\:\tilde{\c{Y}}\z\to \c{Y}$ is a covering.
+Since $\c{Y}$ is reasonable and simply-connected, by \ref{clm:sc-base}, $\tilde w$ is tivial.
+In particular, there is a continuous pointed map $u\:(\c{Y},y_0)\to (\tilde{\c{Y}},\tilde y_0)$ such that the diagram mostly commutes except $u\circ \tilde w\ne \id_{\tilde{\c{Y}}}$.
+
+}
+
+It remains to observe that $g=\tilde f\circ u$ is a requred lift of $f$.
 \qeds
 
 \begin{wrapfigure}[4]{r}{23 mm}
@@ -288,11 +284,12 @@ It remains to observe that $g=\tilde f\circ u$ is a lift of $f$.
 \end{wrapfigure}
 
 \begin{thm}{Exercise}\label{ex:ucover-unique}
-Let $v\:\c{X}\z\to \c{Z}$ and $w\:\c{Y}\z\to \c{Z}$ be a coverings.
+Let $v\:(\c{X},x_0)\z\to (\c{Z},z_0)$ and $w\:(\c{Y},y_0)\z\to (\c{Z},z_0)$ be a coverings.
 Suppose $\c{Z}$ is a connected reasonable space and both spaces $\c{X}$ and $\c{Y}$ are simply-connected.
-Show that there is a homeomorphism $h\:\c{X}\leftrightarrow\c{Y}$ that makes diagram commute.
+Show that there is a unique homeomorphism $h\:(\c{X},x_0)\leftrightarrow(\c{Y},y_0)$ that makes diagram commute.
 \end{thm}
 
+\chapter{Universal covering}\label{chap:unii-covering}
 
 \section{Existence}
 
@@ -316,7 +313,10 @@ Recall that if $a_0\sim a_1$ for $a_0, a_1\z\in \Path(\c{Z},z_0)$, then
 $a_0(1)=a_1(1)$.
 Therefore, $u\:[a]\mapsto a(1)$ is a well-defined map $u\:\tilde{\c{Z}}\to\c{Z}$.
 
+
 \parit{The topology.}
+So far $\tilde{\c{Z}}$ is just a set; this step equips it with topology.
+
 Given an open simply-connected set $V\subset \c{Z}$ and a path $a\in\Path(\c{Z},z_0)$ that ends in $V$,
 consider the set $\tilde V_{[a]}\subset \tilde{\c{Z}}$ defined by
 \[\tilde V_{[a]}=\set{[a*b]\in\tilde{\c{Z}}}{b\ \text{is a path in}\ V\ \text{that starts at}\ a(1)}.\]
@@ -324,7 +324,8 @@ Note that $\tilde V_{[a]}$ depends only on the homotopy class of $a$.
 
 The required topology on $\tilde{\c{Z}}$ can be described by the following property:
 for any open simply-connected set $V\subset \c{Z}$, and any path $a$ from $z_0$ to a point in $V$,
-the set $\tilde V_{[a]}$ is open and $u$ defines a homeomorphisms $\tilde V_{[a]}\to V$.\footnote{In this case the sets $\tilde V_{[a]}$ for all open simply-connected set $V\subset \c{Z}$ form a base of topology of $\tilde{\c{Z}}$.}
+the set $\tilde V_{[a]}$ is open and $u$ defines a homeomorphisms $\tilde V_{[a]}\to V$.%
+\footnote{In this case the sets $\tilde V_{[a]}$ for every open simply-connected set $V\subset \c{Z}$ and every path $a\in\Path(\c{Z},z_0)$ that ends in $V$ form a base of topology of $\tilde{\c{Z}}$.}
 Checking that this property uniquely defines a topology is generously left to the reader.
 
 If $a$ and $b$ be two paths from $z_0$ to a point in $V$, then
@@ -368,12 +369,12 @@ Show that $\tilde{\c{G}}$ admits a structure of topological group such that $u$ 
 \section{Action of the fundamental group}
 
 \begin{thm}{Theorem}\label{thm:action-on-ucovering}
-Let $u\:\tilde{\c{Z}}\z\to \c{Z}$ be a covering map.
+Let $u\:(\tilde{\c{Z}},\tilde z_0)\z\to (\c{Z},z_0)$ be a pointed covering.
 Suppose $\c{Z}$ is reasonable and $\tilde{\c{Z}}$ is simply-connected.
 Then $u$ is a normal $\pi_1(\c{Z},z_0)$-covering.
 \end{thm}
 
-The following proof is similar to the construction of the monodromy homomorphism in \ref{sec:monodromy}.
+The following proof is similar to the construction of the monodromy homomorphism in \ref{sec:monodromy}, which in turn reuses the argument in \ref{thm:pi1S1Z}.
 
 \parit{Proof.}
 Choose a point $z_0\in\c{Z}$.
@@ -387,23 +388,19 @@ $\tilde z_\alpha=\tilde a(1)$.
 
 By \ref{thm:lifting-criterion}, given $\alpha\in \pi_1(\c{Z},z_0)$ there is a unique continuous map $h_\alpha\:\tilde{\c{Z}}\to \tilde{\c{Z}}$ such that $h_\alpha\:\tilde z_1\mapsto \tilde z_\alpha$ and $u\circ h_\alpha=u$.
 
-These maps define an action $\pi_1(\c{Z},z_0)\acts\tilde{\c{Z}}$.
-Indeed, by uniqueness of $h_\alpha$, we have $h_1=\id_{\tilde{\c{Z}}}$.
-Further, choose two elements $\alpha=[a]$ and $\beta=[b]$ in $\pi_1(\c{Z},z_0)$.
-Let $\tilde a$ and $\tilde b$ be the lifts of $a$ and $b$ that start at $\tilde z_1$.
+Given two elements $\alpha=[a]$ and $\beta=[b]$ in $\pi_1(\c{Z},z_0)$,
+let $\tilde a$ and $\tilde b$ be the lifts of $a$ and $b$ that start at~$\tilde z_1$.
 Note that $h_\alpha\circ \tilde b$ is a lift of $b$ that starts at $\tilde a(1)=\tilde z_\alpha$.
 Therefore $\tilde a*(h_\alpha\circ \tilde b)$ is a lift of $a*b$ that start at $\tilde z_1$.
 It follows that
 \[h_{\alpha\cdot \beta}(\tilde z_1)=\tilde a*(h_\alpha\circ \tilde b)(1)=h_\alpha\circ\tilde b(1)=h_\alpha\circ h_\beta(\tilde z_1),\] and from uniqueness of lift, we get $h_{\alpha\cdot \beta}(\tilde z)=h_\alpha\circ h_\beta(\tilde z)$ for \textit{any} $\tilde z\in\tilde{\c{Z}}$.
-It follows that the maps $h_\alpha$ are closed with respect to composition.
-Furthermore, since
-\[\id_{\tilde{\c{Z}}}=h_1=h_{\alpha\cdot \alpha^{-1}}=h_\alpha\circ h_{\alpha^{-1}},\]
-each map $h_\alpha$ is a homeomorphism $\tilde{\c{Z}}\to\tilde{\c{Z}}$, and the maps $h_\alpha$ are closed with respect to taking inverse.
+It follows that $\alpha\mapsto h_\alpha$ is a homomorphism from $\pi_1(\c{Z},z_0)$ to the group of homeomorphisms of $\c{Z}$;
+In other words $\alpha\mapsto h_\alpha$ defines a continuous action $\pi_1(\c{Z},z_0)\acts\tilde{\c{Z}}$.
 
 
 Since $u$ is surjective and open, it is a quotient map.
 The fibers of $u$ are exactly the orbits in $\tilde{\c{Z}}$.
-Therefore $\c{Z}$ is precisely the quotient space of $\tilde{\c{Z}}$ by the constructed action, which proves the statement.
+Therefore $\c{Z}$ comes with the quotient topology of $\tilde{\c{Z}}$ by the constructed action, which proves the statement.
 \qeds
 
 \begin{thm}{Exercise}\label{ex:given-monodromy}
@@ -414,10 +411,8 @@ Given a group homomorphism $m\:\pi_1(\c{Z},z_0)\to G$, construct a normal $G$-co
 
 \section{From covering to subgroup}
 
-A continuous map $v\:\c{X}\to\c{Z}$ with a choice of base points $x_0\in \c{X}$ and $z_0\in \c{Z}$ such that $z_0=x(x_0)$ is called \index{pointed map}\emph{pointed map};
-it can be written as $v\:(\c{X},x_0)\to(\c{Z},z_0)$.
 
-\begin{wrapfigure}[5]{r}{43 mm}
+\begin{wrapfigure}[5]{r}{48 mm}
 \vskip-6mm
 \centering
 \begin{tikzcd}[column sep={1em}, row sep={2em}]
@@ -430,12 +425,41 @@ Let
 $v\:(\c{X},x_0)\z\to (\c{Z},z_0)$ and $w\:(\c{Y},y_0)\z\to (\c{Z},z_0)$ be two pointed covering with connected reasonable base $\c{Z}$.
 We say that they are \index{equivalent coverings}\emph{equivalent}, if there is a pointed homeomorphism $h\:(\c{X},x_0)\z\to(\c{Y},y_0)$ that makes the diagram commute.
 
-\begin{thm}{Proposition}
-Let $\c{Z}$ be a connected reasonable base.
+\begin{thm}{Proposition}\label{prop:classification-coverings}
+Let $\c{Z}$ be a connected reasonable space.
 Then a pointed covering $v\:(\c{X},x_0)\z\to (\c{Z},z_0)$ is uniquely defined up to equivalence by the subgroup $H=\Im v_*<\pi_1(\c{Z},z_0)$.
 \end{thm}
 
 \parit{Proof.}
+Let $G=\pi_1(\c{Z}, z_0)$.
+By \ref{ex:induced-hom-covering:injective} $v_*\:\pi_1(\c{X},x_0)\z\to \pi_1(\c{Z},z_0)$ is a monomorphism; in particular, $H\cong \pi_1(\c{X},x_0)$.
+
+\begin{wrapfigure}{r}{43 mm}
+\vskip-2mm
+\centering
+\begin{tikzcd}
+& (\c{X},x_0)\arrow[d, "v"]\\
+(\tilde{\c{Z}},\tilde z_0) \arrow[r, "u"]\arrow[ur, "w"] & (\c{Z},z_0)
+\end{tikzcd}
+\end{wrapfigure}
+
+Let $u\:(\tilde{\c{Z}},\tilde z_0)\to (\c{Z}, z_0)$ be the universal covering.
+By \ref{thm:lifting-criterion} it can be included into the commutative diagram of coverings.
+By \ref{thm:action-on-ucovering}, $u$ is a normal $G$-covering and $w$ is a normal $H$-covering.
+
+Choose $\alpha=[a]\z\in \pi_1(\c{X},x_0)$.
+Observe that the monodromy homeomorphism of $\alpha$ along $w$ is identical to the monodromy  homeomorphism of $v_*\alpha=[v\circ a]\in \pi_1(\c{Z},z_0)$ along $u$.
+
+Indeed, let $\tilde a$ be a unique lift of $a$ along $w$ such that $\tilde a(0)=\tilde z_0$.
+Note that $\tilde a$ is also a lift of $v\circ a$ along $u$.
+Let $\tilde z_1=\tilde a(1)$, and let $h$ be the monodromy homeomorphism of $\alpha$ with respect to $w$.
+By \ref{prop:monodromy-homo}, $h$ is uniquely defined by $w\circ h=w$ and $h(\tilde z_0) = \tilde z_1$ and it fits definition of monodromy homeomorphism of $v_*\alpha$ along $u$ as well.
+
+We proved the
+
+By \ref{thm:action-on-ucovering}, the space $\c{X}$ can be indentified with the quotient space $\tilde{\c{Z}}/H$ and the covering $v$ becomes a quotient map.
+It follows that, the covering $w$ is equivalent to the covering $\tilde{\c{Z}}/H\to \tilde{\c{Z}}/G=\c{Z}$.
+
 Recall that the induced homomorphism of composition is compostion of induced homomorphisms; see \ref{sec:Induced homomorphism}.
 Therefore, we have the following commutative diagram of fundamental groups,
 and the only-if part follows.
@@ -448,15 +472,10 @@ and the only-if part follows.
 &\pi_1(\c{Z},z_0)&
 \end{tikzcd}
 \end{figure}
-
-Now let $G=\pi_1(\c{Z}, z_0)$ and $H=\Im v_*<\pi_1(\c{Z},z_0)$.
-Since $v_*$ is a monomorphism, $H\cong \pi_1(\c{X}, x_0)$.
-Let $u\:(\tilde{\c{Z}},\tilde z_0)\to (\c{Z}, z_0)$ be the universal covering.
-It can be included into commutative diagram with a covering $w\:\:(\tilde{\c{Z}},\tilde z_0)\to (\c{X}, x_0)$.
-By \ref{thm:action-on-ucovering}, $u$ is a $G$-covering.
-Since $H$ is a subgroup of $G$, it also acts on $\tilde{\c{Z}}$,
-the quotient map $\tilde{\c{Z}}\to \tilde{\c{Z}}/H$ is a is a covering and its base space
 \qeds
+
+Denote by $m_\alpha$ and $n_\beta$ the monodromy
+\ref{prop:monodromy-homo}
 
 
 \section{An application}
@@ -466,12 +485,27 @@ the quotient map $\tilde{\c{Z}}\to \tilde{\c{Z}}/H$ is a is a covering and its b
 A \emph{graph} is a topological space built from a discrete set of points called vertices and copies of the interval $[0,1]$ called edges, where each edge is attached by identifying its two endpoints with vertices.
 
 Groups that isomorphic to the fundamental groups of graphs are called \index{free group}\emph{free}.
+
 Usually free groups are defined in purely algebraic terms:
 a group $G$ is free if there is a subset $S\subset G$ such that for any other group $H$, any map $S\to H$ can be extended to a unique homomorphism $G\to H$.
-In this case, the number of elements in $S$ is called \emph{number of generators} of free group $G$.
-It can be proved that this number is the same for any choice of $S$ and $G$ can be denoted by $F_S$; the set $S$ defines $G$ up to isomorphism.
+In this case, elements of $S$ are called \emph{generators} of $G$ and if $S$ and we say that a free group $G$ is generated by $S$.
+By the extension property $G$ is defined by $S$ up to isomorphism.
+Aside from the trivial group (which is a free group with 0 generators) the generating set of a free group is not uniquely defined, but the sets of generators have the same cardinality; so the term free group with $n$ generators makes sence.
+
 There is also a combinatoric definition, where we start with the set $S$ and consider an alphabet that contains two letters $s$ and $s^{-1}$ for every $s\in S$; then
 the set $G$ is identified with all finite words (including the empty word for neutral element) from this alphabet; the multiplication is defined as by combing two words in one with possible cancelations that only come from the definition of group.
+Here is the beginining of the list of distinct elements of a free group with two generators $a$ and $b$; $1$ stands for the empty word:
+\begin{align*}
+&1,\\
+&a, b, a^{-1}, b^{-1},\\
+&a^2, a\cdot b, a\cdot b^{-1},
+b\cdot a, b^2,b\cdot a^{-1},
+a^{-1}\cdot b,a^{-2}, a^{-1}\cdot b^{-1},
+b^{-1}\cdot a, b^{-1}\cdot a^{-1}, b^{-2},\\
+&
+a^3, a^2\cdot b, a^2\cdot b^{-1}, a\cdot b\cdot a,a\cdot b^{2},a\cdot b^{-1}\cdot a,  \dots
+\end{align*}
+
 
 One way or another, free groups are important in group theory and the following theorem, if proved in purely algebraic way, is not trivial, but as we are about to see, topological proof takes a few lines.
 Proving equivalence of the definitions of free groups requires work, and the proof below should include it,
@@ -482,8 +516,9 @@ Any subgroup of a free group is free.
 \end{thm}
 
 \parit{Proof.}
-Suppose $F=\pi_1(\Gamma,v_0)$, where $\Gamma$ is a graph and $v_0$ is its vertex.
-Note that graph is a reasonable space, therefore for any subgroup $H<F$ there is a covering $w\:\tilde\Gamma\to \Gamma$ and a vertex $\tilde v_0$ such that $w(\tilde v_0)=v_0$ and $\Im w_*=H$.
+Choose a free group $F=\pi_1(\Gamma,v_0)$, where $\Gamma$ is a graph and $v_0$ is its vertex.
+Note that graph is a reasonable space.
+By \ref{prop:classification-coverings}, for any subgroup $H<F$ there is a covering $w\:\tilde\Gamma\to \Gamma$ and a vertex $\tilde v_0$ such that $w(\tilde v_0)=v_0$ and $\Im w_*=H$.
 Recall that $w_*$ is a monomorphism, thus $\pi_1(\tilde \Gamma,\tilde v_0)$ is isomorphic to $H$.
 
 Observe that the total space of a covering of graph is a graph.
@@ -491,7 +526,7 @@ Hence the statement follows.
 \qeds
 
 This statement gives some taste of possible applications of coverings in the group theory.
-The following statements give more applications of that type.
+The following statements lead to more applications of that type.
 \begin{itemize}
 \item Any group is isomorphic to a group of some reasonable topological space.
 \item Let $\Gamma$ is a connected graph and $T$ is a spanning tree in $\Gamma$.
@@ -499,24 +534,40 @@ Denote by $E$ the set of edges of $\Gamma$ that do not lie in $T$.
 Then $\pi_1(\Gamma)$ is isomorphic to $F_E$.
 \end{itemize}
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:subgroup(free)}
 Show that a nontrivial normal subgroup of infinite index in a finitely generated free group is not finitely generated.
 \end{thm}
 
 For more on the subject, read \cite{hatcher-2002} and check the references therein.
 
-\section{Group-covering dictionary}
+Let me add a text about subgroups and its translation into topological language.
+Suppose $w\:(\c{Y},y_0)\to (\c{Z},z_0)$ be a pointed connected covering; assume that $\c{Z}$ is reasonable.
+Suppose $G=\pi_1(\c{Z},z_0)$ and $H=\Im w_*\cong \pi_1(\c{Y},y_0)$.
 
-subgraoup --- covering.
+\spell{\begin{multicols}{2}}{}
 
-subgroup of index $n$ --- $n$-fold covering.
+Recall that $H$ has index $n$ if $G$ has $n$ is cosets $g\cdot H$.
 
-normal subgroup --- normal covering.
+Furthermore, $H$ is a normal if the $g\cdot H=H\cdot g$ for any $g\in G$, in this case we have a natural homomorphism $G\to L=G/H$ and the quotient homomorphism $G\to L$ has kernel $H$.
 
-normal subgroup with quotient $G$ --- normal $G$-covering.
+\columnbreak
+
+Recall that $w$ is $n$-fold if $w^{-1}(z_0)$ has exactly $n$ points.
+
+Furthermore, the covering $w$ is normal if it is defined as a quotient map for a freely discontinuos action $L\acts\c{Y}$.
+In this case, $H$ is normal, $L$ is isomorphic to $G/H$ and  have a monodromy homomorphism $G\to L$.
+
+\spell{\end{multicols}}{}
+
+Now assume we have two pointed connected covering $w_1\:(\c{Y}_1,y_1)\to (\c{Z},z_0)$ and $w_2\:(\c{Y}_2,y_2)\to (\c{Z},z_0)$; let $H_1=\Im w_{1*}\cong \pi_1(\c{Y}_1,y_1)$ and $H_2=\Im w_{2*}\cong \pi_1(\c{Y}_2,y_2)$.
+
+\spell{\begin{multicols}{2}}{}
+The intersection $K=H_1\cap H_2$ is a subgrop of $G$.
+\columnbreak
+The pointed fibered product of $w_1$ and $w_2$ has fundamental group isomorphic to  $K=H_1\cap H_2$.
+\spell{\end{multicols}}{}
+
 
 normalizator --- group of deck trasformations
 
 intersection of subgropus --- fibered product of coverings restricted to a connected component.
-
-homomorphism to the quotient group --- monodromy homomorphism
