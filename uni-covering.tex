@@ -1,7 +1,5 @@
 \chapter{Reasonable spaces}\label{chap:Reasonable spaces}
 
-\section{Definitions}\label{sec:Reasonable spaces}
-
 \begin{wrapfigure}{r}{23 mm}
 \vskip-8mm
 \centering
@@ -10,6 +8,16 @@
 \tilde{\c{Z}} \arrow[r, "u"]\arrow[ur, "v"] & \c{Z}
 \end{tikzcd}
 \end{wrapfigure}
+
+Most of connected spaces $\c{Z}$ that appear in applications admit a covering $u\:\tilde{\c{Z}}\to \c{Z}$ with a simply-connected total space $\tilde{\c{Z}}$ and such covering has a universal property --- any other connected covering $w\:\c{Y}\to \c{Z}$ can be included in the commutative diagram of coverings.
+By that reason, $u$ is called a \textit{universal covering} of~$\c{Z}$.
+
+We already proved several statement, including \ref{thm:bijection-fiber} and \ref{ex:monodromy:isomorphism}, showing that a universal covering knows a lot about fundamental group of the base.
+In this chapter we discuss spaces for which the last statement fails to be true and introduce a mild condition that will be latter used to prove existence of a universal covering.
+
+\section{Definitions}\label{sec:Reasonable spaces}
+
+
 
 Consider a connected covering $u\:\tilde{\c{Z}}\to \c{Z}$.
 This covering will be called \emph{universal} if any other connected covering $w\:\c{Y}\to \c{Z}$ can be included in the commutative diagram of coverings.
@@ -31,7 +39,7 @@ In particular, from \ref{obs:open-connected-component} we have that every connec
 
 
 \begin{thm}{Exercise}\label{ex:reasonable}
-Let $w\:\c{Y}\to \c{Z}$ is a covering.
+Let $w\:\c{Y}\to \c{Z}$ be a covering.
 Show the following:
 \begin{subthm}{}
 If $\c{Z}$ is reasonable then so is $\c{Y}$, and the restriction of $w$ to any connected component of $\c{Y}$ is a covering.
