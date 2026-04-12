@@ -94,7 +94,13 @@ $(a*b)*c\sim a*(b*c)$.
 Each claim is proved by applying \ref{obs:homot-paths};
 each time we rewrite the sides of the equation as $d\circ s_0$ and $d\circ s_1$ for appropriate path $d\:[0,1]\to\c{X}$ and a pair of paths $s_0,s_1\:[0,1]\to[0,1]$ that share the ends.
 
-%???PIC
+{
+
+\begin{wrapfigure}[5]{r}{30 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-1315}
+\end{wrapfigure}
 
 \parit{\ref{SHORT.clm:neutral}.}
 Note that $e_p*a=a\circ s_0$ and $a*e_q=a\circ s_1$, where
@@ -105,8 +111,7 @@ s_0(t)&\df
 \\
 2\cdot t-1 &\text{if\ } t\ge \tfrac12,
 \end{cases}
-&&\text{and}
-&
+\\
 s_1(t)&\df
 \begin{cases}
 2\cdot t&\text{if\ }  t\le \tfrac12,
@@ -120,8 +125,15 @@ $s_0(0)\z=s_1(0)\z=s_2(0)=0$ and
 $s_0(1)\z=s_1(1)=s_2(1)=1$.
 It remains to apply \ref{obs:homot-paths}.
 
+}
 
-%???PIC
+{
+
+\begin{wrapfigure}{r}{30 mm}
+\vskip-4mm
+\centering
+\includegraphics{mppics/pic-1316}
+\end{wrapfigure}
 
 \parit{\ref{SHORT.clm:f-bar-f}.}
 Note that $a*\bar a=a\circ s_0$ and $e_p=a\circ s_1$, where
@@ -137,6 +149,8 @@ s_0(t)&\df
 s_1(t)&\df0
 \end{align*}
 Since $s_0(0)\z=s_1(0)\z=s_0(1)\z=s_1(1)\z=0$, \ref{obs:homot-paths} implies $a*\bar a\sim e_p$.
+
+}
 
 By the same argument, we get $\bar a*a\sim e_q$.
 
@@ -160,7 +174,18 @@ b(4\cdot t-2) &\text{if\ } \tfrac12\le t\le \tfrac34,
 \\
 c(4\cdot t-3) &\text{if\ } \tfrac34\le t\le 1.
 \end{cases}
-\intertext{Therefore, $((a*b)*c)(t)=(a*(b*c))\circ s_1(t)$, where}%???PIC
+\end{align*}
+
+{
+
+\begin{wrapfigure}[4]{r}{30 mm}
+\vskip-4mm
+\centering
+\includegraphics{mppics/pic-1317}
+\end{wrapfigure}
+
+Therefore, $((a*b)*c)(t)=(a*(b*c))\z\circ s_1(t)$, where
+\begin{align*}
 s_1(t)&\df
 \begin{cases}
 2\cdot t&\text{if\ } 0\le t\le \tfrac14,
@@ -170,7 +195,7 @@ t+\tfrac14 &\text{if\ } \tfrac14\le t\le \tfrac12,
 \tfrac12\cdot t+\tfrac12 &\text{if\ } \tfrac12\le t\le 1.
 \end{cases}
 \end{align*}
-The path $((a*b)*c)(t)$ can be written as $((a*b)*c)\circ s_0(t)$ where $s_0(t)\df t$.
+The path $((a*b)*c)(t)$ can be written as $((a*b)*c)\circ s_0(t)$ where $s_0(t)\z\df t$.
 Furthermore, both functions $s_0,s_1\:[0,1]\to[0,1]$ are
 continuous,
 $s_0(0)\z=s_1(0)=0$,
@@ -178,6 +203,8 @@ and
 $s_0(1)\z=s_1(1)=1$.
 It remains to apply \ref{obs:homot-paths}.
 \qeds
+
+}
 
 %??? make a corollary
 \begin{thm}{Exercise}\label{ex:ab=e}

@@ -192,7 +192,7 @@ if not, then explain why.
 (If it looks like one path goes under another, then it does.)
 \end{thm}
 
-\section{Fibered product}\label{sec:Fibered product}
+\section{Fibered product}\label{sec:Fibered product} %??? needed only for universal covering
 
 Given two continuous maps $v\:\c{X}\to \c{Z}$ and $w\:\c{Y}\to \c{Z}$, consider the set
 \[\c{P}=\set{(a,b)\in \c{X}\times \c{Y}}{v(a)=w(b)}\]
@@ -421,7 +421,7 @@ If a covering $w$ can be realized as a quotient map by an action of some group $
 Normal coverings are also called \index{regular covering}\emph{regular} and \index{Galois covering}\emph{Galois}.} or \index{$G$-covering}\emph{$G$-covering};
 the latter term is used if one needs to specify the group.
 
-Note that the map $w\:\RR\to \SS^1$ constructed in \ref{sec:lifting-s1} is a normal $\ZZ$-covering, where $\ZZ$ denotes the additive group of integers;
+Note that the wrapping map $w\:\RR\to \SS^1$ constructed in \ref{sec:lifting-s1} is a normal $\ZZ$-covering, where $\ZZ$ denotes the additive group of integers;
 it is the quotient map for a freely discontinuous action $\ZZ\acts\RR$ by integer shifts $x\mapsto x+n$, where $n\in\ZZ$.
 
 \parit{Proof.}
@@ -434,7 +434,7 @@ Furthermore,
 \[w^{-1}(W)=G\cdot V=\bigcup_{g\in G} g\cdot V.\]
 and the restriction $w|_{g\cdot V}$ is a homeomorphism $g\cdot V\to W$;
 indeed, $w|_{g\cdot V}\:g\cdot V\to W$ is open, continuous, and bijective.
-Therefore, $w$ meets the conditions in the definition of covering.
+We have proved that $w$ is a covering.
 
 On the other hand, if the quotient map $w\:\c{X}\to \c{X}/G$ is a covering,
 then every point $w(x)\in \c{X}/G$ admits an evenly covered neighborhood $W$;
@@ -465,8 +465,8 @@ Then the quotient map $\c{X}\z\to \c{X}/G$ is a covering.
 \end{thm}
 
 \parit{Proof.}
-Choose $x\in \c{X}$ and $g\ne 1$ in $G$.
-Since $G\acts \c{X}$ is free, $g\cdot x\ne x$.
+Choose $x\in \c{X}$ and $g\in G$.
+Since $G\acts \c{X}$ is free, if $g\ne 1$, then $g\cdot x\ne x$.
 Since $\c{X}$ is Hausdorff we can choose disjoint open sets $U_g\ni x$ and $V_g\z\ni g\cdot x$.
 Let $W_g=U_g\cap g^{-1}\cdot V_g$.
 Note that $W_g\ni x$ and $g\cdot W_g\ni g\cdot x$ are disjoint open sets.
@@ -504,7 +504,7 @@ a non-normal 4-fold covering of $\c{F}_8$.
 
 \end{thm}
 
-\section{Real projective plane}
+\section{Real projective plane}\label{sec:Real projective plane}
 
 The equivalence class of an integer $m$ modulo $n$ will be denoted by $[m]_n$;
 that is,
@@ -582,10 +582,10 @@ Most of the proof of \ref{thm:Borsuk-Ulam} will be defining and explaining the f
 \vskip-3mm
 \centering
 \begin{tikzcd}[column sep={1em,2em}, row sep={.5em,1em}]
-&\SS^2
+&(\SS^2,\tilde x_0)
 \arrow[rr,"\tilde h"]
 \arrow[dd,"v"']
-&&\SS^1
+&&(\SS^1,\tilde y_0)
 \arrow[dd,"w"]
 \\
 &&|[shift={(0,-10pt)}]|[0,1]
@@ -595,9 +595,9 @@ Most of the proof of \ref{thm:Borsuk-Ulam} will be defining and explaining the f
 \arrow[dr,"b" ]
 &&&
 \\
-&\RP^2
+&(\RP^2,x_0)
 \arrow[rr,"h"', dashrightarrow]
-&& \SS^1
+&& (\SS^1,y_0)
 \end{tikzcd}
 \end{figure}
 
@@ -607,9 +607,9 @@ Assume that $\tilde h$ exists.
 
 Choose $\tilde x_0\in \SS^2$ and a path $\tilde a\:[0,1]\to \SS^2$ from $\tilde x_0$ to $-\tilde x_0$.
 Let $v\: \SS^2\to\RP^2$ be the quotient map for the equivalence relation $\tilde x\sim -\tilde x$.
-Recall that $v$ is a 2-fold covering.
-Note that $a=v\circ \tilde a$ is a loop in $\RP^2$ based at $x_0=v(\tilde x_0)$, and $\tilde a$ is its lift.%
-\footnote{By \ref{thm:bijection-fiber}, we have $\alpha=[a]=[1]_2\in \ZZ_2=\pi_1(\RP^2)$, but it will not be used in the proof directly.}
+Recall that $v$ is a 2-fold covering; see \ref{sec:Real projective plane}.
+Note that $a=v\circ \tilde a$ is a loop in $\RP^2$ based at $x_0=v(\tilde x_0)=v(-\tilde x_0)$, and $\tilde a$ is its lift.%
+\footnote{By \ref{thm:bijection-fiber}, we have $\alpha=[a]=[1]_2\in \ZZ_2\cong \pi_1(\RP^2,x_0)$, but it will not be used in the proof directly.}
 
 The path $\tilde b=\tilde h\circ \tilde a$ runs from $\tilde y_0=\tilde h(\tilde x_0)$ to $-\tilde y_0=-\tilde h(\tilde x_0)$.
 Let $w\: \SS^1\to\SS^1$ be the quotient map for the equivalence relation $\tilde y\sim -\tilde y$, which is also a 2-fold covering map (see \ref{ex:2-folded-s1});
@@ -617,7 +617,7 @@ note that $b=w\circ \tilde b$ is a loop in $\SS^1$ based at $y_0=w(\tilde y_0)$ 
 Since $\tilde b(1)\ne \tilde b(0)$, \ref{thm:bijection-fiber} implies that $\beta=[b]\ne 0\in \ZZ=\pi_1(\SS^1)$.
 
 Recall that $v\: \SS^2\to\RP^2$ and $w\: \SS^1\to\SS^1$ are quotient maps that identify antipodal points.
-Since $\tilde h$ is odd, it maps the equivalence class in $\SS^2$ to an equivalence class in $\SS^1$.
+Since $\tilde h(-\tilde x)=-\tilde h(\tilde x)$, it maps the equivalence class in $\SS^2$ to an equivalence class in $\SS^1$.
 In other words, there is a map $h\:\RP^2\to\SS^1$ such that $h\circ v=w\circ \tilde h$.%
 \footnote{The dashed arrow on the diagram encodes the claim that $h$ exists.}
 
@@ -665,7 +665,7 @@ $m_{[a]}\cdot \tilde z_1=\tilde a(1)$ for any loop $a\:[0,1]\to \c{Z}$ based at 
 
 \end{thm}
 
-The homomorphism $\alpha\mapsto m_\alpha$ is called \index{monodromy homomorphism}\emph{monodromy homomorphism} of the normal $G$-covering $w\:\tilde{\c{Z}}\to\c{Z}$.
+The homomorphism $\alpha\mapsto m_\alpha$ is called \index{monodromy homomorphism}\emph{monodromy homomorphism} of the pointed $G$-covering $w\:(\tilde{\c{Z}},\tilde z_1)\to(\c{Z},z_0)$.
 The following proof reuses the argument in \ref{thm:pi1S1Z}.
 
 \parit{Proof.}
@@ -677,8 +677,7 @@ Note that $w\circ \tilde a(1)=a(1)=z_0$, so $\tilde a(1)=m_\alpha\cdot \tilde z_
 By \ref{lem:path-lifting}, $\tilde a(1)$ and therefore $m_\alpha$ depend only on the homotopy class $\alpha=[a]$.
 Thus we get a well-defined map $\alpha\mapsto m_\alpha$ from $\pi_1(\c{Z},z_0)$ to $G$.
 
-Let us show that this map is a homomorphism $\pi_1(\c{Z},z_0)\to G$.
-In other words,
+To show that $\alpha\mapsto m_\alpha$ is a homomorphism, we need to check that
 \[m_{\alpha\cdot\beta}\z=m_\alpha\cdot m_\beta\]
 for any $\alpha,\beta\in \pi_1(\c{Z},z_0)$.
 
@@ -688,7 +687,7 @@ Note that $m_\alpha\circ \tilde b$ is a lift of $b$ that starts at $\tilde a(1)=
 Therefore $\tilde a*(m_\alpha\circ \tilde b)$ is a lift of $a*b$ that start at $\tilde z_1$.
 It follows that
 \[m_{\alpha\cdot \beta}(\tilde z_1)=\tilde a*(m_\alpha\circ \tilde b)(1)=m_\alpha\circ\tilde b(1)=m_\alpha\circ m_\beta(\tilde z_1).\]
-\qeds
+\qedsf
 
 \begin{thm}{Exercise}\label{ex:monodromy}
 Let $\alpha\mapsto m_\alpha$ be a monodromy homomorphism of a pointed $G$-covering $w\:(\tilde{\c{Z}},\tilde z_1)\to(\c{Z},z_0)$.
@@ -724,13 +723,13 @@ Formally speaking, the action includes the motions
 for all integers $m$ and $n$.
 
 The quotient space $\RR^2/G$ is called \emph{Klein bottle}.
+This space can be also glued from the square $[-1,1]\times[-1,1]$ by the minimal equivalence relation such that $(x,-1)\sim (x,1)$ and $(-1,y)\sim (1,-y)$.
 \begin{figure}[h!]
 \centering
 \includegraphics{mppics/pic-1743}
 \hskip 4mm
 \includegraphics[angle=90]{asy/klein-bottle}
 \end{figure}
-This space can be also glued from the square $[-1,1]\times[-1,1]$ by the minimal equivalence relation such that $(x,-1)\sim (x,1)$ and $(-1,y)\sim (1,-y)$.
 The picture on the right might help to visualize this space, but this is not an embedding of $\c{K}$, and in fact there is no embedding of $\c{K}\hookrightarrow\RR^3$.
 
 %\begin{figure}[h!]\centering\includegraphics{asy/klein-bottle+++}\end{figure}

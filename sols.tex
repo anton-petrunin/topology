@@ -1292,14 +1292,14 @@ Consider the path $b(t)\df a_t(0)$.
 Show and use that
 $a\sim b*e_q*\bar b\sim e_{p}$.
 
-For the last part, show and use that if $\c{X}$ is a contractable space, it is path-connected and any map $\SS^1\to \c{X}$ is null-homotopic.
+For the last part, show and use that if $\c{X}$ is a contractible space, it is path-connected and any map $\SS^1\to \c{X}$ is null-homotopic.
 
 \parbf{\ref{ex:van-kamp}}; \textit{(a).}
 Cover $\SS^2$ by subsets $V$ and $W$ defined by $z>-\tfrac12$ and $z<\tfrac12$, respectively.
 Observe that $V$ and $W$ are homeomorphic to an open disc and the intersection $V\cap W$ is homeomorphic to the product $\SS^1\times (0,1)$ and apply \ref{prop:van-kamp:sc}.
 
 \parit{(b).}
-Construct contractable (and therefore simply-connected) open sets $V\z\supset \SS^2$ and $W\z\supset \DD^2$ and apply \ref{prop:van-kamp:sc}.
+Construct contractible (and therefore simply-connected) open sets $V\z\supset \SS^2$ and $W\z\supset \DD^2$ and apply \ref{prop:van-kamp:sc}.
 
 \parbf{\ref{ex:homomorphism}.}
 Show that the neutral element is unique and apply definition of homomorphism and neutral element.
@@ -1562,33 +1562,34 @@ for all integers $m$ and $n$.
 Apply \ref{obs:covering:connected}.
 
 \parbf{\ref{ex:Hawaiian/bouquet}.}
-Show and that $\c{F}_\infty$ is reasonable and apply \ref{clm:earring}.
+Show that $\c{F}_\infty$ is reasonable and apply \ref{clm:earring}.
 
 \parbf{\ref{ex:Hawaiian-nouni}.}
 A sufficiently small circle $S\subset \c{H}$ must lie in an open set evenly covered by $w$.
-Construct a retraction $r\:\c{H}\to S$ consider a nontrivial connected covering $v$ with base $S$ and pass to its pullback along $r$ (apply \ref{ex:pull-back}).
+Construct a retraction $r\:\c{H}\to S$; consider a nontrivial connected covering $v$ with base space $S$, and pass to its pullback along $r$ (apply \ref{ex:pull-back}).
 
 \parbf{\ref{ex:Hawaiian-comp-cover}.}
-Taking pullback of the worping map along a retraction $r\:\c{H}\to S$ tosome circle $S\subset \c{H}$ produces a normal $\ZZ$-covering.
+Taking pullback of the wrapping map along a retraction $r\:\c{H}\to S$ to some circle $S\subset \c{H}$ produces a normal $\ZZ$-covering.
 The total space will look like a cactus train.
-Now the for the double cover, unwrap different circles in cacti of this train, so that the size of circle approach zero when you move to infinity.
+Now for the double cover, unwrap different circles in cacti of this train, so that the circle sizes approach zero when you move to infinity.
 
 \parbf{\ref{ex:griffiths}.}
 Read about the Griffiths space.
 
 \parbf{\ref{ex:reasonable-diagram}.}
-Apply \ref{obs:covering:connected} and once \ref{clm:sc-base}.
+Apply \ref{obs:covering:connected} in each case, and \ref{clm:sc-base} once.
 
 \parit{Comment.}
-Each statemnt fails if $\c{Z}$ is not reasonable.
+Each statement fails if $\c{Z}$ is not reasonable.
 Exercise \ref{ex:Hawaiian-comp-cover} provides an example for part \ref{SHORT.ex:reasonable:u}.
 The other parts are simpler, but require patience.
-Recall that $\NN^\infty$ denoted one-point compactification of positive integers $\NN$;
+
+Recall that $\NN^\infty$ denotes one-point compactification of positive integers $\NN$;
 this space can be identified with $\{0,1,\tfrac12,\tfrac13,\ldots\}\subset\RR$;
 this space is not locally connected and therefore not reasonable.
 
 For \ref{SHORT.ex:reasonable:v}, take $\c{X}=\NN^\infty\times \NN$, $\c{Y}=\NN^\infty\times \{0,1\}$, and $\c{Z}=\NN^\infty$;
-furtheremore, define $u$ and $w$ as projections and let
+furthermore, define $u$ and $w$ as projections and let
 \[v(n,k)
 =
 \begin{cases}
@@ -1599,8 +1600,9 @@ furtheremore, define $u$ and $w$ as projections and let
 \]
 Observe that $(\infty,0)\in \c{Y}$ does not admit a neighborhood evenly covered by $v$.
 
-For \ref{SHORT.ex:reasonable:w}, take $\c{X}=\NN^\infty\times \NN$, $\c{Y}=\c{X}/\sim$ where $(k,m)\sim(k,n)$ if $m>k$ and $n>k$, and $\c{Z}=\NN^\infty$;
-furtheremore, let $u$ be the projection and let $v$ be the quotient map.
+For \ref{SHORT.ex:reasonable:w}, take $\c{X}=\NN^\infty\times \NN$, $\c{Y}=\c{X}/\sim$ where $(k,m)\sim(k,n)$ if $m>k$ and $n>k$, and $\c{Z}=\NN^\infty$.
+Furthermore, let $u$ be the projection and let $v$ be the quotient map;
+these uniquely determine $w$.
 Observe that $\infty\in \c{Z}$ does not admit a neighborhood evenly covered by $w$.
 
 \parbf{\ref{ex:vankam-nonconnect}.}
@@ -1613,10 +1615,10 @@ Take 2 copies of each set: $A_1, A_2,B_1,B_2,V_1,V_2,W_1,W_2$ and glue $\tilde{\
 \includegraphics{mppics/pic-1915}
 \end{Figure}
 
-More presisely, the inclusions of $A$ and $B$ in $V$ and $W$ induce 8 embdeddings:
+More precisely, the inclusions of $A$ and $B$ in $V$ and $W$ induce 8 embeddings:
 $A_i\hookrightarrow V_j$, $A_i\hookrightarrow W_j$, $B_i\hookrightarrow V_j$, $B_i\hookrightarrow W_j$
 for all pairs $i$ and $j$.
-Glue the copies along all the embdeddings in the diagram and show that the obtained space $\tilde{\c{Z}}$ covers $\c{Z}$ twice.
+Glue the copies along all the embeddings in the diagram and show that the obtained space $\tilde{\c{Z}}$ covers $\c{Z}$ twice.
 \[
 \begin{tikzcd}
 A_1\arrow[d, hook'] \arrow[r, hook] & V_1 & B_1\arrow[l, hook'] \arrow[d, hook]\\
@@ -1626,7 +1628,7 @@ B_2\arrow[u, hook] \arrow[r, hook] & V_2 & A_2\arrow[l, hook'] \arrow[u, hook']
 \]
 
 \parit{Comment.}
-This is another partial case of Van Kampen theorem, see also \ref{prop:van-kamp:sc}.
+This is another partial case of the Van Kampen theorem, see also \ref{prop:van-kamp:sc}.
 
 One can also construct a normal $\ZZ$-covering, preparing $\ZZ$ copies of each set and glue them along the following maps:
 \begin{align*}
@@ -1637,27 +1639,8 @@ One can also construct a normal $\ZZ$-covering, preparing $\ZZ$ copies of each s
 \hookrightarrow W_{n+1}\hookleftarrow A_{n+1}&\hookrightarrow V_{n+1}\hookleftarrow \dots
 \end{align*}
 
-\parbf{\ref{ex:ucover-unique}.} Apply \ref{thm:lifting-criterion} twice.
-
 \parbf{\ref{ex:group-unicover}.}
 Let $a\cdot b(t)\df a(t)\cdot b(t)$ and consider the product $[a]\cdot [b]\df[a\cdot b]$ on $\tilde{\c{G}}$.
-
-\parbf{\ref{ex:given-monodromy}.}
-The fundamental group $\pi_1(\c{Z},z_0)$ acts on the total space $\tilde{\c{Z}}$ of the universal covering.
-Equip $G$ with the descrete topology.
-The product $\tilde{\c{Z}}\times G$ admits a natural action of $\pi_1(\c{Z},z_0)\times G$;
-this action is freely discontinuous.
-Pass to the quotient of $\tilde{\c{Z}}\times G$ by the image of homomorphism $\pi_1(\c{Z},z_0)\to\pi_1(\c{Z},z_0)\times G$ defined by $\gamma\mapsto (\gamma,m(\gamma))$.
-
-\parbf{\ref{ex:subgroup(free)}.}
-Let $\tilde\Gamma$ be the total space of a connected normal $G$-covering $w$ of a graph $\Gamma$;
-we can assume that $\pi_1(\Gamma,v_0)$ is the free group and $\Im w_*$ is the normal subgroup.
-Note that order of $G$ is the index of $\Im w_*\cong \pi_1(\tilde\Gamma)$ in $\pi_1(\Gamma,v_0)$.
-Since $\Im w_*$ is not trivial, $\tilde\Gamma$ is not a tree.
-Therefore $\Gamma$ has a cycle $C$; and $g\cdot C$ is also a cycle.
-Note that $g\cdot C$ is a cycle for any $g\in G$ and if $G$ is infinite, then infinite number of theses cycles do not overlap.
-Observe that each of these cycle corresponds to a generator of $\pi_1(\tilde\Gamma)$.
-
 
 \parbf{\ref{ex:tietze}.}
 Follow the proof and see that compactness of $\Gamma\cap \cBall[x,R]$ is the only place we use special properties of the Euclidean plane.
@@ -1669,12 +1652,12 @@ One needs open complements to apply \ref{prop:van-kamp:sc} and \ref{ex:vankam-no
 
 If $\Gamma$ is not closed, then its complement might be connected, but not path connected.
 For example, the complement of $\Gamma$ can be $W'$ --- the flea and comb discussed in \ref{sec:flea and comb}.
-In this case the complement $\RR^3\setminus\Gamma$ formed by two open half-spaces joint by $W'$;
-it is easy to see that a loop that cross the $(x,y)$ at flea and returns thru comb is not contractible in $\RR^3\setminus\Gamma$.
+In this case the complement $\RR^3\setminus\Gamma$ is the union of upper and lower open half-spaces with $W'\times\{0\}$;
+it is easy to see that any loop that crosses the $(x,y)$-planne at the flea and returns thru the comb is not contractible in $\RR^3\setminus\Gamma$.
 
 If the complement $\RR^2\setminus\Gamma$ is the union of two copies of fan $F$ (see \ref{ex:retract-strong-weak}) as shown on the picture
-then it is path-connecteed, but $\RR^3\setminus\Gamma$ is not simply conneccted.
-Try to bootstrap a  noncntractibel loop in it.
+then it is path-connected, but $\RR^3\setminus\Gamma$ is not simply-connected.
+Try to bootstrap a noncontractible loop in it.
 
 \begin{Figure}
 \vskip-0mm
@@ -1683,9 +1666,10 @@ Try to bootstrap a  noncntractibel loop in it.
 \end{Figure}
 
 \parbf{\ref{ex:3-components-Gamma}.}
-Show and use that $Y$ can be retracted to figure eight; see \ref{sec:Figure eight}.
+Show and use that $Y$ retracts onto a figure eight; see \ref{sec:Figure eight}.
 
-\parbf{\ref{ex:klee[0,1]-1}.} Follow the proof of \ref{prop:home-gamma-z-axis}.
+\parbf{\ref{ex:klee[0,1]-1}.}
+Follow the proof of \ref{prop:home-gamma-z-axis}.
 
 \parbf{\ref{ex:connected-complement}.}
 Assume the contrary.

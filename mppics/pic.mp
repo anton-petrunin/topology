@@ -1043,6 +1043,63 @@ label.top (btex $b_1$ etex, point .5 of (z.q{dir (-20+8*9)}..{dir (20-12*9)}z.r)
 
 endfig;
 
+beginfig(1315)
+save u,p;
+path p[];
+u:=2cm;
+
+p0=(0,0)*u--(1,0)*u--(1,1)*u--(0,1)*u--cycle;
+p1=(0,0)*u--(1/2,0)*u--(1,1)*u;
+p2=(0,0)*u--(1/2,1)*u--(1,1)*u;
+p3=(0,0)*u--(1,1)*u;
+
+draw p0 penhair;
+draw p1 pensemibold;
+draw p2 pensemibold;
+draw p3 pensemibold;
+
+label.bot (btex $s_0$ etex, (1/2,0)*u);
+label.top (btex $s_1$ etex, (1/2,1)*u);
+whitelabel (btex $s_2$ etex, (1/2,1/2)*u);
+
+endfig;
+
+beginfig(1316)
+save u,p;
+path p[];
+u:=2cm;
+
+p0=(0,0)*u--(1,0)*u--(1,1)*u--(0,1)*u--cycle;
+p1=(0,0)*u--(1/2,1)*u--(1,0)*u;
+p2=(0,0)*u--(1,0)*u;
+
+draw p0 penhair;
+draw p1 pensemibold;
+draw p2 pensemibold;
+
+label.bot (btex $s_1$ etex, (1/2,0)*u);
+label.top (btex $s_0$ etex, (1/2,1)*u);
+
+endfig;
+
+beginfig(1317)
+save u,p;
+path p[];
+u:=2cm;
+
+p0=(0,0)*u--(1,0)*u--(1,1)*u--(0,1)*u--cycle;
+p1=(0,0)*u--(1/4,1/2)*u--(1/2,3/4)*u--(1,1)*u;
+p2=(0,0)*u--(1,1)*u;
+
+draw p0 penhair;
+draw p1 pensemibold;
+draw p2 pensemibold;
+
+label.ulft (btex $s_1$ etex, (3/8,5/8)*u);
+label.lrt (btex $s_0$ etex, (1/2,1/2)*u);
+
+endfig;
+
 beginfig(1335)
 save u,p;
 path p[];
@@ -2027,6 +2084,60 @@ endfor;
 draw (-1,-1)*u--(0,0)*u--(1,-1)*u;
 
 
+endfig;
+
+beginfig(1930)
+save u,p;
+path p[];
+u:=1cm;
+
+draw (0,2)*u--(0,0)*u--(2,0)*u pensemibold;
+draw (0,1)*u--(3,1)*u pensemibold;
+draw (1,0)*u--(1,2)*u pensemibold;
+draw (0,2)*u..(1,2)*u{right}..(2,1)*u{down}..(2,0)*u pensemibold;
+draw (0,1)*u{(-2,-1)}..(-1,1)*u{up}..{(2,-1)}(0,1)*u pensemibold;
+draw (0,0)*u{down}..{up}(1,0)*u pensemibold;
+
+dOt (0,0)*u,(0,1)*u,(0,2)*u,(1,0)*u,(1,1)*u,(1,2)*u,(2,0)*u,(2,1)*u,(3,1)*u;
+endfig;
+
+beginfig(1931)
+save u,p;
+path p[];
+u:=1cm;
+
+z.shift=(7.5,0)*u;
+
+p1=(0,1)*u..{right}(1,1)*u..{left}(1,0)*u..(0,0)*u;
+p2=(0,1)*u..{down}(0,0)*u..{up}(1,0)*u..(1,1)*u;
+p3=(0,1)*u{(-2,1)}..(-.5,1)*u{down}..{(2,1)}(0,1)*u;
+p4=(1,1)*u..{left}(0,1)*u..{right}(0,0)*u..(1,0)*u;
+p5=(1,1)*u{(2,1)}..{(2,-1)}(2,1)*u;
+p6=(1,1)*u{(2,-1)}..{(2,1)}(2,1)*u;
+p7=(0,0)*u..{up}(0,1)*u..{down}(1,1)*u..(1,0)*u;
+
+
+draw p1 shifted z.shift pensemibold;
+draw p2 shifted z.shift pensemibold;
+draw p3 shifted z.shift pensemibold;
+
+draw p2  pensemibold;
+draw p4  pensemibold;
+draw p5  pensemibold;
+draw p6  pensemibold;
+draw p2 shifted ((2,0)*u) pensemibold;
+draw ((2,0)*u--(5,0)*u)  pensemibold;
+draw ((2,1)*u--(5,1)*u) pensemibold;
+draw p7 shifted ((4,0)*u) pensemibold;
+draw p3 shifted ((-1,0)*u) zscaled (-1,0) shifted ((4,1)*u) pensemibold;
+
+dOt (0,1)*u+z.shift, (2,1)*u;
+
+label.urt (btex $\tilde v_0$ etex, (2,1)*u);
+label.urt (btex $v_0$ etex, (0,1)*u+z.shift);
+label (btex $\tilde \Gamma$ etex, (1.5,0)*u);
+label.lft (btex $\Gamma$ etex, z.shift);
+label (btex $\xrightarrow{w}$ etex, .5[(5,1)*u,z.shift]);
 endfig;
 
 end

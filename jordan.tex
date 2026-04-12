@@ -3,7 +3,7 @@
 The Jordan separation theorem states that the complement of a closed simple curve in the plane is not connected.
 This theorem is known for its simple formulation and annoyingly tricky proofs.
 We will present the proof of Patrick Doyle \cite{doyle} that is based on Klee's trick.
-This proof is among the shortest; it also uses several results in topology, which worth knowing.
+This proof is among the shortest; it also uses several results in topology, which are worth knowing.
 
 \section{Tietze--Urysohn extension theorem}
 
@@ -141,8 +141,9 @@ Then there is a homeomorphism $\RR^3\selfmap$ that maps $\Gamma$ to the $z$-axis
 \end{thm}
 
 The following proof uses the so-called \index{Klee trick}\emph{Klee trick}, which is quite useful in many topological problems.
-The construction actually produces a one-parameter family of homeomorphisms $h_t\:\RR^3\selfmap$
-that starts from the identity map $\id_{\RR^3}$ and ends at the homeomorphism we need.
+In fact, the construction gives a bit more; it implies the existence of a one-parameter family of homeomorphisms $h_t\:\RR^3\selfmap$
+that starts at the identity map $\id_{\RR^3}$
+and ends at the homeomorphism we need.
 
 \parit{Proof.}
 Let $h\:t\mapsto (a(t),b(t))$ be a homeomorphism $\RR\to \Gamma$.
@@ -151,22 +152,22 @@ Applying \ref{thm:tietze} to $f=h^{-1}$, we get a function $F\:\RR^2\z\to\RR$ su
 for any $t\in \RR$.
 
 Note that the map
-\[A\:(x,y,z)\mapsto (x,y,z+F(x,y))\] is a homeomorphism.
+\[p\:(x,y,z)\mapsto (x,y,z+F(x,y))\] is a homeomorphism.
 Indeed, this map is continuous and its inverse
-\[A^{-1}\:(x,y,z)\z\mapsto (x,y,z-F(x,y))\]
+\[p^{-1}\:(x,y,z)\z\mapsto (x,y,z-F(x,y))\]
 is continuous as well.
 
 Similarly, the map
-\[B\:(x,y,z)\mapsto (x-a(z),y-b(z),z)\]
+\[q\:(x,y,z)\mapsto (x-a(z),y-b(z),z)\]
 is a homeomorphism as well.
-Indeed, $B$ is continuous and it has an inverse
-\[B^{-1}\:(x,y,z)\mapsto (x+a(z),y+b(z),z)\]
+Indeed, $q$ is continuous and it has an inverse
+\[q^{-1}\:(x,y,z)\mapsto (x+a(z),y+b(z),z)\]
 that is continuous as well.
 
-It follows that the composition $B\circ A\:\RR^3\to\RR^3$ is a homeomorphism.
+It follows that the composition $q\circ p\:\RR^3\to\RR^3$ is a homeomorphism.
 Since $F(a(t),b(t))=t$ for any $t$, we have
-\[B\circ A(a(t),b(t),0)=B(a(t),b(t),t)=(0,0,t).\]
-It follows that $B\circ A$ sends $\Gamma$ to the $z$-axis as required.
+\[q\circ p(a(t),b(t),0)=q(a(t),b(t),t)=(0,0,t).\]
+It follows that $q\circ p$ sends $\Gamma$ to the $z$-axis as required.
 \qeds
 
 \begin{thm}{Exercise}\label{ex:klee[0,1]-1}
@@ -189,7 +190,8 @@ Assume $\RR^2\setminus \Gamma$ is connected.
 Then by \ref{prop:c/sc}, $\RR^3\setminus \Gamma$ is simply-connected.
 
 On the other hand by \ref{prop:home-gamma-z-axis}, $\RR^3\setminus \Gamma$ is homeomorphic to the complement of $z$-axis in $\RR^3$,
-which is not simply-connected by \ref{prop:c/sc} --- a contradiction.
+which is not simply-connected since it can be retracted to a circle%
+\footnote{Alternatively one may apply \ref{prop:c/sc} again.} --- a contradiction.
 \qeds
 
 \begin{thm}{Exercise}\label{ex:connected-complement}
@@ -220,9 +222,8 @@ It remains to apply \ref{thm:proper-jordan}.
 \qeds
 
 Note that applying \ref{ex:proper-jordan3} in the proof of \ref{thm:jourdan}, one gets that
-$\mathbb{S}^2\setminus J$ has exactly two connected components,
-this provides a more exact version of the theorem.
-Furthermore, there is a yet more exact version of the theorem that is due to Arthur Schoenflies;
+$\mathbb{S}^2\setminus J$ has exactly two connected components.
+Furthermore, this theorem has a yet more exact version, which is due to Arthur Schoenflies;
 it states that there is a homeomorphism $h\:\SS^2\selfmap$ that maps $J$ to the equator;
 in particular, each connected component of $\mathbb{S}^2\setminus J$ is homeomorphic to an open disc.
 
@@ -240,7 +241,7 @@ Use part \ref{SHORT.ex:klee[0,1]:[0,1]} to show that if $J\subset \SS^2$ is as i
 
 \begin{thm}{Advanced exercise}\label{ex:AnB}
 Let $A$ and $B$ be closed subsets in $\SS^2$ such that $\SS^2\setminus A$ and $\SS^2\setminus B$ are connected and $\SS^2\setminus (A\cap B)$ is simply-connected.
-Show that $\RR^2\setminus(A\cup B)$ is connected.
+Show that $\SS^2\setminus(A\cup B)$ is connected.
 \end{thm}
 
 
