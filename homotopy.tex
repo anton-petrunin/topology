@@ -2,7 +2,7 @@
 
 \section{Homotopy}\label{sec:homotopy}
 
-Two continuous maps $f,g\:\c{X}\to \c{Y}$ are called \index{homotopic}\emph{homotopic} (briefly, $f\sim g$) if $f$ can be continuously deformed into $g$.
+Two continuous maps $f,g\:\c{X}\to \c{Y}$ are called {}\emph{homotopic} (briefly, $f\sim g$) if $f$ can be continuously deformed into $g$.
 Formally, this means that there exists a continuous map
 \[
 H\:\c{X}\times[0,1]\to \c{Y}
@@ -28,7 +28,7 @@ Then $g_0\circ f_0\sim g_1\circ f_1$.
 \section{Linear homotopy}\label{sec:Linear homotopy}
 
 Suppose $\c{C}$ is a convex subset of $\RR^n$ with induced topology.
-Given two continuous maps $f,g\:\c{X}\to \c{C}$, one can consider \emph{linear homotopy} from $f$ to $g$ defined by
+Given two continuous maps $f,g\:\c{X}\to \c{C}$, one can consider \index{linear homotopy}\emph{linear homotopy} from $f$ to $g$ defined by
 \[H(x,t)=(1-t)\cdot f(x)+t\cdot g(x).\]
 It follows that any two continuous maps $\c{X}\to\c{C}$ are homotopic;
 in particular, any continuous map $\c{X}\to\c{C}$ is null-homotopic.
@@ -49,7 +49,7 @@ Show that $f_0\sim f_1$.
 Let $H\:\c{X}\times[0,1]\to \c{Y}$ be a homotopy, and let $A\subset \c{X}$.
 Suppose that for any $a\in A$ the point $H(a,t)$ does not depend on $t$.
 Then we say that $H$ is a homotopy \index{relative homotopy}\emph{relative to $A$}.
-Two maps $f,g\: \c{X}\to \c{Y}$ are called \index{homotopic relative to $A$}\emph{homotopic relative to $A$}, briefly, $f\sim g\rel A$ if there is a homotopy relative to $A$ from $f$ to $g$.
+Two maps $f,g\: \c{X}\to \c{Y}$ are called {}\emph{homotopic relative to $A$}, briefly, $f\sim g\rel A$ if there is a homotopy relative to $A$ from $f$ to $g$.
 
 Note also that if $f\sim g\rel A$, then $f$ agrees with $g$ on $A$;
 that is, $f(a)=g(a)$ for any $a\in A$.
@@ -61,7 +61,7 @@ In fact, a path is a special case of homotopy --- it is a homotopy with a one-po
 \begin{itemize}
 \item the \index{constant homotopy}\emph{constant homotopy} $H(x,t)=f(x)$ joins $f$ with itself;
 \item if $H$ is a homotopy from $f$ to $g$, then the
-\index{time-reversed}\emph{time-reversed} homotopy defined by
+\index{time-reversed homotopy}\emph{time-reversed} homotopy defined by
 \[
 \bar H(x,t)=H(x,1-t)
 \]
@@ -100,7 +100,7 @@ The constructions from the previous section imply that homotopy defines an equiv
 \end{itemize}
 
 
-The equivalence classes for $\sim$ are called \index{homotopy class}\emph{homotopy classes};
+The equivalence classes for $\sim$ are called \index{homotopy!class!of maps}\emph{homotopy classes};
 the equivalence class of a map $f\:\c{X}\to\c{Y}$ will be denoted by $[f]$.
 Given two spaces $\c{X}$ and $\c{Y}$, the set of all homotopy classes will be denoted by
 $\pi(\c{X},\c{Y})$. %??? \HClass(\c{X},\c{Y}) \HClass_{\rel A}(\c{X},\c{Y})
@@ -207,13 +207,13 @@ Show that any two continuous maps from $\c{X}$ to a path-connected space are hom
 
 \section{Homotopy type}\label{sec:Homotopy type}
 
-Two topological spaces $\c{X}$ and $\c{Y}$ have the same \index{homotopy type}\emph{homotopy type} (briefly $\c{X}\sim\c{Y}$) if there are continuous maps
+Two topological spaces $\c{X}$ and $\c{Y}$ have the same \index{homotopy!type}\emph{homotopy type} (briefly $\c{X}\sim\c{Y}$) if there are continuous maps
 $f\: \c{X}\to \c{Y}$ and $h\:\c{Y}\to \c{X}$ such that $h\circ f\sim \id_\c{X}$ and $f\circ h\sim \id_\c{Y}$.
-In this case $f$ (as well as $h$) is called a \index{homotopy equivalence}\emph{homotopy equivalence} and $h$ is called a \index{homotopy inverse}\emph{homotopy inverse} of $f$.
+In this case $f$ (as well as $h$) is called a \index{homotopy!equivalence}\emph{homotopy equivalence} and $h$ is called a \index{homotopy!inverse}\emph{homotopy inverse} of $f$.
 
 \begin{thm}{Exercise}\label{ex:homotopy-type}
 Show that $\sim$ defines an equivalence relation on topological spaces.
-(The corresponding equivalence classes are called \index{homotopy type}\emph{homotopy types}.)
+(The corresponding equivalence classes are called \index{homotopy!type}\emph{homotopy types}.)
 \end{thm}
 
 

@@ -46,8 +46,8 @@ For example, the neutral element forms a one-element subgroup, which is called \
 
 The sets
 \[g\cdot H=\set{g\cdot h}{h\in H}\quad\text{and}\quad H\cdot g=\set{h\cdot g}{h\in H}\]
-for a fixed $g\in G$ are called \emph{left} and \emph{right cosets} of $H$.
-The number of left cosets is called the \emph{index} of $H$ in $G$;
+for a fixed $g\in G$ are called {}\emph{left} and \index{coset}\emph{right cosets} of $H$.
+The number of left cosets is called the \index{index of subgroup}\emph{index} of $H$ in $G$;
 the map $g\mapsto g^{-1}$ (which is not a homomorphism in general) sends left cosets to right cosets,
 so if you count right cosets you will also get the index of $H$ in $G$.
 
@@ -57,8 +57,8 @@ Let $G$ be a group. Show that $g\mapsto g^{-1}$ is a homomorphism if and only if
 
 \paragraph{Kernels, images and normal subgroups.}
 Given a group homomorphism $\phi\colon G\to H$, its
-\index{kernel}\emph{kernel} and
-\index{image}\emph{image} are defined by
+\index{kernel of homomorphism}\emph{kernel} and
+\index{image of homomorphism}\emph{image} are defined by
 \begin{align*}
 \Ker\phi&\df \phi^{-1}(\{1_H\})=\{g\in G\mid \phi(g)=1_H\},
 \\
@@ -120,15 +120,15 @@ We will mostly need two groups;
 \item $\ZZ_2$ the integers modulo two.
 \end{itemize}
 Both of these groups are commutative.
-Moreover, they are \emph{cyclic}; that is, any element of the group can be written as a power of a certain fixed element.
+Moreover, they are \index{cyclic group}\emph{cyclic}; that is, any element of the group can be written as a power of a certain fixed element.
 
-For commutative groups, one often uses \emph{additive notation};
+For commutative groups, one often uses \index{additive notation}\emph{additive notation};
 so the group operation is denoted by $+$ and the neutral element is denoted by $0$.
 It works perfectly in $\ZZ$.
 
 Any group can appear as a fundamental group of a topological space (we will not prove it, but it is not hard to prove).
 For noncommutative groups additive notation should not be used.
-So we will use multiplicative notation (as in the previous section) for general groups, but once we know that the group is commutative, we will mostly switch to the additive notation --- once we switch, the following changes occur:
+So we will use \index{multiplicative notation}\emph{multiplicative notation} (as in the previous section) for general groups, but once we know that the group is commutative, we will mostly switch to the additive notation --- once we switch, the following changes occur:
 \[1\rightsquigarrow0,\quad \alpha\cdot\beta\rightsquigarrow\alpha+\beta,\quad\text{and}\quad \alpha^n\rightsquigarrow n\cdot\alpha\] --- do not be confused by that.
 
 \begin{thm}{Exercise}\label{ex:Z->S3}
@@ -204,7 +204,7 @@ For some other constructions, the induced map might go in the opposite direction
 In this case, the induced map denoted by $f^*$, and is called \index{pullback}\emph{pullback}.
 The associated constructions are called \index{contravariant}\emph{contravariant}.
 
-As an example of contravariant construction, consider the so-called \emph{first cohomotopy group} $\pi^1(\c{X},x_0)$, which is the set of homotopy classes of pointed continuous maps $(\c{X},x_0)\to (\SS^1,s_0)$.
+As an example of contravariant construction, consider the so-called \index{first cohomotopy group}\emph{first cohomotopy group} $\pi^1(\c{X},x_0)$, which is the set of homotopy classes of pointed continuous maps $(\c{X},x_0)\to (\SS^1,s_0)$.
 (The set $\pi^1(\c{X},x_0)$ has a natural structure of a commutative group, but this is not important for us.)
 Then any pointed continuous map $f\:(\c{X},x_0)\to (\c{Y},y_0)$ has a pullback $f^*\:\pi^1(\c{Y},y_0)\to\pi^1(\c{X},x_0)$.
 Indeed, for a map $h\:(\c{Y},y_0)\to (\SS^1,s_0)$, the composition $h\circ f$ provides a good choice of map $(\c{X},x_0)\to (\SS^1,s_0)$, so we can define $f^*[h]\df [h\circ f]$.
