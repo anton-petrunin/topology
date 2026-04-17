@@ -2135,8 +2135,8 @@ dOt (0,1)*u+z.shift, (2,1)*u;
 
 label.urt (btex $\tilde v_0$ etex, (2,1)*u);
 label.urt (btex $v_0$ etex, (0,1)*u+z.shift);
-label (btex $\tilde \Gamma$ etex, (1.5,0)*u);
-label.lft (btex $\Gamma$ etex, z.shift);
+label.top (btex $\tilde \Gamma$ etex, (2.5,.2)*u);
+label.top (btex $\Gamma$ etex, z.shift+(.5,.2)*u);
 label (btex $\xrightarrow{w}$ etex, .5[(5,1)*u,z.shift]);
 endfig;
 
