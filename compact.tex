@@ -19,7 +19,7 @@ A subfamily of the cover $\{V_\alpha\}$ that is also a cover is called its \inde
 \end{thm}
 
 Observe that any base of a space is a cover, but not every cover is its base.
-For example, any space admits a cover by one set (the whole space), but it forms a base only for concrete spaces.
+For example, any space admits a cover by one set (the whole space), but it forms a base only if the topology is concrete.
 
 \begin{thm}{Exercise}\label{ex:open-open-cover}
 Let $\{V_\alpha\}$ be an open cover of a topological space $\c{X}$.
@@ -40,19 +40,19 @@ Spelling the definitions, we get that \textit{a subset $S$ of a topological spac
 
 Clearly, \textit{any finite topological space is compact}.
 The next exercise provides a source of examples of infinite compact spaces.
-More interesting examples are given in Section~\ref{sec:compact-interval} and further.
+More interesting examples will appear in Section~\ref{sec:compact-interval} and further.
 
 \begin{thm}{Exercise}\label{ex:cofinite-compact}
 Show that any set equipped with the cofinite topology is compact.
 \end{thm}
 
-Let us show how one can apply the definition.
+The solution of the following problem illustrates how one can apply the definition of compactness.
 
-\begin{thm}{Observation}\label{obs:closed-bounded}
+\begin{thm}{Problem}\label{obs:closed-bounded}
 A compact subset $S$ of the real line has to be closed and \index{bounded set}\emph{bounded}; that is there is $c\in \RR$ such that $|s|\le c$ for any $s\in S$.
 \end{thm}
 
-\parit{Proof.}
+\parit{Solution.}
 Suppose $S\subset \RR$ is a compact set.
 Assume $S$ is not closed.
 Then we can choose a point $s\in\bar S\setminus S$ and consider the cover of $S$ by the complements of $[ s-\eps,s+\eps]$ for all $\eps>0$.
@@ -61,7 +61,7 @@ Since it has a finite subcover, a neighborhood of $s$ does not intersect $S$, so
 Applying the same reasoning for cover of $S$ by all intervals $(-c,c)$, one can show that $S$ is bounded.
 \qeds
 
-\begin{thm}{Exercise}\label{ex:noncompact-un}
+\begin{thm}[!]{Exercise}\label{ex:noncompact-un}
 
 \begin{subthm}{ex:noncompact-closed}
 Construct a topological space with a set that is compact, but not closed.
@@ -109,8 +109,8 @@ that is, $\{V_\alpha\}$ is an open cover of $\c{X}$ if and only if $\bigcap Q_\a
 Observe that
 \[Q_{\alpha_1}\cap\dots\cap Q_{\alpha_n}=\c{X}\setminus(V_{\alpha_1}\cup\dots\cup V_{\alpha_n}).
 \]
-Therefore, $\{V_{\alpha_1},\ldots,V_{\alpha_n}\}$ is a finite subcover if and only if
-the intersection $Q_{\alpha_1}\cap\dots\cap Q_{\alpha_n}$ is empty, hence the result.
+Thus, $\{V_{\alpha_1},\ldots,V_{\alpha_n}\}$ is a subcover if and only if
+ $Q_{\alpha_1}\cap\dots\cap Q_{\alpha_n}=\emptyset$, hence the result.
 \qeds
 
 \begin{thm}{Exercise}\label{ex:nested-compact}
@@ -252,7 +252,7 @@ Show that any closed bounded subset of the real line is compact.
 
 Choose a topological space $\c{X}$ and add to $\c{X}$ one extra point that will be denoted by $\infty$.
 Let us define topology on $\c{X}^\infty=\c{X}\cup\{\infty\}$ such that
-a set $V$ in $\c{X}^\infty$ is open if $V$ is an open subset of $\c{X}$ (in which case $\infty\notin V$) or $\infty\in V$ and its complement $\c{X}\setminus V$ is a closed \textit{and} compact subset of $\c{X}$.
+a subset $V\subset\c{X}^\infty$ is open if $V$ is an open subset of $\c{X}$ (in which case $\infty\notin V$) or $\infty\in V$ and its complement $\c{X}\setminus V$ is a closed \textit{and} compact subset of $\c{X}$.
 
 To show that we have defined a topology, we need to check the conditions in \ref{def:top-space}:
 \ref{SHORT.def:top-space:empty} is straightforward, \ref{SHORT.def:top-space:u} follows since intersection of closed and compact sets are closed and compact (see \ref{prop:compact-closed}), and \ref{SHORT.def:top-space:n} follows since union of two closed sets is closed and union of two compact sets is compact (see \ref{def:closed-properties:u} and \ref{ex:ucompact}).
@@ -300,7 +300,7 @@ In the proof, we will need the following definition.
 Let $\{V_\alpha\}$ and $\{W_\beta\}$ be two covers of a topological space $\c{X}$.
 We say that $\{V_\alpha\}$ is \index{inscribed cover}\emph{inscribed}%
 \footnote{One can also say that $\{V_\alpha\}$ \index{refinement}\emph{refines} $\{W_\beta\}$.}
-in $\{W_\beta\}$ if for any $\alpha$ there is $\beta$ such that $V_\alpha\subset W_\beta$.
+in $\{W_\beta\}$ if for any $V_\alpha$ there is $W_\beta$ such that $V_\alpha\subset W_\beta$.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:inscribed-cover-base}
@@ -326,11 +326,11 @@ Find a flaw in the following argument.
 
 \parit{Fake proof of \ref{thm:compact-product}.}
 Fix an open cover $\{O_\beta\}$ of $\c{X}\times\c{Y}$.
-Consider all product sets $V_\alpha\times W_\alpha$ such that $V_\alpha\times W_\alpha\subset O_\beta$ for some $\beta$ (as before, $V_\alpha$ and $W_\alpha$ are open in $\c{X}$ and $\c{Y}$ respectively).
+Consider all product sets $V_\alpha\times W_\alpha$ such that $V_\alpha\times W_\alpha\subset O_\beta$ for some $\beta$; as before, $V_\alpha$ and $W_\alpha$ are open in $\c{X}$ and $\c{Y}$ respectively.
 Note that $\{V_\alpha\times W_\alpha\}$ is a cover of $\c{X}\times\c{Y}$ that is inscribed in $\{O_\beta\}$.
 By the observation, it is sufficient to find a finite subcover of $\{V_\alpha\times W_\alpha\}$.
 
-Note that $\{V_\alpha\}$ is a cover of $\c{X}$.
+Note that $\{V_\alpha\}$ covers $\c{X}$.
 Since $\c{X}$ is compact, we can choose its finite subcover $\{V_{\alpha_1},\ldots,V_{\alpha_n}\}$.
 Similarly, $\{W_\alpha\}$ is a cover of $\c{Y}$;
 so we can choose its finite subcover $\{W_{\alpha_{n+1}},\ldots,W_{\alpha_{n+m}}\}$.
@@ -349,7 +349,7 @@ $V_\alpha\times W_\alpha$, where $V_\alpha$ is open in $\c{X}$ and $W_\alpha$ is
 Choose an open cover $\{O_\beta\}$ of $\c{X}\times\c{Y}$.
 Consider all product sets $V_\alpha\times W_\alpha$ such that $V_\alpha\times W_\alpha\subset O_\beta$ for some $\beta$ (as before, $V_\alpha$ and $W_\alpha$ are open in $\c{X}$ and $\c{Y}$ respectively).
 Note that $\{V_\alpha\times W_\alpha\}$ is a cover of $\c{X}\times\c{Y}$ that is inscribed in $\{O_\beta\}$.
-By the observation, it is sufficient to find a finite subcover of $\{V_\alpha\times W_\alpha\}$.
+By \ref{obs:inscribed-cover}, it is sufficient to find a finite subcover of $\{V_\alpha\times W_\alpha\}$.
 
 Fix $x \in \c{X}$.
 Note that the subspace $\{x\}\times \c{Y}$ is homeomorphic to $\c{Y}$; see \ref{ex:graph}.
@@ -417,7 +417,7 @@ Without loss of generality, we can assume that $\{V_\alpha\}$ cover $\c{X}$.
 Since $\c{X}$ is compact we can choose a finite subcover $\{V_{\alpha_1},\ldots,V_{\alpha_n}\}$.
 It remains to observe that $\{V_{\alpha_1}\times  \c{Y},\ldots,V_{\alpha_n}\times  \c{Y}\}$ covers $\c{X}\times\c{Y}$ and apply the Alexander prebase theorem.
 
-Let us show a more serious application of this theorem.
+Let us indicate a more serious application of this theorem.
 
 Start with a set $S$.
 Denote by \index{Power}$\Power(S)$ the set of all subsets in $S$.
@@ -426,13 +426,13 @@ Given $s\in S$, define sets
 \quad\text{and}\quad
 \mathfrak{W}_s=\set{X\subset S}{X\not\ni s}.
 \]
-Note that $X\subset S$ means that $X\in \Power(S)$, so $\mathfrak{V}_s,\mathfrak{W}_s\subset  \Power(S)$.
+Note that $X\subset S$ means that $X\in \Power(S)$, so $\mathfrak{V}_s$ and $\mathfrak{W}_s$ are subsets of $\Power(S)$.
 
 Let us equip the set $\Power(S)$ with topology defined by the prebase $\{\mathfrak{V}_s,\mathfrak{W}_s\}_{s\in S}$, now we can call it \index{power space}\emph{power space}.
-Applying the argument above, one sees that \textit{$\Power(S)$ is a compact space for any set $S$}.
+Applying the argument above, one sees that \textit{$\Power(S)$ is compact}.
 This is a partial case of the \index{Tychonoff compactness theorem}\emph{Tychonoff compactness theorem}.
 
-For finite set $F$ the space $\Power(F)$ is a discrete space with $2^{|F|}$ points, which is compact --- not a surprise.
+For a finite set $F$ the space $\Power(F)$ is a discrete space with $2^{|F|}$ points, which is compact --- not a surprise.
 
 For the set of natural numbers $\NN=\{1,2,\ldots\}$, a point $p\in \Power(\NN)$ is a subset $p\subset \NN$ and the map
 \[p\mapsto 2\cdot \sum_{n\in p}3^{-n}\]

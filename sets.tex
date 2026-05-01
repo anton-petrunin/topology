@@ -4,18 +4,15 @@ This chapter starts with the definition of closed sets in a topological space.
 Further, we introduce constructions of interior, closure, and boundary.
 Finally, we define neighborhoods and discuss limits in a general topological space.
 
-There is no particular reason why we define a topological space in terms of open sets --- we could use closed sets instead.
-(In fact, closed sets were considered before open sets --- the former were introduced by Georg Cantor in 1884 \cite{cantor}, and the latter by René Baire in 1899 \cite{baire}.)
-
 \section{Closed sets}\label{sec:closed-sets}
 
 Let $\c{X}$ be a topological space. 
 A subset $K\subset \c{X}$ is called \index{closed set}\emph{closed} if its complement $\c{X}\setminus K$ is open.
 
 Sometimes it is easier to use closed sets; 
-for example, the cofinite topology can be defined by declaring that the whole space and all its finite sets are closed.
-
-From the definition of topological spaces, the following properties of closed sets follow.
+for example, the cofinite topology can be defined by declaring that the whole space and all its finite sets are closed.%
+\footnote{There is no particular reason why we define a topological space in terms of open sets --- we could use closed sets instead.
+In fact, closed sets were considered before open sets --- the former were introduced by Georg Cantor in 1884 \cite{cantor}, and the latter by René Baire in 1899 \cite{baire}.}
 
 \begin{thm}{Proposition}\label{prop:closed-properties}
 Let $\c{X}$ be a topological space. 
@@ -39,6 +36,16 @@ That is,  if $K_1$ and $K_2$ are closed, then the union $Q=K_1 \cup K_2$ is clos
 \end{subthm}
 
 \end{thm}
+
+\parit{Proof.}
+The proposition follows since complement of union is intesection of complements.
+More precicely, if $\{S_\alpha\}$ is a family of sets in $\c{X}$, then
+\[\bigcup_\alpha (\c{X}\setminus S_\alpha)=\c{X}\setminus \left(\bigcap_\alpha S_\alpha\right).\]
+To prove this identity, notice that both sides can be written as
+\[\set{x\in \c{X}}{x\notin S_\alpha\ \text{for some}\  \alpha}.\]
+
+It remains to apply the definition of closed sets and the definition of topological spaces; see \ref{def:top-space}.
+\qeds
 
 The following proposition is completely analogous to the original definition of continuous maps via open sets (\ref{def:cont-top}). 
 
@@ -99,21 +106,31 @@ Construct a topological space $\c{Y}$ with a closed set $Q$ that is not an inter
 
 Let $A$ be an arbitrary subset of a topological space $\c{X}$.
 
+
+\setlength{\columnseprule}{.2pt}
+\begin{multicols}{2}
 The union of all open subsets of $A$ is called the \index{interior}\emph{interior} of $A$ and denoted as $\mathring A$, for longer expressions we may use $A^\circ$ or $\interior A$.
 
 Note that $\mathring A$ is open.
-Indeed, it is defined as a union of open sets and such union is open by the definition of a topology (\ref{def:top-space}).
-So we can say that $\mathring A$ is the \textit{maximal} open set in $A$, 
-as any open subset of $A$ lies in~$\mathring A$.
-In particular, $\mathring{\mathring A}=\mathring A$ for any set $A$.
+Indeed, it is defined as a union of open sets and such union is open by the definition of a topology; see \ref{def:top-space}.
+In other words, $\mathring A$ is the \textit{maximal} open set in $A$,
+as any open subset of $A$ must lie in~$\mathring A$.
+In particular,
+\[\mathring{\mathring A}=\mathring A\] for any set $A$.
+
+\columnbreak
 
 The intersection of all closed subsets containing $A$ is called the \index{closure}\emph{closure} of $A$ and denoted as $\bar A$ or $\closure A$.
 
 The set $\bar A$ is closed.
 Indeed, it is defined as an intersection of closed sets and such intersection has to be closed by \ref{prop:closed-properties}.
-In other words, $\bar A$ is the \textit{minimal} closed set that contains $A$, 
+In other words, $\bar A$ is the \textit{minimal} closed set that contains $A$,
 as any closed subset containing $A$ contains $\bar A$.
-In particular, $\bar{\bar A}=\bar A$ for any set $A$.
+In particular,
+\[\bar{\bar A}=\bar A\]
+for any set $A$.
+\end{multicols}
+
 
 \begin{thm}{Exercise}\label{ex:closure-interior-complement}
 Assume $A$ is a subset of a topological space $\c{X}$;
@@ -162,7 +179,8 @@ Prove that all the inclusions and equalities shown on the diagram hold for any s
 \arrow[uull, hook']
 \end{tikzcd}
 \end{figure}
-Conclude that given a set $A$ one can get at most 7 distinct subsets by repeatedly applying the set operations of closure and interior.
+
+Conclude that given a set $A$ one can get at most 7 distinct subsets by repeatedly applying closure and interior.
 \end{subthm}
 
 \begin{subthm}{ex:kuratowski:kuratowski}
@@ -192,11 +210,6 @@ Show that the set $A$ is closed if and only if $\partial A\subset A$.
 \begin{thm}{Exercise}\label{ex:bry-bry}
 Show that for any set $A$ in a topological space we have $\partial(\partial A)\subset \partial A$.
 Provide an example showing that the inclusion might be strict.
-\end{thm}
-
-\begin{thm}{Advanced exercise}\label{ex:3=bry}
-Find three disjoint open sets on the real line 
-that have the same nonempty boundary.
 \end{thm}
 
 \section{Subspaces}\label{sec:induced-topology}
@@ -252,7 +265,7 @@ It follows that if $f$ is continuous, then so is $f|_A\:A\to\c{Y}$;
 here we consider set $A$ with the induced topology.
 The following exercise provides a partial converse.
 
-\begin{thm}{Exercise}\label{ex:u-continuous}
+\begin{thm}[!]{Exercise}\label{ex:u-continuous}
 Let $f\:\c{X}\to \c{Y}$ be a map between topological spaces.
 Suppose $A,B\subset\c{X}$ are sets such that $A\cup B=\c{X}$ and either
 \begin{subthm}{ex:u-continuous:open}
@@ -269,7 +282,7 @@ Show that this is no longer true without assumptions of \ref{SHORT.ex:u-continuo
 
 \end{thm}
 
-\section{Cantor set}\label{sec:Cantor set}
+\section{Cantor set}\label{sec:Cantor set} %??? make a separate chapter + add lakes of Wada
 
 A point $p$ in a topological space $\c{X}$ is called \index{isolated point}\emph{isolated} if the one-point set $\{p\}$ is open in $\c{X}$.
 Note that a space is discrete if every point in it is isolated.
@@ -327,6 +340,11 @@ Furthermore, every open interval contains a rational number, and since the set o
 One might naively think that closed sets have a similar feature, but
 the Cantor set shows that this is not the case --- it is not a countable union of closed intervals (including one-point sets).
 
+\begin{thm}{Advanced exercise}\label{ex:3=bry}
+Find three disjoint open sets on the real line
+that have the same nonempty boundary.
+\end{thm}
+
 \section{Neighborhoods}
 
 %??? neighborhood>>>open neighborhood
@@ -372,7 +390,9 @@ In particular, a sequence might have several different limits.
 Furthermore, if we equip $\RR$ with the cofinite topology then any sequence of pairwise distinct numbers converges to every point in $\RR$.
 
 The following exercise shows that converging sequences do \textit{not} adequately describe the topology of a space;
-namely, an analog of \ref{ex:continuous-limit} does not hold.\footnote{So-called \index{net}\emph{nets} \cite{mcshane} provide an appropriate generalization of sequences that works well in topological spaces, but we are not going to consider them.}
+namely, an analog of \ref{ex:continuous-limit} does not hold.
+Unless you know what you are doing, avoid using limits in general topological spaces.%
+\footnote{So-called \index{net}\emph{nets} \cite{mcshane} provide an appropriate generalization of sequences that works well in topological spaces, but we are not going to consider them.}
 
 Recall that a set is called \index{countable set}\emph{countable} if it admits a bijection to a subset of the set of natural numbers.
 In particular, all finite sets are countable.

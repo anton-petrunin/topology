@@ -20,8 +20,8 @@ Since $\c{M}$ is compact, we can choose a finite subcover $\{\Ball(p_1,r_1),\ldo
 
 Let $\eps=\min\{r_1,\ldots,r_n\}$.
 For any $p\in\c{M}$ we can choose a ball $\Ball(p_i,r_i)\ni p$.
-Observe that $\Ball(p,\eps)\subset \Ball(p_i,2\cdot r_i)$.
-Since $\Ball(p_i,2\cdot r_i)$ lies in some $V_{\alpha}$, so is $\Ball(p,\eps)$.
+Since $\eps<r_i$, we have $\Ball(p,\eps)\subset \Ball(p_i,2\cdot r_i)$.
+Furthermore, since $\Ball(p_i,2\cdot r_i)$ lies in some $V_{\alpha}$, so is $\Ball(p,\eps)$.
 \qeds
 
 %\parit{Proof.} Consider the function $R\:\c{M}\to \RR$ defined by \[R(x)=\sup\set{r\in(0,1)}{\Ball(x,r)\subset V_\alpha\ \text{for some}\ \alpha}.\] Since $\{V_\alpha\}$ is an open cover of $\c{M}$, we have $R(x)>0$ for any $x$.
@@ -79,8 +79,8 @@ in particular, $\c{M}$ is not compact.
 
 The if part of the theorem will be done in \ref{sec:seq-comp-if} after proving a sequence of auxiliary statements.
 The proof can be divided in three steps.
-On the fist step (\ref{sec:nets}) we show that any sequentially compact is \textit{separable}; that is, it has a countable dense subset.
-On the second step (\ref{sec:countable-base}) we show that a separable metric space have countable base and any topological space with a countable base is \textit{Lindelöf}; that  is, every open cover contains a countable subcover
+On the first step (\ref{sec:nets}) we show that any sequentially compact space is \textit{separable}; that is, it has a countable dense subset.
+On the second step (\ref{sec:countable-base}) we show that a separable metric space have countable base and any topological space with a countable base is \textit{Lindelöf}; that  is, every open cover contains a countable subcover.
 On the last step (\ref{sec:seq-comp-if}) we combine these results.
 
 
@@ -95,8 +95,7 @@ Then for any $\eps>0$ there is a finite $\eps$-net in $\c{M}$.
 \end{thm}
 
 \parit{Proof}.
-Choose $\eps>0$.
-Consider the following recursive procedure. 
+Choose $\eps>0$ and apply the following recursive procedure.
 
 Choose a point $x_1$ in $\c{M}$.
 Further, choose a point $x_2$ such that $|x_1\z-x_2|>\eps$.
@@ -107,7 +106,7 @@ This procedure might terminate on the $n$-th step if there is no point $x_n$ suc
 In this case, the set $\{x_1,\ldots,x_{n-1}\}$ is an $\eps$-net in $\c{M}$ --- the lemma is proved.
 
 If the procedure does not terminate, we get an infinite sequence of points $x_1,x_2,\ldots$ such that $|x_i-x_j|>\eps$ for all $i\ne j$.
-Any of its subsequence has the same property; in particular none of its subsequences is Cauchy, so it cannot converge --- a contradiction.
+Any of its subsequence has the same property; in particular none of its subsequences can converge --- a contradiction.
 \qeds
 
 A topological space is called \index{separable space}\emph{separable} if it contains a countable dense subset.
@@ -168,7 +167,7 @@ By \ref{ex:base-nbhd}, for any $x\in\c{X}$ we can choose $i=i(x)$ such that $x\i
 Denote by $S$ the set of all indexes that appear as $i(x)$ for some $x$.
 Then $\{B_i\}_{i\in S}$ is a countable open cover that is inscribed in $\{V_\alpha\}$.
 That is, for every $B_i$ there is $\alpha_i$ such that $B_i\subset V_{\alpha_i}$.
-It remains to observe that $\{V_{\alpha_i}\}_{i\in S}$ is a countable cover of $\c{X}$.
+It remains to observe that $\{V_{\alpha_i}\}_{i\in S}$ is a countable cover of~$\c{X}$.
 \qeds
 
 A topological space is called \index{Lindelöf space}\emph{Lindelöf} if every open cover contains a countable subcover;
@@ -279,7 +278,7 @@ for every $x\in \Ball (p, r(p))$.
 
 \end{thm}
 
-\section{An application}
+\section{An application} %??? + Hausdorff metric, reduce to convex case?
 
 \begin{thm}{Theorem}\label{thm:isoperim}
 Among all plane curves of given length $L$, only circles bound the greatest area.
@@ -340,7 +339,7 @@ $\gamma\mapsto \area F_\gamma$ is continuous.
 {
 
 \begin{wrapfigure}[6]{r}{46 mm}
-\vskip-5mm
+\vskip-7mm
 \centering
 \includegraphics{mppics/pic-790}
 \end{wrapfigure}
@@ -358,11 +357,12 @@ It is sufficient to show that
 \eqlbl{eq:area-cont}\]
 for any $\gamma_1,\gamma_2\in \Gamma$.
 
+}
 
 Note that $F_{\gamma_2}$ lies in an $\tfrac Ln$-neighborhood of $F_{\gamma_1}$.
 Moreover for any $p\in F_{\gamma_2}\setminus F_{\gamma_1}$ there is $x\in\partial F_{\gamma_1}$ such that $|p-x|<\tfrac Ln$.
 Observe that length of $\partial F_{\gamma_1}$ cannot exceed~$L$.
-Whence we can choose an $n$ points $x_1,\ldots,x_n$ such that for any $x\in \partial F_{\gamma_1}$ there is $x_i$ such that $|x-x_i|<\tfrac Ln$.
+Whence we can choose $n$ points $x_1,\ldots,x_n$ such that for any $x\in \partial F_{\gamma_1}$ there is $x_i$ such that $|x-x_i|<\tfrac Ln$.
 It follows that $|p-x_i|<2\cdot\tfrac Ln$ for some $i$, and
 \[F_{\gamma_2}\setminus F_{\gamma_1}\subset \bigcup_{i=1}^{n}\Ball(x_i,2\cdot \tfrac Ln).\]
 Since $\area\Ball(x,r)_{\RR^2}=\pi\cdot r^2$ we get
@@ -370,10 +370,9 @@ Since $\area\Ball(x,r)_{\RR^2}=\pi\cdot r^2$ we get
 and \ref{eq:area-cont} follows.
 \qeds
 
-}
-
-We just described a very common type of application of compactness, which is worth knowing.
-Note that we used a huge compact space $\Gamma$;
+In this proof, we have introduced the space $\Gamma$, proved that it is compact and used that a continuous function on a compact space attends its minimum.
+This is a very common application of compactness.
+Note that our space $\Gamma$ was huge;
 say, $\Gamma$ cannot be embedded into $\RR^n$ for any $n$.
 In particular, one cannot apply standard calculus to $\Gamma$.
 

@@ -126,33 +126,6 @@ if
 $|x-y|_{\c{X}}<\eps$;
 draw a conclusion.
 
-\parbf{\ref{ex:comp+cont}.}
-Fix $x\in \c{X}$ and $y\in\c{Y}$
-such that $f(x)=y$.
-
-Fix $\epsilon>0$.
-Since $g$ is continuous at $y$, there is a positive value $\delta_1$ such that 
-$$|g(y')-g(y)|_{\c{Z}}<\epsilon
-\quad
-\text{if}
-\quad
-|y'-y|_{\c{Y}}<\delta_1.$$
-
-Since $f$ is continuous at $x$, there is $\delta_2>0$ such that 
-$$|f(x'-f(x)|_{\c{Y}}<\delta_1
-\quad
-\text{if}
-\quad
-|x'-x|_{\c{X}}<\delta_2.$$
-
-Since $f(x)=y$, we get that
-$$|h(x')-h(x)|_{\c{Z}}<\epsilon
-\quad
-\text{if}
-\quad
-|x'-x|_{\c{X}}<\delta_2.$$
-Hence the result.
-
 \parbf{\ref{ex:isom-cont}.} \ref{SHORT.ex:isom-cont:continuous}
 Show that the triangle inequality implies that
 $|f(x)-f(y)|_{\c{Y}}<\eps$
@@ -197,11 +170,6 @@ For example the inclusion $\Ball(x,1000)\subset\Ball(y,1)$ holds in the discrete
 
 \parbf{\ref{ex:def:cont-epsilon-delta=def:cont-balls}.}
 Spell the definitions.
-
-\parbf{\ref{ex:ball-is-open}.}
-If $y\in \Ball(x,R)$, then $r=R-|x-y|\z>0$.
-Use the triangle inequality to show that $\Ball(y,r)\z\subset \Ball(x,R)$.
-Draw a conclusion.
 
 \parbf{\ref{ex:open-union}.}
 Apply \ref{def:open}.
@@ -299,9 +267,6 @@ that is, $f(a)\ne f(b)$.
 Note that $W=\RR\setminus\{f(a)\}$ is an open set containing $b$.
 Assume $f$ is continuous.
 Then $\{b\}=f^{-1}(W)$ is an open set --- a contradiction.
-
-\parbf{\ref{ex:composition-continuous}.}
-Apply the definitions.
 
 \parbf{\ref{ex:Rge}}. Note that $S\in \s{T}$ if and only for any $x_0\le x_1$, if $x_0\in S$, then $x_1\in S$.
 
@@ -470,9 +435,6 @@ Suppose that the sets are $P=\{p_1,p_2,\ldots \}$ and $Q=\{q_1,q_2,\dots\}$.
 Try to construct a sequence of homeomorphisms $\Phi_n\:\RR^2\z\leftrightarrow\RR^2$ such that
 $\Phi_n$ converges to a homeomorphism $\Phi\:\RR^2\leftrightarrow\RR^2$ and for any $n$ we have $\Phi_n(\{p_1,\ldots,p_n\})\z\subset Q$ and $\Phi_n^{-1}(\{q_1,\dots,q_n\})\z\subset P$.
 
-\parbf{\ref{ex:bijective-closed-open}.}
-Apply the definitions.
-
 \parbf{\ref{ex:closed-open-cont}.}
 Try the maps between two-point spaces with appropriate topologies.
 
@@ -552,19 +514,6 @@ Construct two disjoint arithmetic progressions that do not admit disjoint open n
 \parbf{\ref{ex:move-topology:pushforward}.} Check the conditions in \ref{def:top-space} directly.
 
 \parbf{\ref{ex:pullback/pushforward}+\ref{ex:category-def-pull-push}.} Spell out the definitions.
-
-\parbf{\ref{ex:open-closed-pushforward}.}
-Since $f$ is continuous, $V=f^{-1}(W)$ is open for any open set $W\subset \c{Y}$.
-It remains to show that if $V$ is open, then so is $W\subset \c{Y}$.
-
-Note that $W=f(V)$.
-If $f$ is open, then $W=f(V)$ is open as well.
-
-Set $A=\c{X}\setminus V$ and $B=\c{Y}\setminus W$.
-Since $V$ is open $A$ is closed.
-Since $f$ is surjective, $B=f(A)$.
-Since $f$ is a closed map, $B=f(A)$ is closed as well.
-Therefore, $W=\c{Y}\setminus B$ is open.
 
 \parbf{\ref{ex:eq-relation-f}.}
 Check the conditions in the definitions of equivalence relation and equivalence class.
@@ -1216,10 +1165,7 @@ Note that $f_i\circ h_t$ is a homotopy from $f_i$ to the constant map $x\mapsto 
 Choose a path from $y_1$ to $y_2$ and use it to construct a homotopy from $f_0\circ h_1$ to $f_1\circ h_1$.
 Concatenate the obtained homotopies.
 
-\parbf{\ref{ex:homotopy-type}.}
-Spell the definitions.
-
-\parbf{\ref{ex:homotopy-type-contractible}.}
+\parbf{\ref{ex:homotopy-type} + \ref{ex:homotopy-type-contractible}.}
 Spell the definitions.
 
 \parbf{\ref{ex:homotopy-equivalence}.} Show and use that $h\sim h\circ f\circ g\sim g$.
@@ -1235,6 +1181,8 @@ Observe and use that both sets form retracts of the plane figure in the picture.
 
 \parbf{\ref{ex:mapping-cylinder}.}
 Read about mapping cylinder.
+
+\parbf{\ref{ex:mobius-cylinder}.} Show that each space has a circle as deformainional retract.
 
 \parbf{\ref{ex:ab=e}.}
 Apply the claim.
@@ -1651,14 +1599,14 @@ Use instead their approximate versions $\tilde q_n$ and $\tilde s_n$, so the equ
 \parbf{\ref{ex:nonclosed-Gamma}.}
 One needs open complements to apply \ref{prop:van-kamp:sc} and \ref{ex:vankam-nonconnect}.
 
-If $\Gamma$ is not closed, then its complement might be connected, but not path connected.
-For example, the complement of $\Gamma$ can be $W'$ --- the flea and comb discussed in \ref{sec:flea and comb}.
-In this case the complement $\RR^3\setminus\Gamma$ is the union of upper and lower open half-spaces with $W'\times\{0\}$;
-it is easy to see that any loop that crosses the $(x,y)$-plane at the flea and returns thru the comb is not contractible in $\RR^3\setminus\Gamma$.
+If we do not assume that $\Gamma$ is closed, then its complement $X=\RR^2\setminus \Gamma$ migt be the flea and comb discussed in \ref{sec:flea and comb}.
+In this case, $Y=\RR^3\setminus \Gamma$ is the union of upper and lower open half-spaces with $X\times\{0\}$.
+The set $X$ is connected (altho not path-connected), but $Y=\RR^3\setminus \Gamma$ is not simply-connected.
+This statement might look evident, but actual proof is quite invalved.
 
-If the complement $\RR^2\setminus\Gamma$ is the union of two copies of fan $F$ (see \ref{ex:retract-strong-weak}) as shown on the picture
-then it is path-connected, but $\RR^3\setminus\Gamma$ is not simply-connected.
-Try to bootstrap a noncontractible loop in it.
+If the complement $X=\RR^2\setminus\Gamma$ is the union of two copies of fan $F$ (see \ref{ex:retract-strong-weak}) as shown on the picture
+then it is path-connected, but $Y=\RR^3\setminus\Gamma$ is not simply-connected.
+Try to bootstrap a noncontractible loop in it and prove that it is not noncontractible.
 
 \begin{Figure}
 \vskip-0mm

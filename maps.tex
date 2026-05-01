@@ -7,7 +7,8 @@ Recall that continuous maps were defined in \ref{sec:continuous-maps}; now we wi
 A bijection $f\:\c{X}\to\c{Y}$ between topological spaces 
 is called a \index{homeomorphism}\emph{homeomorphism} if $f$ and its inverse $f^{-1}\:\c{Y}\to\c{X}$
 are continuous.%
-\footnote{The term \textit{homomorphism} from abstract algebra looks similar and it has a similar meaning but should not be confused with a \textit{homeomorphism}.}
+\footnote{The terms \textit{homomorphism} and \textit{homeomorphism} look similar, and they have
+similar, but different meanings. Homomorphisms are creatures from abstract algebra; we will need them starting from Chapter~\ref{chap:algebra}.}
 
 Topological spaces $\c{X}$ and $\c{Y}$ are called \index{homeomorphic spaces}\emph{homeomorphic} (briefly, $\c{X}\simeq\c{Y}$) if there is a homeomorphism $f\:\c{X}\to\c{Y}$.
 
@@ -80,11 +81,14 @@ Similarly,
 $f$ is called \index{closed map}\emph{closed} if, for any closed set $Q\subset\c{X}$, the image $f(Q)$ is closed in $\c{Y}$.
 \end{thm}
 
-Observe that a homeomorphism can be defined as a \textit{continuous open bijection}.
+Note that a bijective map is open if its inverse is continuous.
+By \ref{prop:cont-closed}, we also have that a bijective map is closed if its inverse is continuous.
+Thus we get the following.
 
-\begin{thm}{Exercise}\label{ex:bijective-closed-open}
-Show that a bijective map between topological spaces is closed if and only if it is open.
+\begin{thm}{Observation}\label{ex:bijective-closed-open}
+A homeomorphism can be defined as a continuous open bijection and as a continuous closed bijection.
 \end{thm}
+
 
 \begin{thm}{Exercise}\label{ex:closed-open-cont}
 Give an example of a map $f$ between topological spaces such that

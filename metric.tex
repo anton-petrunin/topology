@@ -64,31 +64,32 @@ Show that if $(x,y)\mapsto |{x}-{y}|$ is a metric, then so is
 
 \section{Examples}\label{sec:examples(metric-spaces)}
 
-Let us give a few examples of metric spaces.
 
-\begin{itemize}
-\item\index{discrete space}\emph{Discrete space.}\label{page:Discrete metric}
+\parbf{Discrete space.}\index{discrete space}\label{page:Discrete metric}
 Let $\c{X}$ be an arbitrary set.
 For any $x,y\z\in\c{X}$,
 set $|x-y|\z=0$ if $x=y$ and $|x-y|=1$ otherwise.
 This metric is called the \index{discrete metric}\emph{discrete metric} on $\c{X}$ and the obtained metric space is called {}\emph{discrete}.
-\item\index{real line}\emph{Real line.} 
+
+\parbf{Real line.}\index{real line}
 The set $\mathbb{R}$ of all real numbers with the metric defined by $|x-y|$.
 (Unless it is stated otherwise, the real line $\mathbb{R}$ will be considered with this metric.)
-\item {}\emph{Metrics on the plane.}\label{page:Metrics on the plane}
+
+\parbf{Metrics on the plane.}
+\label{page:Metrics on the plane}
 Let us denote by $\mathbb{R}^2$ the set of all pairs $(x,y)$ of real numbers.
 Consider two points $p=(x_p,y_p)$ and $q=(x_q,y_q)$  in~$\mathbb{R}^2$.
 One can equip $\mathbb{R}^2$ with the following metrics:
 \begin{itemize}
 \item\index{Euclidean metric}\emph{Euclidean metric,} 
 $$|p-q|_2=\sqrt{(x_p-x_q)^2+(y_p-y_q)^2}.$$
-(Unless it is stated otherwise, the real line $\mathbb{R}^2$ will be considered with the Euclidean metric.)
+(Unless it is stated otherwise, the plane $\mathbb{R}^2$ will be considered with the Euclidean metric.)
 \item\label{Manhattan plane}\index{Manhattan plane}\emph{Manhattan metric,}  
 $$|p-q|_1=|x_p-x_q|+|y_p-y_q|.$$
 \item{}\emph{Maximum metric,} 
 $$|p-q|_\infty=\max\{|x_p-x_q|,|y_p-y_q|\}.$$
 \end{itemize}
-\end{itemize}
+
 
 \begin{thm}{Exercise}\label{ex:d1+d2+dinfty}
 Prove that (a)~$|{*}-{*}|_1$; (b)~$|{*}-{*}|_2$ and (c)~$|{*}-{*}|_\infty$ are metrics on $\mathbb{R}^2$.
@@ -119,8 +120,9 @@ Similarly, the interval $[0,1)$ is a metric space with metric taken from~$\RR$.
 \section{Continuous maps}\label{sec:metric-continuous}
 
 Recall that a real-to-real function $f$ is called \textit{continuous} 
-if \textit{for any $x_0\in \RR$ and any $\eps > 0$ there exists $\delta > 0$ such that $|f(x_0)-f(x)|\z<\eps$, whenever $|x_0-x|<\delta$}.
-It admits the following straightforward generalization to metric spaces:
+if \textit{for any $x_0\in \RR$ and any $\eps > 0$ there exists $\delta > 0$ such that}
+\[|x_0-x|<\delta\quad\Rightarrow\quad|f(x_0)-f(x)|<\eps.\]
+This definition admits the following straightforward generalization to metric spaces:
 
 \begin{thm}{Definition}\label{def:cont-epsilon-delta}
 A map $f\:\c{X}\to\c{Y}$ between metric spaces is called \index{continuous map}\emph{continuous} 
@@ -139,15 +141,44 @@ $$f(x)\df|x-z|_{\c{X}}$$
 is continuous.
 \end{thm}
 
-\begin{thm}{Exercise}\label{ex:comp+cont}
+\begin{thm}{Claim}\label{ex:comp+cont}
 Let $\c{X}$, $\c{Y}$ and $\c{Z}$ be metric spaces.
 Assume that the maps $f\:\c{X}\to\c{Y}$
 and $g\:\c{Y}\to\c{Z}$ are continuous,
 and 
 \[h=g\circ f\:\c{X}\to \c{Z}\] is their \index{composition}\emph{composition};
 that is, $h(x)=g(f(x))$ for any $x\in \c{X}$.
-Show that $h\:\c{X}\to\c{Z}$ is continuous at any point.
+Show that $h\:\c{X}\to\c{Z}$ is continuous.
 \end{thm}
+
+\parit{Proof.}
+Fix $\epsilon>0$, $x\in \c{X}$, and $y\in\c{Y}$
+such that $f(x)=y$.
+
+Since $g$ is continuous, there is $\delta_1>0$ such that
+$$
+|y'-y|_{\c{Y}}<\delta_1
+\quad
+\Rightarrow
+\quad
+|g(y')-g(y)|_{\c{Z}}<\epsilon.$$
+
+Since $f$ is continuous, there is $\delta_2>0$ such that
+$$|x'-x|_{\c{X}}<\delta_2|
+\quad
+\Rightarrow
+\quad
+f(x'-f(x)|_{\c{Y}}<\delta_1.$$
+
+Since $f(x)=y$, we get that
+$$
+|x'-x|_{\c{X}}<\delta_2
+\quad
+\Rightarrow
+\quad
+|h(x')-h(x)|_{\c{Z}}<\epsilon.$$
+Hence the result.
+\qeds
 
 \begin{thm}{Exercise}\label{ex:isom-cont}
 Let $f\:\c{X}\to\c{Y}$ be a distance-preserving map between metric spaces;
@@ -197,7 +228,7 @@ Analogously we may define {}\emph{closed balls}
 \[\cBall[x,r]=\cBall[x,r]_{\c{X}}=\set{y\in \c{X}}{|x-y|\le r}.\] 
 
 \begin{thm}{Exercise}\label{ex:d1+d2+dinfty-balls}
-Sketch the unit balls for the metrics $|{*}-{*}|_1$, $|{*}-{*}|_2$ and $|{*}-{*}|_\infty$ defined in \ref{sec:examples(metric-spaces)}.
+Sketch the closed unit balls for the metrics $|{*}-{*}|_1$, $|{*}-{*}|_2$ and $|{*}-{*}|_\infty$ defined in \ref{sec:examples(metric-spaces)}.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:r<2R}
@@ -230,7 +261,8 @@ A subset $V$ in a metric space $\c{X}$ is called \index{open set}\emph{open} if 
 
 In other words, $V$ is open if, together with each point, $V$ contains its $\eps$-neighborhood for some $\eps>0$.
 
-For example, any set in a discrete metric space is open since together with any point it contains its $1$-neighborhood.
+For example, any set in a discrete metric space is open.
+Indeed a $1$-neighborhoo of any point $p$ is the opne-point set $\{p\}$, and it lies in any set containing $p$.
 
 Further, the set of positive real numbers
 \[(0,\infty)=\set{x\in\RR}{x>0}\] 
@@ -239,22 +271,40 @@ On the other hand, the set of nonnegative reals
 \[[0,\infty)=\set{x\in\RR}{x\ge0}\]
 is not open since there are negative numbers in any neighborhood of~$0$.
 
-\begin{thm}{Exercise}\label{ex:ball-is-open}
-Show that any open ball in a metric space is open.%
-\footnote{In other words, show that for any $y\in \Ball(x,r)$ there is $\eps>0$ such that $\Ball(y,\eps)\z\subset\Ball(x,r)$.}
+\begin{thm}{Claim}\label{ex:ball-is-open}
+Show that any open ball in a metric space is an open set.
 \end{thm}
 
-\begin{thm}{Exercise}\label{ex:open-union}
-Show that the union of an arbitrary family of open sets is open.
+
+
+\parit{Proof.}
+Choose an open ball $\Ball(x,R)$.
+
+If $y\in \Ball(x,R)$, then $r=R-|x-y|\z>0$.
+The triangle inequality implies that if $|y-z|<r$, then $|x-z|\le |x-y|+|y-z|<R$.
+
+In other words, if $z\in \Ball(y,r)$, then $z\in \Ball(x,R)$.
+Equivalenltly, $\Ball(y,r)\z\subset\Ball(x,R)$.
+Hence the result.
+\qeds
+
+\begin{thm}[!]{Exercise}\label{ex:open-open}
+Prove the following:
+
+\begin{subthm}{ex:open-union}
+The union of an arbitrary family of open sets is open.
+\end{subthm}
+
+\begin{subthm}{ex:open-intersection}
+The intersection of two open sets is open.
+\end{subthm}
+
+\begin{subthm}{ex:union-of-balls}
+A set is open if and only if it is a union of open balls.
+\end{subthm}
+
 \end{thm}
 
-\begin{thm}{Exercise}\label{ex:open-intersection}
-Show that the intersection of two open sets is open.
-\end{thm}
-
-\begin{thm}{Exercise}\label{ex:union-of-balls}
-Show that a set in a metric space is open if and only if it is a union of balls.
-\end{thm}
 
 \begin{thm}{Exercise}\label{ex:infty-open-intersection}
 Give an example of a metric space $\c{X}$ and an infinite sequence of open sets $V_1,V_2,\ldots$
@@ -299,10 +349,10 @@ for some $\eps>0$.
 Since $f$ is continuous, by Definition~\ref{def:cont-balls}, there is $\delta>0$ such that
 \[f(\Ball(x,\delta)_{\c{X}})\subset \Ball(f(x),\eps)_{\c{Y}}.\]
 It follows that together with any point $x\in V$, the set $V$ contains $\Ball(x,\delta)$;
-that is, $V$ is open.
+so, $V$ is open.
 
 \parit{If part.} Fix $x\in \c{X}$ and $\eps>0$.
-According to Exercise~\ref{ex:ball-is-open}, 
+According to \ref{ex:ball-is-open},
 \[W=\Ball(f(x),\eps)_{\c{Y}}\] is an open set in $\c{Y}$.
 Therefore its inverse image $f^{-1}(W)$ is open.
 

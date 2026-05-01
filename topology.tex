@@ -1,5 +1,7 @@
 \chapter{Topological spaces}\label{chap:topological-spaces}
 
+Topology starts here; the previous chapeters provides motivation and examples.
+
 In the previous chapter we defined open sets in metric spaces
 and showed that continuity could be defined using only the notion of open sets.
 In this chapter we collect key properties of open sets and state them as axioms.
@@ -45,7 +47,7 @@ The family of all open sets in $\c{X}$ is called a \index{topology}\emph{topolog
 \end{thm}
 
 Usually we consider a set with just one topology, therefore it is acceptable to use the same notation for the set and the corresponding topological space.
-Rarely we will need to consider different topologies, say $\s{T}_1$ and $\s{T}_2$, on the same set $\c{X}$;
+Several times we will need to consider different topologies, say $\s{T}_1$ and $\s{T}_2$, on the same set $\c{X}$;
 in this case, the corresponding topological spaces will be denoted by $(\c{X},\s{T}_1)$ and $(\c{X},\s{T}_2)$.
 
 
@@ -134,14 +136,24 @@ Construct a nonconstant continuous map $\RR\to \c{X}$.
 \end{subthm}
 
 \begin{subthm}{ex:connect-two-point-maps:X->R}
-Show that any continuous function $\c{X}\to \RR$ is constant.
+Show that any continuous map $\c{X}\to \RR$ is constant.
 \end{subthm}
 
 \end{thm}
 
-\begin{thm}{Exercise}\label{ex:composition-continuous}
-Show that the composition of continuous maps is continuous. 
+\begin{thm}{Claim}\label{ex:composition-continuous}
+The composition of continuous maps is continuous.
 \end{thm}
+
+\parit{Proof.}
+Consider two coninuous maps $\c{X}\xrightarrow{f}\c{Y}\xrightarrow{g}\c{Z}$, and let
+\[h=g\circ f\:\c{X}\z\to\c{Z}.\]
+
+Choose an open set $W\subset \c{Z}$.
+Since $g$ is continuous, $V=g^{-1}(W)$ is open.
+Furthermore, since $f$ is continuous, $U=f^{-1}(V)$ is open.
+Observe that $U=h^{-1}(W)$ --- hence the result.
+\qeds
 
 \begin{thm}{Exercise}\label{ex:Rge}
 Let $\s{T}$ be a family of subsets of $\RR$ that consists of $\emptyset$, $\RR$ and the intervals $[a,\infty)$, $(a,\infty)$ for all $a\in\RR$.
@@ -162,7 +174,7 @@ Show that a function $f\:\RR\to\RR$ is nondecreasing if and only if it defines a
 
 In practice, continuity of maps between topological spaces is often verified indirectly.
 In particular, one can use \ref{ex:composition-continuous}
-together with results from \ref{sec:metric-continuous} and also apply the fact that \textit{any differentiable map defined on a subset of $\RR^n$ is continuous} (which should be familiar from calculus).
+together with results from \ref{sec:metric-continuous} and also apply that \textit{any differentiable map defined on a subset of $\RR^n$ is continuous} (which should be familiar from calculus).
 Bit latter, we will be more flexible in constructing continuous maps; see \ref{ex:u-continuous} and \ref{ex:cont-product-constr}.
 
 \begin{thm}{Exercise}\label{ex:|x|}

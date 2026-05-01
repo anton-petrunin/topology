@@ -1,6 +1,8 @@
 \chapter{Constructions}\label{chap:constructions}
 
-Here we introduce several constructions that produce new topological spaces from the given ones.
+In \ref{sec:induced-topology} we discussed induced topology.
+This construction produces a new topological spaces from the given one.
+Now we introduce several other constructions of this type.
 
 \section{Product space}\label{sec:Product space}
 
@@ -12,7 +14,9 @@ Recall that $\c{X}\times\c{Y}$ denotes the set of all pairs $(x,y)$ such that $x
 \end{figure}
 
 Suppose that the sets $\c{X}$ and $\c{Y}$ are equipped with topologies.
-Let us equip $\c{X}\times\c{Y}$ with topology by declaring that a set is open in $\c{X}\times\c{Y}$ if it can be presented as a union of sets of the following type: $V\times W$ for open sets $V\subset \c{X}$ and $W\subset \c{Y}$.
+Let us equip $\c{X}\times\c{Y}$ with topology by declaring that a set is open in $\c{X}\times\c{Y}$ if it can be presented as a union of sets of the following type:
+\[V\times W\df\set{(x,y)\in \c{X}\times\c{Y}}{x\in V,\ y\in W}\]
+for open sets $V\subset \c{X}$ and $W\subset \c{Y}$.
 In other words, a subset $O$ is open in $\c{X}\times\c{Y}$ if and only if
 for any point $(x,y)\in O$ there are open neighborhoods $V\subset \c{X}$ and $W\subset \c{Y}$ of $x$ and $y$, respectively
 such that $O\supset  V\times W$.
@@ -29,13 +33,12 @@ Parts \ref{SHORT.def:top-space:empty} and \ref{SHORT.def:top-space:u} in \ref{de
 It remains to check \ref{SHORT.def:top-space:n}.
 Consider two sets
 \[
-O=\bigcup_\alpha V_\alpha\times W_\alpha
+O=\bigcup_{\alpha\in\c{I}} V_\alpha\times W_\alpha
 \quad\text{and}\quad
-O'=\bigcup_\beta V'_\beta\times W'_\beta.
+O'=\bigcup_{\beta\in\c{J}} V'_\beta\times W'_\beta.
 \]
-where $\alpha$ and $\beta$ run in some index sets, say $\c{I}$ and $\c{J}$ respectively.
 We need to show that $O\cap O'$ can be presented as a union of products of open sets;
-the latter follows from the next set-theoretical identity
+the latter follows from the identity
 \[O\cap O'=\bigcup_{\alpha,\beta} (V_\alpha\cap V'_\beta)\times (W_\alpha\cap W'_\beta).\eqlbl{eq:nu=un}\]
 
 Checking  \ref{eq:nu=un} is straightforward.
@@ -52,6 +55,7 @@ Two maps $f\:\c{X}\to\c{Y}$ and $g\:\c{X}\to\c{Z}$ are continuous if and only if
 $x\mapsto (f(x),g(x))$ is a continuous map $\c{X}\to\c{Y}\times \c{Z}$.
 \end{thm}
 
+This observation can be used for construction continuous maps; the following exercise provides examples.
 
 \begin{thm}{Exercise}\label{ex:cont-product-constr}
 Let $f$ and $g$ be continuous real-valued functions on the topological space $\c{X}$.
@@ -67,7 +71,7 @@ for any subsets $A\subset\c{X}$, $B\subset\c{Y}$ and their product $A\times B$ i
 
 \begin{thm}{Exercise}\label{ex:cont-product}
 Construct a function $f\:[0,1]\times [0,1]\to [0,1]$ such that $f$ is not continuous, but the functions
-$x\mapsto f(a,x)$ and $x\mapsto f(x,b)$ are continuous for any $a,b\in [0,1]$.
+$x\mapsto f(a,x)$ and $x\mapsto f(x,b)$ are continuous for any constants $a,b\in [0,1]$.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:open-projection}
@@ -83,16 +87,16 @@ A family $\s{B}$ of open sets in a topological space $\c{X}$ is called its \inde
 
 By \ref{ex:union-of-balls}, \textit{open balls form a base of a metric space}.
 
-A base completely defines its topology,
-but typically a topology has many different bases.
+A base completely defines topology,
+but typical topology has many different bases.
 In metric spaces, for example, the set of all balls with rational radii is a base;
 another example is the set of all balls with radii smaller than $1$.
 
 In many cases, it is convenient (and also economical) to describe the topology by specifying its base.
 For example, the product topology on $\c{X}\times\c{Y}$ can be redefined as a \textit{topology with a base formed by all products $V\times W$, where $V$ is open in $\c{X}$, and $W$ is open in $\c{Y}$}.
 
-\begin{thm}{Exercise}\label{ex:base-nbhd}
-Let $\s{B}$ be a family of open sets in a topological space $\c{X}$.
+\begin{thm}[!]{Exercise}\label{ex:base-nbhd}
+Let $\s{B}$ be a family of open sets in a topological space~$\c{X}$.
 Show that $\s{B}$ is a base in $\c{X}$ if and only if for any point $x\in \c{X}$ and any neighborhood $N\ni x$ there is $B\in\s{B}$ such that $x\in B\subset N$.
 \end{thm}
 
@@ -134,7 +138,7 @@ It remains to check \ref{def:top-space:n}; suppose
 O'=\bigcup_\beta B'_\beta,
 \]
 where $\alpha$ and $\beta$ run in some index sets, and $B_\alpha$, $B'_\beta\in \s{B}$ for any $\alpha$ and~$\beta$.
-Then $x\in O\cap O'$ if and only if for some $\alpha$ and $\beta$ we have $x\in B_\alpha$ and $x\in B'_\beta$.
+Then $x\in O\cap O'$ if and only if $x\in B_\alpha$ and $x\in B'_\beta$ for some $\alpha$ and $\beta$.
 By \ref{SHORT.prop:base-any:n}, we can choose $B\in \s{B}$ so that $x\in B\subset B_\alpha \cap B'_\beta$.
 Since $B_\alpha \cap B'_\beta\subset O\cap O'$, it follows that 
 \[\textit{for any $x\in O\cap O'$ there is $B_x\in\s{B}$ such that 
@@ -175,7 +179,7 @@ Then a map $f\: \c{X} \to \c{Y}$ is continuous if and only if $f^{-1}(P)$ is ope
 There are almost no restrictions on a prebase --- we may start with any family $\s{P}$ of subsets that covers the whole space $\c{X}$ and define a topology by declaring that \textit{$\s{P}$ is a prebase for the topology}.
 It defines the weakest topology on $\c{X}$ such that every set of $\s{P}$ is open.
 
-\begin{thm}{Exercise}\label{ex:graph}
+\begin{thm}[!]{Exercise}\label{ex:graph}
 Let $\c{X}$ and $\c{Y}$ be topological spaces.
 
 \begin{subthm}{ex:graph:prebase}
@@ -202,7 +206,7 @@ By \ref{ex:graph:prebase}, these sets form a prebase in $\c{X}\times\c{Y}$ and i
 More generally, given a family of maps $f_\alpha\:S\to \c{Y}_\alpha$ from a set $S$ to topological spaces $\c{Y}_\alpha$, we can introduce a topology on $S$ by stating that the inverse images $f^{-1}_\alpha(W_\alpha)$ for open sets $W_\alpha\subset\c{Y}_\alpha$ form its prebase.
 It defines the topology on $S$ \index{induced topology}\emph{induced} by the maps $f_\alpha$;
 it is the weakest topology on $S$ that makes all maps $f_\alpha$ continuous.
-For example, if we apply this construction to the inclusion map $S\hookrightarrow \c{Y}$ of a subset $S\subset \c{Y}$, then we get {}\emph{induced topology} on $S$ (see \ref{sec:induced-topology}).
+For example, if we apply this construction to a sinle inclusion map $S\hookrightarrow \c{Y}$ of a subset $S\subset \c{Y}$, then we get {}\emph{induced topology} on $S$ (see \ref{sec:induced-topology}).
 
 This construction produces a topology on the source space;
 for that reason it is also called the \index{initial topology}\emph{initial topology}.
@@ -231,7 +235,7 @@ Show that it defines a topology on $\c{Y}$.
 \end{thm}
 
 The constructed topology on $\c{Y}$ is called the \index{final topology}\emph{final} topology for $f$.
-Note that points in $\c{Y}$ outside the image of $\c{X}$ form open one-point sets;
+Note that any point $y\in \c{Y}$ outside the image of $\c{X}$ forms an open one-point set $\{y\}$;
 indeed, if $y\notin f(\c{X})$, then $f^{-1}\{y\}=\emptyset$, and so $\{y\}$ is open.
 
 \begin{thm}{Exercise}\label{ex:pullback/pushforward}
@@ -262,11 +266,29 @@ Show that a map $h\:\c{Y}\to\c{Z}$ is continuous if and only if the composition 
 
 \end{thm}
 
-\begin{thm}{Exercise}\label{ex:open-closed-pushforward}
+\begin{thm}{Claim}\label{ex:open-closed-pushforward}
 Let $f\:\c{X}\to \c{Y}$ be a continuous surjective map.
 Assume $f$ is (a) open or (b) closed.
-Show that $\c{Y}$ has the final topology induced by $f$.
+Then $\c{Y}$ has the final topology induced by $f$.
 \end{thm}
+
+\parit{Proof.}
+Coose a set $W\subset \c{Y}$, and let $V=f^{-1}(W)$.
+Since $f$ is continuous, $V$ is open if $W$ is.
+Hence the topology on $\c{Y}$ has to be weaker than the final topology.
+
+\parit{(a).}
+Since $f$ is open, we have that $W$ is open if $V$ is.
+Thus the topology on $\c{Y}$ has to be stronger than the final topology, and the result follows.
+
+\parit{(b).}
+Set $A=\c{X}\setminus V$ and $B=\c{Y}\setminus W$.
+if $V$ is open, the $A$ is closed.
+Since $f$ is surjective, $B=f(A)$.
+Since $f$ is a closed map, $B=f(A)$ is closed as well.
+Therefore, $W=\c{Y}\setminus B$ is open.
+Again, the topology on $\c{Y}$ has to be stronger than the final topology, and the result follows.
+\qeds
 
 \section{Quotient topology}
 
@@ -290,7 +312,7 @@ The set of all equivalence classes in $\c{X}$ will be denoted by $\c{X}/{\sim}$.
 
 Observe that $x\mapsto [x]$ defines a surjective map $\c{X}\to \c{X}/{\sim}$.
 The corresponding final topology on $\c{X}/{\sim}$ is called the \index{quotient topology}\emph{quotient topology}.
-By default, $\c{X}/{\sim}$ is equipped with the quotient topology;
+By default, the set $\c{X}/{\sim}$ is equipped with the quotient topology;
 in this case, it is called a \index{quotient space}\emph{quotient space}.
 
 The following exercise ties equivalence relations with maps.
@@ -306,22 +328,25 @@ Moreover,
 Construct an equivalence relation $\sim$ on $[0,1]$ such that the quotient space $[0,1]/\sim$ is (a) a connected two-point space or (b) a concrete two-point space.
 \end{thm}
 
-
 Given a set $A$ in a topological space $\c{X}$, the space $\c{X}/A$ is defined as the quotient space $\c{X}/{\sim}$ for the minimal equivalence relation such that $a\sim b$ for any $a,b\in A$.
+Intuitively, the space $\c{X}/A$ is obtaind from $\c{X}$ by gluing together all points in $A$.
 
 \begin{thm}{Exercise}\label{ex:[0,1]/(0,1)}
 Describe the quotient space $[0,1]/(0,1)$, where $[0,1]$ and $(0,1)$ are real intervals;
 that is, list the points and the open sets of the quotient space.
 \end{thm}
 
-One may also check by hand that the quotient space $[0,1]/\{0,1\}\z\simeq\SS^1$;
+One may also check by hand that $[0,1]/\{0,1\}\z\simeq\SS^1$;
 that is, the unit segment with identified ends is homeomorphic to the circle.
-Theorem \ref{obs:compact-to-hausdorff} will provide a very general tool that helps to prove such statements.
+However, Theorem \ref{obs:compact-to-hausdorff} will provide a very general tool that helps to prove such statements.
 
 \section{Actions}\label{sec:Actions}
 
 Let $\c{X}$ be a set.
-A subset $G$ of bijections $\c{X}\to \c{X}$ that includes the identity map $\id_{\c{X}}$ and is closed under composition and inversion is called a \index{group of symmetries}\emph{group of symmetries} of $\c{X}$.
+Recall that the \index{identity map}\emph{identity map} $\c{X}\to \c{X}$ takes a point in $\c{X}$ and returns the same point;
+it will be denoted by \index{$\id$}$\id_{\c{X}}\:\c{X}\to \c{X}$.
+
+A subset $G$ of bijections $\c{X}\to \c{X}$ that includes $\id_{\c{X}}$ and is closed under composition and inversion is called a \index{group of symmetries}\emph{group of symmetries} of $\c{X}$.
 In this case we may say that $G$ \index{action}\emph{acts} on $\c{X}$, briefly $G\acts\c{X}$.
 
 Typically we are interested in group actions that preserve some structure of the set $\c{X}$.
@@ -338,7 +363,7 @@ With this operation, $G$ becomes a \index{group}\emph{group}; that is, it meets 
 \begin{itemize}
 \item (associativity) for any $f,g,h\in G$ we have
 \[(f\cdot g)\cdot h=f\cdot (g\cdot h);\]
-\item (existence of neutral element) there exists $1\in G$ such that for every $g\in G$ we have
+\item (existence of neutral element) there exists an element $1\in G$ such that for every $g\in G$ we have
 \[1\cdot g=g\cdot 1=g;\]
 \item (inverse) for each $g\in G$ there exists $g^{-1}\in G$ such that
 \[g\cdot g^{-1}\z=g^{-1}\cdot g=1.\]
@@ -348,7 +373,7 @@ Associativity follows since it holds for composition, and one can take $1=\id_{\
 
 Finally note that an abstract group (that is, a set $G$ with product that meets the three properties above) acts on itself by $g\: h\mapsto g\cdot h$, so any group acts on some set.
 Furthermore, we may equip $G$ with discrete topology and this way we obtain a continuous action $G\acts G$.
-So you may think that actions are more fundamental than groups.
+(One may think that actions are more fundamental than groups.)
 
 For an action $G\acts \c{X}$, it is common to denote $g(x)$ by $g\cdot x$, where $g\in G$ and $x\in\c{X}$.
 Note that associativity implies that the expression
@@ -356,7 +381,7 @@ Note that associativity implies that the expression
 makes sense for any $g,h\in G$ and $x\in \c{X}$; that is, $g\cdot (h\cdot x)=(g\cdot h)\cdot x$.
 
 We just defined \index{left action}\emph{left actions}.
-In practice, left actions are used more often, and unless stated otherwise, by an action we will always mean a left action.
+In practice, left actions are used more often, and unless stated otherwise, by an action we will mean a left action.
 
 The \index{right action}\emph{right actions} are defined similarly but the homeomorphism $\c{X}\to \c{X}$ that corresponds to $g\in G$ is written as $x\mapsto x\cdot g$ and so $(x\cdot g)\cdot h=x\cdot (g\cdot h)$ for any $x\in \c{X}$ and $g,h\in G$.
 The right action of $G$ on $\c{X}$ is the same thing as a left action of the \index{opposite group}\emph{opposite group} $G^{\mathrm{op}}$,
@@ -396,7 +421,7 @@ that is, list the points and the open sets of the quotient space.
 
 \end{thm}
 
-\begin{thm}{Exercise}\label{ex:quotient-map}
+\begin{thm}[!]{Exercise}\label{ex:quotient-map}
 Suppose a group $G$ acts%
 \footnote{Recall that actions on topological spaces are assumed to be continuous.}
 on a topological space $\c{X}$ and $f\:\c{X}\to \c{X}/G$ is the quotient map.
