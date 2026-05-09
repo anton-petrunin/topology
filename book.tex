@@ -1,12 +1,14 @@
 \documentclass[twoside]{book}
 \usepackage[top=0.9in, bottom=0.9in,left=0.9in, right=0.9in, paperwidth=6in, paperheight=9in]{geometry}
 \usepackage{top}
+\usepackage{acts}
+\usepackage{top-book}
 
 \newcommand{\spell}[2]{#1} %for text
 %\newcommand{\spell}[2]{#2} %for spelling
 
 
-\def\thetitle{Introduction to topology}
+\def\thetitle{A minimalist intro to topology}
 \def\theauthors{Anton Petrunin}
 
 \hypersetup{
@@ -34,17 +36,20 @@ pdfauthor={\theauthors}
 \maketitle
 \thispagestyle{empty}
 
-Here is very preliminary noncomplete lectures from my introductory course in topology at PennState.
-They aim to be minimalist, conservative and rigourous.
-I used several sources, inducing  
-notes of Allen Hatcher \cite{hatcher},
+Here are incomplete lecture notes from my introductory course in topology at Penn State.
+They aim to be minimalist, conservative, and rigorous.
+The emphasis is on topology as a working tool.
+I include the basic notions and examples that are useful elsewhere.
+The main prerequisite is mathematical maturity; students should be comfortable with proofs.
+No topology is assumed; we use elementary set theory, calculus, and a small amount of group theory.
+
+Exercises that are used later in the text are marked with an exclamation point: \textbf{Exercise!}
+
+I used several sources, including Allen Hatcher's texts \cite{hatcher,hatcher-2002},
 lectures of Sergei Ivanov \cite{ivanov},
 the textbook of Czes Kosniowski \cite{kosniowski},
 and the textbook of Oleg Viro, Oleg Ivanov, Nikita Netsvetaev, and Viatcheslav Kharlamov \cite{VINKh}.
-
 I want to thank Rostislav Matveev for his help.
-
-Hope that someone will find it useful for something.
 
 \medskip
 
@@ -59,29 +64,19 @@ To view a copy of this license, visit \texttt{http://creativecommons.org/license
 \pdfbookmark[0]{\contentsname}{bm:toc}
 \tableofcontents
 
-\include{anekdot}
-\include{metric}
-\part{Point-set topology}
-\bookmarksetupnext{startatroot,level=0}
-\include{topology}
-\include{sets}
-\include{maps}
-\include{induced}
-\include{compact}
-\include{metric-plus}
-\include{hausdorff}
+\include{anekdot}\include{metric}\include{topology}\include{sets}\include{maps}\include{induced}\include{compact}\include{metric-plus}\include{hausdorff}\include{bair}
 \include{connect}
-%\part{Fundamental group}
-%\include{path-connect}
-%\include{pi1}
-%\include{algebra}
-%\include{homotopy}
-%\include{hom-type}
-%\include{s1}
-%\include{jordan}
+\include{path-connect}
+\include{homotopy}
+\include{pi1}
+\include{algebra}
+\include{s1}
+\include{covering}
+\include{uni-covering}
+\include{jordan}
 
 \appendix
-%\include{sol-kosniawski}
+
 
 \newgeometry{top=0.9in, bottom=0.9in,inner=0.55in, outer=0.45in}
 %\newgeometry{top=1.025in, bottom=1.025in,inner=0.5in, outer=0.625in, paperwidth=6.125in, paperheight=9.25in}%with bleed

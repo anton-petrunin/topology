@@ -140,7 +140,7 @@ Apply \ref{def:metric-space:b}.
 
 \parbf{\ref{ex:infinite-inverse-image}.}
 Learn about space-filling curves and think.
-Alternatively, guess the patern in the following graphs and pass to the limit.
+Alternatively, guess the pattern in the following graphs and pass to the limit.
 
 \begin{Figure}
 \vskip-0mm
@@ -166,17 +166,16 @@ For the second part, consider the balls $\Ball(2,3)$ and $\Ball(0,4)$ in $[0,\in
 
 \parit{Comment.} Note that we used that $\Ball(y,R)\z\ne \Ball(x,r)$,
 without this condition there are no general restrictions on $r$ in terms of $R$.
-For example the inclusion $\Ball(x,1000)\subset\Ball(y,1)$ holds in the discrete space.
+For example, the inclusion $\Ball(x,1000)\subset\Ball(y,1)$ holds in the discrete space.
 
 \parbf{\ref{ex:def:cont-epsilon-delta=def:cont-balls}.}
 Spell the definitions.
 
-\parbf{\ref{ex:open-union}.}
+\parbf{\ref{ex:open-open}}; \ref{SHORT.ex:open-union}+\ref{SHORT.ex:open-intersection}.
 Apply \ref{def:open}.
 
-\parbf{\ref{ex:open-intersection}.} Apply \ref{def:open}.
-
-\parbf{\ref{ex:union-of-balls}.} The if part follows from \ref{ex:ball-is-open} and \ref{ex:open-union}.
+\parit{\ref{SHORT.ex:union-of-balls}.}
+The if part follows from \ref{ex:ball-is-open} and part \ref{SHORT.ex:open-union}.
 It remains to prove the only-if part.
 
 Let $V$ be an open set.
@@ -207,7 +206,7 @@ Observe that $\Ball(y,\tfrac r2)\z\cap \Ball(z,\tfrac r2)=\emptyset$ and arrive 
 
 \parbf{\ref{ex:continuous-limit}.}
 Suppose $f$ is not continuous.
-This means that there is a point $x_\infty$ and $\eps>0$ such that there is a point $x_n\in \Ball(x_\infty,\tfrac1n)$ such that $|f(x_n)-f(x_\infty)|>\eps$.
+This means that there are $x_\infty$ and $\eps>0$ such that for every $n$ there is a point $x_n\in \Ball(x_\infty,\tfrac1n)$ with $|f(x_n)-f(x_\infty)|>\eps$.
 In particular, $y_n=f(x_n)$ does not converge to $y_\infty=f(x_\infty)$.
 It proves the if part of the exercise.
 
@@ -226,7 +225,7 @@ Try to choose a sequence of integers $m_n$ such that $x_{n,m_n}\to z$ as $n\to\i
 Draw a conclusion.
 
 \parbf{\ref{ex:closed-open-complement}.}
-Show that $Q$ is closed if $x\in Q$ if and only if $\Ball(x,\eps)\cap Q\ne\emptyset$ for any $\eps>0$.
+Show that $Q$ is closed if and only if $x\in Q$ whenever $\Ball(x,\eps)\cap Q\ne\emptyset$ for any $\eps>0$.
 Show that the latter is equivalent to $y\in V$ if and only if $\Ball(y,\eps)\subset V$ for some $\eps>0$.
 Draw a conclusion.
 
@@ -268,7 +267,7 @@ Note that $W=\RR\setminus\{f(a)\}$ is an open set containing $b$.
 Assume $f$ is continuous.
 Then $\{b\}=f^{-1}(W)$ is an open set --- a contradiction.
 
-\parbf{\ref{ex:Rge}}. Note that $S\in \s{T}$ if and only for any $x_0\le x_1$, if $x_0\in S$, then $x_1\in S$.
+\parbf{\ref{ex:Rge}}. Note that $S\in \s{T}$ if and only if for any $x_0\le x_1$, if $x_0\in S$, then $x_1\in S$.
 
 \parit{\ref{SHORT.ex:Rge:top}.}
 Check the conditions in \ref{def:top-space} using the property above.
@@ -289,9 +288,11 @@ Conclude that $V$ is not open in $(\RR,\s{T})$, so $f\:(\RR,\s{T})\to(\RR,\s{T})
 \parbf{\ref{ex:|x|}.}
 Apply \ref{ex:composition-continuous} together with the fact that $x\mapsto |x|$ is a continuous real-to-real function (the latter is assumed to be known from calculus).
 
+\parbf{\ref{ex:lim-weaker}+\ref{ex:cocountable-top}.}
+Apply the definition of the convergence.
+
 \parbf{\ref{ex:open-intersection+metrizable}}; \ref{SHORT.ex:open-intersection+metrizable:a}
 Choose a metric that induces the topology on $\c{X}$.
-Let $Q$ be a closed set in $\c{X}$.
 Let $W_n$ be the union of $\tfrac1n$-balls centered at points in $Q$.
 Show that $W_n$ is open and that $Q=\bigcap W_n$.
 
@@ -302,6 +303,9 @@ Try to find the needed closed set in the connected two-point space; see \ref{sec
 Suppose $V$ is an open subset and $Q$ is its complement.
 Recall that $Q$ is closed; see \ref{sec:closed-sets}.
 Show and use that $V\subset A$ if and only if $Q\supset B$.
+
+\parbf{\ref{ex:dense-nbhd}.}
+Apply the definitions of neighborhood and dense set.
 
 \parbf{\ref{ex:kuratowski}};
 Show and use the following for any two subsets $A$ and $B$:
@@ -318,12 +322,14 @@ For the second part, try to choose a subset $A$ in $\RR$ so that it meets the fo
 \item $A$ and $\RR\setminus A$ are dense in some interval.
 \end{itemize}
 
-
 \parbf{\ref{ex:bry-closed}--\ref{ex:bry-bry}.}
 Apply the definitions of boundary and closed set.
 
-\parbf{\ref{ex:3=bry}.}
-Read about the Cantor set (\ref{sec:Cantor set}) and think.
+\parbf{\ref{ex:bry-nbhd}.}
+Let $A$ be a subset of a topological space $\c{X}$.
+Denote by $B$ its complement; that is $B\z=\c{X}\setminus A$.
+Show and use that the statement is equivalent to the following
+\[\c{X}\setminus\partial A =\mathring A\cup \mathring B.\]
 
 \parbf{\ref{ex:rel-int/cl}.}
 Spell the definitions.
@@ -352,7 +358,7 @@ Apply \ref{def:closed-properties:u} to show that $f^{-1}(Q)$ is closed.
 Apply \ref{prop:cont-closed} again.
 
 \parit{\ref{SHORT.ex:u-continuous:none}.}
-Consider function $f$ that is constant on disjoint sets $A$ and $B$ such that $\bar A\cap B\ne\emptyset$.
+Consider a function $f$ that is constant on disjoint sets $A$ and $B$ such that $\bar A\cap B\ne\emptyset$.
 
 \parbf{\ref{ex:Cantor}.}
 Use induction to show that $\c{C}_n$ is the set of reals $x\in [0,1]$ that can be written in base~$3$ without $1$ in the first $n$ digits.
@@ -362,17 +368,18 @@ For the second part, show that every $x\in \c{C}$ can be uniquely written in bas
 Use the last statement to construct a bijection from $\c{C}$ to $\Power(\NN)$, which is the set of all subsets of the set of positive integers $\NN$.
 By Cantor's theorem, $\Power(\NN)$ has greater cardinality than $\NN$.
 
-\parbf{\ref{ex:bry-nbhd}.}
-Let $A$ be a subset of a topological space $\c{X}$.
-Denote by $B$ its complement; that is $B\z=\c{X}\setminus A$.
-Show and use that the statement is equivalent to the following 
-\[\c{X}\setminus\partial A =\mathring A\cup \mathring B.\]
-
-\parbf{\ref{ex:dense-nbhd}.}
-Apply the definitions of neighborhood and dense set.
-
-\parbf{\ref{ex:lim-weaker}+\ref{ex:cocountable-top}.}
-Apply the definition of the convergence.
+\parbf{\ref{ex:3=bry}.}
+Denote by $V_n$ the open set that is removed from $\c{C}_{n-1}$ on the $n$-th step of construction of the Cantor set.
+So $V_n$ is a union of $2^{n-1}$ open segments of length $\tfrac1{3^n}$ each.
+Consider three sets
+\begin{align*}
+W_1&=V_1\cup V_4\cup V_7\cup\ldots
+\\
+W_2&=V_2\cup V_5\cup V_8\cup\ldots
+\\
+W_3&=V_3\cup V_6\cup V_9\cup\ldots
+\end{align*}
+Show and use that $\partial W_i=\c{C}$ for every $i$.
 
 \parbf{\ref{ex:bijection-ne-homeo}.}
 Let $f\:\c{X}\to\c{Y}$ be a homeomorphism.
@@ -380,7 +387,7 @@ By the definition of inverse, we have $f^{-1}(f(x))=x$ and $f(f^{-1}(y))=y$ for 
 Therefore, the existence of $f^{-1}\:\c{Y}\to\c{X}$ implies that $f$ is a bijection $\c{X}\leftrightarrow\c{Y}$.
 
 For the second part,
-try to find a continuous  bijection for the subspaces $A=[0,1)\cup \{2\}$ and $B=[0,1]$ of $\RR$.
+try to find a continuous bijection for the subspaces $A=[0,1)\cup \{2\}$ and $B=[0,1]$ of $\RR$.
 
 \parbf{\ref{ex:exp}.}
 Observe that $y\mapsto \ln y$ is the inverse of $x\mapsto e^x$,
@@ -388,7 +395,7 @@ and show that both functions are continuous.
 (You can use that differentiable functions are continuous.)
 
 \parbf{\ref{ex:arctan}.} 
-Try to build the needed function from $x\mapsto \arctan x$ or $x\mapsto e^{-e^x}$
+Try to build the needed function from $x\mapsto \arctan x$ or $x\mapsto e^{-e^x}$.
 
 \parbf{\ref{ex:homeo=eq}.}
 Apply the definitions of homeomorphism and \ref{ex:composition-continuous}.
@@ -414,14 +421,14 @@ such that each $V_n$ can be described by the inequality $r<f_n(\theta)$ in the p
 We can assume that $V_0$ is a round disc around the origin.
 
 Further construct a sequence of homeomorphisms $\phi_n\:V_{n-1}\to V_{n}$ such that
-the compositions $\Phi_n=\phi_n\circ\dots\circ\phi_1\:V_0\to V_n$ stabilizes for each $x\in V_0$;
+the compositions $\Phi_n=\phi_n\circ\dots\circ\phi_1\:V_0\to V_n$ stabilize for each $x\in V_0$;
 that is, $\Phi_n(x)$ is a fixed point for all sufficiently large $n$.
 Set 
 \[\Phi(x)=\lim_{n\to\infty} \Phi_n(x),\]
 and show that $\Phi$ defines the needed homeomorphism $V_0\leftrightarrow V$.
 
 \parit{Comment.}
-Note that the boundary of $V$ might be not homeomorphic the circle;
+Note that the boundary of $V$ might not be homeomorphic to the circle;
 an example can be guessed from the picture.
 
 \begin{Figure}
@@ -466,19 +473,6 @@ Check the following function
 
 \parbf{\ref{ex:open-projection}.} Spell the definitions.
 
-\parbf{\ref{ex:base-nbhd}}; \textit{if part.} 
-Choose an open set $N$.
-For any $x\in N$ choose an element $B_x$ of the base such that $x\in B_x\subset N$.
-Observe that 
-\[N=\bigcup_{x\in N}B_x.\]
-
-\parit{Only-if part.} Suppose that $\s{B}$ is a base.
-Then 
-\[N=\bigcup_{\alpha}B_\alpha,\]
-where $B_\alpha\in \s{B}$ for each $\alpha$.
-Then for any $x\in N$ there is $\alpha$ such that $B_\alpha\ni x$;
-in this case, $x\in B_\alpha\subset N$.
-
 \parbf{\ref{ex:base-N}.}
 Let $B_1=\{a_1,a_1+d_1,a_1+2\cdot d_1,\dots\}$ and $B_2=\{a_2,a_2+d_2,a_2+2\cdot d_2,\ldots\}$.
 Show that if $a\in B_1\cap B_2$, then
@@ -494,7 +488,7 @@ The resulting proof is not truly new; it is just the classical proof from Euclid
 
 \parbf{\ref{ex:graph}}; \ref{SHORT.ex:graph:prebase}
 Observe that $(V\times \c{Y})\cap(\c{X}\times W) \z= V\times W$.
-Further, show and use that all the sets $V\times W$ for open subset $V\subset \c{X}$ and $W\subset \c{Y}$ form a base in $\c{X}\times\c{Y}$.
+Further, show and use that all the sets $V\times W$ for open subsets $V\subset \c{X}$ and $W\subset \c{Y}$ form a base in $\c{X}\times\c{Y}$.
 
 \parit{\ref{SHORT.ex:graph:graph}.}
 To show that the map $F$ is continuous,
@@ -508,7 +502,7 @@ that is, for any two closed sets $A$ and $B$ there are open sets $V\supset A$ an
 (Topological spaces that share this property are called \index{normal space}\emph{normal};
 so you need to show that \textit{any metrizable space is normal}.)
 
-Observe that arithmetic progression is a closed set in the initial topology.
+Observe that an arithmetic progression is a closed set in the initial topology.
 Construct two disjoint arithmetic progressions that do not admit disjoint open neighborhoods. 
 
 \parbf{\ref{ex:move-topology:pushforward}.} Check the conditions in \ref{def:top-space} directly.
@@ -520,7 +514,7 @@ Check the conditions in the definitions of equivalence relation and equivalence 
 
 \parbf{\ref{ex:example/~}.}
 Choose a subset $A\subset [0,1]$ with nonempty complement and let $x\sim y$ if $x,y\in A$ or $x,y\notin A$.
-For part \textit{(a)}, choose $A$ to be open; for part \textit{(b)} chose a set that is neither open nor closed in $[0,1]$.
+For part \textit{(a)}, choose $A$ to be open; for part \textit{(b)} choose a set that is neither open nor closed in $[0,1]$.
 
 \parbf{\ref{ex:[0,1]/(0,1)}.}
 Show that it has three points $a=[0]$, $b=[\tfrac12]$, and $c=[1]$ and the open sets are
@@ -553,7 +547,7 @@ Assume that the space is nonempty; otherwise there is nothing to prove.
 Choose a nonempty set $V_0$ from the cover.
 Its complement is a finite set, say $\{x_1,\ldots,x_n\}$.
 For each $x_i$ choose a set $V_i\ni x_i$ from the cover.
-Observe that $\{V_0,V_1\ldots,V_n\}$ is a subcover.
+Observe that $\{V_0,V_1,\ldots,V_n\}$ is a subcover.
 
 
 
@@ -563,7 +557,7 @@ Check subsets in a concrete space.
 \parit{\ref{SHORT.ex:ucompact}.} Apply the definition of compact set.
 
 \parit{\ref{SHORT.ex:noncompact-n}.}
-Choose a noncompact space $\c{X}$ and consider topology on the union $\c{X}\cup\{a,b\}$ that includes
+Choose a noncompact space $\c{X}$ and the consider topology on the union $\c{X}\cup\{a,b\}$ that includes
 $\c{X}\cup\{a,b\}$, $\c{X}\cup\{a\}$, $\c{X}\cup\{b\}$ and all open sets in $\c{X}$.
 Observe that the sets $\c{X}\cup\{a\}$ and $\c{X}\cup\{b\}$ are compact, but their intersection is not.
 
@@ -585,17 +579,8 @@ Apply compactness of $\c{Y}$ to choose a finite set of points $y_1,\z\ldots,y_m\
 Conclude that $C_{y_1}\cap \z\ldots \cap C_{y_m}=\emptyset$ and arrive at a contradiction.
 
 
-\parbf{\ref{ex:disjoint-closed}.}
-Let us write $A\Supset B$ if $\mathring{A}\supset \bar B$.
-
-Construct a strongly nested sequence of intervals $[0,1]=[a_0,b_0]\Supset[a_1,b_1]\Supset\dots$ such that $[a_n,b_n]\cap Q_m=\emptyset$ for any $m\le n$.
-Apply the finite intersection property (\ref{prop:finite intersection property}) to show that the intersection $X=[a_0,b_0]\cap [a_1,b_1]\cap\dots$ is nonempty.
-Note that $X\cap Q_m=\emptyset$ for any $m$.
-
-\parit{Comment.}
-This is a close relative of the \index{Baire category theorem}\emph{Baire category theorem}.
-
-\parbf{\ref{ex:fun(compact)}.} Apply \ref{prop:comp-image} and \ref{obs:closed-bounded}.
+\parbf{\ref{ex:fun(compact)}.}
+Apply \ref{prop:comp-image} and \ref{obs:closed-bounded}.
 
 \parbf{\ref{ex:closed-bounded=compact}.}
 Apply \ref{prop:compact-closed} and \ref{thm:comp-interval}.
@@ -611,24 +596,24 @@ Apply \ref{prop:comp-image} to the projections $\c{X}\times\c{Y}\to\c{X}$ and $\
 
 \parbf{\ref{ex:fake-proof(thm:compact-product)}.}
 The last statement is wrong.
-Show by example that in general, the product $V_{\beta_i}\times W_{\beta_i}$ do \textit{not} cover $\c{X}\times\c{Y}$.
+Show by example that in general, the products $V_{\beta_i}\times W_{\beta_i}$ do \textit{not} cover $\c{X}\times\c{Y}$.
 
 \parbf{\ref{ex:S1-compact}};
 \ref{SHORT.ex:S1-compact:comp-image}.
-Write $\mathbb{S}^1$ is an image of closed interval under a continuous map, and apply \ref{prop:comp-image}.
+Write $\mathbb{S}^1$ is the image of closed interval under a continuous map, and apply \ref{prop:comp-image}.
 
 \parit{\ref{SHORT.ex:S1-compact:compact-closed}.}
 Use that $\mathbb{S}^1$ is a closed subset of $[-1,1]\z\times[-1,1]$.
 
 \parbf{\ref{ex:closed-graph}.}
-By \ref{prop:cont-closed}, it is sufficient to show that any closed set $A\subset\c{K}$ has closed inverse image $B=f^{-1}(A)\subset\c{X}$.
+By \ref{prop:cont-closed}, it is sufficient to show that any closed set $A\subset\c{Y}$ has closed inverse image $B=f^{-1}(A)\subset\c{X}$.
 
 Observe that the set $C=\Gamma\cap (\c{X}\times A)$ is closed,
 so its complement $U$ can be presented as a union $\bigcup V_\alpha\times W_\alpha$.
 
-Suppose $B$ is not closed, choose a point $p\z\in \bar B\backslash B$.
-Note that $\{p\}\times \c{K}$ is a compact set in~$U$.
-Argue as in \ref{thm:compact-product} to prove that there is an open set $N_p\ni p$ such that $N_p\times \c{K}\subset U$.
+Suppose $B$ is not closed; choose a point $p\z\in \bar B\backslash B$.
+Note that $\{p\}\times \c{Y}$ is a compact set in~$U$.
+Argue as in \ref{thm:compact-product} to prove that there is an open set $N_p\ni p$ such that $N_p\times \c{Y}\subset U$.
 Arrive at a contradiction.
 
 \parit{Remark.}
@@ -641,16 +626,25 @@ The following function $f\:\RR\to\RR$ has closed graph, but is not continuous:
 0&\text{if}\ x= 0.
 \end{cases}
 \]
-It shows that compactness of $\c{K}$ is a necessary assumption.
+It shows that compactness of $\c{Y}$ is a necessary assumption.
 
 \parbf{\ref{ex:power-power}.}
 If there is a converging subsequence $\mathfrak{p}_{i_1}$, $\mathfrak{p}_{i_2},\ldots$,
-then we can choose a set $S\subset \NN$ (so $S\in \c{A}$) such that $i_n\in S$ if $n$ is even and otherwise $i_n\notin S$.
-Observe that $\mathfrak{p}_{i_n}\in \mathfrak{V}_{S}$ if $n$ is even and otherwise $\mathfrak{p}_{i_n}\in \mathfrak{W}_{S}=\c{B}\setminus \mathfrak{V}_{S}$.
+then we can choose a set $S\subset \NN$ (which means $S\in \c{A}$) such that $i_n\in S$ if $n$ is even and otherwise $i_n\notin S$.
+Observe that $\mathfrak{p}_{i_n}\in \mathfrak{W}_{S}$ if $n$ is even and otherwise $\mathfrak{p}_{i_n}\in \mathfrak{V}_{S}=\c{B}\setminus \mathfrak{W}_{S}$.
 Draw a conclusion.
 
 \parbf{\ref{ex:lebesgue=1}.}
 Consider an infinite set of points with discrete metric.
+
+\parbf{\ref{ex:lebesgue-opt}.}
+Let $r=\eps-\eps'$.
+Show the existence of a finite cover by $r$-balls.
+For each $r$-ball choose an element of the covering that contains it.
+Show that the obtained subcover has Lebesgue number $\eps'$.
+
+On the other hand, choose small $\eps>0$ and consider an open cover by \textit{all} $\eps$-balls of $[0,1]$.
+Show that this cover does not have a finite subcover with Lebesgue number $\eps$.
 
 \parbf{\ref{ex:product-sequentially-compact}.}
 Given a sequence $z_n=(x_n,y_n)$, pass to a subsequence such that the $x$-coordinate converges.
@@ -672,7 +666,7 @@ Consider two sequences of points $x_0,x_1,\ldots$ and $y_0,y_1,\ldots$ in $\c{M}
 Observe that
 \[|x_0-y_0|\le |x_1-y_1|\le\ldots\]
 Show that one can pass to subsequences $x_{i_1},x_{i_2},\ldots$ and  $y_{i_1},y_{i_2},\ldots$ such that $x_{i_n}\z\to x_0$ and $y_{i_n}\z\to y_0$ as $n\to\infty$.
-Conclude that $|x_0-y_0|\z=|x_1-y_1|$; since the points $x_0$ and $y_0$ can be chosen arbitrary, it implies that $f$ is distance-preserving.
+Conclude that $|x_0-y_0|\z=|x_1-y_1|$; since the points $x_0$ and $y_0$ can be chosen arbitrarily, it implies that $f$ is distance-preserving.
 
 Observe that $f$ is injective.
 Use the argument above to conclude that $f(\c{M})$ is dense in $\c{M}$.
@@ -680,10 +674,10 @@ Note that $f(\c{M})$ is compact and therefore closed (see \ref{prop:hausdorff-co
 Conclude that $f$ is surjective and therefore bijective.
 
 \parit{Comment.}
-This statement is used to prove key properties of so-called \index{Gromov--Hausdorff metric}\emph{Gromov--Hausdorff metric} --- a metric on space of all (isometry classes of) compact metric spaces.
+This statement is used to prove key properties of so-called \index{Gromov--Hausdorff metric}\emph{Gromov--Hausdorff metric} --- a metric on the space of all (isometry classes of) compact metric spaces.
 
 \parbf{\ref{ex:closed-complete}.}
-We need to show that any Cauchy sequenc $q_1,q_2,\ldots$ in a closed subset $Q$ of a complete space $\c{M}$ converges to a point in $Q$.
+We need to show that any Cauchy sequence $q_1,q_2,\ldots$ in a closed subset $Q$ of a complete space $\c{M}$ converges to a point in $Q$.
 Convergence follows from completeness of $\c{M}$.
 It remains to use that $Q$ is closed.
 
@@ -699,7 +693,7 @@ Observe that $F_n$ is a finite $\tfrac1n$-net of $\c{M}$;
 that is,
 \[\c{M}=\bigcup_{z\in F_n} \Ball(z,\tfrac1n).\]
 
-Choose a sequence of points in $x_1,x_2,\ldots$ in $\c{M}$.
+Choose a sequence of points $x_1,x_2,\z\ldots\in\c{M}$.
 Apply the \index{diagonal procedure}\emph{diagonal procedure} (should be known from calculus) to extract a subsequence $y_1,y_2,\ldots$ such that for fixed choice $z_n\z\in F_n$ we have
 $y_m\in \Ball(z_n,\tfrac1n)$ for any $m\ge n$.
 Observe that $y_1,y_2,\ldots$ is Cauchy and use completeness of $\c{M}$.
@@ -716,7 +710,7 @@ in particular, $f(q)\ne q$ and so $q$ is not fixed.
 This is the \index{Banach fixed-point theorem}\emph{Banach fixed-point theorem}; it combines extreme simplicity and extreme usefulness.
 
 \parbf{\ref{ex:alm-min}.}
-Assume such point does not exist.
+Assume such a point does not exist.
 Then for any point $p$ there is a point $p'$ such that $|p-p'|<r(p)$ and $r(p')\le (1-\eps)\cdot r(p)$.
 Let $p_0,p_1,\ldots \in\c{M}$ be a sequence such that $p_i=p_{i-1}'$.
 Show and use that this sequence is Cauchy.
@@ -736,12 +730,12 @@ Since $\RR^2$ is complete, we can define
 Show that $\gamma_\infty\in\Gamma$.
 
 \parit{\ref{SHORT.ex:aa:compact}.} Choose a sequence $\gamma_1,\gamma_2,\ldots\in\Gamma$ and a countable dense set $\{t_1,t_2,\ldots\}$ in $[0,L]$.
-Apply the diagonal procedure to extract a subsequence $\gamma_{i_1}, \gamma_{i_2},\ldots$ such that for any $t_t$ the sequence $\gamma_{i_n}(t_k)$ converges as $n\to\infty$.
+Apply the diagonal procedure to extract a subsequence $\gamma_{i_1}, \gamma_{i_2},\ldots$ such that for any $t_k$ the sequence $\gamma_{i_n}(t_k)$ converges as $n\to\infty$.
 Show that this subsequence converges in $\Gamma$.
 
 \parbf{\ref{ex:round-disc}.}
 Assume that the boundary curve $\gamma$ is not a circle.
-Use convexity to show that all points of $\gamma$ except for a countable set $S$ are smooth; that is, their tangent lines is well-defined.
+Use convexity to show that all points of $\gamma$ except for a countable set $S$ are smooth; that is, their tangent lines are well-defined.
 Show that there is a circle $\sigma$ that crosses $\gamma$ at three distinct smooth points; furthermore, at one of these points, the tangent lines of $\gamma$ and $\sigma$ are distinct.
 Arrive at a contradiction.
 
@@ -753,10 +747,13 @@ The same holds for $W$ --- a contradiction.
 
 \parbf{\ref{ex:hausdorff-closure}.}
 Let $V$ and $W$ be a pair of open sets and $W'=\c{X}\setminus \bar V$.
-Show and use $V$ and $W$ meet \ref{def:hausdorff}
-if and only if
-$V$ and $W'$ meet \ref{def:hausdorff}.
+Show and use that $V$ and $W$ meet \ref{def:hausdorff} if and only if $V$ and $W'$ meet \ref{def:hausdorff}.
 
+\parbf{\ref{ex:hausdorff-n-points}.}
+By the definition of a Hausdorff space, we can choose open subsets $W_{ij}\ni x_i$ such that $W_{ij}\cap W_{ji}=\emptyset$ if $i\ne j$.
+Show that the sets
+\[V_i=\bigcap_{j\ne i}W_{ij}\]
+meet the required condition.
 
 \parbf{\ref{ex:hausdorff-diagonal}.}
 The set $\Delta$ is closed if and only if its complement $U=(\c{X}\times\c{X})\setminus\Delta$ is open.
@@ -767,17 +764,14 @@ Show and use that the latter means that there is a family $\{(V_\alpha,W_\alpha)
 Choose a point $(x,y_1)\notin \Gamma$.
 Let $y_0=f(x)$.
 Let $V\ni y_0$ and $W\ni y_1$ be as in the neighborhoods provided by Hausdorffness of $\c{Y}$.
-Show that $f^{-1}(V)\times W$ is a neighborhood of $(x,y_1)$ that does not intersect $\Gamma$;
-draw a conclusion.
+Show that $f^{-1}(V)\times W$ is a neighborhood of $(x,y_1)$ that does not intersect $\Gamma$; draw a conclusion.
 
-\parit{Remark.}
-This is another part of the \index{closed graph theorem}\emph{closed graph theorem}; compare to \ref{ex:closed-graph} and \ref{ex:graph:graph}.
+\parit{Remark.} This is another part of the \index{closed graph theorem}\emph{closed graph theorem}; compare to \ref{ex:closed-graph} and \ref{ex:graph:graph}.
 
 \parbf{\ref{ex:product} + \ref{ex:Hausdorff+inj}.} Spell the definitions.
 
 \parbf{\ref{ex:normal-hausdorff}.}
-By \ref{thm:hausdorff-compact-t3}, for any $y\in L$ there is a pair of open sets $V_y$, $W_y$ such that $V_y\supset K$ and $W_y\ni y$
-such that $V_y\cap W_y=\emptyset$.
+By \ref{thm:hausdorff-compact-t3}, for any $y\in L$ there is a pair of open sets $V_y$, $W_y$ such that $V_y\supset K$ and $W_y\ni y$ such that $V_y\cap W_y=\emptyset$.
 Mimic the proof of \ref{thm:hausdorff-compact-t3} using these pairs.
 
 \parbf{\ref{ex:X/A}.} Apply \ref{obs:compact-to-hausdorff} for the following maps:
@@ -794,8 +788,7 @@ The map $\DD^2\to \RR^3$ that is written from polar to spherical coordinates as
 Map $(s,t)\in\SS^1\times [0,1]$ to the point in $\RR^2$ with the polar coordinates $(s,t)$.
 
 \parbf{\ref{ex:convex-body}.}
-Let $K\subset\RR^3$ be a convex body;
-we can assume that the origin lies in the interior of $K$.
+Let $K\subset\RR^3$ be a convex body; we can assume that the origin lies in the interior of $K$.
 
 Show that the boundary $\partial K$ is compact.
 Show that any half-line that starts from the origin intersects $\partial K$ at a single point.
@@ -809,6 +802,9 @@ Use \ref{cor:cont-bijection=homeomorphism} to show that the natural map $V^\inft
 \parbf{\ref{ex:compact-Hausdorff-closed}.}
 Compactness of $\c{Y}$ follows from \ref{prop:comp-image}; it remains to show its Hausdorffness.
 
+Since $\c{X}$ is Hausdorff, one-point sets in $\c{X}$ are closed.
+Since $f$ is closed and onto, one-point sets in $\c{Y}$ are closed as well.
+
 Choose two points $y_1,y_2\in\c{Y}$.
 Observe that $K_1=f^{-1}\{y_1\}$ and $K_2=f^{-1}\{y_2\}$ are closed and therefore compact subsets of $\c{X}$.
 Apply \ref{ex:normal-hausdorff} to get disjoint open sets $V_1\supset K_1$ and $V_2\supset K_2$.
@@ -816,13 +812,16 @@ Further, look at the sets $W_i=\c{Y}\setminus f(\c{X}\setminus V_i)$ and think.
 
 \parbf{\ref{ex:first-countable-seq}.}
 Let $N_1$, $N_2,\ldots$ be the sequence of neighborhoods of $x$ provided by the definition of first-countable space.
+We can assume that $N_1\z\supset N_2\supset \z\ldots$; otherwise replace $N_n$ by $N_1\cap\z\ldots\cap N_n$.
+
 If $x\in\bar A$, then we can choose $x_n\in N_n\cap A$ for every $n$.
 Show that $x_n\to x$.
 This proves the only-if part.
-Show that the if part holds for any space, not necessary first-countable.
+
+Show that the if part holds for any space, not necessarily first-countable.
 
 \parbf{\ref{ex:ezh}.}
-Let $V_1$, $V_2,\ldots$ be sequence of neighborhoods of $x_0=[0]\in \c{X}$.
+Let $V_1$, $V_2,\ldots$ be a sequence of neighborhoods of $x_0=[0]\in \c{X}$.
 Construct an open set $W$ in $\c{X}$ such that $V_n\not\subset W$ for any $n$.
 Conclude that $\c{X}$ is not first-countable.
 
@@ -830,7 +829,7 @@ Conclude that $\c{X}$ is not first-countable.
 Argue as in \ref{ex:cont-product-constr} and do some algebra.
 Take $V=f^{-1}(-\infty,\frac12)$ and $W=f^{-1}(\frac12,+\infty)$.
 
-\parbf{\ref{ex:Т5}.}
+\parbf{\ref{ex:T5}.}
 Consider sets
 \begin{align*}
 V&=\bigcup_{a\in A} \Ball(a,\tfrac12\cdot \dist_Ba),
@@ -861,20 +860,25 @@ Apply the definition of Baire space to the sets $V_i'=V_i\cup (\c{X}\setminus W)
 \parit{\ref{SHORT.ex:Baire-subsets:loc}.}
 Spell the definitions.
 
+\parbf{\ref{ex:disjoint-closed}.}
+Construct a strongly nested sequence of intervals $[0,1]=[a_0,b_0]\Supset[a_1,b_1]\Supset\dots$ such that $[a_n,b_n]\cap Q_m=\emptyset$ for any $m\le n$.
+Apply the finite intersection property (\ref{prop:finite intersection property}) to show that the intersection $X=[a_0,b_0]\cap [a_1,b_1]\cap\dots$ is nonempty.
+Note that $X\cap Q_m=\emptyset$ for any $m$.
+
 \parbf{\ref{ex:closed-G-delta}.} Argue as in \ref{ex:open-intersection+metrizable:a}.
 
 \parbf{\ref{ex:G-delta=closed n dense-G-delta}}; \ref{SHORT.ex:G-delta=closed n dense-G-delta:closed}
 Let $G=V_1\cap V_2\cap\dots$ be a G-delta set in a topological space $\c{X}$; here each $V_i$ is an open set.
-Observe that $D=G\cup (\c{X}\setminus \bar G)$ is a dence G-delta set, $\bar G$ is closed, and
+Observe that $D=G\cup (\c{X}\setminus \bar G)$ is a dense G-delta set, $\bar G$ is closed, and
 $G=\bar G\cap D$.
 
 \parit{\ref{SHORT.ex:G-delta=closed n dense-G-delta:open}.}
 Note that $S=[0,\infty)$ is a G-delta set in $\RR$.
-Apply \ref{obs:G-delta} to show that $S$ is not an intersection of dence G-delta set with an open set in $\RR$.
+Apply \ref{obs:G-delta} to show that $S$ is not an intersection of a dense G-delta set with an open set in $\RR$.
 
 
 \parbf{\ref{ex:uncountable-Gdelta}.}
-Show and use that a complement of countable set in $\RR$ is G-delta.
+Show and use that a complement of a countable set in $\RR$ is G-delta.
 
 \parbf{\ref{ex:continuity-Gdelta}};
 \ref{SHORT.ex:continuity-Gdelta:cont}.
@@ -887,29 +891,29 @@ Further, show and use that $\Cont f=V_1\cap V_2\cap\ldots$
 \parit{\ref{SHORT.ex:continuity-Gdelta:Q}.} Show and use that for any integer $n$ and any irrational number $s$ there is $\eps>0$ such that $\eps$-neighborhood of $s$ contains none of the first $n$ rational numbers $q_1,\ldots,q_n$.
 
 \parbf{\ref{ex:Baire-closed-subsets}.}
-Let $G$ be a G-delta subset of complete metric space.
-Show and use that $G$ admits another metric that induces the same topology and makes $G$ to be a complete metric space.
+Let $G$ be a G-delta subset of a complete metric space.
+Show and use that $G$ admits another metric that induces the same topology and makes $G$ a complete metric space.
 
 For the second part, check the complement of $(\RR\setminus \QQ)\times \{0\}$ in $\RR^2$,
-here $\QQ\subset\RR$ denotes the subset or rational numbers.
+here $\QQ\subset\RR$ denotes the subset of rational numbers.
 
 \parbf{\ref{ex:nonborel-image}.}
 Let $\c{X}=\RR_d\times \RR$ where $\RR_d$ denotes the set $\RR$ equipped with the discrete topology.
-Note that graph $\Gamma$ of any (not necessarily continuous) function $f\:\RR_d\to \RR$ is a closed set in $\c{X}$.
+Note that the graph $\Gamma$ of any (not necessarily continuous) function $f\:\RR_d\to \RR$ is a closed set in $\c{X}$.
 Show and use that one can choose $f$ so that the projection of $\Gamma$ to $\RR$ is any given set, say a Vitali set.
 
 \parit{Comment.}
-In fact there are Borel sets in $\RR\times \RR$, which projections to $\RR$ are not Borel, but this is out of scope of my notes.
+In fact there are Borel sets in $\RR\times \RR$, whose projections to $\RR$ are not Borel, but this is out of scope of my notes.
 
 \parbf{\ref{ex:borel-square}.}
-Try to fix the following not very-well-defined map:
+Try to fix the following not very well-defined map:
 \[(0.d_1d_2\ldots)_2\to ((0.d_1d_3\ldots)_2,(0.d_2d_4\ldots)_2),\]
 where $(0.d_1d_2\ldots)_2$ denotes a number in base 2.
 
 
 \parbf{\ref{ex:connected->R}.}
-Assume contrary.
-Show and use that the sets $V=f^{-1}((0,\infty))$ and $W=f^{-1}((-\infty,0))$ form an open separating pair of $\c{X}$.
+Assume the contrary.
+Show and use that the sets $V=f^{-1}((0,\infty))$ and $W\z=f^{-1}((-\infty,0))$ form an open separating pair of $\c{X}$.
 
 \parbf{\ref{ex:nested-in-compact}.}
 Apply \ref{ex:nested-compact} to show that $Q_\infty$ is not empty.
@@ -930,7 +934,7 @@ Use it to check the conditions in \ref{prop:base-any}.
 If a prime number $d$ is larger than $a_1$ and $a_2$, then $(a_1+\NN_0\cdot d)\cap (a_2+\NN_0\cdot d)=\emptyset$.
 Use this to show that the space is Hausdorff.
 
-Consider a finite sequence of elements of base $a_1+\NN_0\cdot d_1,\ldots, a_n+\NN_0\cdot d_n$.
+Consider a finite sequence of elements of the base $a_1+\NN_0\cdot d_1,\ldots, a_n+\NN_0\cdot d_n$.
 Show that the product $d_1\cdots d_n$ does not belong to any of them.
 Apply \ref{ex:inscribed-cover-base} and \ref{obs:inscribed-cover} to conclude that the space is noncompact.
 
@@ -942,7 +946,7 @@ Observe that $a_3+\NN_0\cdot  d_3\subset V$ for some $d_3$ such that $\gcd(a_3,d
 Show that $(a_3+\NN_0\cdot d_3)\cap (a_2+\NN_0\cdot d_2)\ne \emptyset$ and arrive at a contradiction.
 
 \parit{Comment.}
-This problem and solution with more details are discussed in the note by Solomon Colomb \cite{golomb}
+This problem and solution with more details are discussed in the note by Solomon Golomb \cite{golomb}.
 
 \parbf{\ref{ex:quotient-connected}.}
 Apply \ref{prop:image-connected}.
@@ -961,7 +965,7 @@ Apply \ref{prop:connected[0,1]}, \ref{prop:image-connected}, and \ref{prop:union
 Apply \ref{obs:A<B<bar-A}.
 
 \parit{\ref{SHORT.ex:nonopen-connected-component:open}.}
-Consider the following subspace of real line $A=\{0,1,\tfrac12,\tfrac13,\ldots\}$.
+Consider the following subspace of the real line $A=\{0,1,\tfrac12,\tfrac13,\ldots\}$.
 Show that the one-point set $\{0\}$ is a connected component in $A$ and it is not open in $A$.
 
 \parit{\ref{SHORT.ex:nonopen-connected-component:finite}.}
@@ -996,18 +1000,18 @@ Count points with given number of components in the complement for each space.
 \parbf{\ref{ex:Q/H}.}
 Let $x$ be the cross point,
 let $c\ne x$ be a point on the circle,
-let $e$ be one of two endpoints of the segment,
+let $e$ be one of the two endpoints of the segment,
 and let $i$ be a point on the segment that is distinct from $x$ and not an endpoint.
 Show that $Q/H$ has just 4 points $[x]$, $[c]$, $[e]$, and $[i]$ (argue as in \ref{ex:not-homeo}).
 List the open subsets of $\{[x], [c], [e], [i]\}$.
 
 \parbf{\ref{ex:sierpinski}};
 \ref{SHORT.ex:sierpinski:connected}
-Let $T_n$ be the union of all sides of the $3^n$ triangles after $n$-th iteration.
+Let $T_n$ be the union of all sides of the $3^n$ triangles after the $n$-th iteration.
 Note that the sequence is nested; that is, $T_0\subset T_1\subset \dots{}$
 Use induction to show that each $T_n$ is connected.
 Conclude that the union $T=T_0\cup T_1\cup\ldots$ is connected.
-Finally, show that Sierpi\'nski triangle is the closure of $T$ and apply \ref{obs:A<B<bar-A}.
+Finally, show that the Sierpi\'nski triangle is the closure of $T$ and apply \ref{obs:A<B<bar-A}.
 
 \parit{\ref{SHORT.ex:sierpinski:homeogroup}.}
 Denote the Sierpi\'nski triangle by~$\triangle$.
@@ -1033,12 +1037,12 @@ or follow the argument in the note by Reinhard Börger \cite{borger}; see also \
 
 \parit{Comment.}
 From this statement we get that any path-connected Hausdorff space with at least two points must have at least continuum of points.
-Note that connected two-point space provides an example of finite path-connected space.
+Note that connected two-point space provides an example of a finite path-connected space.
 On the other hand, \ref{ex:colomb} provides an example of countable connected space.
 
 
 \parbf{\ref{ex:two-point-path-connected}.}
-Recall that connected two-point space has two point $a$ and $b$,
+Recall that connected two-point space has two points $a$ and $b$,
 and its open sets are $\emptyset$, $\{a\}$, and $\{a,b\}$.
 Show and use that $f\:[0,1]\z\to\c{X}$ defined by
 \[f(t)=
@@ -1059,7 +1063,7 @@ Show and use that $t\z\mapsto (a(t),b(t))$ is a path in $\c{X}\times\c{Y}$.
 
 \parbf{\ref{ex:flea-and-comb}.} The flea and the comb.
 
-\parbf{\ref{ex:nonpathconnected-closure}.} Look at the picture and think
+\parbf{\ref{ex:nonpathconnected-closure}.} Look at the picture and think.
 
 
 \begin{Figure}
@@ -1069,7 +1073,7 @@ Show and use that $t\z\mapsto (a(t),b(t))$ is a path in $\c{X}\times\c{Y}$.
 \end{Figure}
 
 \parbf{\ref{ex:path-connected-component-closed-open}.}
-Choose path-connected component $V$.
+Choose a path-connected component $V$.
 Assume its complement, say $W$, is nonempty.
 Observe that $W$ is a union of path-connected components.
 Therefore, $W$ is open, and the pair $V$, $W$ separates the space.
@@ -1080,7 +1084,7 @@ To prove the converse, apply \ref{thm:conncted/path-connected}
 Read the note by Tatsuo Homma \cite{homma} and think.
 
 \parit{Comments.}
-This is a well known puzzle; with the following interpretation, it appears in the book of
+This is a well-known puzzle; with the following interpretation, it appears in the book of
 Peter Winkler \cite[p. 121]{winkler}:
 \textit{Two monks climb the mountain on the same day, starting at the same time and altitude, but on different paths.
 The paths go up and down on the way to the summit (but never dip below the starting altitude).
@@ -1092,12 +1096,12 @@ Show and use that for any rational numbers $r\ne 0$ and $q$, the line $y=r\cdot 
 \parbf{\ref{ex:pseudocircle}.} Read about \index{pseudo-arc}\emph{pseudo-arc} and think.
 
 \parbf{\ref{ex:finite-connecte}.}
-Describe paths with two-point images and use this description to construct a path between given two points in a connected finite space.
+Describe paths with two-point images and use this description to construct a path between two given points in a connected finite space.
 
 \parbf{\ref{ex:locally-path-connected}}; \ref{SHORT.ex:locally-path-connected:comb}
-Show that the local path-connectedness holds at all points of comb, but does not hold at the flea.
+Show that the local path-connectedness holds at all points of the comb, but does not hold at the flea.
 
-\parit{\ref{SHORT.ex:locally-path-connected:not}.} Consider closure of the comb in $\RR^2$.
+\parit{\ref{SHORT.ex:locally-path-connected:not}.} Consider the closure of the comb in $\RR^2$.
 
 \parit{Comment.}
 Try to construct a path-connected space that is not locally path-connected at any point; can you make it compact?
@@ -1135,7 +1139,7 @@ t\cdot x&\text{if\ }x\notin J_0
 \]
 
 \parit{\ref{SHORT.ex:retract-strong-weak:weak}.}
-Assume $J_\infty$ is deformation retract;
+Assume $J_\infty$ is a deformation retract;
 let $h_t$ be the corresponding homotopy relative to $J_\infty$.
 Show that for any large $n$ we have
 \[|h_t(1,\tfrac1{2^n})-(1,0)|_{\RR^2}<\tfrac1{10}\] for any $t$
@@ -1148,8 +1152,8 @@ the latter contradicts \ref{SHORT.ex:retract-strong-weak:weak}.
 
 
 \parbf{\ref{ex:contractible}}.
-Let $h_t\:\c{X}\to \c{X}$ be a homotopy from the identity map to a constant map,
-so, $h_1(x)=p$ for any $x\in \c{X}$
+Let $h_t\:\c{X}\to \c{X}$ be a homotopy from the identity map to a constant map;
+so, $h_1(x)=p$ for any $x\in \c{X}$.
 
 \parit{\ref{SHORT.ex:contractible:path-connected}.}
 Show and use that $t\mapsto h_t(x)$ is a path from $x$ to $p$.
@@ -1180,12 +1184,9 @@ Observe and use that both sets form retracts of the plane figure in the picture.
 \end{Figure}
 
 \parbf{\ref{ex:mapping-cylinder}.}
-Read about mapping cylinder.
+Read about the mapping cylinder.
 
-\parbf{\ref{ex:mobius-cylinder}.} Show that each space has a circle as deformainional retract.
-
-\parbf{\ref{ex:ab=e}.}
-Apply the claim.
+\parbf{\ref{ex:mobius-cylinder}.} Show that each space has a circle as a deformation retract.
 
 
 \parbf{\ref{ex:assoc+neutral}}; \ref{SHORT.ex:assoc}.
@@ -1200,7 +1201,7 @@ if $0<t_0\le \tfrac12$.
 Apply Hausdorffness.
 
 \parit{\ref{SHORT.ex:neutral}.}
-Use induction to show that given integer $n\ge 1$ we have $a(t)=p$ for any $t\le 1-\tfrac1{2^n}$.
+Use induction to show that given an integer $n\ge 1$ we have $a(t)=p$ for any $t\le 1-\tfrac1{2^n}$.
 Apply Hausdorffness.
 
 \parit{Comment.}
@@ -1210,7 +1211,7 @@ It is instructive to check that both statements fail in the connected two-point 
 Consider the map $f\:[0,1]\times [0,1]\z\to \c{G}$ defined by
 $f\:(s,t)\mapsto a(t)\cdot b(s)$.
 Show that $f$ is continuous.
-Write both $a*b$ and $b*a$ as a composition of $f$ with a path from $(0,0)$ to $(1,1)$ in $[0,1]\times [0,1]$ and apply linear homotopy.
+Write both $a*b$ and $b*a$ as compositions of $f$ with a path from $(0,0)$ to $(1,1)$ in $[0,1]\times [0,1]$ and apply linear homotopy.
 
 \parbf{\ref{ex:sc-retract}.}
 Let $r\:\c{X}\to A$ be a retraction.
@@ -1236,10 +1237,10 @@ so the loop $a$ also defines a map $\SS^1\to \c{X}$.
 \end{Figure}
 
 Since any map $\SS^1\to \c{X}$ is null-homotopic, there is a free homotopy $a_\tau\:[0,1]\to\c{X}$
-such that $a_0=a$, $a_1=e_q$ for some $q\in \c{X}$ and for any $t$, and $a_\tau(0)=a_\tau(1)$ for any $\tau$.
+such that $a_0=a$, $a_1=e_q$ for some $q\in \c{X}$, and $a_\tau(0)=a_\tau(1)$ for any $\tau$.
 Consider the path $b(t)\df a_t(0)$.
 Show and use that
-$a\sim b*e_q*\bar b\sim e_{p}$.
+$a\sim b*e_q*\bar b\z\sim e_{p}$.
 
 For the last part, show and use that if $\c{X}$ is a contractible space, it is path-connected and any map $\SS^1\to \c{X}$ is null-homotopic.
 
@@ -1251,7 +1252,7 @@ Observe that $V$ and $W$ are homeomorphic to an open disc and the intersection $
 Construct contractible (and therefore simply-connected) open sets $V\z\supset \SS^2$ and $W\z\supset \DD^2$ and apply \ref{prop:van-kamp:sc}.
 
 \parbf{\ref{ex:homomorphism}.}
-Show that the neutral element is unique and apply definition of homomorphism and neutral element.
+Show that the neutral element is unique and apply the definition of homomorphism and neutral element.
 
 \parbf{\ref{ex:inner}.}
 Check the condition in the definition of homomorphism.
@@ -1294,7 +1295,7 @@ The same homotopies $r_\tau\circ a_i$ can be used to show that $i_*$ is an epimo
 $f_1\circ a\sim \bar c*(f_0\circ a)*c$ for any loop $a$ in $\c{X}$ based at $x_0$.
 
 \parit{\ref{SHORT.ex:uphi:hom-type}.}
-Let $f\:\c{X}\z\to\c{Y}$ and $h\:\c{Y}\z\to\c{X}$ be a homotopy equivalence and its homotopy inverse.
+Let $f\:\c{X}\z\to\c{Y}$ and $h\:\c{Y}\z\to\c{X}$ be a homotopy equivalence and a homotopy inverse.
 Apply \ref{SHORT.ex:uphi:uphi} to show that $(f\circ h)_*=f_*\circ h_*$ and $(h\circ f)_*=h_*\circ f_*$ are isomorphisms.
 Conclude that $f_*$ is an isomorphism.
 
@@ -1315,7 +1316,7 @@ Choose a point $p\in \RR^3$ and let $q=h(p)$.
 Observe that $\RR^3\setminus\{p\}$ is homeomorphic to $\RR^2\setminus\{q\}$.
 Show that $\pi_1(\RR^3\setminus\{p\})$ is trivial, but $\pi_1(\RR^2\setminus\{q\})$ is not and arrive at a contradiction.
 
-\parit{\ref{SHORT.ex:S2-D2}.} Show and use that after removing one point the sphere $\SS^2$ remains simply-connected, but $\DD^2$ may become not simply-connected.
+\parit{\ref{SHORT.ex:S2-D2}.} Show and use that after removing one point the sphere $\SS^2$ remains simply-connected, but $\DD^2$ need not remain simply-connected.
 
 \parit{\ref{SHORT.ex:bry->bry}.} Apply \ref{thm:pi1(S1)}, \ref{ex:retract*:0}, and the linear homotopy; see \ref{sec:Linear homotopy}.
 
@@ -1334,7 +1335,7 @@ Assume there is a homeomorphism $h\:K_1\to K_2$.
 Argue as in \ref{ex:not-homeo} and \ref{ex:bry->bry} to show that
 (1) $h$ maps interior points of $K_1$ to interior points of $K_2$,
 (2) $h$ maps boundary points of $K_1$ to boundary points of $K_2$,
-and (3) $h$ maps the attached segments of $K_1$ to attached segments of $K_2$.
+and (3) $h$ maps the attached segments of $K_1$ to the attached segments of $K_2$.
 Try to arrive at a contradiction.
 
 \parit{\ref{SHORT.ex:K=K}.}
@@ -1360,7 +1361,7 @@ Observe that the winding number vanishes in the unbounded component,
 and when one crosses the curve the winding number increases or decreases by $1$, depending on the direction of the curve at the point of crossing.
 
 \parit{Comment.}
-Observe that if the winding around the point is not zero, then it lies in the image of any continuous map $\DD^2\to\CC$, assuming that the boundary $\SS^1=\partial\DD^2$ maps along the given curve.
+Observe that if the winding around a point is not zero, then the point lies in the image of any continuous map $\DD^2\to\CC$, assuming that the boundary $\SS^1=\partial\DD^2$ maps along the given curve.
 
 \parbf{\ref{ex:covering-clopen}}; \ref{SHORT.ex:covering-clopen:point}.
 Let $V\ni p$ be an evenly covered open set with slices $\tilde V_\alpha$.
@@ -1384,7 +1385,7 @@ Note that at each crossing, both types of arrows must point both in and out.
 Label $\Theta$ by three types of arrows that point, say from left to right.
 Now try to label the edges in the picture.
 At each crossing, the three arrows must be either all incoming or all outgoing.
-If such labeling is impossible, then it is not a total space of a covering.
+If such a labeling is impossible, then it is not a total space of a covering.
 
 \parbf{\ref{ex:evenly-trivial}+\ref{ex:pull-back}.}
 Spell the definitions.
@@ -1395,9 +1396,6 @@ Spell the definitions, and be aware that composition of coverings might fail to 
 \parit{\ref{SHORT.ex:fibered-product(covering):8}.}
 Apply the definition; start with the 4 crossing points, there should be two types of arrows coming in and two coming out;
 follow the arrows on the two pictures to figure out how they are connected.
-
-\parbf{\ref{ex:unique-lift}.}
-Connect $y_0$ to $y$ by a path and apply the lemma.
 
 \parbf{\ref{ex:induced-hom-covering}};
 \ref{SHORT.ex:induced-hom-covering:injective}+\ref{SHORT.ex:induced-hom-covering:lift}+\ref{SHORT.ex:induced-hom-covering:action}.
@@ -1413,7 +1411,7 @@ Show and use that if a loop $b$ in $(\c{Z},z_0)$ lifts to loops in $(\c{X},x_0)$
 \parbf{\ref{ex:freely-discontinuous+compact}.}
 By \ref{prop:comp-image}, the quotient space $\c{X}/G$ is compact.
 Construct a finite cover of $\c{X}/G$ by evenly covered open sets $V_1,\dots, V_n$.
-We can assume that cover is minimal; that is some point $G\cdot x\in \c{X}/G$ is covered by one $V_i$.
+We can assume that the cover is minimal; that is, some point $G\cdot x\in \c{X}/G$ is covered by one $V_i$.
 Show that the slices of $V_i$ cover $\c{X}$ and apply compactness of $\c{X}$.
 
 \parbf{\ref{ex:freely-discontinuous+hausdorff}.}
@@ -1429,13 +1427,13 @@ it is a subdivision of $\RR\times[0,1]$ into smooth curves that include two hori
 \end{Figure}
 
 This action is freely discontinuous and the quotient space $\c{Y}=(\RR\times[0,1])/\ZZ$ is locally homeomorphic to $\c{X}$, but $\c{Y}$ is not Hausdorff;
-any two points $[(y_0,0)]\in \c{Y}$ and $[(y_1,1)]\in \c{Y}$ do not meet the Hausdorff's condition.
+any two points $[(y_0,0)]\in \c{Y}$ and $[(y_1,1)]\in \c{Y}$ do not satisfy the Hausdorff condition.
 
 \parit{Comment.}
 Note that both quotient spaces $(\RR\times[0,1))/\ZZ$ and $(\RR\times(0,1])/\ZZ$ are homeomorphic to $\SS^1\times [0,\infty)$;
-We can assume that curved in the Reeb foliation is mapped to horizontal circles $\SS^1\times\{t\}$.
-Therefore $\c{Y}$ is homeomorphic to space obtained gluing two copies of $\SS^1\times [0,\infty)$ by a homeomorphism $h\:\SS^1\times (0,\infty)\to \SS^1\times (0,\infty)$ that preserves the second coordinate.
-This homeomorphism is twisting $\SS^1\times\{t\}$ more and more as $t\to0$.
+We can assume that each curve in the Reeb foliation is mapped to horizontal circles $\SS^1\times\{t\}$.
+Therefore $\c{Y}$ is homeomorphic to the space obtained gluing two copies of $\SS^1\times [0,\infty)$ by a homeomorphism $h\:\SS^1\times (0,\infty)\to \SS^1\times (0,\infty)$ that preserves the second coordinate.
+This homeomorphism twists $\SS^1\times\{t\}$ more and more as $t\to0$.
 
 \parbf{\ref{ex:4-fold(8)}.}
 The solutions are not unique.
@@ -1455,7 +1453,7 @@ Prove that $i$ generates a $\ZZ_2$-action on $\tilde{\c{X}}$ and identify $\c{X}
 
 \parbf{\ref{ex:finiteZ2}.}
 Consider the set of all 6 vertices, 12 edges and 8 faces of the octahedron.
-Equip it with topology, by stating that each face is open, the set formed by edge with two adjacent faces is open, and the set formed by a vertex with 4 adjacent edges and 4 adjacent faces is open.
+Equip it with a topology, by stating that each face is open, the set formed by an edge with two adjacent faces is open, and the set formed by a vertex with 4 adjacent edges and 4 adjacent faces is open.
 Take a quotient of this space by an involution.
 
 
@@ -1472,39 +1470,39 @@ Assume the contrary and apply the Borsuk--Ulam theorem for the map
 \parit{\ref{SHORT.ex:sandwich}.}
 Given a unit vector $u\in \SS^2$ consider a perpendicular plane $\Pi(u)$ that divides $C$ evenly.
 Note that $\Pi(u)=\Pi(-u)$.
-Denote by $a(u)$, and $b(u)$, the volume of $A$ and $B$ on the side of $\Pi$ in the direction of $u$.
+Denote by $a(u)$, and $b(u)$, the volumes of $A$ and $B$ on the side of $\Pi$ in the direction of $u$.
 Note that $a(u)+a(-u)$ is the total volume of $A$ and $b(u)+b(-u)$ is the total volume of $B$ for any $u$.
 Apply \ref{SHORT.ex:Borsuk-Ulam:Borsuk-Ulam} to the map $\SS^2\to\RR^2$ defined by $u\mapsto (a(u),b(u))$.
 
 \parit{\ref{SHORT.ex:ABC}.} Show and use that if $f(x)=f(-x)$, then $x$ and $-x$ lie in one of the sets $A$, $B$, or $C$.
-For the last part, try to cover sphere by four spherical triangles.
+For the last part, try to cover the sphere by four spherical triangles.
 
 \parit{Comments.}
-Part \ref{SHORT.ex:Borsuk-Ulam:Borsuk-Ulam} of the exercise can be interpreted the following way:
+Part \ref{SHORT.ex:Borsuk-Ulam:Borsuk-Ulam} of the exercise can be interpreted in the following way:
 \textit{at any moment of time there exists a pair of antipodal points on the surface of the earth that have the same temperature and pressure.}
 
 \parbf{\ref{ex:monodromy}}; \ref{SHORT.ex:monodromy:surjective}.
-Note that $\tilde z_1$ can be connected to any two in $w^{-1}\{z_0\}$ by a path and apply \ref{prop:monodromy-homo}.
+Note that $\tilde z_1$ can be connected by a path to any point in $w^{-1}\{z_0\}$ and apply \ref{prop:monodromy-homo}.
 
 \parit{\ref{SHORT.ex:monodromy:isomorphism}.} By \ref{SHORT.ex:monodromy:surjective} the monodromy homomorphism is surjective; it remains to show that it is injective.
 Choose two loops $a$ and $b$ based at $z_0$;
 let $\tilde a$ and $\tilde b$ be their lifts such that  $\tilde a(0)=\tilde b(0)=\tilde z_1$.
 If $m_{[a]}=m_{[b]}$, then $\tilde a(1)=\tilde b(1)$.
-Since $\tilde{\c{Z}}$ is simply-connected, $\tilde a\sim \tilde b$, therefore $a=w\circ \tilde a\sim w\circ \tilde b =b$; in other words, $[a]=[b]$.
+Since $\tilde{\c{Z}}$ is simply-connected, $\tilde a\sim \tilde b$.
+Therefore $a=w\circ \tilde a\sim w\circ \tilde b =b$; in other words, $[a]=[b]$.
 
-\parit{\ref{SHORT.ex:monodromy:trivial}.} Show and use that lift of any loop in $\c{Z}$ is a loop in $\tilde{\c{Z}}$.
+\parit{\ref{SHORT.ex:monodromy:trivial}.} Show and use that the lift of any loop in $\c{Z}$ is a loop in $\tilde{\c{Z}}$.
 
-\parbf{\ref{ex:klein}};
-\ref{SHORT.ex:klein:freely discontinuous}.
+\parbf{\ref{ex:klein}}; \ref{SHORT.ex:klein:freely discontinuous}.
 Show and use that $|g\cdot p-p|\ge 1$ for any point $p\in\RR^2$ and any $g\ne 1$ in $G$.
 
 \parit{\ref{SHORT.ex:klein:isomorphism}.} Just apply.
 
-\parit{\ref{SHORT.ex:klein:noncommutative}.} Follow the same arrows in different order and see that result is different.
+\parit{\ref{SHORT.ex:klein:noncommutative}.} Follow the same arrows in different order and see that the result is different.
 
 \parit{\ref{SHORT.ex:klein:covering}.}
-Consider subaction of $G\acts \RR^2$ of the motions
-\[(x,y)\mapsto (m+x, 2\cdot n+\cdot y)\]
+Consider the subaction of $G\acts \RR^2$ of the motions
+\[(x,y)\mapsto (m+x, 2\cdot n+y)\]
 for all integers $m$ and $n$.
 
 \parbf{\ref{ex:reasonable}.}
@@ -1518,7 +1516,7 @@ A sufficiently small circle $S\subset \c{H}$ must lie in an open set evenly cove
 Construct a retraction $r\:\c{H}\to S$; consider a nontrivial connected covering $v$ with base space $S$, and pass to its pullback along $r$ (apply \ref{ex:pull-back}).
 
 \parbf{\ref{ex:Hawaiian-comp-cover}.}
-Taking pullback of the wrapping map along a retraction $r\:\c{H}\to S$ to some circle $S\subset \c{H}$ produces a normal $\ZZ$-covering.
+Taking the pullback of the wrapping map along a retraction $r\:\c{H}\to S$ to some circle $S\subset \c{H}$ produces a normal $\ZZ$-covering.
 The total space will look like a cactus train.
 Now for the double cover, unwrap different circles in cacti of this train, so that the circle sizes approach zero when you move to infinity.
 
@@ -1533,7 +1531,7 @@ Each statement fails if $\c{Z}$ is not reasonable.
 Exercise \ref{ex:Hawaiian-comp-cover} provides an example for part \ref{SHORT.ex:reasonable:u}.
 The other parts are simpler, but require patience.
 
-Recall that $\NN^\infty$ denotes one-point compactification of positive integers $\NN$;
+Recall that $\NN^\infty$ denotes one-point compactification of the positive integers $\NN$;
 this space can be identified with $\{0,1,\tfrac12,\tfrac13,\ldots\}\subset\RR$;
 this space is not locally connected and therefore not reasonable.
 
@@ -1556,7 +1554,7 @@ Observe that $\infty\in \c{Z}$ does not admit a neighborhood evenly covered by $
 
 \parbf{\ref{ex:vankam-nonconnect}.}
 Suppose $V\cap W=A\cup B$, where $A$ and $B$ are disjoint open sets; see the first picture.
-Take 2 copies of each set: $A_1, A_2,B_1,B_2,V_1,V_2,W_1,W_2$ and glue $\tilde{\c{Z}}$ from them a space as shown in the second picture.
+Take 2 copies of each set: $A_1, A_2,B_1,B_2,V_1,V_2,W_1,W_2$ and glue them to form a space $\tilde{\c{Z}}$ as shown in the second picture.
 
 \begin{Figure}
 \vskip-0mm
@@ -1564,7 +1562,7 @@ Take 2 copies of each set: $A_1, A_2,B_1,B_2,V_1,V_2,W_1,W_2$ and glue $\tilde{\
 \includegraphics{mppics/pic-1915}
 \end{Figure}
 
-More precisely, the inclusions of $A$ and $B$ in $V$ and $W$ induce 8 embeddings:
+More precisely, the inclusions of $A$ and $B$ into $V$ and $W$ induce 8 embeddings:
 $A_i\hookrightarrow V_j$, $A_i\hookrightarrow W_j$, $B_i\hookrightarrow V_j$, $B_i\hookrightarrow W_j$
 for all pairs $i$ and $j$.
 Glue the copies along all the embeddings in the diagram and show that the obtained space $\tilde{\c{Z}}$ covers $\c{Z}$ twice.
@@ -1577,9 +1575,9 @@ B_2\arrow[u, hook] \arrow[r, hook] & V_2 & A_2\arrow[l, hook'] \arrow[u, hook']
 \]
 
 \parit{Comment.}
-This is another partial case of the Van Kampen theorem, see also \ref{prop:van-kamp:sc}.
+This is another partial case of the van Kampen theorem, see also \ref{prop:van-kamp:sc}.
 
-One can also construct a normal $\ZZ$-covering, preparing $\ZZ$ copies of each set and glue them along the following maps:
+One can also construct a normal $\ZZ$-covering, by preparing $\ZZ$ copies of each set and gluing them along the following maps:
 \begin{align*}
 \dots\hookleftarrow A_{n-1} &\hookrightarrow V_{n-1}\hookleftarrow B_{n-1}\hookrightarrow
 \\
@@ -1596,29 +1594,24 @@ Follow the proof and see that compactness of $\Gamma\cap \cBall[x,R]$ is the onl
 This was used to prove the existence of points $q_n$ and $s_n$.
 Use instead their approximate versions $\tilde q_n$ and $\tilde s_n$, so the equalities in \ref{eq:abF} hold with an error that approaches zero as $n\to\infty$, and check that the remaining part of the proof works with these points.
 
-\parbf{\ref{ex:nonclosed-Gamma}.}
-One needs open complements to apply \ref{prop:van-kamp:sc} and \ref{ex:vankam-nonconnect}.
-
-If we do not assume that $\Gamma$ is closed, then its complement $X=\RR^2\setminus \Gamma$ migt be the flea and comb discussed in \ref{sec:flea and comb}.
-In this case, $Y=\RR^3\setminus \Gamma$ is the union of upper and lower open half-spaces with $X\times\{0\}$.
-The set $X$ is connected (altho not path-connected), but $Y=\RR^3\setminus \Gamma$ is not simply-connected.
-This statement might look evident, but actual proof is quite invalved.
-
-If the complement $X=\RR^2\setminus\Gamma$ is the union of two copies of fan $F$ (see \ref{ex:retract-strong-weak}) as shown on the picture
-then it is path-connected, but $Y=\RR^3\setminus\Gamma$ is not simply-connected.
-Try to bootstrap a noncontractible loop in it and prove that it is not noncontractible.
-
-\begin{Figure}
-\vskip-0mm
-\centering
-\includegraphics{mppics/pic-1920}
-\end{Figure}
-
 \parbf{\ref{ex:3-components-Gamma}.}
 Show and use that $Y$ retracts onto a figure eight; see \ref{sec:Figure eight}.
 
 \parbf{\ref{ex:klee[0,1]-1}.}
 Follow the proof of \ref{prop:home-gamma-z-axis}.
+
+\parbf{\ref{ex:klee1-2}.}
+By \ref{thm:tietze}, $h\:A\to B$ and $h^{-1}\:B\to A$ can be extended to continuous maps $p\:\RR\to\RR$ and $q\:\RR\to\RR$.
+Show and use that the maps
+\begin{align*}
+(x,y)&\mapsto (x,y+p(x)),
+\\
+(x,y)&\mapsto (x-q(y),y),
+\\
+(x,y)&\mapsto(y,x)
+\end{align*}
+are homeomorphisms $\RR^2\to\RR^2$.
+
 
 \parbf{\ref{ex:connected-complement}.}
 Assume the contrary.
@@ -1632,7 +1625,7 @@ Show the following:
 Construct a continuous function $f\:\RR^2\z\to[0,1]$ such that $A=f^{-1}\{0\}$ and $B=f^{-1}\{1\}$.
 Consider the homeomorphism $h\:\RR^3\selfmap$ defined by $(x,y,z)\mapsto (x,y,z+f(x,y))$.
 Observe that $h$ moves $A$ and $B$ to different horizontal planes.
-Use that triviality of fundamental groups of $\RR^3\setminus A$ and $\RR^3\setminus B$ to show that
+Use the triviality of fundamental groups of $\RR^3\setminus A$ and $\RR^3\setminus B$ to show that
 $\RR^3\setminus h(A\cup B)$ has trivial fundamental group.
 Arrive at a contradiction.
 
@@ -1652,13 +1645,13 @@ a way more general statement is provided by Alexander's duality theorem.
 
 \parit{\ref{SHORT.ex:klee[0,1]:bry}.}
 Assume the contrary.
-Then there is a neighborhood $V$ of a point $p\in J$ that does not meet all components of $\SS^2\setminus J$.
+Then there is a neighborhood $V$ of a point $p\in J$ that fails to meet one of the components of $\SS^2\setminus J$.
 Choose a subset $I\subset J$ that is homeomorphic to $[0,1]$ and such that $I\supset J\setminus V$ and apply \ref{SHORT.ex:klee[0,1]:[0,1]}.
 
 \parit{Comment.} Recall that by \ref{ex:proper-jordan3}, $\SS^2\setminus J$ has exactly two connected components, but the solution above does not use this.
 
 \parbf{\ref{ex:AnB}.}
-Removing a point $p\in A\cap B$ from $\SS^2$ we get $\RR^2\simeq\SS^2\setminus \{p\}$; let us keep the notations $A$ and $B$ for these sets without $p$.
+Removing a point $p\in A\cap B$ from $\SS^2$ we get $\RR^2\simeq\SS^2\setminus \{p\}$; let us keep the notation $A$ and $B$ for these sets without $p$.
 Note that $\RR^2\setminus A$ and $\RR^2\setminus B$ are connected and $\RR^2\setminus (A\cap B)$ is simply-connected.
 
 As before, let us think that $\RR^2$ is the $(x,y)$-plane in $\RR^3$.

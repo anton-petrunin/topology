@@ -2,7 +2,6 @@
 
 This chapter starts with the definition of closed sets in a topological space.
 Further, we introduce constructions of interior, closure, and boundary.
-Finally, we define neighborhoods and discuss limits in a general topological space.
 
 \section{Closed sets}\label{sec:closed-sets}
 
@@ -38,8 +37,8 @@ That is,  if $K_1$ and $K_2$ are closed, then the union $Q=K_1 \cup K_2$ is clos
 \end{thm}
 
 \parit{Proof.}
-The proposition follows since complement of union is intesection of complements.
-More precicely, if $\{S_\alpha\}$ is a family of sets in $\c{X}$, then
+The proposition follows since union of complements is complement of intersection.
+More precisely, if $\{S_\alpha\}$ is a family of sets in $\c{X}$, then
 \[\bigcup_\alpha (\c{X}\setminus S_\alpha)=\c{X}\setminus \left(\bigcap_\alpha S_\alpha\right).\]
 To prove this identity, notice that both sides can be written as
 \[\set{x\in \c{X}}{x\notin S_\alpha\ \text{for some}\  \alpha}.\]
@@ -92,7 +91,7 @@ The if part follows since $B$ is an arbitrary open set in $\c{Y}$.
 
 \begin{subthm}{ex:open-intersection+metrizable:a}
 Let $\c{X}$ be a metrizable topological space.
-Show that any closed set in $\c{X}$ is an intersection of a (countable) family of open sets.
+Show that any closed subset $Q\subset\c{X}$ is an intersection of a sequence of open sets.
 \end{subthm}
 
 \begin{subthm}{ex:open-intersection+metrizable:b}
@@ -109,10 +108,11 @@ Let $A$ be an arbitrary subset of a topological space $\c{X}$.
 
 \setlength{\columnseprule}{.2pt}
 \begin{multicols}{2}
-The union of all open subsets of $A$ is called the \index{interior}\emph{interior} of $A$ and denoted as $\mathring A$, for longer expressions we may use $A^\circ$ or $\interior A$.
+The union of all open subsets of $A$ is called the \index{interior}\emph{interior} of $A$ and denoted as $\mathring A$;
+for longer expressions we may use $A^\circ$ or $\interior A$.
 
 Note that $\mathring A$ is open.
-Indeed, it is defined as a union of open sets and such union is open by the definition of a topology; see \ref{def:top-space}.
+Indeed, it is defined as a union of open sets and such a union is open by the definition of a topology; see \ref{def:top-space}.
 In other words, $\mathring A$ is the \textit{maximal} open set in $A$,
 as any open subset of $A$ must lie in~$\mathring A$.
 In particular,
@@ -123,7 +123,7 @@ In particular,
 The intersection of all closed subsets containing $A$ is called the \index{closure}\emph{closure} of $A$ and denoted as $\bar A$ or $\closure A$.
 
 The set $\bar A$ is closed.
-Indeed, it is defined as an intersection of closed sets and such intersection has to be closed by \ref{prop:closed-properties}.
+Indeed, it is defined as an intersection of closed sets and such an intersection has to be closed by \ref{prop:closed-properties}.
 In other words, $\bar A$ is the \textit{minimal} closed set that contains $A$,
 as any closed subset containing $A$ contains $\bar A$.
 In particular,
@@ -137,6 +137,14 @@ Assume $A$ is a subset of a topological space $\c{X}$;
 consider its complement $B=\c{X}\setminus A$.
 Show that 
 \[\bar B=\c{X}\setminus \mathring A.\]
+\end{thm}
+
+Let $A$ and $B$ be subsets of a topological space $\c{X}$.
+The set $A$ is said to be \index{dense set}\emph{dense} in $B$ if $\bar A\supset B$;
+if $\bar A=\c{X}$, then we say that $A$ is \index{everywhere dense}\emph{everywhere dense}.
+
+\begin{thm}{Exercise}\label{ex:dense-nbhd}
+Show that $A$ is dense in $B$ if and only if any neighborhood of any point in $B$ intersects $A$.
 \end{thm}
 
 %\begin{thm}{Exercise}\label{ex:closure-interior}Let $A$ and $B$ be subsets of a topological space $\c{X}$. Show that (a) $\overline A\cup B=\bar A\cup \bar B$, (b) $\overline A\cap B\subset \bar A\cap \bar B$, (c) $(A\cup B)^\circ\supset\mathring A\cup \mathring B$, (d) $(A\cap B)^\circ=\mathring A\cap \mathring B$, (e) show that the inclusions in (b) and (c) might be strict. \end{thm}
@@ -192,7 +200,6 @@ Give an example of a topological space $\c{X}$ with a subset $A$ such that all t
 \end{thm}
 
 
-
 \section{Boundary}
 
 Let $A$ be an arbitrary subset of a topological space $\c{X}$.
@@ -210,6 +217,11 @@ Show that the set $A$ is closed if and only if $\partial A\subset A$.
 \begin{thm}{Exercise}\label{ex:bry-bry}
 Show that for any set $A$ in a topological space we have $\partial(\partial A)\subset \partial A$.
 Provide an example showing that the inclusion might be strict.
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:bry-nbhd}
+Let $A$ be a set in a topological space $\c{X}$.
+Show that $x\in \partial A$ if and only if any neighborhood of $x$ contains points of $A$ and of its complement $\c{X}\setminus A$.
 \end{thm}
 
 \section{Subspaces}\label{sec:induced-topology}
@@ -257,12 +269,12 @@ Provide examples showing that these inclusions might be strict.
 Let $A$ be a subset of a topological space $\c{X}$ and let $\c{Y}$ be another topological space.
 A map $h\:A\to \c{Y}$ is called \index{continuous map}\emph{continuous} if it is continuous with respect to the induced topology on $A$.
 
-Recall the \index{restriction}\emph{restriction} of a map $f:\c{X}\to \c{Y}$ to $A\subset\c{X}$ is obtained by keeping the same rule as $f$ but only allowing inputs from~$A$.
+Recall that the \index{restriction}\emph{restriction} of a map $f:\c{X}\to \c{Y}$ to $A\subset\c{X}$ is obtained by keeping the same rule as $f$ but only allowing inputs from~$A$.
 It is usually denoted by $f|_A$; so $(f|_A)(a)=f(a)$ if $a\in A$ and otherwise it is undefined.
 
 Observe that $(f|_A)^{-1}(W)=A\cap f^{-1}(W)$ for any $W\subset \c{Y}$.
 It follows that if $f$ is continuous, then so is $f|_A\:A\to\c{Y}$;
-here we consider set $A$ with the induced topology.
+here we consider the set $A$ with the induced topology.
 The following exercise provides a partial converse.
 
 \begin{thm}[!]{Exercise}\label{ex:u-continuous}
@@ -277,12 +289,18 @@ both $A$ and $B$ are closed sets.
 Show that $f$ is continuous if and only if so are the restrictions $f|_A$ and $f|_B$.
 
 \begin{subthm}{ex:u-continuous:none}
-Show that this is no longer true without assumptions of \ref{SHORT.ex:u-continuous:open} or~\ref{SHORT.ex:u-continuous:closed}.
+Show that this is no longer true without the assumptions in \ref{SHORT.ex:u-continuous:open} or~\ref{SHORT.ex:u-continuous:closed}.
 \end{subthm}
 
 \end{thm}
 
-\section{Cantor set}\label{sec:Cantor set} %??? make a separate chapter + add lakes of Wada
+\chapter{Cantor set}\label{chap:Cantor set}
+
+The Cantor set is a simple subset of the real line with surprisingly
+rich properties. It serves as a standard test example in many problems
+of topology and analysis.
+
+\section{Isolated points}
 
 A point $p$ in a topological space $\c{X}$ is called \index{isolated point}\emph{isolated} if the one-point set $\{p\}$ is open in $\c{X}$.
 Note that a space is discrete if every point in it is isolated.
@@ -294,7 +312,9 @@ For example, in the set $A=\{0,1,\tfrac12,\tfrac13,\ldots\}\subset\RR$ all point
 In 1882, Magnus Mittag-Leffler posed a question, which could be restated as follows:
 \textit{Does there exist a nowhere dense closed set $\c{C}\subset\RR$ without isolated points?}
 This might be the first question in point-set topology.
-The question was answered by Georg Cantor in 1883; he constructed the following example.
+The question was answered by Georg Cantor in 1883; he constructed an example that now bears his name.
+
+\section{Cantor set}\label{sec:Cantor set}
 
 Let us start with the unit interval $\c{C}_0=[0,1]$, and remove its open middle third $(\tfrac13,\tfrac23)$;
 we get a new set $\c{C}_1=[0,\tfrac13]\cup[\tfrac23,1]$ which is a union of two disjoint closed intervals.
@@ -315,7 +335,7 @@ is called the \index{Cantor set}\emph{Cantor set}.
 By construction, $\c{C}$ is a closed nowhere dense set; in particular, it contains no intervals other than points.
 On the other hand, $\c{C}$ has no isolated points.
 Indeed, a neighborhood $V$ of any point $x\in \c{C}$ must contain one of the $2^n$ intervals in $\c{C}_n$ for a sufficiently large integer $n$; denote it by $[a,b]$.
-Note that $a$ and $b$ remain to be ends of intervals of $\c{C}_{n+1}$, $\c{C}_{n+2}$, and so on.
+Note that $a$ and $b$ remain endpoints of intervals at every later stage $\c{C}_{n+1}$, $\c{C}_{n+2}, \ldots$.
 Therefore $a,b\in \c{C}$, and since $x\ne a$ or $x\ne b$, we get that $x$ is not isolated.
 
 
@@ -327,94 +347,23 @@ and each $d_i$ is either $0$ or $2$.
 
 \begin{thm}{Exercise}\label{ex:Cantor}
 Prove the equivalence of the two definitions and use it to show that $\c{C}$ is uncountable.%
-\footnote{This exercise requires a bit more set theory than usual; it uses that the set of all subsets an infinite set is uncountable, which follows from Cantor's power set theorem.}
+\footnote{This exercise requires a bit more set theory than usual; it uses that the set of all subsets of an infinite set is uncountable, which follows from Cantor's power set theorem.}
 \end{thm}
 
+\section{Open versus closed}
 
 Observe that any open set $V\subset\RR$ is a union of open intervals.
 Indeed, given a point $x\in V$ there is a unique maximal open interval $(a,b)$ (finite or infinite) such that
 $x\in (a,b)\subset V$.
-Note that if two maximal intervals intersect, then they have to coincide (otherwise they were not maximal).
+Note that if two maximal intervals intersect, then they have to coincide (otherwise they would not be maximal).
 Furthermore, every open interval contains a rational number, and since the set of rational numbers is countable, we have that the set of the maximal intervals is countable as well.
 
 One might naively think that closed sets have a similar feature, but
 the Cantor set shows that this is not the case --- it is not a countable union of closed intervals (including one-point sets).
 
-\begin{thm}{Advanced exercise}\label{ex:3=bry}
+\begin{thm}{Exercise}\label{ex:3=bry}
 Find three disjoint open sets on the real line
 that have the same nonempty boundary.
 \end{thm}
 
-\section{Neighborhoods}
 
-%??? neighborhood>>>open neighborhood
-
-Let $x$ be a point in a topological space $\c{X}$.
-A \index{neighborhood}\emph{neighborhood} of $x$ is any open set $N$ containing $x$.
-
-In topology, neighborhoods often replace balls, which makes sense only in metric spaces.
-
-\begin{thm}{Exercise}\label{ex:bry-nbhd}
-Let $A$ be a set in a topological space $\c{X}$.
-Show that $x\in \partial A$ if and only if any neighborhood of $x$ contains points of $A$ and  of its complement $\c{X}\setminus A$.
-\end{thm}
-
-Let $A$ and $B$ be subsets of a topological space $\c{X}$.
-The set $A$ is said to be \index{dense set}\emph{dense} in $B$ if $\bar A\supset B$;
-if $\bar A=\c{X}$, then we say that $A$ is \index{everywhere dense}\emph{everywhere dense}.
-
-\begin{thm}{Exercise}\label{ex:dense-nbhd} 
-Show that $A$ is dense in $B$ if and only if any neighborhood of any point in $B$ intersects $A$.
-\end{thm}
-
-%\begin{thm}{Exercise}\label{ex:everywhere-dense} Assume that $A$ is an everywhere dense subset and $V$ is open subset in a topological space $\c{X}$. Show that $\overline (A\cap V)\supset V$. \end{thm}
-
-
-\section{Limits}\label{sec:limits}
-
-\begin{thm}{Definition}\label{def:limit-top}
-Suppose $x_n$ is a sequence of points in a topological space $\c{X}$.
-We say that $x_n$ \index{convergence}\emph{converges} to a point $x_\infty\in \c{X}$ (briefly $x_n\to x_\infty$ as $n\to\infty$) if for any neighborhood $N$ of $x_\infty$, we have that 
-$x_n\in N$ for all sufficiently large $n$.
-\end{thm}
-
-Observe that the above definition agrees with \ref{def:limit-metric}.
-In other words, a sequence of points $x_1,x_2,\ldots$ in a metric space converges to a point $x_\infty$ in the sense of the definition \ref{def:limit-metric} if and only if it converges in the sense of the definition \ref{def:limit-top}.
-
-\begin{thm}{Exercise}\label{ex:lim-weaker}
-Show that a convergent sequence of points in a topological space is also convergent for every weaker topology.
-\end{thm}
-
-Note that in a space with the concrete topology any sequence converges to any point.
-In particular, a sequence might have several different limits.
-Furthermore, if we equip $\RR$ with the cofinite topology then any sequence of pairwise distinct numbers converges to every point in $\RR$.
-
-The following exercise shows that converging sequences do \textit{not} adequately describe the topology of a space;
-namely, an analog of \ref{ex:continuous-limit} does not hold.
-Unless you know what you are doing, avoid using limits in general topological spaces.%
-\footnote{So-called \index{net}\emph{nets} \cite{mcshane} provide an appropriate generalization of sequences that works well in topological spaces, but we are not going to consider them.}
-
-Recall that a set is called \index{countable set}\emph{countable} if it admits a bijection to a subset of the set of natural numbers.
-In particular, all finite sets are countable.
-
-\begin{thm}{Advanced exercise}\label{ex:cocountable-top}
-Let $\c{X}$ be the set of real numbers with the so-called \index{cocountable topology}\emph{cocountable topology};
-its closed sets are either countable or the whole $\RR$.
-
-\begin{subthm}{}
-Show that a sequence $x_1,x_2,\ldots \in \c{X}$ converges to $x_\infty$ if and only if $x_n=x_\infty$ for all sufficiently large $n$.
-\end{subthm}
-
-\begin{subthm}{ex:cocountable-top:closed}
-Show that any set $A\subset \c{X}$ is \index{sequentially closed set}\emph{sequentially closed};
-that is, if $a_1,a_2,\ldots \in A$ is a converging sequence, then its limit lies in $A$.
-Observe that not all subsets of $\c{X}$ are closed.
-\end{subthm}
-
-\begin{subthm}{}
-Show that any map $f\:\c{X}\to \c{X}$ is \index{sequentially continuous map}\emph{sequentially continuous};
-that is, if a sequence $x_1,x_2,\ldots \in \c{X}$ converges to $x_\infty$ in $\c{X}$, then  $y_n=f(x_n)$ converges to $y_\infty\z=f(x_\infty)$.
-Observe that not all maps $f\:\c{X}\to \c{X}$ are continuous.
-\end{subthm}
-
-\end{thm}

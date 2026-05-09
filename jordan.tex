@@ -1,14 +1,15 @@
 \chapter{Separation theorem}\label{chap:Jordan}
 
-The Jordan separation theorem states that the complement of a closed simple curve in the plane is not connected.
+Let $J\subset\RR^2$ be a subset homeomorphic to $\SS^1$.
+The Jordan separation theorem states that the complement $\RR^2\setminus J$ is not connected.
 This theorem is known for its simple formulation and annoyingly tricky proofs.
 We will present the proof of Patrick Doyle \cite{doyle} that is based on Klee's trick.
 This proof is among the shortest; it also uses several results in topology, which are worth knowing.
 
 \section{Tietze--Urysohn extension theorem}
 
-The following statement is a partial case of the so-called \index{Tietze--Urysohn extension theorem}\emph{Tietze--Urysohn extension theorem},
-which provides an analogous statement for all normal spaces, which means $T_1+T_4$; see \ref{sec:haudorff-comments}.
+The following statement is a special case of the so-called \index{Tietze--Urysohn extension theorem}\emph{Tietze--Urysohn extension theorem},
+which provides an analogous statement for all normal spaces; see \ref{sec:haudorff-comments}.
 
 \begin{thm}{Proposition}\label{thm:tietze}
 Let $\Gamma$ be a closed subset of $\RR^2$.
@@ -17,7 +18,7 @@ that is, there is a continuous function $F\:\RR^2\to\RR$ such that $F(p)=f(p)$ f
 \end{thm}
 
 \parit{Proof.}
-We can assume that $\Gamma\ne\emptyset$, otherwise take $F(x)\equiv 0$.
+We can assume that $\Gamma\ne\emptyset$; otherwise take $F(x)\equiv 0$.
 
 Assume $f(\Gamma)\subset(1,2)$.
 Given $x\in\RR^2$, let
@@ -40,15 +41,23 @@ f(x)& \text{if}\ x\in \Gamma,
 defines a function $F\:\RR^2\to(1,2)$.
 
 It remains to check that $F$ is continuous;
-that is, if a converging sequence of points $p_n\to p_\infty$, then $F(p_\infty)=\lim F(p_n)$.
+that is,
+\[F(p_\infty)=\lim F(p_n)\eqlbl{eq:F(lim)=lim(F)}\]
+for any converging sequence of points $p_n\to p_\infty$ in $\RR^2$.
 
-We can assume that $\lim F(p_n)$ is defined, otherwise pass to a subsequence.
+We can assume that $\lim F(p_n)$ is defined; otherwise pass to a subsequence.
 Furthermore, by the triangle inequality, $a$ and $b$ are continuous functions.
 Since $a(x)>0$ for any $x\notin\Gamma$, the function $F$ is continuous in the complement $\RR^2\setminus \Gamma$.
 
 It remains to check the case $p_\infty\in\Gamma$.
 Furthermore, if $p_n\in \Gamma$ for all large $n$, then the statement follows from the continuity of $f$.
 Therefore, passing to a subsequence, we can assume that $p_n\notin \Gamma$ for any $n$.
+
+\begin{wrapfigure}[5]{r}{43 mm}
+\vskip-4mm
+\centering
+\includegraphics{mppics/pic-1905}
+\end{wrapfigure}
 
 Let $q_n,s_n\in\Gamma$ be points that minimize $|p_n-q_n|$ and $f(s_n)\cdot |p_n-s_n|$, respectively;
 so
@@ -68,13 +77,13 @@ Note that
 \[\tfrac12\cdot|p_n-s_n| \le |p_n-q_n|\le |p_n-p_\infty|;\]
 in particular, $q_n\to p_\infty$, $s_n\to p_\infty$, and $f(s_n)\to f(p_\infty)$ as $n\to\infty$.
 Let
-\[\eps_n=\sup\set{|f(p_\infty)-f(p)|}{p\in \Gamma\cap \cBall(p_\infty,2\cdot |p_n-p_\infty|};\]
+\[\eps_n=\sup\set{|f(p_\infty)-f(x)|}{x\in \Gamma\cap \cBall[\,p_\infty,2\cdot |p_n-p_\infty|\,]};\]
 note that $\eps_n\to 0$ as $n\to\infty$ and
-\[1-2\cdot \eps_n\le \frac{|p_n-q_n|}{|p_n-s_n|}\le 1\]
-It follows that $\tfrac{|p_n-q_n|}{|p_n-s_n|}\to1$ as $n\to \infty$, and by \ref{eq:abF}, continuity of $F$ follows.
+\[1-2\cdot \eps_n\le \frac{|p_n-q_n|}{|p_n-s_n|}\le 1.\]
+It follows that $\tfrac{|p_n-q_n|}{|p_n-s_n|}\to1$ as $n\to \infty$; together with \ref{eq:abF}, this implies~\ref{eq:F(lim)=lim(F)}.
 
-In general case, let $\hat f=h\circ f\:\Gamma\to (1,2)$ for a homeomorphism $h\:\RR\to (1,2)$.
-If $\hat F\:\RR^2\to (1,2)$ is extension of $\hat f$, then $F\z=h^{-1}\circ \hat F$ is the required extension of $f$.
+In the general case, let $\hat f=h\circ f\:\Gamma\to (1,2)$ for a homeomorphism $h\:\RR\to (1,2)$.
+If $\hat F\:\RR^2\to (1,2)$ is an extension of $\hat f$, then $F\z=h^{-1}\circ \hat F$ is the required extension of $f$.
 \qeds
 
 \begin{thm}{Exercise}\label{ex:tietze}
@@ -83,7 +92,7 @@ Try to modify the proof to make it work in arbitrary metric spaces.
 \end{thm}
 
 
-\section{Around Van Kampen}
+\section{Around van Kampen}
 
 \begin{thm}{Lemma}\label{prop:c/sc}
 Let us identify $\RR^2$ with the $(x,y)$-plane in $\RR^3$.
@@ -113,25 +122,36 @@ Indeed, the horizontal plane $z= 1$ is a deformation retract of $V$;
 a retraction can be defined by $(x,y,z)\mapsto (x,y,1)$ and the following homotopy shows that it is homotopic to the identity map:
 \[h_t(x,y,z)=(x,y,(1-t)\cdot z+t).\]
 The plane $z= 1$ is contractible, hence so is $V$.
-Similarly, $W$ is contractible since it has plane $z=-1$ as a deformation retract.
+Similarly, $W$ is contractible since it has the plane $z=-1$ as a deformation retract.
 
 If $X$ is not connected, then so is $X\times \RR= V\cap W$.
-In this case, by \ref{ex:vankam-nonconnect}, we have $\RR^3\setminus \Gamma=V\cup W$ is not simply-connected.
+In this case, by \ref{ex:vankam-nonconnect}, $\RR^3\setminus \Gamma=V\cup W$ is not simply-connected.
 
-On the other hand if $X$ is connected, then so is $X\times \RR= V\cap W$.
+On the other hand, if $X$ is connected, then so is $X\times \RR= V\cap W$.
 In this case, by \ref{prop:van-kamp:sc}, we have $\RR^3\setminus \Gamma=V\cup W$ is simply-connected.
 \qeds
-
-\begin{thm}{Exercise}\label{ex:nonclosed-Gamma} %???PROBLEM HERE!!!
-Provide an example showing that \ref{prop:c/sc} above does not hold without assuming that $\Gamma$ is closed.
-Spot the place in the proof that breaks in this case.
-\end{thm}
 
 \begin{thm}{Exercise}\label{ex:3-components-Gamma}
 Suppose $\Gamma\subset\RR^2$, $X=\RR^2\setminus \Gamma$, and $Y=\RR^3\setminus \Gamma$ are as in \ref{prop:c/sc}.
 Show that if $X$ has at least 3 connected components, then $\pi_1(Y)\not\cong\ZZ$.
 \end{thm}
 
+\begin{wrapfigure}{r}{28 mm}
+\vskip-6mm
+\centering
+\includegraphics{mppics/pic-1920}
+\end{wrapfigure}
+
+\parit{Comments.}
+If we do not assume that $\Gamma$ is closed, then its complement $X=\RR^2\setminus \Gamma$ might be the flea and comb discussed in \ref{sec:flea and comb}.
+In this case, $Y=\RR^3\setminus \Gamma$ is the union of upper and lower open half-spaces with $X\times\{0\}$.
+The set $X$ is connected (altho not path-connected), but $Y=\RR^3\setminus \Gamma$ is not simply-connected.
+This statement might look evident, but the actual proof is quite involved.
+
+If the complement $X=\RR^2\setminus\Gamma$ is the union of two copies of the fan $F$ (see \ref{ex:retract-strong-weak}) as shown in the picture
+then it is path-connected, but $Y\z=\RR^3\setminus\Gamma$ is not simply-connected.
+The latter statement is closely related to \ref{ex:griffiths};
+try to bootstrap a noncontractible loop in it and prove that it is not contractible.
 
 \section{Klee trick}
 
@@ -175,6 +195,14 @@ Let $I\subset \RR^2$ be a subset homeomorphic to $[0,1]$.
 Construct a homeomorphism $h\:\RR^3\to \RR^3$ that maps $I$ to a line segment.
 \end{thm}
 
+\begin{thm}{Exercise}\label{ex:klee1-2}
+Suppose $h\:A\to B$ is a homeomorphism between closed subsets $A,B\subset \RR$.
+Let us consider $\RR$ as a subset of the plane $\RR^2$.
+Show that $h$ can be extended to a homeomorphism of the plane;
+that is, there is a homeomorphism $H\:\RR^2\selfmap$ such that $H(a)=h(a)$ for any $a\in A$.
+\end{thm}
+
+
 \section{Separation by a proper curve}
 
 \begin{thm}{Theorem}\label{thm:proper-jordan}
@@ -186,10 +214,9 @@ Note that the assumption that $\Gamma$ is closed is necessary;
 indeed, a finite open interval $I$ of a line in $\RR^2$ is homeomorphic to $\RR$, but its complement $\RR^2\setminus I$ is connected.
 
 \parit{Proof.}
-Assume $\RR^2\setminus \Gamma$ is connected.
-Then by \ref{prop:c/sc}, $\RR^3\setminus \Gamma$ is simply-connected.
+If $\RR^2\setminus \Gamma$ is connected, then by \ref{prop:c/sc}, $\RR^3\setminus \Gamma$ is simply-connected.
 
-On the other hand by \ref{prop:home-gamma-z-axis}, $\RR^3\setminus \Gamma$ is homeomorphic to the complement of $z$-axis in $\RR^3$,
+On the other hand, by \ref{prop:home-gamma-z-axis}, $\RR^3\setminus \Gamma$ is homeomorphic to the complement of the $z$-axis in $\RR^3$,
 which is not simply-connected since it can be retracted to a circle%
 \footnote{Alternatively one may apply \ref{prop:c/sc} again.} --- a contradiction.
 \qeds
@@ -217,15 +244,16 @@ then $\mathbb{S}^2\setminus J$ has at least two connected components.
 
 
 \parit{Proof.}
-Remove a point $p$ from $J$ to get a closed set $\Gamma=J\setminus\{p\}$ homeomorphic to $\RR$ in $\mathbb{S}^2\setminus\{p\}\simeq\RR^2$.
+Choose a point $p\in J$.
+Note that $\Gamma=J\setminus\{p\}\simeq\RR$, and it is a closed subset in $\mathbb{S}^2\setminus\{p\}\simeq\RR^2$.
 It remains to apply \ref{thm:proper-jordan}.
 \qeds
 
 Note that applying \ref{ex:proper-jordan3} in the proof of \ref{thm:jourdan}, one gets that
 $\mathbb{S}^2\setminus J$ has exactly two connected components.
-Furthermore, this theorem has a yet more exact version, which is due to Arthur Schoenflies;
-it states that there is a homeomorphism $h\:\SS^2\selfmap$ that maps $J$ to the equator;
-in particular, each connected component of $\mathbb{S}^2\setminus J$ is homeomorphic to an open disc.
+Furthermore, this theorem has an even more precise version due to Arthur Schoenflies;
+it states that there is a homeomorphism $h\:\SS^2\selfmap$ that maps $J$ to the equator.
+In particular, each connected component of $\mathbb{S}^2\setminus J$ is homeomorphic to an open disc.
 
 \begin{thm}{Exercise}\label{ex:klee[0,1]}
 

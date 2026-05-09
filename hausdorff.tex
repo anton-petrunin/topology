@@ -24,11 +24,11 @@ $\Ball(x,\tfrac r2)\cap \Ball(y,\tfrac r2)=\emptyset$.
 Hence the statement follows.
 \qeds
 
-Recall that in general, a sequence of points in a topological space might have different limits (see \ref{sec:limits}).
-For example, for the real line with the cofinite topology most sequences of points converge to \textit{every} point.
+Recall that a sequence of points in a topological space might have distinct limits (see \ref{sec:limits}).
+For example, for the real line with the cofinite topology most sequences converge to \textit{every} point.
 
 \begin{thm}{Exercise}\label{ex:hausdorff-unique-limit}
-Show that any converging sequence in Hausdorff space has a unique limit.
+Show that any converging sequence in а Hausdorff space has a unique limit.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:hausdorff-closure}
@@ -36,7 +36,9 @@ Show that a topological space $\c{X}$ is Hausdorff
 if and only if for any two distinct points $x,y\in \c{X}$ there is an open set $V\ni x$ such that $\bar V\not\ni y$.
 \end{thm}
 
-%\begin{thm}{Exercise}\label{ex:hausdorff-n-points} Show that for distinct $n$ points $x_1,\ldots,x_n$ in a Hausdorff space one can choose $n$ disjoint open setss $V_1,\dots,V_n$ such that $V_i\ni x_i$ for each $i$. Provide an example showing that analogoes statement does not hold for an infinite sequence of points. \end{thm}???
+\begin{thm}{Exercise}\label{ex:hausdorff-n-points}
+Show that for $n$ distinct points $x_1,\ldots,x_n$ in a Hausdorff space one can choose $n$ disjoint open sets $V_1,\dots,V_n$ such that $V_i\ni x_i$ for each $i$.
+\end{thm}
 
 
 \begin{thm}{Exercise}\label{ex:hausdorff-diagonal}
@@ -61,14 +63,14 @@ is a closed set in $\c{X}\times\c{Y}$.
 Any one-point set in a Hausdorff space is closed. 
 \end{thm}
 
-If every one-point set is closed, then the space is called \index{$T_1$}\emph{$T_1$}.
+If every one-point set is closed, then the space is called \index{$T_1$}\emph{$T_1$} (see \ref{sec:haudorff-comments}).
 Therefore the observation above states that \textit{any Hausdorff space is $T_1$}.
 
 \parit{Proof.}
 Let $\c{X}$ be a Hausdorff space and $x\in \c{X}$.
 By \ref{def:hausdorff}, given a point $y\ne x$,
 there are disjoint open sets $V_y\ni x$ and $W_y\ni y$.
-In particular $W_y\not\ni x$.
+In particular, $W_y\not\ni x$.
 
 Note that 
 \[\c{X}\setminus\{x\}=\bigcup_{y\ne x}W_y.\]
@@ -76,7 +78,7 @@ It follows that $\c{X}\setminus\{x\}$ is open, and therefore $\{x\}$ is closed.
 \qeds
 
 Suppose $x\in V$ and $y\in W$ are as in the definition of Hausdorff space (\ref{def:hausdorff}).
-If $x,y$ lie in some subset $A$, then $V'=V\cap A\ni x$ and $W'=W\cap A\ni y$ are nonintersecting neighborhoods in the induced topology on $A$, and we get the following.
+If $x,y$ lie in some subset $A$, then $V'=V\cap A\ni x$ and $W'=W\cap A\ni y$ are disjoint neighborhoods in the induced topology on $A$, and we get the following.
 
 
 \begin{thm}{Observation}
@@ -99,21 +101,21 @@ Show that $\c{X}$ is Hausdorff.
 \section{Hausdorff meets compactness}
 
 \begin{thm}{Proposition}\label{prop:hausdorff-compact-closed}
-Any compact  subset of a Hausdorff space is closed.
+Any compact subset of a Hausdorff space is closed.
 
 \end{thm}
 
 Note that any one-point set is compact.
-Therefore the proposition generalizes Observation~\ref{obs:one-point=compact}.
+Therefore the proposition generalizes \ref{obs:one-point=compact}.
 The proof is similar but requires an extra step.
-Before reading the proof, it is instructive to refresh in your memory of \ref{ex:noncompact-closed}.
+Before reading the proof, it is instructive to refresh your memory of \ref{ex:noncompact-closed}.
 
 The proof of the proposition is based on the following theorem.
 
 \begin{thm}{Theorem}\label{thm:hausdorff-compact-t3}
 Let $\c{X}$ be a Hausdorff space and $K\subset \c{X}$ be a compact subset.
 Then for any point $y\notin K$ there are open sets $V\supset K$ and $W\ni y$
-such that $V\cap W=\emptyset$
+such that $V\cap W=\emptyset$.
 \end{thm}
 
 \parit{Proof of \ref{prop:hausdorff-compact-closed} modulo \ref{thm:hausdorff-compact-t3}.}
@@ -151,8 +153,17 @@ Show that there are disjoint open sets $V\supset K$ and $W\supset L$.
 Let $f$ be a continuous map from a compact space $\c{K}$ to a Hausdorff space $\c{Y}$.
 Then $f$ is a closed map.
 
-If in addition, the map $f$ is onto, then $\c{Y}$ is equipped with the quotient topology induced by $f$.
+If, in addition, the map $f$ is onto, then $\c{Y}$ is equipped with the quotient topology induced by $f$.
 \end{thm}
+
+\parit{Proof.}
+Since $\c{K}$ is compact, any closed subset $Q\subset \c{K}$ is compact (\ref{prop:compact-closed}).
+Since the image of a compact set is compact (\ref{prop:comp-image}), we have that $f(Q)$ is a compact subset of $\c{Y}$.
+Since $\c{Y}$ is Hausdorff, $f(Q)$ is closed (\ref{prop:hausdorff-compact-closed}).
+Hence the first statement follows.
+
+The second statement follows from \ref{ex:open-closed-pushforward}.
+\qeds
 
 Recall that every homeomorphism is a continuous bijection; see \ref{ex:bijection-ne-homeo}.
 The following corollary provides a partial converse.
@@ -163,16 +174,7 @@ A continuous bijection from a compact space to a Hausdorff space is a homeomorph
 Furthermore, a continuous injective map from a compact space to a Hausdorff space is an embedding.
 \end{thm}
 
-\parit{Proof of \ref{obs:compact-to-hausdorff}.}
-Since $\c{K}$ is compact, any closed subset $Q\subset \c{K}$ is compact (\ref{prop:compact-closed}).
-Since the image of a compact set is compact (\ref{prop:comp-image}), we have that $f(Q)$ is a compact subset of $\c{Y}$.
-Since $\c{Y}$ is Hausdorff, $f(Q)$ is closed (\ref{prop:hausdorff-compact-closed}).
-Hence the first statement follows.
-
-The second statement follows from \ref{ex:open-closed-pushforward}.
-\qeds
-
-The corollary is used to describe the quotient topology.
+The corollary can be used to describe the quotient topology.
 For example, consider the map $f$,
 \begin{figure}[h!]
 \centering
@@ -193,12 +195,12 @@ The map $f$ defines an equivalence relation on the square $[0,1]\times[0,1]$:
 \[f(u_1,v_1)=f(u_2,v_2)\quad\Leftrightarrow\quad(u_1,v_1)\sim(u_2,v_2);\]
 this is the minimal equivalence relation such that
 $(u,0)\sim (u,1)$ and $(0,v)\sim (1,v)$ for any $u,v\in[0,1]$.
-Since $[0,1]\times[0,1]$ is compact and $\RR^3$ is Hausdorff, we can conclude that $f$ defines a homeomorphism from the quotient space $[0,1]\times[0,1]/{\sim}\to T$.
-Note that we did not have to check that inverse map $T\to[0,1]\times[0,1]/\sim$ is continuous.
+Since $[0,1]\times[0,1]$ is compact and $\RR^3$ is Hausdorff, we can conclude that $f$ defines a homeomorphism from the quotient space $[0,1]\times[0,1]/{\sim}$ to $T$.
+Note that we did not have to check that the inverse map $T\to[0,1]\times[0,1]/\sim$ is continuous.
 
 
-Recall that $\DD^2$, $\mathbb{S}^1$, and $\mathbb{S}^1$ denote the unit disc the unit circle, and the unit sphere, respectively.
-that is,
+Recall that $\DD^2$, $\mathbb{S}^1$, and $\mathbb{S}^2$ denote the unit disc, the unit circle, and the unit sphere, respectively.
+That is,
 \begin{align*}
 \DD^2&=\set{(x,y)\in\RR^2}{x^2+y^2\le 1},
 \\
@@ -211,12 +213,12 @@ that is,
 Prove the following:
 
 \begin{subthm}{ex:[0,1]/0=1}
-$\mathbb{S}^1\simeq[0,1]/\{0,1\}$.%
-\footnote{In other words, $\mathbb{S}^1$ is homeomorphic to the unit interval with glued ends.}
+$\mathbb{S}^1\simeq[0,1]/\{0,1\}$.
+In other words, $\mathbb{S}^1$ is homeomorphic to the unit interval with glued ends.
 \end{subthm}
 
 \begin{subthm}{ex:D/S}
-$\DD^2/\mathbb{S}^1\simeq\mathbb{S}^2$.
+$\DD^2/\mathbb{S}^1\simeq\mathbb{S}^2$; here $\mathbb{S}^1=\partial\DD^2\subset \DD^2$.
 \end{subthm}
 
 \begin{subthm}{ex:SxI/S}
@@ -232,8 +234,7 @@ Show that the boundary of a convex body is homeomorphic to $\mathbb{S}^2$.
 
 \begin{thm}{Exercise}\label{ex:1-point-comp-quotinet}
 Let $Q$ be a closed subset of a compact Hausdorff space $\c{X}$.
-Assume that the complement $V=\c{X}\setminus Q$ is not compact.
-Show that the one-point compactification of $V$ is homeomorphic to the quotient space $\c{X}/Q$.
+Show that the one-point compactification of $V=\c{X}\setminus Q$ is homeomorphic to the quotient space $\c{X}/Q$.
 \end{thm}
 
 
@@ -253,12 +254,12 @@ The following theorem provides a converse, but we are not going to prove it.
 A compact second-countable Hausdorff space is metrizable.
 \end{thm}
 
-This theorem is a corollary of the Urysohn metrization theorem; it gives a very satisfactory topological characterization of compact metrizable spaces.
+This theorem is a corollary of the Urysohn metrization theorem; it gives a satisfactory topological characterization of compact metrizable spaces.
 There are analogous characterizations of all metrizable spaces;
-if you are interested in the subject then start with Nagata--Smirnov theorem.
+if you are interested in the subject then start with the Nagata--Smirnov theorem.
 Both theorems are discussed in the book by James Munkres \cite{munkres}.
 
-Let us mention several other conditions that (like Hausdorffness) make a topological space behave more like metrizable.
+Let us mention several other conditions that, like Hausdorffness, make a topological space behave more like metrizable spaces.
 
 Recall that a topological space $\c{X}$ is called \index{first-countable space}\emph{first-countable} if for each point $x\in\c{X}$ there exists a sequence of neighborhoods $N_1$, $N_2,\ldots$ such that for any open set $V\ni x$ we can choose $n$ such that $V\supset N_n\ni x$.
 Observe that any metric space is first-countable; indeed, one can take $N_n=\Ball(x,\tfrac1n)$.
@@ -277,9 +278,9 @@ Show that $\c{X}$ is not metrizable.
 \end{thm}
 
 
-Given a nonempty set $A$ in a metric space $\c{M}$, consider function $\dist_A\:\c{M}\to \RR$ defined by
+Given a nonempty set $A$ in a metric space $\c{M}$, consider the function $\dist_A\:\c{M}\to \RR$ defined by
 \[\dist_Ax=\inf\set{|x-a|_{\c{M}}}{a\in A}.\]
-By triangle inequality, $|\dist_Ax-\dist_Ay|\le |x-y|_{\c{M}}$.
+By the triangle inequality, $|\dist_Ax-\dist_Ay|\le |x-y|_{\c{M}}$.
 Therefore, \textit{$\dist_A$ is a continuous nonnegative function}.
 Directly from the definition, we have that $x\in\bar A\ \Leftrightarrow\ \dist_Ax=0$.
 
@@ -287,7 +288,7 @@ Directly from the definition, we have that $x\in\bar A\ \Leftrightarrow\ \dist_A
 \begin{thm}{Exercise}\label{ex:distfun}
 Consider two disjoint closed sets $A$ and $B$ in a metric space $\c{M}$.
 Show that the function defined by
-\[f\:x\mapsto \frac{\dist_Ax}{\dist_Ax+\dist_Bx}.\]
+\[f\:x\mapsto \frac{\dist_Ax}{\dist_Ax+\dist_Bx}\]
 is a continuous function $\c{M}\to[0,1]$.
 Moreover,
 \[f(a)=0\ \Leftrightarrow\ a\in A
@@ -298,23 +299,24 @@ Conclude that there are disjoint open sets $V\supset A$ and $W\supset B$.
 \end{thm}
 
 
-The last exercise provides a purely topological property of metrizable spaces.
+The exercise provides a purely topological property of metrizable spaces.
 Topological spaces that meet the statement about existence of open sets $V$ and $W$ are called
-$T_4$; by \ref{ex:normal-hausdorff}, \textit{any compact Hausdorff space is $T_4$}.
-There is a sequence of its related conditions $T_0$, $T_1$, $T_2$, $T_3$, $T_4$, and $T_5$ which are listed below for your entertainment.
-There are also additional conditions related to the existence of function in the first part of the exercise.
-(One can easily spend weeks studying difference between all these conditions.)
+$T_4$.
+There is a sequence of its related conditions $T_0$, $T_1$, $T_2$, $T_3$, $T_4$, and $T_5$ which I list below for your entertainment.
+These are the most common conditions, and there are many more;
+one can easily spend weeks studying the difference between them.
 
 All these conditions hold for metrizable spaces; they were extensively studied.
 Hausdorffness is $T_2$, and this is the most important condition in this line.
-We met $T_1$ in \ref{obs:one-point=compact}; also by \ref{thm:hausdorff-compact-t3}, \textit{any compact Hausdorff space is $T_3$}.
+We met $T_1$ in \ref{obs:one-point=compact};
+also by \ref{thm:hausdorff-compact-t3} and \ref{ex:normal-hausdorff} \textit{any compact Hausdorff space is $T_3$ and $T_4$}.
 
 \index{$T_0$, $T_1$, $T_2$, $T_3$, $T_4$, $T_5$}
 \begin{itemize}
 \item[$T_0$.] For any distinct points $a,b\in \c{X}$ there is an open set $V$ such that $a\in V$ and $b\notin V$ or an open set $W$ such that $a\notin W$ and $b\in W$.
 \item[$T_1$.] For any distinct points $a,b\in \c{X}$ there is an open set $V$ such that $a\in V$ and $b\notin V$.
 \item[$T_2$.] For any distinct points $a,b\in \c{X}$ there are disjoint open sets $V$ and $W$ such that $a\in V$ and $b\in W$.
-\item[$T_3$.] For any point $a\in \c{X}$ and closed set $B\subset \c{X}$ such that $a\notin B$ there are disjoint open sets $V$ and $W$ such that $a\in V$ and $B\subset W$.
+\item[$T_3$.] For any point $a\in \c{X}$ and a closed set $B\subset \c{X}$ such that $a\notin B$ there are disjoint open sets $V$ and $W$ such that $a\in V$ and $B\subset W$.
 \item[$T_4$.] For any two disjoint closed sets $A,B\subset \c{X}$ there are disjoint open sets $V$ and $W$ such that $A\subset V$ and $B\subset W$.
 \item[$T_5$.] For any sets $A,B\subset \c{X}$ such that $\bar A\cap B= A\cap \bar B=\emptyset$ there are disjoint open sets $V$ and $W$ such that $A\subset V$ and $B\subset W$.
 \end{itemize}
@@ -322,12 +324,12 @@ We met $T_1$ in \ref{obs:one-point=compact}; also by \ref{thm:hausdorff-compact-
 \medskip
 
 Often one includes $T_1$ in the definition of $T_i$ for $i\ge 3$;
-in this case, one-point sets are closed, and  $T_5\Rightarrow T_4\Rightarrow T_3\Rightarrow T_2\Rightarrow T_1\Rightarrow T_0$.
+in this case, one-point sets are closed, and $T_5\Rightarrow T_4\Rightarrow T_3\Rightarrow T_2\Rightarrow T_1\Rightarrow T_0$.
 Spaces that meet $T_3$ and $T_4$ are also called \index{regular space}\emph{regular} and \index{normal space}\emph{normal}, respectively; again different authors might define them with or without $T_1$.
-I see no reason for particular choice of terms regular and normal;
+I see no reason for a particular choice of terms regular and normal;
 but it helps to remember that Hausdorff ($T_2$), regular ($T_3$), and normal ($T_4$) do \textit{not} go in the alphabetical order.
 
-\begin{thm}{Exercise}\label{ex:Т5}
+\begin{thm}{Exercise}\label{ex:T5}
 Prove that any metric space is $T_5$.
 \end{thm}
 

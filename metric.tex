@@ -71,8 +71,8 @@ For any $x,y\z\in\c{X}$,
 set $|x-y|\z=0$ if $x=y$ and $|x-y|=1$ otherwise.
 This metric is called the \index{discrete metric}\emph{discrete metric} on $\c{X}$ and the obtained metric space is called {}\emph{discrete}.
 
-\parbf{Real line.}\index{real line}
-The set $\mathbb{R}$ of all real numbers with the metric defined by $|x-y|$.
+\parbf{Real line}\index{real line}
+is the set $\mathbb{R}$ of all real numbers with the metric defined by $|x-y|$.
 (Unless it is stated otherwise, the real line $\mathbb{R}$ will be considered with this metric.)
 
 \parbf{Metrics on the plane.}
@@ -112,7 +112,7 @@ For example, the disc
 \begin{align*}
 \DD^2&=\set{(x,y)\in\RR^2}{x^2+y^2\le 1}
 \intertext{and the circle}
-\SS^1&=\set{(x,y)\in\RR^2}{x^2+y^2=1},
+\SS^1&=\set{(x,y)\in\RR^2}{x^2+y^2=1}
 \end{align*}
 are metric spaces with the metrics taken from the Euclidean plane.
 Similarly, the interval $[0,1)$ is a metric space with metric taken from~$\RR$.
@@ -142,13 +142,9 @@ is continuous.
 \end{thm}
 
 \begin{thm}{Claim}\label{ex:comp+cont}
-Let $\c{X}$, $\c{Y}$ and $\c{Z}$ be metric spaces.
-Assume that the maps $f\:\c{X}\to\c{Y}$
-and $g\:\c{Y}\to\c{Z}$ are continuous,
-and 
-\[h=g\circ f\:\c{X}\to \c{Z}\] is their \index{composition}\emph{composition};
-that is, $h(x)=g(f(x))$ for any $x\in \c{X}$.
-Show that $h\:\c{X}\to\c{Z}$ is continuous.
+Let $f\:\c{X}\to\c{Y}$
+and $g\:\c{Y}\to\c{Z}$ be continuous maps between  metric spaces.
+Then the composition $h=g\circ f\:\c{X}\to \c{Z}$ is also continuous.
 \end{thm}
 
 \parit{Proof.}
@@ -164,11 +160,11 @@ $$
 |g(y')-g(y)|_{\c{Z}}<\epsilon.$$
 
 Since $f$ is continuous, there is $\delta_2>0$ such that
-$$|x'-x|_{\c{X}}<\delta_2|
+$$|x'-x|_{\c{X}}<\delta_2
 \quad
 \Rightarrow
 \quad
-f(x'-f(x)|_{\c{Y}}<\delta_1.$$
+|f(x'-f(x)|_{\c{Y}}<\delta_1.$$
 
 Since $f(x)=y$, we get that
 $$
@@ -262,7 +258,7 @@ A subset $V$ in a metric space $\c{X}$ is called \index{open set}\emph{open} if 
 In other words, $V$ is open if, together with each point, $V$ contains its $\eps$-neighborhood for some $\eps>0$.
 
 For example, any set in a discrete metric space is open.
-Indeed a $1$-neighborhoo of any point $p$ is the opne-point set $\{p\}$, and it lies in any set containing $p$.
+Indeed a $1$-neighborhood of any point $p$ is the one-point set $\{p\}$, and it lies in any set containing $p$.
 
 Further, the set of positive real numbers
 \[(0,\infty)=\set{x\in\RR}{x>0}\] 
@@ -284,7 +280,7 @@ If $y\in \Ball(x,R)$, then $r=R-|x-y|\z>0$.
 The triangle inequality implies that if $|y-z|<r$, then $|x-z|\le |x-y|+|y-z|<R$.
 
 In other words, if $z\in \Ball(y,r)$, then $z\in \Ball(x,R)$.
-Equivalenltly, $\Ball(y,r)\z\subset\Ball(x,R)$.
+Equivalently, $\Ball(y,r)\z\subset\Ball(x,R)$.
 Hence the result.
 \qeds
 

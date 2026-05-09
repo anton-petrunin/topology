@@ -15,7 +15,7 @@ that is, if every $x\in \c{X}$ belongs to some~$V_\alpha$.
 
 More generally, $\{V_\alpha\}$ is an \index{open cover}\emph{open cover} of a subset $S\subset \c{X}$ if any $s\in S$ belongs to some~$V_\alpha$.
 
-A subfamily of the cover $\{V_\alpha\}$ that is also a cover is called its \index{subcover}\emph{subcover} of $\{V_\alpha\}$.
+A subfamily of the cover $\{V_\alpha\}$ that is also a cover is called a \index{subcover}\emph{subcover} of $\{V_\alpha\}$.
 \end{thm}
 
 Observe that any base of a space is a cover, but not every cover is its base.
@@ -29,7 +29,7 @@ Conclude that a map $f\:\c{X}\to \c{Y}$ is continuous if for any $\alpha$ the re
 \end{thm}
 
 \begin{thm}{Definition}
-A topological space $\c{X}$ is called \index{compact space}\emph{compact} if any cover $\{V_\alpha\}$ of $\c{X}$
+A topological space $\c{X}$ is called \index{compact space}\emph{compact} if any open cover $\{V_\alpha\}$ of $\c{X}$
 contains a finite subcover $\{V_{\alpha_1},\z\ldots,V_{\alpha_n}\}$.
 
 Analogously, a subset $S$ of a topological space $\c{X}$ is called {}\emph{compact} if any cover of $S$
@@ -49,7 +49,7 @@ Show that any set equipped with the cofinite topology is compact.
 The solution of the following problem illustrates how one can apply the definition of compactness.
 
 \begin{thm}{Problem}\label{obs:closed-bounded}
-A compact subset $S$ of the real line has to be closed and \index{bounded set}\emph{bounded}; that is there is $c\in \RR$ such that $|s|\le c$ for any $s\in S$.
+A compact subset $S$ of the real line has to be closed and \index{bounded set}\emph{bounded}; that is, there is $c\in \RR$ such that $|s|\le c$ for any $s\in S$.
 \end{thm}
 
 \parit{Solution.}
@@ -58,7 +58,7 @@ Assume $S$ is not closed.
 Then we can choose a point $s\in\bar S\setminus S$ and consider the cover of $S$ by the complements of $[ s-\eps,s+\eps]$ for all $\eps>0$.
 Since it has a finite subcover, a neighborhood of $s$ does not intersect $S$, so $s\notin\bar S$ --- a contradiction.
 
-Applying the same reasoning for cover of $S$ by all intervals $(-c,c)$, one can show that $S$ is bounded.
+Applying the same reasoning to the cover of $S$ by all intervals $(-c,c)$ for $c>0$, one can show that $S$ is bounded.
 \qeds
 
 \begin{thm}[!]{Exercise}\label{ex:noncompact-un}
@@ -96,7 +96,7 @@ such that
 
 \end{thm}
 
-We say that a family of sets has \index{finite intersection property}\emph{finite intersection property} if any finite subfamily of has non-empty intersection.
+We say that a family of sets has \index{finite intersection property}\emph{finite intersection property} if any finite subfamily of it has non-empty intersection.
 According to the proposition, compactness is equivalent to the following property: \textit{any family of closed sets with finite intersection property has a nonempty intersection}.
 
 \parit{Proof.}
@@ -120,16 +120,9 @@ Show that there is a point $q\in \c{K}$ such that $q\in Q_n$ for any $n$.
 
 \begin{thm}{Advanced exercise}\label{ex:proper-point}
 Let $f\:\c{X}\to\c{Y}$ be a closed continuous map.
-Assume that $\c{Y}$ is compact and every point $y\in \c{Y}$ has compact inverse image $f^{-1}\{y\}\subset \c{X}$.
+Assume that $\c{Y}$ is compact and every point $y\in \c{Y}$ has a compact inverse image $f^{-1}\{y\}\subset \c{X}$.
 Show that $\c{X}$ is compact.
 \end{thm}
-
-\begin{thm}{Advanced exercise}\label{ex:disjoint-closed} %???MOVE
-Let $Q_1,Q_2,\ldots$ be a sequence of nonempty disjoint closed sets in $[0,1]$.
-Show that
-$Q_1\cup Q_2\cup\dots\ne [0,1]$.
-\end{thm}
-
 
 \section{Real interval}\label{sec:compact-interval}
 
@@ -238,7 +231,8 @@ the eldest son should be given half of all camels,
 the middle son the 1/3 part,
 and the youngest son the 1/9.
 It was impossible to follow his will until a wise man appeared.
-He added his own camel, the oldest son took $18/2=9$ camels, the second son took $18/3=6$ camels, and the third son $18/9=2$ camels, the wise man took his camel and went away.}}
+He added his own camel, the oldest son took $18/2=9$ camels, the second son took $18/3=6$ camels, and the third son $18/9=2$ camels.
+The wise man took his camel and went away.}}
 
 
 \begin{thm}{Exercise}\label{ex:closed-bounded=compact}
@@ -248,14 +242,14 @@ Show that any closed bounded subset of the real line is compact.
 
 \section{One-point compactification}
 
-%??? change notation to $\dot{\c{X}}$ or so.
+
 
 Choose a topological space $\c{X}$ and add to $\c{X}$ one extra point that will be denoted by $\infty$.
-Let us define topology on $\c{X}^\infty=\c{X}\cup\{\infty\}$ such that
+Let us define a topology on $\c{X}^\infty=\c{X}\cup\{\infty\}$ such that
 a subset $V\subset\c{X}^\infty$ is open if $V$ is an open subset of $\c{X}$ (in which case $\infty\notin V$) or $\infty\in V$ and its complement $\c{X}\setminus V$ is a closed \textit{and} compact subset of $\c{X}$.
 
 To show that we have defined a topology, we need to check the conditions in \ref{def:top-space}:
-\ref{SHORT.def:top-space:empty} is straightforward, \ref{SHORT.def:top-space:u} follows since intersection of closed and compact sets are closed and compact (see \ref{prop:compact-closed}), and \ref{SHORT.def:top-space:n} follows since union of two closed sets is closed and union of two compact sets is compact (see \ref{def:closed-properties:u} and \ref{ex:ucompact}).
+\ref{SHORT.def:top-space:empty} is straightforward, \ref{SHORT.def:top-space:u} follows since intersection of closed and compact sets is closed and compact (see \ref{prop:compact-closed}), and \ref{SHORT.def:top-space:n} follows since union of two closed sets is closed and union of two compact sets is compact (see \ref{def:closed-properties:u} and \ref{ex:ucompact}).
 
 Now, choose an open cover $\{V_\alpha\}$ of $\c{X}^\infty$.
 Choose $\alpha_\infty$ such that $V_{\alpha_\infty}\ni\infty$.
@@ -266,7 +260,7 @@ whence $\c{X}^\infty$ is compact.
 
 
 The space $\c{X}^\infty$ constructed in the proof is called the \index{one-point compactification}\emph{one-point compactification} of $\c{X}$.
-Observe that inclusion map $\c{X}\hookrightarrow\c{X}^\infty$ is an embedding.
+Observe that the inclusion map $\c{X}\hookrightarrow\c{X}^\infty$ is an embedding.
 Furthermore, if $\c{X}$ is not compact, then it is dense in $\c{X}^\infty$.
 In particular, we proved the following statement.
 
@@ -276,7 +270,7 @@ Every topological space is homeomorphic to a subspace of a compact space.
 
 
 \begin{thm}{Exercise}\label{ex:one-point-comp}
-Show that one-point compactification of the real $\RR$ line is homeomorphic to the circle $\SS^1$.
+Show that the one-point compactification of the real line $\RR$ is homeomorphic to the circle $\SS^1$.
 \end{thm}
 
  
@@ -310,7 +304,7 @@ Show that for any cover $\{V_\alpha\}$ of $\c{X}$ there is an inscribed cover ma
 
 Suppose that $\{V_\alpha\}$ is inscribed in $\{W_\beta\}$.
 If $\{V_\alpha\}$ has a finite subcover $\{V_{\alpha_1},\ldots,V_{\alpha_n}\}$,
-then for each $\alpha_i$ we can choose $\beta_i$ such that $V_{\alpha_i}\subset  W_{\beta_i}$.
+then for each $\alpha_i$ we can choose $\beta_i$ such that $V_{\alpha_i}\subset W_{\beta_i}$.
 Note that $\{W_{\beta_1},\ldots,W_{\beta_n}\}$ is a finite subcover of $\{W_\beta\}$.
 It proves the following:
 
@@ -326,7 +320,7 @@ Find a flaw in the following argument.
 
 \parit{Fake proof of \ref{thm:compact-product}.}
 Fix an open cover $\{O_\beta\}$ of $\c{X}\times\c{Y}$.
-Consider all product sets $V_\alpha\times W_\alpha$ such that $V_\alpha\times W_\alpha\subset O_\beta$ for some $\beta$; as before, $V_\alpha$ and $W_\alpha$ are open in $\c{X}$ and $\c{Y}$ respectively.
+Consider all product sets $V_\alpha\times W_\alpha$ such that $V_\alpha\times W_\alpha\subset O_\beta$ for some $\beta$; as before, $V_\alpha$ and $W_\alpha$ are open in $\c{X}$ and $\c{Y}$, respectively.
 Note that $\{V_\alpha\times W_\alpha\}$ is a cover of $\c{X}\times\c{Y}$ that is inscribed in $\{O_\beta\}$.
 By the observation, it is sufficient to find a finite subcover of $\{V_\alpha\times W_\alpha\}$.
 
@@ -347,20 +341,20 @@ $V_\alpha\times W_\alpha$, where $V_\alpha$ is open in $\c{X}$ and $W_\alpha$ is
 \end{figure}
 
 Choose an open cover $\{O_\beta\}$ of $\c{X}\times\c{Y}$.
-Consider all product sets $V_\alpha\times W_\alpha$ such that $V_\alpha\times W_\alpha\subset O_\beta$ for some $\beta$ (as before, $V_\alpha$ and $W_\alpha$ are open in $\c{X}$ and $\c{Y}$ respectively).
+Consider all product sets $V_\alpha\times W_\alpha$ such that $V_\alpha\times W_\alpha\subset O_\beta$ for some $\beta$ (as before, $V_\alpha$ and $W_\alpha$ are open in $\c{X}$ and $\c{Y}$, respectively).
 Note that $\{V_\alpha\times W_\alpha\}$ is a cover of $\c{X}\times\c{Y}$ that is inscribed in $\{O_\beta\}$.
 By \ref{obs:inscribed-cover}, it is sufficient to find a finite subcover of $\{V_\alpha\times W_\alpha\}$.
 
 Fix $x \in \c{X}$.
 Note that the subspace $\{x\}\times \c{Y}$ is homeomorphic to $\c{Y}$; see \ref{ex:graph}.
-In particular, the  set $\{x\}\times \c{Y}$ is compact.
+In particular, the set $\{x\}\times \c{Y}$ is compact.
 Therefore, $\{x\}\times \c{Y}$ has a finite cover $\{V_{\alpha_1}\times W_{\alpha_1},\ldots,V_{\alpha_n}\times W_{\alpha_n}\}$; that is,
 \[(V_{\alpha_1}\times W_{\alpha_1})\cup\dots\cup
 (V_{\alpha_n}\times W_{\alpha_n})
 \supset \{x\}\times \c{Y}\]
 Consider the set
 \[N_x=V_{\alpha_1}\cap\dots\cap V_{\alpha_n};\]
-note that $N_x$ is  open in $\c{X}$.
+note that $N_x$ is open in $\c{X}$.
 Since $N_x\subset V_{\alpha_i}$ for any $i$, we have
 \[N_x\times \c{Y}\subset (V_{\alpha_1}\times W_{\alpha_1})\cup\dots\cup
 (V_{\alpha_n}\times W_{\alpha_n}).\]
@@ -375,7 +369,8 @@ Since $\c{X}$ is compact,
 there is a finite subcover $\{N_{x_1},\ldots,N_{x_m}\}$.
 Note that 
 \[\c{X}\times\c{Y}=(N_{x_1}\times \c{Y})\cup\dots\cup (N_{x_m}\times \c{Y});\]
-that is, $\c{X}\times\c{Y}$ can be covered by a finite set of sets from $\{N_x\times \c{Y}\}_{x\in\c{X}}$.
+that is, $\c{X}\times\c{Y}$ can be
+covered by a finite subfamily of $\{N_x\times \c{Y}\}_{x\in\c{X}}$.
 Applying \ref{clm:Nx}, we get that $\c{X}\times\c{Y}$ can be covered by a finite number of product sets from $\{V_\alpha\times W_\alpha\}$.
 \qeds
 
@@ -410,17 +405,17 @@ A topological space $\c{X}$ is compact if and only if for some (and therefore an
 \end{thm}
 
 Applying this theorem to the prebase from \ref{ex:graph:prebase} gives a short proof of \ref{thm:compact-product}.
-Indeed, suppose that a cover of the product space $\c{X}\times \c{Y}$ consists only of products $V_\alpha\times  \c{Y}$ and $\c{X}\times W_\beta$, where $V_\alpha\subset \c{X}$ and $W_\beta\subset \c{Y}$ are open sets.
+Indeed, suppose that a cover of the product space $\c{X}\times \c{Y}$ consists only of products $V_\alpha\times \c{Y}$ and $\c{X}\times W_\beta$, where $V_\alpha\subset \c{X}$ and $W_\beta\z\subset \c{Y}$ are open sets.
 Note that $\bigcup V_\alpha= \c{X}$ or $\bigcup W_\beta= \c{Y}$;
-indeed, if there are $x\in \c{X}\setminus \bigcup V_\alpha$ and $y\in \c{Y}\setminus\bigcup W_\beta$, then $(x,y)$ is not covered by any $V_\alpha\times  \c{Y}$ or $\c{X}\times W_\beta$ --- a contradiction.
+indeed, if there are $x\in \c{X}\setminus \bigcup V_\alpha$ and $y\in \c{Y}\setminus\bigcup W_\beta$, then $(x,y)$ is not covered by any $V_\alpha\times \c{Y}$ or $\c{X}\times W_\beta$ --- a contradiction.
 Without loss of generality, we can assume that $\{V_\alpha\}$ cover $\c{X}$.
 Since $\c{X}$ is compact we can choose a finite subcover $\{V_{\alpha_1},\ldots,V_{\alpha_n}\}$.
-It remains to observe that $\{V_{\alpha_1}\times  \c{Y},\ldots,V_{\alpha_n}\times  \c{Y}\}$ covers $\c{X}\times\c{Y}$ and apply the Alexander prebase theorem.
+It remains to observe that $\{V_{\alpha_1}\times \c{Y},\ldots,V_{\alpha_n}\times \c{Y}\}$ covers $\c{X}\times\c{Y}$ and to apply the Alexander prebase theorem.
 
 Let us indicate a more serious application of this theorem.
 
 Start with a set $S$.
-Denote by \index{Power}$\Power(S)$ the set of all subsets in $S$.
+Denote by \index{Power}$\Power(S)$ the set of all subsets of $S$.
 Given $s\in S$, define sets
 \[\mathfrak{V}_s=\set{X\subset S}{X\ni s}
 \quad\text{and}\quad
@@ -428,9 +423,9 @@ Given $s\in S$, define sets
 \]
 Note that $X\subset S$ means that $X\in \Power(S)$, so $\mathfrak{V}_s$ and $\mathfrak{W}_s$ are subsets of $\Power(S)$.
 
-Let us equip the set $\Power(S)$ with topology defined by the prebase $\{\mathfrak{V}_s,\mathfrak{W}_s\}_{s\in S}$, now we can call it \index{power space}\emph{power space}.
+Let us equip the set $\Power(S)$ with the topology defined by the prebase $\{\mathfrak{V}_s,\mathfrak{W}_s\}_{s\in S}$; now we can call it \index{power space}\emph{power space}.
 Applying the argument above, one sees that \textit{$\Power(S)$ is compact}.
-This is a partial case of the \index{Tychonoff compactness theorem}\emph{Tychonoff compactness theorem}.
+This is a special case of the \index{Tychonoff compactness theorem}\emph{Tychonoff compactness theorem}.
 
 For a finite set $F$ the space $\Power(F)$ is a discrete space with $2^{|F|}$ points, which is compact --- not a surprise.
 
@@ -440,10 +435,10 @@ defines a homeomorphism from $\Power(\NN)$ to the Cantor set $\c{C}\subset [0,1]
 
 %Recall that the set $\c{C}$ constructed as an intersection of nested sequence of subsets $[0,1]\z=\c{C}_0\supset \c{C}_1\supset \dots$ such that $\c{C}_{i+1}$ is obtained from $\c{C}_i$ by deleting the open middle third from every line segment in it.
 
-The following exercise describes a truly scary example of compact space.
+The following exercise describes a truly scary example of a compact space.
 
 \begin{thm}{Advanced exercise}\label{ex:power-power}
-Let $\c{A}=\Power(\NN)$ and $\c{B}=\Power(\c{A})$; as we know $\c{B}$ is a compact space.
+Let $\c{A}=\Power(\NN)$ and $\c{B}=\Power(\c{A})$; as we know, $\c{B}$ is a compact space.
 Show that the following sequence of points $\mathfrak{p}_1$, $\mathfrak{p}_2,\ldots$ in $\c{B}$ does not have a converging subsequence:
 \[\mathfrak{p}_n=\set{P\in\c{A}}{P\not\ni n}.\]
 

@@ -12,7 +12,7 @@ The map $H\:\c{X}\times[0,1]\to \c{Y}$ is called a \index{homotopy}\emph{homotop
 
 It is often convenient to think of the homotopy $H$ as a one-parameter family of maps $h_t\:\c{X}\to \c{Y}$ defined by $h_t(x)=H(x,t)$.
 
-We say that a map is \index{null-homotopic}\emph{null-homotopic} if it is homotopic to a constant map.
+A map is called \index{null-homotopic}\emph{null-homotopic} if it is homotopic to a constant map.
 
 Observe that if $f_t\:\c{X}\to\c{Y}$ and $g_t\:\c{Y}\to \c{Z}$ are homotopies,
 then so is
@@ -28,7 +28,7 @@ Then $g_0\circ f_0\sim g_1\circ f_1$.
 \section{Linear homotopy}\label{sec:Linear homotopy}
 
 Suppose $\c{C}$ is a convex subset of $\RR^n$ with induced topology.
-Given two continuous maps $f,g\:\c{X}\to \c{C}$, one can consider \index{linear homotopy}\emph{linear homotopy} from $f$ to $g$ defined by
+Given two continuous maps $f,g\:\c{X}\to \c{C}$, one can consider the \index{linear homotopy}\emph{linear homotopy} from $f$ to $g$ defined by
 \[H(x,t)=(1-t)\cdot f(x)+t\cdot g(x).\]
 It follows that any two continuous maps $\c{X}\to\c{C}$ are homotopic;
 in particular, any continuous map $\c{X}\to\c{C}$ is null-homotopic.
@@ -37,10 +37,10 @@ Recall that
 \[\SS^2\df\set{(x,y,z)\in\RR^3}{x^2+y^2+z^2=1}.\]
 
 \begin{thm}{Exercise}\label{ex:homot-sphere}
-Suppose that for two continuous maps $f_0, f_1\:\c{X}\z\to\SS^2$, we have that $f_0(x)\z+f_1(x)\ne 0$ for any $x\in\c{X}$.
+Let $f_0, f_1\:\c{X}\z\to\SS^2$ be two continuous maps.
+Suppose that $f_0(x)\z+f_1(x)\ne 0$ for any $x\in\c{X}$.
 Show that $f_0\sim f_1$.
 \end{thm}
-
 
 
 
@@ -49,7 +49,7 @@ Show that $f_0\sim f_1$.
 Let $H\:\c{X}\times[0,1]\to \c{Y}$ be a homotopy, and let $A\subset \c{X}$.
 Suppose that for any $a\in A$ the point $H(a,t)$ does not depend on $t$.
 Then we say that $H$ is a homotopy \index{relative homotopy}\emph{relative to $A$}.
-Two maps $f,g\: \c{X}\to \c{Y}$ are called {}\emph{homotopic relative to $A$}, briefly, $f\sim g\rel A$ if there is a homotopy relative to $A$ from $f$ to $g$.
+Two maps $f,g\: \c{X}\to \c{Y}$ are called {}\emph{homotopic relative to $A$}, briefly, $f\sim g\rel A$, if there is a homotopy relative to $A$ from $f$ to $g$.
 
 Note also that if $f\sim g\rel A$, then $f$ agrees with $g$ on $A$;
 that is, $f(a)=g(a)$ for any $a\in A$.
@@ -57,7 +57,7 @@ that is, $f(a)=g(a)$ for any $a\in A$.
 \section{Operations on homotopies}\label{sec:homot-operations}
 
 The following operations on homotopies are analogous to the operations on paths discussed in \ref{sec:Operations on paths}.
-In fact, a path is a special case of homotopy --- it is a homotopy with a one-point source space.
+In fact, a path is a special case of a homotopy --- it is a homotopy with a one-point source space.
 \begin{itemize}
 \item the \index{constant homotopy}\emph{constant homotopy} $H(x,t)=f(x)$ joins $f$ with itself;
 \item if $H$ is a homotopy from $f$ to $g$, then the
@@ -96,39 +96,40 @@ The constructions from the previous section imply that homotopy defines an equiv
 \begin{itemize}
  \item $f\sim f$;
  \item if $f\sim g$, then $g\sim f$;
- \item if $f\sim g$, and $g\sim h$, then $f\sim h$.
+ \item if $f\sim g$ and $g\sim h$, then $f\sim h$.
 \end{itemize}
 
 
 The equivalence classes for $\sim$ are called \index{homotopy!class!of maps}\emph{homotopy classes};
 the equivalence class of a map $f\:\c{X}\to\c{Y}$ will be denoted by $[f]$.
 Given two spaces $\c{X}$ and $\c{Y}$, the set of all homotopy classes will be denoted by
-$\pi(\c{X},\c{Y})$. %??? \HClass(\c{X},\c{Y}) \HClass_{\rel A}(\c{X},\c{Y})
+$\HC(\c{X},\c{Y})$.
 
 (The same holds for homotopies relative to $A\subset \c{X}$; so $f\sim g \rel A$ is an equivalence relation.
-The set of all homotopy classes relative to $A$ can be denoted by $\pi_A(\c{X},\c{Y})$.)
+The set of all homotopy classes relative to $A$ can be denoted by $\HC_A(\c{X},\c{Y})$.)
 
-Often the set $\pi(\c{X},\c{Y})$ admits a direct description; this is precisely its advantage over the vast set of all continuous maps $\c{X}\to \c{Y}$.
-Note that any homeomorphism $\c{Y}\to \c{Y}'$ defines a bijection between homotopy classes $\pi(\c{X},\c{Y})\to \pi(\c{X},\c{Y}')$ for any given space $\c{X}$.
+Often the set $\HC(\c{X},\c{Y})$ admits a direct description; this is precisely its advantage over the vast set of all continuous maps $\c{X}\to \c{Y}$.
+
+Note that any homeomorphism $\c{Y}\to \c{Z}$ defines a bijection between $\HC(\c{X},\c{Y})$ and $\HC(\c{X},\c{Z})$ for any given space $\c{X}$.
 So, studying the homotopy classes may help to distinguish topological spaces.
 
-This construction is meaningful even for very simple choices of source space $\c{X}$.
-If $\c{X}$ is the one-point space, then $\pi(\c{X},\c{Y})$ is also denoted by $\pi_0(\c{Y})$.
-Note that $\pi_0(\c{Y})$ is the set of path-connected components in $\c{Y}$ --- this was the main subject of the previous chapter.
-The set $\pi(\SS^1,\c{Y})$ is closely related to the fundamental group of $\c{Y}$, which will soon be introduced.
+This construction is meaningful even for very simple choices of the source space $\c{X}$.
+If $\c{X}$ is the one-point space, then $\HC(\c{X},\c{Y})$ is also denoted by $\pi_0(\c{Y})$.
+Note that $\pi_0(\c{Y})$ is the set of path-connected components of $\c{Y}$ --- this was the main subject of the previous chapter.
+The set $\HC(\SS^1,\c{Y})$ is closely related to the fundamental group of $\c{Y}$, which will soon be introduced.
 
 The idea to use homotopy classes to distinguish topological spaces will guide us in the right direction.
 However, the true reason to consider homotopy classes is different; it will be discussed in Chapter~\ref{chap:algebra}.
 
 \section{Retracts}
 
-%??? A >>> B
+%??? A >>> ???
 
 Let $A$ be a subset of a topological space $\c{X}$.
 A continuous map $r\:\c{X}\z\to A$ is called a \index{retraction}\emph{retraction} onto $A$ if $r(a)=a$ for any $a\in A$.%
 \footnote{The notion of retraction is closely related to projection in linear algebra; say, a continuous map $r\:\c{X}\to \c{X}$ defines a retraction onto $r(\c{X})$ if and only if $r\circ r=r$.}
 In this case $A$ is called a \index{retract}\emph{retract} of $\c{X}$.
-If in addition, $r\:\c{X}\to A$ is homotopic to the identity map $\id_{\c{X}}$, then $A$ is called a \index{weak deformation retract}\emph{weak deformation retract} of $\c{X}$.
+If, in addition, $r\:\c{X}\to A$ is homotopic to the identity map $\id_{\c{X}}$, then $A$ is called a \index{weak deformation retract}\emph{weak deformation retract} of $\c{X}$.
 If $r\sim \id_{\c{X}}\rel A$, then $A$ is called a \index{deformation retract}\emph{deformation retract} of $\c{X}$.
 
 Note that a one-point subset is a retract of any space --- the retraction maps the whole space to this single point.
@@ -168,13 +169,13 @@ Is it true that $F$ is a retract of the square $[0,1]\times[0,1]$?
 \section{Contractible spaces}
 
 A topological space $\c{X}$ is called \index{contractible space}\emph{contractible} if the identity map $\id_\c{X}\:\c{X}\z\to \c{X}$ is homotopic to a constant map;
-that is, there is a homotopy $h_t\:\c{X}\to\c{X}$ such that $h_0(x)=x$ and $h_1(x)=p$ for some fixed point $p\in\c{X}$ and any $t\in [0,1]$ and $x\in \c{X}$.
+that is, there is a homotopy $h_t\:\c{X}\to\c{X}$ such that $h_0(x)=x$ and $h_1(x)=p$ for some fixed point $p\in\c{X}$ and all $x\in \c{X}$.
+
+Applying linear homotopy, one can see that any convex subset of $\RR^n$ is contractible.
+This is a good source of contractible spaces.
 
 Soon we will show that the circle $\mathbb{S}^1$ is an example of a path-connected space that is not contractible;
 in particular, there are noncontractible path-connected spaces.
-
-Applying linear homotopy, one can see that any convex subset of the Euclidean space is contractible.
-This is a good source of contractible spaces.
 
 \begin{thm}{Proposition}\label{prop:retract-contractible}
 A retract of a contractible space is contractible.
@@ -207,7 +208,7 @@ Show that any two continuous maps from $\c{X}$ to a path-connected space are hom
 
 \section{Homotopy type}\label{sec:Homotopy type}
 
-Two topological spaces $\c{X}$ and $\c{Y}$ have the same \index{homotopy!type}\emph{homotopy type} (briefly $\c{X}\sim\c{Y}$) if there are continuous maps
+Two topological spaces $\c{X}$ and $\c{Y}$ have the same \index{homotopy!type}\emph{homotopy type} (briefly, $\c{X}\sim\c{Y}$) if there are continuous maps
 $f\: \c{X}\to \c{Y}$ and $h\:\c{Y}\to \c{X}$ such that $h\circ f\sim \id_\c{X}$ and $f\circ h\sim \id_\c{Y}$.
 In this case $f$ (as well as $h$) is called a \index{homotopy!equivalence}\emph{homotopy equivalence} and $h$ is called a \index{homotopy!inverse}\emph{homotopy inverse} of $f$.
 
@@ -239,16 +240,16 @@ In other words, if $i\:A\hookrightarrow \c{X}$ is the inclusion map, then $\id_{
 Since $r$ is a retraction, $r\circ i=\id_A$, hence the result.
 \qeds
 
-This proposition can be used together with \ref{ex:homotopy-type} to prove that the given spaces have the same homotopy type; here is one example:
+This proposition can be used together with \ref{ex:homotopy-type} to prove that given spaces have the same homotopy type; here is one example:
 
 \begin{thm}{Exercise}\label{ex:8-theta}
-Show that the closed connected sets in the picture have the same homotopy type.
-(Each set is a union of several line segments and if it looks like they intersect, then they intersect.)
-
+Show that the closed connected sets in the following picture have the same homotopy type.
 \begin{figure}[!ht]
 \centering
 \includegraphics{mppics/pic-40}
 \end{figure}
+(Each set is a union of several line segments
+and whenever two of them appear to intersect, they really do intersect.)
 \end{thm}
 
 The \index{Möbius band}\emph{Möbius band} can be defined as the quotient space
@@ -271,7 +272,8 @@ Show that the cylinder $\SS^1\times[0,1]$ and the Möbius band have the same hom
 \end{thm}
 
 \begin{thm}{Advanced exercise}\label{ex:mapping-cylinder}
-Show that two topological spaces have the same homotopy type if and only if they are homeomorphic to deformation retracts of a common space.
+Show that two topological spaces have the same homotopy type if and only if they are
+homeomorphic to deformation retracts of one common space.
 \end{thm}
 
 To gain better intuition for deformation retracts,

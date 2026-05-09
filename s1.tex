@@ -1,7 +1,7 @@
 \chapter{Fundamental group of a circle}\label{chap:S1}
 
 This chapter computes the fundamental group of the circle, which is the first example of a space with a nontrivial fundamental group.
-In the proof one has to show nonexistence of homotopies between certain loops;
+In the proof one has to show the nonexistence of homotopies between certain loops;
 this part requires new ideas.
 
 \section{The statement}
@@ -11,8 +11,8 @@ The fundamental group of the circle $\mathbb{S}^1$ is isomorphic to the additive
 \end{thm}
 
 The proof is done in several steps.
-Given a loop $a\:[0,1]\to \mathbb{S}^1$, denote by $\deg a$ the number of times it goes around $\mathbb{S}^1$ counterclockwise (each clockwise turn is counted with minus).
-In the following sections we will define degree formally, prove that it depends only on the homotopy class of the loop and then show that $\deg\:\pi_1\, \SS^1 \to\ZZ$ is an isomorphism.
+First we introduce the degree of a loop $a\:[0,1]\to \mathbb{S}^1$, briefly $\deg a$, as the number of times it goes around $\mathbb{S}^1$ counterclockwise (each clockwise turn is counted with a minus sign).
+After giving a formal definition of degree, we prove that it depends only on the homotopy class of the loop and then show that $\deg\:\pi_1\, \SS^1 \to\ZZ$ is an isomorphism.
 
 Let us give one application of the theorem before proving it.
 
@@ -43,7 +43,7 @@ that is, $h$ defines a retraction $\DD^2\z\to \SS^1$.
 Note that both spaces $\SS^1$ and $\DD^2$ are path-connected.
 By \ref{thm:pi1(S1)}, $\SS^1$ is not simply-connected.
 By \ref{ex:retract*:0}, the same holds for $\DD^2$.
-The latter contradicts \ref{ex:contractible=>sc}
+The latter contradicts \ref{ex:contractible=>sc}.
 \qeds
 
 }
@@ -64,7 +64,7 @@ $\DD^2\not\simeq\SS^2$.
 
 
 \begin{subthm}{ex:bry->bry}
-Given $x\in\DD^2$ the complement $\DD^2\setminus\{x\}$ is simply-connected if and only if $x\in \SS^1=\partial \DD^2$.
+Given $x\in\DD^2$, the complement $\DD^2\setminus\{x\}$ is simply-connected if and only if $x\in \SS^1=\partial \DD^2$.
 Conclude that any homeomorphism $\DD^2\to\DD^2$ maps $\partial \DD^2$ to itself.
 \end{subthm}
 
@@ -91,7 +91,7 @@ Consider two plane sets $K_1$ and $K_2$, shown in the picture.
 \end{wrapfigure}
 
 Each set is a closed annulus with two attached line segments.
-In $K_1$ one segment is attached from the inside and another from the outside;
+In $K_1$ one segment is attached from the inside and the other from the outside;
 in $K_2$ both segments are attached from the outside.
 
 \begin{subthm}{ex:K!=K}
@@ -107,6 +107,8 @@ Show that $K_1 \times[0,1]\simeq K_2 \times[0,1]$.
 
 \section{Wrapping map}\label{sec:lifting-s1}
 
+{
+
 \begin{wrapfigure}{r}{16 mm}
 \vskip-24mm
 \centering
@@ -118,9 +120,13 @@ namely, we will encode a point $(x,y)\in\RR^2$ by the complex number $z=x+i\cdot
 In particular,
 \[\SS^1=\set{z=x+i\cdot y\in \CC}{|z|\df\sqrt{x^2+y^2}=1}.\]
 
+}
+
+\pagebreak %???
+
 Consider the wrapping map $w\:\RR\to \mathbb{S}^1\subset \CC$ defined by
 \[w\:x\mapsto \exp(2\cdot\pi\cdot i\cdot x)=\cos(2\cdot\pi\cdot x)+i\cdot\sin(2\cdot\pi\cdot x).\]
-(The last equality follows from Euler's formula $\exp(i\cdot x)=\cos x \z+i\cdot \sin x$, which can be taken as a definition of $\exp(i\cdot x)$.)
+The last equality follows from Euler's formula $\exp(i\cdot x)=\cos x \z+i\cdot \sin x$, which can be taken as a definition of $\exp(i\cdot x)$.
 
 \begin{wrapfigure}[5]{r}{23 mm}
 \vskip-2mm
@@ -133,10 +139,7 @@ Consider the wrapping map $w\:\RR\to \mathbb{S}^1\subset \CC$ defined by
 
 Let $a\:\c{X}\to \SS^1$ be a continuous map.
 A continuous map $\tilde a\:\c{X}\to \RR$ will be called a \index{lift}\emph{lift} of $a$ if $a=w\circ \tilde a$.
-In other words, if the diagram \index{commutative diagram}\emph{commutes}, which means that following directed paths in the diagram with the same start and endpoints lead to the same result.
-%(Even in this simple case, using a commutative diagram is helpful, and later on you simply can't do without them.)
-
-
+In other words, if the diagram \index{commutative diagram}\emph{commutes}, which means that composing the maps following directed paths in the diagram with the same initial and terminal lead to the same result.
 
 \begin{thm}{Proposition}\label{prop:lifting}
 Let $a_0\:[0,1]\to\SS^1$ be a path and let $x_0\in \RR$ be a point such that $w(x_0)=a_0(0)$.
@@ -151,7 +154,7 @@ Let $W=\SS^1\setminus \{s_0\}$ for some $s_0=w(x_0)\in\SS^1$.
 Then $w^{-1}(W)$ is a disjoint union of open intervals $V_n=(x_0+n,x_0+n+1)$ for $n\in \ZZ$
 and $w$ defines a homeomorphism $V_n\to W$ for each $n$.
 
-In particular, given a connected space $\c{X}$, continuous map $a\:\c{X}\z\to W$, and points $p\in \c{X}$ and $q\in \RR$ such that $w(q)=a(p)$, there is a unique lift $\tilde a\:\c{X}\to \RR$ of $a$ such that $\tilde a(p)=q$.
+In particular, given a connected space $\c{X}$, a continuous map $a\:\c{X}\z\to W$, and points $p\in \c{X}$ and $q\in \RR$ such that $w(q)=a(p)$, there is a unique lift $\tilde a\:\c{X}\to \RR$ of $a$ such that $\tilde a(p)=q$.
 \end{thm}
 
 
@@ -174,12 +177,12 @@ Therefore,
 \[[0,1]=a_0^{-1}(W_1)\z\cup a_0^{-1}(W_2).\]
 
 The open sets $a_0^{-1}(W_1)$ and $a_0^{-1}(W_2)$ cover $[0,1]$;
-let $\eps>0$ be the Lebesgue number (see \ref{prop:lebesgue-number}).
+let $\eps>0$ be a Lebesgue number (see \ref{prop:lebesgue-number}).
 Consider a partition $0=t_0<t_1<\dots<t_n=1$ of $[0,1]$ into equal intervals shorter than $\eps$.
-Note that $a_0([t_i,t_{i+1}])\subset W_1$ or  $a_0([t_i,t_{i+1}])\subset W_2$ for each $i$.
+Note that $a_0([t_i,t_{i+1}])\subset W_1$ or $a_0([t_i,t_{i+1}])\subset W_2$ for each $i$.
 
 By \ref{lem:covering}, we can lift $a_0|_{[t_0,t_1]}$ to $\tilde a_0 \:[t_0,t_1]\to \RR$ such that $\tilde a_0(0)\z=x_0$; let $x_1=\tilde a_0(t_1)$.
-By the same argument, we can extend $\tilde a_0$ to $[t_0,t_2]$ via lift of $a_0|_{[t_1,t_2]}$ such that $\tilde a_0(t_1)=x_1$.
+By the same argument, we can extend $\tilde a_0$ to $[t_0,t_2]$ via a lift of $a_0|_{[t_1,t_2]}$ such that $\tilde a_0(t_1)=x_1$.
 The continuity of $\tilde a_0$ follows from \ref{ex:u-continuous:closed}.
 Repeating this argument $n$ times gives us a lift of $a_0$, and it is unique by construction.
 
@@ -193,21 +196,21 @@ Repeating this argument $n$ times gives us a lift of $a_0$, and it is unique by 
 
 The proof of the last statement is similar.
 Choose a homotopy $H\:[0,1]\times [0,1]\to\SS^1$ from $a_0$ to $a_1$.
-Applying \ref{prop:lebesgue-number} again, we can subdivide $[0,1]\times [0,1]$ into small squares by horizontal and vertical lines so that $H$ maps each small square in $W_1$ or in $W_2$.
-Then we can build the lift $\tilde H$ square by square, from bottom up in the order shown in the picture.
+Applying \ref{prop:lebesgue-number} again, we can subdivide $[0,1]\times [0,1]$ into small squares by horizontal and vertical lines so that $H$ maps each small square into $W_1$ or into $W_2$.
+Then we can build the lift $\tilde H$ square by square, from the bottom up in the order shown in the picture.
 
 }
 
-When we extend $\tilde H$ over a small square $\square$ the value of $\tilde H$ is already defined at its lower left corner, say $v$.
+When we extend $\tilde H$ over a small square $\square$, the value of $\tilde H$ is already defined at its lower left corner, say $v$.
 So we can apply \ref{lem:covering}.
-The part of $\square$ on which $\tilde H$ was already defined is one or two sides adjacent to $v$.
-In both cases this set is connected and by \ref{lem:covering} the extension agrees with the already constructed part.
+The part of $\square$ on which $\tilde H$ was already defined consists of one or two sides adjacent to $v$.
+In both cases, this set is connected, and by \ref{lem:covering} the extension agrees with the already constructed part.
 Again, the continuity of $\tilde H$ follows from \ref{ex:u-continuous:closed}.
 
 It remains to show that for the constructed lift $\tilde a_\tau(t)\df \tilde H(t,\tau)$ the point $\tilde a_\tau(1)$ is constant, so $\tilde a_\tau$ is a true homotopy of paths (not just a free homotopy).
-Observe that $w\circ \tilde a_\tau(1)=a_\tau(1)$ which is a constant point.
+Observe that $(w\circ \tilde a_\tau)(1)=a_\tau(1)$ which is a constant point.
 Therefore the continuous function $\tau\mapsto \tilde a_\tau(1)-\tilde a_0(1)$ takes integer values, and hence it must be a constant function.
-Since $0\mapsto 0$, we have $\tau\mapsto 0$ for any $\tau$; hence the last statement follows.
+Since $\tilde a_0(1)-\tilde a_0(1)=0$, we have $\tilde a_\tau(1)-\tilde a_0(1)=0$ for any $\tau$; hence the last statement follows.
 \qeds
 
 \begin{thm}{Exercise}\label{ex:missed-point}
@@ -277,10 +280,12 @@ Choose a polynomial
 If $p$ is not constant, we can assume that $n\ge 1$ and $c_n\ne 0$.
 
 Choose $r\ge 0$, and let
-\[a_r(t)\df\frac{p(r\cdot w(t))\,\cdot\, |p(r\cdot w(0))|}{|p(r\cdot w(t))|\,\cdot\, p(r\cdot w(0))};
+\[a_r(t)
+\df
+\frac{p(r\cdot w(t))}{|p(r\cdot w(t))|}\bigg/\frac{p(r\cdot w(0))}{|p(r\cdot w(0))|};
 \eqlbl{eq:ar}\]
 here $w\:t\mapsto\exp(2\cdot\pi\cdot i\cdot t)$ is the wrapping map.
-If $p$ has no roots, then the denominator in \ref{eq:ar} does not vanish;
+If $p$ has no roots, then the denominators in \ref{eq:ar} do not vanish;
 therefore the map $(t,r)\mapsto a_r(t)$ is continuous.
 Furthermore, by \ref{eq:ar} we have $a_r(0)=a_r(1)=1$ and $|a_r(t)|\equiv 1$; so $a_r$ is a loop in $\SS^1$ based at $1$.
 
@@ -294,27 +299,30 @@ By \ref{eq:ar}, we have
 $|a_r(t)-a_\infty (t)|<1$ for any large~$r$.
 Applying linear homotopy with radial projection to $\SS^1$, we get the following homotopy from $a_r$ to $a_\infty$; namely,
 \[H(t,s)=\frac{(1-s)\cdot a_r(t)+s\cdot a_\infty(t)}{|(1-s)\cdot a_r(t)+s\cdot a_\infty(t)|}.\]
-In particular $a_r\sim a_\infty$ and $\deg a_r=n$ for any large $r$ --- a contradiction.
+In particular, $a_r\sim a_\infty$ and $\deg a_r=n$ for any large $r$ --- a contradiction.
 \qeds
 
 \begin{thm}{Exercise}\label{ex:wind}
 Consider a loop $a\:[0,1]\to \CC$ and a point $z\z\notin a([0,1])$.
-The \index{winding number}\emph{winding number} of loop $a$ around point $z$ is defined as
+The the \index{winding number}\emph{winding number} of the loop $a$ around point $z$ is defined as
 \[\wind_a(z)\z\df\deg b_z,\]
 where
-\[b_z(t)\z\df\frac{(a(t)-z)\cdot|a(0)-z|}{|a(t)-z|\cdot(a(0)-z)}.\]
+\[b_z(t)
+\df
+\frac{(a(t)-z)}{|a(t)-z|}\bigg/
+\frac{(a(0)-z)}{|a(0)-z|}.\]
 
 \begin{subthm}{ex:wind:constant}
-Show the function $\wind_a$ is constant in every connected component of $\CC\z\setminus a([0,1])$.
+Show that the function $\wind_a$ is constant in every connected component of $\CC\z\setminus a([0,1])$.
 \end{subthm}
 
-\begin{subthm}{ex:wind:7}
-Redraw the following loop and write its winding number in each connected component of the complement.
 \begin{figure}[!ht]
 \centering
 \includegraphics{mppics/pic-1555}
 \end{figure}
 
+\begin{subthm}{ex:wind:7}
+Redraw the loop and write its winding number in each connected component of the complement.
 \end{subthm}
 
 \end{thm}

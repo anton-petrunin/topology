@@ -1,19 +1,17 @@
-\chapter{Baire spaces}\label{chap:baire}
+\chapter{Topology meets Analysis}\label{chap:baire}
 
-Here we will develop a language to talk rigorously about typical objects in many contexts.
-In practice, it is used to prove existence of examples with weird properties,
-and it often comes with a surprise: typical object looks like nothing we saw before.
+Here we discuss two purely topological notions that have applications in mathematical analysis.
+These results will not be used further in the text.
 
 \section{Baire theorem}
 
-A topological space is called \index{Baire space}\emph{Baire} if any countable family of dense open sets in $\c{X}$ has a dense intersection.
+A topological space $\c{X}$ is called \index{Baire space}\emph{Baire} if any countable family of dense open sets in $\c{X}$ has a dense intersection.
 
 For example, the space of rational numbers $\QQ$ is not Baire.
 Indeed, the complement of a one-point set $\QQ\setminus \{q\}$ is dense and open in $\QQ$;
 the intersection of all these complements is empty, and since $\QQ$ is countable, this is a countable intersection.
-On the other hand the set of integers $\ZZ$ is a Baire space, since $\ZZ$ is the only dense open set in $\ZZ$.
-The following theorem implies that $\RR$ is a Baire space.
-
+On the other hand, the set of integers $\ZZ$ is a Baire space, since $\ZZ$ is the only dense open set in $\ZZ$.
+The following theorem implies that the real line $\RR$ is Baire.
 
 \begin{thm}{Theorem}\label{thm:baire-category}
 Any complete metric space is Baire.
@@ -22,21 +20,23 @@ Any complete metric space is Baire.
 Given two subsets $A$ and $B$ of a topological space, we will write \index{$A\Supset B$}$A\Supset B$ (equivalently, $B\Subset A$) if $\mathring{A}\supset \bar B$; that is, the interior of $A$ contains the closure of $B$.
 
 \parit{Proof.}
-Let $V_1,V_2\ldots$ be a sequence of dense open sets in a complete metric space $\c{M}$.
+Let $V_1,V_2,\ldots$ be a sequence of dense open sets in a complete metric space $\c{M}$.
 We need to show that $G=V_1\cap V_2\cap\ldots$ intersects any open ball in $\c{M}$.
 
 Choose a ball $B_0=\Ball(p_0,r_0)$.
-Since $V_1$ is dense and open, we can choose another ball $B_1=\Ball(p_1,r_1)\subset B_0\cap V_1$; moreover, taking the radius $r_1$ smaller we can achieve
-$B_1\Subset B_0\cap V_1$ and $r_1\le\tfrac12\cdot r_0$.
-Continue this process for $V_2$, $V_3$, and so on;
+Since $V_1$ is dense and open, we can choose another ball $B_1=\Ball(p_1,r_1)\subset B_0\cap V_1$;
+moreover, taking the radius $r_1$ smaller we can achieve that $B_1\Subset B_0\cap V_1$ and $r_1\le\tfrac12\cdot r_0$.
+Let us continue this process for $V_2$, $V_3,\dots$;
 on the $n$-th step we choose a ball $B_n=\Ball(p_n,r_n)\Subset B_{n-1}\cap V_n$ and $r_n\le\tfrac12\cdot r_{n-1}$.
 
-If $i<j$, then  $|p_i-p_j|<r_i\le\tfrac 1{2^i}\cdot r_0$.
+If $i<j$, then $|p_i-p_j|<r_i\le\tfrac 1{2^i}\cdot r_0$.
 It follows that $p_0,p_1,\ldots$ is a Cauchy sequence.
 Since $\c{M}$ is complete, the sequence must converge; denote its limit by $p_\infty$.
 It remains to observe that $p_\infty\in \bar B_n$ for any $n$; in particular, $p_\infty\in G\cap B_0$.
 \qeds
 
+Theorem \ref{thm:baire-category} is the main source of Baire spaces;
+the following exercise provides another source.
 
 \begin{thm}{Exercise}\label{ex:haus-comp-bair}
 Let $\c{K}$ be a compact Hausdorff space.
@@ -50,7 +50,7 @@ Conclude that $\c{K}$ is a Baire space.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:irrational-baire}
-Show that irrational numbers $\RR\setminus\QQ$ form a Baire space.
+Show that the irrational numbers $\RR\setminus\QQ$ form a Baire space.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:union-closures}
@@ -63,7 +63,7 @@ Show that at least one of the closures $\bar B_n$ has nonempty interior.
 Prove the following statements.
 
 \begin{subthm}{ex:Baire-subsets:open}
-Any open set in Baire space is Baire.
+Any open set in a Baire space is Baire.
 \end{subthm}
 
 \begin{subthm}{ex:Baire-subsets:loc}
@@ -72,14 +72,20 @@ Any locally Baire space is Baire; that is, if any point $p$ in a topological spa
 
 \end{thm}
 
+\begin{thm}{Advanced exercise}\label{ex:disjoint-closed}
+Let $Q_1,Q_2,\ldots$ be a sequence of nonempty disjoint closed sets in $[0,1]$.
+Show that
+$Q_1\cup Q_2\cup\dots\ne [0,1]$.
+\end{thm}
+
 
 \section{G-delta sets}
 
 Let $G$ be a set in a topological space $\c{X}$.
 We say that $G$ is a \index{G-delta set}\emph{G-delta} set if it can be written as a countable intersection of open sets;
-that is, $G=V_1\cap V_2\cap\ldots$ for a sequence of open sets $V_1,V_2,\ldots \subset \c{X}$.%
+that is, $G=V_1\cap V_2\cap\ldots$ for a sequence of open sets $V_1,V_2,\ldots \subset \c{X}$.
 In the definition we can assume that the sequence of open sets is nested;
-that is $V_1\supset V_2\supset\ldots$;
+that is, $V_1\supset V_2\supset\ldots$;
 if not, pass to the sequence
 \[V_1,\ V_1\cap V_2,\ V_1\cap V_2\cap V_3,\ \ldots\]
 
@@ -87,15 +93,36 @@ if not, pass to the sequence
 Show that any closed set in a metrizable space is G-delta.
 \end{thm}
 
-Observe that a countable intersection of G-delta sets is G-delta.
-The following identity implies that  union of two (and therefore finitely many) G-delta sets is G-delta:
+
+\begin{thm}{Observation}\label{obs:uG-delta}
+The union of two (and therefore finitely many) G-delta sets is G-delta.
+\end{thm}
+
+\parit{Proof.}
+The observation follows from the identity
 \[\biggl(\bigcap_i V_i\biggr)\cup \biggl(\bigcap_j W_j\biggr)
 =
-\bigcap_{i,j}\, (V_i\cup W_j).\]
+\bigcap_{i,j}\, (V_i\cup W_j);\]
+note that the intersection in the right-hand side is countable.
+
+Indeed, we may assume that $V_i$ and $W_j$ are open and our G-delta sets are $G_1=\bigcap_i V_i$, and $G_2=\bigcap_j W_j$, so the identity gives two expressions for $G_1\cup G_2$.
+Since the set $V_i\cup W_j$ is open for any $i$ and $j$, the right-hand side says that $G_1\cup G_2$ is G-delta.
+\qeds
+
+
+Recall that \textit{countable union of countable sets is countable}.
+Since each G-delta set is a countable intersection of open sets,
+we get the following.
+
+\begin{thm}{Observation}\label{obs:nG-delta}
+A countable intersection of G-delta sets is G-delta.
+\end{thm}
+
+Combining this observation with the definition of Baire space, we get the following.
 
 \begin{thm}{Observation}\label{obs:G-delta}
 Let $\c{X}$ be a Baire space.
-Then countable intersection of dense G-delta sets in $\c{X}$ is dense.
+Then a countable intersection of dense G-delta sets in $\c{X}$ is dense.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:G-delta=closed n dense-G-delta}
@@ -109,10 +136,11 @@ Give an example of a topological space with a G-delta set that is not an interse
 
 \end{thm}
 
+Recall that $\QQ\subset\RR$ denotes the set of rational numbers.
 Note that the set of irrational numbers $\II=\RR\setminus \QQ$ is G-delta --- it is an intersection of all complements $\RR\setminus\{q\}$ for $q\in\QQ$.
 Since $\QQ$ and $\II$ are dense, the observation implies that $\QQ\subset\RR$ is not G-delta.
-On the other hand,  $\QQ\subset\RR$ is a countable union of one-point sets; each one-point set $\{q\}$ can be written as intersection of open intervals $(q-\tfrac1n,q+\tfrac1n)$.
-Therefore, countable union of G-delta sets does not have to be G-delta.
+On the other hand, $\QQ\subset\RR$ is a countable union of one-point sets; each one-point set $\{q\}$ can be written as an intersection of open intervals $(q-\tfrac1n,q+\tfrac1n)$.
+Therefore, a countable union of G-delta sets does not have to be G-delta.
 
 \begin{thm}{Exercise}\label{ex:uncountable-Gdelta}
 Show that any dense G-delta set in $\RR$ is uncountable.
@@ -135,7 +163,7 @@ Show that there is no function $f\: \RR\to \RR$ such that $\Cont f=\QQ$.
 
 \begin{subthm}{ex:continuity-Gdelta:Q}
 Let us enumerate all rational numbers $r_1,r_2,\ldots$
-Consider function $f\: \RR\to \RR$ defined by $f(r_n)=\tfrac1n$ and $f(x)=0$ for any irrational $x$.
+Consider the function $f\: \RR\to \RR$ defined by $f(r_n)=\tfrac1n$ and $f(x)=0$ for any irrational $x$.
 Show that $\Cont f=\RR\setminus\QQ$.
 \end{subthm}
 
@@ -151,137 +179,38 @@ Give an example of a Baire space $\c{X}$ with a G-delta set that is not Baire.
 
 
 
-
 \section{Large or small?}
 
-According to the observation, dense G-delta sets contain all points in Baire space except a \textit{negligible} set.
+
+Observation \ref{obs:nG-delta} can be interpreted the following way:
+\textit{dense G-delta sets contain all points in a Baire space except a negligible set}.
 At least, we cannot cover an open set with complements of dense G-delta sets
-and intersection of countably many dense G-delta sets is a dense G-delta set.
+and the intersection of countably many dense G-delta sets is a dense G-delta set.
 
 In spaces with measure, the sets of full measure have analogous features, but as we will see in an incompatible way.
 
-Let us enumerate rational numbers $q_1,q_2,\ldots$, consider the unions of open intervals:
+Let us enumerate rational numbers $q_1,q_2,\ldots$; consider the unions of open intervals:
 \[V_n\df \bigcup_i (q_i-\tfrac1{2^{n+i}},q_i+\tfrac1{2^{n+i}}).\]
 Note that $G=V_1\cap V_2\cap \ldots$ is a dense G-delta set in $\RR$.
-Observe that the Lebesgue measure of $V_n$ (its total length) is less than
+Observe that the \index{Lebesgue measure}\emph{Lebesgue measure}%
+\footnote{Lebesgue measure of a set in $\RR$ can be thaut as its total length, but it is defined on a much larger class of subsets that include all G-delta sets and Borel sets that will be discussed soon.}
+of $V_n$ is less than
 \[\frac1{2^{n-1}}=\frac{2}{2^{n+1}}+\frac{2}{2^{n+2}}+\ldots\]
 Therefore, $G$ has vanishing measure.
-So, measure-theoretically, $G$ is nearly nothing, but topologically it is nearly everything.
+So, measure-theoretically, $G$ is nothing, but topologically it is everything.
 
-\section{An application}
-
-Let $\c{C}$ be the set of all continuous functions $[0,1]\to\RR$,
-equipped with the \index{sup-norm metric}\emph{sup-norm metric}
-\[|f-g|_{\c{C}}\df\sup\set{|f(x)-g(x)|}{x\in [0,1]}.\]
-It is straightforward to check that this is indeed a metric;
-that is, it meets all conditions in \ref{def:metric-space}.
-The following claim is not that obvious.
-
-\begin{thm}{Claim}
-The space $\c{C}$ is complete.
-\end{thm}
-
-\parit{Proof.}
-In the space $\c{C}$ every point is a continuous function $[0,1]\to\RR$.
-We need to show that a Cauchy sequence $f_1,f_2,\ldots \in \c{C}$ converges in~$\c{C}$.
-
-Choose $x\in [0,1]$.
-Observe that $f_1(x), f_2(x),\ldots$ is a Cauchy sequence of real numbers; so,
-it must converge; let us denote its limit by $f_\infty(x)$.
-
-Evidently
-\[\sup\set{|f_n(x)-f_\infty(x)|}{x\in[0,1]}\to 0.\eqlbl{eq:|f-f|->0}\]
-Fix $x_0\in [0,1]$ and $\eps>0$.
-By \ref{eq:|f-f|->0}, we can choose $n$ such that
-\[|f_n(x)-f_\infty(x)|<\tfrac\eps3\]
-for any $x\in [0,1]$.
-By continuity of $f_n$, we can choose $\delta>0$ such that
-\[|x-x_0|<\delta
-\quad\Rightarrow\quad |f_n(x)-f_n(x_0)|<\tfrac\eps3\]
-If $|x-x_0|<\delta$, then
-\begin{align*}
-\eps&>|f_\infty(x)-f_n(x)|+|f_n(x)-f_n(x_0)|
-+|f_n(x_0)-f_\infty(x_0)|\ge
-\\
-&\ge
-|f_\infty(x)-f_\infty(x_0)|.
-\end{align*}
-Since $\eps>0$ and $x_0$ are arbitrary, $f_\infty$ is continuous; that is, $f_\infty\in\c{C}$.
-Finally by \ref{eq:|f-f|->0}, $f_n\to f_\infty$ in $\c{C}$.
-\qeds
-
-\begin{thm}{Claim}
-The set of all continuous functions $[0,1]\to\RR$ that are not differentiable at any point contains a dense G-delta set in $\c{C}$.
-\end{thm}
-
-\parit{Sketch of proof.}
-Given a positive integer $n$ consider the set $V_n$ of all functions $f$ in $\c{C}$ such that
-for some integer $m>n$ we have the following inequality
-\[|f(\tfrac{k}{m})-f(\tfrac{k-1}{m})|>\tfrac nm\]
-for any integer $k$ from $1$ to $m$.
-
-The set $V_n$ is open and dense in $\c{C}$;
-to prove the latter statement, take huge value $m$ and approximate a given function by zig-zag-looking function with large slope as shown in the picture.%
-\footnote{More formally, let us choose small $\eps>0$.
-Given a continuous function $f$ we can choose large $m$ so that if $|x_0-x_1|\le \tfrac1m$, then $|f(x_0)-f(x_1)|<\eps$.
-Now define a new function $h$ by setting $h(\tfrac im)=f(\tfrac im)+(-1)^i\cdot\eps$ for integer $i$ from $0$ to $m$ and extend $h$ linearly on each interval $[\tfrac {i-1}m,\tfrac im]$.
-Observe that $h\in \c{C}$ and $|h-f|_{\c{C}}<2\cdot \eps$; moreover given $\eps>0$ and a positive integer $n$, one can choose $m$ sufficiently large so that $h\in V_n$.}
-
-{
-
-\begin{wrapfigure}{o}{26 mm}
-\vskip-0mm
-\centering
-\includegraphics{mppics/pic-940}
-\end{wrapfigure}
-
-Now, assume $f\in V_n$ for every $n$.
-Observe that for any $x_0\in [0,1]$ we can choose a point $x\in [0,1]$ such that
-\[|x-x_0|< \tfrac1n,
-\quad\text{and}\quad
-\left|\frac{f(x)-f(x_0)}{x-x_0}\right|>n.
-\]
-It follows that the limit
-\[\lim_{x\to x_0}\frac{f(x)-f(x_0)}{x-x_0}\]
-is undefined.
-Therefore $f$ is not differentiable at every $x_0\in [0,1]$.
-
-}
-
-It remains to apply \ref{thm:baire-category} to $G=V_1\cap V_2\cap\ldots$
-\qeds
-
-We just proved that \textit{most} continuous functions $[0,1]\z\to\RR$ are not differentiable at any point.
-Try to come up with an explicit example of one such function --- it is not easy.
-Maybe you did not see such functions before, altho you know many functions; in this case the functions you know are very non-typical and you did not meet a typical one.
-
-Let me list several more statements that can be proved essentially the same way; try to think of explicit examples of that type.
-\begin{itemize}
-\item A typical surjective nondecreasing function $f\:[0,1]\to[0,1]$ is strictly increasing, but its derivative vanishes at every point where it is defined.
-\item  A typical distance-nonexpanding map $f\:\SS^2\z\to\RR^2$ is \index{length-preserving map}\emph{length-preserving}; that is,
-\[\length f\circ\gamma=\length \gamma\]
-for any curve $\gamma\:[a,b]\to \SS^2$.
-\item  A typical compact set in the plane is homeomorphic to the Cantor set; see \ref{sec:Cantor set}. Furthermore, a typical compact \textit{connected} set (defined in the next chapter) is homeomorphic to the pseudo-arc, which is a truly weird example in many ways (read about~it).
-\end{itemize}
-
-%the uniform boundedness principle
-
-\section{Borel sets} %??? fix title of the chapter.
+\section{Borel sets}
 
 Any topological space $\c{X}$ comes with the so-called \index{Borel sets}\emph{Borel sets}, which form the minimal family of sets that is closed under complement and countable union and includes all open sets in $\c{X}$.
 
-Borel sets play a key role in analysis.
-We will discuss Borel sets in this section, but we are not going to use them further in the text.
-
 A family of sets in $\c{X}$ that contains the whole space and is closed under complements and countable unions is called a \index{sigma-algebra}\emph{sigma-algebra}, so we can say that Borel sets form the minimal sigma-algebra that includes all open sets.
 
-Since complement of countable union is the countable intersection of the complements,
-sigma-algebra can be equivalently defined using countable intersection instead of countable union.
-It follows that Borel sets include all closed sets (since they are complements of open sets) as well as G-delta sets (as countable intersections of open sets) and their complement, which are called \index{F-sigma set}\emph{F-sigma} sets;
-the F-sigma sets can be defined directly as union of countable families of closed sets.
+Since the complement of a countable union is the countable intersection of the complements,
+a sigma-algebra can be equivalently defined using countable intersection instead of countable union.
+It follows that Borel sets include all closed sets (since they are complements of open sets) as well as G-delta sets (as countable intersections of open sets) and their complements, which are called \index{F-sigma set}\emph{F-sigma} sets;
+the F-sigma sets can be defined directly as a union of countable families of closed sets.
 
-
-The following proposition says that any Borel set in $\RR$ is a negligible modification of an open set.
+The following proposition implies that any Borel set in $\RR$ is a negligible modification of an open set.
 
 \begin{thm}{Proposition}\label{prop:B=GnV}
 For any Borel set $B$ in a Baire space there is a dense G-delta set $G$ and an open set $V$ such that $B\cap G=V\cap G$.
@@ -291,7 +220,7 @@ For any Borel set $B$ in a Baire space there is a dense G-delta set $G$ and an o
 Choose a Baire space $\c{X}$.
 Let us denote by $\s{B}$ the set of all Borel sets in $\c{X}$.
 Further, denote by $\s{S}$ the set of all subsets of $\c{X}$ that meet the conclusion of the proposition;
-that is, a set $S\subset \c{X}$ belongs to $\s{S}$ if there is a dense G-delta set $G\subset\c{X} $ and an open set $V\subset\c{X}$ such that $S\cap G=V\cap G$.
+that is, a subset $S\subset \c{X}$ belongs to $\s{S}$ if there is a dense G-delta set $G\subset\c{X} $ and an open set $V\subset\c{X}$ such that $S\cap G=V\cap G$.
 
 Observe that $\s{S}$ includes all open sets.
 Let us show that $\s{S}$ is a sigma-algebra;
@@ -312,7 +241,7 @@ V=V_1\cup V_2\cup \ldots,\quad
 G=G_1\cap G_2\cap \ldots
 \]
 The set $V$ is open as a union of open sets.
-Furthermore, $G$ is a G-delta set, and since $\c{X}$ is Baire, it must be dense.
+Furthermore, $G$ is G-delta, and since $\c{X}$ is Baire, it must be dense.
 Observe that
 \[S\cap G=V\cap G;\]
 in particular, $S\in \s{S}$ --- we proved that $\s{S}$ is closed under countable union, so $\s{S}$ is a sigma-algebra --- the proof is finished.
@@ -320,9 +249,9 @@ in particular, $S\in \s{S}$ --- we proved that $\s{S}$ is closed under countable
 
 We say that $L\subset\RR$ is a \index{Vitali set}\emph{Vitali set} if for any $x\in\RR$ there is a unique $\ell\in L$ such that $x-\ell\in \QQ$; here $\QQ$ denotes the set of rational numbers.
 
-To construct a Vitali set, consider equivalence relation $\sim$ on $\RR$ such that $x\sim y$ $\Leftrightarrow$ $x-y\in \QQ$
+To construct a Vitali set, consider the equivalence relation $\sim$ on $\RR$ such that $x\sim y$ $\Leftrightarrow$ $x-y\in \QQ$
 and choose one number from each equivalence class.
-However, to \textit{choose} a number in every equivalence class one needs the axiom of choice.
+Be aware that to \textit{choose} a number in every equivalence class one needs the axiom of choice.
 
 Now we are ready to show that not every set in the real line is Borel.
 
@@ -344,11 +273,11 @@ If $L$ is Borel, then by \ref{prop:B=GnV} $L\cap G=V\cap G$ for some dense G-del
 
 Note that $V\ne \emptyset$;
 otherwise \ref{eq:cupL} implies that
-\[\bigcap_{q\in \QQ}(q+G)\subset \RR\setminus \bigcup_{q\in Q}(q+L)=\emptyset,\]
+\[\bigcap_{q\in \QQ}(q+G)\subset \RR\setminus \bigcup_{q\in \QQ}(q+L)=\emptyset,\]
 which is impossible since $q+G$ is a dense G-delta set for any $q\in \QQ$, the set $\QQ$ is countable, and $\RR$ is Baire.
 
 Since $V$ is open, it contains an open interval;
-therefore, we can choose small $q\in\QQ$ such that $V_q=V\cap (q+V)$ is a nonempty open set.
+therefore, we can choose small positive $q\in\QQ$ such that $V_q=V\cap (q+V)$ is a nonempty open set.
 Let $G_q=G\cap (q+G)$; it is a dense G-delta set.
 Hence $V_q\cap G_q\ne\emptyset$.
 Therefore
@@ -363,3 +292,109 @@ Construct a continuous map $f\:\c{X}\to \RR$ and a Borel set $B\subset \c{X}$ su
 \begin{thm}{Advanced exercise}\label{ex:borel-square}
 Construct a bijection $f\:[0,1]\to[0,1]\z\times [0,1]$ such that $f$ and its inverse $f^{-1}$ map Borel sets to Borel sets.
 \end{thm}
+
+\section{An application}
+
+Let $\c{C}$ be the set of all continuous functions $[0,1]\to\RR$,
+equipped with the \index{sup-norm metric}\emph{sup-norm metric}
+\[|f-g|_{\c{C}}\df\sup\set{|f(x)-g(x)|}{x\in [0,1]}.\]
+It is straightforward to check that this is indeed a metric;
+that is, it meets all conditions in \ref{def:metric-space}.
+The following claim is not that obvious.
+
+\begin{thm}{Claim}
+The space $\c{C}$ is complete.
+\end{thm}
+
+\parit{Proof.}
+In the space $\c{C}$ every point is a continuous function $[0,1]\to\RR$.
+We need to show that a Cauchy sequence $f_1,f_2,\ldots \in \c{C}$ converges in~$\c{C}$.
+
+Choose $x\in [0,1]$.
+Observe that $f_1(x), f_2(x),\ldots$ is a Cauchy sequence of reals; so,
+it must converge; let us denote its limit by $f_\infty(x)$.
+
+
+
+Evidently,
+\[\sup\set{|f_n(x)-f_\infty(x)|}{x\in[0,1]}\to 0.\eqlbl{eq:|f-f|->0}\]
+Fix $x_0\in [0,1]$ and $\eps>0$.
+By \ref{eq:|f-f|->0}, we can choose $n$ such that
+\[|f_n(x)-f_\infty(x)|<\tfrac\eps3\]
+for any $x\in [0,1]$.
+By continuity of $f_n$, we can choose $\delta>0$ such that
+\[|x-x_0|<\delta
+\quad\Rightarrow\quad |f_n(x)-f_n(x_0)|<\tfrac\eps3\]
+If $|x-x_0|<\delta$, then
+\begin{align*}
+\eps&>|f_\infty(x)-f_n(x)|+|f_n(x)-f_n(x_0)|
++|f_n(x_0)-f_\infty(x_0)|\ge
+\\
+&\ge
+|f_\infty(x)-f_\infty(x_0)|.
+\end{align*}
+Since $\eps>0$ and $x_0$ are arbitrary, $f_\infty$ is continuous; that is, $f_\infty\in\c{C}$.
+Finally by \ref{eq:|f-f|->0}, $f_n\to f_\infty$ in $\c{C}$.
+\qeds
+
+{
+
+\begin{wrapfigure}{o}{26 mm}
+\vskip-6mm
+\centering
+\includegraphics{mppics/pic-940}
+\end{wrapfigure}
+
+\begin{thm}{Claim}
+The set of all continuous functions $[0,1]\to\RR$ that are not differentiable at any point contains a dense G-delta set in $\c{C}$.
+\end{thm}
+
+
+\parit{Sketch.}
+Given a positive integer $n$, consider the set $V_n$ of all functions $f$ in $\c{C}$ such that
+for some integer $m>n$ we have the following inequality
+\[|f(\tfrac{k}{m})-f(\tfrac{k-1}{m})|>\tfrac nm\]
+for any integer $k$ from $1$ to $m$.
+
+}
+
+The set $V_n$ is open and dense in $\c{C}$;
+to prove the latter statement, take huge value $m$ and approximate a given function by a zig-zag-looking function with large slope as shown in the picture.%
+\footnote{More formally, let us choose a small $\eps>0$.
+Given a continuous function $f$ we can choose large $m$ so that if $|x_0-x_1|\le \tfrac1m$, then $|f(x_0)-f(x_1)|<\eps$.
+Now define a new function $h$ by setting $h(\tfrac im)=f(\tfrac im)+(-1)^i\cdot\eps$ for an integer $i$ from $0$ to $m$ and extend $h$ linearly on each interval $[\tfrac {i-1}m,\tfrac im]$.
+Observe that $h\in \c{C}$ and $|h-f|_{\c{C}}<2\cdot \eps$; moreover, given $\eps>0$ and a positive integer $n$, one can choose $m$ sufficiently large so that $h\in V_n$.}
+
+Now, assume $f\in V_n$ for every $n$.
+Observe that for any $x_0\in [0,1]$ we can choose a point $x\in [0,1]$ such that
+\[|x-x_0|< \tfrac1n,
+\quad\text{and}\quad
+\left|\frac{f(x)-f(x_0)}{x-x_0}\right|>n.
+\]
+It follows that the limit
+\[\lim_{x\to x_0}\frac{f(x)-f(x_0)}{x-x_0}\]
+is undefined.
+Therefore $f$ differentiable at no point $x_0\in [0,1]$.
+
+
+
+It remains to apply \ref{thm:baire-category} to $G=V_1\cap V_2\cap\ldots$
+\qeds
+
+We just proved that \textit{most} continuous functions $[0,1]\z\to\RR$ are not differentiable at any point.
+However, finding one such example is challenging.
+This is very common in mathematics: as soon as you define a typical object
+in your favorite theory, you realize that you have never actually seen one.
+(By the way, did you ever see a typical man?)
+
+Let me list several other statements that can be proved essentially the same way.
+\begin{itemize}
+\item A typical surjective nondecreasing function $f\:[0,1]\to[0,1]$ is strictly increasing, but its derivative vanishes at every point where it is defined.
+\item A typical distance-nonexpanding map $f\:\SS^2\z\to\RR^2$ is \index{length-preserving map}\emph{length-preserving}; that is,
+\[\length f\circ\gamma=\length \gamma\]
+for any curve $\gamma\:[a,b]\to \SS^2$.
+\item A typical compact set in the plane is homeomorphic to the Cantor set; see \ref{sec:Cantor set}.
+Furthermore, a typical compact \textit{connected} set (defined in the next chapter) is homeomorphic to the pseudo-arc, which is a truly weird example in many ways (read about~it).
+\end{itemize}
+
+%the uniform boundedness principle

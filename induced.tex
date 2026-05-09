@@ -1,7 +1,7 @@
 \chapter{Constructions}\label{chap:constructions}
 
 In \ref{sec:induced-topology} we discussed induced topology.
-This construction produces a new topological spaces from the given one.
+This construction produces a new topological space from the given one.
 Now we introduce several other constructions of this type.
 
 \section{Product space}\label{sec:Product space}
@@ -14,7 +14,7 @@ Recall that $\c{X}\times\c{Y}$ denotes the set of all pairs $(x,y)$ such that $x
 \end{figure}
 
 Suppose that the sets $\c{X}$ and $\c{Y}$ are equipped with topologies.
-Let us equip $\c{X}\times\c{Y}$ with topology by declaring that a set is open in $\c{X}\times\c{Y}$ if it can be presented as a union of sets of the following type:
+Let us equip $\c{X}\times\c{Y}$ with a topology by declaring that a set is open in $\c{X}\times\c{Y}$ if it can be presented as a union of sets of the following type:
 \[V\times W\df\set{(x,y)\in \c{X}\times\c{Y}}{x\in V,\ y\in W}\]
 for open sets $V\subset \c{X}$ and $W\subset \c{Y}$.
 In other words, a subset $O$ is open in $\c{X}\times\c{Y}$ if and only if
@@ -55,7 +55,7 @@ Two maps $f\:\c{X}\to\c{Y}$ and $g\:\c{X}\to\c{Z}$ are continuous if and only if
 $x\mapsto (f(x),g(x))$ is a continuous map $\c{X}\to\c{Y}\times \c{Z}$.
 \end{thm}
 
-This observation can be used for construction continuous maps; the following exercise provides examples.
+This observation can be used used for constructing continuous maps; the following exercise provides examples.
 
 \begin{thm}{Exercise}\label{ex:cont-product-constr}
 Let $f$ and $g$ be continuous real-valued functions on the topological space $\c{X}$.
@@ -87,21 +87,37 @@ A family $\s{B}$ of open sets in a topological space $\c{X}$ is called its \inde
 
 By \ref{ex:union-of-balls}, \textit{open balls form a base of a metric space}.
 
-A base completely defines topology,
-but typical topology has many different bases.
+A base completely defines the topology,
+but a typical topology has many different bases.
 In metric spaces, for example, the set of all balls with rational radii is a base;
 another example is the set of all balls with radii smaller than $1$.
 
 In many cases, it is convenient (and also economical) to describe the topology by specifying its base.
 For example, the product topology on $\c{X}\times\c{Y}$ can be redefined as a \textit{topology with a base formed by all products $V\times W$, where $V$ is open in $\c{X}$, and $W$ is open in $\c{Y}$}.
 
-\begin{thm}[!]{Exercise}\label{ex:base-nbhd}
+\begin{thm}{Observation}\label{ex:base-nbhd}
 Let $\s{B}$ be a family of open sets in a topological space~$\c{X}$.
-Show that $\s{B}$ is a base in $\c{X}$ if and only if for any point $x\in \c{X}$ and any neighborhood $N\ni x$ there is $B\in\s{B}$ such that $x\in B\subset N$.
+Then $\s{B}$ is a base in $\c{X}$ if and only if for any point $x\in \c{X}$ and any neighborhood $N\ni x$ there is $B\in\s{B}$ such that $x\in B\subset N$.
 \end{thm}
 
+\parit{Proof; if part.}
+Choose an open set $N$.
+For any $x\in N$ choose an element $B_x$ of the base such that $x\in B_x\subset N$.
+Since
+\[N=\bigcup_{x\in N}B_x,\]
+the if part follows.
+
+\parit{Only-if part.}
+Now suppose that $\s{B}$ is a base.
+Then
+\[N=\bigcup_{\alpha}B_\alpha,\]
+where $B_\alpha\in \s{B}$ for each $\alpha$.
+Then for any $x\in N$ there is $\alpha$ such that $B_\alpha\ni x$;
+in this case, $x\in B_\alpha\subset N$, and the only-if part follows.
+\qeds
+
 \begin{wrapfigure}{r}{27 mm}
-\vskip-5mm
+\vskip-0mm
 \centering
 \includegraphics{mppics/pic-540}
 \end{wrapfigure}
@@ -165,10 +181,12 @@ Suppose $\s{P}$ is a family of subsets of $\c{X}$ that covers the whole space;
 that is, $\c{X}$ is a union of all sets in $\s{P}$.
 By \ref{prop:base-any}, the set of all finite intersections of sets in $\s{P}$ is a base for \textit{some} topology on $\c{X}$.
 The set $\s{P}$ is called a \index{prebase}\emph{prebase} for this topology.%
-\footnote{Prebase is also known as a \index{subbase}\emph{subbase}, but this is an ill-chosen term. Indeed, prebase is \textit{not} a subset of base that is a base, so subbase breaks the pattern of subspace, subgroup, subsequence, subcover, and so on.}
+\footnote{Prebase is also known as a \index{subbase}\emph{subbase}, but this is an ill-chosen term.
+Indeed, prebase is \textit{not}
+a subset of a base that is itself a base, so subbase breaks the pattern of subspace, subgroup, subsequence, subcover, and so on.}
 
 Note that any base is a prebase, but not the other way around.
-Spelling the defining properties of open sets (\ref{def:top-space}) and the definition of prebase we get the following.
+Spelling the defining properties of open sets (\ref{def:top-space}) and the definition of prebase, we get the following.
 
 \begin{thm}{Observation}\label{ex:prebase}
 Let $\s{P}$ be a prebase for the topology on $\c{Y}$.
@@ -206,11 +224,11 @@ By \ref{ex:graph:prebase}, these sets form a prebase in $\c{X}\times\c{Y}$ and i
 More generally, given a family of maps $f_\alpha\:S\to \c{Y}_\alpha$ from a set $S$ to topological spaces $\c{Y}_\alpha$, we can introduce a topology on $S$ by stating that the inverse images $f^{-1}_\alpha(W_\alpha)$ for open sets $W_\alpha\subset\c{Y}_\alpha$ form its prebase.
 It defines the topology on $S$ \index{induced topology}\emph{induced} by the maps $f_\alpha$;
 it is the weakest topology on $S$ that makes all maps $f_\alpha$ continuous.
-For example, if we apply this construction to a sinle inclusion map $S\hookrightarrow \c{Y}$ of a subset $S\subset \c{Y}$, then we get {}\emph{induced topology} on $S$ (see \ref{sec:induced-topology}).
+For example, if we apply this construction to a single inclusion map $S\hookrightarrow \c{Y}$ of a subset $S\subset \c{Y}$, then we get the {}\emph{induced topology} on $S$ (see \ref{sec:induced-topology}).
 
 This construction produces a topology on the source space;
 for that reason it is also called the \index{initial topology}\emph{initial topology}.
-It can be used to define a topology on an infinite product of spaces, as the induced topology for all its projections.
+It can be used to define a topology on an infinite product of spaces, as the induced topology by all its projections.
 This topology is called the \index{Tychonoff topology}\emph{Tychonoff topology}.
 
 \begin{thm}{Advanced exercise}\label{ex:induced-nonmetrizable}
@@ -273,7 +291,7 @@ Then $\c{Y}$ has the final topology induced by $f$.
 \end{thm}
 
 \parit{Proof.}
-Coose a set $W\subset \c{Y}$, and let $V=f^{-1}(W)$.
+Choose a set $W\subset \c{Y}$, and let $V=f^{-1}(W)$.
 Since $f$ is continuous, $V$ is open if $W$ is.
 Hence the topology on $\c{Y}$ has to be weaker than the final topology.
 
@@ -283,7 +301,7 @@ Thus the topology on $\c{Y}$ has to be stronger than the final topology, and the
 
 \parit{(b).}
 Set $A=\c{X}\setminus V$ and $B=\c{Y}\setminus W$.
-if $V$ is open, the $A$ is closed.
+If $V$ is open, then $A$ is closed.
 Since $f$ is surjective, $B=f(A)$.
 Since $f$ is a closed map, $B=f(A)$ is closed as well.
 Therefore, $W=\c{Y}\setminus B$ is open.
@@ -329,7 +347,7 @@ Construct an equivalence relation $\sim$ on $[0,1]$ such that the quotient space
 \end{thm}
 
 Given a set $A$ in a topological space $\c{X}$, the space $\c{X}/A$ is defined as the quotient space $\c{X}/{\sim}$ for the minimal equivalence relation such that $a\sim b$ for any $a,b\in A$.
-Intuitively, the space $\c{X}/A$ is obtaind from $\c{X}$ by gluing together all points in $A$.
+Intuitively, the space $\c{X}/A$ is obtained from $\c{X}$ by gluing together all points in $A$.
 
 \begin{thm}{Exercise}\label{ex:[0,1]/(0,1)}
 Describe the quotient space $[0,1]/(0,1)$, where $[0,1]$ and $(0,1)$ are real intervals;
@@ -357,7 +375,7 @@ Indeed, if $g\in G$, then $g^{-1}\in G$; therefore $g$ as well as its inverse mu
 Actions on topological spaces will always be assumed to be continuous.
 
 Given an action $G\acts\c{X}$, we can equip the set $G$ with a product defined as composition;
-that is, if $g,h\in G$ then its product $g\cdot h\in G$ is defined as
+that is, if $g,h\in G$ then their product $g\cdot h\in G$ is defined as
 $(g\cdot h)(x)\df g(h(x))$.
 With this operation, $G$ becomes a \index{group}\emph{group}; that is, it meets the following properties:
 \begin{itemize}
@@ -371,8 +389,8 @@ With this operation, $G$ becomes a \index{group}\emph{group}; that is, it meets 
 Checking these properties is straightforward.
 Associativity follows since it holds for composition, and one can take $1=\id_{\c{X}}$.
 
-Finally note that an abstract group (that is, a set $G$ with product that meets the three properties above) acts on itself by $g\: h\mapsto g\cdot h$, so any group acts on some set.
-Furthermore, we may equip $G$ with discrete topology and this way we obtain a continuous action $G\acts G$.
+Finally note that an abstract group (that is, a set $G$ with a product that meets the three properties above) acts on itself by $g\: h\mapsto g\cdot h$, so any group acts on some set.
+Furthermore, we may equip $G$ with the discrete topology and this way we obtain a continuous action $G\acts G$.
 (One may think that actions are more fundamental than groups.)
 
 For an action $G\acts \c{X}$, it is common to denote $g(x)$ by $g\cdot x$, where $g\in G$ and $x\in\c{X}$.
@@ -384,8 +402,8 @@ We just defined \index{left action}\emph{left actions}.
 In practice, left actions are used more often, and unless stated otherwise, by an action we will mean a left action.
 
 The \index{right action}\emph{right actions} are defined similarly but the homeomorphism $\c{X}\to \c{X}$ that corresponds to $g\in G$ is written as $x\mapsto x\cdot g$ and so $(x\cdot g)\cdot h=x\cdot (g\cdot h)$ for any $x\in \c{X}$ and $g,h\in G$.
-The right action of $G$ on $\c{X}$ is the same thing as a left action of the \index{opposite group}\emph{opposite group} $G^{\mathrm{op}}$,
-it has the same set of elements as $G$, but the product $\bullet$ in $G^{\mathrm{op}}$ is taken in the opposite order; that is, $g\bullet h\df h\cdot g$.
+The right action of $G$ on $\c{X}$ is the same thing as a left action of the \index{opposite group}\emph{opposite group} $G^{\mathrm{op}}$.
+The group $G^{\mathrm{op}}$ has the same set of elements as $G$, but the product $\bullet$ in $G^{\mathrm{op}}$ is taken in the opposite order; that is, $g\bullet h\df h\cdot g$.
 For commutative groups, left and right actions differ only by notation.
 
 
@@ -405,13 +423,13 @@ Further, if $y=g\cdot x$, then
 $\Rightarrow$
 $y\sim x$.
 Finally, suppose $x\sim y$ and $y\sim z$;
-that is, $y=g\cdot x$ and $z=h\cdot y$ for some $g,h\in G$, then $z=(h\cdot g)\cdot x$;
-therefore $x\sim z$.
+that is, $y=g\cdot x$ and $z=h\cdot y$ for some $g,h\in G$.
+Then $z=(h\cdot g)\cdot x$; therefore $x\sim z$.
 
 For the described equivalence relation, the quotient space $\c{X}/{\sim}$ can also be denoted by $\c{X}/G$;
 it is called the quotient of $\c{X}$ by the action of~$G$.
 
-Note that $[x]=G\cdot x$; that is, the orbit of $x$ coincides with its equivalence class of $\sim$.
+Note that $[x]=G\cdot x$; that is, the orbit of $x$ coincides with its equivalence class for $\sim$.
 For that reason, $\c{X}/G$ is also called the \index{orbit space}\emph{orbit space}.
 
 \begin{thm}{Exercise}\label{ex:R/R}

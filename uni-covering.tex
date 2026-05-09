@@ -8,11 +8,11 @@ This term will be used only in these notes; it is not standard and can mean some
 So, a topological space $\c{Z}$ is \index{reasonable space}\emph{reasonable} if for any open set $V\subset \c{Z}$ and any $p\in V$ there is an open simply-connected set $W$ such that $V\z\supset W\ni p$.
 
 For instance, Euclidean space is reasonable;
-it follows since any open ball in a Euclidean space is convex; in particular, contractible and simply-connected.
+it follows since any open ball in a Euclidean space is convex; in particular, contractible and therefore simply-connected.
 
 Since any simply-connected set is path-connected, any reasonable space is locally path-connected and locally connected;
 see \ref{sec:Locally path-connected spaces} and \ref{sec:Locally connected spaces}.
-In particular, from \ref{obs:open-connected-component} we have that every connected component of a reasonable space is clopen.
+In particular, by \ref{obs:open-connected-component} we have that every connected component of a reasonable space is clopen.
 
 
 \begin{thm}[!]{Exercise}\label{ex:reasonable}
@@ -28,7 +28,7 @@ If $w$ is surjective and $\c{Y}$ is reasonable, then so is $\c{Z}$.
 
 \end{thm}
 
-In this chapter we will sketch the following theorem.
+In this chapter we will sketch a proof of the following theorem.
 
 \begin{wrapfigure}{r}{36 mm}
 \vskip-8mm
@@ -43,16 +43,17 @@ In this chapter we will sketch the following theorem.
 Any reasonable connected space $\c{Z}$ admits a covering $u\:\tilde{\c{Z}}\z\to \c{Z}$ with a simply-connected total space $\tilde{\c{Z}}$.
 
 Moreover such a covering has the following \index{universal property}\emph{universal property}:
-any other connected pointed covering $w\:(\c{Y},y_0)\to (\c{Z},z_0)$ and any choice of point $\tilde z_1\in \tilde{\c{Z}}$ such that $u(\tilde z_1)\z=z_0$ there is a pointed covering $v\:(\tilde{\c{Z}},\tilde z_1)\z\to (\c{Y},y_0)$ which makes the diagram commute.
+given a connected pointed covering $w\:(\c{Y},y_0)\to (\c{Z},z_0)$ and any choice of point $\tilde z_1\in \tilde{\c{Z}}$ such that $u(\tilde z_1)\z=z_0$ there is a pointed covering $v\:(\tilde{\c{Z}},\tilde z_1)\z\to (\c{Y},y_0)$ which makes the diagram commute.
 \end{thm}
-
-Most spaces that appear in applications are reasonable, so the following theorem has many applications; for example, it can be used together with \ref{thm:bijection-fiber} and \ref{ex:monodromy:isomorphism}.
 
 The first part of the theorem will be provided by \ref{thm:u-cover-exist}, and the second part will follow from \ref{ex:reasonable:v} and \ref{thm:lifting-criterion}; see \ref{sec:Lifts again}.
 
+The theorem can be used together with \ref{thm:bijection-fiber} and \ref{ex:monodromy:isomorphism};
+it is useful since most spaces that appear in applications are reasonable.
+
 The covering $u$ as in the theorem is called \index{universal covering}\emph{universal}.
-Note that the universal property can be applied to the same covering $u\:\tilde{\c{Z}}\z\to \c{Z}$ with another choice of base point $\tilde z_\alpha\in u^{-1}\{z_0\}$.
-It defines a group action on $\tilde{\c{Z}}$ and implies that the universal covering is normal;
+Note that the universal property can be applied to the covering $u\:\tilde{\c{Z}}\z\to \c{Z}$ with different choices of base points.
+It defines a homeomorphism $h\:\tilde{\c{Z}}\selfmap$ and all such homeomorphisms define a group action on $\tilde{\c{Z}}$, which meets the definition of a normal covering;
 applying \ref{ex:monodromy:isomorphism}, we get the following.
 
 \begin{thm}{Observation}
@@ -77,9 +78,9 @@ Let $\c{Z}$ be a connected reasonable space.
 Then a connected pointed covering $v\:(\c{X},x_0)\z\to (\c{Z},z_0)$ is uniquely defined up to equivalence by the subgroup $H=\Im v_*<\pi_1(\c{Z},z_0)$.
 \end{thm}
 
-This classification follows from \ref{ex:induced-hom-covering:injective}, \ref{prop:monodromy-homo}, and \ref{thm:unicover}; we will not prove it formally, but it is a good exercise on concentration.
+This classification follows from \ref{ex:induced-hom-covering:injective}, \ref{prop:monodromy-homo}, and \ref{thm:unicover}; we will not prove it formally, but it is a good exercise in concentration.
 
-In the following sections we show how the theorem might fail to be true for nonreasonable spaces.
+In the following two sections we show how the theorem might fail to be true for nonreasonable spaces.
 
 \section{Hawaiian earring and its relatives}
 
@@ -105,11 +106,11 @@ Let us show that $\c{H}$ is not locally simply-connected.
 
 Let $p$ be the common point of the circles in $\c{H}$.
 An arbitrary neighborhood $V$ of $p$ contains a circle, say $S$.
-Consider the map $r\:V\to S$ that is identity on $S$ and maps $V\setminus S$ to $p$.
+Consider the map $r\:V\to S$ that is the identity on $S$ and maps $V\setminus S$ to $p$.
 Note that $r$ is a retraction.
 
 Recall that $S$ has a nontrivial fundamental group; see \ref{thm:pi1(S1)}.
-By \ref{ex:retract*:0},  $V$ is not simply-connected.
+By \ref{ex:retract*:0}, $V$ is not simply-connected.
 Hence the statement follows.
 \qeds
 
@@ -129,8 +130,11 @@ Show that $\c{F}_\infty\not\simeq \c{H}$.
 
 {
 
+\begin{thm}{Exercise}\label{ex:Hawaiian-nouni}
+Show that the Hawaiian earring $\c{H}$ does not admit a covering that meets the universal property.
+
 \begin{wrapfigure}{r}{23 mm}
-\vskip-4mm
+\vskip-8mm
 \centering
 \begin{tikzcd}
 & \c{Y}\arrow[d, "w"]\\
@@ -138,22 +142,20 @@ Show that $\c{F}_\infty\not\simeq \c{H}$.
 \end{tikzcd}
 \end{wrapfigure}
 
-\begin{thm}{Exercise}\label{ex:Hawaiian-nouni}
-Show that Hawaiian earring $\c{H}$ does not admit a covering that meets the universal property;
-that is, for any covering $w\:\c{X}\to\c{H}$ with connected $\c{X}$ there is another covering $v\:\c{Y}\to\c{H}$ with connected $\c{Y}$
+Moreover, for any covering $w\:\c{X}\to\c{H}$ with connected $\c{X}$ there is another covering $v\:\c{Y}\to\c{H}$ with connected $\c{Y}$
 that cannot be included in the commutative diagram.
 \end{thm}
 
 }
 
-The following exercise implies that composition of coverings might fail to be a covering; according to \ref{ex:reasonable:u}, reasonable spaces behave better.
+The following exercise implies that composition of coverings might fail to be a covering; as we will see in \ref{ex:reasonable:u}, reasonable spaces behave better.
 
 \begin{thm}{Advanced exercise}\label{ex:Hawaiian-comp-cover}
-Construct a $\ZZ$-covering of the Hawaiian earring $w\:\c{Y}\to \c{H}$ and $\ZZ_2$-covering $v\:\c{X}\to \c{Y}$ such that the composition $w\circ v\:\c{X}\to \c{H}$ is not a covering.
+Construct a $\ZZ$-covering of the Hawaiian earring $w\:\c{Y}\to \c{H}$ and a $\ZZ_2$-covering $v\:\c{X}\to \c{Y}$ such that the composition $w\circ v\:\c{X}\to \c{H}$ is not a covering.
 \end{thm}
 
 The cone over the Hawaiian earring provides an example of a contractible space (in particular, simply-connected) that is not locally simply-connected.
-To construct this space think that $\c{H}$ lies in the $(x,y)$-plane in $\RR^3$;
+To construct this space, think that $\c{H}$ lies in the $(x,y)$-plane in $\RR^3$;
 choose a tip of the cone, say $q$, under the $(x,y)$-plane
 and consider the union of line segments from $q$ to the points in~$\c{H}$.
 
@@ -179,9 +181,9 @@ Show that the Griffiths space has nontrivial fundamental group.
 
 \section{Polish circle}
 
-\emph{Polish circle} $\c{P}$ is an example of a topological space shown on the right side of the picture.
+The \emph{Polish circle} $\c{P}$ is an example of a topological space shown on the right side of the picture.
 It is a simply-connected space that is not locally path-connected.
-On the left side of the picture, you see a total space of its connected 2-fold cover.
+On the left side of the picture, you see the total space of its connected 2-fold cover.
 \begin{figure}[h!]
 \vskip-0mm
 \centering
@@ -200,7 +202,7 @@ Below you see the total space of its covering that meets the universal property 
 
 From now on we restrict attention to reasonable spaces.
 The following claim is one of their key features.
-Note that it does not hold for the Polish circle, so the claim does not hold without assuming that reasonability.
+Note that it does not hold for the Polish circle, so the claim does not hold without assuming reasonability.
 (This time local path-connectedness will suffice.)
 
 \begin{thm}{Claim}\label{clm:sc-base}
@@ -222,10 +224,10 @@ Since $\c{Z}$ is simply-connected, $w$ is surjective.
 It remains to show that $w$ is injective;
 indeed, an open bijective continuous map must be a homeomorphism.
 
-Choose two points $\tilde z_0,\tilde z_1\in\tilde{\c{Z}}$ that map to a single point, say $z_0=w(\tilde z_0)=w(\tilde z_1)$.
+Choose two points $\tilde z_0,\tilde z_1\in\tilde{\c{Z}}$ that map to a single point, say $z_0\z=w(\tilde z_0)=w(\tilde z_1)$.
 Since $\tilde{\c{Z}}$ is path-connected, we can choose a path $\tilde a$ from $\tilde z_0$ to $\tilde z_1$.
 Note that $a=w\circ \tilde a$ is a loop in $\c{Z}$.
-Since $\c{Z}$ is simply-connected $a\sim e_{z_0}$.
+Since $\c{Z}$ is simply-connected, $a\sim e_{z_0}$.
 Now, \ref{lem:path-lifting} implies that $\tilde z_0=\tilde a(0)=\tilde a(1)=\tilde z_1$, which proves that $w$ is injective.
 \qeds
 
@@ -234,7 +236,7 @@ Note that the statement at the end of this proof also follows from \ref{ex:induc
 {
 
 \begin{wrapfigure}{r}{33 mm}
-\vskip-6mm
+\vskip-2mm
 \centering
 \begin{tikzcd}
 & \c{Y}\arrow[dr, "w"]&\\
@@ -243,20 +245,19 @@ Note that the statement at the end of this proof also follows from \ref{ex:induc
 \end{wrapfigure}
 
 \begin{thm}[!]{Exercise}\label{ex:reasonable-diagram}
-Assume that each map in the commutative diagram is continuous and the space $\c{Z}$ is reasonable;
-furthermore, $v$ is surjective.%
-\footnote{Double arrow $\twoheadrightarrow$ is used to denote surjective maps.}
+Assume that each map in the commutative diagram is continuous, $v$ is surjective%
+\footnote{Double arrow $\twoheadrightarrow$ is used to denote surjective maps.}, and the space $\c{Z}$ is reasonable.
 Show that
 \begin{subthm}{ex:reasonable:u}
 if $v$ and $w$ are coverings, then so is $u$,
 \end{subthm}
 
 \begin{subthm}{ex:reasonable:v}
-if $u$ and $w$ are coverings, then so is  $v$,
+if $u$ and $w$ are coverings, then so is $v$,
 \end{subthm}
 
 \begin{subthm}{ex:reasonable:w}
-if $u$ and $v$ are coverings, then $w$ is a covering.
+if $u$ and $v$ are coverings, then so is $w$.
 \end{subthm}
 
 \end{thm}
@@ -266,18 +267,18 @@ if $u$ and $v$ are coverings, then $w$ is a covering.
 \begin{thm}[!]{Exercise}\label{ex:vankam-nonconnect}
 Let $V$ and $W$ be two connected open sets in a reasonable space $\c{Z}$.
 Assume $\c{Z}=V\cup W$ and the intersection $V\cap W$ has at least two connected components.
-Glue a nontrivial 2-fold cover $\tilde{\c{Z}}$ of $\c{Z}$ from two copies of $V$ and two copies of $W$.
+Construct the total space $\tilde{\c{Z}}$ of a nontrivial 2-fold covering of $\c{Z}$by gluing together two copies of $V$ and two copies of $W$.
 Conclude that $\c{Z}$ is not simply-connected.
 \end{thm}
 
 \section{Lifts again}\label{sec:Lifts again}
 
-The following theorem and \ref{ex:reasonable:v} provide the second part of \ref{thm:unicover}; that is, a covering of a connected reasonable space with simply-connected total space must meet the universal property.
+The following theorem and \ref{ex:reasonable:v} provide the second part of \ref{thm:unicover}; that is, a covering of a connected reasonable space with a simply-connected total space must meet the universal property.
 
 {
 
-\begin{wrapfigure}[4]{r}{36 mm}
-\vskip-8mm
+\begin{wrapfigure}{r}{36 mm}
+\vskip-0mm
 \centering
 \begin{tikzcd}
 & (\tilde{\c{Z}},\tilde z_0)\arrow[d, "w"]\\
@@ -318,8 +319,8 @@ In particular, there is a continuous pointed map $s\:(\c{Y},y_0)\z\to (\tilde{\c
 
 }
 
-Note that the diagram mostly commutes except $s\circ \tilde w\ne \id_{\tilde{\c{Y}}}$.
-It remains to observe that $g=\tilde f\circ s$ is a required lift of $f$.
+Note that the diagram commutes except $s\circ \tilde w\ne \id_{\tilde{\c{Y}}}$.
+It remains to observe that $g=\tilde f\circ s$ is the required lift of $f$.
 \qeds
 
 \section{Existence}
@@ -329,7 +330,7 @@ Any connected reasonable space $\c{Z}$ admits a covering $u\:\tilde{\c{Z}}\to\c{
 \end{thm}
 
 \parit{Sketch of proof.}
-We will construct a \textit{set} $\tilde{\c{Z}}$ with a map $u\:\tilde{\c{Z}}\to\c{Z}$, then equip $\tilde{\c{Z}}$ with a topology and check that $u$ meets the conditions in the theorem.
+We will construct a \textit{set} $\tilde{\c{Z}}$ with a map $u\:\tilde{\c{Z}}\to\c{Z}$, and then equip $\tilde{\c{Z}}$ with a topology and check that $u$ meets the conditions in the theorem.
 
 \parit{The set and the map.}
 Choose a point $z_0\in \c{Z}$.
@@ -348,7 +349,8 @@ Therefore, $u\:[a]\mapsto a(1)$ is a well-defined map $u\:\tilde{\c{Z}}\to\c{Z}$
 \parit{The topology.}
 So far $\tilde{\c{Z}}$ is just a set; this step equips it with a topology.
 
-Let $V\subset \c{Z}$ be an open simply-connected set and let $a\z\in\Path(\c{Z},z_0)$ be a path that ends in $V$.
+Let $V\subset \c{Z}$ be an open simply-connected set.
+Choose a path $a\z\in\Path(\c{Z},z_0)$ that ends in $V$.
 Consider the set $\tilde V_{[a]}\subset \tilde{\c{Z}}$ defined by
 \[\tilde V_{[a]}=\set{[a*b]\in\tilde{\c{Z}}}{b\ \text{is a path in}\ V\ \text{that starts at}\ a(1)}.\]
 Note that $\tilde V_{[a]}$ depends only on the homotopy class of $a$.
@@ -365,29 +367,29 @@ If $a$ and $b$ are two paths from $z_0$ to a point in $V$, then
 \tilde V_{[a]}=\tilde V_{[b]};\]
 again, the proof is left to the reader.
 In particular, $V$ is evenly covered by $u$ and the sets $\tilde V_{[a]}$ are the slices over $V$.
-Since $\c{Z}$ is reasonable, this implies that $u$ is a covering.
+Since $\c{Z}$ is reasonable, it admits an open cover by simply-connected sets, and this implies that $u$ is a covering.
 
 Let $\tilde z_0=[e_{z_0}]$; that is, the point $\tilde z_0\in \tilde{\c{Z}}$ corresponds to the constant path $e_{z_0}$ in $\c{Z}$.
 Note that $u(\tilde z_0)=e_{z_0}(1)=z_0$.
 
-Given a path $a$, and $s\in [0,1]$, let $a_s\:[0,1]\to \c{Z}$ be the path defined by $a_s(t)=a(s\cdot t)$;
+Given a path $a$ and $s\in [0,1]$, let $a_s\:[0,1]\to \c{Z}$ be the path defined by $a_s(t)=a(s\cdot t)$;
 note that $a_s$ runs from $a(0)$ to $a(s)$.%
 \footnote{Note that $a_s$ is not a homotopy of paths, but it is a free homotopy; see \ref{sec:Homotopy of paths}.}
 
-Let $\tilde z=[a]\in \tilde{\c{Z}}$ for some $a\in\Path(\c{Z},z_0)$.
+Choose $\tilde z=[a]\in \tilde{\c{Z}}$; here $a\in\Path(\c{Z},z_0)$.
 By \ref{lem:path-lifting}, there is a unique lift $\tilde a$ of $a$ such that $\tilde a(0)=\tilde z_0$.
 Observe that $\tilde a(s)\z= [a_s]$ for any $s\in[0,1]$.
 In particular, $\tilde a$ is a path from $\tilde z_0$ to $\tilde z$;
 since $\tilde z$ is arbitrary, we get that $\tilde{\c{Z}}$ is path-connected.
 
-Choose a loop $\tilde a\:[0,1]\to  \tilde{\c{Z}}$ based at $\tilde z_0$.
+Choose a loop $\tilde a\:[0,1]\to \tilde{\c{Z}}$ based at $\tilde z_0$.
 Let $a=u\circ \tilde a$; it is a loop based at $z_0$.
 From above, we have $\tilde a(s)= [a_s]$.
 Note that $\tilde a$ is a loop, $a=a_1$ and $e_{z_0}=a_0$; therefore,
 \[[a]=\tilde a(1)=\tilde a(0)=[e_{z_0}].\]
-In other words $a\sim e_{z_0}$.
+In other words, $a\sim e_{z_0}$.
 By \ref{lem:path-lifting}, the corresponding homotopy can be lifted to $\tilde{\c{Z}}$ and it contracts $\tilde a$.
-That is, any loop in $\tilde{\c{Z}}$ is contractible; thus, $\tilde{\c{Z}}$ is simply-connected.
+That is, any loop in $\tilde{\c{Z}}$ is contractible; by \ref{prop:sc=1hclass}, $\tilde{\c{Z}}$ is simply-connected.
 \qeds
 
 Recall that topological groups were defined in \ref{ex:group}.
@@ -411,19 +413,19 @@ Groups that are isomorphic to the fundamental groups of graphs are called \index
 
 Free groups are important in group theory.
 They are usually defined in purely algebraic terms.
-The following statement, if proved in a purely algebraic way, is not trivial, but as we are about to see, topological proof takes a few lines.
-In a perfect world, I should present an algebraic definition and prove their equivalence,
-but I skip this part --- please forgive this shortcut.
+The following statement, if proved in a purely algebraic way, is not trivial, but as we are about to see, a topological proof takes a few lines.
+In a perfect world, I should present both definitions and prove their equivalence, but I will skip this part --- please forgive this shortcut.
+
 
 \begin{thm}{Theorem}
 Any subgroup of a free group is free.
 \end{thm}
 
 \parit{Proof.}
-Choose a free group $F=\pi_1(\Gamma,v_0)$, where $\Gamma$ is a graph and $v_0$ is its vertex.
+Choose a free group $F=\pi_1(\Gamma,v_0)$, where $\Gamma$ is a graph and $v_0$ is one of its vertices.
 Note that any graph is a reasonable space.
-By \ref{prop:classification-coverings}, for any subgroup $H<F$ there is a pointed covering $w\:(\tilde\Gamma,\tilde v_0)\to (\Gamma,v_0)$ such that $\Im w_*=H$.
-Recall that $w_*$ is a monomorphism, thus $\pi_1(\tilde \Gamma,\tilde v_0)$ is isomorphic to $H$.
+By \ref{prop:classification-coverings}, for any subgroup $H<F$ there is a pointed covering $w\:(\tilde\Gamma,\tilde v_0)\z\to (\Gamma,v_0)$ such that $\Im w_*=H$.
+Recall that $w_*$ is a monomorphism; thus $\pi_1(\tilde \Gamma,\tilde v_0)$ is isomorphic to $H$.
 
 \begin{figure}[ht!]
 \vskip-0mm
@@ -435,7 +437,6 @@ Observe that the total space of a covering of a graph is a graph.
 Hence the statement follows.
 \qeds
 
-This statement gives some taste of possible applications of coverings in the group theory.
-The following statements lead to more applications of that type.
+This statement gives some taste of possible applications of coverings in group theory.
 For more on the subject, read \cite{hatcher-2002} and check the references therein.
 

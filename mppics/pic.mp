@@ -1377,7 +1377,7 @@ endfig;
 beginfig(1555)
 save u,p;
 path p[];
-u:=1.4cm;
+u:=1cm;
 
 
 p0=(4,0)*u{up}..(1,0)*u{down}..(3,0)*u{up}..(0,0)*u{up}..cycle;
@@ -1478,7 +1478,7 @@ endfor
 draw subpath (2*(n-m)-2+.1,2*(n-m)+.9) of p3 withpen pencircle scaled 4 withcolor 1;
 draw subpath (2*(n-m)-2,2*(n-m)+1) of p3;
 
-label (btex $\downarrow$ etex, (.5,.4)*u);
+label (btex $\downarrow$ etex, (.5,.5)*u);
 endfig;
 
 beginfig(1655)
@@ -2042,6 +2042,30 @@ label.lft (btex $b$ etex, (0,.5)*u);
 label.rt (btex $b$ etex, (1,.5)*u);
 endfig;
 
+beginfig(1905)
+save u,p;
+path p[];
+u:=.7cm;
+
+z.p=(0,0)*u;
+z.q=(.2,-1)*u;
+
+p1=z.q{z.q zscaled (0,1)}..(2,-2)*u{down}..tension 1.7..(-2.2,-2.4)*u{up}..cycle;
+
+z.s=point 2.7 of p1;
+
+hatchfill p1  withcolor (67, 1mm, -.5bp);
+draw p1;
+draw z.s--z.p--z.q;
+
+dOt z.p,z.q,z.s;
+
+label.top (btex $p_n$ etex, z.p);
+label.urt (btex $q_n$ etex, z.q);
+label.ulft (btex $s_n$ etex, z.s);
+whitelabel (btex $\Gamma$ etex, (-.1,-2.2)*u);
+endfig;
+
 beginfig(1915)
 save u,p;
 path p[];
@@ -2183,5 +2207,6 @@ label.top (btex $\tilde \Gamma$ etex, (2.5,.2)*u);
 label.top (btex $\Gamma$ etex, z.shift+(.5,.2)*u);
 label (btex $\xrightarrow{w}$ etex, .5[(5,1)*u,z.shift]);
 endfig;
+
 
 end

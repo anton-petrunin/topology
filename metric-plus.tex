@@ -4,7 +4,7 @@ Recall that any metric space comes with a topology.
 In particular, we may talk about \textit{compact metric spaces}.
 In this chapter we discuss specific properties of metric spaces that are related to compactness.
 
-\section{Lebesgue number}%???MOVE
+\section{Lebesgue number}
 
 \begin{thm}{Theorem}\label{prop:lebesgue-number}
 Given an open cover $\{V_\alpha\}$ of a compact metric space $\c{M}$,
@@ -13,20 +13,20 @@ there is $\eps > 0$ such that every $\eps$-ball in $\c{M}$ is contained in $V_\a
 
 The number $\eps$ that meets the condition in the theorem is called the \index{Lebesgue number}\emph{Lebesgue number} of the cover.
 
-\parit{Proof.} %??? redo with cont r(p)
+\parit{Proof.}
 Given a point $p\in \c{M}$ we can choose $r=r(p)>0$ such that the ball $\Ball(p,2\cdot r)$ lies in $V_\alpha$ for some $\alpha$.
 Observe that all balls $\Ball(p,r(p))$ form an open cover of $\c{M}$.
 Since $\c{M}$ is compact, we can choose a finite subcover $\{\Ball(p_1,r_1),\ldots,\Ball(p_n,r_n)\}$.
 
 Let $\eps=\min\{r_1,\ldots,r_n\}$.
 For any $p\in\c{M}$ we can choose a ball $\Ball(p_i,r_i)\ni p$.
-Since $\eps<r_i$, we have $\Ball(p,\eps)\subset \Ball(p_i,2\cdot r_i)$.
-Furthermore, since $\Ball(p_i,2\cdot r_i)$ lies in some $V_{\alpha}$, so is $\Ball(p,\eps)$.
+Since $\eps\le r_i$, we have $\Ball(p,\eps)\subset \Ball(p_i,2\cdot r_i)$.
+Furthermore, since $\Ball(p_i,2\cdot r_i)$ lies in some $V_{\alpha}$, so does $\Ball(p,\eps)$.
 \qeds
 
-%\parit{Proof.} Consider the function $R\:\c{M}\to \RR$ defined by \[R(x)=\sup\set{r\in(0,1)}{\Ball(x,r)\subset V_\alpha\ \text{for some}\ \alpha}.\] Since $\{V_\alpha\}$ is an open cover of $\c{M}$, we have $R(x)>0$ for any $x$.
+%???\parit{Proof.} Consider the function $R\:\c{M}\to \RR$ defined by \[R(x)=\sup\set{r\in(0,1)}{\Ball(x,r)\subset V_\alpha\ \text{for some}\ \alpha}.\] Since $\{V_\alpha\}$ is an open cover of $\c{M}$, we have $R(x)>0$ for any $x$.
 
-%Choose two points $x,y\in \c{M}$; let $d=|x-y|_{\c{M}}$. By the triangle inequality, \[\Ball(x,r)\subset \Ball(y,r+d)\quad \text{and}\quad  \Ball(y,r)\subset \Ball(x,r+d)\] for any $x,y\in \c{M}$ and $r>0$. Therefore, if $\Ball(y,r+d)\subset V_\alpha$ for some~$\alpha$, then $\Ball(x,r)\subset V_\alpha$. It follows that $|R(x)-R(y)|\le |x-y|_{\c{M}}$ for any $x,y\in \c{M}$.
+%Choose two points $x,y\in \c{M}$; let $d=|x-y|_{\c{M}}$. By the triangle inequality, \[\Ball(x,r)\subset \Ball(y,r+d)\quad \text{and}\quad \Ball(y,r)\subset \Ball(x,r+d)\] for any $x,y\in \c{M}$ and $r>0$. Therefore, if $\Ball(y,r+d)\subset V_\alpha$ for some~$\alpha$, then $\Ball(x,r)\subset V_\alpha$. It follows that $|R(x)-R(y)|\le |x-y|_{\c{M}}$ for any $x,y\in \c{M}$.
 
 %In particular, $R$ is a continuous function. By \ref{ex:fun(compact):min-max}, $R$ attains its minimum; that is, there is a point $x_{\min}\in \c{M}$ such that $R(x)\ge R(x_{\min})$ for any $x\in\c{M}$. It remains to observe that $\eps=\tfrac12\cdot R(x_{\min})$ meets the conditions in the theorem. \qeds
 
@@ -34,7 +34,12 @@ Furthermore, since $\Ball(p_i,2\cdot r_i)$ lies in some $V_{\alpha}$, so is $\Ba
 Construct a noncompact metric space $\c{M}$ such that $1$ is a Lebesgue number for any open cover of $\c{M}$.
 \end{thm}
 
-%\begin{thm}{Exercise}\label{ex:lebesgue-opt} Let $\eps>0$ be a Lebesgue number of an open cover $\{V_\alpha\}$ of a compact metric space $\c{M}$. Show that for any $0<\eps'<\eps$ there is a finite subcover of $\{V_\alpha\}$ with Lebesgue number $\eps'$. Give an example showing that in gereral there might be no finite subcover of $\{V_\alpha\}$ with Lebesgue number $\eps$. \end{thm} %??? ADD
+\begin{thm}{Exercise}\label{ex:lebesgue-opt}
+Let $\eps>0$ be a Lebesgue number of an open cover $\{V_\alpha\}$ of a compact metric space $\c{M}$.
+Show that for any $0<\eps'<\eps$ there is a finite subcover of $\{V_\alpha\}$ for which $\eps'$ is a Lebesgue number.
+
+Give an example showing that in general there might be no finite subcover of $\{V_\alpha\}$ with Lebesgue number $\eps$.
+\end{thm}
 
 
 \section[\texorpdfstring{Compactness $\Rightarrow$ sequential compactness}{Compactness ⇒ sequential compactness}]{Compactness $\bm{\Rightarrow}$ sequential compactness}\label{sec:comp=>seq-comp}
@@ -49,9 +54,9 @@ Show that the product of two sequentially compact spaces is sequentially compact
 
 }
 
-For general topological spaces sequential compactness does not imply compactness, and the other way around.%
-\footnote{An example of compact, but not sequentially compact space has been constructed in \ref{ex:power-power}.
-A standard example of sequentially compact, but not compact space is $[0,\Omega)$ --- the set of all countable ordinals, with the order topology;
+For general topological spaces sequential compactness does not imply compactness, nor conversely.%
+\footnote{An example of a compact, but not sequentially compact, space has been constructed in \ref{ex:power-power}.
+A standard example of a sequentially compact, but not compact, space is $[0,\Omega)$ --- the set of all countable ordinals, with the order topology;
 it is discussed in the classical book of Lynn Arthur Steen and J. Arthur, Jr. Seebach~\cite{steen-seebach}.
 }
 The following proposition states that these two notions are equivalent for metric spaces.
@@ -68,9 +73,8 @@ contains infinitely many elements~$x_n$.
 Indeed, if this property holds, then we can choose $i_1$ such that $x_{i_1}\in \Ball(p,1)$, further $i_2>i_1$ such that $x_{i_2}\in \Ball(p,\tfrac12)$ and so on; on the $n$-th step we get $i_n>i_{n-1}$ such that $x_{i_n}\in \Ball(p,\tfrac1n)$.
 The obtained subsequence $x_{i_1},x_{i_2},\ldots$ converges to $p$.
 
-
 Now assume $\c{M}$ is not sequentially compact;
-that is, a sequence $x_1,x_2,\ldots{}\in \c{M}$ has no converging subsequence.
+that is, some sequence $x_1,x_2,\ldots{}\in \c{M}$ has no convergent subsequence.
 Then for any point $p$ there is $\eps_p>0$ such that $\Ball(p,\eps_p)$ contains only finitely many elements of $x_n$.
 Note that all balls $\Ball(p,\eps_p)$ form a cover of~$\c{M}$.
 Since the sequence is infinite, this cover does not have a finite subcover,
@@ -80,14 +84,15 @@ in particular, $\c{M}$ is not compact.
 The if part of the theorem will be done in \ref{sec:seq-comp-if} after proving a sequence of auxiliary statements.
 The proof can be divided in three steps.
 On the first step (\ref{sec:nets}) we show that any sequentially compact space is \textit{separable}; that is, it has a countable dense subset.
-On the second step (\ref{sec:countable-base}) we show that a separable metric space have countable base and any topological space with a countable base is \textit{Lindelöf}; that  is, every open cover contains a countable subcover.
+On the second step (\ref{sec:countable-base}) we show that a separable metric space has a countable base and any topological space with a countable base is \textit{Lindelöf}; that is, every open cover contains a countable subcover.
 On the last step (\ref{sec:seq-comp-if}) we combine these results.
+
 
 
 \section{Nets and separability}\label{sec:nets}
 
 Let $\c{M}$ be a metric space.
-A subset $A\subset\c{M}$ is called an \index{$\eps$-net}\emph{$\eps$-net} of $\c{M}$ if for any $p\in \c{M}$  there is $a\in A$ such that $|p-a|_{\c{M}}<\eps$.
+A subset $A\subset\c{M}$ is called an \index{$\eps$-net}\emph{$\eps$-net} of $\c{M}$ if for any $p\in \c{M}$ there is $a\in A$ such that $|p-a|_{\c{M}}<\eps$.
 
 \begin{thm}{Lemma}\label{lem:net}
 Let $\c{M}$ be a sequentially compact metric space.
@@ -106,7 +111,7 @@ This procedure might terminate on the $n$-th step if there is no point $x_n$ suc
 In this case, the set $\{x_1,\ldots,x_{n-1}\}$ is an $\eps$-net in $\c{M}$ --- the lemma is proved.
 
 If the procedure does not terminate, we get an infinite sequence of points $x_1,x_2,\ldots$ such that $|x_i-x_j|>\eps$ for all $i\ne j$.
-Any of its subsequence has the same property; in particular none of its subsequences can converge --- a contradiction.
+Any of its subsequences has the same property; in particular none of its subsequences can converge --- a contradiction.
 \qeds
 
 A topological space is called \index{separable space}\emph{separable} if it contains a countable dense subset.
@@ -164,7 +169,7 @@ Then any open cover of $\c{X}$ has a countable subcover.
 Choose an open cover $\{V_\alpha\}$.
 Let $\{B_1,B_2,\ldots\}$ be a countable base of $\c{X}$.
 By \ref{ex:base-nbhd}, for any $x\in\c{X}$ we can choose $i=i(x)$ such that $x\in B_i\subset V_\alpha$ for some $\alpha$.
-Denote by $S$ the set of all indexes that appear as $i(x)$ for some $x$.
+Denote by $S$ the set of all indices that appear as $i(x)$ for some $x$.
 Then $\{B_i\}_{i\in S}$ is a countable open cover that is inscribed in $\{V_\alpha\}$.
 That is, for every $B_i$ there is $\alpha_i$ such that $B_i\subset V_{\alpha_i}$.
 It remains to observe that $\{V_{\alpha_i}\}_{i\in S}$ is a countable cover of~$\c{X}$.
@@ -188,13 +193,13 @@ Show that $\c{X}\times \c{X}$ is not Lindelöf.
 \end{thm}
 
 
-\section[\texorpdfstring{Sequential compactness $\Rightarrow$  compactness}{Sequential compactness ⇒ compactness}]{Sequential compactness $\bm{\Rightarrow}$ compactness}\label{sec:seq-comp-if}
+\section[\texorpdfstring{Sequential compactness $\Rightarrow$ compactness}{Sequential compactness ⇒ compactness}]{Sequential compactness $\bm{\Rightarrow}$ compactness}\label{sec:seq-comp-if}
 
 \parit{Proof of the if part in \ref{prop:seq-comp-metr}.}
 Choose an open cover of $\c{M}$.
-By \ref{lem:lind}, we can assume that it is countable; denote it by $\{V_1,V_2,\ldots\}$.
+By \ref{lem:lind}, we can assume that the cover is countable; denote it by $\{V_1,V_2,\ldots\}$.
 If it has no finite subcover, then we can choose a sequence of points $x_1,x_2,\ldots\in\c{M}$ such that
-\[x_n\notin  V_1\cup \ldots\cup V_n\]
+\[x_n\notin V_1\cup \ldots\cup V_n\]
 for any $n$.
 
 Since $\c{M}$ is sequentially compact, a subsequence of $x_1,x_2,\ldots$ has a limit, say $x$,
@@ -217,11 +222,11 @@ that is, $f$ is a bijection and equality always holds in \ref{eq:distance-noncon
 
 A sequence $x_1,x_2,\ldots$ of points in a metric space is called \index{Cauchy sequence}\emph{Cauchy} if
 for any $\eps>0$ there is $n$ such that $|x_i-x_j|<\eps$ for all $i,j>n$.
-It is easy to prove that any converging sequence is Cauchy, the converse does not hold in general.
+It is easy to prove that any converging sequence is Cauchy; the converse does not hold in general.
 A metric space $\c{M}$ is called \index{complete space}\emph{complete} if any Cauchy sequence in $\c{M}$ converges to a point in $\c{M}$.
 
 The Cauchy test (which is assumed to be known from calculus) implies that the real line $\RR$ with the standard metric is complete.
-On the other hand, an open interval $(0,1)$ forms a noncomplete subspace of $\RR$;
+On the other hand, an open interval $(0,1)$ isnot complete;
 indeed, the sequence $x_n=\tfrac 1{2^n}$ is Cauchy, but it does not converge in $(0,1)$ --- it converges to $0$ in $\RR$, but $0\notin(0,1)$.
 
 
@@ -233,7 +238,7 @@ Any (sequentially) compact metric space $\c{M}$ is complete.
 Choose a Cauchy sequence $x_1,x_2,\ldots\in \c{M}$.
 By the only-if part of \ref{prop:seq-comp-metr} (which is proved already), we can assume that the space is sequentially compact; therefore, we can find a converging subsequence; denote its limit by $p$.
 
-Choose $\eps>0$ and let $n$ be as in the definition of Cauchy sequence, so $|x_i-x_j|<\eps$ for all $i,j>n$.
+Choose $\eps>0$ and let $n$ be as in the definition of a Cauchy sequence, so $|x_i-x_j|<\eps$ for all $i,j>n$.
 Note that the ball $\Ball(p,\eps)$ contains infinitely many elements of the sequence; in particular, $|x_j-p|<\eps$ for some $j>n$.
 By the triangle inequality,
 \[|x_i-p|\le|x_i-x_j| +|x_j-p|<2\cdot \eps\]
@@ -242,14 +247,14 @@ Since $\eps>0$ is arbitrary, the sequence $x_1,x_2,\ldots$ converges to $p$.
 \qeds
 
 \begin{thm}{Exercise}\label{ex:closed-complete}
-Show that closed subset of complete metric space forms a complete subspace.
+Show that a closed subset of a complete metric space forms a complete subspace.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:compact-complete}
 Show that any sequentially compact metric space $\c{M}$ is \index{bounded metric space}\emph{bounded};
 that is, $\c{M}$ has finite \index{diameter}\emph{diameter}:
 \[\diam\c{M}=\sup\set{|x-y|_{\c{M}}}{x,y\in \c{M}}<\infty.\]
-Give an example of noncompact complete bounded metric space.
+Give an example of noncompact, complete, bounded metric space.
 
 \end{thm}
 
@@ -278,16 +283,17 @@ for every $x\in \Ball (p, r(p))$.
 
 \end{thm}
 
+
 \section{An application} %??? + Hausdorff metric, reduce to convex case?
 
 \begin{thm}{Theorem}\label{thm:isoperim}
 Among all plane curves of given length $L$, only circles bound the greatest area.
 \end{thm}
 
-Since a circle of length $L$ bounds area $\tfrac{L^2}{4\cdot \pi}$, the statement can be reformulated in a more algebraic manner: \textit{a plane curve $\gamma$ of given length $L$ bounds area  $a\le \tfrac{L^2}{4\cdot \pi}$, and, in the case of equality $\gamma$ is a circle.}
-This statement is called {}\emph{isoperimetric inequality}.
+Since a circle of length $L$ bounds area $\tfrac{L^2}{4\cdot \pi}$, the statement can be reformulated in a more algebraic manner: \textit{a plane curve $\gamma$ of given length $L$ bounds area $a\le \tfrac{L^2}{4\cdot \pi}$, and, in the case of equality, $\gamma$ is a circle.}
+This statement is called the {}\emph{isoperimetric inequality}.
 
-Given a plane curve $\gamma$ denote by $F_\gamma$ its {}\emph{convex hull}; that is, minimal convex set that includes $\gamma$.
+Given a plane curve $\gamma$, denote by $F_\gamma$ its {}\emph{convex hull}; that is, the minimal convex set that includes $\gamma$.
 A figure bounded by $\gamma$ must lie in $F_\gamma$.
 Furthermore, if $\gamma$ is a circle then it bounds $F_\gamma$.
 Therefore, it is sufficient to prove the following two statements:
@@ -300,7 +306,7 @@ Among all closed plane curves of length $\le L$ there is a curve $\gamma$ that m
 If a closed plane curve $\gamma$ of length $\le L$ maximizes the area of $F_\gamma$, then $\gamma$ must be a circle of length $L$.
 \end{thm}
 
-Note that \ref{clm:isoperim-circle} does not say that a circle maximizes the area, it only says that no other curve does.
+Note that \ref{clm:isoperim-circle} does not say that a circle maximizes the area; it only says that no other curve does.
 But together with \ref{clm:isoperim-exist} it proves the theorem.
 
 \parit{Proof of \ref{clm:isoperim-exist}.}
@@ -336,14 +342,6 @@ The function $\Gamma\to\RR$ defined by
 $\gamma\mapsto \area F_\gamma$ is continuous.
 \end{thm}
 
-{
-
-\begin{wrapfigure}[6]{r}{46 mm}
-\vskip-7mm
-\centering
-\includegraphics{mppics/pic-790}
-\end{wrapfigure}
-
 \parit{Proof.}
 It is sufficient to show that
 \[
@@ -355,29 +353,33 @@ It is sufficient to show that
 \area F_{\gamma_2}< \area &F_{\gamma_1}+\tfrac{4\cdot\pi\cdot L^2}n
 \end{aligned}
 \eqlbl{eq:area-cont}\]
-for any $\gamma_1,\gamma_2\in \Gamma$.
+for any $\gamma_1,\gamma_2\in \Gamma$ and a positive integer $n$.
 
-}
+\begin{wrapfigure}{o}{46 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-790}
+\end{wrapfigure}
 
 Note that $F_{\gamma_2}$ lies in an $\tfrac Ln$-neighborhood of $F_{\gamma_1}$.
-Moreover for any $p\in F_{\gamma_2}\setminus F_{\gamma_1}$ there is $x\in\partial F_{\gamma_1}$ such that $|p-x|<\tfrac Ln$.
-Observe that length of $\partial F_{\gamma_1}$ cannot exceed~$L$.
+Moreover, for any $p\in F_{\gamma_2}\setminus F_{\gamma_1}$ there is $x\in\partial F_{\gamma_1}$ such that $|p-x|<\tfrac Ln$.
+Observe that the length of $\partial F_{\gamma_1}$ cannot exceed~$L$.
 Whence we can choose $n$ points $x_1,\ldots,x_n$ such that for any $x\in \partial F_{\gamma_1}$ there is $x_i$ such that $|x-x_i|<\tfrac Ln$.
 It follows that $|p-x_i|<2\cdot\tfrac Ln$ for some $i$, and
 \[F_{\gamma_2}\setminus F_{\gamma_1}\subset \bigcup_{i=1}^{n}\Ball(x_i,2\cdot \tfrac Ln).\]
 Since $\area\Ball(x,r)_{\RR^2}=\pi\cdot r^2$ we get
-\[\area (F_{\gamma_2}\setminus F_{\gamma_1})\le  n\cdot\pi \cdot (2\cdot \tfrac Ln)^2,\]
+\[\area (F_{\gamma_2}\setminus F_{\gamma_1})\le n\cdot\pi \cdot (2\cdot \tfrac Ln)^2,\]
 and \ref{eq:area-cont} follows.
 \qeds
 
-In this proof, we have introduced the space $\Gamma$, proved that it is compact and used that a continuous function on a compact space attends its minimum.
+In this proof, we have introduced the space $\Gamma$, proved that it is compact and used that a continuous function on a compact space attains its maximum.
 This is a very common application of compactness.
 Note that our space $\Gamma$ was huge;
 say, $\Gamma$ cannot be embedded into $\RR^n$ for any $n$.
 In particular, one cannot apply standard calculus to $\Gamma$.
 
 Lemma~\ref{clm:isoperim-circle} will be proved by means of elementary geometry;
-it will use the following characterization of round disc.
+it will use the following characterization of a round disc.
 
 \begin{figure}[hb!]
 \vskip-0mm
@@ -387,7 +389,7 @@ it will use the following characterization of round disc.
 
 Let $F$ be a convex figure;
 cut it along a chord $\ell$ into two lenses, $L_1$ and $L_2$.
-Let us denote by $L'_1$ the reflection of  $L_1$ across the perpendicular bisector to the chord.
+Let us denote by $L'_1$ the reflection of $L_1$ across the perpendicular bisector of the chord.
 The figure $F'=L_1'\cup L_2$ will be called a {}\emph{flip} of $F$ along the chord $\ell$.
 
 \begin{thm}{Exercise}\label{ex:round-disc}
@@ -405,13 +407,13 @@ Show that $F$ is a round disc.
 
 \parit{Proof of \ref{clm:isoperim-circle}.}
 If $\gamma$ maximizes the area, then it must be convex; that is, it must bound a convex figure, say $F$.
-If this is not the case, then one can exchange $\gamma$ to another curve (as in the picture) enlarging the area while keeping the length the same.
+If this is not the case, then one can exchange $\gamma$ by another curve (as in the picture) enlarging the area while keeping the length the same.
 
 }
 
 Choose a chord of $F$ and consider its flip $F'$;
 it has the same area and perimeter.
-Therefore if $\gamma$ was a maximizer, then so is $\partial F'$.
-In particular $F'$ must be convex.
+Therefore, if $\gamma$ was a maximizer, then so is $\partial F'$.
+In particular, $F'$ must be convex.
 It remains to apply \ref{ex:round-disc}.
 \qeds

@@ -7,7 +7,9 @@ A subset of a topological space is called \index{clopen subset}\emph{clopen} if 
 \begin{thm}{Definition}
 A topological space $\c{X}$ is called \index{connected space}\emph{connected} if it has exactly two clopen sets $\emptyset$ and $\c{X}$.
 
-A subset of a topological space is called \index{connected set}\emph{connected} if the corresponding subspace is connected.
+A subset of a topological space is called \index{connected set}\emph{connected} if the corresponding subspace%
+\footnote{Which is the subset equipped with the induced topology.}
+is connected.
 \end{thm}
 
 According to our definition, \textit{the empty space is not connected}.
@@ -37,7 +39,7 @@ V\cup W\supset A,\quad\text{and}\quad
 V\cap W\cap A=\emptyset.\]
 
 \begin{thm}{Observation}\label{def:connected-subset}
-A nonempty topological space (or its subset) is \index{disconnected subset}\emph{disconnected} if and only if it has an open separating pair.
+A nonempty topological space (or a nonempty subset of a topological space) is \index{disconnected subset}\emph{disconnected} if and only if it has an open separating pair.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:connected->R}
@@ -53,7 +55,7 @@ Then $B$ is connected.
 \end{thm}
 
 \parit{Proof.}
-Since $A$ is connected, we have $A\ne\emptyset$ and $B\ne\emptyset$.
+Since $A$ is connected, we have $A\ne\emptyset$ and hence $B\ne\emptyset$.
 
 Assume $V$ and $W$ form an open separating pair of $B$.
 Since $B\subset \bar A$,
@@ -93,7 +95,7 @@ Then the image $B=f(A)$ is a connected set in $\c{Y}$.
 \end{thm}
 
 \parit{Proof.}
-Since $A$ is connected, $A\ne \emptyset$, and $B\ne\emptyset$.
+Since $A$ is connected, $A\ne \emptyset$, and hence $B\ne\emptyset$.
 
 Assume that $B=f(A)$ is disconnected.
 Choose open sets $V$ and $W$ that separate $B$; that is,
@@ -121,7 +123,9 @@ is connected.
 \end{thm}
 
 \parit{Proof.}
-Assume that $A$ is disconnected; choose an open separating pair $V$ and $W$.
+Assume that $A$ is disconnected;
+let $V$ and $W$ be an open separating pair.
+
 Choose $p\in \bigcap_\alpha A_\alpha$.
 Without loss of generality, we can assume that $p\in V$.
 
@@ -170,16 +174,17 @@ Let $c=\tfrac12\cdot(a_{n-1}+b_{n-1})$; note that $c\in V$ or $c\in W$.
 If $c\in V$,
 then set $a_{n}=c$ and $b_{n}=b_{n-1}$;
 if $c\in W$, then set $a_{n}=a_{n-1}$ and $b_{n}=c$.
-In both cases, we have \ref{eq:ab-in-VW}.
+In both cases, the conditions in \ref{eq:ab-in-VW} hold.
 
 Observe that
 \[
 a_0\le a_1\le \dots \le b_1\le b_0.
 \]
-In particular, the sequence $a_n$ is nondecreasing and bounded above by $b_0$.
-Therefore, $a_n$ converges to some limit, say $x$.
-Since $b_n-a_n\z=\tfrac1{2^n}\cdot(b_0-a_0)$, the sequence $b_n$ also converges to $x$.
-The point $x$ has to belong to $V$ or $W$.
+In particular, the sequence $a_n$ is nondecreasing and bounded above by~$b_0$.
+Therefore, it must converge; denote its limit by $x$.
+Since
+\[b_n-a_n\z=\tfrac1{2^n}\cdot(b_0-a_0),\] the sequence $b_n$ also converges to $x$.
+The point $x$ has to belong to $V$ or~$W$.
 Since both $V$ and $W$ are open,
 whichever set contains $x$ contains all $a_n$ and $b_n$ for all large $n$, which contradicts \ref{eq:ab-in-VW}.
 \qeds
@@ -242,7 +247,7 @@ Then any connected component of $V$ is open.
 
 \parit{Proof.}
 Let $V_0$ be a connected component in $V$.
-Given a point $x\in V_0$, we can choose its connected neighborhood $N_x\subset V$.
+Given a point $x\in V_0$, choose a connected neighborhood $N_x\subset V$ of $x$.
 By \ref{prop:union-connect}, $N_x\subset V_0$, and the observation follows.
 \qeds
 
@@ -253,9 +258,9 @@ In particular, the number of connected components is a topological invariant;
 that is, \textit{if two spaces are homeomorphic, then they have the same number of connected components}.
 In particular, a connected space is not homeomorphic to a disconnected space.
 
-Here is a more refined way to apply this observation.
+Let us describe a refined way to apply this observation.
 Suppose $\c{X}$ is a connected space.
-A point $x \in\c{X}$ is called a \index{cut point}\emph{cut point} if removing $x$ from $\c{X}$ produces a disconnected space;
+A point $x\in\c{X}$ is called a \index{cut point}\emph{cut point} of $\c{X}$ if removing $x$ from $\c{X}$ produces a disconnected space;
 that is, the subset $\c{X}\setminus\{x\}$ is disconnected.
 
 Note that if $f\:\c{X}\to \c{Y}$ is a homeomorphism, then a point $x \in\c{X}$ is a cut point of $\c{X}$ if and only if $y=f(x)$ is a cut point of $\c{Y}$.
@@ -263,12 +268,11 @@ Moreover, the number of connected components in $\c{X}\setminus\{x\}$ is the sam
 The latter follows since the restriction of $f$ defines a homeomorphism $\c{X}\setminus\{x\}\to \c{Y}\setminus\{y\}$.
 
 For example, consider the circle $\mathbb{S}^1$ and the line segment $[0,1]$.
-Note that both spaces are connected, compact, Hausdorff, metrizable, and Baire;
-so, we cannot distinguish these two spaces by all these properties.
+Note that both spaces are connected, compact, Hausdorff, metrizable, and Baire --- none of these properties can distinguish these spaces.
 Now choose the midpoint $\tfrac12\in [0,1]$;
 observe that its complement $[0,1]\setminus \{\tfrac12\}$ has two connected components.
 If there is a homeomorphism $f\:[0,1]\to \mathbb{S}^1$, then the set $\mathbb{S}^1\setminus \{f(\tfrac12)\}$ must have two connected components.
-On the other hand $\mathbb{S}^1\setminus \{x\}$ is connected for any point $x\in \mathbb{S}^1$ (prove it).
+On the other hand, $\mathbb{S}^1\setminus \{x\}$ is connected for any point $x\in \mathbb{S}^1$ (prove it).
 This leads to a contradiction, proving that $\mathbb{S}^1$ is not homeomorphic to the line segment $[0,1]$.
 
 The same type of argument can be used to solve the following exercises.
@@ -281,12 +285,13 @@ Show that the plane $\RR^2$ is not homeomorphic to the real line $\RR$.
 
 \begin{thm}{Exercise}\label{ex:not-homeo}
 Show that no two of the following four closed connected sets in the plane are homeomorphic.
-(Each set is a union of four line segments, and if it looks like they share an end point, then this is indeed so.)
-
 \begin{figure}[!ht]
 \centering
 \includegraphics{mppics/pic-10}
 \end{figure}
+(Each set is a union of four line segments, and if it looks like they share an endpoint, then this is indeed so.)
+
+
 
 \end{thm}
 
@@ -295,15 +300,16 @@ Show that no two of the following four closed connected sets in the plane are ho
 {
 
 \begin{wrapfigure}{r}{12 mm}
-\vskip-4mm
+\vskip-2mm
 \centering
 \includegraphics{mppics/pic-980}
 \end{wrapfigure}
 
 \begin{thm}{Exercise}\label{ex:Q/H}
 Let $Q$ be the set shown in the picture;
-it is a union of a circle with a crossing closed line segment.
-Consider the action on $Q$ of the group $H$ of all homeomorphisms from $Q$ to itself.
+it is a union of
+a circle together with a closed line segment crossing it.
+Consider the action on $Q$ of the group $H$ of all homeomorphisms $Q\selfmap$.
 Describe the quotient space $Q/H$;
 that is, list its points and the open sets.
 
@@ -312,8 +318,8 @@ that is, list its points and the open sets.
 }
 
 
-\index{Sierpi\'nski triangle}\emph{Sierpi\'nski triangle} is constructed in the following way:
-start with a solid equilateral triangle, subdivide it into four smaller congruent equilateral triangles and remove the interior of the central one.
+The \index{Sierpiński triangle}\emph{Sierpiński triangle} is constructed in the following way:
+start with a solid equilateral triangle, subdivide it into four smaller congruent equilateral triangles, and remove the interior of the central one.
 Repeat this procedure recursively for each of the remaining solid triangles.
 
 

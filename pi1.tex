@@ -1,18 +1,19 @@
 \chapter{Fundamental group}\label{chap:pi1}
 
 Let $\c{X}$ be a topological space with a chosen basepoint $x_0 \in \c{X}$.
-Fix a point $s_0 \in \SS^1$, and  consider all continuous maps $\SS^1\to \c{X}$ that send $s_0$ to $x_0$.
-Denote by $\pi_1(X,x_0)$ the set of homotopy classes$\rel{\{s_0\}}$ of such maps.
+Fix a point $s_0 \in \SS^1$, and consider all continuous maps $\SS^1\to \c{X}$ that send $s_0$ to $x_0$.
+Denote by $\pi_1(\c{X},x_0)$ the set of homotopy classes $\rel{\{s_0\}}$ of such maps.
 
 In this chapter we will equip $\pi_1(\c{X},x_0)$ with multiplication and show that it makes this set into a group.
 This will justify calling $\pi_1(\c{X},x_0)$ the \textit{fundamental group} of $\c{X}$ with base point $x_0$.
+
 The fundamental group is the first meaningful construction in algebraic topology, and the rest of the course will be largely devoted to it.
 
 \section{Homotopy of paths}\label{sec:Homotopy of paths}
 
 Recall that a path is a continuous map defined on the unit interval $[0,1]$.
 The term \index{homotopy!of paths}\emph{homotopy of paths} will be used as a shortcut for \textit{homotopy of paths relative to the ends};
-in the notations of \ref{sec:rel-homotopy}, we have the source space $[0,1]$ with a two-point subset $A=\{0,1\}$.
+using the notation of \ref{sec:rel-homotopy}, we have the source space $[0,1]$ with a two-point subset $A=\{0,1\}$.
 In the rare case when we need to talk about general homotopy of paths (allowing the endpoints to move), we say \index{free homotopy}\emph{free homotopy of paths}.
 
 \begin{wrapfigure}{r}{35 mm}
@@ -23,11 +24,12 @@ In the rare case when we need to talk about general homotopy of paths (allowing 
 
 More formally, a homotopy of paths is defined by a continuous map $H\:[0,1]\times [0,1]\z\to \c{X}$ such that $H(0,\tau)=p$ and $H(1,\tau)=q$ for some points $p,q$ in the target space $\c{X}$.
 
-As usual, it is convenient to think that homotopy is a one-parameter family of paths from $p$ to $q$; say $a_\tau\:[0,1]\to \c{X}$, where $a_\tau(t)\df H(t,\tau)$.
+As usual, it is convenient to think that $H$ defines a one-parameter family of paths from $p$ to $q$; say $a_\tau\:[0,1]\to \c{X}$, where $a_\tau(t)\df H(t,\tau)$.
 Two paths $b,c\:[0,1]\to \c{X}$ are called {}\emph{homotopic} (briefly $b\sim c$)
 if there is a homotopy $a_\tau\:[0,1]\to \c{X}$ such that $b=a_0$ and $c=a_1$.
 Recall that $\sim$ is an equivalence relation.
-Therefore, we can talk about the equivalence class of a path $a$ that will be called its \index{homotopy!class!of paths}\emph{homotopy class} and denoted by~$[a]$.
+Therefore, we can talk about
+the equivalence class of a path $a$, which will be called its \index{homotopy!class!of paths}\emph{homotopy class} and denoted by~$[a]$.
 
 
 \section{Technical claims}\label{sec:homotopy-claim}
@@ -36,7 +38,7 @@ Therefore, we can talk about the equivalence class of a path $a$ that will be ca
 Suppose $a_0$ is a path from $p$ to $q$,
 and
 $b_0$ is a path from $q$ to $r$.
-Suppose $a_0\sim a_1$ and $b_0\sim b_1$
+Suppose $a_0\sim a_1$ and $b_0\sim b_1$,
 then
 \[a_0*b_0\sim a_1*b_1.\]
 
@@ -67,7 +69,7 @@ provides a homotopy from $s_0$ to $s_1$.
 The conditions $s_0(0)=s_1(0)$ and $s_0(1)=s_1(1)$ imply that $s_\tau(0)$ and $s_\tau(1)$ do not depend on $\tau$;
 that is, $s_\tau$ is a homotopy relative to the endpoints.
 
-To prove the last statement, observe that $a\circ s_\tau$ is a homotopy of paths from $a\circ s_0$ to  $a\circ s_1$.
+To prove the last statement, observe that $a\circ s_\tau$ is a homotopy of paths from $a\circ s_0$ to $a\circ s_1$.
 \qeds
 
 \begin{thm}{Claim}\label{clm:homot-claims}
@@ -75,7 +77,7 @@ Let $a,b,c\:[0,1]\to\c{X}$ be paths such that $a(0)=p$, $a(1)=b(0)=q$ and $b(1)=
 Then
 
 \begin{subthm}{clm:neutral}
-$e_p*a\sim a*e_q\sim  a$;
+$e_p*a\sim a*e_q\sim a$;
 \end{subthm}
 
 \begin{subthm}{clm:f-bar-f}
@@ -92,7 +94,7 @@ $(a*b)*c\sim a*(b*c)$.
 
 \parit{Proof.}
 Each claim is proved by applying \ref{obs:homot-paths};
-each time we rewrite the sides of the equation as $d\circ s_0$ and $d\circ s_1$ for appropriate path $d\:[0,1]\to\c{X}$ and a pair of paths $s_0,s_1\:[0,1]\to[0,1]$ that share the ends.
+each time we rewrite the sides of the equation as $d\circ s_0$ and $d\circ s_1$ for an appropriate path $d\:[0,1]\to\c{X}$ and a pair of paths $s_0,s_1\:[0,1]\to[0,1]$ that share the ends.
 
 {
 
@@ -114,15 +116,17 @@ s_0(t)&\df
 \\
 s_1(t)&\df
 \begin{cases}
-2\cdot t&\text{if\ }  t\le \tfrac12,
+2\cdot t&\text{if\ } t\le \tfrac12,
 \\
 1 &\text{if\ } t\ge \tfrac12.
 \end{cases}
 \end{align*}
-Note that $a\z=a\circ s_2$ where $s_2(t)\z\df t$;
-furthermore,
-$s_0(0)\z=s_1(0)\z=s_2(0)=0$ and
-$s_0(1)\z=s_1(1)=s_2(1)=1$.
+Furthermore, $a\z=a\circ s_2$ where $s_2(t)\z\df t$, and
+\begin{align*}
+s_0(0)&=s_1(0)=s_2(0)=0,
+&
+s_0(1)&=s_1(1)=s_2(1)=1.
+\end{align*}
 It remains to apply \ref{obs:homot-paths}.
 
 }
@@ -157,7 +161,7 @@ By the same argument, we get $\bar a*a\sim e_q$.
 \parit{\ref{SHORT.clm:assoc}.}
 Spelling the definition of product of paths, we get
 \begin{align*}
-(a*b)*c(t)&\df
+((a*b)*c)(t)&\df
 \begin{cases}
 a(4\cdot t)&\text{if\ } 0\le t\le \tfrac14,
 \\
@@ -166,7 +170,7 @@ b(4\cdot t-1) &\text{if\ } \tfrac14\le t\le \tfrac12,
 c(2\cdot t-1) &\text{if\ } \tfrac12\le t\le 1,
 \end{cases}
 \intertext{and}
-a*(b*c)(t)&\df
+(a*(b*c))(t)&\df
 \begin{cases}
 a(2\cdot t)&\text{if\ } 0\le t\le \tfrac12,
 \\
@@ -195,7 +199,7 @@ t+\tfrac14 &\text{if\ } \tfrac14\le t\le \tfrac12,
 \tfrac12\cdot t+\tfrac12 &\text{if\ } \tfrac12\le t\le 1.
 \end{cases}
 \end{align*}
-The path $((a*b)*c)(t)$ can be written as $((a*b)*c)\circ s_0(t)$ where $s_0(t)\z\df t$.
+The path $(a*b)*c$ can be written as $((a*b)*c)\circ s_0$ where $s_0(t)\z\df t$.
 Furthermore, both functions $s_0,s_1\:[0,1]\to[0,1]$ are
 continuous,
 $s_0(0)\z=s_1(0)=0$,
@@ -206,24 +210,43 @@ It remains to apply \ref{obs:homot-paths}.
 
 }
 
-%??? make a corollary
-\begin{thm}{Exercise}\label{ex:ab=e}
+\begin{thm}{Corollary}\label{ex:ab=e}
 Let $a$ and $b$ be paths from $p$ to $q$.
 Show that $a\sim b$ if and only if $a*\bar b\sim e_p$.
 \end{thm}
 
+\parit{Proof.}
+Suppose $a\sim b$.
+Then \ref{clm:product} and \ref{obs:homot-paths} imply that
+\[a*\bar b\sim b*\bar b\sim e_p.\]
+
+Now suppose $a*\bar b\sim e_p$.
+Applying \ref{clm:product} and \ref{obs:homot-paths} again, we get
+\[a
+\sim
+a*e_q
+\sim
+a*(\bar b*b)
+\sim
+(a*\bar b)*b
+\sim
+e_p*b
+\sim
+b.
+\]
+\qedsf
 
 \begin{thm}{Exercise}\label{ex:assoc+neutral}
-Let $a$, $b$, and $c$ be paths in a Hausdorff space.
+Let $a$, $b$, and $c$ be paths in a Hausdorff space, and let $a(0)=p$.
 
 \begin{subthm}{ex:assoc}
 Suppose that $(a*b)*c= a*(b*c)$
 and both sides of the equation are defined.
-Show that $a=b=c=e_p$ for some point $p$.
+Show that $a=b=c=e_p$.
 \end{subthm}
 
 \begin{subthm}{ex:neutral}
-Assume $a(0)=p$, and $e_p*a= a$.
+Suppose that $e_p*a= a$.
 Show that $a=e_p$.
 \end{subthm}
 
@@ -240,18 +263,18 @@ any loop defines a map $\SS^1\to \c{X}$.
 Note that if $a$ and $b$ are loops based at $x_0$, then their products are defined; moreover, $a*b$, $b*a$, $\bar a$, $\bar b$ are also loops based at $x_0$; see \ref{sec:Operations on paths}.
 
 
-Recall that homotopy of paths and loops does not move their ends
-and $[a]$ stands for the homotopy class of a loop (or path) $a$.
+Recall that homotopy of paths (in particular, loops) does not move their ends
+and $[a]$ stands for the homotopy class of a path (or loop) $a$.
 The multiplication of homotopy classes of loops based at $x_0$ is defined by
 \[[a]\cdot [b]=[a*b];\]
 that is, \textit{the product of homotopy classes of loops $a$ and $b$ is the homotopy class of the product $a*b$.}
 
 Observe that the product is well-defined;
-that is, if $[a_0]= [a_1]$ and $[b_0]=[b_1]$, then  $[a_0*b_0]=[a_1*b_1]$.
+that is, if $[a_0]= [a_1]$ and $[b_0]=[b_1]$, then $[a_0*b_0]=[a_1*b_1]$.
 In other words, if $a_0\sim a_1$ and $b_0\sim b_1$, then $a_0*b_0\sim a_1*b_1$.
 The latter is stated in Claim \ref{clm:product}.
 
-Denote by $\pi_1(\c{X},x_0)$ the set of all homotopy classes of loops with base at $x_0$.
+Denote by $\pi_1(\c{X},x_0)$ the set of all homotopy classes of loops based at $x_0$.
 
 \begin{thm}{Theorem}\label{thm:pi1}
 The set $\pi_1(\c{X},x_0)$ with the introduced multiplication is a group.
@@ -269,14 +292,20 @@ By \ref{clm:homot-claims},
 \begin{enumerate}[(a)]
 \item $a*e_{x_0}\sim e_{x_0}*a\sim a$,
 \item $a*\bar a\sim\bar a* a\sim e_{x_0}$,
-\item $(a*b)*c\sim a*(b*c)$,
+\item $(a*b)*c\sim a*(b*c)$
 \end{enumerate}
 for any loops $a$, $b$, and $c$ based at $x_0$.
-And these equations imply the conditions in the definition of group.
+And these interrelations can be rewritten as
+\begin{enumerate}[(a)]
+\item $[a]\cdot [e_{x_0}]= [e_{x_0}]\cdot [a]=[a]$,
+\item $[a]\cdot [\bar a]=[\bar a]\cdot [a]= [e_{x_0}]$,
+\item $([a]\cdot [b])\cdot [c]= [a]\cdot([b]\cdot[c])$,
+\end{enumerate}
+and they imply the conditions in the definition of a group with neutral element $[e_{x_0}]$ and $[a]^{-1}\df [\bar a]$.
 \qeds
 
 \begin{thm}{Exercise}\label{ex:group}
-Let $\c{G}$ be a \index{topological group}\emph{topological group}; that is a group equipped with a topology such that the maps $\c{G}\times \c{G}\to \c{G}$ and $\c{G}\to \c{G}$ defined by $(g,h)\mapsto g\cdot h$ and $g\mapsto g^{-1}$ are continuous.
+Let $\c{G}$ be a \index{topological group}\emph{topological group}; that is, a group equipped with a topology such that the maps $\c{G}\times \c{G}\to \c{G}$ and $\c{G}\to \c{G}$ defined by $(g,h)\mapsto g\cdot h$ and $g\mapsto g^{-1}$ are continuous.
 Show that the fundamental group $\pi_1(\c{G},1)$ is abelian;
 in other words, $a_1*a_2\sim a_2*a_1$
 for any two loops $a_1$ and $a_2$ with base point $1\in \c{G}$.
@@ -301,14 +330,15 @@ Show that a retract of a simply-connected space is simply-connected.
 \end{thm}
 
 Recall that a group is called \index{trivial group}\emph{trivial} if it contains only one element, which is necessarily the neutral element.
-If the fundamental group $\pi_1(\c{X},x_0)$ is trivial, it is common to write $\pi_1(\c{X},x_0)=0$ despite that it makes no sense --- in general the group $\pi_1(\c{X},x_0)$ is not commutative and so it would be more reasonable to write $\pi_1(\c{X},x_0)\z=\{1\}$, meaning that $1$ is the only element of $\pi_1(\c{X},x_0)$.
+If the fundamental group $\pi_1(\c{X},x_0)$ is trivial, it is common to write $\pi_1(\c{X},x_0)=0$ altho this makes no sense --- in general the group $\pi_1(\c{X},x_0)$ is not commutative, and so it would be more reasonable to write $\pi_1(\c{X},x_0)\z=\{1\}$, meaning that $1$ is the only element of $\pi_1(\c{X},x_0)$.
 
 \begin{thm}{Proposition}\label{prop:sc=1hclass}
 A path-connected space $\c{X}$ is simply-connected if and only if $\pi_1(\c{X},x_0)=0$ for some (and therefore any) base point $x_0\in \c{X}$.
 \end{thm}
 
 Since $(a*b)*c\z\ne a*(b*c)$, one has to fully parenthesize products of paths.
-However, I will omit parentheses when any parenthesization does the job (since $(a*b)*c\sim a*(b*c)$).
+However, I will omit parentheses when any parenthesization does the job.
+(Since $(a*b)*c\sim a*(b*c)$ this is the case if we consider loops up to homotopy.)
 On a more formal basis, one can assume that the product is taken in the usual order;
 that is, \index{$a*b*c*d$}
 \[a*b*c*d\df((a*b)*c)*d.\]
@@ -365,7 +395,7 @@ Then $\c{X}$ is simply-connected.
 \end{thm}
 
 
-This statement is a special case of Van Kampen's theorem.
+This statement is a special case of van Kampen's theorem.
 Roughly speaking, the general theorem allows one to recover the fundamental
 group of $\c{X}=V\cup W$ from the fundamental groups of the open sets $V$, $W$, and $V\cap W$,
 together with the way $V\cap W$ sits inside $V$ and $W$.
@@ -377,7 +407,7 @@ that is, \index{$a*b*c*d$} $a*b*c*d\df((a*b)*c)*d$.
 \parit{Proof.}
 Let $a$ be a loop in $\c{X}$ based at $x_0\in V\cap W$.
 Note that we can choose a sequence $0=t_0<t_1<\ldots<t_n=1$ such that
-$a([t_{i-1},t_i])\z\subset V$, or $a([t_{i-1},t_i])\subset W$ and $a(t_i)\in V\cap W$ for each $i$.
+each image $a([t_{i-1},t_i])$ lies in $V$ or $W$, and each subdivision point $a(t_i)$ lies in $V\cap W$.
 
 \begin{wrapfigure}{r}{45 mm}
 \vskip-0mm
@@ -385,14 +415,14 @@ $a([t_{i-1},t_i])\z\subset V$, or $a([t_{i-1},t_i])\subset W$ and $a(t_i)\in V\c
 \includegraphics{mppics/pic-1350}
 \end{wrapfigure}
 
-Indeed, two open sets $a^{-1}(V)$ and $a^{-1}(W)$ cover $[0,1]$; let $\eps>0$ be a Lebesgue number of this cover.
+Indeed, the two open sets $a^{-1}(V)$ and $a^{-1}(W)$ cover $[0,1]$; let $\eps>0$ be a Lebesgue number of this cover.
 So if $|t_i-t_{i-1}|<\eps$, then $a([t_{i-1},t_i])\subset V$ or $a([t_{i-1},t_i])\subset W$ for each $i$.
 If $a(t_i)\notin V\cap W$ for some $i$, then it can be removed from the sequence keeping the property;
 after several such removals we get the needed subdivision.
 
-Reparametrizing $[t_{i-1},t_i]$ by $[0,1]$ we get paths $a_1,\ldots,a_n$ such that
+Reparametrizing $[t_{i-1},t_i]$ by $[0,1]$, we get paths $a_1,\ldots,a_n$ such that
 \[a\sim a_1*\dots*a_n\]
-and each $a_i$ lies completely in $V$ or $W$ and has ends in $V\cap W$.
+and each $a_i$ lies completely in $V$ or $W$ and has endpoints in $V\cap W$.
 Let us connect $x_0$ to every point $x_i=a_i(1)$ for $i<n$ by a path $b_i$ in $V\cap W$.
 By \ref{clm:homot-claims},
 \[a_1*\ldots*a_n{\sim}(a_1*\bar b_1)*(b_1*a_2*\bar b_2)*\ldots*(b_{n-1}*a_n).\]
@@ -400,7 +430,7 @@ By \ref{clm:homot-claims},
 Observe that each loop $a_1*\bar b_1$, $b_1*a_2*\bar b_2, \z\ldots, b_{n-1}*a_n$ lies entirely in $V$ or $W$.
 Since $V$ and $W$ are simply-connected,
 \[a_1*\bar b_1\sim e_{x_0},\quad
- b_1*a_2*\bar b_2\sim e_{x_0},\quad \ldots\ ,\quad b_{n-1}*a_n\sim e_{x_0}.
+ b_1*a_2*\bar b_2\sim e_{x_0},\quad \ldots\/,\quad b_{n-1}*a_n\sim e_{x_0}.
 \]
 Hence $a_1*\ldots*a_n\sim e_{x_0}$, and the statement follows.
 \qeds
