@@ -1,3 +1,131 @@
+\section{Compactness criterion}
+
+The following statement provides a partial converse to \ref{lem:net}.
+
+\begin{thm}{Proposition}\label{prop:complete-with-compact-nets}
+Let $Q$ be a closed subset in complete metric space.
+Suppose that for every \(\eps>0\) there is a compact \(\eps\)-net of \(Q\).
+Then \(Q\) is compact.
+\end{thm}
+
+\parit{Proof.}
+Choose a positive integer $n$ and a compact \(\tfrac1{2\cdot n}\)-net \(K_n\) of $Q$.
+By \ref{prop:seq-comp-metr} and \ref{lem:net}, $K_n$ contains a finite \(\tfrac1{2\cdot n}\)-net, say $F_n$.
+
+Observe that $F_n$ is a finite \(\tfrac1n\)-net of \(Q\).
+Indeed, given \(q\in Q\), we can choose \(p\in K_n\) such that
+$|q-p|<\tfrac1{2\cdot n}$.
+Further, we can choose \(z\in F_n\) such that
+$|p-z|<\tfrac1{2\cdot n}$.
+By the triangle inequality, $|q-z|<\tfrac1n$.
+
+Now choose a sequence \(x_1,x_2,\ldots\) in \(Q\).
+Applying a diagonal precedure,
+we can pass to its subserqunce $y_1,y_2,\ldots$
+and choose a sequence of points $z_n\in F_n$ such that
+\[|y_m-z_n|<\tfrac 1n\eqlbl{eq:|y-z|,1/n}\]
+for some if $m\ge n$.
+
+Indeed, since \(F_1\) is finite and $Q\subset \bigcup_{z\in F_1}\Ball(z,1)$,
+one of these balls, say $\Ball(z_1,1)$, contains infinitely many members of the sequence.
+Passing to a subsequence, we may assume that all its members lie in $\Ball(z_1,1)$;
+let $y_1$ be the first element of this subsequence.
+Furhther we can pass to a subsequence again so that all its members lie $\Ball(z_2,\tfrac12)$ for some $z_2\in F_2$ and let $y_2$ be the second element in this subsequence.
+Continuing this way we construct a subsequences $y_1,y_2,\ldots$ of \(x_1,x_2,\ldots\) and a sequence $z_1,z_2,\ldots$ that meet \ref{eq:|y-z|,1/n}.
+
+By \ref{eq:|y-z|,1/n}, \(y_1,y_2,\ldots\) is Cauchy.
+Indeed, if \(i,j\ge n\), then
+\[|y_i-y_j|\le |y_i-z_n|+|z_n-y_j|< \tfrac2n.\]
+Since the space is complete and $Q$ is closed, the subsequence \(y_1,y_2,\ldots\) converges to a point in \(Q\).
+
+Since \(x_1,x_2,\ldots\) is an arbitrary sequence in \(Q\), we get that \(Q\) sequentially compact, and by \ref{prop:seq-comp-metr}, it is compact.
+\qeds
+
+Let $L$ be a positive real number.
+A map $f\:\c{X}\to \c{Y}$ between metric spaces is called $L$-Lipschits if
+\[|f(x_0)-f(x_1)|_{\c{Y}}\le L\cdot|x_0-x_1|_{\c{X}}\]
+for any $x_0,x_1\in \c{X}$.
+
+\begin{thm}{Corollary}
+Let $\c{X}$ and $\c{Y}$ be compact metric spaces.
+Then the space of all $1$-Lipschits maps $f\:\c{X}\to \c{Y}$ equipped with metric
+\[|f-h|\df\sup\set{f(x)-h(x)}{x\in\c{X}}\]
+is compact.
+\end{thm}
+
+\parit{Proof.}
+Given $\eps>0$, we can choose an
+\qeds
+
+\section{An application}
+
+
+\begin{thm}{Theorem}\label{thm:isoperim}
+Among all plane curves of given length $L$, only circles bound the greatest area.
+\end{thm}
+
+Since a circle of length $L$ bounds area $\tfrac{L^2}{4\cdot \pi}$, the statement can be reformulated in a more algebraic manner: \textit{a plane curve $\gamma$ of given length $L$ bounds area $a\le \tfrac{L^2}{4\cdot \pi}$, and, in the case of equality, $\gamma$ is a circle.}
+This statement is called the {}\emph{isoperimetric inequality}.
+
+I will indicate a proof of isoperimetric intequality in the plane based on the compactness criterion from the previous section.
+
+Given a plane curve $\gamma$, denote by $F_\gamma$ its {}\emph{convex hull}; that is, the minimal convex set that includes $\gamma$.
+A figure bounded by $\gamma$ must lie in $F_\gamma$.
+Furthermore, if $\gamma$ is a circle then it bounds $F_\gamma$.
+Therefore, it is sufficient to prove the following two statements:
+
+\begin{thm}{Lemma}\label{clm:isoperim-exist}
+Among all closed plane curves of length $\le L$ there is a curve $\gamma$ that maximizes the area of $F_\gamma$.
+\end{thm}
+
+\begin{thm}{Lemma}\label{clm:isoperim-circle}
+If a closed plane curve $\gamma$ of length $\le L$ maximizes the area of $F_\gamma$, then $\gamma$ must be a circle of length $L$.
+\end{thm}
+
+Note that \ref{clm:isoperim-circle} does not say that a circle maximizes the area; it only says that no other curve does.
+But together with \ref{clm:isoperim-exist} it proves the theorem.
+
+\parit{Proof of \ref{clm:isoperim-exist}.}
+A closed plane curve $\gamma$ with length $\le L$ can be described by a parametrization $\gamma\:[0,L]\to\RR^2$ such that $\gamma(0)=\gamma(L)$ and
+\[|\gamma(t_0)-\gamma(t_1)|_{\RR^2}\le |t_0-t_1|.\]
+Without loss of generality, we can assume that $\gamma(0)=\gamma(L)=0\in\RR^2$.
+Consider the space $\Gamma$ of all such parametrized curves with the \index{sup-norm metric}\emph{sup-norm metric} defined by
+\[|\gamma_1-\gamma_2|_\Gamma= \max\set{|\gamma_1(t)-\gamma_2(t)|_{\RR^2}}{t\in[0,L]}
+\eqlbl{eq:Gamma-metric}\]
+
+\begin{thm}{Exercise}\label{ex:aa}
+Prove the following statements:
+\begin{subthm}{ex:aa:def}
+The formula defines a metric on $\Gamma$; in particular, the maximum in the right-hand side in \ref{eq:Gamma-metric} is defined.
+\end{subthm}
+
+\begin{subthm}{ex:aa:complete}
+The space $\Gamma$ is complete.
+\end{subthm}
+
+\begin{subthm}{ex:aa:compact}
+The space $\Gamma$ is compact.
+\end{subthm}
+
+\end{thm}
+
+It remains to prove the following sublemma and apply \ref{ex:fun(compact):min-max}.
+\qeds
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \parbf{\ref{ex:ucover-unique}.} Apply \ref{thm:lifting-criterion} twice.
 
 \parbf{\ref{ex:given-monodromy}.}
