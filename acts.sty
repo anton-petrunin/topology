@@ -11,11 +11,20 @@
   }%
 }
 
-\newcommand{\selfmap@draw}[2]{%
+\newcommand{\selfdown@draw}[2]{%
   \mathrel{%
     \tikz[x=1em,y=1em,scale=#2,baseline=-0.45ex,line cap=round,line join=round]{
       \draw[-{Latex[length=1.2mm,width=1.0mm]},line width=.4pt,arrows = {->[]}]
       (0.1,.3) to[out=20,in=90] (.8,0.1) to[out=270,in=340] (0,-0.1)
+    }%
+  }%
+}
+
+\newcommand{\selfup@draw}[2]{%
+\mathrel{%
+    \tikz[x=1em,y=1em,scale=#2,baseline=-0.45ex,line cap=round,line join=round]{
+      \draw[-{Latex[length=1.2mm,width=1.0mm]},line width=.4pt,arrows={->[]}]
+      (0.1,-.1) to[out=-20,in=270] (0.8,0.1) to[out=90,in=20] (0,0.3);
     }%
   }%
 }
@@ -28,10 +37,18 @@
     {\acts@draw\scriptscriptstyle{0.60}}%
 }
 
-\newcommand{\selfmap}{%
+\newcommand{\selfdown}{%
   \mathchoice
-    {\selfmap@draw\displaystyle{1.00}\,}%
-    {\selfmap@draw\textstyle{1.00}\,}%
-    {\selfmap@draw\scriptstyle{0.75}\,}%
-    {\selfmap@draw\scriptscriptstyle{0.60}\,}%
+    {\selfdown@draw\displaystyle{1.00}\,}%
+    {\selfdown@draw\textstyle{1.00}\,}%
+    {\selfdown@draw\scriptstyle{0.75}\,}%
+    {\selfdown@draw\scriptscriptstyle{0.60}\,}%
+}
+
+\newcommand{\selfup}{%
+  \mathchoice
+    {\selfup@draw\displaystyle{1.00}\,}%
+    {\selfup@draw\textstyle{1.00}\,}%
+    {\selfup@draw\scriptstyle{0.75}\,}%
+    {\selfup@draw\scriptscriptstyle{0.60}\,}%
 }
